@@ -105,7 +105,6 @@ const config = {
     ...nativeFirebaseOnMobileOnly('@react-native-firebase/analytics'),
     ...nativeFirebaseOnMobileOnly('@react-native-firebase/crashlytics'),
     ...nativeFirebaseOnMobileOnly('@react-native-firebase/messaging'),
-    ...nativeFirebaseOnMobileOnly('@react-native-firebase/remote-config'),
     '@shopify/react-native-skia': { platforms: { windows: null } },
     'react-native-audio-api': { platforms: { windows: null } },
     // Its Windows project is UWP-only (Paper), which cannot link into this

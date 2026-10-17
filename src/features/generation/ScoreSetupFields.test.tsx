@@ -124,9 +124,27 @@ describe('ScoreSetupFields', () => {
 
   it('labels the style and the complexity rather than printing their values', () => {
     const view = setup(reggae());
-    expect(view.getByText('Reggae')).toBeTruthy();
+    // The style carries its family in the label, the way the web picker groups
+    // it under a heading (`flatStyleOptions`).
+    expect(view.getByText('Latin & Caribbean · Reggae')).toBeTruthy();
     expect(view.getByText('Moderate')).toBeTruthy();
     expect(view.queryByText('moderate')).toBeNull();
+  });
+
+  it('offers the lyric language while words are being written, open on English', () => {
+    // reggae() turns generation on, which adds a singer, so lyrics are on and
+    // the language picker shows beside the theme. Undefined means English — the
+    // generation prompt's own default — so the trigger reads "English".
+    const view = setup(reggae());
+    expect(view.getByText('Language of the words')).toBeTruthy();
+    expect(view.getByLabelText('Language of the words')).toBeTruthy();
+    expect(view.getByText('English')).toBeTruthy();
+  });
+
+  it('hides the lyric language when no words are being written', () => {
+    // A plain instrumental draft: no singer, so no lyrics and no language.
+    const view = setup();
+    expect(view.queryByText('Language of the words')).toBeNull();
   });
 
   it('locks exactly the rows the style made essential', () => {

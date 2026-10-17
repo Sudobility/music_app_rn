@@ -1246,7 +1246,12 @@
     "defaultTitle": "新乐谱",
     "defaultTitleGenerated": "生成的乐谱",
     "lyricsTheme": "歌词的主题",
-    "lyricsThemePlaceholder": "例如：一首关于归乡的情歌"
+    "lyricsThemePlaceholder": "例如：一首关于归乡的情歌",
+    "lyricsLanguage": "歌词语言",
+    "lyricsLanguageName": {
+      "en": "英文",
+      "zh": "中文"
+    }
   },
   "ornament": {
     "invertedMordent": "逆波音",

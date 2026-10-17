@@ -5,7 +5,7 @@
 import { setFirebaseProxy } from '@sudobility/di';
 setFirebaseProxy(process.env.FIREBASE_PROXY);
 
-// Native Firebase (analytics, crashlytics, messaging, remote config) on iOS
+// Native Firebase (analytics, crashlytics, messaging) on iOS
 // and Android; on the desktops, analytics through GA4's Measurement Protocol.
 // The same `src/di/initializeServices` sudojo_app_rn and svgr_app_rn start.
 // Not awaited: nothing waits on it, and a failure must not stop the app.

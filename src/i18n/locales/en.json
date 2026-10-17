@@ -1246,7 +1246,12 @@
     "defaultTitle": "New Score",
     "defaultTitleGenerated": "Generated Score",
     "lyricsTheme": "What the words are about",
-    "lyricsThemePlaceholder": "e.g. a love song about coming home"
+    "lyricsThemePlaceholder": "e.g. a love song about coming home",
+    "lyricsLanguage": "Language of the words",
+    "lyricsLanguageName": {
+      "en": "English",
+      "zh": "Chinese (中文)"
+    }
   },
   "ornament": {
     "invertedMordent": "Inv. mordent",

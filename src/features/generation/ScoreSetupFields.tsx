@@ -40,8 +40,10 @@ import {
   GENERATE_SCORE_KEY_FIFTHS_OPTIONS,
   GENERATE_SCORE_MOOD_OPTIONS,
   GENERATE_SCORE_TIME_SIGNATURE_OPTIONS,
+  LYRICS_LANGUAGE_OPTIONS,
   canRemoveNewProjectEntry,
   complexityLabelKey,
+  lyricsLanguageLabelKey,
   generationInstrumentOptionsFlat,
   isNewProjectEntryLocked,
   flatStyleOptions,
@@ -324,6 +326,29 @@ export function ScoreSetupFields({
               }
               placeholder={t('newProject.lyricsThemePlaceholder')}
               accessibilityLabel={t('newProject.lyricsTheme')}
+            />
+          </Field>
+        ) : null}
+
+        {/* The language the words are written in. Undefined means English — the
+            generation prompt's own default — so the picker shows English until
+            the reader picks otherwise; the form seeds it from the working
+            language, so a Chinese UI opens on 中文. */}
+        {showNewProjectLyricsTheme(draft) ? (
+          <Field label={t('newProject.lyricsLanguage')}>
+            <Select
+              value={draft.lyricsLanguage ?? 'en'}
+              accessibilityLabel={t('newProject.lyricsLanguage')}
+              options={LYRICS_LANGUAGE_OPTIONS.map(value => ({
+                value,
+                label: t(lyricsLanguageLabelKey(value)),
+              }))}
+              onValueChange={value =>
+                dispatch({
+                  type: 'setLyricsLanguage',
+                  lyricsLanguage: value as 'en' | 'zh',
+                })
+              }
             />
           </Field>
         ) : null}

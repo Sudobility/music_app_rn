@@ -45,12 +45,16 @@ export function useNewProjectForm({
   account,
   onSubmit,
 }: UseNewProjectFormOptions) {
-  const { t } = useTranslation();
-  const [draft, dispatch] = useReducer(
-    reducer,
-    undefined,
-    initialNewProjectDraft,
-  );
+  const { t, i18n } = useTranslation();
+  // Open the lyric language on the reader's working language, so a Chinese UI
+  // writes Chinese words by default; undefined would mean English regardless.
+  // The reader can still change it on the form.
+  const [draft, dispatch] = useReducer(reducer, undefined, () => ({
+    ...initialNewProjectDraft(),
+    lyricsLanguage: (i18n.language.startsWith('zh') ? 'zh' : 'en') as
+      | 'en'
+      | 'zh',
+  }));
   /*
     Every credit rule — whether "Generate for me" may be switched on, whether
     Create is offered, and what to say about either — is music_lib's
