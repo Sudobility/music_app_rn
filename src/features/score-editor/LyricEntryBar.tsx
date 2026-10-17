@@ -31,17 +31,23 @@ import { useEffect, useRef, useState } from 'react';
 import { View } from 'react-native';
 import type { TextInput } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { Button, Input, Text } from '@sudobility/components-rn';
-import type { NoteEvent } from '@sudobility/music_types';
+import { Button, FormModal, Input, Text } from '@sudobility/components-rn';
+import { syllabifyText } from '@sudobility/music_types';
+import type { LyricLanguage, NoteEvent } from '@sudobility/music_types';
 import { FieldSlot } from '@/components/controls/FieldRow';
+import { Field } from '@/features/inspector/Field';
 import type { EditingStoreApi } from '@sudobility/music_editing';
 import {
   applyLyricStep,
+  distributeLyrics,
   lyricEntryStep,
   lyricTextAt,
   splitLyricSeparator,
 } from '@sudobility/music_editing';
 import type { LyricEntryState, LyricInput } from '@sudobility/music_types';
+
+/** A line with a Han character sings a syllable per character. */
+const HAS_HAN = /[㐀-鿿豈-﫿]/;
 
 export type LyricEntryBarProps = {
   store: EditingStoreApi;
@@ -71,6 +77,35 @@ export function LyricEntryBar({
   const continuing = useRef(false);
   const inputRef = useRef<TextInput>(null);
   const initializedIndex = useRef<number | null>(null);
+
+  /**
+   * The "paste a whole line" sheet. The bar itself walks note by note, advancing
+   * on every space and hyphen, which is exactly wrong for pasting a finished
+   * line — so a line is typed here instead and laid on the melody at once
+   * (`distributeLyrics`, held notes becoming melismas).
+   */
+  const [lineOpen, setLineOpen] = useState(false);
+  const [line, setLine] = useState('');
+  const trackId = notes[0]?.trackId;
+
+  const distribute = (): void => {
+    if (!trackId || line.trim() === '') return;
+    const language: LyricLanguage = HAS_HAN.test(line) ? 'zh' : 'en';
+    const { leftover } = distributeLyrics(
+      store,
+      trackId,
+      syllabifyText(line, language),
+    );
+    if (leftover.length > 0) {
+      store.getState().pushToast({
+        message: t('editor.lyricsDidNotFit', { count: leftover.length }),
+        severity: 'warning',
+      });
+    }
+    setLine('');
+    setLineOpen(false);
+    onClose();
+  };
 
   useEffect(() => {
     setIndex(startIndex);
@@ -137,56 +172,101 @@ export function LyricEntryBar({
   };
 
   return (
-    <View
-      className="border-border flex-row items-center gap-2 border-t px-2 py-1.5"
-      accessibilityRole="toolbar"
-      accessibilityLabel={t('editor.lyricEntry')}
-    >
-      <Text className="text-muted-foreground shrink-0 text-sm">
-        {t('editor.lyricNoteOf', {
-          current: index + 1,
-          total: notes.length,
-        })}
-      </Text>
-      {/* The buttons beside it are 44 points tall and this was 32: one
+    <>
+      <View
+        className="border-border flex-row items-center gap-2 border-t px-2 py-1.5"
+        accessibilityRole="toolbar"
+        accessibilityLabel={t('editor.lyricEntry')}
+      >
+        <Text className="text-muted-foreground shrink-0 text-sm">
+          {t('editor.lyricNoteOf', {
+            current: index + 1,
+            total: notes.length,
+          })}
+        </Text>
+        {/* The buttons beside it are 44 points tall and this was 32: one
           height, stated, as everywhere a field has an action beside it. */}
-      <FieldSlot grow>
-        <Input
-          ref={inputRef}
-          value={draft}
-          autoFocus
-          // A lyric is prose, so the keyboard should behave like prose — except
-          // for autocorrect, which rewrites the syllables of a hyphenated word.
-          autoCorrect={false}
-          autoCapitalize="none"
-          returnKeyType="done"
-          accessibilityLabel={t('editor.syllable')}
-          onChangeText={handleChange}
-          onSubmitEditing={() => perform('enter', draft)}
-          className="h-full px-2 py-0 text-base"
-        />
-      </FieldSlot>
-      <Button
-        variant="ghost"
-        onPress={() => perform('back', draft)}
-        disabled={index === 0}
-        accessibilityLabel={t('editor.previousSyllable')}
+        <FieldSlot grow>
+          <Input
+            ref={inputRef}
+            value={draft}
+            autoFocus
+            // A lyric is prose, so the keyboard should behave like prose — except
+            // for autocorrect, which rewrites the syllables of a hyphenated word.
+            autoCorrect={false}
+            autoCapitalize="none"
+            returnKeyType="done"
+            accessibilityLabel={t('editor.syllable')}
+            onChangeText={handleChange}
+            onSubmitEditing={() => perform('enter', draft)}
+            className="h-full px-2 py-0 text-base"
+          />
+        </FieldSlot>
+        <Button
+          variant="ghost"
+          onPress={() => perform('back', draft)}
+          disabled={index === 0}
+          accessibilityLabel={t('editor.previousSyllable')}
+        >
+          {'‹'}
+        </Button>
+        <Button
+          variant="ghost"
+          onPress={() => perform('hyphen', draft)}
+          accessibilityLabel={t('editor.hyphenate')}
+        >
+          {'-'}
+        </Button>
+        <Button variant="ghost" onPress={() => perform('space', draft)}>
+          {'␣'}
+        </Button>
+        <Button
+          variant="ghost"
+          onPress={() => {
+            setLine('');
+            setLineOpen(true);
+          }}
+          accessibilityLabel={t('editor.distributeLine')}
+        >
+          {'¶'}
+        </Button>
+        <Button variant="ghost" onPress={onClose}>
+          {t('editor.done')}
+        </Button>
+      </View>
+      <FormModal
+        visible={lineOpen}
+        title={t('editor.distributeTitle')}
+        onClose={() => setLineOpen(false)}
+        closeAriaLabel={t('common.closeDialog')}
+        actions={[
+          {
+            label: t('common.cancel'),
+            onPress: () => setLineOpen(false),
+            variant: 'ghost',
+          },
+          {
+            label: t('editor.distribute'),
+            disabled: line.trim() === '' || !trackId,
+            onPress: distribute,
+          },
+        ]}
       >
-        {'‹'}
-      </Button>
-      <Button
-        variant="ghost"
-        onPress={() => perform('hyphen', draft)}
-        accessibilityLabel={t('editor.hyphenate')}
-      >
-        {'-'}
-      </Button>
-      <Button variant="ghost" onPress={() => perform('space', draft)}>
-        {'␣'}
-      </Button>
-      <Button variant="ghost" onPress={onClose}>
-        {t('editor.done')}
-      </Button>
-    </View>
+        <Field
+          label={t('editor.distributeTitle')}
+          hint={t('editor.distributeHint')}
+        >
+          <Input
+            value={line}
+            onChangeText={setLine}
+            multiline
+            autoFocus
+            autoCorrect={false}
+            autoCapitalize="none"
+            accessibilityLabel={t('editor.distributeTitle')}
+          />
+        </Field>
+      </FormModal>
+    </>
   );
 }
