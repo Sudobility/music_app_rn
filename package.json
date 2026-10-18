@@ -48,7 +48,7 @@
     "@react-navigation/native-stack": "^7.10.1",
     "@react-navigation/stack": "^7.7.1",
     "@shopify/react-native-skia": "2.2.12",
-    "@sudobility/auth_lib": "^0.0.109",
+    "@sudobility/auth_lib": "^0.0.110",
     "@sudobility/building_blocks_rn": "^0.0.86",
     "@sudobility/components-rn": "^1.0.120",
     "@sudobility/consumables_client": "^0.0.28",
