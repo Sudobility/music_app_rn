@@ -62,7 +62,7 @@
     "@sudobility/music_editing": "^0.0.48",
     "@sudobility/music_io": "^0.9.70",
     "@sudobility/music_lib": "^1.9.75",
-    "@sudobility/music_player": "^0.1.64",
+    "@sudobility/music_player": "^0.1.65",
     "@sudobility/music_spatial_core": "^0.0.19",
     "@sudobility/music_spatial_rn": "^0.0.22",
     "@sudobility/music_types": "^0.13.51",
