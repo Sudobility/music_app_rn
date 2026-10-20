@@ -26,7 +26,7 @@ import {
   getMusicPositionSource,
   publishedSnapshotUrl,
 } from '@sudobility/music_types';
-import type { PublishedSnapshot } from '@sudobility/music_types';
+import type { FlagReason, PublishedSnapshot } from '@sudobility/music_types';
 import { getMusicClient } from '@/config/server';
 import { ScrollingScore } from '@/features/score/ScrollingScore';
 import { TransportBar } from '@/features/transport/TransportBar';
@@ -35,9 +35,13 @@ import { SafeAreaView } from '@/platform/SafeArea';
 import { useSafeEdgeList } from '@/platform/safe-edges';
 import type { RootStackParamList } from '@/app/Navigation';
 import { Share } from 'react-native';
-import { ShareIcon } from 'react-native-heroicons/solid';
+import { ShareIcon, FlagIcon } from 'react-native-heroicons/solid';
 import { IconButton } from '@/components/layout/IconButton';
 import { useNotationInk } from '@/components/icons/notation-ink';
+import { useAuth, readIdToken } from '@/auth/AuthContext';
+import { SignInModal } from '@/features/account/SignInModal';
+import { FlagSnapshotSheet } from '@/features/community/FlagSnapshotSheet';
+import { usePendingAction } from '@/components/controls/usePendingAction';
 import { createDocumentStore } from '@sudobility/music_lib';
 import { usePlayerBinding } from '@/features/transport/usePlayerBinding';
 import { appToasts } from '@/features/toasts/Toasts';
@@ -153,6 +157,49 @@ export function PublishedScore({ snapshot }: { snapshot: PublishedSnapshot }) {
   const [spatialActive, setSpatialActive] = useState(false);
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
+  // Flagging requires an account — a report has a reporter. A signed-out reader
+  // is sent through sign-in first, then the sheet opens.
+  const { user } = useAuth();
+  const [flagOpen, setFlagOpen] = useState(false);
+  const [signInOpen, setSignInOpen] = useState(false);
+  const flagging = usePendingAction();
+  const onFlag = useCallback(() => {
+    if (user) setFlagOpen(true);
+    else setSignInOpen(true);
+  }, [user]);
+  const submitFlag = useCallback(
+    (reason: FlagReason, details: string) =>
+      void flagging.run(async () => {
+        const client = getMusicClient();
+        const token = await readIdToken();
+        if (!client || !token) {
+          appToasts.push({
+            id: `flag-${Date.now()}`,
+            message: t('flag.failed'),
+            severity: 'error',
+          });
+          return;
+        }
+        try {
+          await client.flagSnapshot(snapshot.publicId, reason, details, token);
+          setFlagOpen(false);
+          appToasts.push({
+            id: `flag-${Date.now()}`,
+            message: t('flag.thanks'),
+            severity: 'success',
+          });
+        } catch {
+          appToasts.push({
+            id: `flag-${Date.now()}`,
+            message: t('flag.failed'),
+            severity: 'error',
+          });
+        }
+      }),
+    [flagging, snapshot.publicId, t],
+  );
+
   const share = useCallback(() => {
     /*
       The web page's own address, `<web>/<lang>/p/<id>` — the route a link
@@ -187,12 +234,17 @@ export function PublishedScore({ snapshot }: { snapshot: PublishedSnapshot }) {
         </View>
       ),
       headerRight: () => (
-        <IconButton label={t('published.share')} onPress={share}>
-          <ShareIcon size={18} color={ink.foreground} />
-        </IconButton>
+        <View className="flex-row items-center">
+          <IconButton label={t('published.flag')} onPress={onFlag}>
+            <FlagIcon size={18} color={ink.foreground} />
+          </IconButton>
+          <IconButton label={t('published.share')} onPress={share}>
+            <ShareIcon size={18} color={ink.foreground} />
+          </IconButton>
+        </View>
       ),
     });
-  }, [navigation, snapshot, share, t]);
+  }, [navigation, snapshot, share, onFlag, ink.foreground, t]);
 
   return (
     // The bars run to the screen's edges and their content clears the
@@ -242,6 +294,22 @@ export function PublishedScore({ snapshot }: { snapshot: PublishedSnapshot }) {
           onToggleSpatial={() => setSpatialActive(active => !active)}
         />
       </SafeAreaView>
+
+      <FlagSnapshotSheet
+        open={flagOpen}
+        onClose={() => setFlagOpen(false)}
+        onSubmit={submitFlag}
+        submitting={flagging.pending}
+      />
+      {/* A signed-out reader signs in over this page, then the sheet opens. */}
+      <SignInModal
+        visible={signInOpen}
+        onClose={() => setSignInOpen(false)}
+        onSuccess={() => {
+          setSignInOpen(false);
+          setFlagOpen(true);
+        }}
+      />
     </View>
   );
 }

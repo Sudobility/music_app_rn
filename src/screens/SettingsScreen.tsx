@@ -46,6 +46,7 @@ import { AccountSection } from './settings/AccountSection';
 import { ApiKeysSection } from './settings/ApiKeysSection';
 import { CreditHistorySection } from './settings/CreditHistorySection';
 import { ManageCouponsSection } from './settings/ManageCouponsSection';
+import { ReviewFlagsSection } from './settings/ReviewFlagsSection';
 import { trackScreenView } from '@/analytics';
 
 /** The sections, in the order they are listed. */
@@ -55,6 +56,7 @@ export const SETTINGS_SECTIONS = [
   'history',
   'apiKeys',
   'manageCoupons',
+  'reviewFlags',
   'appearance',
 ] as const;
 export type SettingsSection = (typeof SETTINGS_SECTIONS)[number];
@@ -66,13 +68,14 @@ const SECTION_LABEL: Record<SettingsSection, string> = {
   history: 'dashboard.creditHistory',
   apiKeys: 'dashboard.apiKeys',
   manageCoupons: 'dashboard.manageCoupons',
+  reviewFlags: 'dashboard.reviewFlags',
   appearance: 'settings.page.appearanceLabel',
 };
 
 /** What is offered whoever is asking: the way in, and the device's own. */
 const FOR_EVERYONE: readonly SettingsSection[] = ['account', 'appearance'];
 /** What only a site administrator is offered. */
-const ADMIN_ONLY: readonly SettingsSection[] = ['manageCoupons'];
+const ADMIN_ONLY: readonly SettingsSection[] = ['manageCoupons', 'reviewFlags'];
 
 /** The sections offered to this reader, in the listed order. */
 export function settingsSectionsFor(
@@ -163,6 +166,7 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
             {section === 'history' ? <CreditHistorySection /> : null}
             {section === 'apiKeys' ? <ApiKeysSection /> : null}
             {section === 'manageCoupons' ? <ManageCouponsSection /> : null}
+            {section === 'reviewFlags' ? <ReviewFlagsSection /> : null}
             {section === 'appearance' ? <AppearanceSection /> : null}
           </SplitPanel>
         }

@@ -28,6 +28,15 @@ jest.mock('@react-navigation/native', () => ({
   ...(jest.requireActual('@react-navigation/native') as object),
   useNavigation: () => ({ setOptions: mockSetOptions }),
 }));
+// Auth is the family's shared context; a component test mocks it rather than
+// standing up a provider (and the Firebase SDK the sign-in form imports).
+jest.mock('@/auth/AuthContext', () => ({
+  useAuth: () => ({ user: null }),
+  readIdToken: async () => null,
+}));
+jest.mock('@/features/account/SignInModal', () => ({
+  SignInModal: () => null,
+}));
 
 const snapshot: PublishedSnapshot = {
   publicId: 'pub-1',

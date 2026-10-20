@@ -155,7 +155,9 @@
     "deleteProject": "Delete project: {{name}}",
     "deleteTitle": "Delete project",
     "deleteMessage": "Delete \"{{name}}\"? This cannot be undone.",
-    "updated": "Updated {{date}}"
+    "updated": "Updated {{date}}",
+    "reviewFlags": "Review flags",
+    "reviewFlagsDesc": "Review reports on shared snapshots"
   },
   "docs": {
     "editor": {
@@ -1276,7 +1278,8 @@
     "by": "by {{name}}",
     "noLongerShared": "This link is no longer shared.",
     "notFound": "Not found",
-    "share": "Share"
+    "share": "Share",
+    "flag": "Flag"
   },
   "replace": {
     "action": "Replace",
@@ -1679,5 +1682,33 @@
     "noUsage": "No credits spent yet.",
     "loadMore": "Load more",
     "generation": "Generation"
+  },
+  "flag": {
+    "title": "Report this snapshot",
+    "hint": "Tell us why you're reporting this shared snapshot. A site administrator will review it.",
+    "reasonLabel": "Reason",
+    "detailsLabel": "Details",
+    "detailsPlaceholder": "Describe the problem",
+    "detailsRequired": "Please add some details.",
+    "submit": "Submit report",
+    "submitting": "Submitting…",
+    "thanks": "Thanks — your report has been sent for review.",
+    "failed": "Could not send your report. Please try again.",
+    "reject": "Reject",
+    "confirm": "Confirm",
+    "reviewHint": "Reports awaiting review. Reject to dismiss, or Confirm to remove the snapshot from the community.",
+    "reviewEmpty": "No reports to review.",
+    "reviewFailed": "Could not load reports.",
+    "removedForReason": "Removed from community: {{reason}}",
+    "reason": {
+      "copyright": "Copyright infringement",
+      "offensive": "Offensive material",
+      "other": "Other"
+    },
+    "status": {
+      "submitted": "Submitted",
+      "rejected": "Rejected",
+      "confirmed": "Confirmed"
+    }
   }
 }

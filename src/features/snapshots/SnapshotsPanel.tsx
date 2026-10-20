@@ -27,6 +27,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Text } from '@sudobility/components-rn';
 import { Spinner } from '@/components/controls/Spinner';
 import type { ProjectSnapshots } from '@sudobility/music_client';
+import { flagReasonLabelKey } from '@sudobility/music_types';
 import { CreateSnapshotSheet, OpenSnapshotSheet } from './SnapshotSheets';
 import { DraftInput } from '@/features/inspector/DraftInput';
 import {
@@ -133,47 +134,59 @@ export function SnapshotsPanel({
             {t('snapshot.managePublishedTitle')}
           </Text>
           {snapshots.published.map(snapshot => (
-            <View
-              key={snapshot.id}
-              className="flex-row items-center justify-between gap-2"
-            >
+            <View key={snapshot.id} className="gap-1">
+              <View className="flex-row items-center justify-between gap-2">
+                {/*
+                  A draft committed on blur, not per keystroke: a half-typed
+                  title must never reach a public page. A blank one is refused
+                  by the hook, which sends nothing.
+                */}
+                <FieldSlot grow>
+                  <DraftInput
+                    className={SLOT_FIELD_CLASS}
+                    value={snapshot.publicName ?? snapshot.name}
+                    accessibilityLabel={t('snapshot.publicNameFor', {
+                      name: snapshot.name,
+                    })}
+                    onCommit={publicName => {
+                      // A field committed on blur, not a call to action: it
+                      // has nothing to spin and is not refused by one.
+                      setError(null);
+                      void snapshots
+                        .rename(snapshot.id, publicName)
+                        .catch(report);
+                    }}
+                  />
+                </FieldSlot>
+                <FieldSlot>
+                  <Button
+                    variant="ghost"
+                    className={SLOT_BUTTON_CLASS}
+                    disabled={busy}
+                    loading={pending.pendingKey === `unpublish:${snapshot.id}`}
+                    onPress={() =>
+                      run(`unpublish:${snapshot.id}`, () =>
+                        snapshots.unpublish(snapshot.id),
+                      )
+                    }
+                  >
+                    {t('snapshot.unpublish')}
+                  </Button>
+                </FieldSlot>
+              </View>
               {/*
-                A draft committed on blur, not per keystroke: a half-typed
-                title must never reach a public page. A blank one is refused
-                by the hook, which sends nothing.
+                A confirmed flag removed this from the community. The owner is
+                told here, and why, since nothing else on the page would say so.
               */}
-              <FieldSlot grow>
-                <DraftInput
-                  className={SLOT_FIELD_CLASS}
-                  value={snapshot.publicName ?? snapshot.name}
-                  accessibilityLabel={t('snapshot.publicNameFor', {
-                    name: snapshot.name,
+              {snapshot.removedFromCommunity ? (
+                <Text className="text-destructive text-sm">
+                  {t('flag.removedForReason', {
+                    reason: snapshot.removalReason
+                      ? t(flagReasonLabelKey(snapshot.removalReason))
+                      : '',
                   })}
-                  onCommit={publicName => {
-                    // A field committed on blur, not a call to action: it
-                    // has nothing to spin and is not refused by one.
-                    setError(null);
-                    void snapshots
-                      .rename(snapshot.id, publicName)
-                      .catch(report);
-                  }}
-                />
-              </FieldSlot>
-              <FieldSlot>
-                <Button
-                  variant="ghost"
-                  className={SLOT_BUTTON_CLASS}
-                  disabled={busy}
-                  loading={pending.pendingKey === `unpublish:${snapshot.id}`}
-                  onPress={() =>
-                    run(`unpublish:${snapshot.id}`, () =>
-                      snapshots.unpublish(snapshot.id),
-                    )
-                  }
-                >
-                  {t('snapshot.unpublish')}
-                </Button>
-              </FieldSlot>
+                </Text>
+              ) : null}
             </View>
           ))}
         </View>

@@ -83,6 +83,7 @@ const ALL = [
   'Credit history',
   'API keys',
   'Manage coupons',
+  'Review flags',
   'Appearance',
 ];
 
@@ -134,13 +135,14 @@ describe('settingsSectionsFor', () => {
     ]);
   });
 
-  it('offers coupon management to an administrator, after API keys', () => {
+  it('offers coupon management and flag review to an administrator, after API keys', () => {
     expect(settingsSectionsFor(true, true)).toEqual([
       'account',
       'credits',
       'history',
       'apiKeys',
       'manageCoupons',
+      'reviewFlags',
       'appearance',
     ]);
   });

@@ -155,7 +155,9 @@
     "deleteProject": "删除项目：{{name}}",
     "deleteTitle": "删除项目",
     "deleteMessage": "确定删除「{{name}}」？此操作无法撤销。",
-    "updated": "更新于 {{date}}"
+    "updated": "更新于 {{date}}",
+    "reviewFlags": "审核举报",
+    "reviewFlagsDesc": "审核对分享乐谱的举报"
   },
   "docs": {
     "editor": {
@@ -1276,7 +1278,8 @@
     "by": "作者：{{name}}",
     "noLongerShared": "该链接已不再分享。",
     "notFound": "未找到",
-    "share": "分享"
+    "share": "分享",
+    "flag": "举报"
   },
   "replace": {
     "action": "替换",
@@ -1679,5 +1682,33 @@
     "noUsage": "还没有消耗点数。",
     "loadMore": "加载更多",
     "generation": "生成"
+  },
+  "flag": {
+    "title": "举报此乐谱",
+    "hint": "请说明举报此分享乐谱的原因。站点管理员将进行审核。",
+    "reasonLabel": "原因",
+    "detailsLabel": "详细说明",
+    "detailsPlaceholder": "描述问题",
+    "detailsRequired": "请填写详细说明。",
+    "submit": "提交举报",
+    "submitting": "提交中…",
+    "thanks": "感谢——你的举报已提交审核。",
+    "failed": "无法提交举报，请重试。",
+    "reject": "驳回",
+    "confirm": "确认",
+    "reviewHint": "待审核的举报。驳回以忽略，或确认以将该乐谱从社区移除。",
+    "reviewEmpty": "暂无待审核的举报。",
+    "reviewFailed": "无法加载举报。",
+    "removedForReason": "已从社区移除：{{reason}}",
+    "reason": {
+      "copyright": "侵犯版权",
+      "offensive": "不良内容",
+      "other": "其他"
+    },
+    "status": {
+      "submitted": "已提交",
+      "rejected": "已驳回",
+      "confirmed": "已确认"
+    }
   }
 }
