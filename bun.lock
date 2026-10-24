@@ -33,7 +33,7 @@
         "@sudobility/design": "^1.1.66",
         "@sudobility/di": "^1.5.79",
         "@sudobility/di_rn": "^0.1.165",
-        "@sudobility/entity_client": "^0.0.54",
+        "@sudobility/entity_client": "^0.0.55",
         "@sudobility/music_client": "^0.4.97",
         "@sudobility/music_codecs": "^0.2.61",
         "@sudobility/music_drawing": "^0.0.71",
@@ -724,7 +724,7 @@
 
     "@sudobility/di_rn": ["@sudobility/di_rn@0.1.165", "https://npm.pkg.github.com/download/@sudobility/di_rn/0.1.165/c3a909635c6eb08d4ad6c4ed616ad391d12a69b1", { "peerDependencies": { "@sudobility/components-rn": "^1.0.129", "@sudobility/di": "^1.5.79", "@sudobility/types": "^1.9.76", "react": "^18.0.0 || ^19.0.0", "react-native": ">=0.72.0" } }, "sha512-575M+f4qVdXMVDS4U80U232LiDzQ2NTaLEtrUFg3/DPojlnvWAjCyXMYeYMK7jWAO3g6eXwgz4YvJA+Ih43F0g=="],
 
-    "@sudobility/entity_client": ["@sudobility/entity_client@0.0.54", "https://npm.pkg.github.com/download/@sudobility/entity_client/0.0.54/5bf017560eb1e05a6e7c7a1bf33bdb6ab410ebc5", { "peerDependencies": { "@sudobility/types": "^1.9.76", "@tanstack/react-query": "^5.0.0", "react": "^18.0.0 || ^19.0.0" } }, "sha512-08WoAdLlxGehKy87OfJXK8uo5f/VOs/vCKKap9szh4lv4UQKu0+mWglrAuvXSPo4v6AAUouctM8VQqYmyvEQVw=="],
+    "@sudobility/entity_client": ["@sudobility/entity_client@0.0.55", "https://npm.pkg.github.com/download/@sudobility/entity_client/0.0.55/aceb85228ec4b6f42f4c4125078c8592cb367220", { "peerDependencies": { "@sudobility/types": "^1.9.76", "@tanstack/react-query": "^5.0.0", "react": "^18.0.0 || ^19.0.0" } }, "sha512-1ZaXuQ1uvKA07EgQdnrzojihDRFpX8Q61jLxyc3vUPr6t8ZnLEWRZM1miJ1MgOm2SvlAQrxwekSuc9cZgxG+Pg=="],
 
     "@sudobility/music_client": ["@sudobility/music_client@0.4.97", "https://npm.pkg.github.com/download/@sudobility/music_client/0.4.97/dc51f289c1a34b03b7eab8a023b3e435f4fc0c4b", { "peerDependencies": { "@sudobility/di": "^1.5.79", "@sudobility/music_types": "^0.13.59", "@sudobility/types": "^1.9.76", "@tanstack/react-query": ">=5", "react": ">=18" } }, "sha512-RsYhbI3yEvi4kHUmyrGshnYrK0qhjVlMbf4vc2lxR75+bxwCCr5MJXSSyK4vZYZfOUlhYDhmSRKTnhA0nR7AYg=="],
 
