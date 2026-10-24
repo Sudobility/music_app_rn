@@ -26,24 +26,24 @@
         "@react-navigation/native-stack": "~7.21.0",
         "@react-navigation/stack": "~7.12.1",
         "@shopify/react-native-skia": "2.2.12",
-        "@sudobility/auth_lib": "^0.0.117",
-        "@sudobility/building_blocks_rn": "^0.0.92",
-        "@sudobility/components-rn": "^1.0.128",
-        "@sudobility/consumables_client": "^0.0.35",
+        "@sudobility/auth_lib": "^0.0.119",
+        "@sudobility/building_blocks_rn": "^0.0.94",
+        "@sudobility/components-rn": "^1.0.129",
+        "@sudobility/consumables_client": "^0.0.36",
         "@sudobility/design": "^1.1.66",
-        "@sudobility/di": "^1.5.77",
-        "@sudobility/di_rn": "^0.1.163",
-        "@sudobility/entity_client": "^0.0.53",
-        "@sudobility/music_client": "^0.4.96",
-        "@sudobility/music_codecs": "^0.2.60",
-        "@sudobility/music_drawing": "^0.0.70",
-        "@sudobility/music_editing": "^0.0.54",
-        "@sudobility/music_io": "^0.9.77",
-        "@sudobility/music_lib": "^1.9.81",
-        "@sudobility/music_player": "^0.1.72",
+        "@sudobility/di": "^1.5.79",
+        "@sudobility/di_rn": "^0.1.165",
+        "@sudobility/entity_client": "^0.0.54",
+        "@sudobility/music_client": "^0.4.97",
+        "@sudobility/music_codecs": "^0.2.61",
+        "@sudobility/music_drawing": "^0.0.71",
+        "@sudobility/music_editing": "^0.0.55",
+        "@sudobility/music_io": "^0.9.78",
+        "@sudobility/music_lib": "^1.9.82",
+        "@sudobility/music_player": "^0.1.73",
         "@sudobility/music_spatial_core": "^0.0.20",
         "@sudobility/music_spatial_rn": "^0.0.23",
-        "@sudobility/music_types": "^0.13.58",
+        "@sudobility/music_types": "^0.13.59",
         "@sudobility/types": "^1.9.76",
         "@sudobility/windows_canvas_rn": "^0.2.9",
         "@tanstack/react-query": "~5.104.5",
@@ -150,7 +150,7 @@
 
     "@babel/helper-skip-transparent-expression-wrappers": ["@babel/helper-skip-transparent-expression-wrappers@8.0.0", "", { "dependencies": { "@babel/traverse": "^8.0.0", "@babel/types": "^8.0.0" } }, "sha512-xmCA9kP3IhySsqhzwIdWGlDN/1A4cCKNBO/uwZx/3YzmDoMePwno2Q5/Bq0q+tYaKbeF940YiKV/kaW8Mzvpjw=="],
 
-    "@babel/helper-string-parser": ["@babel/helper-string-parser@7.29.7", "", {}, "sha512-Pb5ijPrZ89GDH8223L4UP8i6QApWxs04RbPQJTeWDV0/keR2E36MeKnyr6LYmUUvqRRI+Iv87SuF1W6ErINzYw=="],
+    "@babel/helper-string-parser": ["@babel/helper-string-parser@7.29.11", "", {}, "sha512-snZbO7MEDOof+hvNa97EjEY7qD7h2kwvQr5AJC3ZhQudKW5dnej6k3kP9NQV88hJwaS8vDqRLFo9rivLEhle2g=="],
 
     "@babel/helper-validator-identifier": ["@babel/helper-validator-identifier@7.29.7", "", {}, "sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg=="],
 
@@ -160,7 +160,7 @@
 
     "@babel/helpers": ["@babel/helpers@7.29.10", "", { "dependencies": { "@babel/template": "^7.29.7", "@babel/types": "^7.29.8" } }, "sha512-EMCx3AGZ3WfAl6ht7AyQoPm2Lh+BGYEMdc4Q6Hf7uSCDOZFuLq44qNwL+iaim8VlyYhRAo4X43+weadK8ZB4Yg=="],
 
-    "@babel/parser": ["@babel/parser@7.29.9", "", { "dependencies": { "@babel/types": "^7.29.8" }, "bin": "./bin/babel-parser.js" }, "sha512-CjXrNHTnvqBVqHgdBysY3vk2T8tpJHb5/RMeHJBTyVa9xgugCB0CJTx/3oO8RV2QRQP391RWpB7D6hLjm8V9uA=="],
+    "@babel/parser": ["@babel/parser@7.29.11", "", { "dependencies": { "@babel/types": "^7.29.11" }, "bin": "./bin/babel-parser.js" }, "sha512-OZ6+oaK7GMyg3IfCpj8JOmn8n+w2rJbDT0LLfVDTLb1ZFeKDh3AiNELgCMUw175IJHSkLl74hG0M0VLsvx+gag=="],
 
     "@babel/plugin-proposal-export-default-from": ["@babel/plugin-proposal-export-default-from@7.29.7", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-p+G5BNXDcy3bOXplhY4HybQ1GxH3i2Tppmdm/3epyRu2VgJJZuUlZ61MqRTg582Q7ZLBdP7fePYvsumSEkMxcQ=="],
 
@@ -210,13 +210,13 @@
 
     "@babel/plugin-transform-async-to-generator": ["@babel/plugin-transform-async-to-generator@7.29.7", "", { "dependencies": { "@babel/helper-module-imports": "^7.29.7", "@babel/helper-plugin-utils": "^7.29.7", "@babel/helper-remap-async-to-generator": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-pcUb2SS+RMo9TWVBwKGI5ShtoG7R+zBsFmCKDa6fe8c+hPr3XJlZgoE5j6i8W7gDjhyvy+85vmYexanvXh3d1w=="],
 
-    "@babel/plugin-transform-block-scoping": ["@babel/plugin-transform-block-scoping@7.29.7", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-ONyr4+AZhKh8yKWInVxU9AXA9EbsyeLcL6V0dJy6M2/62vuvpGm29zzuymbTpdc451GEpDIdAyPLP3r+P61yKQ=="],
+    "@babel/plugin-transform-block-scoping": ["@babel/plugin-transform-block-scoping@7.29.11", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-iARF4jjHSM0v8DImCACPXrwEltBP3DgqDpXTvjAMBAVpyEY0LiGss78wvI+KtmW+IJNEvZ5sOhPDCsOsXsIybA=="],
 
     "@babel/plugin-transform-class-properties": ["@babel/plugin-transform-class-properties@7.29.7", "", { "dependencies": { "@babel/helper-create-class-features-plugin": "^7.29.7", "@babel/helper-plugin-utils": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-GtcpjFvanPfzNQi3eTitsCqtRRmmqzpy/A+yhTR1HaZo1Ly3EA8ZXxlPyHdR8/IuRMYc3E4wdGBewB2QKQjAaA=="],
 
     "@babel/plugin-transform-class-static-block": ["@babel/plugin-transform-class-static-block@8.0.5", "", { "dependencies": { "@babel/helper-create-class-features-plugin": "^8.0.5", "@babel/helper-plugin-utils": "^8.0.1" }, "peerDependencies": { "@babel/core": "^8.0.0" } }, "sha512-hyqluKOSy6PVOoHDEb4xsjFbtOSy+FFNzHNCrAHS5T+LxS8BtZHBCIVYFAcWzhBf/wRYsYu2uEpUvRmHYeOf8A=="],
 
-    "@babel/plugin-transform-classes": ["@babel/plugin-transform-classes@7.29.7", "", { "dependencies": { "@babel/helper-annotate-as-pure": "^7.29.7", "@babel/helper-compilation-targets": "^7.29.7", "@babel/helper-globals": "^7.29.7", "@babel/helper-plugin-utils": "^7.29.7", "@babel/helper-replace-supers": "^7.29.7", "@babel/traverse": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-qV0OGGBVacduzQHE649JyCneOFI/maT+YKsO+K4Yi3xv2wTPNjM/W2o2gdzMwEAZz7fXNTHAe0NcSg30bIN69g=="],
+    "@babel/plugin-transform-classes": ["@babel/plugin-transform-classes@7.29.11", "", { "dependencies": { "@babel/helper-annotate-as-pure": "^7.29.7", "@babel/helper-compilation-targets": "^7.29.7", "@babel/helper-globals": "^7.29.7", "@babel/helper-plugin-utils": "^7.29.7", "@babel/helper-replace-supers": "^7.29.7", "@babel/traverse": "^7.29.10" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-f8kTDM/nTvpLeafb+TJ4jboFr/Y3BbC+QzgPpPGzSKJqWLnj9LW0WLqv4XKA11LX5sr+EgvLE6Ix3YsCEusodw=="],
 
     "@babel/plugin-transform-computed-properties": ["@babel/plugin-transform-computed-properties@7.29.7", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.29.7", "@babel/template": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-RK7/IyU5phpuCdBAuig5VkzG/EnbDaui5SQGdU9BFrHdV+mV4cUjLMQ9lJDjLNtWHsqtiefpGZUXQP2BiTYMsA=="],
 
@@ -268,7 +268,7 @@
 
     "@babel/plugin-transform-shorthand-properties": ["@babel/plugin-transform-shorthand-properties@7.29.7", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-I+WYbGBAiCn7nA6xBrlgPH+MB7HWb4u8pv5S0Pv7OtwNvIFvCCb24YlttKEeUFVurfBCEaOTnuhlqsb7f0Z5Dg=="],
 
-    "@babel/plugin-transform-spread": ["@babel/plugin-transform-spread@7.29.8", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.29.7", "@babel/helper-skip-transparent-expression-wrappers": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-4S9ksMGVWUshvgK0mKfvZky7leuG5/uoFVwMpAomJ8bMoDJiNHRVmc1EglwW/CmGVSqqWpEbXm9FmbRit22qoA=="],
+    "@babel/plugin-transform-spread": ["@babel/plugin-transform-spread@7.29.11", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.29.7", "@babel/helper-skip-transparent-expression-wrappers": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-5xWGhfuMgbOfIjsk/I2c4uMnoqRwQdKYi4QjvybQrcEVE0G9/p3qmIkp2Sxe8YF8DGNNVs5whfwNqIM5684XoQ=="],
 
     "@babel/plugin-transform-sticky-regex": ["@babel/plugin-transform-sticky-regex@7.29.7", "", { "dependencies": { "@babel/helper-plugin-utils": "^7.29.7" }, "peerDependencies": { "@babel/core": "^7.0.0-0" } }, "sha512-BCHzNYJGe9l7EpwwDBN/ztlL2NYFFq8hp9ddjtUEM9f2O7S7kKV/lL6Fwo7IF7NSkYhPK2vO+86nIGltA90MsA=="],
 
@@ -286,7 +286,7 @@
 
     "@babel/traverse": ["@babel/traverse@7.29.10", "", { "dependencies": { "@babel/code-frame": "^7.29.7", "@babel/generator": "^7.29.8", "@babel/helper-globals": "^7.29.7", "@babel/parser": "^7.29.9", "@babel/template": "^7.29.7", "@babel/types": "^7.29.8", "debug": "^4.3.1" } }, "sha512-B3lYAs2nkKskbgQ1nfy8Ma9ao9Q1rntTAQHrzzyDuj+TSO+X3le6PfWwqDvodsb+OumE10eMFfuMCTQSQ5iuIQ=="],
 
-    "@babel/types": ["@babel/types@7.29.8", "", { "dependencies": { "@babel/helper-string-parser": "^7.29.7", "@babel/helper-validator-identifier": "^7.29.7" } }, "sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg=="],
+    "@babel/types": ["@babel/types@7.29.11", "", { "dependencies": { "@babel/helper-string-parser": "^7.29.11", "@babel/helper-validator-identifier": "^7.29.7" } }, "sha512-WCsemW40Cpc6gouC1SrY6PBaZ+oLRlEVY9XBvZBI7il/HyUrb2nJ505wE1MHEFyDZNnrWDEuy4jL50WVHfTTSQ=="],
 
     "@bcoe/v8-coverage": ["@bcoe/v8-coverage@0.2.3", "", {}, "sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw=="],
 
@@ -710,41 +710,41 @@
 
     "@standard-schema/spec": ["@standard-schema/spec@1.1.0", "", {}, "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w=="],
 
-    "@sudobility/auth_lib": ["@sudobility/auth_lib@0.0.117", "https://npm.pkg.github.com/download/@sudobility/auth_lib/0.0.117/2ff436bb099d6cfc396cef89c55ad8182df98a2f", { "peerDependencies": { "@react-native-firebase/app": ">=18.0.0", "@react-native-firebase/auth": ">=18.0.0", "@sudobility/di": "^1.5.77", "@sudobility/types": "^1.9.76", "@tanstack/react-query": "^5.0.0", "firebase": "^12.7.0", "react": "^18.0.0 || ^19.0.0" } }, "sha512-gDjO3YAJl4bTERAQZXfyOIc3RyN/cVHiSEgjFkNFXkMSJM5IUEVJEvAkJELGufU8QCMSwlvzKpCZP5N1La6HZQ=="],
+    "@sudobility/auth_lib": ["@sudobility/auth_lib@0.0.119", "https://npm.pkg.github.com/download/@sudobility/auth_lib/0.0.119/cb5cf939570edcd1b111cdd30693c0be5800b629", { "peerDependencies": { "@react-native-firebase/app": ">=18.0.0", "@react-native-firebase/auth": ">=18.0.0", "@sudobility/di": "^1.5.79", "@sudobility/types": "^1.9.76", "@tanstack/react-query": "^5.0.0", "firebase": "^12.7.0", "react": "^18.0.0 || ^19.0.0" } }, "sha512-voiF70krLGBMv1O5p3ba6dcO+MVykqlOwL5+4XNqzsHxz4HmutJSfsL0b5kmNze4svbCqLmO+s9FOHViNhPceA=="],
 
-    "@sudobility/building_blocks_rn": ["@sudobility/building_blocks_rn@0.0.92", "https://npm.pkg.github.com/download/@sudobility/building_blocks_rn/0.0.92/a3e97c6d685dd89709475a27df5871eeb3ad5dae", { "peerDependencies": { "@react-native-async-storage/async-storage": ">=1.0.0", "@react-navigation/bottom-tabs": ">=7.0.0", "@react-navigation/native": ">=7.0.0", "@react-navigation/native-stack": ">=7.0.0", "@sudobility/components-rn": "^1.0.128", "@sudobility/design": "^1.1.66", "i18next": "^23.0.0 || ^24.0.0 || ^25.0.0", "react": "^18.0.0 || ^19.0.0", "react-i18next": "^14.0.0 || ^15.0.0 || ^16.0.0", "react-native": ">=0.72.0", "react-native-in-app-review": ">=4.4.2", "react-native-localize": ">=3.0.0", "react-native-safe-area-context": ">=4.0.0" } }, "sha512-unQngNAK6LlvyRyER6IdtA2OS7z780VZVy7/V99+LpNa3HZRr2nTutRBHRZR1pKqDh657T/QcXivGT1aMh0I9g=="],
+    "@sudobility/building_blocks_rn": ["@sudobility/building_blocks_rn@0.0.94", "https://npm.pkg.github.com/download/@sudobility/building_blocks_rn/0.0.94/cd460908227fa49efe33f81737cff7112c3cbe58", { "peerDependencies": { "@react-native-async-storage/async-storage": ">=1.0.0", "@react-navigation/bottom-tabs": ">=7.0.0", "@react-navigation/native": ">=7.0.0", "@react-navigation/native-stack": ">=7.0.0", "@sudobility/components-rn": "^1.0.129", "@sudobility/design": "^1.1.66", "i18next": "^23.0.0 || ^24.0.0 || ^25.0.0", "react": "^18.0.0 || ^19.0.0", "react-i18next": "^14.0.0 || ^15.0.0 || ^16.0.0", "react-native": ">=0.72.0", "react-native-in-app-review": ">=4.4.2", "react-native-localize": ">=3.0.0", "react-native-safe-area-context": ">=4.0.0" } }, "sha512-TqBzJyQU4lgSwLsL+ncSJmjbH4BNwPzNOKWso+D+7WhuPdIPlTqCiGsKs6qajwf7np1dwPYAhzEOUJswZEVpkg=="],
 
-    "@sudobility/components-rn": ["@sudobility/components-rn@1.0.128", "https://npm.pkg.github.com/download/@sudobility/components-rn/1.0.128/ea7f3ab0b8264f1035ee44ea1154df298943db75", { "peerDependencies": { "@react-native-community/slider": "^4.5.1", "@sudobility/design": "^1.1.66", "@sudobility/types": "^1.9.76", "class-variance-authority": "^0.7.0", "clsx": "^2.0.0", "nativewind": ">=4.0.0", "react": "^18.0.0 || ^19.0.0", "react-native": ">=0.72.0", "react-native-gesture-handler": ">=2.0.0", "react-native-reanimated": ">=3.0.0", "react-native-safe-area-context": ">=4.0.0", "react-native-svg": ">=13.0.0", "tailwind-merge": ">=2.0.0" } }, "sha512-tj2ly14SXvz0ZoQXmq6DIDIJZpPg/Ps8ORI69CRlWxbZQoc+OZl0h+AYZizjJypqMpno9xXxEVdUejLntb13PA=="],
+    "@sudobility/components-rn": ["@sudobility/components-rn@1.0.129", "https://npm.pkg.github.com/download/@sudobility/components-rn/1.0.129/f173cfb089b037699d39caec141276304441e326", { "peerDependencies": { "@react-native-community/slider": "^4.5.1", "@sudobility/design": "^1.1.66", "@sudobility/types": "^1.9.76", "class-variance-authority": "^0.7.0", "clsx": "^2.0.0", "nativewind": ">=4.0.0", "react": "^18.0.0 || ^19.0.0", "react-native": ">=0.72.0", "react-native-gesture-handler": ">=2.0.0", "react-native-reanimated": ">=3.0.0", "react-native-safe-area-context": ">=4.0.0", "react-native-svg": ">=13.0.0", "tailwind-merge": ">=2.0.0" } }, "sha512-zSv/6S+pS8zjsOQsTsaYmRXf8aQDQ4zG13P4Zfkb9jMB4N9O+zF0WzKNSJQ1GlNJp707eiI7JcmXH7pWmlE6iA=="],
 
-    "@sudobility/consumables_client": ["@sudobility/consumables_client@0.0.35", "https://npm.pkg.github.com/download/@sudobility/consumables_client/0.0.35/f2cb8e00b5b5c1ed96ee8997cd6218e4678ba32f", { "peerDependencies": { "@revenuecat/purchases-js": "^1.0.0", "@sudobility/types": "^1.9.76", "react": "^18.0.0 || ^19.0.0", "react-native-purchases": ">=7.0.0" } }, "sha512-7dpDBzRhO1E+ipqCNR+SIV7mmj0HhPA6KJ/s+uDEQHl7pLtqKf9S2aIl6yxyYpkSvLk/ILGzbKcKI42DVR4lPA=="],
+    "@sudobility/consumables_client": ["@sudobility/consumables_client@0.0.36", "https://npm.pkg.github.com/download/@sudobility/consumables_client/0.0.36/3709daa754e43947e1d39ff24e62a3f50688b1f9", { "peerDependencies": { "@revenuecat/purchases-js": "^1.0.0", "@sudobility/types": "^1.9.76", "react": "^18.0.0 || ^19.0.0", "react-native-purchases": ">=7.0.0" } }, "sha512-behY3AaJPzlDN4J6NBaBPCk8EDv6+VhDTyd8OLoaIUs/Jnd1rYGPaJXVMj3ludXPxGdQXWWwCAy0NS+0pjX74g=="],
 
     "@sudobility/design": ["@sudobility/design@1.1.66", "https://npm.pkg.github.com/download/@sudobility/design/1.1.66/08ff28eba0e05a9e6916a0aae67ac2c36df590f2", { "peerDependencies": { "clsx": ">=2.0.0", "tailwind-merge": ">=2.0.0" } }, "sha512-E+5HxPKHsujJQMYhtdgtzcGkGtaHhuWpMBd05n+dq/FMihrLT8GeMj6G75XpaxqQmbWYOfkjHEUV2GFcECzeNw=="],
 
-    "@sudobility/di": ["@sudobility/di@1.5.77", "https://npm.pkg.github.com/download/@sudobility/di/1.5.77/6b39975a9755834aa804ce8de32d310f0d08f04c", { "peerDependencies": { "@notifee/react-native": ">=7.0.0", "@react-native-async-storage/async-storage": ">=1.19.0", "@react-native-community/netinfo": ">=9.0.0", "@react-native-firebase/analytics": ">=18.0.0", "@react-native-firebase/app": ">=18.0.0", "@react-native-firebase/messaging": ">=18.0.0", "@sudobility/types": "^1.9.76", "firebase": ">=11.0.0", "react": ">=18.0.0", "react-native": ">=0.70.0" } }, "sha512-jlG+pmPgy/kOF3uwr3uNLxaCm8WoH/4XEAJoG308c1NOTleuLSiM3fUMwd3OUmULPmqqyXByGjnyuiw/VUhdQQ=="],
+    "@sudobility/di": ["@sudobility/di@1.5.79", "https://npm.pkg.github.com/download/@sudobility/di/1.5.79/1035c3304c3dc33d7b5b38b38ba6d6fe8c3dbd60", { "peerDependencies": { "@notifee/react-native": ">=7.0.0", "@react-native-async-storage/async-storage": ">=1.19.0", "@react-native-community/netinfo": ">=9.0.0", "@react-native-firebase/analytics": ">=18.0.0", "@react-native-firebase/app": ">=18.0.0", "@react-native-firebase/messaging": ">=18.0.0", "@sudobility/types": "^1.9.76", "firebase": ">=11.0.0", "react": ">=18.0.0", "react-native": ">=0.70.0" } }, "sha512-2y+YqxNN7lhrbtwKGPKemf/jOJ7RKj8Jm3+9cnSKtiaRf7M2MIEiXQCsF1pF2M6SerzwsUfFbYDVQkfl6qWbzA=="],
 
-    "@sudobility/di_rn": ["@sudobility/di_rn@0.1.163", "https://npm.pkg.github.com/download/@sudobility/di_rn/0.1.163/b2cd887592cd0dc8fe228c54e6719b0d049dc2df", { "peerDependencies": { "@sudobility/components-rn": "^1.0.128", "@sudobility/di": "^1.5.77", "@sudobility/types": "^1.9.76", "react": "^18.0.0 || ^19.0.0", "react-native": ">=0.72.0" } }, "sha512-DppT0bp7mkXiuHQcVrWnybPapHt3ojOpx1S7Bw3yDT6h76lG4oNlVHDJx85Bq17wBHWbAblpseRA1n0HCAdIsg=="],
+    "@sudobility/di_rn": ["@sudobility/di_rn@0.1.165", "https://npm.pkg.github.com/download/@sudobility/di_rn/0.1.165/c3a909635c6eb08d4ad6c4ed616ad391d12a69b1", { "peerDependencies": { "@sudobility/components-rn": "^1.0.129", "@sudobility/di": "^1.5.79", "@sudobility/types": "^1.9.76", "react": "^18.0.0 || ^19.0.0", "react-native": ">=0.72.0" } }, "sha512-575M+f4qVdXMVDS4U80U232LiDzQ2NTaLEtrUFg3/DPojlnvWAjCyXMYeYMK7jWAO3g6eXwgz4YvJA+Ih43F0g=="],
 
-    "@sudobility/entity_client": ["@sudobility/entity_client@0.0.53", "https://npm.pkg.github.com/download/@sudobility/entity_client/0.0.53/be3f12808b411a354b71a8966d14a5d989176e3e", { "peerDependencies": { "@sudobility/types": "^1.9.76", "@tanstack/react-query": "^5.0.0", "react": "^18.0.0 || ^19.0.0" } }, "sha512-Z32iJaDisCO2sqFAISjVLdodbGNelO7dzDRopyKP5jcE4xLNfNZ774X0KgT/+ULtCrhhD0fjeeCweijUKSc8cw=="],
+    "@sudobility/entity_client": ["@sudobility/entity_client@0.0.54", "https://npm.pkg.github.com/download/@sudobility/entity_client/0.0.54/5bf017560eb1e05a6e7c7a1bf33bdb6ab410ebc5", { "peerDependencies": { "@sudobility/types": "^1.9.76", "@tanstack/react-query": "^5.0.0", "react": "^18.0.0 || ^19.0.0" } }, "sha512-08WoAdLlxGehKy87OfJXK8uo5f/VOs/vCKKap9szh4lv4UQKu0+mWglrAuvXSPo4v6AAUouctM8VQqYmyvEQVw=="],
 
-    "@sudobility/music_client": ["@sudobility/music_client@0.4.96", "https://npm.pkg.github.com/download/@sudobility/music_client/0.4.96/cbd014b6fb9050fd8446711da1b3cda3684a496a", { "peerDependencies": { "@sudobility/di": "^1.5.77", "@sudobility/music_types": "^0.13.58", "@sudobility/types": "^1.9.76", "@tanstack/react-query": ">=5", "react": ">=18" } }, "sha512-qA2qtHni0BEYp+gpo/LYwL3E20+GcVrz76U8x13QSPHcPY5QYBIgptGTQfvCslseySuJVOJcTYD3D/Py692f+A=="],
+    "@sudobility/music_client": ["@sudobility/music_client@0.4.97", "https://npm.pkg.github.com/download/@sudobility/music_client/0.4.97/dc51f289c1a34b03b7eab8a023b3e435f4fc0c4b", { "peerDependencies": { "@sudobility/di": "^1.5.79", "@sudobility/music_types": "^0.13.59", "@sudobility/types": "^1.9.76", "@tanstack/react-query": ">=5", "react": ">=18" } }, "sha512-RsYhbI3yEvi4kHUmyrGshnYrK0qhjVlMbf4vc2lxR75+bxwCCr5MJXSSyK4vZYZfOUlhYDhmSRKTnhA0nR7AYg=="],
 
-    "@sudobility/music_codecs": ["@sudobility/music_codecs@0.2.60", "https://npm.pkg.github.com/download/@sudobility/music_codecs/0.2.60/c76a3368265befad29d03e06eaad56a0cf0bcc55", { "peerDependencies": { "@sudobility/music_types": "^0.13.58" } }, "sha512-HW3oywUDaTLJOJO21Kc5jFKfZoUQoWqxZqkLeDervCDVbZ9VrZlPyK3OHCFkadATgc75ioBatL0yf98x7XkuRA=="],
+    "@sudobility/music_codecs": ["@sudobility/music_codecs@0.2.61", "https://npm.pkg.github.com/download/@sudobility/music_codecs/0.2.61/d39f07f7e597b91fb6baf35b77b2905bd6798e5c", { "peerDependencies": { "@sudobility/music_types": "^0.13.59" } }, "sha512-L52EXhow5K+qq/bZ1c6vqBYVrSQinR5UONQHtMLaNte9LnJ787Fkuaz3otcVE8bVv9Kj7ZpI81aCe3+BbCb6Tw=="],
 
-    "@sudobility/music_drawing": ["@sudobility/music_drawing@0.0.70", "https://npm.pkg.github.com/download/@sudobility/music_drawing/0.0.70/b3645713296440867d58d513f5a34b374f2f9be7", { "peerDependencies": { "@sudobility/music_types": "^0.13.58", "vexflow": "^4.2.5" } }, "sha512-dBZuxaL/peGOH1oqdfk8zYE5iy/aW+RoKo1l2T3CKEwLPk9Af3AzP32B6VfOETf1aBJKNiIs+UKrPpN9iyn+iA=="],
+    "@sudobility/music_drawing": ["@sudobility/music_drawing@0.0.71", "https://npm.pkg.github.com/download/@sudobility/music_drawing/0.0.71/7f2749b43de76578a7a4591659fdc5e462b1bd79", { "peerDependencies": { "@sudobility/music_types": "^0.13.59", "vexflow": "^4.2.5" } }, "sha512-HjYa5blqcIi+M5CoV/BVV10hpi6nzYr1SiLAWbi8IK+X+Vl97eBG5FmGQLpA6y0v4/vP2YBw/pJwDIjb7M+fQg=="],
 
-    "@sudobility/music_editing": ["@sudobility/music_editing@0.0.54", "https://npm.pkg.github.com/download/@sudobility/music_editing/0.0.54/8f5e9a5dea7642c923459c2f8664a38f1b2cf87a", { "peerDependencies": { "@sudobility/music_types": "^0.13.58", "immer": "^11.1.18", "react": ">=18", "zustand": ">=5" } }, "sha512-bjZRWyglleclInCarBp++1RL0a6L1ythg/UjDBAdTUafx7YoLSGBzsVha5HsiFZyNGF3tTksdahNryZd0Q2VZg=="],
+    "@sudobility/music_editing": ["@sudobility/music_editing@0.0.55", "https://npm.pkg.github.com/download/@sudobility/music_editing/0.0.55/c08d7cd8112e66a437bf57fa41bfec0d101ce1f9", { "peerDependencies": { "@sudobility/music_types": "^0.13.59", "immer": "^11.1.18", "react": ">=18", "zustand": ">=5" } }, "sha512-cA8Rj/7gDh6/3pc7Rpv1mB1STMOTpYBfz+vPBzuHCcZaYaW2bGRfy6rk8XZCkj/Dz7v7VPAO0BjYMf99vXdESw=="],
 
-    "@sudobility/music_io": ["@sudobility/music_io@0.9.77", "https://npm.pkg.github.com/download/@sudobility/music_io/0.9.77/5ca5701d7a21e258a5d7fe907143723bb24239e5", { "peerDependencies": { "@breezystack/lamejs": "^1.2.7", "@sudobility/music_codecs": "^0.2.60", "@sudobility/music_types": "^0.13.58", "fast-xml-parser": ">=5.0.0", "react-native-fs": ">=2.20.0", "react-native-share": ">=10.0.0" } }, "sha512-+YJLJhDp0MldZazw8BHOq1lTvLYiM5cdzqUb25aVG2DBs5tfndTQmZzPlDwK7AHtBCHtKPWhsggTKU4gsFEjYQ=="],
+    "@sudobility/music_io": ["@sudobility/music_io@0.9.78", "https://npm.pkg.github.com/download/@sudobility/music_io/0.9.78/06e169af7d13ca92f673a4d1216020085253f85f", { "peerDependencies": { "@breezystack/lamejs": "^1.2.7", "@sudobility/music_codecs": "^0.2.61", "@sudobility/music_types": "^0.13.59", "fast-xml-parser": ">=5.0.0", "react-native-fs": ">=2.20.0", "react-native-share": ">=10.0.0" } }, "sha512-0AQRwu4DwGBbsdKNZk2zea8Z3iBK3sgumoDM7sVpBaVxS0E3iSDVj0QFBjKwuB02sHV0qwlqmRH+v0pf8Bz8AQ=="],
 
-    "@sudobility/music_lib": ["@sudobility/music_lib@1.9.81", "https://npm.pkg.github.com/download/@sudobility/music_lib/1.9.81/f98aac2dc0478182301e6baa5183fda609a28e53", { "peerDependencies": { "@sudobility/music_types": "^0.13.58", "immer": "^10.0.0 || ^11.0.0", "zustand": ">=5" } }, "sha512-5GJUYDgdglA35Qtyh0B8Iq4XdH/aFtkGEs4zUYq7olKmKjWvH0mNKl9M8qOtXFrKGhE+GMLChD0SDnHrVyMU3w=="],
+    "@sudobility/music_lib": ["@sudobility/music_lib@1.9.82", "https://npm.pkg.github.com/download/@sudobility/music_lib/1.9.82/d60f0e5ff466cb20f9b4dacbe2dd8519b5999f06", { "peerDependencies": { "@sudobility/music_types": "^0.13.59", "immer": "^10.0.0 || ^11.0.0", "zustand": ">=5" } }, "sha512-n4RWTj8EVfcAN3/jRqzV4xQbCZtOjrbGcedt9lz7aJTSmI41RzrrcreE2ixkVB9QyvsXaKQoOyoiUs6Ji17rzA=="],
 
-    "@sudobility/music_player": ["@sudobility/music_player@0.1.72", "https://npm.pkg.github.com/download/@sudobility/music_player/0.1.72/eeaf435d21fc4b760941c606621067e572887486", { "peerDependencies": { "@sudobility/music_types": "^0.13.58", "js-synthesizer": "^1.13.0", "react": ">=18.0.0", "react-native-audio-api": ">=0.13.0" } }, "sha512-Hzrwi1XuM3T8BGL+L0kZkdRtIWgdx/ns/LFaAGZL1B881i/FTHoFzxp+BgVOwVj1nBYqwkz7S388rYyv+P+isg=="],
+    "@sudobility/music_player": ["@sudobility/music_player@0.1.73", "https://npm.pkg.github.com/download/@sudobility/music_player/0.1.73/5256915a6f80e85860ff3ca59530fc4d0ab8d8de", { "peerDependencies": { "@sudobility/music_types": "^0.13.59", "js-synthesizer": "^1.13.0", "react": ">=18.0.0", "react-native-audio-api": ">=0.13.0" } }, "sha512-OX0Wn2AiiDCzJ4pBWQ0LDG/bQzeBg5Pu+GcxjYwnwi7oTz9XhaZbVQk/B+vadzYmDWyJ+fCRtJ10T/gLvM6zdA=="],
 
     "@sudobility/music_spatial_core": ["@sudobility/music_spatial_core@0.0.20", "https://npm.pkg.github.com/download/@sudobility/music_spatial_core/0.0.20/eaf671261666ae5f3cfbfbda2438659ef14a9cc1", { "peerDependencies": { "@sudobility/music_types": "^0.13.53", "react": ">=18", "three": "^0.160.0" } }, "sha512-CrOllMcfGuFcx5RrDvpxuSLhS6g1uI9Fj6y23MtA8wW5IrqMYcjBOgEGiAdvXdP/cdpT6wEdvhEKHL4qYm8uzw=="],
 
     "@sudobility/music_spatial_rn": ["@sudobility/music_spatial_rn@0.0.23", "https://npm.pkg.github.com/download/@sudobility/music_spatial_rn/0.0.23/179c537c9d01bb819077a26f37cb245c206eca59", { "peerDependencies": { "@shopify/react-native-skia": ">=1", "@sudobility/music_spatial_core": "^0.0.20", "@sudobility/music_types": "^0.13.53", "@sudobility/windows_canvas_rn": "^0.2.4", "react": ">=18", "react-native": ">=0.74", "react-native-gesture-handler": ">=2", "react-native-reanimated": ">=4", "react-native-svg": ">=13", "react-native-worklets": ">=0.5", "three": "^0.160.0" } }, "sha512-+Ezp4ofAvHZ9uQdcZNBgKt5t23/xwQwF8vb9tY/W7PbaZdrnnK/LFECSACYuZydIdvMVYW/5XJGmUql6svsoIA=="],
 
-    "@sudobility/music_types": ["@sudobility/music_types@0.13.58", "https://npm.pkg.github.com/download/@sudobility/music_types/0.13.58/417361a22213c3456784dfc74f461eea5bedcbe5", { "peerDependencies": { "@sudobility/types": "^1.9.76", "immer": "^10.0.0 || ^11.0.0", "zod": "^4.0.0" } }, "sha512-4WKqF46byiZClNaK0u6Fmxlh9k4v9oWNchqKSFy1oONug9ZWmDhqN8OpBua3bBm+H7s3lbtJ93qsmupulcepQA=="],
+    "@sudobility/music_types": ["@sudobility/music_types@0.13.59", "https://npm.pkg.github.com/download/@sudobility/music_types/0.13.59/d4216f3795dba11bb8ba6b43dea2046f04db3e9c", { "peerDependencies": { "@sudobility/types": "^1.9.76", "immer": "^10.0.0 || ^11.0.0", "zod": "^4.0.0" } }, "sha512-DyWCDGi5V0IBEbMiMv9d8FgjCmV7hY2ft7v3Quj0rcR63aSSBAA7joQWnziVhgfUJXru5uUjFuLhOFbeObBa8g=="],
 
     "@sudobility/types": ["@sudobility/types@1.9.76", "https://npm.pkg.github.com/download/@sudobility/types/1.9.76/71635156f72fd9461107d5f147b3dc1c49f863d0", {}, "sha512-b7maZHR5wM84VlQ+l9R+2guzSOrExog6OUNy1oCe7h0abW13syycmnLQL0g+qql0aQ84qTB4A0mJelhY3Vef4Q=="],
 
@@ -1270,7 +1270,7 @@
 
     "ieee754": ["ieee754@1.2.1", "", {}, "sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA=="],
 
-    "ignore": ["ignore@7.0.13", "", {}, "sha512-2E8Q6rh+1RRSq/YdaGsNfXsEZy9FVqv6BSSrkmZJP7BnaoPnRfKL+YaofPvP+5rzdk144qSm6i4+hvPgUcbV4Q=="],
+    "ignore": ["ignore@7.0.14", "", {}, "sha512-wCBiZ77u1tuWde6G/nfOtLaCTYcFDU5yCzARzK10y+rLhzYoL7a7yEemcopcc2Mzow7gZOIjnV2ym1NYmdiJOQ=="],
 
     "immer": ["immer@11.2.9", "", {}, "sha512-IQ4UEtXjZjyefyWjtLEDXUSrF6T2hwjKPi6BIJl3bY/2XXW24d6cNGdXJSBOA/+KNnuiXkZY6DR0C3efolhitA=="],
 
