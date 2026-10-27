@@ -43,7 +43,9 @@ export function MainTabs() {
       backBehavior="none"
       tabBar={renderTabBar}
       // The bar names the screen; a header over each tab would name it again.
-      screenOptions={{ headerShown: false, tabBarPosition: 'top' }}
+      // A sidebar down the left, the desktop convention: the tabs beside the
+      // content, not across the top of it.
+      screenOptions={{ headerShown: false, tabBarPosition: 'left' }}
     >
       <Tab.Screen
         name="Dashboard"

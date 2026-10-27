@@ -75,8 +75,8 @@ export const FIREBASE_CONFIG: FirebaseWebConfig = {
 export const GA4_CONFIG = {
   measurementId: FIREBASE_CONFIG.measurementId,
   apiSecret: windows
-    ? process.env.GA4_API_SECRET_WINDOWS ?? ''
-    : process.env.GA4_API_SECRET_MACOS ?? '',
+    ? (process.env.GA4_API_SECRET_WINDOWS ?? '')
+    : (process.env.GA4_API_SECRET_MACOS ?? ''),
 };
 
 /**

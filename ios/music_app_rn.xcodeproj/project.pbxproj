@@ -27,8 +27,8 @@
 		4BBA77DBF0E70593E666DB39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "music_app_rn/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-music_app_rn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-music_app_rn.release.xcconfig"; path = "Target Support Files/Pods-music_app_rn/Pods-music_app_rn.release.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = music_app_rn/AppDelegate.swift; sourceTree = "<group>"; };
-		7A1B2C3D4E5F60718293A4C6 /* MoosiacMenuBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MoosiacMenuBridge.m; path = music_app_rn/MoosiacMenuBridge.m; sourceTree = "<group>"; };
 		7A1B2C3D4E5F60718293A4B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = music_app_rn/SceneDelegate.swift; sourceTree = "<group>"; };
+		7A1B2C3D4E5F60718293A4C6 /* MoosiacMenuBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MoosiacMenuBridge.m; path = music_app_rn/MoosiacMenuBridge.m; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = music_app_rn/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */

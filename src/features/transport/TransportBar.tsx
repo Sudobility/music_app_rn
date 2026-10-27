@@ -415,8 +415,8 @@ function PlayPauseButton({
   const label = preparing
     ? t('transport.preparingUnknown')
     : playing
-    ? t('transport.pause')
-    : t('transport.play');
+      ? t('transport.pause')
+      : t('transport.play');
   return (
     // The button's own spinner rather than the library `Spinner`, which
     // draws a fixed blue in both themes: this one is the theme's ink.

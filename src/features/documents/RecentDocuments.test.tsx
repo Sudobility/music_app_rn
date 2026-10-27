@@ -48,7 +48,9 @@ describe('RecentDocuments', () => {
     await act(async () => {});
     // The `PortalHost` the harness mounts is always in the tree, so "drew
     // nothing" is a statement about what is inside it.
-    expect(view.toJSON()?.children).toBeNull();
+    expect(
+      (view.toJSON() as { children?: unknown } | null)?.children,
+    ).toBeNull();
   });
 
   it('lists what was opened before', async () => {

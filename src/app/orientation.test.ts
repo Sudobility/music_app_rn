@@ -27,16 +27,24 @@ import { readFileSync } from 'node:fs';
 
 const ANDROID_ORIENTATION = 'sensorLandscape';
 
-const LANDSCAPE_IOS = [
-  'UIInterfaceOrientationLandscapeLeft',
-  'UIInterfaceOrientationLandscapeRight',
-];
-
-/** The iPad key is separate, and iPadOS reads it in preference to the base one. */
-const IOS_ORIENTATION_KEYS = [
-  'UISupportedInterfaceOrientations',
-  'UISupportedInterfaceOrientations~ipad',
-];
+/**
+ * The app now supports all orientations. The iPad key is separate, and iPadOS
+ * reads it in preference to the base one; iPhones omit upside-down by platform
+ * convention, so the two keys differ.
+ */
+const IOS_ORIENTATIONS: Record<string, string[]> = {
+  UISupportedInterfaceOrientations: [
+    'UIInterfaceOrientationPortrait',
+    'UIInterfaceOrientationLandscapeLeft',
+    'UIInterfaceOrientationLandscapeRight',
+  ],
+  'UISupportedInterfaceOrientations~ipad': [
+    'UIInterfaceOrientationPortrait',
+    'UIInterfaceOrientationPortraitUpsideDown',
+    'UIInterfaceOrientationLandscapeLeft',
+    'UIInterfaceOrientationLandscapeRight',
+  ],
+};
 
 /** Comments name the thing they forbid; only the code is being checked. */
 function withoutComments(kotlin: string): string {
@@ -97,9 +105,12 @@ describe('android orientation', () => {
 describe('ios orientation', () => {
   const plist = readFileSync('ios/music_app_rn/Info.plist', 'utf8');
 
-  it.each(IOS_ORIENTATION_KEYS)('%s is landscape only', key => {
-    expect(plistArray(plist, key)).toEqual(LANDSCAPE_IOS);
-  });
+  it.each(Object.keys(IOS_ORIENTATIONS))(
+    '%s supports all orientations',
+    key => {
+      expect(plistArray(plist, key)).toEqual(IOS_ORIENTATIONS[key]);
+    },
+  );
 
   it('requires full screen, so iPadOS honours the restriction', () => {
     // Without this an iPad app is multitasking-capable, and a multitasking app

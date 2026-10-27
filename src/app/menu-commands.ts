@@ -69,8 +69,7 @@ export const MENU_COMMANDS = [
 export type MenuCommand = (typeof MENU_COMMANDS)[number];
 
 const bridge = NativeModules.MoosiacMenuBridge as
-  | Record<string, unknown>
-  | undefined;
+  Record<string, unknown> | undefined;
 
 const emitter = bridge ? new NativeEventEmitter(bridge as never) : null;
 

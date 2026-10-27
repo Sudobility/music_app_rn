@@ -108,7 +108,7 @@ function Profile({ context }: { context: MusicHookContext }) {
   const busy = writing.pending;
   const avatarId = profile.data?.avatarId ?? null;
   const pictureUrl = avatarId
-    ? getMusicClient()?.avatarUrl(avatarId) ?? null
+    ? (getMusicClient()?.avatarUrl(avatarId) ?? null)
     : null;
   const failed = () => setProblem(t('account.saveFailed'));
 

@@ -164,7 +164,7 @@ export function ScoreSetupFields({
   const { data: styleSettings } = useScoreStyleSettings(serverContext);
   const localTempoRange = newProjectTempoRange(draft);
   const styleSetting = draft.style
-    ? styleSettings?.[draft.style] ?? styleGenerationSettings(draft.style)
+    ? (styleSettings?.[draft.style] ?? styleGenerationSettings(draft.style))
     : null;
   const tempoMin = styleSetting?.minBpm ?? localTempoRange?.[0] ?? 40;
   const tempoMax = styleSetting?.maxBpm ?? localTempoRange?.[1] ?? 240;

@@ -30,8 +30,8 @@ function fakeSnapshots(
     create: jest.fn(async () => null),
     publish: jest.fn(async () => null),
     rename: jest.fn(async () => null),
-    unpublish: jest.fn(async () => ({} as never)),
-    open: jest.fn(async () => ({} as never)),
+    unpublish: jest.fn(async () => ({}) as never),
+    open: jest.fn(async () => ({}) as never),
     ...overrides,
   } as ProjectSnapshots;
 }

@@ -31,16 +31,16 @@ afterEach(() => {
 });
 
 describe('hasTopTabBar', () => {
-  it('is an iPad from iPadOS 18, where the bar floats across the top', () => {
+  // The shared @sudobility/building_blocks_rn pod pins the native tab bar to
+  // the compact bottom bar on iPad too (RNSForceCompactTabBar), so the bar is
+  // never along the top — on any device or version — and the layout follows
+  // the bottom-bar path everywhere.
+  it('is never true: the bar is pinned to the bottom on every device', () => {
     Platform.OS = 'ios';
     device(true, '18.0');
-    expect(hasTopTabBar()).toBe(true);
+    expect(hasTopTabBar()).toBe(false);
     device(true, '27.0');
-    expect(hasTopTabBar()).toBe(true);
-  });
-
-  it('is not an older iPad, a phone, or anything that is not iOS', () => {
-    Platform.OS = 'ios';
+    expect(hasTopTabBar()).toBe(false);
     device(true, '17.5');
     expect(hasTopTabBar()).toBe(false);
     device(false, '27.0');

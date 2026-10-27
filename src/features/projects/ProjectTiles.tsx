@@ -168,8 +168,8 @@ export function ProjectTiles({
             item.status === 'transcribing'
               ? t('dashboard.transcribing')
               : item.status === 'generating'
-              ? t('dashboard.generating')
-              : null;
+                ? t('dashboard.generating')
+                : null;
           return (
             <View
               testID="project-tile"

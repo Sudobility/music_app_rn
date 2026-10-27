@@ -72,6 +72,7 @@ export function DocsScreen() {
         <ScreenBackBar />
       </View>
       <SplitViewContainer
+        collapsible
         primaryPanel={
           <SplitPanel title={t('docs.title')}>
             <SplitMenuList

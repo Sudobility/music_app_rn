@@ -193,8 +193,8 @@ function DuplicatedOrigin({
   const name = source
     ? source.name
     : projects.isSuccess
-    ? t('projectOrigin.sourceMissing')
-    : sourceProjectId;
+      ? t('projectOrigin.sourceMissing')
+      : sourceProjectId;
   return <OriginRows rows={[[t('projectOrigin.sourceProject'), name]]} />;
 }
 

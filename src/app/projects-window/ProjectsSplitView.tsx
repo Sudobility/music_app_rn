@@ -70,6 +70,12 @@ export type ProjectsSplitViewProps = {
    * before it closes work that has nowhere to be saved.
    */
   single?: boolean;
+  /**
+   * Whether the split view collapses to one column where the window is narrow
+   * — the Projects tab on a phone in portrait. Off for the desktop Projects
+   * window and the editor's popup, which are only ever shown wide.
+   */
+  collapsible?: boolean;
 };
 
 export function ProjectsSplitView({
@@ -77,6 +83,7 @@ export function ProjectsSplitView({
   onOpenCredits,
   requested,
   single = false,
+  collapsible = false,
 }: ProjectsSplitViewProps) {
   const { t } = useTranslation();
   const { user } = useAuth();
@@ -210,6 +217,7 @@ export function ProjectsSplitView({
     // the window around it, rather than every pane looking that way equally).
     <>
       <SplitViewContainer
+        collapsible={collapsible}
         primaryPanel={
           <SplitPanel title={t('nav.projects')}>
             <ProjectsSidebar

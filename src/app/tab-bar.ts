@@ -26,22 +26,21 @@ export function hasTabBar(): boolean {
 }
 
 /**
- * Whether the tab bar floats across the top of the screen rather than
- * sitting along the bottom: an iPad, from iPadOS 18.
+ * Whether the tab bar floats across the top of the screen rather than sitting
+ * along the bottom.
  *
- * It matters to whatever draws in that row. The bar is centred and takes the
- * middle of it, so a title at the leading edge shows beside the bar and one
- * further in is drawn underneath it.
+ * Always false. The shared `@sudobility/components-rn` pod pins the native tab
+ * bar to the compact (bottom) bar on iPad as well (`RNSForceCompactTabBar`) —
+ * the arrangement the rest of the family uses — so the bar is never along the
+ * top, which iPadOS 18 would otherwise do. The layout therefore follows the
+ * bottom-bar path on every device, as it does on a phone.
  *
- * Not a desktop window, although its bar is along the top too: that one is a
- * row of its own above the screen, and floats over nothing.
+ * Kept as a function, rather than inlined away, so its call sites still read as
+ * the question they ask — "is the bar across the top?" — and so the top
+ * arrangement can be restored in one place if that ever changes.
  */
 export function hasTopTabBar(): boolean {
-  return (
-    Platform.OS === 'ios' &&
-    Platform.isPad &&
-    Number.parseInt(String(Platform.Version), 10) >= 18
-  );
+  return false;
 }
 
 export type MainTab = keyof MainTabParamList;

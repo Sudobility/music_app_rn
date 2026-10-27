@@ -78,7 +78,7 @@ describe('KeyboardPanel', () => {
     // The wrapper the test renderer provides is all that is left; the panel
     // itself contributes nothing.
     const tree = view.toJSON();
-    expect(Array.isArray(tree) ? tree : tree?.children ?? null).toBeNull();
+    expect(Array.isArray(tree) ? tree : (tree?.children ?? null)).toBeNull();
   });
 
   it('renders the keys once opened', () => {

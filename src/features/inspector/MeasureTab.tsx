@@ -137,11 +137,11 @@ export function MeasureTab({
     numbers.length === 0
       ? t('inspector.pickup')
       : numbers.length > 1
-      ? t('inspector.measureRange', {
-          from: Math.min(...numbers),
-          to: Math.max(...numbers),
-        })
-      : t('inspector.measureNumber', { number: numbers[0] });
+        ? t('inspector.measureRange', {
+            from: Math.min(...numbers),
+            to: Math.max(...numbers),
+          })
+        : t('inspector.measureNumber', { number: numbers[0] });
 
   const single = measures.length === 1;
 

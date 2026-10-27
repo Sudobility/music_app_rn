@@ -302,8 +302,8 @@ export function EditorToolbar({
     ...(action.value === 'enter-lyrics'
       ? { disabled: lyricsDisabled }
       : available[action.control]
-      ? {}
-      : { disabled: true }),
+        ? {}
+        : { disabled: true }),
   }));
 
   const handleMoreAction = (value: string): void => {

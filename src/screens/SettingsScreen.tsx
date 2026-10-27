@@ -149,6 +149,7 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
         <ScreenBackBar />
       </View>
       <SplitViewContainer
+        collapsible
         primaryPanel={
           <SplitPanel title={t('nav.settings')}>
             <SplitMenuList

@@ -35,15 +35,13 @@ const DESKTOP_PLATFORMS = new Set(['macos', 'windows']);
 export function applyWindowTitle(title: string): void {
   if (!DESKTOP_PLATFORMS.has(Platform.OS)) return;
   const native = NativeModules.MoosiacWindowTitle as
-    | WindowTitleModule
-    | undefined;
+    WindowTitleModule | undefined;
   native?.setTitle(title);
 }
 
 export function applyAppName(name: string): void {
   if (Platform.OS !== 'macos') return;
   const native = NativeModules.MoosiacWindowTitle as
-    | WindowTitleModule
-    | undefined;
+    WindowTitleModule | undefined;
   native?.setAppName?.(name);
 }

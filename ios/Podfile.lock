@@ -11,7 +11,7 @@ PODS:
     - PromisesObjC (~> 2.4)
     - PromisesSwift (~> 2.4)
     - RecaptchaInterop (~> 101.0)
-  - building_blocks_rn (0.0.79):
+  - building_blocks_rn (0.0.94):
     - React-Core
   - FBLazyVector (0.81.6)
   - Firebase/CoreOnly (12.18.0):
@@ -22,11 +22,6 @@ PODS:
   - Firebase/Messaging (12.18.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 12.18.0)
-  - Firebase/RemoteConfig (12.18.0):
-    - Firebase/CoreOnly
-    - FirebaseRemoteConfig (~> 12.18.0)
-  - FirebaseABTesting (12.18.0):
-    - FirebaseCore (~> 12.18.0)
   - FirebaseAnalytics/Core (12.18.0):
     - FirebaseCore (~> 12.18.0)
     - FirebaseInstallations (~> 12.18.0)
@@ -76,14 +71,6 @@ PODS:
     - GoogleUtilities/Reachability (~> 8.1)
     - GoogleUtilities/UserDefaults (~> 8.1)
     - nanopb (~> 3.30910.0)
-  - FirebaseRemoteConfig (12.18.0):
-    - FirebaseABTesting (~> 12.18.0)
-    - FirebaseCore (~> 12.18.0)
-    - FirebaseInstallations (~> 12.18.0)
-    - FirebaseRemoteConfigInterop (~> 12.18.0)
-    - FirebaseSharedSwift (~> 12.18.0)
-    - GoogleUtilities/Environment (~> 8.1)
-    - "GoogleUtilities/NSData+zlib (~> 8.1)"
   - FirebaseRemoteConfigInterop (12.18.0)
   - FirebaseSessions (12.18.0):
     - FirebaseCore (~> 12.18.0)
@@ -94,7 +81,6 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 8.1)
     - nanopb (~> 3.30910.0)
     - PromisesSwift (~> 2.1)
-  - FirebaseSharedSwift (12.18.0)
   - GoogleAppMeasurement/Core (12.18.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
     - GoogleUtilities/MethodSwizzler (~> 8.1)
@@ -1454,7 +1440,7 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
-  - react-native-document-picker (12.0.2):
+  - react-native-document-picker (12.0.3):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1476,7 +1462,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-image-picker (8.2.1):
+  - react-native-image-picker (8.3.0):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1595,7 +1581,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-slider (5.2.1):
+  - react-native-slider (5.2.2):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -1607,7 +1593,7 @@ PODS:
     - React-graphics
     - React-ImageManager
     - React-jsi
-    - react-native-slider/common (= 5.2.1)
+    - react-native-slider/common (= 5.2.2)
     - React-NativeModulesApple
     - React-RCTFabric
     - React-renderercss
@@ -1618,7 +1604,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - react-native-slider/common (5.2.1):
+  - react-native-slider/common (5.2.2):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2232,30 +2218,6 @@ PODS:
     - ReactNativeDependencies
     - RNFBApp
     - Yoga
-  - RNFBRemoteConfig (26.4.0):
-    - Firebase/RemoteConfig (= 12.18.0)
-    - hermes-engine
-    - RCTRequired
-    - RCTTypeSafety
-    - React-Core
-    - React-Core-prebuilt
-    - React-debug
-    - React-Fabric
-    - React-featureflags
-    - React-graphics
-    - React-ImageManager
-    - React-jsi
-    - React-NativeModulesApple
-    - React-RCTFabric
-    - React-renderercss
-    - React-rendererdebug
-    - React-utils
-    - ReactCodegen
-    - ReactCommon/turbomodule/bridging
-    - ReactCommon/turbomodule/core
-    - ReactNativeDependencies
-    - RNFBApp
-    - Yoga
   - RNFS (2.20.0):
     - React-Core
   - RNGestureHandler (2.28.0):
@@ -2304,7 +2266,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNLocalize (3.7.0):
+  - RNLocalize (3.7.2):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2674,7 +2636,6 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBCrashlytics (from `../node_modules/@react-native-firebase/crashlytics`)"
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
-  - "RNFBRemoteConfig (from `../node_modules/@react-native-firebase/remote-config`)"
   - RNFS (from `../node_modules/react-native-fs`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "RNGoogleSignin (from `../node_modules/@react-native-google-signin/google-signin`)"
@@ -2691,7 +2652,6 @@ SPEC REPOS:
     - AppAuth
     - AppCheckCore
     - Firebase
-    - FirebaseABTesting
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseCoreExtension
@@ -2699,10 +2659,8 @@ SPEC REPOS:
     - FirebaseCrashlytics
     - FirebaseInstallations
     - FirebaseMessaging
-    - FirebaseRemoteConfig
     - FirebaseRemoteConfigInterop
     - FirebaseSessions
-    - FirebaseSharedSwift
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleSignIn
@@ -2882,8 +2840,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/crashlytics"
   RNFBMessaging:
     :path: "../node_modules/@react-native-firebase/messaging"
-  RNFBRemoteConfig:
-    :path: "../node_modules/@react-native-firebase/remote-config"
   RNFS:
     :path: "../node_modules/react-native-fs"
   RNGestureHandler:
@@ -2908,10 +2864,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AppAuth: ef4da5a3fc2e10b90c09a0a94a9baeaedc0341d5
   AppCheckCore: be8fce5469f68d7f6a29aa94b25f097409ff7fdc
-  building_blocks_rn: 03a698608329ed5427ab42312d916181d1b5c131
+  building_blocks_rn: a951562e3a84e446d7c35c61cde652b5c7ad6cea
   FBLazyVector: 14ce6e3675cacb2683ad30272f04274a4ee5b67d
   Firebase: 5523dd53ebe603451b4e1befcd99fa20a5c015cd
-  FirebaseABTesting: 7060ad22592c1ae86cccf9cc0f886f470084cbd5
   FirebaseAnalytics: 651ecdc96c7dd8df0c15d55b6c6b70f78c2987b9
   FirebaseCore: 96787d19ee32dc2242cc487b301bc616afeb398b
   FirebaseCoreExtension: a86bab02524ca2bff95dddab7a3fcad505c2ddeb
@@ -2919,10 +2874,8 @@ SPEC CHECKSUMS:
   FirebaseCrashlytics: bd160cfa074ad21ed708a466e15d1928ded1642a
   FirebaseInstallations: 933b2747e8594084c9117b65e8358fce29d7ced7
   FirebaseMessaging: 422bb80cbf8ff83e69e50bea4d4984fc4704f665
-  FirebaseRemoteConfig: 263cc3d8306e5ec83727bca18fc245fb7027d3ca
   FirebaseRemoteConfigInterop: 3cbd659033c3129ea81a756a52e4bf1cfc20c3a7
   FirebaseSessions: 3eaac5fd8077513b95f9723efd940438e3e35fb2
-  FirebaseSharedSwift: 9d9404eea60b650d3e549898bfebbb8f665fe601
   GoogleAppMeasurement: d70df385587c4175fc0836c11e413d5cbcaa3c7b
   GoogleDataTransport: a24e58982ab3ba2f64d79613e027fe7f57e88539
   GoogleSignIn: e449a40a92e9f2eea56e98b5214d13725dc5a00a
@@ -2968,13 +2921,13 @@ SPEC CHECKSUMS:
   React-logger: 6655e8067cf5b86a8b165fecb0395f65ddddfe6b
   React-Mapbuffer: 2400756499468284390aee02af83e05acc3b7e6a
   React-microtasksnativemodule: 2bc6328eab685a029a51bcc8d0a254b93dc10585
-  react-native-document-picker: 8c2439a01afd820f2f40014cb8f874e4132f8660
-  react-native-image-picker: 4123dc2b15a0b6fc2f027e6cf94ae5f48c9ae9b0
+  react-native-document-picker: 3f73f5f9da122126e80403f26c029975d1d14ad0
+  react-native-image-picker: 7428e6911fb3d4efd05cf320e555a0deeb5f2fb3
   react-native-in-app-review: 1516ba69d60d58053b7eb3aaaf8d2a5a74af8b57
   react-native-safe-area-context: c5d42c4294aa175415947e23c2ac956253abfc7d
   react-native-segmented-control: bf6e0032726727498e18dd437ae88afcdbc18e99
   react-native-skia: 5d024324ef7b19f8fd70868458b0d7b2cb6644b5
-  react-native-slider: e3b55c306dfb0fe720e78cce1c730e0ac2083922
+  react-native-slider: a6258ca5ae08a0a6c8b4dc7e9b43fc709d8a29de
   React-NativeModulesApple: 2f4d69fb420f671980452a14efacd7a2273c4fbb
   React-oscompat: 0ceaff9ee45fc3801e266194ef8e60b384220b1c
   React-perflogger: f6bcfdde29ace9d7c3eb52643c8d3790bf6b5edf
@@ -3014,11 +2967,10 @@ SPEC CHECKSUMS:
   RNFBApp: a7f7d8958325c68e4b2bdabe8c32e329a1735cb0
   RNFBCrashlytics: 5a6cfdced3ef39203d9da4de092c79bade1ed53d
   RNFBMessaging: 1369667e0c3762e9e5770f5f7b5685ac0410f59d
-  RNFBRemoteConfig: 3e0bd1d896d15e74af1694061e58bd1ccf440bdf
   RNFS: 89de7d7f4c0f6bafa05343c578f61118c8282ed8
   RNGestureHandler: c3831b3b1b5014c6afab7fff7e4171394a3419ab
   RNGoogleSignin: cfa9011ad7127f01021f54b35c7212feddbdbb96
-  RNLocalize: 0da45ec541d1460051b1f23c3a1820a8caa0fe6b
+  RNLocalize: 22818bd4ef1d02343bb4f9ce2de93485fb3ab689
   RNReanimated: 501f77664d59e91a35e77a40db46b5b0c925a497
   RNScreens: ca829379d20b0d1ff41a0b87bc37bdc50276cef5
   RNShare: bb86fb1390b9e321f0c4cc5b21dad667b3220338

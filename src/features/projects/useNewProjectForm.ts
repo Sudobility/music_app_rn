@@ -52,8 +52,7 @@ export function useNewProjectForm({
   const [draft, dispatch] = useReducer(reducer, undefined, () => ({
     ...initialNewProjectDraft(),
     lyricsLanguage: (i18n.language.startsWith('zh') ? 'zh' : 'en') as
-      | 'en'
-      | 'zh',
+      'en' | 'zh',
   }));
   /*
     Every credit rule — whether "Generate for me" may be switched on, whether

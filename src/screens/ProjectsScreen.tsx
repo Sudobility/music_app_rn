@@ -27,6 +27,7 @@ export function ProjectsScreen() {
   return (
     <ProjectsSplitView
       single
+      collapsible
       requested={pane ? { pane, at: route.params?.at ?? 0 } : undefined}
       // No project id: the document is already open and active, and the
       // editor shows whichever one that is.

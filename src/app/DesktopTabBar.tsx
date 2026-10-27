@@ -42,15 +42,17 @@ const TABS: Record<MainTab, { icon: Glyph; labelKey: string }> = {
   Whole class strings, never a template with a hole in it: Tailwind extracts
   classes by scanning source text.
 */
-const ITEM = 'flex-row items-center gap-2 border-b-2 border-transparent px-4';
+const ITEM =
+  'w-full flex-row items-center gap-3 border-l-2 border-transparent px-4 py-2';
 const ITEM_SELECTED =
-  'border-primary flex-row items-center gap-2 border-b-2 px-4';
+  'bg-muted border-primary w-full flex-row items-center gap-3 border-l-2 px-4 py-2';
 
 /**
- * The bar's height, and so each item's: the least a control may be, which is
- * a toolbar's height rather than a phone tab bar's.
+ * The sidebar's width, and each item's least height: the least a control may
+ * be, which is a toolbar's height rather than a phone tab bar's.
  */
 const BAR_HEIGHT = MIN_TOUCH_TARGET;
+const SIDEBAR_WIDTH = 200;
 
 export function DesktopTabBar({ state, navigation }: BottomTabBarProps) {
   const { t } = useTranslation();
@@ -61,8 +63,8 @@ export function DesktopTabBar({ state, navigation }: BottomTabBarProps) {
       // which VoiceOver cannot press: each item is a button that says
       // whether it is selected, and the row has no role.
       testID="desktop-tab-bar"
-      className="border-border bg-card flex-row justify-center border-b"
-      style={{ height: BAR_HEIGHT }}
+      className="border-border bg-card border-r pt-2"
+      style={{ width: SIDEBAR_WIDTH }}
     >
       {state.routes.map((route, index) => {
         const tab = TABS[route.name as MainTab];
@@ -89,7 +91,10 @@ export function DesktopTabBar({ state, navigation }: BottomTabBarProps) {
             // press, so a VoiceOver press would otherwise do nothing.
             onAccessibilityTap={choose}
             className={selected ? ITEM_SELECTED : ITEM}
-            style={({ pressed }) => (pressed ? PRESSED_STYLE : null)}
+            style={({ pressed }) => [
+              { minHeight: BAR_HEIGHT },
+              pressed ? PRESSED_STYLE : null,
+            ]}
           >
             <Icon size={ICON_SIZE} color={selected ? ink.primary : ink.muted} />
             <Text

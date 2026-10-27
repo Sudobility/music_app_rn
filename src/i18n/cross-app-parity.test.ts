@@ -225,8 +225,8 @@ describe.skipIf(!haveWeb)('the two apps say the same thing', () => {
         we[key] !== undefined && re[key] === undefined
           ? [we, re]
           : re[key] !== undefined && we[key] === undefined
-          ? [re, we]
-          : [null, null];
+            ? [re, we]
+            : [null, null];
       if (!mine || !other) return true;
       return !Object.entries(other).some(
         ([k, value]) => mine[k] === undefined && value === mine[key],
