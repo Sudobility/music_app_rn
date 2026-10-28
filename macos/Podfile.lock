@@ -1,6 +1,6 @@
 PODS:
   - boost (1.84.0)
-  - building_blocks_rn (0.0.97):
+  - building_blocks_rn (0.0.98):
     - React-Core
   - DoubleConversion (1.1.6)
   - fast_float (8.0.0)
@@ -3425,7 +3425,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: cea1d4f90a3a59537f3deb03ff5656489d7133dd
-  building_blocks_rn: 12ea1cc9d90222a874e57af7d21109e798087c9b
+  building_blocks_rn: 5afe1cbe88a11ae043661e728a1b3ae6f3adeb78
   DoubleConversion: d31b1eb37f6d6f456530c4fd9124b857d6889cab
   fast_float: 20817c22759af6ac8d4d67e6e059b8b499953656
   FBLazyVector: 3d09e008ffda2b1f6fcc3f9e924abf4f703d7311
