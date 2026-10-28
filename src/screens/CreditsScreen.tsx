@@ -78,7 +78,7 @@ function CreditsBody() {
           {t('credits.balance')}
         </Text>
         <Text className="text-foreground text-2xl tabular-nums">
-          {loading && balance === null ? '…' : balance ?? '—'}
+          {loading && balance === null ? '…' : (balance ?? '—')}
         </Text>
       </View>
       <Text className="text-foreground">{t('credits.rate')}</Text>

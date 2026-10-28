@@ -7,6 +7,7 @@
  * back to English for anything that is not Chinese.
  */
 import i18next from 'i18next';
+import type { InitOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { preferredLanguage } from '@sudobility/music_types';
 import { CONSTANTS } from '@/config/constants';
@@ -30,7 +31,7 @@ export function initializeI18n(deviceTags: readonly string[]): typeof i18next {
         // name is not a fact about the reader's language.
         defaultVariables: { appName: CONSTANTS.APP_NAME },
       },
-    });
+    } as InitOptions);
   }
   return i18next;
 }

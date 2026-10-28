@@ -19,7 +19,9 @@ describe('GenerationOverlay', () => {
     );
     // The `PortalHost` the harness mounts is always in the tree, so "drew
     // nothing" is a statement about what is inside it.
-    expect(view.toJSON()?.children).toBeNull();
+    expect(
+      (view.toJSON() as { children?: unknown } | null)?.children,
+    ).toBeNull();
   });
 
   it('says what is happening and that editing waits for it', () => {

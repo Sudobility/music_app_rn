@@ -33,8 +33,7 @@ const DESKTOP_PLATFORMS = new Set(['macos', 'windows']);
 function native(): ProjectsWindowModule | undefined {
   if (!DESKTOP_PLATFORMS.has(Platform.OS)) return undefined;
   return NativeModules.MoosiacProjectsWindow as
-    | ProjectsWindowModule
-    | undefined;
+    ProjectsWindowModule | undefined;
 }
 
 export function showProjectsWindow(): void {

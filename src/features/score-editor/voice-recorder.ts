@@ -19,8 +19,7 @@ type NativeVoiceRecorder = {
 export async function startVoiceRecording(): Promise<VoiceRecording> {
   if (Platform.OS === 'windows' || Platform.OS === 'macos') {
     const native = NativeModules.MoosiacSynth as
-      | NativeVoiceRecorder
-      | undefined;
+      NativeVoiceRecorder | undefined;
     if (!native?.startVoiceRecording)
       throw new Error('Microphone recording is unavailable');
     await native.startVoiceRecording();

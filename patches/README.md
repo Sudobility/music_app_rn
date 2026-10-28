@@ -1,5 +1,15 @@
 # Patches
 
+## `react-native-webgpu+0.13.0.patch` — macOS compile fix (WebGPU spike)
+
+The podspec declares macOS and the view code switches on `TARGET_OS_OSX`,
+but two headers never compiled for it: `WebGPUView.h` imports UIKit outright
+instead of the package's own `RNWGUIKit.h` shim, and `CAMetalLayer` reaches
+`MetalView.mm` on iOS only because UIKit pulls in QuartzCore, which AppKit
+does not. The patch routes the view through the shim and imports
+`QuartzCore/CAMetalLayer.h` there. With it, the spike stage renders through
+Dawn on Metal under react-native-macos 0.81.
+
 ## `react-native-safe-area-context+5.6.2.patch` — Windows dialog content
 
 Adds a Windows provider backed by an ordinary `View`, reporting its client

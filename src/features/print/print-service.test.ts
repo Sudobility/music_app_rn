@@ -12,7 +12,10 @@ import { createEmptyScore } from '@sudobility/music_types';
 const printPages =
   vi.fn<(name: string, pages: unknown[]) => Promise<boolean>>();
 const renderPrintPages = vi.fn(
-  async (_plan: { trackIds: readonly string[] }, isCancelled?: () => boolean) =>
+  async (
+    _plan: { trackIds: readonly string[] },
+    isCancelled?: () => boolean,
+  ) =>
     isCancelled?.() ? null : [{ base64: 'AAA', width: 1000, height: 1400 }],
 );
 

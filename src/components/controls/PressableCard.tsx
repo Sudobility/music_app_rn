@@ -81,10 +81,10 @@ export function PressableCard({
         pressed
           ? 'border-primary bg-primary/20'
           : hovered
-          ? 'border-primary bg-primary/10'
-          : footer
-          ? 'bg-card'
-          : 'border-border bg-card',
+            ? 'border-primary bg-primary/10'
+            : footer
+              ? 'bg-card'
+              : 'border-border bg-card',
       )}
       style={{
         minHeight: MIN_TOUCH_TARGET,

@@ -8,9 +8,4 @@
  * only signed out: signed in, the open project is in My Projects already.
  */
 export type PaneKey =
-  | 'connect'
-  | 'myProjects'
-  | 'open'
-  | 'new'
-  | 'template'
-  | 'import';
+  'connect' | 'myProjects' | 'open' | 'new' | 'template' | 'import';

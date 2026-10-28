@@ -29,7 +29,7 @@ const project = (id: string, name: string): ProjectSummary =>
     name,
     status: 'ready',
     updatedAt: '2026-09-29T10:00:00.000Z',
-  } as unknown as ProjectSummary);
+  }) as unknown as ProjectSummary;
 
 const PROJECTS = [project('a', 'Morning Song'), project('b', 'Evening Song')];
 const context = {} as MusicHookContext;

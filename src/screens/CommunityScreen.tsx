@@ -210,8 +210,8 @@ function CommunityList({ navigation }: { navigation: CommunityNavigation }) {
             {list.kind === 'failed'
               ? t('community.loadFailed')
               : list.kind === 'noMatch'
-              ? t('community.noMatch', { query })
-              : t('community.empty')}
+                ? t('community.noMatch', { query })
+                : t('community.empty')}
           </Text>
           {list.kind === 'empty' ? (
             <Button

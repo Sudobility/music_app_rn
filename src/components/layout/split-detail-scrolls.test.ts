@@ -52,8 +52,8 @@ function sourceOf(
   const base = from.startsWith('@/')
     ? join('src', from.slice(2))
     : from.startsWith('.')
-    ? join(dirname(file), from)
-    : null;
+      ? join(dirname(file), from)
+      : null;
   if (!base) return null;
   return [`${base}.tsx`, `${base}.ts`].find(existsSync) ?? null;
 }

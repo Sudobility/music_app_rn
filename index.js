@@ -1,3 +1,5 @@
+// WebGPU spike: three.js needs TextDecoder before it loads.
+import 'fast-text-encoding';
 // Configure the Firebase China proxy before anything initializes Firebase.
 // Blank/unset means standard Firebase (the library holds no default). It is a
 // fetch wrapper, so it covers the Firebase JS SDK — auth, on every platform —
@@ -5,7 +7,7 @@
 import { setFirebaseProxy } from '@sudobility/di';
 setFirebaseProxy(process.env.FIREBASE_PROXY);
 
-// Native Firebase (analytics, crashlytics, messaging, remote config) on iOS
+// Native Firebase (analytics, crashlytics, messaging) on iOS
 // and Android; on the desktops, analytics through GA4's Measurement Protocol.
 // The same `src/di/initializeServices` sudojo_app_rn and svgr_app_rn start.
 // Not awaited: nothing waits on it, and a failure must not stop the app.

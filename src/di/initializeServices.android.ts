@@ -2,7 +2,7 @@
  * Service initialization for music_app_rn (Android).
  *
  * Uses @sudobility/di_rn for centralized initialization: native Firebase —
- * analytics, crashlytics, messaging, remote config — configured
+ * analytics, crashlytics, messaging — configured
  * from `google-services.json`. The same arrangement as sudojo_app_rn's
  * and svgr_app_rn's `src/di`.
  */
@@ -20,7 +20,7 @@ let analyticsService: FirebaseAnalyticsService | null = null;
  *
  * This sets up:
  * - Storage service
- * - Firebase service (analytics, remote config, messaging)
+ * - Firebase service (analytics, messaging)
  * - Network service
  * - Info service (for toast notifications)
  */
@@ -32,13 +32,12 @@ export async function initializeAllServices(): Promise<FirebaseAnalyticsService>
   analyticsService = await initializeRNApp({
     firebaseOptions: {
       enableAnalytics: true,
-      enableRemoteConfig: true,
       enableMessaging: true,
     },
   });
 
   // Firebase Auth is the JS SDK, initialised lazily by AuthContext on every
-  // platform; native Firebase here is analytics, messaging and remote config.
+  // platform; native Firebase here is analytics and messaging.
 
   servicesInitialized = true;
   return analyticsService;
