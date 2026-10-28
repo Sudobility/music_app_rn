@@ -12,8 +12,8 @@
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
 		514201552437B4B40078DB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514201532437B4B40078DB4F /* Main.storyboard */; };
 		514201582437B4B40078DB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 514201572437B4B40078DB4F /* main.m */; };
-		A93C00102A76000100000001 /* SpatialMouseDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93C00102A76000100000002 /* SpatialMouseDragView.m */; };
 		754AFE157BCB2B430E48128A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 40BE94A665FAB7324CB01A46 /* PrivacyInfo.xcprivacy */; };
+		A93C00102A76000100000001 /* SpatialMouseDragView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93C00102A76000100000002 /* SpatialMouseDragView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +26,9 @@
 		514201542437B4B40078DB4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		514201562437B4B40078DB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		514201572437B4B40078DB4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A93C00102A76000100000002 /* SpatialMouseDragView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpatialMouseDragView.m; sourceTree = "<group>"; };
 		514201592437B4B40078DB4F /* music_app_rn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = music_app_rn.entitlements; sourceTree = "<group>"; };
 		743C37F95C9A13212E54EBC2 /* Pods-music_app_rn-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-music_app_rn-macOS.debug.xcconfig"; path = "Target Support Files/Pods-music_app_rn-macOS/Pods-music_app_rn-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A93C00102A76000100000002 /* SpatialMouseDragView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpatialMouseDragView.m; sourceTree = "<group>"; };
 		BA823BBA82ACB9DAAC6A765A /* libPods-music_app_rn-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-music_app_rn-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -262,12 +262,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-music_app_rn-macOS/Pods-music_app_rn-macOS-frameworks.sh",
-				"${PODS_ROOT}/hermes-engine/destroot/Library/Frameworks/macosx/hermes.framework",
+				"${PODS_ROOT}/hermes-engine/destroot/Library/Frameworks/macosx/hermesvm.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MoosiacSynth/FluidSynth.framework/FluidSynth",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermesvm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FluidSynth.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +420,8 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -481,6 +483,8 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;

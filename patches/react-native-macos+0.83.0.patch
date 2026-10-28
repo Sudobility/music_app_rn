@@ -48,7 +48,7 @@ diff --git a/node_modules/react-native-macos/React/Fabric/Mounting/ComponentView
  
  @interface RCTModalHostViewComponentView () <RCTFabricModalHostViewControllerDelegate>
  
-@@ -323,8 +356,297 @@
+@@ -327,8 +360,297 @@
      eventEmitter->onRequestClose({});
    }
  }
@@ -348,35 +348,34 @@ diff --git a/node_modules/react-native-macos/React/Fabric/Mounting/ComponentView
  
  #ifdef __cplusplus
 diff --git a/node_modules/react-native-macos/React/Fabric/Mounting/ComponentViews/View/RCTViewComponentView.mm b/node_modules/react-native-macos/React/Fabric/Mounting/ComponentViews/View/RCTViewComponentView.mm
-index 6e20d03..44889b9 100644
 --- a/node_modules/react-native-macos/React/Fabric/Mounting/ComponentViews/View/RCTViewComponentView.mm
 +++ b/node_modules/react-native-macos/React/Fabric/Mounting/ComponentViews/View/RCTViewComponentView.mm
-@@ -766,6 +766,25 @@ - (void)prepareForRecycle
-     _allowsVibrancy = NO;
-     self.acceptsFirstMouse = NO;
-     self.mouseDownCanMoveWindow = YES;
-+    // [Moosiac: hover state is the last occupant's, not the next one's.
-+    // A view taken off screen under the pointer — a row clicked to leave its
-+    // list — never receives mouseExited:, so it goes back to the pool with
-+    // _hasMouseOver still YES. Reused for another row, mouseEntered: then
-+    // returns early and that row never reports the pointer arriving. Which
-+    // rows inherit a stale view depends on the order they are recycled in,
-+    // so it looked random and changed every time the list was rebuilt.
-+    if (_trackingArea) {
-+      [self removeTrackingArea:_trackingArea];
-+      _trackingArea = nil;
-+    }
-+    _hasMouseOver = NO;
-+    if (_hasClipViewBoundsObserver) {
-+      _hasClipViewBoundsObserver = NO;
-+      [[NSNotificationCenter defaultCenter] removeObserver:self
-+                                                      name:NSViewBoundsDidChangeNotification
-+                                                    object:nil];
-+    }
-+    // Moosiac]
- #endif // macOS]
+@@ -801,6 +801,25 @@
+   _isJSResponder = NO;
+   _removeClippedSubviews = NO;
+   _reactSubviews = [NSMutableArray new];
++
++#if TARGET_OS_OSX // [macOS
++  // [Moosiac] Hover state is the last occupant's, not the next one's. A view
++  // taken off screen under the pointer (a row clicked to leave its list) never
++  // receives mouseExited:, so it returns to the recycle pool with _hasMouseOver
++  // still YES; reused for another row, mouseEntered: returns early and that row
++  // never reports the pointer arriving. Reset the mouse-tracking state here.
++  if (_trackingArea) {
++    [self removeTrackingArea:_trackingArea];
++    _trackingArea = nil;
++  }
++  _hasMouseOver = NO;
++  if (_hasClipViewBoundsObserver) {
++    _hasClipViewBoundsObserver = NO;
++    [[NSNotificationCenter defaultCenter] removeObserver:self
++                                                    name:NSViewBoundsDidChangeNotification
++                                                  object:nil];
++  }
++#endif // macOS]
  }
  
+ - (void)setPropKeysManagedByAnimated_DO_NOT_USE_THIS_IS_BROKEN:(NSSet<NSString *> *_Nullable)props
 diff --git a/node_modules/react-native-macos/ReactCommon/react/renderer/core/ShadowNode.cpp b/node_modules/react-native-macos/ReactCommon/react/renderer/core/ShadowNode.cpp
 --- a/node_modules/react-native-macos/ReactCommon/react/renderer/core/ShadowNode.cpp
 +++ b/node_modules/react-native-macos/ReactCommon/react/renderer/core/ShadowNode.cpp
@@ -425,7 +424,7 @@ diff --git a/node_modules/react-native-macos/ReactCommon/react/renderer/core/Sha
  #include <shared_mutex>
  
  #include <react/renderer/core/EventEmitter.h>
-@@ -117,6 +118,17 @@
+@@ -115,6 +116,17 @@
     */
    mutable std::unique_ptr<folly::dynamic> nativeProps_DEPRECATED;
  
@@ -456,7 +455,7 @@ diff --git a/node_modules/react-native-macos/ReactCommon/react/renderer/uimanage
  #include <cxxreact/JSExecutor.h>
  #include <cxxreact/TraceSection.h>
  #include <react/debug/react_native_assert.h>
-@@ -118,7 +121,21 @@
+@@ -120,7 +123,21 @@
    auto props = ShadowNodeFragment::propsPlaceholder();
  
    if (!rawProps.isEmpty()) {
@@ -479,7 +478,7 @@ diff --git a/node_modules/react-native-macos/ReactCommon/react/renderer/uimanage
        // 1. update the nativeProps_DEPRECATED props.
        //
        // In this step, we want the most recent value for the props
-@@ -132,11 +149,7 @@
+@@ -134,11 +151,7 @@
        // present in `nativeProps_DEPRECATED`, it will not be added.
        //
        // The result of this operation is the new `nativeProps_DEPRECATED`.
@@ -492,7 +491,7 @@ diff --git a/node_modules/react-native-macos/ReactCommon/react/renderer/uimanage
  
        // 2. Compute the final set of props.
        //
-@@ -148,7 +161,7 @@
+@@ -150,7 +163,7 @@
        // We use these finalProps as source of truth for the component.
        auto finalProps = mergeDynamicProps(
            (folly::dynamic)rawProps, // source
@@ -501,7 +500,7 @@ diff --git a/node_modules/react-native-macos/ReactCommon/react/renderer/uimanage
            NullValueStrategy::Override);
  
        // 3. Clone the props by using finalProps.
-@@ -426,6 +439,8 @@
+@@ -428,6 +441,8 @@
      const std::shared_ptr<const ShadowNode>& shadowNode,
      RawProps rawProps) const {
    auto& family = shadowNode->getFamily();
@@ -510,7 +509,7 @@ diff --git a/node_modules/react-native-macos/ReactCommon/react/renderer/uimanage
    if (family.nativeProps_DEPRECATED) {
      // Values in `rawProps` patch (take precedence over)
      // `nativeProps_DEPRECATED`. For example, if both `nativeProps_DEPRECATED`
-@@ -440,6 +455,8 @@
+@@ -442,6 +457,8 @@
      family.nativeProps_DEPRECATED =
          std::make_unique<folly::dynamic>((folly::dynamic)rawProps);
    }
@@ -519,43 +518,3 @@ diff --git a/node_modules/react-native-macos/ReactCommon/react/renderer/uimanage
  
    shadowTreeRegistry_.visit(
        family.getSurfaceId(), [&](const ShadowTree& shadowTree) {
-diff --git a/node_modules/react-native-macos/scripts/codegen/generate-artifacts-executor/generateRCTThirdPartyComponents.js b/node_modules/react-native-macos/scripts/codegen/generate-artifacts-executor/generateRCTThirdPartyComponents.js
---- a/node_modules/react-native-macos/scripts/codegen/generate-artifacts-executor/generateRCTThirdPartyComponents.js
-+++ b/node_modules/react-native-macos/scripts/codegen/generate-artifacts-executor/generateRCTThirdPartyComponents.js
-@@ -138,7 +138,7 @@
-     .flatMap(library => {
-       const components = componentsInLibraries[library];
-       return components.map(({componentName, className}) => {
--        return `\t\t@"${componentName}": NSClassFromString(@"${className}"), // ${library}`;
-+        return `\t\t@[@"${componentName}", @"${className}"], // ${library}`;
-       });
-     })
-     .join('\n');
-diff --git a/node_modules/react-native-macos/scripts/codegen/templates/RCTThirdPartyComponentsProviderMM.template b/node_modules/react-native-macos/scripts/codegen/templates/RCTThirdPartyComponentsProviderMM.template
---- a/node_modules/react-native-macos/scripts/codegen/templates/RCTThirdPartyComponentsProviderMM.template
-+++ b/node_modules/react-native-macos/scripts/codegen/templates/RCTThirdPartyComponentsProviderMM.template
-@@ -19,9 +19,22 @@
-   static dispatch_once_t nativeComponentsToken;
- 
-   dispatch_once(&nativeComponentsToken, ^{
--    thirdPartyComponents = @{
-+    // [macOS] Codegen runs with the iOS platform for a macOS build, so this list
-+    // names components from libraries that have no macOS implementation and
-+    // are not linked (react-native-screens, the community slider). Their
-+    // classes are nil here, and a nil in a dictionary literal aborts the app at
-+    // the first render. Skip what is not linked instead.
-+    NSArray<NSArray<NSString *> *> *candidates = @[
- {thirdPartyComponentsMapping}
--    };
-+    ];
-+    NSMutableDictionary<NSString *, Class<RCTComponentViewProtocol>> *found = [NSMutableDictionary new];
-+    for (NSArray<NSString *> *pair in candidates) {
-+      Class componentClass = NSClassFromString(pair[1]);
-+      if (componentClass != nil) {
-+        found[pair[0]] = componentClass;
-+      }
-+    }
-+    thirdPartyComponents = [found copy];
-   });
- 
-   return thirdPartyComponents;

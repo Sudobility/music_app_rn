@@ -1,23 +1,7 @@
 diff --git a/node_modules/react-native-svg/apple/Elements/RNSVGImage.mm b/node_modules/react-native-svg/apple/Elements/RNSVGImage.mm
-index 8a1b2c3..9d4e5f6 100644
 --- a/node_modules/react-native-svg/apple/Elements/RNSVGImage.mm
 +++ b/node_modules/react-native-svg/apple/Elements/RNSVGImage.mm
-@@ -131,7 +131,13 @@ using namespace facebook::react;
- 
- #pragma mark - RCTImageResponseDelegate
- 
--- (void)didReceiveImage:(UIImage *)image metadata:(id)metadata fromObserver:(void const *)observer
-+- (void)didReceiveImage:(
-+#if TARGET_OS_OSX
-+    NSImage *
-+#else
-+    UIImage *
-+#endif
-+    )image metadata:(id)metadata fromObserver:(void const *)observer
- {
-   if (!_eventEmitter || !_state) {
-     // Notifications are delivered asynchronously and might arrive after the view is already recycled.
-@@ -151,7 +157,11 @@ using namespace facebook::react;
+@@ -166,7 +166,11 @@
               }});
    }
    dispatch_async(dispatch_get_main_queue(), ^{
@@ -29,27 +13,18 @@ index 8a1b2c3..9d4e5f6 100644
      self->_imageSize = CGSizeMake(CGImageGetWidth(self->_image), CGImageGetHeight(self->_image));
      [self invalidate];
    });
-diff --git a/node_modules/react-native-svg/apple/Elements/RNSVGSvgView.mm b/node_modules/react-native-svg/apple/Elements/RNSVGSvgView.mm
-index d03d5c0b6449696dccd966a85f44d0c5c780a47b..7772f5ebe7b54becc9f33af80a6314f093258f7a 100644
---- a/node_modules/react-native-svg/apple/Elements/RNSVGSvgView.mm
-+++ b/node_modules/react-native-svg/apple/Elements/RNSVGSvgView.mm
-@@ -65,6 +65,16 @@ using namespace facebook::react;
-   return self;
- }
- 
-+#if TARGET_OS_OSX && defined(RCT_NEW_ARCH_ENABLED)
-+// RCTViewComponentView returns YES from wantsUpdateLayer, which causes macOS
-+// to call updateLayer instead of drawRect:. SVG rendering happens in drawRect:,
-+// so we must override this to NO to restore the drawRect: display path.
-+- (BOOL)wantsUpdateLayer
-+{
-+  return NO;
-+}
+@@ -254,7 +258,11 @@
+                      callback:^(__unused NSError *error, NSImage *image) {
+ #endif // macOS]
+                        dispatch_async(dispatch_get_main_queue(), ^{
++#if TARGET_OS_OSX
++                         self->_image = CGImageRetain([image CGImageForProposedRect:nil context:nil hints:nil]);
++#else
+                          self->_image = CGImageRetain(image.CGImage);
 +#endif
-+
- #ifdef RCT_NEW_ARCH_ENABLED
- #pragma mark - RCTComponentViewProtocol
- 
+                          self->_imageSize = CGSizeMake(CGImageGetWidth(self->_image), CGImageGetHeight(self->_image));
+                          if (self->_onLoad) {
+                            RCTImageSource *sourceLoaded;
 diff --git a/node_modules/react-native-svg/src/elements/Svg.tsx b/node_modules/react-native-svg/src/elements/Svg.tsx
 index 23f0840..acdd16e 100644
 --- a/node_modules/react-native-svg/src/elements/Svg.tsx
