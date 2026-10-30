@@ -7,16 +7,26 @@
  * open project covers the tab bar and has the whole screen.
  *
  * **The bar is the system's, not a drawing of one.** The native navigator
- * hands the tabs to a `UITabBarController` on iOS and a Material bottom
- * navigation bar on Android, so an iPad gets the bar iPadOS draws for an
- * iPad — where it puts it, how it looks and how it moves are the platform's
- * and change with it. The JS navigator (`createBottomTabNavigator`) draws a
- * bar of its own along the bottom on every device, which is what made an
- * iPad look like a large phone. The cost is the icon: a system bar takes a
- * platform image rather than a React view, so each tab names an SF Symbol
- * for iOS and an image for Android (`assets/tab-icons/`, rendered from
- * `android/app/src/main/res/drawable/ic_tab_*.xml`, the heroicon outlines
- * the rest of the app draws).
+ * (`createNativeBottomTabNavigator` from `@bottom-tabs/react-navigation`,
+ * backed by `react-native-bottom-tabs`) hands the tabs to a real
+ * `UITabBarController` on iOS — Liquid Glass on the iOS 26 SDK — and a
+ * Material bottom bar on Android, so each platform draws the bar it draws for
+ * itself. The JS navigator (`createBottomTabNavigator`) draws a bar of its
+ * own along the bottom on every device, which is what made an iPad look like a
+ * large phone.
+ *
+ * This used to be `@react-navigation/bottom-tabs/unstable`, whose native tabs
+ * are react-native-screens' `RNSTabBarController`; under React Native 0.83 it
+ * aborts on the first mount with `[RNScreens] Expected exactly 1 focused tab`
+ * (`assertExactlyOneFocusedTab`), a debug-only invariant that fires before the
+ * app draws anything. `sudojo_app_rn` and the rest of the family use
+ * react-native-bottom-tabs, which has no such crash.
+ *
+ * The cost is the icon: a system bar takes a platform image rather than a
+ * React view, so each tab names an SF Symbol for iOS and an image for Android
+ * (`assets/tab-icons/`, rendered from
+ * `android/app/src/main/res/drawable/ic_tab_*.xml`, the heroicon outlines the
+ * rest of the app draws).
  *
  * The route names are the desktop stack's own, `Dashboard` for Projects
  * included, so a screen that navigates to a sibling does it the same way
@@ -26,8 +36,8 @@ import type { ReactElement } from 'react';
 import { Platform } from 'react-native';
 import type { ImageSourcePropType } from 'react-native';
 import { SafeAreaView as TabSafeAreaView } from 'react-native-screens/experimental';
-import { createNativeBottomTabNavigator } from '@react-navigation/bottom-tabs/unstable';
-import type { NativeBottomTabIcon } from '@react-navigation/bottom-tabs/unstable';
+import { createNativeBottomTabNavigator } from '@bottom-tabs/react-navigation';
+import type { AppleIcon } from 'react-native-bottom-tabs';
 import { useTranslation } from 'react-i18next';
 import { UnsavedQuitGuard } from '@/features/documents/UnsavedQuitGuard';
 import { ProjectsScreen } from '@/screens/ProjectsScreen';
@@ -35,13 +45,12 @@ import { CommunityScreen } from '@/screens/CommunityScreen';
 import { DocsScreen } from '@/screens/DocsScreen';
 import { ResourcesScreen } from '@/screens/ResourcesScreen';
 import { SettingsScreen } from '@/screens/SettingsScreen';
-import { hasTopTabBar } from './tab-bar';
 import type { MainTab } from './tab-bar';
 import type { MainTabParamList } from './Navigation';
 
 const Tab = createNativeBottomTabNavigator<MainTabParamList>();
 
-type SymbolName = Extract<NativeBottomTabIcon, { type: 'sfSymbol' }>['name'];
+type SymbolName = AppleIcon['sfSymbol'];
 
 /**
  * Each tab's glyph, per platform. A record over the tabs, so one added
@@ -65,8 +74,10 @@ const ICONS: Record<
     image: require('../../assets/tab-icons/projects.png'),
   },
   Community: {
-    symbol: 'person.3',
-    filled: 'person.3.fill',
+    // `person.2`, as sudojo_app_rn and the rest of the family use: the
+    // three-person `person.3` was conspicuously wider than its neighbours.
+    symbol: 'person.2',
+    filled: 'person.2.fill',
     image: require('../../assets/tab-icons/community.png'),
   },
   Docs: {
@@ -88,10 +99,12 @@ const ICONS: Record<
 
 function tabIcon(tab: MainTab) {
   const { symbol, filled, image } = ICONS[tab];
-  return ({ focused }: { focused: boolean }): NativeBottomTabIcon =>
-    Platform.OS === 'ios'
-      ? { type: 'sfSymbol', name: focused ? filled : symbol }
-      : { type: 'image', source: image };
+  return ({
+    focused,
+  }: {
+    focused: boolean;
+  }): ImageSourcePropType | AppleIcon =>
+    Platform.OS === 'ios' ? { sfSymbol: focused ? filled : symbol } : image;
 }
 
 /**
@@ -140,24 +153,21 @@ export function MainTabs() {
         */
         backBehavior="none"
         {...SCREEN_LAYOUT}
-        screenOptions={{
-          /*
-            Where the tab bar is along the top (an iPad, from iPadOS 18) the
-            native bar stays and its title goes: the tab bar floats across
-            that row, and the bar is what the content stops under. The tab
-            bar names the screen, so nothing else does. Where the tab bar is
-            along the bottom there is no native bar at all — it drew a blank
-            strip on Android — and each screen draws a titled bar of its own
-            (`SplitPanel`, `TitledScreen`). `title` is still given to each
-            tab: it is what the tab itself is labelled with.
-          */
-          headerShown: hasTopTabBar(),
-          headerTitle: '',
-          // Android hides the label of every tab but the chosen one once
-          // there are more than three. Five destinations named by a glyph
-          // alone are five guesses.
-          tabBarLabelVisibilityMode: 'labeled',
-        }}
+        /*
+          Keep the bar at the bottom on every device, the iPad included. The
+          sidebar-adaptable style moves it to the top (and a trailing strip in
+          compact-wide, e.g. the iPhone Duo), which collides with the screens'
+          own titled bars and the master-detail split view.
+        */
+        sidebarAdaptable={false}
+        // Liquid Glass on the iOS 26 SDK: translucent, no opaque fill.
+        translucent
+        /*
+          Android hides the label of every tab but the chosen one once there
+          are more than three. Five destinations named by a glyph alone are
+          five guesses, so every label stays on.
+        */
+        labeled
       >
         <Tab.Screen
           name="Dashboard"

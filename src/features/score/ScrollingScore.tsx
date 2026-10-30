@@ -139,6 +139,19 @@ export type ScrollingScoreProps = {
   initialScroll?: ScrollOffset | null;
   /** Where the view was scrolled when it goes away, so the tab can reopen there. */
   onLeaveScroll?: (offset: ScrollOffset) => void;
+  /**
+   * The right safe-area inset to honour, in points — the notch/cutout on the
+   * side the score runs up against (0 when something else, like the inspector
+   * column, clears it instead).
+   *
+   * Page mode is not scrolled sideways, so the drawable area is narrowed by
+   * this much and the music never falls under the cutout. Continuous mode *is*
+   * scrolled sideways: the one wide system runs to the physical edge, and the
+   * inset becomes a `contentInset`/`scrollIndicatorInsets` on the right so the
+   * last bar can still be scrolled clear of the cutout and the scrollbar sits
+   * inboard of it.
+   */
+  rightInset?: number;
 };
 
 /** How often a scroll reports back. 16ms is one frame; more is wasted repaint. */
@@ -160,6 +173,7 @@ export function ScrollingScore({
   onLongPress,
   initialScroll,
   onLeaveScroll,
+  rightInset = 0,
 }: ScrollingScoreProps) {
   /*
     The canvas draws in literal colours, so it has to be told the scheme.
@@ -191,6 +205,10 @@ export function ScrollingScore({
     Reading it does not re-render this component.
   */
   const continuous = layoutMode === 'continuous';
+  // Page mode narrows the drawable area; continuous mode keeps full width and
+  // insets the horizontal scroller instead. See `rightInset`.
+  const pageRightInset = continuous ? 0 : rightInset;
+  const scrollRightInset = continuous ? rightInset : 0;
 
   const [contentSize, setContentSize] = useState({ width: 0, height: 0 });
   useLayoutEffect(() => {
@@ -446,33 +464,42 @@ export function ScrollingScore({
       : { onTouchStart, onTouchEnd };
 
   return (
-    <View style={styles.fill} onLayout={onLayout}>
-      {/* Pinned under the scroll view: the canvas is viewport-sized and never
+    // Page mode is boxed in by the right cutout; the inner view is what gets
+    // measured, so the canvas is laid out at the narrowed width.
+    <View
+      style={
+        pageRightInset > 0
+          ? [styles.fill, { paddingRight: pageRightInset }]
+          : styles.fill
+      }
+    >
+      <View style={styles.fill} onLayout={onLayout}>
+        {/* Pinned under the scroll view: the canvas is viewport-sized and never
           moves, because what changes on a scroll is which systems it draws. */}
-      {measured ? (
-        /*
+        {measured ? (
+          /*
           Clipped: the cursor is a system tall and placed in content
           coordinates, so without it the line ran past the bottom of the score
           and across whatever sits below it — the piano keyboard, once that
           started expanded. A view does not clip its children by default here.
         */
-        <View style={styles.pinned} pointerEvents="none">
-          <ScoreView picture={picture} height={height} />
-          <PlaybackCursor
-            cursor={cursor}
-            scroll={scroll}
-            color={resolvedTheme.caret}
-          />
-        </View>
-      ) : null}
-      <ScrollView
-        ref={verticalRef}
-        style={styles.fill}
-        onScroll={onScroll}
-        onContentSizeChange={onContentSizeChange}
-        scrollEventThrottle={SCROLL_EVENT_THROTTLE}
-      >
-        {/*
+          <View style={styles.pinned} pointerEvents="none">
+            <ScoreView picture={picture} height={height} />
+            <PlaybackCursor
+              cursor={cursor}
+              scroll={scroll}
+              color={resolvedTheme.caret}
+            />
+          </View>
+        ) : null}
+        <ScrollView
+          ref={verticalRef}
+          style={styles.fill}
+          onScroll={onScroll}
+          onContentSizeChange={onContentSizeChange}
+          scrollEventThrottle={SCROLL_EVENT_THROTTLE}
+        >
+          {/*
           The spacer carries the touch as well as the content size: the canvas
           above is `pointerEvents="none"` so scrolling still works.
 
@@ -481,26 +508,31 @@ export function ScrollingScore({
           there is deliberately no horizontal scroller at all — adding one would
           let a reader drag the sheet sideways to nothing.
         */}
-        {continuous ? (
-          <ScrollView
-            ref={horizontalRef}
-            horizontal
-            onScroll={onScrollHorizontal}
-            onContentSizeChange={onContentSizeChangeHorizontal}
-            scrollEventThrottle={SCROLL_EVENT_THROTTLE}
-          >
+          {continuous ? (
+            <ScrollView
+              ref={horizontalRef}
+              horizontal
+              onScroll={onScrollHorizontal}
+              onContentSizeChange={onContentSizeChangeHorizontal}
+              scrollEventThrottle={SCROLL_EVENT_THROTTLE}
+              // Render to the physical edge, but let the last bar scroll clear of
+              // the cutout and keep the scrollbar inboard of it (iOS).
+              contentInset={{ right: scrollRightInset }}
+              scrollIndicatorInsets={{ right: scrollRightInset }}
+            >
+              <TouchSurface
+                style={{ height: contentSize.height, width: contentSize.width }}
+                {...surfaceHandlers}
+              />
+            </ScrollView>
+          ) : (
             <TouchSurface
-              style={{ height: contentSize.height, width: contentSize.width }}
+              style={{ height: contentSize.height }}
               {...surfaceHandlers}
             />
-          </ScrollView>
-        ) : (
-          <TouchSurface
-            style={{ height: contentSize.height }}
-            {...surfaceHandlers}
-          />
-        )}
-      </ScrollView>
+          )}
+        </ScrollView>
+      </View>
     </View>
   );
 }

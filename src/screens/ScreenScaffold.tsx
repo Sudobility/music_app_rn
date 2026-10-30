@@ -16,6 +16,7 @@ import {
   SCREEN_WIDTH_STYLE,
   useContentPadding,
   useEmbedded,
+  useSidesHandled,
 } from '@/components/layout/EmbeddedScreen';
 
 /**
@@ -34,11 +35,14 @@ export function ScreenScaffold({
   // The navigator owns the top inset. Only the content clears side cutouts;
   // the background and bottom still extend to the screen edges.
   const insets = useSafeAreaInsets();
-  // Which sides to clear is the one rule's (`useSafeEdges`). A pane of a
-  // split view clears neither: the split view already has, and clearing
-  // them again would indent the pane by a notch it is nowhere near.
+  // Which sides to clear is the one rule's (`useSafeEdges`). A pane shown
+  // beside another clears neither (`sidesHandled`): the split view already
+  // has, and clearing them again would indent the pane by a notch it is
+  // nowhere near. A standalone screen — or a pane drawn full-width in a
+  // collapsed split view — meets the screen's own edges and clears them here.
   const edges = useSafeEdges();
   const embedded = useEmbedded();
+  const sidesHandled = useSidesHandled();
   const PADDING = useContentPadding(SCREEN_PADDING);
   return (
     <ScrollView
@@ -57,8 +61,9 @@ export function ScreenScaffold({
         gap: PADDING,
         paddingTop: PADDING,
         paddingBottom: PADDING,
-        paddingLeft: PADDING + (!embedded && edges.left ? insets.left : 0),
-        paddingRight: PADDING + (!embedded && edges.right ? insets.right : 0),
+        paddingLeft: PADDING + (!sidesHandled && edges.left ? insets.left : 0),
+        paddingRight:
+          PADDING + (!sidesHandled && edges.right ? insets.right : 0),
       }}
     >
       {/*

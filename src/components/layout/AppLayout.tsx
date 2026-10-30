@@ -21,7 +21,7 @@
  * costs none of it. The strip arrangement was taking the one thing the phone
  * could not spare.
  */
-import { Platform, View } from 'react-native';
+import { Platform, StatusBar as RNStatusBar, View } from 'react-native';
 import type { LayoutChangeEvent } from 'react-native';
 import {
   KEYBOARD_MAX_HEIGHT,
@@ -240,6 +240,7 @@ export type AppLayoutProps = {
 // (`useSafeEdges`): these say only what each view is responsible for.
 const TOP_EDGE = ['top'] as const;
 const SIDE_EDGES = ['left', 'right'] as const;
+const LEFT_EDGE = ['left'] as const;
 const BOTTOM_ROW_EDGES = ['left', 'right', 'bottom'] as const;
 const NO_EDGES = [] as const;
 
@@ -297,7 +298,7 @@ export function AppLayout({
   */
   const { size, onLayout } = useContainerSize();
   /*
-    How far the navigator's header reaches over the editor, on iOS.
+    How far the navigator's header reaches over the editor, on an iPhone.
 
     The native stack lays the screen out below the bar's standard height, but
     the bar the editor's header draws is taller than that: a title with its
@@ -305,12 +306,21 @@ export function AppLayout({
     in landscape, the header was 78pt and the screen began at 54, so the
     editor toolbar's top 24pt sat under the bar. The difference is measured
     rather than assumed, so a bar that fits leaves it at zero.
+
+    **Not on an iPad.** There the native stack insets the screen below the full
+    header with no overlap left — measured as zero, fullscreen and in a Stage
+    Manager window alike. Running the measurement there bought nothing and cost
+    a flash: `rootTop` is read while the screen is still settling below the
+    header, so the first frames saw it too small and padded a tall blank band
+    between the header and the editing bar that vanished once it settled. iPad
+    is `isPad`, not a width, so a narrow window keeps the overlap off too.
   */
+  const isPad = (Platform as { isPad?: boolean }).isPad === true;
   const headerHeight = useContext(HeaderHeightContext) ?? 0;
   const rootRef = useRef<View>(null);
   const [rootTop, setRootTop] = useState<number | null>(null);
   const headerOverlap =
-    Platform.OS === 'ios' && hasNativeHeader() && rootTop !== null
+    Platform.OS === 'ios' && !isPad && hasNativeHeader() && rootTop !== null
       ? Math.max(0, Math.ceil(headerHeight - rootTop))
       : 0;
   const insets = useSafeAreaInsets();
@@ -318,6 +328,7 @@ export function AppLayout({
   // draws one; clearing it again left an empty band under the header.
   const topEdges = useSafeEdgeList(hasNativeHeader() ? NO_EDGES : TOP_EDGE);
   const sideEdges = useSafeEdgeList(SIDE_EDGES);
+  const leftEdge = useSafeEdgeList(LEFT_EDGE);
   const bottomEdges = useSafeEdgeList(BOTTOM_ROW_EDGES);
   /*
     A device pref, expanded by default and remembered, as on the web. It was a
@@ -608,6 +619,13 @@ export function AppLayout({
       }}
     >
       {/*
+        The title bar is red (`bg-primary`); its clock and battery read in
+        light ink. The status bar is app-based, so this entry wins while the
+        editor is on screen and reverts to `ThemedStatusBar` on the way out.
+        iOS only — Android draws the editor header below an opaque status bar.
+      */}
+      {Platform.OS === 'ios' ? <RNStatusBar barStyle="light-content" /> : null}
+      {/*
         Hidden wherever a menu bar exists to carry its buttons instead —
         `hasMenuBar()` is the honest test, exactly as `menu-commands.ts`
         argues for itself. macOS and Windows both grow one; iOS and Android
@@ -663,7 +681,17 @@ export function AppLayout({
           onToggleInspector={() => setInspectorOpen(!inspectorVisible)}
         />
       </SafeAreaView>
-      <SafeAreaView edges={sideEdges} className="bg-background min-h-0 flex-1">
+      {/*
+        The right cutout is cleared by whichever element runs up against it:
+        the inspector column when it is open, otherwise the score itself —
+        which honours it as padding in page mode and as a scroll inset in
+        continuous mode (`ScrollingScore.rightInset`). So the row clears both
+        sides with the inspector open and only the left without it.
+      */}
+      <SafeAreaView
+        edges={inspectorVisible ? sideEdges : leftEdge}
+        className="bg-background min-h-0 flex-1"
+      >
         {/*
           Always a row: the inspector is a right-hand column wherever it is
           shown. This was two complete class strings chosen at render, never a
@@ -686,6 +714,7 @@ export function AppLayout({
                 layoutMode={layoutMode}
                 pitchDisplay={pitchDisplay}
                 trackInfo={trackInfo}
+                rightInset={inspectorVisible ? 0 : insets.right}
                 {...(scoreReadOnly
                   ? {}
                   : { onPress: onScorePress, onLongPress: onScoreLongPress })}

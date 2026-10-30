@@ -101,6 +101,11 @@ const ALLOWED_NON_UI = new Set([
   // and vitest cannot parse it, so the arithmetic would be untestable exactly
   // where it shipped wrong.
   'src/features/layout/inspector-default.ts',
+  // Whether the editing and playback bars collapse to their compact arrangement
+  // — a size-class rule over the bar's own measured width. A plain module, not
+  // part of `EditorToolbar.tsx`, so vitest can pin the three cases (phone, wide
+  // window, narrow window) that a single width cannot separate.
+  'src/features/layout/compact-bars.ts',
   // Printing. `print-pages.ts` draws music_drawing's `printPlan` with Skia;
   // `print-service.ts` hands the images to the platform. Both are arrangement
   // over `music_drawing`, which owns every rule about what a printed page is —

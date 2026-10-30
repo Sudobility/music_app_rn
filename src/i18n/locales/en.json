@@ -1411,7 +1411,9 @@
     "pitchDisplayHelp": "Transposing instruments can show the pitch as written for the player, or as it sounds.",
     "page": {
       "appearanceLabel": "Appearance"
-    }
+    },
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
   },
   "shortcuts": {
     "playPause": "Play / pause",
@@ -1618,6 +1620,7 @@
     "percussion": "Percussion"
   },
   "overlay": {
+    "openingProject": "Opening project…",
     "transcribingNotes": "Transcribing the recording…",
     "progress": "{{stage}} {{done}} of {{total}}: {{label}}",
     "reconnecting": "Reconnecting…",
@@ -1709,6 +1712,114 @@
       "submitted": "Submitted",
       "rejected": "Rejected",
       "confirmed": "Confirmed"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {{date}}",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "body": "Welcome to {{appName}}. We respect your privacy and are committed to protecting your personal data. This policy explains how we collect, use, and safeguard your information when you use {{appName}} to write, play, and share music."
+      },
+      "collection": {
+        "title": "Information We Collect",
+        "body": "Information you provide:\n• Account information (email address, name)\n• Your scores, arrangements, and projects\n• Preferences and settings\n• Payment information (processed securely by our payment provider)\n\nInformation collected automatically:\n• Device and app information\n• IP address and approximate location\n• Usage patterns and analytics\n• Performance and reliability metrics"
+      },
+      "usage": {
+        "title": "How We Use Your Information",
+        "body": "We use the information we collect to:\n• Provide and improve {{appName}} and its notation, playback, and generation features\n• Store and sync your projects across your devices\n• Process credits and payments\n• Send important updates about the service\n• Analyze usage to improve the app"
+      },
+      "sharing": {
+        "title": "Information Sharing",
+        "body": "We may share your information in these circumstances:\n• With service providers who help us operate\n• When required by law or legal process\n• To protect our rights and safety\n• With your consent"
+      },
+      "security": {
+        "title": "Data Security",
+        "body": "We use appropriate safeguards:\n• Encryption of data in transit and at rest\n• Regular security assessments\n• Access controls and authentication\n• Secure cloud infrastructure"
+      },
+      "retention": {
+        "title": "Data Retention",
+        "body": "We keep your personal information for as long as your account is active or as needed to provide the service. Your projects are stored so you can return to them across sessions and devices. You can request deletion of your account and its data at any time."
+      },
+      "rights": {
+        "title": "Your Privacy Rights",
+        "body": "You have the right to:\n• Access your personal information\n• Correct inaccurate data\n• Request deletion of your data\n• Export your projects\n• Opt out of marketing messages"
+      },
+      "cookies": {
+        "title": "Local Storage",
+        "body": "We use essential storage on your device to keep you signed in, save your work, and remember your preferences. We do not use third-party tracking for advertising."
+      },
+      "children": {
+        "title": "Children's Privacy",
+        "body": "{{appName}} is intended for users of all ages. We do not knowingly collect personal information from children under 13 without parental consent."
+      },
+      "transfers": {
+        "title": "International Data Transfers",
+        "body": "Your information may be transferred to and processed in countries other than your own. We take appropriate steps to protect it when it is."
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "body": "We may update this Privacy Policy from time to time. We will post the new policy on this page and update the date above."
+      },
+      "language": {
+        "title": "Language",
+        "body": "This document is provided in more than one language for your convenience. If the English version and a translation differ, the English version prevails."
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "body": "If you have questions about this Privacy Policy, contact us at {{email}} or visit {{website}}."
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "body": "By using {{appName}}, you agree to these Terms of Service. If you do not agree, please do not use the service."
+      },
+      "service": {
+        "title": "Description of Service",
+        "body": "{{appName}} is an app for writing, playing, and sharing music notation. It offers free features and paid credits for features such as AI-assisted generation."
+      },
+      "accounts": {
+        "title": "User Accounts",
+        "body": "When you create an account, you agree to:\n• Provide accurate and complete information\n• Keep your account credentials secure\n• Accept responsibility for activity under your account\n• Tell us promptly of any unauthorized access"
+      },
+      "usage": {
+        "title": "Acceptable Use",
+        "body": "When using {{appName}}, you agree not to:\n• Access paid features without paying for them\n• Use bots or automated systems against the service\n• Reverse engineer or extract the source code\n• Share your account credentials with others\n• Interfere with or disrupt the service"
+      },
+      "payments": {
+        "title": "Credits and Payments",
+        "body": "Some features are paid for with credits. Purchases are processed through the app store under its policies. Credits are consumed as those features are used."
+      },
+      "ip": {
+        "title": "Intellectual Property",
+        "body": "{{appName}} and its original content, features, and design are owned by {{companyName}} and protected by international copyright and trademark laws. The music you create remains yours."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "body": "{{appName}} is provided \"as is\" without warranties of any kind. We are not liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the service."
+      },
+      "termination": {
+        "title": "Termination",
+        "body": "We may suspend or terminate your account for violations of these terms. On termination, your right to use the service ends. You may delete your account at any time."
+      },
+      "changes": {
+        "title": "Changes to These Terms",
+        "body": "We may change these terms from time to time. We will notify you of significant changes through the app. Continuing to use {{appName}} after a change means you accept the new terms."
+      },
+      "language": {
+        "title": "Language",
+        "body": "This document is provided in more than one language for your convenience. If the English version and a translation differ, the English version prevails."
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "body": "For questions about these Terms of Service, contact us at {{email}} or visit {{website}}."
     }
   }
 }

@@ -7,8 +7,8 @@
  * height.
  */
 import type { ReactNode } from 'react';
-import { ActivityIndicator, Platform, Pressable } from 'react-native';
-import { touchSlop } from '@sudobility/components-rn';
+import { ActivityIndicator, Pressable } from 'react-native';
+import { MIN_TOUCH_TARGET } from '@sudobility/components-rn';
 import { useNotationInk } from '@/components/icons/notation-ink';
 
 export type IconButtonProps = {
@@ -59,8 +59,8 @@ export type IconButtonProps = {
   whole in the file and is silently never generated. It fails quietly — the
   colours still work, the layout does not.
 */
-const BASE = 'rounded-md p-1.5';
-const DISABLED = 'rounded-md p-1.5 opacity-40';
+const BASE = 'rounded-md items-center justify-center active:opacity-40';
+const DISABLED = 'rounded-md items-center justify-center opacity-40';
 /*
   Selection is a *colour*, and this used to paint a grey chip behind one.
 
@@ -72,26 +72,33 @@ const DISABLED = 'rounded-md p-1.5 opacity-40';
   button keeps its shape; `accessibilityState.selected` still carries the fact
   to anything not looking at it.
 */
-const SELECTED = 'rounded-md p-1.5';
+const SELECTED = 'rounded-md items-center justify-center active:opacity-40';
 /*
   The exception: a control that *is* an on/off switch for something on screen —
   the piano keyboard — fills red when on, with inverse ink, the way the toolbar
   chips do. Tinting the glyph alone read as "selected" rather than "on".
 */
-const FILLED = 'rounded-md p-1.5 bg-primary';
+const FILLED =
+  'rounded-md items-center justify-center bg-primary active:opacity-40';
 
 /**
- * The drawn size: an 18px glyph in 6px of padding.
+ * The button is the platform's minimum touch target — 44pt on iOS/macOS, 48dp
+ * on Android — in both width and height, with the 18px glyph centred in it.
  *
- * Well under the 44/48 both platforms ask a touch target to be — and it has to
- * be, because the editing bar is 44pt tall in total and cannot hold a 44pt
- * control with any padding at all. `touchSlop` is what closes that: the button
- * still *looks* 30pt, and still fits the bar, while the region that responds
- * to a finger is the full 44 or 48. Both platforms' guidance is about the
- * touch area rather than the drawing, which is exactly this case.
+ * It used to be drawn at 30pt and brought up to the minimum with `hitSlop`,
+ * so it *looked* smaller than it responded. The bars that could not hold a
+ * full-size control (the editing bar and the playback bar) wrap to more rows
+ * now, and the ones with too many controls for a phone group the rest into a
+ * menu rather than shrinking the buttons.
  */
-const DRAWN_SIZE = 30;
-const SLOP = touchSlop(DRAWN_SIZE, DRAWN_SIZE);
+// A plain object, never a `style` *function*: NativeWind silently drops a
+// function passed alongside `className` (the min size then never applied and
+// the buttons stayed content-narrow). The pressed dim is a className `active:`
+// variant below instead.
+const SIZE_STYLE = {
+  minWidth: MIN_TOUCH_TARGET,
+  minHeight: MIN_TOUCH_TARGET,
+} as const;
 
 /**
  * What the button does while the finger is still down.
@@ -113,8 +120,7 @@ const SLOP = touchSlop(DRAWN_SIZE, DRAWN_SIZE);
  * below is. Deliberately *not* `TouchableOpacity`, whose 150ms fade is its own
  * invention rather than UIKit's — a bar glyph there responds immediately.
  */
-const RIPPLE = { borderless: true, radius: DRAWN_SIZE / 2 } as const;
-const PRESSED_OPACITY = Platform.OS === 'ios' ? 0.4 : 1;
+const RIPPLE = { borderless: true, radius: MIN_TOUCH_TARGET / 2 } as const;
 /** The glyph's own box, so a spinning button keeps the bar's rhythm. */
 const SPINNER_STYLE = { width: 18, height: 18 } as const;
 
@@ -145,14 +151,11 @@ export function IconButton({
       // VoiceOver press would otherwise do nothing.
       {...(inert ? {} : { onAccessibilityTap: onPress })}
       disabled={inert}
-      hitSlop={SLOP}
       android_ripple={RIPPLE}
       className={
         disabled ? DISABLED : selected ? (fill ? FILLED : SELECTED) : BASE
       }
-      style={({ pressed }) =>
-        pressed && !inert ? { opacity: PRESSED_OPACITY } : null
-      }
+      style={SIZE_STYLE}
     >
       {loading ? (
         <ActivityIndicator

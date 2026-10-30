@@ -35,7 +35,7 @@ import { SafeAreaView } from '@/platform/SafeArea';
 import { useSafeEdgeList } from '@/platform/safe-edges';
 import type { RootStackParamList } from '@/app/Navigation';
 import { Share } from 'react-native';
-import { ShareIcon, FlagIcon } from 'react-native-heroicons/solid';
+import { ArrowUpOnSquareIcon, FlagIcon } from 'react-native-heroicons/solid';
 import { IconButton } from '@/components/layout/IconButton';
 import { useNotationInk } from '@/components/icons/notation-ink';
 import { useAuth, readIdToken } from '@/auth/AuthContext';
@@ -239,7 +239,9 @@ export function PublishedScore({ snapshot }: { snapshot: PublishedSnapshot }) {
             <FlagIcon size={18} color={ink.foreground} />
           </IconButton>
           <IconButton label={t('published.share')} onPress={share}>
-            <ShareIcon size={18} color={ink.foreground} />
+            {/* The platform-standard share glyph — a square with an up arrow
+                — rather than heroicons' three-node `ShareIcon`. */}
+            <ArrowUpOnSquareIcon size={18} color={ink.foreground} />
           </IconButton>
         </View>
       ),

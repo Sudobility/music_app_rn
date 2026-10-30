@@ -13,6 +13,14 @@ import { renderWithApp, testDocument } from '@/test/render';
 import { useEditorHeader } from './useEditorHeader';
 import type { TitleBarProps } from '@/components/layout/TitleBar';
 
+// A tablet shows every title-bar action inline; a phone groups the secondary
+// ones (Export, Print, …) behind the "…" overflow. These assertions press the
+// actions directly, so pin the tablet arrangement (as the toolbar tests do).
+jest.mock('@sudobility/components-rn', () => ({
+  ...(jest.requireActual('@sudobility/components-rn') as object),
+  useFormFactor: () => 'tablet',
+}));
+
 function Host({
   setOptions,
   props,

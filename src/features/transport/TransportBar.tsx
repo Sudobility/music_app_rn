@@ -36,13 +36,23 @@ import { View } from 'react-native';
 import { useStore } from 'zustand';
 
 import { useTranslation } from 'react-i18next';
-import { Input, MIN_TOUCH_TARGET, Text } from '@sudobility/components-rn';
+import {
+  Input,
+  MIN_TOUCH_TARGET,
+  Text,
+  useFormFactor,
+} from '@sudobility/components-rn';
 import {
   ArrowPathRoundedSquareIcon,
   CubeTransparentIcon,
   PauseIcon,
   PlayIcon,
 } from 'react-native-heroicons/solid';
+import { EllipsisHorizontalIcon } from 'react-native-heroicons/outline';
+import { ControlsSheet } from '@/components/controls/ControlsSheet';
+import type { ControlRow } from '@/components/controls/ControlsSheet';
+import { useContainerSize } from '@/features/layout/useContainerSize';
+import { barsCompact } from '@/features/layout/compact-bars';
 import {
   barBeatForTick,
   formatBarBeat,
@@ -123,6 +133,14 @@ export function TransportBar({
 }: TransportBarProps) {
   const { t } = useTranslation();
   const ink = useNotationInk();
+  // The bar collapses the secondary controls into a "more" sheet in a compact
+  // window — always on a phone, and on a tablet/desktop whose window is narrow
+  // (an iPad split view, a small Mac window) — and shows them all inline when
+  // there is room. Measured from the bar's own width, so it follows a window
+  // resize rather than being decided by the device. See the two layouts below.
+  const { size: barSize, onLayout: onBarLayout } = useContainerSize();
+  const compact = barsCompact(useFormFactor(), barSize.width);
+  const [moreOpen, setMoreOpen] = useState(false);
   const loop = useStore(store, s => s.loopRange !== null);
   const metronome = useStore(store, s => s.metronome);
   const speed = useStore(store, s => s.tempoMultiplier);
@@ -168,215 +186,267 @@ export function TransportBar({
     commitOpeningTempoText(store, tempoDraft);
   };
 
+  // Each control, defined once and placed either on the bar or in the "more"
+  // sheet, so the two layouts cannot drift.
+  const resetButton = (
+    <IconButton
+      label={t('transport.goToStart')}
+      onPress={() => {
+        // Reset: stop where you are and go back to the beginning.
+        transport.pause();
+        transport.goToStart();
+      }}
+    >
+      <NotationIcon name="GoToStartIcon" color={ink.foreground} />
+    </IconButton>
+  );
+  const playButton = (
+    <PlayPauseButton
+      playing={playing}
+      disabled={playDisabled}
+      onPress={() => {
+        trackButtonClick(playing ? 'pause' : 'play');
+        void transport.togglePlay();
+      }}
+    />
+  );
+  /*
+    Loop and metronome are toggles, and they say so the way every other toggle
+    in this app does — a filled chip and `selected` reported to the
+    accessibility layer. The loop is the web's rule, through the binding: the
+    selection when there is one, else the whole score.
+  */
+  const loopButton = (
+    <IconButton
+      label={t('transport.toggleLoop')}
+      selected={loop}
+      onPress={transport.toggleLoop}
+    >
+      <ArrowPathRoundedSquareIcon
+        size={ICON_SIZE}
+        color={loop ? ink.primary : ink.foreground}
+      />
+    </IconButton>
+  );
+  const metronomeButton = (
+    <IconButton
+      label={t('transport.toggleMetronome')}
+      selected={metronome}
+      onPress={() => transport.setMetronome(!metronome)}
+    >
+      <NotationIcon
+        name="MetronomeIcon"
+        color={metronome ? ink.primary : ink.foreground}
+      />
+    </IconButton>
+  );
+  const measureBeat = (
+    <MeasureBeatReadout score={score} transport={transport} />
+  );
+  /*
+    The BPM, edited in place: a button that becomes a field, like the web's.
+    A read-only host shows it as a readout instead.
+  */
+  const tempoControl = readOnly ? (
+    <View
+      accessibilityLabel={t('transport.tempoBpm')}
+      className="justify-center px-2"
+      style={{ minHeight: MIN_TOUCH_TARGET }}
+    >
+      <Text className="text-foreground text-sm tabular-nums">
+        {`${currentBpm} BPM`}
+      </Text>
+    </View>
+  ) : editingTempo ? (
+    <Input
+      keyboardType="number-pad"
+      accessibilityLabel={t('transport.tempoBpm')}
+      value={tempoDraft}
+      autoFocus
+      onChangeText={setTempoDraft}
+      onBlur={commitTempo}
+      onSubmitEditing={commitTempo}
+      className="w-20"
+    />
+  ) : (
+    <IconButton
+      label={t('transport.tempoBpm')}
+      hint={t('transport.editTempo')}
+      onPress={() => {
+        setTempoDraft(String(currentBpm));
+        setEditingTempo(true);
+      }}
+    >
+      <Text className="text-foreground text-sm tabular-nums">
+        {`${currentBpm} BPM`}
+      </Text>
+    </IconButton>
+  );
+  const speedSelect = (
+    <ToolbarSelect
+      label={t('transport.speed')}
+      hint={t('transport.speedMultiplier')}
+      options={PLAYBACK_SPEEDS.map(value => ({
+        value: String(value),
+        label: `${value}x`,
+      }))}
+      value={String(speed)}
+      onChange={value => transport.setTempoMultiplier(Number(value))}
+    >
+      <Text className="text-foreground text-sm">{`${speed}x`}</Text>
+    </ToolbarSelect>
+  );
+  const outputSelect = <AudioOutputSelect />;
+  const onVolume = (next: number) => {
+    setVolumeDraft(next);
+    // Continuous: a gain must be audible while the finger moves.
+    transport.setMasterVolume(next);
+  };
+  const volumeControl = (
+    <View className="w-32 flex-row items-center gap-1">
+      <Text className="text-foreground text-sm">{t('transport.volume')}</Text>
+      <LevelSlider
+        className="flex-1"
+        label={t('transport.masterVolume')}
+        value={volumeDraft}
+        onChange={onVolume}
+      />
+    </View>
+  );
+  const volumeSlider = (
+    <View className="w-40">
+      <LevelSlider
+        label={t('transport.masterVolume')}
+        value={volumeDraft}
+        onChange={onVolume}
+      />
+    </View>
+  );
+  const positionScrubber = (
+    <PositionScrubber maxTick={maxTick} transport={transport} />
+  );
+  const timecode = (
+    <Timecode
+      transport={transport}
+      tempoMap={tempoMap}
+      maxTick={maxTick}
+      totalSeconds={totalSeconds}
+    />
+  );
+  const spatialButton = onToggleSpatial ? (
+    <IconButton
+      label={spatialActive ? t('editor.hideSpatial') : t('editor.showSpatial')}
+      selected={spatialActive === true}
+      fill
+      onPress={onToggleSpatial}
+    >
+      <CubeTransparentIcon
+        size={ICON_SIZE}
+        color={spatialActive ? ink.onPrimary : ink.foreground}
+      />
+    </IconButton>
+  ) : null;
+  const keyboardButton = onToggleKeyboard ? (
+    <IconButton
+      label={
+        keyboardCollapsed ? t('editor.showKeyboard') : t('editor.hideKeyboard')
+      }
+      selected={!keyboardCollapsed}
+      fill
+      onPress={onToggleKeyboard}
+    >
+      <NotationIcon
+        name="PianoKeysIcon"
+        color={keyboardCollapsed ? ink.foreground : ink.onPrimary}
+      />
+    </IconButton>
+  ) : null;
+  // Self-effacing: renders nothing once the engine is ready.
+  const loadIndicator = <SynthLoadIndicator store={store} />;
+
+  if (compact) {
+    /*
+      A compact window keeps the transport proper — reset, play, the readouts,
+      the scrubber, the 3D stage toggle and the keyboard toggle — on the bar,
+      and moves the settings (loop, metronome, tempo, speed, output, volume)
+      into a "more" sheet, so the full-size controls fit one row instead of
+      three. The 3D toggle is a view you step into, like the keyboard, not a
+      setting, so it stays on the bar beside it rather than in the sheet.
+    */
+    const rows: ControlRow[] = [
+      { key: 'loop', label: t('transport.toggleLoop'), control: loopButton },
+      {
+        key: 'metronome',
+        label: t('transport.toggleMetronome'),
+        control: metronomeButton,
+      },
+      { key: 'tempo', label: t('transport.tempoBpm'), control: tempoControl },
+      { key: 'speed', label: t('transport.speed'), control: speedSelect },
+      {
+        key: 'output',
+        label: t('transport.audioOutput'),
+        control: outputSelect,
+      },
+      {
+        key: 'volume',
+        label: t('transport.masterVolume'),
+        control: volumeSlider,
+      },
+    ];
+    return (
+      <View
+        accessibilityRole="toolbar"
+        accessibilityLabel={t('transport.transport')}
+        onLayout={onBarLayout}
+        className="bg-card flex-row items-center gap-1 px-2 py-1"
+      >
+        {resetButton}
+        {playButton}
+        {measureBeat}
+        {positionScrubber}
+        {timecode}
+        <IconButton
+          label={t('editor.moreActions')}
+          onPress={() => setMoreOpen(true)}
+        >
+          <EllipsisHorizontalIcon size={ICON_SIZE} color={ink.foreground} />
+        </IconButton>
+        {spatialButton}
+        {keyboardButton}
+        {loadIndicator}
+        <ControlsSheet
+          open={moreOpen}
+          title={t('editor.moreActions')}
+          onClose={() => setMoreOpen(false)}
+          rows={rows}
+        />
+      </View>
+    );
+  }
+
   return (
     <View
       accessibilityRole="toolbar"
       accessibilityLabel={t('transport.transport')}
-      className="bg-card flex-row items-center gap-1 px-2 py-1"
+      onLayout={onBarLayout}
+      // Wraps to a second row only where it has to; a wide window fits one, and
+      // a window narrow enough crosses the size-class threshold and collapses.
+      className="bg-card flex-row flex-wrap items-center gap-1 px-2 py-1"
     >
-      <IconButton
-        label={t('transport.goToStart')}
-        onPress={() => {
-          // Reset: stop where you are and go back to the beginning.
-          transport.pause();
-          transport.goToStart();
-        }}
-      >
-        <NotationIcon name="GoToStartIcon" color={ink.foreground} />
-      </IconButton>
-      <PlayPauseButton
-        playing={playing}
-        disabled={playDisabled}
-        onPress={() => {
-          trackButtonClick(playing ? 'pause' : 'play');
-          void transport.togglePlay();
-        }}
-      />
-
-      {/*
-        Loop and metronome are toggles, and they say so the way every other
-        toggle in this app does — a filled chip and `selected` reported to the
-        accessibility layer. Tinting the glyph alone said it only to somebody
-        looking at it.
-
-        The loop is the web's rule, through the binding: the selection when
-        there is one, else the whole score. This bar always looped the whole
-        score, so looping four selected bars could not be done here.
-      */}
-      <IconButton
-        label={t('transport.toggleLoop')}
-        selected={loop}
-        onPress={transport.toggleLoop}
-      >
-        <ArrowPathRoundedSquareIcon
-          size={ICON_SIZE}
-          color={loop ? ink.primary : ink.foreground}
-        />
-      </IconButton>
-      <IconButton
-        label={t('transport.toggleMetronome')}
-        selected={metronome}
-        onPress={() => transport.setMetronome(!metronome)}
-      >
-        {/*
-          The accent when it is on, not `onPrimary` — that was white, and it
-          was legible only against the grey chip this control no longer has.
-        */}
-        <NotationIcon
-          name="MetronomeIcon"
-          color={metronome ? ink.primary : ink.foreground}
-        />
-      </IconButton>
-
-      <MeasureBeatReadout score={score} transport={transport} />
-
-      {/*
-        The BPM, edited in place. A button that becomes a field, like the web's:
-        the number is read far more often than it is changed, and a permanent
-        text input in a bar of icon buttons reads as somewhere to type rather
-        than as a readout.
-      */}
-      {readOnly ? (
-        // No score edit reachable on a read-only host: a readout, not the
-        // button that opens the field below.
-        <View
-          accessibilityLabel={t('transport.tempoBpm')}
-          className="justify-center px-2"
-          style={{ minHeight: MIN_TOUCH_TARGET }}
-        >
-          <Text className="text-foreground text-sm tabular-nums">
-            {`${currentBpm} BPM`}
-          </Text>
-        </View>
-      ) : editingTempo ? (
-        <Input
-          keyboardType="number-pad"
-          accessibilityLabel={t('transport.tempoBpm')}
-          value={tempoDraft}
-          autoFocus
-          onChangeText={setTempoDraft}
-          onBlur={commitTempo}
-          onSubmitEditing={commitTempo}
-          className="w-20"
-        />
-      ) : (
-        <IconButton
-          label={t('transport.tempoBpm')}
-          hint={t('transport.editTempo')}
-          onPress={() => {
-            setTempoDraft(String(currentBpm));
-            setEditingTempo(true);
-          }}
-        >
-          <Text className="text-foreground text-sm tabular-nums">
-            {`${currentBpm} BPM`}
-          </Text>
-        </IconButton>
-      )}
-
-      <ToolbarSelect
-        label={t('transport.speed')}
-        hint={t('transport.speedMultiplier')}
-        options={PLAYBACK_SPEEDS.map(value => ({
-          value: String(value),
-          label: `${value}x`,
-        }))}
-        value={String(speed)}
-        onChange={value => transport.setTempoMultiplier(Number(value))}
-      >
-        <Text className="text-foreground text-sm">{`${speed}x`}</Text>
-      </ToolbarSelect>
-
-      {/*
-        `w-32`, not `w-24`. This width was picked for a 20px-tall drawn slider
-        whose thumb was 12px across; a `UISlider`'s is 28px with a shadow, so
-        at the old width the knob very nearly filled its own track and the
-        control read as a button rather than as a fader.
-      */}
-      <AudioOutputSelect />
-
-      <View className="w-32 flex-row items-center gap-1">
-        <Text className="text-foreground text-sm">{t('transport.volume')}</Text>
-        <LevelSlider
-          className="flex-1"
-          label={t('transport.masterVolume')}
-          value={volumeDraft}
-          onChange={next => {
-            setVolumeDraft(next);
-            // Continuous: a gain must be audible while the finger moves.
-            transport.setMasterVolume(next);
-          }}
-        />
-      </View>
-
-      <PositionScrubber maxTick={maxTick} transport={transport} />
-      <Timecode
-        transport={transport}
-        tempoMap={tempoMap}
-        maxTick={maxTick}
-        totalSeconds={totalSeconds}
-      />
-      {/*
-        The keyboard toggle, rightmost.
-
-        It used to sit on a bar of the keyboard's own, above it — a whole row
-        for one button, and the control that *reveals* the keyboard was inside
-        the thing it reveals. Here it is a transport control like the metronome
-        beside it: something you turn on while playing rather than something you
-        edit. The web app puts it in the same place.
-      */}
-      {/*
-        The Spatial toggle, before the keyboard's: the same on/off idiom, in
-        the same place the web bar puts it, with the same solid
-        `CubeTransparentIcon`.
-      */}
-      {onToggleSpatial ? (
-        <IconButton
-          label={
-            spatialActive ? t('editor.hideSpatial') : t('editor.showSpatial')
-          }
-          selected={spatialActive === true}
-          fill
-          onPress={onToggleSpatial}
-        >
-          <CubeTransparentIcon
-            size={ICON_SIZE}
-            color={spatialActive ? ink.onPrimary : ink.foreground}
-          />
-        </IconButton>
-      ) : null}
-      {onToggleKeyboard ? (
-        <IconButton
-          label={
-            keyboardCollapsed
-              ? t('editor.showKeyboard')
-              : t('editor.hideKeyboard')
-          }
-          selected={!keyboardCollapsed}
-          // An on/off switch for the panel below, drawn like the web's: red
-          // while the keyboard is showing.
-          fill
-          onPress={onToggleKeyboard}
-        >
-          {/*
-            The same drawing the web toolbar shows: `NOTATION_ICONS` holds it,
-            both apps replay it, so a keyboard here *is* the keyboard there
-            rather than a lookalike. A glyph's colour is passed on native —
-            `currentColor` is an SVG idea react-native-svg does not resolve — so
-            it comes from the theme through `useNotationInk`.
-          */}
-          <NotationIcon
-            name="PianoKeysIcon"
-            color={keyboardCollapsed ? ink.foreground : ink.onPrimary}
-          />
-        </IconButton>
-      ) : null}
-
-      {/*
-        Last, and self-effacing: it renders nothing once the engine is ready,
-        which is every press of Play after the first.
-      */}
-      <SynthLoadIndicator store={store} />
+      {resetButton}
+      {playButton}
+      {loopButton}
+      {metronomeButton}
+      {measureBeat}
+      {tempoControl}
+      {speedSelect}
+      {outputSelect}
+      {volumeControl}
+      {positionScrubber}
+      {timecode}
+      {spatialButton}
+      {keyboardButton}
+      {loadIndicator}
     </View>
   );
 }

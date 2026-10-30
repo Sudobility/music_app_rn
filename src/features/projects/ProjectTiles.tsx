@@ -31,7 +31,12 @@ import type { ProjectSummary } from '@sudobility/music_types';
 import { ConfirmSheet } from '@/components/controls/ConfirmSheet';
 import { usePendingAction } from '@/components/controls/usePendingAction';
 import { PressableCard } from '@/components/controls/PressableCard';
-import { useContentPadding } from '@/components/layout/EmbeddedScreen';
+import {
+  useContentPadding,
+  useSidesHandled,
+} from '@/components/layout/EmbeddedScreen';
+import { useSafeAreaInsets } from '@/platform/SafeArea';
+import { useSafeEdges } from '@/platform/safe-edges';
 import { useDocumentList } from '@/documents/DocumentsContext';
 
 /** The narrowest a tile is drawn: a name and a date on a line each. */
@@ -98,7 +103,18 @@ export function ProjectTiles({
     setWidth(Math.round(event.nativeEvent.layout.width));
   }, []);
   const padding = useContentPadding(SCREEN_PADDING);
-  const { columns, tileWidth } = tileGrid(width, padding);
+  // The grid is not scrolled sideways, so it clears the side safe areas it
+  // meets — unless the split view already has (`sidesHandled`). The column
+  // maths uses the width left after those insets.
+  const insets = useSafeAreaInsets();
+  const edges = useSafeEdges();
+  const sidesHandled = useSidesHandled();
+  const sideLeft = !sidesHandled && edges.left ? insets.left : 0;
+  const sideRight = !sidesHandled && edges.right ? insets.right : 0;
+  const { columns, tileWidth } = tileGrid(
+    width - sideLeft - sideRight,
+    padding,
+  );
 
   // Which tile's Duplicate / Delete is waiting on the server: that one spins,
   // and no tile starts a second one meanwhile.
@@ -143,7 +159,12 @@ export function ProjectTiles({
         numColumns={columns}
         keyExtractor={(project: ProjectSummary) => project.id}
         accessibilityLabel={t('dashboard.myProjects')}
-        contentContainerStyle={{ padding, gap: TILE_GAP }}
+        contentContainerStyle={{
+          padding,
+          paddingLeft: padding + sideLeft,
+          paddingRight: padding + sideRight,
+          gap: TILE_GAP,
+        }}
         {...(columns > 1 ? { columnWrapperStyle: { gap: TILE_GAP } } : {})}
         ListHeaderComponent={
           <View className="gap-3">

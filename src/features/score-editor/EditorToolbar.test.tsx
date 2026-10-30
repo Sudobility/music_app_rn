@@ -33,6 +33,22 @@ import { renderWithApp, testDocument } from '@/test/render';
 import type { MusicDocument } from '@/documents/document';
 import { EditorToolbar } from './EditorToolbar';
 
+// A tablet shows every control inline; a phone groups all but the note-entry
+// essentials behind the "…" sheet, where these tests cannot reach them. The
+// toolbar's arrangement is `useFormFactor`'s, so pin it (as `TransportBar.test`
+// does); the phone grouping has its own coverage.
+jest.mock('@sudobility/components-rn', () => ({
+  ...(jest.requireActual('@sudobility/components-rn') as object),
+  useFormFactor: () => 'tablet',
+}));
+
+// Showing the whole bar mounts the voice-record button, which reads the auth
+// context for a token; a component test signs nobody in, so stand it in — the
+// phone bar hid it in the "…" sheet, which is why this was never needed.
+jest.mock('@/auth/AuthContext', () => ({
+  useAuth: () => ({ user: null, siteAdmin: false, getToken: async () => null }),
+}));
+
 function setup(overrides: Partial<Parameters<typeof EditorToolbar>[0]> = {}) {
   const document = testDocument();
   const onLayoutModeChange = jest.fn();
@@ -289,7 +305,9 @@ describe('EditorToolbar', () => {
     const { view, document } = setup();
     act(() => getMusicPositionSource().moveTo(0));
     act(() => {
-      fireEvent.press(view.getByLabelText('Insert note'));
+      // By role: the chip's `Group` carries the same label as the chip, so a
+      // bare label match finds both the group and the button.
+      fireEvent.press(view.getByRole('button', { name: 'Insert note' }));
     });
     const notes = document.store
       .getState()

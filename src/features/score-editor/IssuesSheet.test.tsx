@@ -12,6 +12,19 @@ import type { MusicDocument } from '@/documents/document';
 import { renderWithApp, testDocument } from '@/test/render';
 import { IssuesSheet } from './IssuesSheet';
 
+// `repairAllIssues` is music_editing's and keeps getting better at repairing —
+// it now clears an overcrowded bar that it once left alone. The "stays open"
+// branch is this sheet's own (close only when the list empties), so for that
+// one case stand the repair in as a no-op that fixes nothing; every other test
+// uses the real one (the spy delegates to it by default).
+jest.mock('@sudobility/music_editing', () => {
+  const actual = jest.requireActual<typeof import('@sudobility/music_editing')>(
+    '@sudobility/music_editing',
+  );
+  return { ...actual, repairAllIssues: jest.fn(actual.repairAllIssues) };
+});
+import { repairAllIssues } from '@sudobility/music_editing';
+
 function setup() {
   const document = testDocument();
   const onClose = jest.fn();
@@ -145,6 +158,10 @@ describe('IssuesSheet', () => {
     expect(document.store.getState().validationIssues.length).toBeGreaterThan(
       0,
     );
+    // Nothing fixed, one left: the outcome the sheet must keep itself open for.
+    jest
+      .mocked(repairAllIssues)
+      .mockReturnValueOnce({ fixed: 0, remaining: 1 });
     act(() => {
       fireEvent.press(view.getByRole('button', { name: 'Fix all' }));
     });

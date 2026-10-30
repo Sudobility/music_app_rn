@@ -54,8 +54,14 @@ import type { PaneKey } from './paneKey';
 import { usePendingAction } from '@/components/controls/usePendingAction';
 
 export type ProjectsSplitViewProps = {
-  /** A document was opened, and is the active one: show it. */
-  onProjectOpened: () => void;
+  /**
+   * A document was opened: show it. Called with the project's id when the
+   * caller should navigate to the editor and let it read the project (the tab
+   * arrangement, so the click moves at once); with no id when the document is
+   * already open and active (a blank, a template, an import, or the desktop,
+   * which has read it before revealing it).
+   */
+  onProjectOpened: (projectId?: string) => void;
   /** The reader is out of credits and asked where to get more. */
   onOpenCredits: () => void;
   /**
@@ -161,13 +167,26 @@ export function ProjectsSplitView({
 
   const openExisting = useCallback(
     (id: string) => {
+      /*
+        Under a tab bar the editor is a route that opens the project itself
+        (`EditorScreen` reads `projectId` and shows a loader while it reads), so
+        navigate straight there rather than awaiting the fetch here — a click
+        used to sit on the Projects screen for the whole read before anything
+        moved. A desktop has no such route: the Projects window opens the
+        document into the shared list and then reveals it, so it still reads
+        first.
+      */
+      if (single) {
+        projectOpened(id);
+        return;
+      }
       openProjectInto(list, services, id)
         .then(() => projectOpened())
         .catch((error: unknown) =>
           setFailure(error instanceof Error ? error.message : String(error)),
         );
     },
-    [list, services, projectOpened],
+    [single, list, services, projectOpened],
   );
 
   const submitNew = useCallback(

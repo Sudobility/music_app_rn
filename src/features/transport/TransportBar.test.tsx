@@ -20,6 +20,17 @@ import { renderWithApp, testDocument } from '@/test/render';
 import { usePlayerBinding } from './usePlayerBinding';
 import { TransportBar } from './TransportBar';
 
+/*
+  These check control *behaviour* — each reaches the player, not the store —
+  which is the same whether a control sits on the bar or in the phone's "more"
+  sheet. Rendering as a tablet keeps every control inline, so a test presses it
+  directly; the phone grouping (the "…" sheet) is a layout concern.
+*/
+jest.mock('@sudobility/components-rn', () => ({
+  ...(jest.requireActual('@sudobility/components-rn') as object),
+  useFormFactor: () => 'tablet',
+}));
+
 /** Records what the transport asked the engine to do. */
 /**
  * A player whose load state can be driven from the test.

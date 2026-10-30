@@ -21,7 +21,7 @@ import { useTranslation } from 'react-i18next';
 import { SafeAreaEdgesProvider } from '@sudobility/components-rn';
 import { LoginPage } from '@sudobility/building_blocks_rn';
 import { CONSTANTS } from '@/config/constants';
-import { useEmbedded } from '@/components/layout/EmbeddedScreen';
+import { useSidesHandled } from '@/components/layout/EmbeddedScreen';
 import { useSafeEdgeList } from '@/platform/safe-edges';
 import type { Edge } from '@/platform/safe-edges';
 import { useSignInForm } from './useSignInForm';
@@ -40,10 +40,10 @@ export type SignInPageProps = {
 export function SignInPage({ onSuccess }: SignInPageProps) {
   const { t } = useTranslation();
   const form = useSignInForm();
-  const embedded = useEmbedded();
+  const sidesHandled = useSidesHandled();
   const screenEdges = useSafeEdgeList(SCREEN_EDGES);
   return (
-    <SafeAreaEdgesProvider edges={embedded ? NO_EDGES : screenEdges}>
+    <SafeAreaEdgesProvider edges={sidesHandled ? NO_EDGES : screenEdges}>
       <LoginPage
         appName={CONSTANTS.APP_NAME}
         onEmailSignIn={form.onEmailSignIn}

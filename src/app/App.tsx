@@ -18,7 +18,7 @@ import { useEffect, useMemo } from 'react';
 import { GestureRoot } from '@/platform/GestureRoot';
 import { SafeAreaProvider } from '@/platform/SafeArea';
 import { AppSafeEdges } from '@/platform/AppSafeEdges';
-import { AppState, StatusBar } from 'react-native';
+import { AppState, StatusBar, View } from 'react-native';
 import { getSharedAppState, queryClient } from './appState';
 import { DocumentsProvider } from '@/documents/DocumentsContext';
 import { Toasts } from '@/features/toasts/Toasts';
@@ -30,8 +30,7 @@ import { WindowTitleSync } from '@/features/documents/WindowTitleSync';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { PortalHost } from '@sudobility/components-rn';
 import { ThemeVarsProvider } from '@/components/ThemeVarsProvider';
-import { ThemeProvider, useTheme } from '@/config/ThemeContext';
-import { useFormFactor } from '@sudobility/components-rn';
+import { ThemeProvider } from '@/config/ThemeContext';
 import { AuthProvider } from '@/auth/AuthContext';
 import { EntityUserScope } from '@/features/account/EntityUserScope';
 import { Navigation } from './Navigation';
@@ -45,20 +44,16 @@ import { Navigation } from './Navigation';
  * chose, which is not always the device's.
  */
 function ThemedStatusBar() {
-  const { resolved } = useTheme();
-  // A phone is held on its side here, and its short edge has no room for
-  // a status bar over a bar over the content: the bars go to the top edge.
-  const hidden = useFormFactor() === 'phone';
-  return (
-    <StatusBar
-      hidden={hidden}
-      // Under the window, not above it: hidden alone leaves Android laying
-      // the app out below the row the bar took, which is the gap this is
-      // here to close.
-      translucent={hidden}
-      barStyle={resolved === 'dark' ? 'light-content' : 'dark-content'}
-    />
-  );
+  // Always light-content: every screen's top is now the design theme's red
+  // (the nav bar, the status-bar clearance above it, and the app root behind
+  // both), so white status text reads on it whatever the colour scheme. It
+  // used to follow the scheme, which drew dark text over the red in light
+  // mode. Shown on every device — the app is no longer landscape-only, and
+  // hiding it on a phone left an empty band above the native header. Like
+  // sudojo_app_rn, the status bar is app-based
+  // (`UIViewControllerBasedStatusBarAppearance` is NO), so this JS component
+  // drives it on iOS and Android alike.
+  return <StatusBar barStyle="light-content" />;
 }
 
 export default function App() {
@@ -92,21 +87,31 @@ export default function App() {
           <ThemeProvider>
             <ThemedStatusBar />
             <ThemeVarsProvider>
-              <QueryClientProvider client={queryClient}>
-                {/*
+              {/*
+                The app root is `bg-primary` (red, from the Swiss design theme).
+                A pushed native-stack screen (the editor) is inset below the
+                window's top safe area on some devices — the iPhone Duo's folded
+                cover screen among them — and the strip above its bar shows this
+                root. Painting it the primary red means the editor's red header
+                reads to the top edge with no band. The design theme's colour,
+                so it follows light/dark.
+              */}
+              <View className="bg-primary flex-1">
+                <QueryClientProvider client={queryClient}>
+                  {/*
                 Auth wraps the navigator rather than gating it: the editor is
                 usable signed out, and only the screens that read the server
                 ask whether there is an account.
               */}
-                <AuthProvider>
-                  {/*
+                  <AuthProvider>
+                    {/*
                   Every entity_client query is cached under the signed-in
                   user, so one account's workspaces and keys never reach the
                   next. Above the portal host, so a sheet sees it too.
                 */}
-                  <EntityUserScope>
-                    <DocumentsProvider list={list} services={services}>
-                      {/*
+                    <EntityUserScope>
+                      <DocumentsProvider list={list} services={services}>
+                        {/*
                     Above everything that opens a picker: a portalled sheet
                     draws here, so it escapes the scrolling toolbar that would
                     otherwise clip it. Inside the data providers, not above
@@ -115,31 +120,32 @@ export default function App() {
                     New Project — failed with "No QueryClient set" when this
                     sat outside `QueryClientProvider`.
                   */}
-                      <PortalHost>
-                        {/*
+                        <PortalHost>
+                          {/*
                       A File-menu import makes a new document from whatever
                       screen is in front, so it can belong to none of them.
                     */}
-                        <MenuImportCommands />
-                        <MenuFileCommands />
-                        {/*
+                          <MenuImportCommands />
+                          <MenuFileCommands />
+                          {/*
                       Store-screenshot links, in a debug build only — the
                       build `app_store/scripts/capture.sh` installs.
                     */}
-                        {__DEV__ ? <ScreenshotLinks /> : null}
-                        {/*
+                          {__DEV__ ? <ScreenshotLinks /> : null}
+                          {/*
                       The test account from `.env`, in a debug build only:
                       what lets the screenshot devices show what needs one.
                     */}
-                        {__DEV__ ? <DevAutoSignIn /> : null}
-                        <WindowTitleSync />
-                        <Navigation />
-                        <Toasts />
-                      </PortalHost>
-                    </DocumentsProvider>
-                  </EntityUserScope>
-                </AuthProvider>
-              </QueryClientProvider>
+                          {__DEV__ ? <DevAutoSignIn /> : null}
+                          <WindowTitleSync />
+                          <Navigation />
+                          <Toasts />
+                        </PortalHost>
+                      </DocumentsProvider>
+                    </EntityUserScope>
+                  </AuthProvider>
+                </QueryClientProvider>
+              </View>
             </ThemeVarsProvider>
           </ThemeProvider>
         </AppSafeEdges>

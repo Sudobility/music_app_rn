@@ -131,7 +131,9 @@ describe('SplitViewContainer, collapsed', () => {
     view: ReturnType<typeof renderWithApp>,
     width: number,
   ): void {
-    fireEvent(view.getByTestId('split-container'), 'layout', {
+    // `MasterDetailLayout` measures its own frame, not the container's, so the
+    // width that decides two-column vs. drill-in is reported on its root.
+    fireEvent(view.getByTestId('master-detail'), 'layout', {
       nativeEvent: { layout: { width, height: 800, x: 0, y: 0 } },
     });
   }
@@ -139,19 +141,22 @@ describe('SplitViewContainer, collapsed', () => {
   it('shows one column at a time on a narrow phone, drilling in and back', () => {
     const view = renderWithApp(<Drilldown />);
     layoutWidth(view, 390);
-    // The list is the one column; the detail is not beside it, and the list's
-    // bar carries no way back.
+    // The list is the one column; the detail is not mounted over it, and the
+    // list's bar carries no way back.
     expect(view.getByText('Alpha')).toBeTruthy();
     expect(view.queryByText('detail-body')).toBeNull();
     expect(view.queryByTestId('split-back')).toBeNull();
     // Choosing a row drills into the detail, whose bar now has the way back.
+    // The list stays mounted underneath — the detail slides in over it
+    // (`MasterDetailDrilldown`) — so it is the back control appearing, not the
+    // list's absence, that marks the drill-in.
     fireEvent.press(view.getByLabelText('Beta'));
     expect(view.getByText('detail-body')).toBeTruthy();
-    expect(view.queryByText('Alpha')).toBeNull();
-    // Back returns to the list.
+    expect(view.getByTestId('split-back')).toBeTruthy();
+    // Back returns to the list: the detail's way back goes with it.
     fireEvent.press(view.getByTestId('split-back'));
     expect(view.getByText('Alpha')).toBeTruthy();
-    expect(view.queryByText('detail-body')).toBeNull();
+    expect(view.queryByTestId('split-back')).toBeNull();
   });
 
   it('keeps both panels side by side where the view is wide', () => {

@@ -29,9 +29,13 @@ export function ProjectsScreen() {
       single
       collapsible
       requested={pane ? { pane, at: route.params?.at ?? 0 } : undefined}
-      // No project id: the document is already open and active, and the
-      // editor shows whichever one that is.
-      onProjectOpened={() => navigation.navigate('Editor')}
+      // With a project id, the editor route opens it and shows a loader while
+      // it reads, so the click navigates at once instead of waiting on the
+      // fetch; with none (a blank, template or import) the document is already
+      // open and active, and the editor shows whichever one that is.
+      onProjectOpened={projectId =>
+        navigation.navigate('Editor', projectId ? { projectId } : undefined)
+      }
       onOpenCredits={() => navigation.navigate('Credits')}
     />
   );

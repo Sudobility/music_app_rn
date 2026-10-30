@@ -38,10 +38,14 @@
  * `runAddTrackChoice`) and the edit modes (`EDIT_MODE_OPTIONS`).
  */
 import { useMemo, useState } from 'react';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 import { useStore } from 'zustand';
 import { useTranslation } from 'react-i18next';
-import { Text } from '@sudobility/components-rn';
+import { Text, useFormFactor } from '@sudobility/components-rn';
+import { ControlsSheet } from '@/components/controls/ControlsSheet';
+import type { ControlRow } from '@/components/controls/ControlsSheet';
+import { useContainerSize } from '@/features/layout/useContainerSize';
+import { barsCompact } from '@/features/layout/compact-bars';
 import {
   addTrackChoices,
   changeAccidental,
@@ -132,9 +136,6 @@ import { usePendingAction } from '@/components/controls/usePendingAction';
 
 const ICON_SIZE = 18;
 
-/** One row of controls, matching the web bar's `h-8` plus its padding. */
-const TOOLBAR_HEIGHT = 44;
-
 /*
   Which glyph each note value, accidental and edit mode draws is music_types'
   (`DURATION_ICON`, `ACCIDENTAL_ICON`, `EDIT_MODE_OPTIONS`)
@@ -213,6 +214,14 @@ export function EditorToolbar({
     activeTrack === null ||
     !isVocalInstrumentValue(String(activeTrack.midiProgram));
 
+  // The bar collapses to the note-entry essentials plus a "…" sheet in a
+  // compact window — always on a phone, and on a tablet/desktop whose window is
+  // narrow (an iPad split view, a small Mac window) — and shows every control
+  // inline when there is room. Measured from the bar's own width, so it follows
+  // a window resize rather than being decided by the device.
+  const { size: barSize, onLayout: onBarLayout } = useContainerSize();
+  const compact = barsCompact(useFormFactor(), barSize.width);
+  const [moreToolsOpen, setMoreToolsOpen] = useState(false);
   const [quantizeGrid, setQuantizeGrid] = useState<QuantizeGrid>('sixteenth');
   const [goToBarOpen, setGoToBarOpen] = useState(false);
   const [addTrackOpen, setAddTrackOpen] = useState(false);
@@ -337,527 +346,376 @@ export function EditorToolbar({
       }
     });
 
-  return (
-    /*
-      Two parts on one row: the tools scroll, the view controls do not. They sit
-      outside the scrolling region because inside it they are the first thing to
-      go past the right edge, reachable only by scrolling the whole bar — which
-      is exactly what the web app measured and moved them for.
-    */
-    <View
-      className="bg-card flex-row items-stretch"
-      style={{ height: TOOLBAR_HEIGHT }}
+  // Each control, defined once and placed either on the bar or in the "more
+  // tools" sheet (a phone), so the two arrangements cannot drift.
+  const addTrackControl = (
+    <IconButton
+      label={t('editor.addTrack')}
+      disabled={!available.addTrack}
+      onPress={() => setAddTrackOpen(true)}
     >
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        accessibilityRole="toolbar"
-        accessibilityLabel={t('editor.toolbar')}
-        /*
-          The height comes from the row above rather than from a `flexGrow: 0`
-          of its own: a horizontal ScrollView has no intrinsic height and takes
-          whatever it is offered, which is an empty band above and below the
-          controls when nothing bounds it.
-        */
-        className="flex-1"
-        contentContainerClassName="items-center gap-1 px-2"
+      <PlusIcon size={ICON_SIZE} color={ink.foreground} />
+    </IconButton>
+  );
+  const noteDurationControl = (
+    <ToolbarSelect
+      label={t('editor.noteDuration')}
+      hint={t('editor.noteDurationHint')}
+      options={durationOptions}
+      {...(durationShown.kind === 'mixed' ? {} : { value: durationShown.base })}
+      disabled={!available.noteDuration}
+      onChange={value =>
+        chooseDuration(store, withBase(snapGrid, value as BaseDuration))
+      }
+    >
+      {durationShown.kind === 'mixed' ? (
+        <Text className="text-foreground text-base">…</Text>
+      ) : (
+        <NotationIcon
+          name={DURATION_ICON[durationShown.base]}
+          color={ink.foreground}
+        />
+      )}
+    </ToolbarSelect>
+  );
+  const durationModifierControls = (
+    <Group label={t('editor.durationModifier')}>
+      <GlyphChip
+        icon="DottedIcon"
+        label={t('editor.dotted')}
+        hint={t('editor.dottedHint')}
+        disabled={!available.dotted}
+        selected={durationParts(snapGrid).modifier === 'dotted'}
+        onPress={() => chooseDuration(store, withModifier(snapGrid, 'dotted'))}
+      />
+      <GlyphChip
+        icon="TripletIcon"
+        label={t('editor.triplet')}
+        hint={t('editor.tripletHint')}
+        disabled={!available.triplet}
+        selected={durationParts(snapGrid).modifier === 'triplet'}
+        onPress={() => chooseDuration(store, withModifier(snapGrid, 'triplet'))}
+      />
+    </Group>
+  );
+  const accidentalControl = (
+    <ToolbarSelect
+      label={t('editor.accidental')}
+      hint={t('editor.accidentalHint')}
+      options={accidentalOptions}
+      disabled={!available.accidental}
+      onChange={value => changeAccidental(store, Number(value) as Accidental)}
+    >
+      <NotationIcon name="SharpIcon" color={ink.foreground} />
+    </ToolbarSelect>
+  );
+  const articulationControl = (
+    <ToolbarSelect
+      label={t('editor.articulation')}
+      hint={t('editor.articulationHint')}
+      options={articulationOptions}
+      disabled={!available.articulation}
+      onChange={value =>
+        changeArticulation(
+          store,
+          value === NO_MARK ? undefined : (value as Articulation),
+        )
+      }
+    >
+      <NotationIcon name="ArticulationIcon" color={ink.foreground} />
+    </ToolbarSelect>
+  );
+  const ornamentControl = (
+    <ToolbarSelect
+      label={t('editor.ornament')}
+      hint={t('editor.ornamentHint')}
+      options={ornamentOptions}
+      disabled={!available.ornament}
+      onChange={value =>
+        changeOrnament(
+          store,
+          value === NO_MARK ? undefined : (value as Ornament),
+        )
+      }
+    >
+      <NotationIcon name="OrnamentIcon" color={ink.foreground} />
+    </ToolbarSelect>
+  );
+  const markControls = (
+    <Group label={t('editor.articulation')}>
+      <GlyphChip
+        icon="TieIcon"
+        label={t('editor.toggleTie')}
+        hint={t('editor.toggleTie')}
+        disabled={!available.tie}
+        onPress={() => toggleTie(store, 'tieStart')}
+      />
+      <GlyphChip
+        icon="SlurIcon"
+        label={t('editor.slur')}
+        hint={t('editor.slurHint')}
+        disabled={!available.slur}
+        onPress={() => toggleSlur(store)}
+      />
+      <GlyphChip
+        icon="CrescendoIcon"
+        label={t('editor.crescendo')}
+        hint={t('editor.crescendoHint')}
+        disabled={!available.crescendo}
+        onPress={() => toggleHairpin(store, 'crescendo')}
+      />
+      <GlyphChip
+        icon="DiminuendoIcon"
+        label={t('editor.diminuendo')}
+        hint={t('editor.diminuendoHint')}
+        disabled={!available.diminuendo}
+        onPress={() => toggleHairpin(store, 'diminuendo')}
+      />
+      <GlyphChip
+        icon="ArpeggioIcon"
+        label={t('editor.arpeggiate')}
+        hint={t('editor.arpeggiateHint')}
+        disabled={!available.arpeggiate}
+        onPress={() => toggleArpeggiate(store)}
+      />
+      <GlyphChip
+        icon="FermataIcon"
+        label={t('editor.fermata')}
+        hint={t('editor.fermataHint')}
+        disabled={!available.fermata}
+        onPress={() => toggleFermata(store)}
+      />
+    </Group>
+  );
+  const beamControls = (
+    <Group label={t('editor.beamBreak')}>
+      <GlyphChip
+        icon="BeamBreakIcon"
+        label={t('editor.beamBreak')}
+        hint={t('editor.beamBreakHint')}
+        disabled={!available.beamBreak}
+        onPress={() => changeBeam(store, 'break')}
+      />
+      <GlyphChip
+        icon="BeamNoneIcon"
+        label={t('editor.beamNone')}
+        hint={t('editor.beamNoneHint')}
+        disabled={!available.beamNone}
+        onPress={() => changeBeam(store, 'none')}
+      />
+    </Group>
+  );
+  const editModeControls = (
+    <Group label={t('editor.editMode')}>
+      {EDIT_MODE_OPTIONS.map(mode => (
+        <GlyphChip
+          key={mode.value}
+          icon={mode.icon}
+          label={t(mode.labelKey)}
+          hint={t(editModeHintKey(mode.value, available.stackMode), {
+            instrument:
+              activeTrack?.instrumentName ?? t('editor.thisInstrument'),
+          })}
+          selected={effectiveEditMode === mode.value}
+          disabled={!available[`${mode.value}Mode`]}
+          onPress={() => chooseEditMode(store, mode.value)}
+        />
+      ))}
+    </Group>
+  );
+  const insertControls = (
+    <Group label={t('editor.insertNote')}>
+      <GlyphChip
+        icon="InsertNoteIcon"
+        label={t('editor.insertNote')}
+        hint={t('editor.insertNoteHint')}
+        disabled={!available.insertNote}
+        onPress={() => insertDefaultNoteAtCaret(store)}
+      />
+      <GlyphChip
+        icon="InsertRestIcon"
+        label={t('editor.insertRest')}
+        hint={t('editor.insertRestHint')}
+        disabled={!available.insertRest}
+        onPress={() => insertRestAtSelection(store)}
+      />
+    </Group>
+  );
+  const voiceRecordControl = (
+    <VoiceRecordButton
+      document={document}
+      onTranscriptionJob={onVoiceTranscriptionJob}
+    />
+  );
+  const noteInputControl = (
+    <IconButton
+      label={t('editor.noteInput')}
+      hint={t('editor.noteInputHint')}
+      selected={noteInput}
+      disabled={!available.noteInput}
+      onPress={() => store.getState().setNoteInput(!noteInput)}
+    >
+      <PencilIcon
+        size={ICON_SIZE}
+        color={noteInput ? ink.primary : ink.foreground}
+      />
+    </IconButton>
+  );
+  const quantizeControls = (
+    <Group label={t('editor.quantizeGrid')}>
+      <ToolbarSelect
+        label={t('editor.quantizeGrid')}
+        hint={t('editor.quantizeGridHint')}
+        options={quantizeOptions}
+        value={quantizeGrid}
+        disabled={!available.quantizeGrid}
+        onChange={value => setQuantizeGrid(value as QuantizeGrid)}
       >
-        {/* Tracks first: adding a part, before anything that acts within one.
-            There is no track picker here. Tapping a staff makes its track the
-            active one, so a second way to say the same thing was a control the
-            width of a field on the widest bar in the app; which tracks are
-            drawn is on the inspector's Track tab (`VisibleTracksField`). */}
-        <Group label={t('editor.tracks')}>
-          {/*
-            One control that asks, rather than two that act — the same two
-            answers the web app's Add Track menu offers, in the same order.
-          */}
-          <IconButton
-            label={t('editor.addTrack')}
-            disabled={!available.addTrack}
-            onPress={() => setAddTrackOpen(true)}
-          >
-            <PlusIcon size={ICON_SIZE} color={ink.foreground} />
-          </IconButton>
-        </Group>
-
-        <Divider />
-
-        {/*
-          One control, not six chips. What it shows depends on the selection —
-          see `durationDisplay` — and choosing a value both rewrites every
-          selected note and arms the next one, so the control never has to
-          explain which of its two jobs it is doing.
-        */}
-        <ToolbarSelect
-          label={t('editor.noteDuration')}
-          hint={t('editor.noteDurationHint')}
-          options={durationOptions}
-          {...(durationShown.kind === 'mixed'
-            ? {}
-            : { value: durationShown.base })}
-          disabled={!available.noteDuration}
-          onChange={value =>
-            chooseDuration(store, withBase(snapGrid, value as BaseDuration))
-          }
-        >
-          {durationShown.kind === 'mixed' ? (
-            // Not the first note's icon and not the armed one: either would
-            // claim the selection is something it is not.
-            <Text className="text-foreground text-base">…</Text>
-          ) : (
-            <NotationIcon
-              name={DURATION_ICON[durationShown.base]}
-              color={ink.foreground}
-            />
-          )}
-        </ToolbarSelect>
-
-        <Group label={t('editor.durationModifier')}>
-          <GlyphChip
-            icon="DottedIcon"
-            label={t('editor.dotted')}
-            hint={t('editor.dottedHint')}
-            disabled={!available.dotted}
-            selected={durationParts(snapGrid).modifier === 'dotted'}
-            onPress={() =>
-              chooseDuration(store, withModifier(snapGrid, 'dotted'))
-            }
-          />
-          <GlyphChip
-            icon="TripletIcon"
-            label={t('editor.triplet')}
-            hint={t('editor.tripletHint')}
-            disabled={!available.triplet}
-            selected={durationParts(snapGrid).modifier === 'triplet'}
-            onPress={() =>
-              chooseDuration(store, withModifier(snapGrid, 'triplet'))
-            }
-          />
-        </Group>
-
-        <Divider />
-
-        {/* One picker, not five chips. Accidentals only ever act on a
-            selection, so they are not something you reach for constantly while
-            entering notes. */}
-        <ToolbarSelect
-          label={t('editor.accidental')}
-          hint={t('editor.accidentalHint')}
-          options={accidentalOptions}
-          disabled={!available.accidental}
-          onChange={value =>
-            changeAccidental(store, Number(value) as Accidental)
-          }
-        >
-          <NotationIcon name="SharpIcon" color={ink.foreground} />
-        </ToolbarSelect>
-
-        <Divider />
-
-        {/*
-          The trigger applies rather than reflects, so no `value` is passed —
-          this adds an articulation to the selection, it does not hold one.
-        */}
-        <ToolbarSelect
-          label={t('editor.articulation')}
-          hint={t('editor.articulationHint')}
-          options={articulationOptions}
-          disabled={!available.articulation}
-          onChange={value =>
-            changeArticulation(
-              store,
-              value === NO_MARK ? undefined : (value as Articulation),
-            )
-          }
-        >
-          <NotationIcon name="ArticulationIcon" color={ink.foreground} />
-        </ToolbarSelect>
-
-        <ToolbarSelect
-          label={t('editor.ornament')}
-          hint={t('editor.ornamentHint')}
-          options={ornamentOptions}
-          disabled={!available.ornament}
-          onChange={value =>
-            changeOrnament(
-              store,
-              value === NO_MARK ? undefined : (value as Ornament),
-            )
-          }
-        >
-          <NotationIcon name="OrnamentIcon" color={ink.foreground} />
-        </ToolbarSelect>
-
-        <GlyphChip
-          icon="TieIcon"
-          label={t('editor.toggleTie')}
-          hint={t('editor.toggleTie')}
-          disabled={!available.tie}
-          onPress={() => toggleTie(store, 'tieStart')}
-        />
-
-        <Divider />
-
-        <Group label={t('editor.editMode')}>
-          {EDIT_MODE_OPTIONS.map(mode => (
-            <GlyphChip
-              key={mode.value}
-              icon={mode.icon}
-              label={t(mode.labelKey)}
-              /*
-                Stack has a second hint for a part that cannot play a chord,
-                saying why the button is off rather than describing a mode the
-                reader cannot have. It takes the instrument's name.
-              */
-              hint={t(editModeHintKey(mode.value, available.stackMode), {
-                instrument:
-                  activeTrack?.instrumentName ?? t('editor.thisInstrument'),
-              })}
-              selected={effectiveEditMode === mode.value}
-              disabled={!available[`${mode.value}Mode`]}
-              onPress={() => chooseEditMode(store, mode.value)}
-            />
-          ))}
-        </Group>
-
-        <GlyphChip
-          icon="InsertNoteIcon"
-          label={t('editor.insertNote')}
-          hint={t('editor.insertNoteHint')}
-          disabled={!available.insertNote}
-          /*
-            Writes the default pitch at the caret and steps past it, so a second
-            press continues the line — decision 4 of the parity plan, and the
-            library's rather than an `advanceCaret: true` this bar has to
-            remember.
-          */
-          onPress={() => insertDefaultNoteAtCaret(store)}
-        />
-
-        {/*
-          A phrase mark over the selection. Needs two notes — one note cannot
-          carry a slur — so it disables rather than doing nothing.
-        */}
-        <GlyphChip
-          icon="SlurIcon"
-          label={t('editor.slur')}
-          hint={t('editor.slurHint')}
-          disabled={!available.slur}
-          onPress={() => toggleSlur(store)}
-        />
-        <VoiceRecordButton
-          document={document}
-          onTranscriptionJob={onVoiceTranscriptionJob}
-        />
-        {/*
-          The hairpins. Two chips rather than a menu: crescendo and diminuendo
-          are the two things anybody reaches for, and a wedge is faster to
-          recognise as a shape than to read as a word. Two notes minimum, like
-          the slur — a wedge over one note has nowhere to open.
-        */}
-        <GlyphChip
-          icon="CrescendoIcon"
-          label={t('editor.crescendo')}
-          hint={t('editor.crescendoHint')}
-          disabled={!available.crescendo}
-          onPress={() => toggleHairpin(store, 'crescendo')}
-        />
-        <GlyphChip
-          icon="DiminuendoIcon"
-          label={t('editor.diminuendo')}
-          hint={t('editor.diminuendoHint')}
-          disabled={!available.diminuendo}
-          onPress={() => toggleHairpin(store, 'diminuendo')}
-        />
-        {/* Rolling a chord. One note is enough to select; a lone note simply
-            draws nothing. */}
-        <GlyphChip
-          icon="ArpeggioIcon"
-          label={t('editor.arpeggiate')}
-          hint={t('editor.arpeggiateHint')}
-          disabled={!available.arpeggiate}
-          onPress={() => toggleArpeggiate(store)}
-        />
-        {/*
-          Beaming overrides. One note is enough for either: a break is a
-          property of the note it sits on rather than a span, and so is taking a
-          note out of beaming altogether.
-        */}
-        <GlyphChip
-          icon="BeamBreakIcon"
-          label={t('editor.beamBreak')}
-          hint={t('editor.beamBreakHint')}
-          disabled={!available.beamBreak}
-          onPress={() => changeBeam(store, 'break')}
-        />
-        <GlyphChip
-          icon="BeamNoneIcon"
-          label={t('editor.beamNone')}
-          hint={t('editor.beamNoneHint')}
-          disabled={!available.beamNone}
-          onPress={() => changeBeam(store, 'none')}
-        />
-        {/*
-          A pause on the selection. One note is enough, unlike the slur beside
-          it — a fermata belongs to a single note.
-        */}
-        <GlyphChip
-          icon="FermataIcon"
-          label={t('editor.fermata')}
-          hint={t('editor.fermataHint')}
-          disabled={!available.fermata}
-          onPress={() => toggleFermata(store)}
-        />
-
-        {/*
-          Note input is a mode, because a tap cannot mean two things: with it on
-          a tap on a stave writes a note at that pitch, with it off the tap aims
-          the caret. The caret is what selection ranges, insertion and "play
-          from here" are all aimed with, so it stays the default. A pencil, like
-          the web's, so the mode is not confused with the Insert Note action
-          that shares the notehead glyph.
-        */}
-        <IconButton
-          label={t('editor.noteInput')}
-          hint={t('editor.noteInputHint')}
-          selected={noteInput}
-          disabled={!available.noteInput}
-          onPress={() => store.getState().setNoteInput(!noteInput)}
-        >
-          <PencilIcon
-            size={ICON_SIZE}
-            color={noteInput ? ink.primary : ink.foreground}
-          />
-        </IconButton>
-
-        <GlyphChip
-          icon="InsertRestIcon"
-          label={t('editor.insertRest')}
-          hint={t('editor.insertRestHint')}
-          disabled={!available.insertRest}
-          onPress={() => insertRestAtSelection(store)}
-        />
-
-        {/*
-          Copy, Cut, Paste and Delete used to sit here.
-
-          They moved to the score's own long-press menu, on both platforms,
-          because all four act on something already selected and none of them
-          could say *what*. Delete means three different edits depending on
-          whether a track, a span of bars or a run of notes is selected, and a
-          button on a bar cannot name its subject. A menu opened on the thing
-          itself can, and does.
-        */}
-        <Divider />
-
-        <ToolbarSelect
-          label={t('editor.quantizeGrid')}
-          hint={t('editor.quantizeGridHint')}
-          options={quantizeOptions}
-          value={quantizeGrid}
-          disabled={!available.quantizeGrid}
-          onChange={value => setQuantizeGrid(value as QuantizeGrid)}
-        >
-          {/* The short form: the trigger is read at a glance, and the full
-              words made this the widest control on the web bar. */}
-          <Text className="text-foreground text-sm">
-            {QUANTIZE_GRID_SHORT[quantizeGrid]}
-          </Text>
-        </ToolbarSelect>
-        <GlyphChip
-          icon="QuantizeIcon"
-          label={t('editor.quantize')}
-          hint={t('editor.quantizeHint')}
-          disabled={!available.quantize}
-          loading={quantizing.pending}
-          onPress={() =>
-            void quantizing.run(() =>
-              quantizeSelectionToGrid(store, quantizeGrid),
-            )
-          }
-        />
-
-        <Divider />
-
-        {/* How many voices is music_editing's `EDITOR_VOICE_COUNT` — two, where
-            the notation actually needs them: stems up against stems down on
-            one stave. Nothing else in the editor tells more apart yet, so
-            offering four would be offering somewhere to lose notes. */}
-        <Group label={t('editor.voice')}>
-          {Array.from({ length: EDITOR_VOICE_COUNT }, (_, index) => (
-            <TextChip
-              key={index}
-              label={String(index + 1)}
-              name={t('editor.voiceNumber', { number: index + 1 })}
-              hint={t(voiceHintKey(index))}
-              selected={activeVoiceIndex === index}
-              disabled={!available.voice}
-              onPress={() => store.getState().setActiveVoice(index)}
-            />
-          ))}
-        </Group>
-
-        <Divider />
-
-        <ToolbarSelect
-          label={t('editor.moreActions')}
-          options={moreOptions}
-          disabled={!available.moreActions}
-          onChange={handleMoreAction}
-        >
-          <EllipsisHorizontalIcon size={ICON_SIZE} color={ink.foreground} />
-        </ToolbarSelect>
-      </ScrollView>
-
-      {/* Pinned outside the scroller: these change how you look at the score,
-          not the score itself. */}
-      <View className="border-border flex-row shrink-0 items-center gap-0.5 border-l pl-1">
-        {/*
-          Zoom is not an edit, so it stays live while the transport plays —
-          reading along with the music is exactly when it is wanted.
-        */}
-        <IconButton
-          label={t('editor.zoomOut')}
-          onPress={() => store.getState().setZoom(zoomOut(zoom))}
-        >
-          <MagnifyingGlassMinusIcon size={ICON_SIZE} color={ink.foreground} />
-        </IconButton>
-        {/*
-          The name sits on a wrapper: this package's `Text` styles text and
-          takes no accessibility props of its own.
-        */}
-        <View accessibilityLabel={t('editor.currentZoom')} className="w-16">
-          <Text className="text-foreground text-center text-sm">
-            {zoomLabel}
-          </Text>
-        </View>
-        <IconButton
-          label={t('editor.zoomIn')}
-          onPress={() => store.getState().setZoom(zoomIn(zoom))}
-        >
-          <MagnifyingGlassPlusIcon size={ICON_SIZE} color={ink.foreground} />
-        </IconButton>
-
-        <Group label={t('editor.layoutMode')}>
-          <GlyphChip
-            icon="PageLayoutIcon"
-            label={t('editor.pageLayout')}
-            hint={t('editor.pageHint')}
-            selected={layoutMode === 'page'}
-            onPress={() => onLayoutModeChange('page')}
-          />
-          <GlyphChip
-            icon="ContinuousLayoutIcon"
-            label={t('editor.continuousLayout')}
-            hint={t('editor.continuousHint')}
-            selected={layoutMode === 'continuous'}
-            onPress={() => onLayoutModeChange('continuous')}
-          />
-        </Group>
-
-        {/*
-          The track-info column: the whole thing, or the instrument icons
-          alone — one control that switches between the two, as the pitch
-          switch below does; its label names what tapping does. A device
-          pref, so it is the same in the next project.
-        */}
-        <GlyphChip
-          icon="TrackInfoIconIcon"
-          label={
-            trackInfo === 'icon'
-              ? t('editor.trackInfoFull')
-              : t('editor.trackInfoIcon')
-          }
-          hint={t('editor.trackInfoHint')}
-          selected={trackInfo === 'icon'}
-          onPress={() =>
-            devicePrefs
-              .getState()
-              .setTrackInfo(trackInfo === 'icon' ? 'full' : 'icon')
-          }
-        />
-
-        {/*
-          The label names what tapping *does*, not the current state, which is
-          what a button should say — so the two names are two states of one
-          control, not two controls.
-        */}
+        <Text className="text-foreground text-sm">
+          {QUANTIZE_GRID_SHORT[quantizeGrid]}
+        </Text>
+      </ToolbarSelect>
+      <GlyphChip
+        icon="QuantizeIcon"
+        label={t('editor.quantize')}
+        hint={t('editor.quantizeHint')}
+        disabled={!available.quantize}
+        loading={quantizing.pending}
+        onPress={() =>
+          void quantizing.run(() =>
+            quantizeSelectionToGrid(store, quantizeGrid),
+          )
+        }
+      />
+    </Group>
+  );
+  const voiceControls = (
+    <Group label={t('editor.voice')}>
+      {Array.from({ length: EDITOR_VOICE_COUNT }, (_, index) => (
         <TextChip
-          /*
-            Abbreviated because the chip is one glyph wide, but translated all
-            the same: both apps hardcoded the same two English letters here,
-            which is exactly why no parity check could see them.
-          */
-          label={t(
-            pitchDisplay === 'written'
-              ? 'editor.pitchWrittenShort'
-              : 'editor.pitchConcertShort',
-          )}
-          name={
-            pitchDisplay === 'written'
-              ? t('editor.showConcertPitch')
-              : t('editor.showWrittenPitch')
-          }
-          hint={t('editor.pitchDisplayHint')}
-          selected={pitchDisplay === 'written'}
-          /*
-            A device pref, not this document's: written pitch is how the reader
-            reads, on every tab and after a relaunch. The document stores are
-            mirrored from the prefs store, so writing to this one alone would
-            change one tab, persist nothing, and be overwritten by the next
-            change made anywhere else.
-          */
-          onPress={() =>
-            devicePrefs
-              .getState()
-              .setPitchDisplay(
-                pitchDisplay === 'written' ? 'concert' : 'written',
-              )
-          }
+          key={index}
+          label={String(index + 1)}
+          name={t('editor.voiceNumber', { number: index + 1 })}
+          hint={t(voiceHintKey(index))}
+          selected={activeVoiceIndex === index}
+          disabled={!available.voice}
+          onPress={() => store.getState().setActiveVoice(index)}
         />
+      ))}
+    </Group>
+  );
+  const moreControl = (
+    <ToolbarSelect
+      label={t('editor.moreActions')}
+      options={moreOptions}
+      disabled={!available.moreActions}
+      onChange={handleMoreAction}
+    >
+      <EllipsisHorizontalIcon size={ICON_SIZE} color={ink.foreground} />
+    </ToolbarSelect>
+  );
+  const zoomControls = (
+    <View
+      accessibilityLabel={t('editor.currentZoom')}
+      className="flex-row items-center gap-0.5"
+    >
+      <IconButton
+        label={t('editor.zoomOut')}
+        onPress={() => store.getState().setZoom(zoomOut(zoom))}
+      >
+        <MagnifyingGlassMinusIcon size={ICON_SIZE} color={ink.foreground} />
+      </IconButton>
+      <View className="w-16">
+        <Text className="text-foreground text-center text-sm">{zoomLabel}</Text>
       </View>
+      <IconButton
+        label={t('editor.zoomIn')}
+        onPress={() => store.getState().setZoom(zoomIn(zoom))}
+      >
+        <MagnifyingGlassPlusIcon size={ICON_SIZE} color={ink.foreground} />
+      </IconButton>
+    </View>
+  );
+  const layoutControls = (
+    <Group label={t('editor.layoutMode')}>
+      <GlyphChip
+        icon="PageLayoutIcon"
+        label={t('editor.pageLayout')}
+        hint={t('editor.pageHint')}
+        selected={layoutMode === 'page'}
+        onPress={() => onLayoutModeChange('page')}
+      />
+      <GlyphChip
+        icon="ContinuousLayoutIcon"
+        label={t('editor.continuousLayout')}
+        hint={t('editor.continuousHint')}
+        selected={layoutMode === 'continuous'}
+        onPress={() => onLayoutModeChange('continuous')}
+      />
+    </Group>
+  );
+  const trackInfoControl = (
+    <GlyphChip
+      icon="TrackInfoIconIcon"
+      label={
+        trackInfo === 'icon'
+          ? t('editor.trackInfoFull')
+          : t('editor.trackInfoIcon')
+      }
+      hint={t('editor.trackInfoHint')}
+      selected={trackInfo === 'icon'}
+      onPress={() =>
+        devicePrefs
+          .getState()
+          .setTrackInfo(trackInfo === 'icon' ? 'full' : 'icon')
+      }
+    />
+  );
+  const pitchControl = (
+    <TextChip
+      label={t(
+        pitchDisplay === 'written'
+          ? 'editor.pitchWrittenShort'
+          : 'editor.pitchConcertShort',
+      )}
+      name={
+        pitchDisplay === 'written'
+          ? t('editor.showConcertPitch')
+          : t('editor.showWrittenPitch')
+      }
+      hint={t('editor.pitchDisplayHint')}
+      selected={pitchDisplay === 'written'}
+      onPress={() =>
+        devicePrefs
+          .getState()
+          .setPitchDisplay(pitchDisplay === 'written' ? 'concert' : 'written')
+      }
+    />
+  );
+  const inspectorControl = (
+    <IconButton
+      label={t('editor.toggleInspector')}
+      hint={
+        inspectorVisible ? t('editor.hideInspector') : t('editor.showInspector')
+      }
+      selected={inspectorVisible}
+      onPress={onToggleInspector}
+    >
+      {inspectorVisible ? (
+        <ChevronDoubleRightIcon size={ICON_SIZE} color={ink.primary} />
+      ) : (
+        <ChevronDoubleLeftIcon size={ICON_SIZE} color={ink.foreground} />
+      )}
+    </IconButton>
+  );
 
-      {/* Outside the scroller too, so it stays reachable however narrow the
-          window gets. It controls the property sheet, not the score. */}
-      <View className="flex-row shrink-0 items-center pr-1">
-        <IconButton
-          label={t('editor.toggleInspector')}
-          hint={
-            inspectorVisible
-              ? t('editor.hideInspector')
-              : t('editor.showInspector')
-          }
-          selected={inspectorVisible}
-          onPress={onToggleInspector}
-        >
-          {/*
-            Tinted when the sheet is open, because the grey chip that used to
-            say so is gone — selection is the accent colour throughout.
-          */}
-          {inspectorVisible ? (
-            <ChevronDoubleRightIcon size={ICON_SIZE} color={ink.primary} />
-          ) : (
-            <ChevronDoubleLeftIcon size={ICON_SIZE} color={ink.foreground} />
-          )}
-        </IconButton>
-      </View>
-
-      {/*
-        Both answers are always listed, and Generate Track is *disabled* rather
-        than dropped when the document is not a server project — a menu whose
-        entries come and go teaches the reader nothing about where to find
-        them, and the detail line can say why it is unavailable where an
-        absence cannot.
-      */}
+  // The modals that the controls open — shared by both arrangements.
+  const sheets = (
+    <>
       <ChoiceSheet
         open={addTrackOpen}
         title={t('editor.addTrack')}
         message={t('editor.addTrackPrompt')}
-        /*
-          The answers, their order, their hints and when Generate is off are
-          music_editing's `addTrackChoices`, the list the web's menu draws.
-        */
         choices={addTrackChoices({
           canGenerate: onGenerateTrack !== undefined,
         }).map((choice, index) => ({
@@ -869,9 +727,6 @@ export function EditorToolbar({
         }))}
         onChoose={(choice: AddTrackChoice) => {
           setAddTrackOpen(false);
-          // Both answers add content, so `runAddTrackChoice` refuses them
-          // mid-playback — the trigger is already disabled, but the sheet can
-          // outlive a play that started under it.
           runAddTrackChoice(store, choice, {
             ...(onGenerateTrack ? { generateTrack: onGenerateTrack } : {}),
           });
@@ -890,6 +745,148 @@ export function EditorToolbar({
         onSubmit={insertBars}
         submitting={inserting.pending}
       />
+    </>
+  );
+
+  if (compact) {
+    /*
+      A compact window keeps the note-entry essentials on the bar — add a track,
+      the note value, note input and accidentals — plus the inspector toggle,
+      and moves everything else into a "more tools" sheet so the full-size
+      controls fit without three rows of wrapping.
+    */
+    const toolRows: ControlRow[] = [
+      {
+        key: 'duration-modifier',
+        label: t('editor.durationModifier'),
+        control: durationModifierControls,
+      },
+      {
+        key: 'insert',
+        label: t('editor.insertNote'),
+        control: insertControls,
+      },
+      {
+        key: 'articulation',
+        label: t('editor.articulation'),
+        control: articulationControl,
+      },
+      {
+        key: 'ornament',
+        label: t('editor.ornament'),
+        control: ornamentControl,
+      },
+      { key: 'marks', label: t('editor.slur'), control: markControls },
+      { key: 'beam', label: t('editor.beamBreak'), control: beamControls },
+      {
+        key: 'edit-mode',
+        label: t('editor.editMode'),
+        control: editModeControls,
+      },
+      {
+        key: 'voice-record',
+        label: t('editor.recordVoice'),
+        control: voiceRecordControl,
+      },
+      {
+        key: 'quantize',
+        label: t('editor.quantizeGrid'),
+        control: quantizeControls,
+      },
+      { key: 'voice', label: t('editor.voice'), control: voiceControls },
+      { key: 'more', label: t('editor.moreActions'), control: moreControl },
+      { key: 'zoom', label: t('editor.currentZoom'), control: zoomControls },
+      {
+        key: 'layout',
+        label: t('editor.layoutMode'),
+        control: layoutControls,
+      },
+      {
+        key: 'track-info',
+        label: t('editor.trackInfoHint'),
+        control: trackInfoControl,
+      },
+      {
+        key: 'pitch',
+        label: t('editor.pitchDisplayHint'),
+        control: pitchControl,
+      },
+    ];
+    return (
+      <View
+        accessibilityRole="toolbar"
+        accessibilityLabel={t('editor.toolbar')}
+        onLayout={onBarLayout}
+        className="bg-card flex-row items-center gap-1 px-2 py-1"
+      >
+        {addTrackControl}
+        {noteDurationControl}
+        {noteInputControl}
+        {accidentalControl}
+        <IconButton
+          label={t('editor.moreActions')}
+          onPress={() => setMoreToolsOpen(true)}
+        >
+          <EllipsisHorizontalIcon size={ICON_SIZE} color={ink.foreground} />
+        </IconButton>
+        <View className="flex-1" />
+        {inspectorControl}
+        <ControlsSheet
+          open={moreToolsOpen}
+          title={t('editor.moreActions')}
+          onClose={() => setMoreToolsOpen(false)}
+          rows={toolRows}
+        />
+        {sheets}
+      </View>
+    );
+  }
+
+  return (
+    <View
+      accessibilityRole="toolbar"
+      accessibilityLabel={t('editor.toolbar')}
+      onLayout={onBarLayout}
+      // A wide window has room for every control, so they all show inline (no
+      // "more tools" sheet); it wraps to a second row only if the window is a
+      // little narrow, and collapses to the compact arrangement once it crosses
+      // the size-class threshold.
+      className="bg-card flex-row flex-wrap items-center gap-1 px-2 py-1"
+    >
+      {addTrackControl}
+      <Divider />
+      {noteDurationControl}
+      {durationModifierControls}
+      <Divider />
+      {accidentalControl}
+      <Divider />
+      {articulationControl}
+      {ornamentControl}
+      {markControls}
+      {beamControls}
+      <Divider />
+      {editModeControls}
+      {insertControls}
+      {noteInputControl}
+      {voiceRecordControl}
+      <Divider />
+      {quantizeControls}
+      <Divider />
+      {voiceControls}
+      <Divider />
+      {moreControl}
+      {/* The view controls: these change how you look at the score, not the
+          score itself. A left divider sets them apart from the tools. */}
+      <View className="border-border flex-row items-center gap-0.5 border-l pl-1">
+        {zoomControls}
+        {layoutControls}
+        {trackInfoControl}
+        {pitchControl}
+      </View>
+      <View className="flex-row shrink-0 items-center pr-1">
+        {inspectorControl}
+      </View>
+      {sheets}
     </View>
   );
 }

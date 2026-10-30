@@ -138,7 +138,9 @@ export function LyricEntryBar({
     // Do not steal the caret while the user is typing a new or edited lyric.
     if (draft !== existing) return;
     inputRef.current?.focus();
-    inputRef.current?.setSelection(0, existing.length);
+    // `setSelection` is a native `TextInput` method some platforms (and a test
+    // renderer) do not expose; selecting the word is a nicety, not a necessity.
+    inputRef.current?.setSelection?.(0, existing.length);
   }, [draft, index]);
 
   if (!note) return null;

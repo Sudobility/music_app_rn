@@ -25,6 +25,10 @@ jest.mock('@/config/useServerContext', () => ({
   useServerContext: () => mockServerContext(),
 }));
 jest.mock('@react-navigation/native', () => ({
+  // Keep the real exports — the split view's own navigators and, through the
+  // tab navigator, `createScreenFactory` need them — and stand in only for the
+  // hook this screen reads.
+  ...(jest.requireActual('@react-navigation/native') as object),
   useNavigation: () => ({ navigate: jest.fn() }),
 }));
 /*

@@ -24,11 +24,8 @@ import { useTranslation } from 'react-i18next';
 import { Bars3Icon, ChevronLeftIcon } from 'react-native-heroicons/outline';
 import { useNotationInk } from '@/components/icons/notation-ink';
 import { IconButton } from '@/components/layout/IconButton';
-import {
-  TitleBarAppActions,
-  TitleBarDocumentActions,
-  TitleBarTitle,
-} from '@/components/layout/TitleBar';
+import { useFormFactor } from '@sudobility/components-rn';
+import { TitleBarActions, TitleBarTitle } from '@/components/layout/TitleBar';
 import type { TitleBarProps } from '@/components/layout/TitleBar';
 
 /** The one thing asked of the navigator, so a test can stand in for it. */
@@ -74,6 +71,9 @@ export function useEditorHeader(
   const { t } = useTranslation();
   const ink = useNotationInk();
   const pushed = onMaster !== undefined;
+  // A phone groups the secondary title-bar actions behind an overflow "…";
+  // a tablet shows them all. See `TitleBarActions`.
+  const phone = useFormFactor() === 'phone';
   useLayoutEffect(() => {
     if (!hasNativeHeader()) return;
     navigation.setOptions({
@@ -100,7 +100,9 @@ export function useEditorHeader(
             ),
           }
         : {}),
-      // The title bar's colours: `bg-primary` under inverse ink.
+      // The title bar's colours: `bg-primary` (red) under inverse ink. The
+      // band above it on a pushed screen is painted the same red by the app
+      // root (`App.tsx`'s `bg-primary` fill), so the bar reads to the top edge.
       headerStyle: { backgroundColor: ink.primary },
       headerTintColor: ink.onPrimary,
       headerTitle: () => (
@@ -111,28 +113,26 @@ export function useEditorHeader(
         </View>
       ),
       headerRight: () => (
-        <View className="flex-row items-center gap-1">
-          <TitleBarDocumentActions
-            document={document}
-            onSave={onSave}
-            onExport={onExport}
-            exporting={exporting}
-            {...(onSnapshots ? { onSnapshots } : {})}
-            {...(onPrint ? { onPrint } : {})}
-            printing={printing}
-          />
-          <TitleBarAppActions
-            onSettings={onSettings}
-            onDocuments={onDocuments}
-            {...(onShortcuts ? { onShortcuts } : {})}
-          />
-        </View>
+        <TitleBarActions
+          document={document}
+          onSave={onSave}
+          onExport={onExport}
+          exporting={exporting}
+          {...(onSnapshots ? { onSnapshots } : {})}
+          {...(onPrint ? { onPrint } : {})}
+          printing={printing}
+          onSettings={onSettings}
+          onDocuments={onDocuments}
+          {...(onShortcuts ? { onShortcuts } : {})}
+          phone={phone}
+        />
       ),
     });
   }, [
     navigation,
     ink,
     t,
+    phone,
     pushed,
     onMaster,
     document,

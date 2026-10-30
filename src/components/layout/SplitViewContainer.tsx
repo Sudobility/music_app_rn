@@ -23,16 +23,8 @@
  * must never size from `useWindowDimensions()` (on macOS it reports the
  * display, not the window).
  */
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react';
 import type { ReactNode } from 'react';
 import { FlatList, Platform, Pressable, StyleSheet, View } from 'react-native';
-import type { LayoutChangeEvent } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import {
   NavigationContainer,
@@ -47,9 +39,11 @@ import {
 } from 'react-native-heroicons/outline';
 import {
   Heading,
+  MasterDetailLayout,
   MIN_TOUCH_TARGET,
   Text,
   useFormFactor,
+  useMasterDetail,
 } from '@sudobility/components-rn';
 import { useNotationInk } from '@/components/icons/notation-ink';
 import { SafeAreaView, useSafeAreaInsets } from '@/platform/SafeArea';
@@ -75,37 +69,12 @@ import {
 const COLLAPSE_MAX_WIDTH = 600;
 
 /**
- * Collapse is a phone-in-hand behaviour, so it is gated to the touch
- * platforms: a narrow desktop window keeps both panels (and `onLayout` there
- * does not track a window resize anyway).
+ * Which column a row press lands in — the library's master/detail, read from
+ * within a panel or the list. `MasterDetailLayout` provides it: where both
+ * columns show (`isWide`), a press marks a selection the detail beside it
+ * already draws; where it has drilled in, the list's press `showDetail()`
+ * pushes the detail and the detail's bar `showMaster()` returns.
  */
-const IS_TOUCH = Platform.OS === 'ios' || Platform.OS === 'android';
-
-/**
- * Whether the split view is collapsed to one column, and which column shows.
- * `SplitViewContainer` provides it: the list calls `showDetail` when a row is
- * chosen, and the detail's bar calls `showList` to go back. When the view is
- * not collapsed every field is inert — both panels are on screen at once — so
- * a list may call `showDetail` unconditionally.
- */
-type SplitCollapse = {
-  collapsed: boolean;
-  detailShown: boolean;
-  showDetail: () => void;
-  showList: () => void;
-};
-
-const SplitCollapseContext = createContext<SplitCollapse>({
-  collapsed: false,
-  detailShown: false,
-  showDetail: () => {},
-  showList: () => {},
-});
-
-/** Read the collapse state from within a panel or a list. */
-export function useSplitCollapse(): SplitCollapse {
-  return useContext(SplitCollapseContext);
-}
 
 /** The primary panel's width, in points — `sudojo_app_rn`'s. */
 export const PRIMARY_PANEL_WIDTH = 320;
@@ -144,8 +113,11 @@ function TopClearance({ children }: { children: ReactNode }) {
   // the panels, which a screen with no panels (Community) never had.
   const wanted = useSafeEdgeList(TOP);
   const edges = hasTopTabBar() ? NO_EDGES : wanted;
+  // `bg-primary`, so the status-bar strip this clears is the same red as the
+  // navigation bar below it — one red top rather than a grey bar with the red
+  // app root showing above it. The panels paint `bg-background` over the rest.
   return (
-    <SafeAreaView edges={edges} className="bg-background flex-1">
+    <SafeAreaView edges={edges} className="bg-primary flex-1">
       {children}
     </SafeAreaView>
   );
@@ -225,65 +197,64 @@ export function SplitViewContainer({
    */
   collapsible?: boolean;
 }) {
-  // The list is what meets the screen's left edge, so its panel is what
-  // widens to clear a notch there; the detail meets the right edge, and
-  // pads for one there. Which is which, if either, is the one rule's.
+  // The list meets the screen's left edge, so the master column is widened to
+  // clear a notch there (the list pads its own content by the same inset); the
+  // detail pane clears its own right edge, in `DetailChrome`.
   const insets = useSafeAreaInsets();
   const edges = useSafeEdges();
   const primaryWidth = usePrimaryPanelWidth();
+  const masterWidth = primaryWidth + (edges.left ? insets.left : 0);
 
-  // Measured, not taken from `useWindowDimensions()`: the window's width is the
-  // display's on macOS, and this is the view's own. It stays null until the
-  // first layout, so the view renders as two panes until it knows it is narrow
-  // — which also keeps it two-pane under a test renderer, where layout never
-  // fires.
-  const [width, setWidth] = useState<number | null>(null);
-  const onLayout = useCallback((event: LayoutChangeEvent) => {
-    setWidth(event.nativeEvent.layout.width);
-  }, []);
-  const collapsed =
-    collapsible && IS_TOUCH && width !== null && width < COLLAPSE_MAX_WIDTH;
-
-  const [detailShown, setDetailShown] = useState(false);
-  const showDetail = useCallback(() => setDetailShown(true), []);
-  const showList = useCallback(() => setDetailShown(false), []);
-  const collapse = useMemo<SplitCollapse>(
-    () => ({ collapsed, detailShown, showDetail, showList }),
-    [collapsed, detailShown, showDetail, showList],
-  );
-
+  // The two columns, and the drill-in when there is room for only one, are the
+  // library's `MasterDetailLayout` — the whole family's master/detail, so a
+  // row press pushes the detail on a real native stack (its slide and
+  // back-swipe) rather than swapping it in by hand. It measures its own width,
+  // never the window's. The panels draw their own red bars (`PanelBar`), so the
+  // stack draws none (`headerShown={false}`).
   return (
-    <SplitCollapseContext.Provider value={collapse}>
-      <TopClearance>
-        <View testID="split-container" className="flex-1" onLayout={onLayout}>
-          {collapsed ? (
-            // One column at a time: the list, or — once a row is chosen — what
-            // it chose, as a pane (its own back bar stands down; the panel's
-            // bar carries the way back).
-            detailShown ? (
-              <EmbeddedScreen>{secondaryPanel}</EmbeddedScreen>
-            ) : (
-              primaryPanel
-            )
-          ) : (
-            <View className="flex-1 flex-row">
-              <View
-                style={{ width: primaryWidth + (edges.left ? insets.left : 0) }}
-              >
-                {primaryPanel}
-              </View>
-              <View className="bg-border" style={styles.divider} />
-              <View
-                className="min-w-0 flex-1"
-                style={{ paddingRight: edges.right ? insets.right : 0 }}
-              >
-                <EmbeddedScreen>{secondaryPanel}</EmbeddedScreen>
-              </View>
-            </View>
-          )}
-        </View>
-      </TopClearance>
-    </SplitCollapseContext.Provider>
+    <TopClearance>
+      {/*
+        `bg-background` over the red `TopClearance`, which fills the view to
+        colour the status-bar strip above the bar; without this its red showed
+        through the panes' notch padding as a band down the side in landscape.
+      */}
+      <View testID="split-container" className="bg-background flex-1">
+        <MasterDetailLayout
+          master={primaryPanel}
+          detail={<DetailChrome>{secondaryPanel}</DetailChrome>}
+          masterWidth={masterWidth}
+          /*
+            Drill in only where this split view opts into collapsing on a narrow
+            phone; otherwise a breakpoint of 0 is never wider than, so it stays
+            two columns — a desktop window, the editor's Projects popup.
+          */
+          breakpoint={collapsible ? COLLAPSE_MAX_WIDTH : 0}
+          headerShown={false}
+        />
+      </View>
+    </TopClearance>
+  );
+}
+
+/**
+ * The detail pane's side chrome.
+ *
+ * Beside the list (`isWide`) the split view has cleared the screen's sides
+ * already, so the pane does not (`sidesHandled`), and the right notch — which
+ * the two columns do not pad — is padded here. Drilled in, the pane is
+ * full-width: it clears its own sides and there is no column to pad against.
+ */
+function DetailChrome({ children }: { children: ReactNode }) {
+  const { isWide } = useMasterDetail();
+  const insets = useSafeAreaInsets();
+  const edges = useSafeEdges();
+  return (
+    <View
+      className="min-w-0 flex-1"
+      style={{ paddingRight: isWide && edges.right ? insets.right : 0 }}
+    >
+      <EmbeddedScreen sidesHandled={isWide}>{children}</EmbeddedScreen>
+    </View>
   );
 }
 
@@ -364,6 +335,7 @@ function PanelBar({
   onBack?: () => void;
 }) {
   const theme = useNavigationTheme();
+  const ink = useNotationInk();
   const formFactor = useFormFactor();
   const { t } = useTranslation();
   return (
@@ -395,7 +367,9 @@ function PanelBar({
                       hitSlop={8}
                       style={styles.back}
                     >
-                      <ChevronLeftIcon size={24} color={theme.colors.primary} />
+                      {/* Inverse ink: the bar is red now, so a `primary`
+                          (red) chevron would be invisible on it. */}
+                      <ChevronLeftIcon size={24} color={ink.onPrimary} />
                     </Pressable>
                   )
                 : undefined,
@@ -420,10 +394,11 @@ export function SplitPanel({
   secondary?: boolean;
   children: ReactNode;
 }) {
-  const { collapsed, detailShown, showList } = useSplitCollapse();
+  const { isWide, showMaster } = useMasterDetail();
   if (hasPanelBar()) {
-    // Only the detail's bar, and only while it is the one column on screen.
-    const onBack = secondary && collapsed && detailShown ? showList : undefined;
+    // Only the detail's bar, and only while it is the one column on screen
+    // (drilled in): then its own back returns to the list.
+    const onBack = secondary && !isWide ? showMaster : undefined;
     return (
       <PanelBar title={title ?? ''} onBack={onBack}>
         <AboveTabBar>
@@ -489,12 +464,21 @@ export function SplitMenuList({
   const insets = useSafeAreaInsets();
   const edges = useSafeEdges();
   const ink = useNotationInk();
-  const { showDetail } = useSplitCollapse();
+  const { isWide, showDetail } = useMasterDetail();
   return (
     <FlatList
       className="bg-background flex-1"
       accessibilityLabel={label}
-      contentContainerStyle={{ paddingLeft: edges.left ? insets.left : 0 }}
+      /*
+        The list clears the side safe areas it meets. Beside the detail its
+        right edge is the divider — the container has already widened the panel
+        for the left notch — so only the left is cleared here. Drilled in, the
+        list is full-width and meets the screen's right edge too.
+      */
+      contentContainerStyle={{
+        paddingLeft: edges.left ? insets.left : 0,
+        paddingRight: !isWide && edges.right ? insets.right : 0,
+      }}
       data={entries}
       // Every entry, from the first frame: the list is a menu of a couple of
       // dozen rows at most, and one drawn a screenful at a time has rows a
@@ -556,7 +540,6 @@ export function EmptySecondaryPanel({ message }: { message: string }) {
 }
 
 const styles = StyleSheet.create({
-  divider: { width: StyleSheet.hairlineWidth },
   detail: { maxWidth: DETAIL_MAX_WIDTH },
   // The collapsed detail's back control, sized to the leading inset a bar's
   // title would have.

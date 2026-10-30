@@ -12,8 +12,9 @@
  * account: each would be a page saying only "sign in", under the one entry
  * that does exactly that.
  *
- * **Appearance is last**, as the one section that is about the app rather
- * than the person.
+ * **Appearance comes before the legal pages**, as the one section about the
+ * app rather than the person; the Privacy Policy and Terms of Service sit last
+ * and are offered signed out too, since reading them needs no account.
  *
  * Docs, Resources and Community are tabs where there is a tab bar. Without
  * one this screen is still the way to them, so they are listed after the
@@ -47,6 +48,7 @@ import { ApiKeysSection } from './settings/ApiKeysSection';
 import { CreditHistorySection } from './settings/CreditHistorySection';
 import { ManageCouponsSection } from './settings/ManageCouponsSection';
 import { ReviewFlagsSection } from './settings/ReviewFlagsSection';
+import { LegalSection } from './settings/LegalSection';
 import { trackScreenView } from '@/analytics';
 
 /** The sections, in the order they are listed. */
@@ -58,6 +60,8 @@ export const SETTINGS_SECTIONS = [
   'manageCoupons',
   'reviewFlags',
   'appearance',
+  'privacy',
+  'terms',
 ] as const;
 export type SettingsSection = (typeof SETTINGS_SECTIONS)[number];
 
@@ -70,10 +74,20 @@ const SECTION_LABEL: Record<SettingsSection, string> = {
   manageCoupons: 'dashboard.manageCoupons',
   reviewFlags: 'dashboard.reviewFlags',
   appearance: 'settings.page.appearanceLabel',
+  privacy: 'settings.privacyPolicy',
+  terms: 'settings.termsOfService',
 };
 
-/** What is offered whoever is asking: the way in, and the device's own. */
-const FOR_EVERYONE: readonly SettingsSection[] = ['account', 'appearance'];
+/**
+ * What is offered whoever is asking: the way in, the device's own, and the
+ * legal documents — a privacy policy and terms need no account to read.
+ */
+const FOR_EVERYONE: readonly SettingsSection[] = [
+  'account',
+  'appearance',
+  'privacy',
+  'terms',
+];
 /** What only a site administrator is offered. */
 const ADMIN_ONLY: readonly SettingsSection[] = ['manageCoupons', 'reviewFlags'];
 
@@ -169,6 +183,8 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
             {section === 'manageCoupons' ? <ManageCouponsSection /> : null}
             {section === 'reviewFlags' ? <ReviewFlagsSection /> : null}
             {section === 'appearance' ? <AppearanceSection /> : null}
+            {section === 'privacy' ? <LegalSection doc="privacy" /> : null}
+            {section === 'terms' ? <LegalSection doc="terms" /> : null}
           </SplitPanel>
         }
       />

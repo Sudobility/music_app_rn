@@ -38,6 +38,10 @@ module.exports = {
     '^@shopify/react-native-skia$': '<rootDir>/jest.skia.cjs',
     // The Spatial stage: Skia plus `three`, neither of which jest can run.
     '^@sudobility/music_spatial_rn$': '<rootDir>/jest.spatial.cjs',
+    // Audio recording: ESM the transform lacks babel for, over a native
+    // recorder jest has no device for. The voice button mounts; it never
+    // records here.
+    '^react-native-audio-api$': '<rootDir>/jest.audio.cjs',
     // auth_lib's subpaths are reachable only through its `exports` map,
     // which jest's resolver does not read; the same files, by path.
     '^@sudobility/auth_lib/(oauth|signin|account)$':

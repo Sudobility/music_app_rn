@@ -39,15 +39,21 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$(brew --prefix)/bin:$PATH"
 echo "Bun version: $(bun --version)"
 
-# --- npm registry for @sudobility packages ---
-# Only when the workflow provides a token: an empty one is still sent, and
-# would be refused where no token at all is accepted.
-if [ -n "${NPM_TOKEN:-}" ]; then
-  echo "Configuring npm registry..."
+# --- npm registry for @sudobility packages (GitHub Packages) ---
+# @sudobility/* moved off npmjs to GitHub Packages (npm.pkg.github.com); the
+# committed .npmrc routes the scope there, so CI must supply a read:packages
+# token or every @sudobility download 401s. Set GITHUB_PACKAGE_TOKEN (a GitHub
+# PAT with read:packages) as a Secret environment variable in the Xcode Cloud
+# workflow; NPM_TOKEN is still accepted as a fallback name for the same value.
+GH_PKG_TOKEN="${GITHUB_PACKAGE_TOKEN:-${NPM_TOKEN:-}}"
+if [ -n "$GH_PKG_TOKEN" ]; then
+  echo "Configuring GitHub Packages registry for @sudobility..."
   cat > "$HOME/.npmrc" << EOF
-@sudobility:registry=https://registry.npmjs.org/
-//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+@sudobility:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GH_PKG_TOKEN}
 EOF
+else
+  echo "WARNING: no GITHUB_PACKAGE_TOKEN/NPM_TOKEN set; @sudobility installs will 401" >&2
 fi
 
 # --- Install JS dependencies ---

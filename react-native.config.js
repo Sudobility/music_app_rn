@@ -105,6 +105,15 @@ const config = {
     ...nativeFirebaseOnMobileOnly('@react-native-firebase/analytics'),
     ...nativeFirebaseOnMobileOnly('@react-native-firebase/crashlytics'),
     ...nativeFirebaseOnMobileOnly('@react-native-firebase/messaging'),
+    // The native tab bar (a real UITabBarController / Material bar, via
+    // react-native-bottom-tabs) is iOS and Android only; the desktops resolve
+    // `MainTabs.macos.tsx` / `MainTabs.windows.tsx` and never bundle this
+    // module. Its podspec declares `s.osx`, so without this entry autolinking
+    // would install it into the macOS Pods for a module nothing on the Mac
+    // loads. The mobile side replaces `@react-navigation/bottom-tabs/unstable`,
+    // whose react-native-screens `RNSTabBarController` aborts on launch under
+    // RN 0.83 (`assertExactlyOneFocusedTab`). sudojo_app_rn uses this package.
+    'react-native-bottom-tabs': { platforms: { macos: null, windows: null } },
     '@shopify/react-native-skia': { platforms: { windows: null } },
     'react-native-audio-api': { platforms: { windows: null } },
     // Its Windows project is UWP-only (Paper), which cannot link into this

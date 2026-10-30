@@ -85,6 +85,8 @@ const ALL = [
   'Manage coupons',
   'Review flags',
   'Appearance',
+  'Privacy Policy',
+  'Terms of Service',
 ];
 
 beforeEach(() => {
@@ -115,23 +117,32 @@ function listed(view: ReturnType<typeof setup>): string[] {
 }
 
 describe('settingsSectionsFor', () => {
-  it('offers the way in and the device to somebody signed out', () => {
+  it('offers the way in, the device, and the legal pages to somebody signed out', () => {
     expect(settingsSectionsFor(false, false)).toEqual([
       'account',
       'appearance',
+      'privacy',
+      'terms',
     ]);
     // Being an administrator is a fact about an account; with none, it is
     // not a way into anything.
-    expect(settingsSectionsFor(false, true)).toEqual(['account', 'appearance']);
+    expect(settingsSectionsFor(false, true)).toEqual([
+      'account',
+      'appearance',
+      'privacy',
+      'terms',
+    ]);
   });
 
-  it('puts the account first and Appearance last, once signed in', () => {
+  it('puts the account first and the legal pages last, once signed in', () => {
     expect(settingsSectionsFor(true, false)).toEqual([
       'account',
       'credits',
       'history',
       'apiKeys',
       'appearance',
+      'privacy',
+      'terms',
     ]);
   });
 
@@ -144,14 +155,21 @@ describe('settingsSectionsFor', () => {
       'manageCoupons',
       'reviewFlags',
       'appearance',
+      'privacy',
+      'terms',
     ]);
   });
 });
 
 describe('SettingsScreen', () => {
-  it('lists the account and Appearance when signed out, and opens on the account', () => {
+  it('lists the account, Appearance and the legal pages when signed out, and opens on the account', () => {
     const view = setup();
-    expect(listed(view)).toEqual(['Account', 'Appearance']);
+    expect(listed(view)).toEqual([
+      'Account',
+      'Appearance',
+      'Privacy Policy',
+      'Terms of Service',
+    ]);
     expect(view.getByText('account section')).toBeTruthy();
   });
 
@@ -163,6 +181,8 @@ describe('SettingsScreen', () => {
       'Credit history',
       'API keys',
       'Appearance',
+      'Privacy Policy',
+      'Terms of Service',
     ]);
   });
 
@@ -246,6 +266,17 @@ describe('SettingsScreen', () => {
     mockUser.mockReturnValue(SIGNED_IN);
     mockParams.mockReturnValue({ section: 'history', at: 1 });
     expect(setup().getByText('history section')).toBeTruthy();
+  });
+
+  it('opens the privacy policy and the terms of service, each a real document', () => {
+    // Rendered for real, not stubbed, so the section ids `LegalSection` walks
+    // must resolve to the locale keys — a drifted id would show the key or
+    // nothing. Both are offered signed out.
+    const view = setup();
+    fireEvent.press(view.getByLabelText('Privacy Policy'));
+    expect(view.getByText('Introduction')).toBeTruthy();
+    fireEvent.press(view.getByLabelText('Terms of Service'));
+    expect(view.getByText('Acceptance of Terms')).toBeTruthy();
   });
 
   it('goes back to the account when the section showing stops being offered', () => {

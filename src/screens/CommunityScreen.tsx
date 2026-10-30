@@ -27,10 +27,7 @@ import { TILE_GAP, tileGrid } from '@/features/projects/ProjectTiles';
 import { getMusicClient } from '@/config/server';
 import type { CommunityItem } from '@sudobility/music_types';
 import { ScreenScaffold, ServerUnavailable } from './ScreenScaffold';
-import {
-  SideClearance,
-  TitledScreen,
-} from '@/components/layout/SplitViewContainer';
+import { TitledScreen } from '@/components/layout/SplitViewContainer';
 import { trackScreenView } from '@/analytics';
 
 /** How wide the publisher's picture is drawn, in points. */
@@ -112,9 +109,15 @@ export function CommunityScreen({ navigation }: CommunityScreenProps) {
   const { t } = useTranslation();
   return (
     <TitledScreen title={t('nav.community')}>
-      <SideClearance>
-        <CommunityList navigation={navigation} />
-      </SideClearance>
+      {/*
+        No `SideClearance` wrapper: `ScreenScaffold` inside `CommunityList`
+        already clears the side safe areas (as Resources does). Wrapping it in
+        one too cleared the notch twice — on the iPhone Duo's folded cover the
+        84pt right inset came off the content once here and once in the
+        scaffold, leaving the tiles in a 266pt column with a dead 84pt gap
+        beside them.
+      */}
+      <CommunityList navigation={navigation} />
     </TitledScreen>
   );
 }

@@ -7,12 +7,14 @@
  * `NavigationContainer`, so that a navigation tree with no container above
  * it — each panel of a split view is one — arrives at the same answer.
  *
- * **A bar is the colour of the screen it is over, not of a card.** React
- * Navigation paints its bars `card`, which by default is white over a grey
- * screen. On an iPad the system's tab bar floats in that same row, drawn
- * over whatever is behind it — so a white bar put a white slab behind the
- * tab bar and beneath a grey status bar, where the bar was meant to be part
- * of the screen. `card` is therefore the app's background.
+ * **Every navigation bar is the design theme's red (`primary`), under
+ * inverse ink.** The editor's header already is; this makes the rest match,
+ * so every screen has the one red nav bar rather than a grey one with the
+ * red app root (`App.tsx`'s `bg-primary`) showing as a thin strip above it in
+ * landscape. `card` is what React Navigation paints its headers (and the
+ * iPad's floating tab bar's row) with, so it is the red; `text` is the white
+ * that reads on it; `background` stays the screen's own, since it is the
+ * content area below the bar, not the bar.
  */
 import { useMemo } from 'react';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
@@ -37,9 +39,10 @@ export function useNavigationTheme(): Theme {
         ...base.colors,
         primary: ink.primary,
         background,
-        card: background,
-        text: ink.foreground,
-        border: ink.border,
+        // The bars are red; the content below them keeps `background`.
+        card: ink.primary,
+        text: ink.onPrimary,
+        border: ink.primary,
       },
     };
   }, [resolved, ink]);

@@ -17,6 +17,7 @@ import { View } from 'react-native';
 import { useStore } from 'zustand';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@sudobility/components-rn';
+import { Spinner } from '@/components/controls/Spinner';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { createKeyValueStore } from '@/documents/rn-key-value';
 import { defaultDocumentUri } from '@/documents/rn-storage';
@@ -132,6 +133,32 @@ export function EditorScreen() {
   }, [projectParam, list, services]);
 
   if (openError) return <EmptyState message={openError} />;
+  /*
+    Navigated here to open a project the list does not hold yet. The editor is
+    not drawn until its store holds the project the route asked for — shown
+    INSTEAD of the editor, not over it, so a previous tab's score and title
+    never leak out from under a spinner while the fetch runs. The create, blank
+    and template paths navigate with no `projectId` and have the document ready,
+    so they never reach this. Matches the web's `ProjectLoading`.
+  */
+  if (
+    projectParam !== null &&
+    getMusicClient() !== null &&
+    projectIdOf(document) !== projectParam
+  ) {
+    return (
+      <View
+        className="bg-background flex-1 items-center justify-center gap-4 p-4"
+        accessibilityRole="progressbar"
+        accessibilityLabel={t('overlay.openingProject')}
+      >
+        <Spinner />
+        <Text className="text-muted-foreground">
+          {t('overlay.openingProject')}
+        </Text>
+      </View>
+    );
+  }
   if (!document) {
     return (
       <View className="bg-background flex-1 items-center justify-center gap-4 p-4">
@@ -863,4 +890,11 @@ function EmptyState({ message }: { message: string }) {
       <Text className="text-muted-foreground">{message}</Text>
     </View>
   );
+}
+
+/** The project a document was read from, or null for a file or a scratch score. */
+function projectIdOf(document: MusicDocument | null): string | null {
+  if (!document) return null;
+  const { origin } = document.store.getState();
+  return origin.kind === 'project' ? origin.projectId : null;
 }

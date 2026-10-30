@@ -1,40 +1,32 @@
 /**
- * Mobile is landscape-only, on every device.
+ * Mobile supports every orientation, on every device.
  *
- * A system of music is wide: a portrait phone shows about two bars of it, and a
- * portrait tablet is no better once the inspector column and the track gutter
- * are both accounted for. So iOS, iPadOS and Android are all landscape, and the
- * layout code is allowed to assume it.
+ * A system of music is wide, so this app was once landscape-only — but a
+ * foldable like the iPhone Duo has a narrow portrait cover screen the app has
+ * to work on, so every orientation is allowed now and the layout copes by
+ * wrapping its bars rather than assuming width. This is declarative on both
+ * platforms and so invisible to every other test (nothing renders a manifest),
+ * and exactly the kind of thing that regresses silently, so it is pinned here.
  *
- * This is declarative on both platforms and therefore invisible to every other
- * test in the suite — nothing renders a manifest. It is also exactly the kind of
- * thing that regresses silently: the app simply rotates one day and the score
- * gets narrow. Android had that bug. `AndroidManifest.xml` declared
- * `sensorLandscape` and `MainActivity.onCreate` then called
- * `setRequestedOrientation` with `SCREEN_ORIENTATION_UNSPECIFIED` on any device
- * over `sw600dp`, which is a runtime override of the manifest and wins — so the
- * tablet emulator launched in portrait while the manifest said it could not.
- *
- * `sensorLandscape` rather than `landscape`: both landscape directions are
- * upright for this app, so a device turned 180° should follow rather than show
- * the music upside down. And rather than `userLandscape`, which obeys the
- * system rotation lock — a reader with rotation locked would be pinned to one
- * of the two, which is a setting about portrait/landscape being answered for an
- * app that has no portrait.
+ * Android: `fullUser`, and `MainActivity` must not override it at runtime — a
+ * `setRequestedOrientation` call beats the manifest, which is the bug that once
+ * launched a tablet locked the wrong way. iOS: all four orientations under both
+ * the base key and the iPad key, with `UIRequiresFullScreen` false so an iPad,
+ * which is multitasking-capable, honours them.
  */
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 
-const ANDROID_ORIENTATION = 'sensorLandscape';
+const ANDROID_ORIENTATION = 'fullUser';
 
 /**
- * The app now supports all orientations. The iPad key is separate, and iPadOS
- * reads it in preference to the base one; iPhones omit upside-down by platform
- * convention, so the two keys differ.
+ * All four orientations, under both keys. iPadOS reads the `~ipad` key in
+ * preference to the base one, so both are stated; here they agree.
  */
 const IOS_ORIENTATIONS: Record<string, string[]> = {
   UISupportedInterfaceOrientations: [
     'UIInterfaceOrientationPortrait',
+    'UIInterfaceOrientationPortraitUpsideDown',
     'UIInterfaceOrientationLandscapeLeft',
     'UIInterfaceOrientationLandscapeRight',
   ],
@@ -73,7 +65,7 @@ describe('android orientation', () => {
     ),
   );
 
-  it('is locked to landscape in the manifest', () => {
+  it('supports every orientation in the manifest', () => {
     expect(manifest).toContain(
       `android:screenOrientation="${ANDROID_ORIENTATION}"`,
     );
@@ -112,10 +104,10 @@ describe('ios orientation', () => {
     },
   );
 
-  it('requires full screen, so iPadOS honours the restriction', () => {
-    // Without this an iPad app is multitasking-capable, and a multitasking app
-    // is required to support every orientation — the declaration above is then
-    // one the system is entitled to ignore.
-    expect(plist).toMatch(/<key>UIRequiresFullScreen<\/key>\s*<true\s*\/>/);
+  it('does not require full screen, so an iPad honours every orientation', () => {
+    // The app supports every orientation, so it has no reason to opt out of
+    // iPad multitasking: `UIRequiresFullScreen` is false, and a multitasking
+    // app is held to the orientation arrays above, which already list them all.
+    expect(plist).toMatch(/<key>UIRequiresFullScreen<\/key>\s*<false\s*\/>/);
   });
 });

@@ -40,16 +40,53 @@ export const SCREEN_WIDTH_STYLE = {
   alignSelf: 'center',
 } as const;
 
-const EmbeddedContext = createContext(false);
+/**
+ * What being a pane means, split into its two parts.
+ *
+ * - `embedded`: this is a pane, not a screen of its own, so a body-drawn back
+ *   control stands down (the panel's bar carries the way back).
+ * - `sidesHandled`: the split view has already cleared the left/right safe
+ *   area for this pane, so the content must *not* clear them again. This is
+ *   true for a pane shown **beside** another (the container widens the list
+ *   panel and pads the detail), and **false** when the split view is collapsed
+ *   and the pane is drawn full-width — then the pane meets the screen's own
+ *   edges and has to clear the notch itself, exactly as a standalone screen
+ *   does. A standalone screen (no provider) is `{ embedded: false,
+ *   sidesHandled: false }`: not a pane, and responsible for its own sides.
+ */
+type EmbeddedState = { embedded: boolean; sidesHandled: boolean };
 
-export function EmbeddedScreen({ children }: { children: ReactNode }) {
+const EmbeddedContext = createContext<EmbeddedState>({
+  embedded: false,
+  sidesHandled: false,
+});
+
+export function EmbeddedScreen({
+  children,
+  /** False when the pane is drawn full-width (a collapsed split view). */
+  sidesHandled = true,
+}: {
+  children: ReactNode;
+  sidesHandled?: boolean;
+}) {
   return (
-    <EmbeddedContext.Provider value={true}>{children}</EmbeddedContext.Provider>
+    <EmbeddedContext.Provider value={{ embedded: true, sidesHandled }}>
+      {children}
+    </EmbeddedContext.Provider>
   );
 }
 
 export function useEmbedded(): boolean {
-  return useContext(EmbeddedContext);
+  return useContext(EmbeddedContext).embedded;
+}
+
+/**
+ * Whether the split view has already cleared this content's side safe areas.
+ * A screen clears its own sides when this is false — standalone, or a pane
+ * drawn full-width in a collapsed split view.
+ */
+export function useSidesHandled(): boolean {
+  return useContext(EmbeddedContext).sidesHandled;
 }
 
 /**
