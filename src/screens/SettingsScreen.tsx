@@ -30,7 +30,7 @@ import { useTheme } from '@/config/ThemeContext';
 import { devicePrefs } from '@/config/useDevicePrefs';
 import { THEME_MODE_OPTIONS } from '@sudobility/music_types';
 import type { ThemeMode } from '@sudobility/music_types';
-import { SUPPORTED_LANGUAGES } from '@/i18n';
+import { SUPPORTED_LANGUAGES, languageFor } from '@/i18n';
 import { hasTabBar } from '@/app/tab-bar';
 import type { MainTabParamList } from '@/app/Navigation';
 import { ScreenBackBar } from '@/components/layout/ScreenBackBar';
@@ -213,7 +213,11 @@ function AppearanceSection() {
     <ScreenScaffold>
       <Row label={t('settings.language')}>
         <Select
-          value={i18n.language.startsWith('zh') ? 'zh' : 'en'}
+          // Resolve whatever i18next is on to one of this build's codes, so the
+          // picker shows the language actually in force — `zh-hant` stays
+          // `zh-hant` rather than collapsing to `zh`, and a regional tag maps to
+          // its base. `languageFor` is the same resolver the composition root uses.
+          value={languageFor(i18n.language, [])}
           // A select's visible label sits outside it, so without this a screen
           // reader announces only the value — "English", with no word for what
           // is English.

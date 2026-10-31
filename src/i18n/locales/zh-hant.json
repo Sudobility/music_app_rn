@@ -1,0 +1,1838 @@
+{
+  "about": {
+    "title": "關於"
+  },
+  "accidental": {
+    "0": "還原號",
+    "1": "升號",
+    "2": "重升號",
+    "-1": "降號",
+    "-2": "重降號"
+  },
+  "articulation": {
+    "accent": "重音",
+    "marcato": "強調音",
+    "none": "無",
+    "staccato": "斷音",
+    "tenuto": "保持音"
+  },
+  "auth": {
+    "orContinueWith": "或透過以下方式繼續",
+    "missingFields": "請輸入郵箱和密碼。",
+    "signInWithGoogle": "使用 Google 繼續",
+    "createAccount": "建立你的帳戶",
+    "email": "郵箱",
+    "passwordLabel": "密碼",
+    "signInWithApple": "使用 Apple 繼續",
+    "forgotPassword": "忘記密碼？",
+    "resetPasswordHint": "輸入你的郵箱地址，我們會傳送一封重置密碼的連結。",
+    "sendResetLink": "傳送重置連結",
+    "resetEmailSent": "如果有帳戶使用該郵箱，重置密碼的連結已發出。請查收郵件。",
+    "backToSignIn": "返回登入",
+    "missingEmail": "請輸入郵箱地址。",
+    "signUp": "建立帳戶",
+    "alreadyHaveAccount": "已經有帳戶了？",
+    "dontHaveAccount": "還沒有帳戶？",
+    "resetPassword": "重置你的密碼",
+    "signInToAccount": "登入你的帳戶",
+    "genericError": "身份驗證失敗"
+  },
+  "command": {
+    "clearBars": "清空小節",
+    "clearTrack": "清空音軌",
+    "pasteBars": "貼上小節",
+    "pasteTrack": "貼上音軌",
+    "addMeasure": "新增小節",
+    "insertBars": "插入小節",
+    "addNote": "新增音符",
+    "addTrack": "新增音軌",
+    "changeAccidental": "更改臨時記號",
+    "changeArticulation": "更改演奏法",
+    "changeClef": "更改譜號",
+    "changeDuration": "更改時值",
+    "changeKeySignature": "更改調號",
+    "changePitch": "更改音高",
+    "changeTempo": "更改速度",
+    "changeTimeSignature": "更改拍號",
+    "changeTrackProps": "更改音軌",
+    "changeVelocity": "更改力度",
+    "changeVoice": "更改聲部",
+    "deleteEvents": "刪除音符",
+    "deleteMeasure": "刪除小節",
+    "deleteTrack": "刪除音軌",
+    "importScore": "匯入樂譜",
+    "insertWithRipple": "插入",
+    "moveNotes": "移動音符",
+    "pasteEvents": "貼上",
+    "quantize": "量化",
+    "relocateNotes": "移動音符",
+    "resizeNotes": "調整時值",
+    "toggleTie": "連音線",
+    "transpose": "移調",
+    "changeMetadata": "修改樂譜資訊",
+    "changeDynamic": "修改力度",
+    "setLyric": "修改歌詞",
+    "toGraceNote": "修改裝飾音",
+    "setPickup": "設定弱起小節",
+    "setChordSymbol": "修改和絃標記",
+    "changeRepeats": "修改反覆記號",
+    "changeBeam": "更改符槓",
+    "setFingering": "更改指法",
+    "changeBarline": "更改小節線",
+    "changeMeasureClef": "更改小節譜號",
+    "changeNavigation": "更改反覆導航",
+    "changeOrnament": "更改裝飾音",
+    "toggleArpeggiate": "琶音",
+    "toggleGlissando": "滑音",
+    "toggleOttava": "八度記號",
+    "toggleFermata": "延長記號",
+    "toggleHairpin": "漸強漸弱記號",
+    "toggleSlur": "連句線",
+    "moveUnpluggedListener": "移動聽眾位置",
+    "turnUnpluggedListener": "轉動聽眾朝向",
+    "moveUnpluggedTrack": "移動樂器位置",
+    "resetUnpluggedArrangement": "重置舞臺佈局"
+  },
+  "common": {
+    "cancel": "取消",
+    "closeDialog": "關閉對話方塊",
+    "done": "完成",
+    "ok": "好",
+    "open": "開啟",
+    "close": "關閉",
+    "save": "儲存",
+    "delete": "刪除"
+  },
+  "community": {
+    "browseResources": "瀏覽資源",
+    "empty": "還沒有釋出的作品。",
+    "intro": "其他人分享的樂譜快照。任何人都可以聆聽，無需帳戶。",
+    "loadFailed": "載入失敗。",
+    "noMatch": "沒有與「{{query}}」匹配的樂譜。",
+    "searchLabel": "搜尋分享的樂譜",
+    "searchPlaceholder": "按標題或分享者搜尋",
+    "sharedBy": "由 {{name}} 分享",
+    "title": "社群"
+  },
+  "credits": {
+    "balance": "餘額",
+    "outOfCreditsBody": "生成需要消耗積分，您的餘額已用完。充值後即可繼續，您的工作不會丟失。",
+    "outOfCreditsTitle": "積分不足",
+    "purchaseElsewhere": "點數請在網頁版購買。",
+    "rate": "每小節每件樂器消耗一點。",
+    "viewCredits": "檢視積分"
+  },
+  "dashboard": {
+    "create": "建立",
+    "empty": "還沒有專案。",
+    "generating": "生成中…",
+    "transcribing": "轉錄中…",
+    "import": "匯入",
+    "importFormat": "匯入檔案",
+    "importMidi": "匯入 MIDI",
+    "newProject": "新建專案",
+    "syncToServer": "儲存到伺服器",
+    "importMusicXml": "匯入 MusicXML",
+    "importAudio": "匯入音訊",
+    "importModule": "匯入 Tracker 模組",
+    "importProject": "匯入專案檔案",
+    "connect": "連線",
+    "myProjects": "我的專案",
+    "newFromTemplateAction": "從模板新建",
+    "projectFileError": {
+      "invalidJson": "該檔案不是專案：無法作為 JSON 讀取。",
+      "notAProject": "該檔案不是 Moosiac 專案。",
+      "newerVersion": "該專案由更新版本的 Moosiac 儲存，請更新應用後再開啟。",
+      "invalidScore": "無法讀取該專案中的樂譜。"
+    },
+    "openDocuments": "已開啟的專案",
+    "creditHistory": "點數記錄",
+    "redeemCoupon": "兌換優惠券",
+    "apiKeys": "API 金鑰",
+    "manageCoupons": "管理優惠券",
+    "duplicate": "複製",
+    "duplicateProject": "複製專案：{{name}}",
+    "deleteProject": "刪除專案：{{name}}",
+    "deleteTitle": "刪除專案",
+    "deleteMessage": "確定刪除「{{name}}」？此操作無法撤銷。",
+    "updated": "更新於 {{date}}",
+    "reviewFlags": "稽核舉報",
+    "reviewFlagsDesc": "稽核對分享樂譜的舉報"
+  },
+  "docs": {
+    "editor": {
+      "title": "編輯器",
+      "summary": "制譜畫布、游標，以及音符是怎麼寫進去的。",
+      "figure": "樂譜上方的編輯欄，游標位於第一小節的開頭。",
+      "canvas": {
+        "heading": "畫布",
+        "p1": "樂譜繪製在單張畫布上，每一幀只繪製你看得見的那幾行。這正是長樂譜仍然流暢的原因——繪製的開銷不隨小節數增長。",
+        "p2": "每一行左側是音軌資訊欄：音軌名稱、樂器，以及靜音與獨奏開關。它和譜表畫在同一張畫布上，所以永遠不會和它標註的音樂錯位。",
+        "p3": "不是當前編輯的音軌會整體變暗——音符、符槓、連結線和譜線一起變暗——讓你一眼看出正在處理哪個聲部。被選中的音符在任何音軌上都保持它的顏色，因為跨音軌選擇是你刻意做的事。"
+      },
+      "caret": {
+        "heading": "游標與選擇",
+        "p1": "紅色游標標示下一個音符落在哪裡，也是播放開始的位置。點選空白譜表會移動它、把該音軌設為當前音軌並清除選擇；點選音符則同時選中那個音符。",
+        "p2": "Shift 點選可以把音符加入選擇或移出選擇。Cmd 點選選中當前音軌上從游標到點選處的全部內容，Cmd+Shift 點選則跨所有音軌做同樣的事。",
+        "p3": "每行上方的小節號是另一條資訊欄：點選一個選中該小節，Shift 點選把選擇擴充套件成一段小節。替換和重新生成都作用於一段範圍，所以這就是瞄準它們的方式。"
+      },
+      "noteInput": {
+        "heading": "寫音符",
+        "p1": "有四種寫音符的方式：敲它的字母、在音符輸入模式下點選譜表、彈螢幕上的鋼琴，或者彈一臺連線好的 MIDI 鍵盤。",
+        "p2": "敲字母通常最快。A 到 G 會在游標處寫下那個音，並選擇離前一個音最近的八度，這樣旋律不必事後再移調。數字 1 到 6 選擇音符時值，句點加附點，R 寫休止符，T 加延音線。",
+        "p3": "音符輸入是一個模式，用 N 切換，因為點選必須能表達兩件事：關閉時點選用來定位游標，開啟時點選在你點的音高上寫下音符。"
+      },
+      "editModes": {
+        "heading": "插入、替換與疊加",
+        "p1": "插入會把該音軌後面的音符往後推，騰出位置。替換會覆蓋原本已有的內容。疊加則把音符加到該位置已有的內容上，組成和絃。",
+        "p2": "在一次只能發一個音的樂器上，疊加不可用——長笛吹不出和絃，所以工具欄直接說明，而不是讓你寫出一個來。"
+      },
+      "voices": {
+        "heading": "聲部",
+        "p1": "一行譜表可以承載兩個獨立聲部，靠符幹區分：上聲部符幹朝上，下聲部朝下，這也是制譜師的做法。",
+        "p2": "只有一個聲部時保留渲染器自己的符幹方向，因為在那裡強制方向會讓一半的音符指錯。"
+      },
+      "layout": {
+        "heading": "排版與縮放",
+        "p1": "分頁排版把音樂折成適合寬度的若干行，就像印刷樂譜那樣。連續排版把整份樂譜排成一整行，橫向滾動。",
+        "p2": "縮放改變的是刻版大小。它改變螢幕上能放下多少，從不改變樂譜裡有什麼。"
+      }
+    },
+    "formats": {
+      "title": "匯入與匯出",
+      "summary": "應用能讀什麼、能寫什麼，以及什麼內容能完整保留。",
+      "importing": {
+        "heading": "匯入",
+        "p1": "每一次匯入都會建立新專案，所以它們都放在「專案」頁面而不是編輯器裡——從已開啟的樂譜裡匯入，只會把你踢出那份樂譜。",
+        "p2": "唯一的例外是把音訊作為一條音軌而不是一個專案匯入。那會把轉寫結果寫到你已經開啟的樂譜上，因此它在編輯器的「新增音軌」下面。",
+        "p3": "tracker 模組按檔案內容而不是副檔名判斷，所以改錯名字的模組照樣能匯入，而無法識別的檔案會說明它實際讀到了什麼。"
+      },
+      "exporting": {
+        "heading": "匯出",
+        "p1": "匯出選單可以寫出 MIDI、MusicXML、XM tracker 模組、WAV 或 MP3 音訊，以及專案檔案。列印是獨立的，提供 Letter 或 Legal 紙張、縱向或橫向。",
+        "p2": "音訊透過播放時所用的同一套音色庫渲染，因此檔案是你所聽內容的錄音，而不是另一次不同的演繹。",
+        "p3": "如果樂譜裡有隱藏音軌，匯出時會先問要不要包含它們，而不是替你悄悄決定。"
+      },
+      "fidelity": {
+        "heading": "什麼內容能保留",
+        "p1": "MIDI 攜帶的是走帶實際演奏的內容，而不是儲存的內容——力度記號、漸強漸弱、演奏法和倚音都會進入檔案。MusicXML 攜帶的是刻版：符槓、圓滑線、裝飾音、歌詞、反覆和導航記號。",
+        "p2": "三者之中 tracker 模組損失最大，而且它會在寫入前說明：它有行網格、聲道上限和音域限制，匯出會先把將要損失的內容擺給你看，然後才寫。"
+      },
+      "importsHeading": "可讀取的格式",
+      "exportsHeading": "可寫出的格式",
+      "name": {
+        "midi": "MIDI",
+        "musicxml": "MusicXML",
+        "tracker": "Tracker 模組",
+        "audio": "音訊",
+        "project": "專案檔案",
+        "xm": "XM 模組",
+        "wav": "WAV 音訊",
+        "mp3": "MP3 音訊",
+        "print": "列印"
+      },
+      "in": {
+        "midi": "音符、速度和拍號。你可以選擇如何拆分成音軌，以及量化得多緊。",
+        "musicxml": "除音符外還有刻版資訊：符槓、圓滑線、裝飾音、歌詞、反覆和譜號變化。",
+        "tracker": "音符按樂器而不是按聲道歸組，所以跨聲道演奏的聲部會落到同一條音軌上。",
+        "audio": "一次一條旋律線。僅限單音——不嘗試處理和絃與混音，對話方塊裡也會說明。",
+        "project": "完整還原匯出時的整個專案，包括每條音軌和它的混音設定。"
+      },
+      "out": {
+        "midi": "走帶實際演奏的內容，含力度記號、漸強漸弱、演奏法和倚音。",
+        "musicxml": "完整的刻版資訊，便於在其他制譜軟體中開啟。",
+        "tracker": "只有音符。樂器槽有名稱但是空的，因此檔案在 tracker 使用者填入取樣前是無聲的。",
+        "wav": "未壓縮音訊，透過播放時所用的同一套音色庫渲染。",
+        "mp3": "壓縮音訊，來自同一次渲染。",
+        "project": "全部內容，用於備份或在帳號之間遷移。",
+        "print": "帶紙張尺寸和方向的列印檢視，可用於列印或存成 PDF。"
+      }
+    },
+    "generation": {
+      "title": "音樂生成",
+      "summary": "生成整份樂譜、一條音軌或一段替換，以及它們的花費。",
+      "figure": "開啟“為我生成”後的新建專案表單。",
+      "whole": {
+        "heading": "生成整份樂譜",
+        "p1": "在「專案」頁面描述你想要什麼，並選擇樂器、長度、速度、調號和拍號。留空的部分由生成器自己決定。",
+        "p2": "生成執行在伺服器上，不在瀏覽器裡。你可以關掉頁面再回來——專案會顯示進度，結果到達時會自動應用。",
+        "p3": "你列出的第一件樂器承擔旋律，所以列表的順序是有意義的。"
+      },
+      "track": {
+        "heading": "生成一條音軌",
+        "p1": "在編輯器裡，你可以為已有的樂譜新增一條音軌。它會沿用樂譜的調號、速度和長度，並得到其他聲部作為配合物件。",
+        "p2": "最後這一點很重要：生成器會看到同樣這些小節裡其他音軌在演奏什麼，所以低音線是寫在你的旋律之下，而不是各寫各的。"
+      },
+      "replace": {
+        "heading": "替換音樂",
+        "p1": "替換會重寫已有樂譜的一部分。選中若干小節替換那幾小節；選中一條音軌替換整條；或者只選中若干音符，只替換它們。",
+        "p2": "你可以讓一部分保持不動而其餘改變——保留和聲、保留節奏、保留旋律只改變伴奏，或者保留兩端的音符，讓新音樂能幹淨地接上。",
+        "p3": "替換音符是唯一不會向外取整到整小節的情況。選擇按它覆蓋的範圍整段替換，對話方塊會說明該範圍內有多少音符並未被選中。"
+      },
+      "credits": {
+        "heading": "花費",
+        "p1": "一點數寫一件樂器的一小節。四件樂器八小節就是 32 點。對話方塊會在你確認之前給出估算。",
+        "p2": "估算說的是「大約」，因為按實際產出計費。當生成返回了你要求的長度時兩者一致，否則會更少。"
+      },
+      "quality": {
+        "heading": "結果如何檢查",
+        "p1": "每一段生成結果在你看到之前都會被檢查：超出樂器音域的音、會無聲的音、同一時刻重複的音、樂器彈不出的和絃，以及節奏與力度毫無變化的聲部。",
+        "p2": "如果有問題，會再次請求生成，並明確告知要修正什麼，而不是簡單地再試一次。次數有上限，所以頑固的請求不會失控。",
+        "p3": "殘留的問題絕不會導致結果被丟棄。系統保留最好的一次嘗試並把問題報告出來，因為一段只需小改的音樂，也遠比什麼都沒有更有價值。"
+      }
+    },
+    "getting-started": {
+      "title": "快速上手",
+      "summary": "這個應用是什麼，以及如何讓第一份樂譜出現在你面前。",
+      "figure": "新建專案表單：標題、樂器，以及長度、調和拍號。",
+      "what": {
+        "heading": "這是什麼",
+        "p1": "Moosiac 是一個帶有 AI 生成功能的制譜工具。你描述想要的音樂，它寫出樂譜；從那之後，每一個音符都由你自己編輯、播放、列印和匯出。",
+        "p2": "生成的內容沒有任何一處是你之後不能手工修改的。生成器寫入的是編輯器使用的同一個樂譜模型，所以生成的小節和你親手輸入的小節是同一種東西。"
+      },
+      "firstProject": {
+        "heading": "建立第一個專案",
+        "p1": "一切都從「專案」頁面開始。有四種起步方式：從模板開始、用 AI 生成整份樂譜、匯入檔案，或者複製一個已有的專案。",
+        "p2": "模板是已經排好譜表的空白樂譜——主旋律譜、鋼琴大譜表、絃樂四重奏、爵士小組。想要一張形狀正確的白紙，模板是最快的路。",
+        "p3": "匯入同樣會建立新專案。MIDI 檔案、MusicXML 檔案、tracker 模組、音訊錄音或專案檔案，都會成為一個新專案，而不是併入已經開啟的那一個。"
+      },
+      "dashboard": {
+        "heading": "專案頁面",
+        "p1": "專案按最近修改排在最前，也可以按名稱排序或搜尋。點選一行進入編輯器，行上的選單可以複製或刪除。",
+        "p2": "正在生成的專案會就地顯示進度，也可以在那裡取消。你可以離開頁面——生成執行在伺服器上，不在瀏覽器裡。"
+      }
+    },
+    "group": {
+      "start": "從這裡開始",
+      "using": "使用應用",
+      "reference": "參考資料"
+    },
+    "inspector": {
+      "title": "屬性面板",
+      "summary": "音軌、音符、小節與樂譜四個頁籤。",
+      "figure": "選中一個音符時的檢查器。",
+      "tabs": {
+        "heading": "四個頁籤",
+        "p1": "「音軌」排在最前，因為它總有內容可顯示——當前音軌永遠存在。它包含名稱、樂器或鼓組、譜號、音量、聲像、靜音、獨奏，以及刪除音軌。",
+        "p2": "「音符」顯示選中的內容：音名、臨時記號、八度、時值、力度、聲部、演奏法、裝飾音、力度記號、和絃標記、指法，以及跨音符的記號——圓滑線、滑音、八度括號。",
+        "p3": "「小節」管這一小節：小節號、拍號與調號、從這裡開始的速度變化、小節線樣式、反覆與房子、譜號變化、反覆導航記號，以及它是否為弱起小節。",
+        "p4": "「樂譜」是作品本身——標題、作曲者和說明。標題決定每個匯出檔案的名字，它和專案頁面上那一行的專案名稱並不是同一件事。"
+      },
+      "editing": {
+        "heading": "怎麼讀它",
+        "p1": "面板顯示的是音符時值、小節號和調名，而不是 tick 和五度數。四分音符就讀作四分音符，而不是 480。",
+        "p2": "當選中的多個音符在某個值上不一致時，該欄會顯示「不一致」，而不是從中挑一個來顯示。"
+      }
+    },
+    "instruments": {
+      "title": "樂器",
+      "summary": "128 個 General MIDI 音色、它們的音域，以及這些數字有多可信。",
+      "catalogue": {
+        "heading": "音色表",
+        "p1": "音軌的音色是 128 個 General MIDI 音色之一，分成十六個家族，每族八個。每個音色帶有自己的音域、同時能發幾個音，以及記譜音高與實際音高相差多遠。",
+        "p2": "下面的表格由那份資料生成，而不是另行抄寫，因此它不可能和應用實際使用的內容脫節。",
+        "p3": "移調以半音表示，從實際音高到記譜音高。降 B 調小號是 +2：實際發出的 C 記作 D。空白表示該樂器記譜與發聲相同，大多數樂器都是如此。"
+      },
+      "compass": {
+        "heading": "音域有多可信",
+        "p1": "最後一列才是值得細讀的。「已核實」表示有人對照資料核對過這件樂器。「隨調」表示這件樂器根本沒有固定的絕對音高——三味線按歌者定弦，箏按樂曲定弦——所以顯示的音域是一個典型跨度，而不是限制。",
+        "p2": "「合成」表示電子音色，它沒有聲學音域需要尊重，因此給它整個鍵盤，而不是編造一個界限。「無固定音高」表示音效或不定音高的打擊樂：根本不存在「超出音域」這回事。",
+        "p3": "只有「已核實」的音域才會被用來拒絕一個音符。拿沒人核實過的範圍去拒絕，會把本來完全沒問題的音樂擋掉，所以應用不這麼做。"
+      },
+      "percussion": {
+        "heading": "鼓組",
+        "p1": "打擊樂音軌的工作方式不同：音高指的是一件鼓，而不是一個音。中央 C 是低音鼓，它上面的 D 是軍鼓。對映覆蓋 MIDI 35 到 81，超出範圍的音不發聲。",
+        "p2": "在鼓組音軌上，樂器欄選擇的是鼓組而不是樂器。General MIDI 定義了八套——標準、房間、強力、電子、TR-808、爵士、刷子和管絃——同一個編號在這裡表示鼓組，在別處表示樂器。",
+        "p3": "螢幕鍵盤會標註每一個鼓鍵，你不必去記這份對映。"
+      },
+      "search": "按名稱、家族或音色編號搜尋",
+      "showing": "顯示 128 個音色中的 {{count}} 個",
+      "colProgram": "編號",
+      "colName": "樂器",
+      "colFamily": "家族",
+      "colRange": "音域",
+      "colPolyphony": "同時發音",
+      "colTranspose": "移調",
+      "colBasis": "音域依據",
+      "polyUnlimited": "不限",
+      "basis": {
+        "measured": "已核實",
+        "tunable": "隨調",
+        "synthetic": "合成",
+        "unpitched": "無固定音高",
+        "assumed": "未核實"
+      }
+    },
+    "limits": {
+      "title": "限制與已知缺口",
+      "summary": "本應用刻意不做的事，以及暫時還做不到的事。",
+      "byDesign": {
+        "heading": "刻意如此",
+        "p1": "音訊匯入是單音的。一次一條旋律線——不嘗試處理和絃與混音，對話方塊會直接說明，而不是給出一個自信卻錯誤的結果。",
+        "p2": "生成只返回一個結果並直接應用。沒有候選列表可供挑選，因為生成是後臺任務，結果到達時並沒有人在看。",
+        "p3": "快照不能編輯也不能刪除。這種不可變性靠「根本不存在這個操作」來保證，而不是靠一條需要人記住的規矩。"
+      },
+      "known": {
+        "heading": "已知缺口",
+        "p1": "符槓只能斷開或移除，不能跨拍合併。因此一個跨拍連槓的檔案匯入後會採用本應用的分組，而不是它自己的。",
+        "p2": "裝飾音記號會繪製、會匯出，但不會被播放。這類記號偏重記譜，把它展開成音符會讓之後再也無法把它讀回成一個記號。",
+        "p3": "tracker 模組匯出只寫音符。樂器槽有名稱但內容為空，因此在 tracker 使用者填入取樣之前檔案是無聲的——匯出前會先說明這一點。"
+      }
+    },
+    "midi-input": {
+      "title": "MIDI 鍵盤",
+      "summary": "用連線好的樂器把音符彈進樂譜。",
+      "figure": "樂譜下方的鋼琴鍵盤，每個 C 和 F 都有標註。",
+      "connecting": {
+        "heading": "連線",
+        "p1": "連線到電腦的 MIDI 鍵盤可以直接把音符彈進樂譜。許可權在第一次列出裝置時才請求，而不是在頁面載入時，所以你不會為一個可能用不到的許可權被打擾。",
+        "p2": "只要瀏覽器支援 Web MIDI 就能使用。不支援時這個功能乾脆不出現，而不是等你去用的時候才失敗。",
+        "p3": "不會請求 sysex 許可權——只使用編輯器真正需要的音符訊息。"
+      },
+      "playing": {
+        "heading": "彈奏輸入",
+        "p1": "來自 MIDI 鍵盤的音符走的是和螢幕鍵盤完全相同的路徑：按住時發聲，同時按下的多個音歸為和絃，按住的時長成為時值，游標隨後前移越過寫入的內容。",
+        "p2": "許多鍵盤用「力度為 0 的按下」代替「鬆開」。這裡會把它讀作鬆開，因為照字面理解會讓那個音永遠響下去。"
+      }
+    },
+    "navLabel": "文件主題",
+    "navigation": {
+      "title": "頁面導航",
+      "summary": "各個頁面的用途，以及哪些需要登入。",
+      "figure": "在應用各部分之間切換的導航欄。",
+      "routes": {
+        "heading": "各個頁面",
+        "p1": "頂欄包含「專案」「社群」「文件」「資源」和「設定」，點選標誌回到首頁。所有頁面都在語言字首之下，英文站是 /en，中文站是 /zh。",
+        "p2": "「專案」是你自己的作品。「社群」是別人分享出來的。「資源」指向值得匯入的免費曲庫。「設定」裡有主題、字號、音高顯示方式和開發者選項。",
+        "p3": "開啟專案會進入 /project/專案編號 的編輯器。列印是 /project/專案編號/print 的獨立檢視，分享出來的快照則在 /p/公開編號 閱讀。"
+      },
+      "account": {
+        "heading": "哪些需要登入",
+        "p1": "「專案」「點數」和「購買記錄」需要登入。首頁、社群、文件、資源、設定，以及任何被分享的快照都不需要。",
+        "p2": "最後這一點是刻意的：你分享出去的連結必須能被從未登入過的人開啟，所以公開閱讀頁完全在登入門檻之外。"
+      }
+    },
+    "notation": {
+      "title": "記號與記譜",
+      "summary": "除了音高和時值之外，還能寫在音符上的一切。",
+      "figure": "編輯欄：音符時值、臨時記號、演奏法及其他記號。",
+      "ties": {
+        "heading": "延音線與休止符",
+        "p1": "延音線把兩個同音高的音符連成一個持續發聲的音。選中一個音符按 T，或使用工具欄。延音線不是圓滑線：前者連線，後者只表示樂句。",
+        "p2": "你從不需要寫休止符來製造靜默。靜默就是你在音符之間留下的空隙，休止符會出現在空隙處。當你想刻意佔住某一拍時，用 R 明確寫一個。"
+      },
+      "dynamics": {
+        "heading": "力度記號與漸強漸弱",
+        "p1": "力度記號標示一段音樂從哪個層次開始，從 ppp 到 fff，並一直有效到下一個記號。給一個音符標 f 會讓整段變響——中間的音符不需要各自標註。",
+        "p2": "音符自身的力度值作為偏移量保留在那個層次之上，所以弱奏段落裡的重音仍然是重音，而不會被抹平。",
+        "p3": "漸強漸弱表示兩個層次之間的變化，寫在兩個或更多音符之上，用 Shift+< 或 Shift+>。它會作為斜坡發聲，走向後面的下一個記號；若後面沒有記號，則移動一個層次。"
+      },
+      "articulation": {
+        "heading": "演奏法",
+        "p1": "斷奏、重音、保持音和強調是長度與重量兩件事。斷奏把音符縮短一半，重音增加力度，強調兩者兼具，保持音則是音符本來就有的完整長度。",
+        "p2": "縮短從不移動任何東西。斷奏的音符提早放開，但仍然佔據它記譜的長度，因此後面每一個音符都留在原處，小節也依然算得平。"
+      },
+      "ornaments": {
+        "heading": "裝飾音記號",
+        "p1": "顫音、波音、逆波音和迴音是記號，而不是它們所代表的那串音。裝飾音怎麼彈取決於時代與品味，所以這裡存的是記號，並保持可讀可改。",
+        "p2": "這些記號在本應用中偏重記譜：會繪製、會匯出，但播放不會把它們展開成音符。"
+      },
+      "grace": {
+        "heading": "倚音",
+        "p1": "倚音掛在它所裝飾的音符上，而不從小節裡佔用時值，因此它隨主音一起移動、複製和刪除，也絕不會讓小節算不平。",
+        "p2": "它們會發聲。倚音從主音借時間而不是從小節借，且最多借主音的一半，所以後面每一個音符都精確地留在原位。"
+      },
+      "tuplets": {
+        "heading": "連音符",
+        "p1": "三連音不是存出來的，而是識別出來的：三個各為普通時值三分之二的音符就是三連音，並會被畫成三連音。改動其中一個，括號就不再繪製——這是事實，而不是一個過期的記號。",
+        "p2": "只有完整的三個才成組。四個音是一個三連音加一個餘數，休止符也算成員——中間有休止符的三連音仍然是三連音。"
+      },
+      "beams": {
+        "heading": "符槓",
+        "p1": "符槓由時值和拍號推導而來，因此無需指定就會跟隨拍點。只有你的不同意見會被存下來：「斷開」在某個音符處開始新的一組，「不連」把音符移出符槓、改畫符尾。",
+        "p2": "「斷開」正是聲樂寫作需要的，那裡符槓跟隨音節而不是拍點。這裡刻意沒有「合併」——跨拍連槓是這套機制唯一表達不了的改動。"
+      },
+      "lyrics": {
+        "heading": "歌詞",
+        "p1": "歌詞是順著旋律線一路輸入的，而不是一個欄位一個欄位地填。按 L 然後開始打字：空格結束一個詞，連字元結束詞內的一個音節，回車結束輸入，Shift+空格 退回上一個音節改錯字。",
+        "p2": "一個音節是詞首、詞中還是詞尾，由這些按鍵推匯出來，而不需要你另行選擇。這決定了尾部連字元的繪製，也決定匯出時寫出的音節型別。",
+        "p3": "音節屬於它所在的音符，因此隨那個音符一起移動、複製和刪除。"
+      },
+      "chords": {
+        "heading": "和絃標記",
+        "p1": "和絃標記按你輸入的原樣儲存。C-7、Cmin7 和 Cm7 是同一個和絃的三種寫法，其中任何一種都不會被改寫或拒絕。",
+        "p2": "它印在譜表上方——與歌詞和力度記號相反的一側，這正是三者在主旋律譜上都清晰可讀的原因。匯出時只解析根音，其餘部分按你寫的文字原樣帶走。"
+      },
+      "spans": {
+        "heading": "跨音符的記號",
+        "p1": "圓滑線為一串不同音高劃出樂句，不連線任何東西。選中兩個或更多音符按 S。少於兩個會被拒絕——一個音符上的樂句記號沒有意義。",
+        "p2": "滑音在兩個音符之間滑行；八度括號讓一段音樂在紙面上升高或降低一個八度，而不改變它的實際發聲。",
+        "p3": "八度括號是一種顯示視角，不是移調。樂譜始終儲存實際音高，所以 8va 的含義是「這些音為了留在譜表上而低寫了一個八度」。"
+      }
+    },
+    "playback": {
+      "title": "播放",
+      "summary": "走帶控制、鋼琴鍵盤，以及檢視如何跟隨。",
+      "figure": "播放控制欄：播放、停止、迴圈、節拍器、位置、速度、倍速和音量。",
+      "transport": {
+        "heading": "走帶控制",
+        "p1": "空格鍵播放和暫停。走帶欄還有停止、前後跳一個小節、迴圈、節拍器、播放速度、速度標記和總音量。",
+        "p2": "第一次按播放需要取得音色庫並交給合成器，會花幾秒鐘。在音符真的能發聲之前，走帶欄不會聲稱正在播放，同時會顯示載入進度。",
+        "p3": "播放時樂譜不能編輯——混音除外。靜音、獨奏、音量和聲像保持可用，因為一邊聽一邊把某個聲部靜音，正是聽編配的方式。"
+      },
+      "keyboard": {
+        "heading": "鋼琴鍵盤",
+        "p1": "樂譜下方是一整排鍵盤，實時顯示當前音軌正在發聲的音。它的音域來自當前音軌的樂器，不總是全部 88 鍵，所以它會跟著音軌切換和樂器切換一起變。",
+        "p2": "它不只是顯示，也是輸入裝置。按下琴鍵可以試聽。選中一個音符時，輕點琴鍵會改變該音符的音高。沒有選中音符時，鬆開琴鍵會在游標處寫入音符，時值由按住的時間決定，並對齊到時值按鈕可產生的值。",
+        "p3": "在鼓組音軌上，每個鍵都標註了對應的鼓，黑鍵也不例外，因為鼓組對映不像鍵盤那樣有規律可循。"
+      },
+      "following": {
+        "heading": "跟隨音樂",
+        "p1": "檢視跟隨播放，但不會和你自己的滾動打架。分頁排版下，音樂折到下一行時會保留你在行內的偏移，讓你正在看的那個音軌留在原處。",
+        "p2": "連續排版下改為橫向跟隨，並且會讓開音軌資訊欄，使正在演奏的小節永遠不會停在音軌名稱後面。"
+      }
+    },
+    "settings": {
+      "title": "設定",
+      "summary": "外觀、音高顯示方式，以及開發者選項。",
+      "figure": "“設定”介面，顯示的是“外觀”。",
+      "appearance": {
+        "heading": "外觀",
+        "p1": "主題可以跟隨系統，也可以固定為淺色或深色，字號也可以調整。兩者都作用於整個應用，包括樂譜。",
+        "p2": "刻版後的樂譜為每一種狀態準備了自己的顏色——普通音符、選中的音符、剛生成的音符、正在發聲的音符——並且都會跟隨主題變化。"
+      },
+      "pitch": {
+        "heading": "記譜音高與實際音高",
+        "p1": "移調樂器可以按實際發聲顯示，也可以按演奏者讀到的樣子顯示。按實際音高寫出的降 B 調小號聲部，看起來會和演奏者手裡那份差一個全音。",
+        "p2": "這隻改變顯示。樂譜始終儲存實際音高，所以切換這個設定從不修改任何音符。",
+        "p3": "音符輸入會在儲存前把顯示反算回去，因此在記譜音高模式下點選譜表，存下的是真正會發聲的那個音。沒有這一步，一個聲部可能看起來正確、聽起來卻差一個全音。"
+      },
+      "developer": {
+        "heading": "開發者模式",
+        "p1": "開發者模式會增加診斷功能：效能測量、基準測試，以及在反饋問題時有用的診斷資訊匯出。",
+        "p2": "它不改變音樂的任何方面。預設關閉，開著也沒有副作用。"
+      }
+    },
+    "sharing": {
+      "title": "快照與分享",
+      "summary": "儲存版本，以及把某個版本公開給別人。",
+      "figure": "快照命令：建立快照、開啟快照，以及檢視你已釋出的快照。",
+      "snapshots": {
+        "heading": "快照",
+        "p1": "快照是樂譜此刻的副本，以你取的名字儲存。系統會先儲存你當前的工作，所以快照釘住的始終是你真正看到的內容。",
+        "p2": "歷史是一棵樹，而不是一條線。在已有更新快照的情況下開啟較早的快照，並不會毀掉較新的那個——它會分叉，你接下來建立的快照是所開啟那個的子節點。",
+        "p3": "快照不能編輯也不能刪除。這一點靠「根本沒有這個操作」來保證，而不是靠某個人記得住的規矩。"
+      },
+      "publish": {
+        "heading": "公開分享",
+        "p1": "快照可以公開，得到一個任何人都能開啟的連結——無需帳號。對方看到的是一個只顯示樂譜並能播放的閱讀頁，僅此而已。",
+        "p2": "公開的作品有自己的名稱，與專案名稱分開，它也是顯示在「社群」頁面上的名字。你之後可以修改它，而不影響樂譜。",
+        "p3": "公開時會請你確認這份作品確實由你有權分享。只有公開快照所需的內容會被髮送——你的帳號資訊不會隨之傳出。"
+      }
+    },
+    "shortcuts": {
+      "title": "鍵盤快捷鍵",
+      "summary": "編輯器繫結的全部按鍵。",
+      "intro": {
+        "heading": "它們是怎麼安排的",
+        "p1": "音符輸入鍵刻意不帶任何修飾鍵，這樣瀏覽器或作業系統自己的快捷鍵就絕不會被誤認成音符。單獨的字母寫音符，數字選擇時值。",
+        "p2": "於是 Shift 留給各種記號，Alt 留給游標。漸強漸弱這一對不需要記憶，因為 Shift+< 和 Shift+> 本身就是那兩個楔形符號。"
+      },
+      "group": {
+        "transport": "播放",
+        "editing": "編輯",
+        "selection": "選擇",
+        "noteEntry": "寫音符",
+        "marks": "記號",
+        "caret": "游標",
+        "pointer": "滑鼠"
+      }
+    },
+    "structure": {
+      "title": "小節與結構",
+      "summary": "拍號、調號、小節線、反覆，以及作品的整體形狀。",
+      "figure": "檢查器的“小節”標籤頁：拍號、調、速度、譜號和小節線。",
+      "bars": {
+        "heading": "小節",
+        "p1": "點選每行上方的小節號選中那一小節；Shift 點選另一個可以選中兩者之間的一段。替換和重新生成都作用於一段範圍，這就是瞄準它們的方式。",
+        "p2": "小節網格是所有音軌共享的。同一小節在每一行譜表上都是同一小節，所以任何改變網格的操作都作用於整份樂譜，而不是某一個聲部。",
+        "p3": "小節編號會跳過弱起小節，因此屬性面板顯示的號碼、演奏者讀到的號碼，以及「跳到第幾小節」落到的位置，是同一個號碼。"
+      },
+      "signatures": {
+        "heading": "拍號與調號",
+        "p1": "兩者都在「小節」頁籤中按小節設定，並且都會一直沿用到下一次改變。在第 9 小節設定拍號，改變的是第 9 小節之後，而不是整份樂譜。",
+        "p2": "調號以五度圈上的位置加大調或小調儲存，但屬性面板顯示給你的是調名而不是數字。",
+        "p3": "改變拍號會改變小節的長度，因此已經在裡面的音符會被重新安排，而不是無聲地溢位。"
+      },
+      "pickup": {
+        "heading": "弱起小節",
+        "p1": "弱起小節是不計入編號的小節。它是第一小節上的一個標記，而不是「樂曲中間的短小節」——後者是刻意的不規則小節，會保留自己的編號。",
+        "p2": "它作用於所有音軌，因為只在一行譜表上有弱起，會讓各聲部對「第 1 小節從哪裡開始」產生分歧。它只在第一小節上提供。"
+      },
+      "barlines": {
+        "heading": "小節線",
+        "p1": "一個小節可以帶雙小節線或終止線。不設定就是普通單線，也就是絕大多數小節的樣子。",
+        "p2": "當反覆記號和雙小節線落在同一小節時，反覆優先，繪製和匯出都是如此：反覆是演奏者要執行的指令，在它上面畫一條雙小節線，等於悄悄把它從演奏中刪掉。"
+      },
+      "repeats": {
+        "heading": "反覆與房子",
+        "p1": "反覆小節線是兩個各自獨立的記號，而不是一個整體的區間，因為沒有起始記號的收尾反覆表示「從樂曲開頭反覆」——這是真實存在的記號，而不是需要阻止的錯誤。",
+        "p2": "房子編號標在該房子的每一個小節上，括號的兩端由相鄰小節是否有相同編號推導得出。刪掉一個小節會讓括號縮短，而不是留下一個指向空處的括號。",
+        "p3": "反覆會被播放。樂譜自身的時間保持為準，走帶會推算出各小節實際被演奏的順序，因此游標、進度條和小節讀數都不必知道反覆的存在。"
+      },
+      "navigation": {
+        "heading": "D.C.、D.S.、Coda 與 Fine",
+        "p1": "記號、Coda、To Coda 和 Fine 是小節所攜帶的「位置」；跳轉是「指令」，位於執行它的那個小節末尾。六種跳轉是一個整體選項，而不是方向加目標的組合，所以只有演奏者真正會遇到的組合才寫得出來。",
+        "p2": "在記譜上看不出、又最容易搞反的一條規則是：Fine 和 To Coda 在第一遍時不起作用。演奏者會徑直讀過它們，直到某個跳轉把他們送回去為止。",
+        "p3": "跳轉只執行一次——執行過後就當它不存在——否則樂曲永遠不會結束。記號不完整也照樣能播放：沒有記號的 D.S. 會退回到開頭，就像讀譜的人會做的那樣。"
+      },
+      "tempo": {
+        "heading": "速度",
+        "p1": "走帶欄的速度欄改的始終是樂曲開始時的速度。「小節」頁籤裡的速度則在該小節設定一次變化，使樂曲可以在排練號處放慢或改變。",
+        "p2": "它顯示的是當前生效的速度，若本小節沒有設定就沿用更早的設定，因此它從不為空、也從不撒謊。起始速度不能刪除——完全沒有速度的樂譜是沒有速度的。"
+      },
+      "clefs": {
+        "heading": "譜號變化",
+        "p1": "譜號變化儲存在它發生的那一小節上；沒有儲存就表示沿用當前生效的譜號。從不換譜號的聲部什麼也不存。",
+        "p2": "它作用於單條音軌，這一點和反覆、小節線不同：左手跨到高音譜號，並不說明右手也要跟著換。把譜號設成當前已經生效的那個，會移除這個標記，而不是存一個印不出任何東西的標記。"
+      }
+    },
+    "title": "使用文件",
+    "tracks": {
+      "title": "音軌與混音",
+      "summary": "新增聲部、選擇音色，以及平衡它們。",
+      "figure": "檢查器的“音軌”標籤頁：名稱、樂器、譜號、音量、聲像、靜音和獨奏。",
+      "adding": {
+        "heading": "新增與刪除",
+        "p1": "「新增音軌」提供空白音軌、AI 生成的音軌，或從音訊檔案轉寫而來的音軌。新音軌會沿用它所加入樂譜的小節網格。",
+        "p2": "樂譜始終至少保留一條音軌，所以最後一條不能刪除。刪除其他任何一條都是普通編輯，可以照常撤銷。"
+      },
+      "instrument": {
+        "heading": "選擇音色",
+        "p1": "音軌的音色是 128 個 General MIDI 音色之一，在「音軌」頁籤中選擇。更換音色時，已有的音符會按整八度移入新樂器的音域，因此低音線仍然是那條低音線。",
+        "p2": "如果該聲部的音域寬於新樂器能演奏的範圍，更換會被拒絕並給出說明，而不是隻改一半。",
+        "p3": "在打擊樂音軌上，同一個欄位選擇的是鼓組而不是樂器。兩者從不一致：作為鼓組表示「刷子」的編號，作為樂器表示「小提琴」。"
+      },
+      "mixing": {
+        "heading": "音量、聲像、靜音與獨奏",
+        "p1": "每條音軌都有音量和聲像，也可以靜音或獨奏。這是播放過程中唯一仍然可用的一類編輯，因為一邊聽一邊把某個聲部靜音，正是聽編配的方式。",
+        "p2": "獨奏是互斥的：把第二條音軌設為獨奏會清除第一條。你獨奏是為了聽清一個聲部，第二個獨奏只會悄悄擴大你聽到的範圍。",
+        "p3": "獨奏同時會把該音軌設為當前音軌，於是其餘音軌全部變暗。否則這份靜默就沒有面孔——你只聽到一個聲部，螢幕上卻沒有任何東西說明原因。"
+      },
+      "visibility": {
+        "heading": "隱藏音軌",
+        "p1": "音軌可以從樂譜上隱藏，而不必刪除或靜音。隱藏針對的是紙面，不是聲音。",
+        "p2": "匯出含有隱藏音軌的樂譜時，會先詢問是否包含它們，而不是替你悄悄決定。"
+      },
+      "active": {
+        "heading": "當前音軌",
+        "p1": "始終有一條音軌是當前音軌。音符寫入它，鋼琴鍵盤顯示它，其餘音軌變暗時它保持完整亮度。",
+        "p2": "點選某條音軌譜表上的任意位置即可把它設為當前音軌。如果當前音軌被刪除，第一條音軌會接替，而不是讓選擇落空。"
+      }
+    },
+    "seeShortcutsScreen": "顯示鍵盤快捷鍵"
+  },
+  "document": {
+    "untitled": "未命名",
+    "new": "新建樂譜",
+    "open": "開啟…",
+    "close": "關閉",
+    "unsavedTitle": "未儲存的更改",
+    "unsavedBody": "“{{title}}”有尚未儲存的更改。",
+    "unsavedQuitBody": "有 {{count}} 個開啟的文件存在尚未儲存的更改。",
+    "closeDocument": "關閉 {{title}}",
+    "exportAs": "匯出 {{format}}",
+    "saveFailedTitle": "無法儲存",
+    "closeWithoutSaving": "不儲存並關閉",
+    "quitWithoutSaving": "不儲存並退出"
+  },
+  "duration": {
+    "eighth": "八分音符",
+    "half": "二分音符",
+    "quarter": "四分音符",
+    "sixteenth": "十六分音符",
+    "thirtysecond": "三十二分音符",
+    "whole": "全音符"
+  },
+  "editor": {
+    "accidental": "變音記號",
+    "accidentalHint": "為選中的音符設定臨時記號",
+    "addMeasure": "插入小節…",
+    "insertBarsTitle": "插入小節",
+    "insertBars": "插入小節",
+    "barCount": "小節數",
+    "insertBarsPosition": "位置",
+    "insertBarsBefore": "當前小節之前",
+    "insertBarsAfter": "當前小節之後",
+    "generateInsertedBars": "生成音樂",
+    "generateInsertedBarsHint": "使用 AI 為所有樂器填充新小節",
+    "generateInsertedBarsInstruction": "為所有樂器在插入的小節中自然延續現有音樂。",
+    "addTrack": "新增音軌",
+    "addTrackPrompt": "新增哪種音軌？",
+    "arpeggiate": "琶音",
+    "arpeggiateHint": "琶音",
+    "articulation": "演奏記號",
+    "articulationHint": "為選中內容新增演奏記號",
+    "barNumber": "小節號",
+    "barNumberOf_one": "小節號（本譜共 1 小節）",
+    "barNumberOf_other": "小節號（1–{{count}}）",
+    "beamBreak": "斷開符槓",
+    "beamBreakHint": "在此斷開符槓",
+    "beamNone": "不用符槓",
+    "beamNoneHint": "取消符槓",
+    "blankTrack": "空白音軌",
+    "blankTrackHint": "在其他音軌下方新增一行空白譜表，可直接寫入。",
+    "clear": "清空",
+    "closeGap": "合併空隙",
+    "closeGapDetail": "該軌道後面的音符前移填補空隙",
+    "continuousHint": "將樂譜排成一行連續滾動",
+    "continuousLayout": "連續排版",
+    "copy": "複製",
+    "crescendo": "漸強",
+    "crescendoHint": "漸強",
+    "currentZoom": "當前縮放比例",
+    "cut": "剪下",
+    "cutMessage": "該音軌上它們之後還有音樂。",
+    "cutTitle": "剪下這些音符",
+    "deleteMeasure": "刪除小節",
+    "deleteSelection": "刪除選中內容",
+    "diminuendo": "漸弱",
+    "diminuendoHint": "漸弱",
+    "done": "完成",
+    "dotted": "附點",
+    "dottedHint": "附點",
+    "durationModifier": "時值修飾",
+    "editMode": "編輯模式",
+    "ending": "房子（反覆括號）",
+    "endingPlaceholder": "例如 1 或 1, 2",
+    "enterLyrics": "輸入歌詞",
+    "distributeLine": "整行填詞",
+    "distributeTitle": "填寫一行歌詞",
+    "distributeHint": "空格分詞，連字元分音節。",
+    "distribute": "填入",
+    "lyricsDidNotFit": "有 {{count}} 個音節未能放入旋律",
+    "export": "匯出",
+    "fermata": "延長記號",
+    "fermataHint": "延長記號",
+    "fixIssues": "全部修復",
+    "fixedIssuesPartial_one": "已修復 {{count}} 個問題；還有 {{remaining}} 個需要處理。",
+    "fixedIssuesPartial_other": "已修復 {{count}} 個問題；還有 {{remaining}} 個需要處理。",
+    "fixedIssues_one": "已修復 {{count}} 個問題。",
+    "fixedIssues_other": "已修復 {{count}} 個問題。",
+    "fixedNothing": "這些問題無法自動修復。",
+    "generateTrack": "生成音軌",
+    "generateTrackHint": "根據現有音樂生成一個新的聲部。",
+    "generateTrackUnavailable": "僅適用於已儲存到伺服器的專案樂譜。",
+    "glissando": "滑音",
+    "glissandoHint": "在兩個音符之間滑音",
+    "go": "跳轉",
+    "goToBar": "跳轉到小節…",
+    "hideInspector": "隱藏屬性面板",
+    "hideKeyboard": "隱藏鍵盤",
+    "hideSpatial": "隱藏空間檢視",
+    "hyphenate": "在詞內結束這個音節",
+    "insert": "插入",
+    "insertDetail": "當前位置的內容在該軌道上後移",
+    "insertMode": "插入",
+    "insertModeHint": "插入：新增的音符會把該音軌後面的音符向後推",
+    "insertNote": "插入音符",
+    "insertNoteHint": "在游標處插入音符",
+    "insertRest": "插入休止符",
+    "insertRestHint": "插入休止符",
+    "inspector": "屬性面板",
+    "issues": "問題",
+    "keyboardShortcuts": "鍵盤快捷鍵",
+    "lastMeasureKept": "樂譜至少保留一個小節。",
+    "layoutMode": "排版模式",
+    "leaveSilence": "保留空白",
+    "leaveSilenceDetail": "軌道其餘部分保持原位",
+    "lyricEntry": "歌詞輸入",
+    "lyricNoteOf": "第 {{current}} / {{total}} 個音符",
+    "marks": "記號",
+    "midi": "MIDI",
+    "moreActions": "更多操作",
+    "musicXml": "MusicXML",
+    "audioMp3": "音訊（MP3）…",
+    "audioWav": "音訊（WAV）…",
+    "projectJson": "專案檔案（.moo）",
+    "xmModule": "XM 模組",
+    "noIssues": "沒有問題。",
+    "noScore": "未開啟樂譜。",
+    "noSuchBar_one": "本譜只有 1 小節。",
+    "noSuchBar_other": "本譜的小節範圍是 1 到 {{count}}。",
+    "noteDuration": "音符時值",
+    "noteDurationHint": "音符長度——用於新增的音符，也用於選中的音符",
+    "noteInput": "音符輸入",
+    "noteInputHint": "音符輸入（N）——開啟後，點選五線譜會在該音高寫入音符，而不是移動游標",
+    "noteValue": "音符時值",
+    "ornament": "裝飾音",
+    "ornamentHint": "為所選音符新增裝飾音記號",
+    "pageHint": "按頁面寬度折行排列",
+    "pageLayout": "分頁排版",
+    "paste": "貼上",
+    "pasteMessage": "目標位置已經有內容。",
+    "pasteTitle": "貼上覆蓋此處音樂",
+    "pitchConcertShort": "實際",
+    "pitchDisplayHint": "顯示每位演奏者的記譜音高，或樂譜實際發聲的音高",
+    "pitchWrittenShort": "記譜",
+    "previousSyllable": "上一個音節",
+    "print": "列印…",
+    "quantize": "量化",
+    "quantizeGrid": "量化網格",
+    "quantizeGridHint": "量化所對齊的網格",
+    "quantizeHint": "將選中內容對齊到量化網格",
+    "redo": "重做",
+    "removeTempoChange": "刪除此速度變化",
+    "repeatEnd": "在此結束反覆",
+    "repeatStart": "在此開始反覆",
+    "repeats": "反覆記號",
+    "repeatsPlaybackNote": "反覆記號會繪製、匯出並在播放時生效。播放從該小節第一次出現處開始。",
+    "replaceDetail": "移除當前位置的內容",
+    "replaceMode": "替換",
+    "replaceModeHint": "替換：新增的音符會覆蓋原有內容",
+    "saveNow": "立即儲存",
+    "saved": "已儲存",
+    "saving": "儲存中…",
+    "scoreActions": "樂譜操作",
+    "scoreActionsHint": "長按樂譜即可開啟此選單。",
+    "selectAll": "全選",
+    "selectAllNotes": "選中所有音符",
+    "showConcertPitch": "顯示實際音高",
+    "showInspector": "顯示屬性面板",
+    "showKeyboard": "顯示鍵盤",
+    "showSpatial": "顯示空間檢視",
+    "showWrittenPitch": "顯示記譜音高",
+    "slur": "連句線",
+    "recordVoice": "錄製人聲",
+    "recordVoiceHint": "用麥克風錄製旋律並加入當前軌道",
+    "captureAudio": "錄製並轉錄音訊",
+    "recordFrom": "錄製來源",
+    "microphone": "麥克風",
+    "speakers": "揚聲器",
+    "inputDevice": "輸入裝置",
+    "defaultInput": "系統預設輸入",
+    "transcriptionScope": "轉錄範圍",
+    "voiceTrackOnly": "僅人聲軌",
+    "allTracks": "所有音軌",
+    "startRecording": "開始錄製",
+    "speakerCaptureHelp": "在瀏覽器選擇器中選擇包含音訊的螢幕或應用視窗。將轉錄所有音軌。",
+    "speakerCaptureUnavailable": "所選來源沒有提供音訊",
+    "stopVoiceRecording": "停止錄製人聲",
+    "recordVoiceError": "無法錄製或轉寫人聲",
+    "microphoneUnavailable": "此處無法使用麥克風錄音",
+    "microphoneDenied": "麥克風訪問被拒絕",
+    "emptyRecording": "錄音為空",
+    "noVoiceNotes": "錄音中未找到音符",
+    "slurHint": "為所選加連奏線",
+    "stackMode": "疊加為和絃",
+    "stackModeHint": "疊加：新增的音符會與原有音符組成和絃",
+    "stackModeUnavailable": "疊加需要能同時演奏多個音符的樂器——{{instrument}} 無法做到",
+    "subjectBars": "小節",
+    "subjectBars_other": "小節",
+    "subjectNotes": "音符",
+    "subjectNotes_other": "音符",
+    "subjectTrack": "音軌",
+    "syllable": "音節",
+    "thisInstrument": "該樂器",
+    "toggleInspector": "切換屬性面板",
+    "toggleTie": "切換延音線",
+    "toolbar": "樂譜編輯器工具欄",
+    "tracks": "音軌",
+    "triplet": "三連音",
+    "tripletHint": "三連音",
+    "undo": "撤銷",
+    "unsaved": "未儲存",
+    "validationIssues": "校驗問題",
+    "validationProblem": "該編輯會破壞小節：{{detail}}",
+    "voice": "聲部",
+    "voice1Hint": "聲部 1——該譜表上的主旋律線",
+    "voice2Hint": "聲部 2——同一譜表上另一條獨立的旋律線",
+    "voiceNumber": "聲部 {{number}}",
+    "zoomIn": "放大",
+    "zoomOut": "縮小",
+    "outOfRange": {
+      "above": "{{pitch}} 高於{{instrument}}的音域（{{low}}–{{high}}），{{action}}",
+      "below": "{{pitch}} 低於{{instrument}}的音域（{{low}}–{{high}}），{{action}}"
+    },
+    "refused": {
+      "addNote": "因此未新增。",
+      "addChord": "因此未新增這個和絃。",
+      "changeNote": "因此未更改該音符。",
+      "changeAccidental": "因此未更改變音記號。",
+      "moveNote": "因此未移動該音符。",
+      "moveNotes": "因此未移動這些音符。",
+      "transpose": "因此未進行移調。",
+      "paste": "因此未貼上任何內容。"
+    },
+    "polyphonyOne": "{{instrument}}一次只能演奏一個音，{{action}}",
+    "polyphonyMany": "{{instrument}}最多同時演奏 {{limit}} 個音，{{action}}",
+    "unknownInstrument": "該樂器",
+    "save": "儲存",
+    "trackInfo": "音軌資訊",
+    "trackInfoFull": "完整音軌資訊",
+    "trackInfoIcon": "僅顯示樂器圖示",
+    "trackInfoHint": "在每行譜表旁只顯示樂器圖示，或顯示完整音軌資訊"
+  },
+  "errors": {
+    "createProject": "建立專案失敗",
+    "loadProjects": "無法載入您的專案。",
+    "openProject": "開啟專案失敗",
+    "deleteProject": "刪除專案失敗",
+    "duplicateProject": "複製專案失敗"
+  },
+  "export": {
+    "explain": "選擇一種格式。每種保留的內容不同：MusicXML 保留樂譜頁面，MIDI 保留演奏，音軌模組保留網格上的音符，音訊只保留聲音。"
+  },
+  "exportScope": {
+    "hiddenCount_one": "該樂譜有 {{count}} 條隱藏音軌。",
+    "hiddenCount_other": "該樂譜有 {{count}} 條隱藏音軌。",
+    "title": "匯出隱藏的音軌？",
+    "visibleOnly": "僅可見音軌"
+  },
+  "generate": {
+    "action": "生成",
+    "estimate": "這將消耗約 {{count}} 點數。",
+    "instrument": "樂器",
+    "prompt": "提示詞",
+    "working": "正在創作您的音樂",
+    "workingExplain": "這在伺服器上執行，您可以離開此頁面。完成後樂譜會自動解鎖。",
+    "presets": "預設"
+  },
+  "generateScore": {
+    "duration": "時長",
+    "durationInvalid": "請輸入時長，例如 0:45 或 1:30。",
+    "addInstrument": "新增樂器",
+    "removeInstrument": "移除{{instrument}}",
+    "essential": "（必需）",
+    "complexity": "複雜度",
+    "instrumentation": "配器",
+    "key": "調號",
+    "measures": "小節數",
+    "mode": "調式",
+    "mood": "情緒",
+    "noMood": "不指定情緒",
+    "noStyle": "不指定風格",
+    "style": "風格",
+    "tempo": "速度",
+    "timeSignature": "拍號",
+    "title": "生成新樂譜",
+    "titleField": "標題",
+    "titlePlaceholder": "生成的樂譜",
+    "styleFamily": {
+      "popRock": "流行與搖滾",
+      "americanRoots": "美國根源音樂",
+      "jazz": "爵士",
+      "funkSoul": "放克與靈魂樂",
+      "latinCaribbean": "拉丁與加勒比",
+      "hipHop": "嘻哈",
+      "electronic": "電子",
+      "classical": "古典",
+      "danceCeremonial": "舞曲與儀式音樂",
+      "screen": "影視與氛圍"
+    },
+    "styleName": {
+      "ambient": "氛圍",
+      "baroque": "巴洛克",
+      "battle": "戰鬥",
+      "bluegrass": "藍草",
+      "blues": "布魯斯",
+      "bossaNova": "波薩諾瓦",
+      "cinematic": "電影配樂",
+      "classical": "古典樂派",
+      "country": "鄉村",
+      "disco": "迪斯科",
+      "edm": "電子舞曲",
+      "electroSwing": "電子搖擺",
+      "funk": "放克",
+      "heavyMetal": "重金屬",
+      "hipHop": "嘻哈",
+      "house": "浩室",
+      "jazz": "爵士",
+      "lofi": "低保真",
+      "march": "進行曲",
+      "pop": "流行",
+      "punk": "朋克",
+      "ragtime": "拉格泰姆",
+      "reggae": "雷鬼",
+      "rock": "搖滾",
+      "salsa": "薩爾薩",
+      "samba": "桑巴",
+      "soul": "靈魂樂",
+      "swing": "搖擺樂",
+      "symphonyLarge": "交響曲（浪漫）",
+      "symphonyMedium": "交響曲（古典）",
+      "symphonySmall": "交響曲（室內樂）",
+      "tango": "探戈",
+      "techno": "鐵克諾",
+      "trance": "迷幻舞曲",
+      "trap": "陷阱音樂",
+      "waltz": "圓舞曲"
+    },
+    "preset": {
+      "gentleMelody": "一段柔和的八小節大調旋律",
+      "simpleBeginner": "只用四分音符和二分音符的簡單旋律",
+      "openingTitle": "一小段片頭主題音樂",
+      "slowBuild": "緩慢推進，最後進入盛大的結尾段落",
+      "loopableLoop": "一段可以無縫迴圈的短小樂句",
+      "callAndResponse": "主奏與伴奏之間的一問一答",
+      "quietEnding": "結尾比開頭更安靜的樂曲",
+      "singleHook": "一個鮮明的動機，先陳述再變化",
+      "verseChorus": "主歌加副歌，副歌把情緒推高",
+      "loveSong": "一首樸素直白的情歌",
+      "leavingHome": "一首關於離家遠行的歌",
+      "lateNightDrive": "適合深夜開車時聽的音樂",
+      "breakupSong": "一首體面的分手之歌",
+      "crowdSinger": "一段全場都能跟著唱的副歌",
+      "rainyWindow": "看著窗上雨水的安靜小曲",
+      "summerDay": "適合夏日午後的明亮歌曲",
+      "walkingBass": "在行走低音上展開的和聲進行",
+      "lockedGroove": "貝斯與鼓咬合得嚴絲合縫的律動",
+      "handclapBackbeat": "讓人忍不住拍手的後拍節奏",
+      "halfTimeDrop": "中途落入半速的段落",
+      "drivingEighths": "從頭到尾推進的平直八分音符",
+      "syncopatedRiff": "落在弱拍上的切分樂句",
+      "triumphant": "凱旋般的勝利主題",
+      "menacing": "始終不肯解決的陰森主題",
+      "bittersweet": "一段苦樂參半的小調音樂",
+      "playfulDance": "一支輕快俏皮的舞曲",
+      "lullaby": "一首緩慢簡單的搖籃曲",
+      "restless": "焦躁不安、始終無法平靜的音樂",
+      "lonely": "留白很多的孤獨旋律",
+      "celebration": "適合慶典的音樂",
+      "chaseScene": "追逐場面的配樂",
+      "battleTheme": "充滿力量的戰鬥主題",
+      "creditsRoll": "片尾字幕的配樂",
+      "marketScene": "熱鬧街市般忙碌的音樂",
+      "sunriseScene": "緩緩升起的日出",
+      "ceremonyProcession": "典禮上的行進曲",
+      "twelveBarShuffle": "十二小節的搖擺布魯斯，留出加花空間",
+      "improvisedSolo": "先奏主題，再留出獨奏空間",
+      "fiddleAnswers": "每一句都有提琴應答的曲調",
+      "organStabs": "深沉低音之上的弱拍風琴插句",
+      "brassStabs": "銅管短促地應答主旋律",
+      "pedalDrone": "緩慢旋律之下的持續長音",
+      "palmMutedRiff": "一段悶音重複樂句，反覆推進",
+      "threeChordRush": "三個和絃，飛快，不加修飾"
+    },
+    "presetPrompts": "預設提示詞",
+    "moodName": {
+      "gentle": "溫柔",
+      "dark": "黑暗",
+      "upbeat": "歡快",
+      "dramatic": "戲劇性",
+      "calm": "寧靜",
+      "energetic": "充滿活力"
+    },
+    "complexityName": {
+      "simple": "簡單",
+      "moderate": "中等",
+      "complex": "複雜"
+    },
+    "tempoInvalid": "速度必須是大於零的數字，或留空。"
+  },
+  "generateTrack": {
+    "intro": "為當前樂譜新增一條新音軌，並與其調號、速度和長度保持一致。",
+    "promptLabel": "它應該演奏什麼？",
+    "promptPlaceholder": "在旋律下方的行走低音線",
+    "title": "生成音軌"
+  },
+  "import": {
+    "failedTitle": "無法匯入",
+    "unsupported": "此版本無法開啟檔案。",
+    "warningsExplain": "檔案中包含本應用不支援的內容，其餘部分均已匯入。",
+    "warningsTitle": "已匯入，但有說明"
+  },
+  "importAudio": {
+    "choose": "選擇錄音",
+    "description": "將錄音轉換為專案，並拆分為多個聲部——人聲、鼓、貝斯、吉他、鋼琴等，每個聲部佔一條音軌。轉換在伺服器上進行，需要幾分鐘：專案會立即開啟，每個聲部轉錄完成後即出現在樂譜中。得到的是可供編輯的草稿，而不是原曲的複製品。支援 {{formats}}。",
+    "longRecording": "較長的錄音需要一些時間，過長的錄音會被拒絕。",
+    "sending": "正在上傳錄音…",
+    "signInRequired": "請先登入再匯入錄音。錄音在伺服器上轉錄為您的專案，因此需要帳戶。",
+    "title": "匯入音訊",
+    "unavailable": "此伺服器不支援音訊轉譜。",
+    "upload": "轉譜"
+  },
+  "importMidi": {
+    "colChannel": "聲道",
+    "colClef": "譜號",
+    "colNotes": "音符",
+    "colProgram": "音色",
+    "colTrack": "音軌",
+    "description": "將 MIDI 檔案作為新文件開啟。在下方選擇要匯入的音軌以及如何解讀它們的時值。",
+    "detectKey": "檢測調號",
+    "fileKind": "MIDI 檔案",
+    "gridEighth": "八分音符",
+    "gridHalf": "二分音符",
+    "gridNone": "不量化",
+    "gridQuarter": "四分音符",
+    "gridSixteenth": "十六分音符",
+    "gridThirtySecond": "三十二分音符",
+    "gridWhole": "全音符",
+    "includeTrack": "包含音軌：{{name}}",
+    "mergeDuplicates": "合併幾乎重複的音符",
+    "minDuration": "最短音符時值（tick）",
+    "minDurationShort": "最短音符時值（tick）",
+    "pianoSplit": "鋼琴譜表分譜",
+    "quantizeGrid": "量化網格",
+    "splitPoint": "分譜點（MIDI 音符）",
+    "splitPointLabel": "分譜點（MIDI 音符編號）",
+    "summaryLine_one": "{{count}} 個音軌，{{seconds}} 秒，{{ppq}} PPQ",
+    "summaryLine_other": "{{count}} 個音軌，{{seconds}} 秒，{{ppq}} PPQ",
+    "sustain": "延音踏板處理",
+    "sustainExtend": "按延音延長音符",
+    "sustainIgnore": "忽略延音踏板",
+    "trackSummary": "MIDI 音軌概覽",
+    "tripletDetection": "三連音檢測",
+    "clefOfTrack": "譜號：{{name}}"
+  },
+  "inspector": {
+    "articulation": "演奏法",
+    "bar": "小節",
+    "barline": "小節線",
+    "barlineDouble": "雙線",
+    "barlineFinal": "終止線",
+    "barlineSingle": "單線",
+    "beat": "拍",
+    "centerPan": "聲像居中",
+    "chordSymbol": "和絃符號",
+    "chordSymbolPlaceholder": "例如 Cmaj7",
+    "clearGraceNotes_one": "移除 1 個裝飾音",
+    "clearGraceNotes_other": "移除 {{count}} 個裝飾音",
+    "clef": "譜號",
+    "clefInherit": "繼承（{{clef}}）",
+    "coda": "尾聲記號",
+    "composer": "作曲",
+    "customDuration": "自定義（{{ticks}} tick）",
+    "deleteTrack": "刪除音軌",
+    "deleteTrackConfirm": "刪除“{{name}}”及其所有音樂？只能透過撤銷恢復。",
+    "drumKit": "鼓組",
+    "duration": "時值",
+    "dynamic": "力度",
+    "dynamicHint": "標記力度的起點，直到下一個標記為止。",
+    "fine": "結束",
+    "fingering": "指法",
+    "glissando": "滑音",
+    "instrument": "樂器",
+    "instrumentRangeError": "{{instrument}} 無法在不改變音程的情況下覆蓋該音軌的音域。",
+    "jump": "跳轉",
+    "jumpNone": "無",
+    "key": "調號",
+    "keyFlats": "{{count}} 個降號",
+    "keyFlats_other": "{{count}} 個降號",
+    "keyMode": "調式",
+    "keyNoAccidentals": "無升降號",
+    "keyOptionMajor": "{{tonic}} 大調 — {{accidentals}}",
+    "keyOptionMinor": "{{tonic}} 小調 — {{accidentals}}",
+    "keySharps": "{{count}} 個升號",
+    "keySharps_other": "{{count}} 個升號",
+    "kitOf": "鼓組：{{name}}",
+    "makeGraceNote": "作為下一音符的裝飾音",
+    "measure": "小節",
+    "measureClef": "從此處的譜號",
+    "measureNumber": "第 {{number}} 小節",
+    "measureRange": "第 {{from}}–{{to}} 小節",
+    "mixed": "多個值",
+    "mute": "靜音",
+    "name": "名稱",
+    "navigation": "反覆導航",
+    "noDynamic": "無",
+    "noScore": "沒有樂譜",
+    "note": "音符",
+    "notesSelected_one": "已選中 1 個音符",
+    "notesSelected_other": "已選中 {{count}} 個音符",
+    "octave": "八度",
+    "ornaments": "裝飾音",
+    "pan": "聲像",
+    "pickup": "弱起小節",
+    "pickupBeats": "{{count}} 拍",
+    "pickupBeats_other": "{{count}} 拍",
+    "pickupNone": "無",
+    "pitch": "音高",
+    "replaceMeasures": "替換小節",
+    "replaceNotes": "替換音符",
+    "replaceTrack": "替換音軌",
+    "score": "樂譜",
+    "scoreTitle": "標題",
+    "scoreTitleHint": "用於所有匯出檔案的命名，與文件名稱無關。",
+    "segno": "反覆記號",
+    "selectMeasure": "未選擇小節",
+    "selectNote": "未選擇音符",
+    "selectTrack": "未選擇音軌",
+    "solo": "獨奏",
+    "spans": "跨音符記號",
+    "tempoHere": "此處速度（BPM）",
+    "tempoInherited": "沿用前面小節的速度。輸入數值即可在此設定速度變化。",
+    "tempoStarting": "樂譜的起始速度。",
+    "tieStart": "延音線起點",
+    "tieStop": "延音線終點",
+    "timeSigDenominator": "拍號分母",
+    "timeSigNumerator": "拍號分子",
+    "timeSignature": "拍號",
+    "toCoda": "轉尾聲",
+    "track": "音軌",
+    "trackName": "音軌名稱",
+    "trackPan": "音軌聲像",
+    "trackVolume": "音軌音量",
+    "unplugged": "不插電",
+    "unpluggedHint": "拖動樂器或自己的位置來改變聽感。拖動小手柄可以轉動朝向。",
+    "unpluggedListener": "你",
+    "unpluggedReset": "重置佈局",
+    "unpluggedStage": "樂器佈局",
+    "unpluggedTurnHandle": "轉向",
+    "unpluggedWander": "漫步",
+    "velocity": "力度",
+    "voice": "聲部",
+    "volume": "音量",
+    "moveRefused": "無法將該音符移動到該位置。",
+    "outOfRange_one": "有 {{count}} 個音符超出該樂器 {{low}}-{{high}} 的音域，無法演奏。",
+    "outOfRange_other": "有 {{count}} 個音符超出該樂器 {{low}}-{{high}} 的音域，無法演奏。",
+    "visibleTracks": "顯示的音軌"
+  },
+  "key": {
+    "major": "大調",
+    "minor": "小調"
+  },
+  "library": {
+    "retry": "重試",
+    "saveFailed": "儲存失敗。您的更改仍保留在本地，稍後會重試。",
+    "playbackFailed": "無法開始播放。",
+    "scoreLoadFailed": "無法為播放準備樂譜。",
+    "authRequired": "請先登入後再繼續。",
+    "serverUnavailable": "此功能需要伺服器連線，在此處不可用。"
+  },
+  "musicXmlWarn": {
+    "alterRounded": "變音記號 {{alter}} 已取整為 {{clamped}}。",
+    "complexTimeSignature": "複合拍號已被簡化。",
+    "multipleArticulations": "一個音符上只保留了第一個演奏法記號。",
+    "noDuration": "沒有時值的音符已被跳過。",
+    "noPitchOrRest": "既無音高也非休止符的音符已被跳過。",
+    "noTempo": "未指定速度，已使用 {{defaultBpm}} BPM。",
+    "nonPositiveDuration": "時值不為正數的音符已被跳過。",
+    "noteTrimmed": "有音符被裁短以適應所在小節。",
+    "tempoClamped": "速度 {{bpm}} 超出 {{min}}-{{max}} 範圍，已調整為 {{clamped}}。",
+    "unpitched": "無音高的音符已放置在打擊樂譜表上。",
+    "unsupportedArticulation": "不支援的演奏法記號 <{{tag}}> 已被忽略。",
+    "unsupportedClef": "不支援的譜號 {{sign}}（第 {{line}} 線），已改用高音譜號。",
+    "unsupportedKeyMode": "不支援的調式“{{mode}}”，已改用大調。",
+    "unsupportedMeasureElement": "不支援的小節元素 <{{tag}}> 已被忽略。",
+    "unsupportedNotation": "不支援的記號 <{{tag}}> 已被忽略。",
+    "unsupportedNoteElement": "不支援的音符元素 <{{tag}}> 已被忽略。",
+    "unsupportedPitchStep": "不支援的音名“{{step}}”。",
+    "unsupportedTime": "第 {{measureNumber}} 小節的拍號不受支援，已保留原有拍號。"
+  },
+  "nav": {
+    "back": "返回",
+    "community": "社群",
+    "credits": "點數",
+    "docs": "文件",
+    "projects": "專案",
+    "published": "已釋出",
+    "resources": "資源",
+    "settings": "設定",
+    "signIn": "登入",
+    "signOut": "退出登入",
+    "purchases": "購買記錄"
+  },
+  "newProject": {
+    "generateForMe": "由 AI 生成",
+    "generateForMeHint": "讓 AI 譜寫音樂。關閉時，你會得到一份使用這些樂器的空白樂譜。",
+    "generationNeedsServer": "生成功能需要伺服器上的專案。需要登入。",
+    "generationNeedsSignIn": "登入後即可讓 AI 為你生成樂譜。",
+    "generationNeedsCredits": "你的積分餘額低於零，暫時無法生成。購買積分後即可再次使用。",
+    "notEnoughCredits": "這需要 {{estimate}} 積分，但你的餘額為 {{balance}}（還差 {{shortfall}}）。請購買積分、減少小節或樂器，或關閉“由 AI 生成”。",
+    "buyCredits": "購買積分",
+    "title": "新建專案",
+    "untitled": "未命名專案",
+    "writeLyrics": "填寫歌詞",
+    "writeLyricsHint": "為演唱聲部配上歌詞",
+    "defaultTitle": "新樂譜",
+    "defaultTitleGenerated": "生成的樂譜",
+    "lyricsTheme": "歌詞的主題",
+    "lyricsThemePlaceholder": "例如：一首關於歸鄉的情歌",
+    "lyricsLanguage": "歌詞語言",
+    "lyricsLanguageName": {
+      "en": "英文",
+      "zh": "中文"
+    }
+  },
+  "ornament": {
+    "invertedMordent": "逆波音",
+    "mordent": "波音",
+    "none": "無",
+    "trill": "顫音",
+    "turn": "迴音"
+  },
+  "print": {
+    "action": "列印",
+    "landscape": "橫向",
+    "orientation": "方向",
+    "paper": "紙張",
+    "paperA4": "A4",
+    "paperLegal": "法律用紙",
+    "paperLetter": "信紙",
+    "portrait": "縱向",
+    "whatToPrint": "列印內容",
+    "wholeScore": "整份樂譜"
+  },
+  "published": {
+    "by": "作者：{{name}}",
+    "noLongerShared": "該連結已不再分享。",
+    "notFound": "未找到",
+    "share": "分享",
+    "flag": "舉報"
+  },
+  "replace": {
+    "action": "替換",
+    "measuresTitle": "替換小節",
+    "notesTitle": "替換音符",
+    "nothingSelected": "請先選擇一段音樂。",
+    "preserveBoundary": "保留邊界音符",
+    "preserveHarmony": "保留和聲",
+    "preserveMelody": "保留旋律",
+    "preserveRhythm": "保留節奏",
+    "presetInstructions": "預設指令",
+    "trackTitle": "替換音軌",
+    "preset": {
+      "moreDramatic": "讓這段更有戲劇性",
+      "simplify": "簡化這段音樂",
+      "rhythmicVariation": "增加節奏變化",
+      "memorableMelody": "讓旋律更容易記住",
+      "strongerTransition": "做一個更有力的過渡",
+      "harmonicTension": "增加和聲張力",
+      "resolvePhrase": "讓樂句得到解決",
+      "moreUpbeat": "讓這段更歡快",
+      "darker": "讓這段更陰暗",
+      "variationKeepMelody": "保留旋律，寫一段變奏",
+      "keepRhythmChangeHarmony": "保留節奏，改變和聲",
+      "keepHarmonyChangeMelody": "保留和聲，改變旋律",
+      "addAccompaniment": "加入伴奏",
+      "thinOrchestration": "精簡配器"
+    }
+  },
+  "resources": {
+    "title": "資源",
+    "intro": "可直接匯入 {{appName}} 的免費音樂，按各類檔案對應的匯入方式分組。下載檔案後，在專案頁面使用「匯入」。",
+    "group": {
+      "scores": {
+        "title": "樂譜",
+        "route": "「匯入 → MusicXML」。音符、節奏、歌詞、力度與排版都會完整保留。"
+      },
+      "midi": {
+        "title": "MIDI 檔案",
+        "route": "「匯入 → MIDI」。音符與時值可直接讀取；小節線與調號為推斷結果，可在嚮導中修正。"
+      },
+      "modules": {
+        "title": "Tracker 模組",
+        "route": "「匯入 → 模組」。支援 MOD、S3M、XM、IT 與 MPTM，按檔案內容而非副檔名識別。"
+      },
+      "audio": {
+        "title": "可轉譜的錄音",
+        "route": "「匯入 → 音訊」。一次只能識別一條旋律線，請選擇獨奏樂器或獨唱。"
+      },
+      "datasets": {
+        "title": "大型合集",
+        "route": "「匯入 → MIDI 或 MusicXML」。整套語料而非單曲——先下載壓縮包，再開啟其中一個檔案。"
+      },
+      "sound": {
+        "title": "樂器與音色",
+        "route": "不可匯入。這些是播放所用的取樣與 SoundFont，適合在其他軟體中播放樂譜時使用。"
+      },
+      "reference": {
+        "title": "格式與工具",
+        "route": "參考資料，並非樂曲檔案。說明各格式實際儲存了什麼，以及還有哪些軟體能開啟它。"
+      }
+    },
+    "link": {
+      "musescore": "上百萬份社群樂譜，其中公共領域作品可下載為 MusicXML。",
+      "openscore": "重新打譜的古典曲目，全部釋出為公共領域。",
+      "imslp": "公共領域古典樂譜庫，收錄二十萬首作品，許多在 PDF 之外還附有 MusicXML。",
+      "cpdl": "合唱樂譜維基，四萬餘份合唱與聲樂樂譜，大量提供可編輯的原始檔。",
+      "mutopia": "重新排版的公共領域樂譜，每首都附有 LilyPond 原始檔與 MIDI。",
+      "musopenScores": "完全不受版許可權制的樂譜，與 Musopen 的錄音收錄在一起。",
+      "openGoldberg": "巴赫《哥德堡變奏曲》，樂譜與演奏錄音均可自由使用。",
+      "musicxmlDirectory": "該格式官方整理的 MusicXML 站點清單——看完本頁後可繼續往這裡找。",
+      "bitmidi": "可搜尋的大型 MIDI 合集，下載前能直接在瀏覽器裡試聽。",
+      "vgmusic": "手工製作的電子遊戲音樂 MIDI，按主機與曲目分類。",
+      "kunstderfuge": "網上最大的古典 MIDI 檔案庫，數千個檔案可免費取用。",
+      "midiworld": "古典、流行與遊戲 MIDI 並列收錄，另有鼓點節奏型。",
+      "mfiles": "製作精良的古典 MIDI，收錄的大多是最常被尋找的曲目。",
+      "classicalArchives": "經過篩選的免費合集，可自由複製使用，無需事先申請許可。",
+      "theSession": "愛爾蘭傳統曲調，每個版本都可下載為 MIDI。",
+      "hymnary": "讚美詩曲調與歌詞，多數附有完整和聲的 MIDI。",
+      "midkar": "爵士、藍調、雷格泰姆與經典標準曲，經三十年陸續製作。",
+      "modarchive": "數以萬計的模組檔案，涵蓋 demoscene 時期至今，站內自帶播放器。",
+      "modland": "最完整的檔案庫：涵蓋各種 tracker 格式，按作者歸檔，可當作磁碟瀏覽。",
+      "amp": "Amiga 圈自建的曲庫，由創作這些音樂的人親手整理。",
+      "sceneOrg": "demoscene 的檔案伺服器，音樂目錄收錄了數十年來的聚會參賽作品。",
+      "woolyss": "長期維護的索引，彙總 tracker 音樂的來源與仍可播放它的軟體。",
+      "archiveTrackers": "精選的數 GB 合集，MOD、XM、IT 與 S3M 一次打包下載。",
+      "musopenAudio": "錄製後釋出為公共領域的古典音樂演奏。",
+      "freeMusicArchive": "十萬餘首採用知識共享許可的曲目，可按許可型別篩選。",
+      "freesound": "單音、短樂句與實地錄音，全部採用開放許可。",
+      "archiveAudio": "現場演出、78 轉唱片轉錄與社群上傳，均可免費下載。",
+      "pdmx": "二十五萬份公共領域 MusicXML 樂譜，打包成一個資料集。",
+      "lakh": "為音樂研究收集的十七萬六千個 MIDI 檔案，可免費下載。",
+      "maestro": "兩百小時的鋼琴比賽演奏，MIDI 與錄音精確對齊。",
+      "adlPiano": "按流派、子流派與藝人歸檔的鋼琴 MIDI。",
+      "museTrainer": "公共領域鋼琴 MusicXML 倉庫——克隆下來即可開啟其中任意檔案。",
+      "womenComposers": "女性作曲家的作品樂譜，已完成編碼並可自由使用。",
+      "freepats": "採用開放許可的樂器取樣與音色集。",
+      "polyphone": "可免費下載的 SoundFont，並附有製作自用音色的編輯器。",
+      "generalUser": "經過調校的通用 MIDI 音色庫，全部 128 種音色在同一混音中互不掩蓋。",
+      "philharmonia": "由樂團親自錄製的管絃樂器逐音取樣。",
+      "musicXmlSpec": "MusicXML 規範，逐個元素說明。",
+      "generalMidi": "每條音軌的樂器都從這 128 種通用 MIDI 音色中選取。",
+      "standardMidiFile": "MIDI 協會官方文件，說明 .mid 檔案實際儲存了什麼。",
+      "openMpt": "當你還想取出模組中的取樣時，用這款 tracker 開啟它。",
+      "verovio": "在瀏覽器中把 Humdrum 編碼的樂譜轉換為 MusicXML。"
+    }
+  },
+  "selection": {
+    "notes_one": "已選擇 {{count}} 個音符",
+    "notes_other": "已選擇 {{count}} 個音符",
+    "measures_one": "已選擇 {{count}} 個小節",
+    "measures_other": "已選擇 {{count}} 個小節",
+    "tracks_one": "已選擇 {{count}} 個音軌",
+    "tracks_other": "已選擇 {{count}} 個音軌",
+    "none": "未選擇任何內容",
+    "regenerated": "已重新生成 {{summary}}"
+  },
+  "settings": {
+    "account": "帳戶",
+    "language": "語言",
+    "language_en": "English",
+    "language_de": "Deutsch",
+    "language_es": "Español",
+    "language_fr": "Français",
+    "language_it": "Italiano",
+    "language_ja": "日本語",
+    "language_ko": "한국어",
+    "language_pt": "Português",
+    "language_ru": "Русский",
+    "language_sv": "Svenska",
+    "language_th": "ไทย",
+    "language_uk": "Українська",
+    "language_vi": "Tiếng Việt",
+    "language_zh": "简体中文",
+    "language_zh-hant": "繁體中文",
+    "theme": "主題",
+    "themeSystem": "跟隨系統",
+    "themeLight": "淺色",
+    "themeDark": "深色",
+    "scoreLabel": "樂譜",
+    "pitchWritten": "顯示記譜音高",
+    "pitchDisplayHelp": "移調樂器可以按演奏者所見的記譜音高顯示，也可以按實際發聲的音高顯示。",
+    "page": {
+      "appearanceLabel": "外觀"
+    },
+    "privacyPolicy": "隱私政策",
+    "termsOfService": "服務條款"
+  },
+  "shortcuts": {
+    "playPause": "播放 / 暫停",
+    "clearSelection": "清除選擇",
+    "deleteNotes": "刪除選中的音符",
+    "pitchSemitone": "音高上移/下移半音",
+    "pitchOctave": "音高上移/下移八度",
+    "moveSelection": "選區向前/向後移動",
+    "clickChord": "點選一個和絃",
+    "selectEveryNote": "選中其中的所有音符",
+    "pianoKey": "鋼琴鍵（已選中和絃時）",
+    "addRemoveNote": "新增或移除該音符",
+    "enterPitch": "在游標處寫入該音符，八度取最接近前一個音符的位置",
+    "chooseDuration": "選擇時值：全、二分、四分、八分、十六分、三十二分",
+    "toggleDotted": "為當前時值加附點",
+    "insertRest": "插入休止符",
+    "toggleTie": "將所選音符與下一個連音",
+    "noteInput": "開啟／關閉音符輸入",
+    "stepCaret": "按當前時值移動游標",
+    "barEdge": "游標移至小節首／尾",
+    "scoreEdge": "游標移至樂譜開頭／結尾",
+    "toggleSlur": "為所選音符新增連句線",
+    "markFermata": "給選中的音符加延長記號",
+    "markArpeggiate": "把選中的和絃改為琶音",
+    "markGlissando": "在選中的音符之間加滑音",
+    "markOttava": "在選中範圍上加八度括號",
+    "markCrescendo": "在選中範圍上加漸強",
+    "markDiminuendo": "在選中範圍上加漸弱"
+  },
+  "snapshot": {
+    "copyrightConfirm": "我擁有本作品及其引用內容的全部版權。",
+    "copyrightWarning": "只發布你自己創作的音樂。釋出後，任何人都可以開啟該公開頁面。",
+    "createHint": "將專案固定為當前狀態。快照一經儲存便不會改變。",
+    "createTitle": "建立快照",
+    "currentWork": "當前工作",
+    "history": "歷史",
+    "managePublishedTitle": "已釋出的快照",
+    "name": "快照名稱",
+    "newSnapshot": "新建快照",
+    "open": "開啟",
+    "openTitle": "開啟快照",
+    "openWarning": "開啟快照會替換你當前的工作內容。其他內容不會丟失——每個快照都保留在原處。",
+    "publicName": "公開名稱",
+    "publicNameFor": "{{name}} 的公開名稱",
+    "publicNameHint": "在社群中顯示的標題。預設為專案名稱加快照名稱。",
+    "publish": "釋出",
+    "publishHint": "釋出——任何擁有連結的人都可以聆聽",
+    "publisherHint": "將顯示在社群中，絕不會顯示你的郵箱地址。",
+    "publisherName": "釋出者名稱",
+    "snapshotFirst": "先為當前工作建立快照",
+    "unpublish": "取消釋出"
+  },
+  "templates": {
+    "lead-sheet": {
+      "name": "主旋律譜",
+      "description": "單行高音譜表，16 小節 4/4 拍。空白起點。"
+    },
+    "piano-grand-staff": {
+      "name": "鋼琴（大譜表）",
+      "description": "高音譜表在上、低音譜表在下，16 小節——一件樂器兩隻手。"
+    },
+    "string-quartet": {
+      "name": "絃樂四重奏",
+      "description": "第一、第二小提琴，中提琴用中音譜號，大提琴用低音譜號。16 小節。"
+    },
+    "jazz-combo": {
+      "name": "爵士小組",
+      "description": "小號、鋼琴、低音提琴和爵士鼓。32 小節，降 B 大調。"
+    },
+    "rock-band": {
+      "name": "搖滾樂隊",
+      "description": "兩把吉他、貝斯和搖滾鼓組。32 小節，速度 120。"
+    },
+    "satb-choir": {
+      "name": "四聲部合唱",
+      "description": "女高音、女中音、男高音和男低音。16 小節。"
+    },
+    "drum-kit": {
+      "name": "架子鼓",
+      "description": "單行打擊樂譜表，16 小節——鍵盤會標出每件鼓的名稱。"
+    },
+    "waltz": {
+      "name": "圓舞曲（3/4）",
+      "description": "三拍子鋼琴，24 小節——換一種拍子開始。"
+    },
+    "jig": {
+      "name": "吉格舞曲（6/8）",
+      "description": "複合拍子的單行旋律，16 小節。"
+    },
+    "gentle-piano-melody": {
+      "name": "輕柔鋼琴旋律",
+      "description": "已寫好的 8 小節 C 大調鋼琴旋律，可在此基礎上繼續。"
+    },
+    "pop-arrangement": {
+      "name": "流行編曲",
+      "description": "高音／低音雙音軌編曲骨架，已含音符。"
+    },
+    "orchestral-passage": {
+      "name": "管絃樂片段",
+      "description": "用於配器的柱式和絃。"
+    }
+  },
+  "trackerFit": {
+    "clampedNotes_one": "有 {{count}} 個音符超出 {{format}} 的音域，已按整八度移動。",
+    "clampedNotes_other": "有 {{count}} 個音符超出 {{format}} 的音域，已按整八度移動。",
+    "droppedShortNotes_one": "有 {{count}} 個短於一行的音符被丟棄。",
+    "droppedShortNotes_other": "有 {{count}} 個短於一行的音符被丟棄。",
+    "droppedVoices_one": "有 {{count}} 個聲部超出 {{format}} 的聲道數，將會缺失。",
+    "droppedVoices_other": "有 {{count}} 個聲部超出 {{format}} 的聲道數，將會缺失。",
+    "quantisedNotes_one": "有 {{count}} 個音符被略微移動以對齊行網格。",
+    "quantisedNotes_other": "有 {{count}} 個音符被略微移動以對齊行網格。",
+    "title": "匯出為 {{format}}",
+    "exportAnyway": "仍然匯出"
+  },
+  "transport": {
+    "audioOutput": "音訊輸出",
+    "systemDefault": "系統預設",
+    "outputUnavailable": "無法切換到該音訊輸出裝置",
+    "editTempo": "編輯速度",
+    "goToStart": "回到開頭",
+    "loadFailed": "樂器載入失敗",
+    "masterVolume": "主音量",
+    "measureBeat": "當前小節與拍子",
+    "nextMeasure": "下一小節",
+    "pause": "暫停",
+    "play": "播放",
+    "position": "位置",
+    "preparing": "正在準備樂器 {{percent}}%",
+    "preparingUnknown": "正在準備樂器",
+    "previousMeasure": "上一小節",
+    "speed": "播放速度",
+    "speedMultiplier": "播放速度",
+    "stop": "停止",
+    "tempo": "速度",
+    "tempoBpm": "速度（BPM）",
+    "time": "播放時間",
+    "toggleLoop": "迴圈",
+    "toggleMetronome": "節拍器",
+    "transport": "播放控制",
+    "volume": "音量"
+  },
+  "generationChoices": {
+    "heading": "這首作品的生成方式",
+    "hint": "鎖定想保留的選項後重新生成：鎖定的選項保持不變，其餘的重新隨機選擇。",
+    "lock": "保留{{name}}",
+    "groove": "律動",
+    "cycle": "和絃",
+    "arcEntry": "開頭",
+    "arcIntensity": "推進",
+    "moment": "亮點段落",
+    "carrier": "旋律",
+    "formShape": "曲式",
+    "hook": "主題動機",
+    "lyric": "歌詞",
+    "again": "重新生成",
+    "againKeeping_one": "重新生成，保留 1 個選項",
+    "againKeeping_other": "重新生成，保留 {{count}} 個選項",
+    "confirmTitle": "重新生成這首作品？",
+    "confirmMessage": "這會用新生成的結果替換整份樂譜。除非先儲存快照，否則當前樂譜不會保留。",
+    "confirm": "重新生成"
+  },
+  "projectOrigin": {
+    "heading": "來源",
+    "kind": {
+      "generated": "根據請求生成",
+      "imported": "從檔案匯入",
+      "transcribed": "從錄音轉錄",
+      "duplicated": "從另一個專案複製",
+      "blank": "從空白樂譜開始",
+      "unknown": "未記錄"
+    },
+    "file": "檔案",
+    "format": "格式",
+    "sourceProject": "來源專案",
+    "sourceMissing": "該專案已被刪除",
+    "request": "當時的請求",
+    "lineup": "編制",
+    "backend": "生成後端",
+    "tempoValue": "每分鐘 {{bpm}} 拍",
+    "barsValue_one": "{{count}} 小節",
+    "barsValue_other": "{{count}} 小節",
+    "generatedOn": "生成時間",
+    "modelUsed": "使用的模型",
+    "tokens": "Token 用量",
+    "tokensValue": "輸入 {{prompt}}，輸出 {{completion}}",
+    "jobLoading": "正在載入生成請求…",
+    "jobMissing": "生成此專案的任務已不在列表中。"
+  },
+  "home": {
+    "heroTitle": "音樂的原始碼",
+    "heroBody": "{{appName}} 面向希望掌控創作過程、同時藉助 AI 助力的音樂人。用標準樂譜創作、檢查並編輯每一個音符。",
+    "featureEditorTitle": "逐音創作，掌控作品",
+    "featureEditorBody": "使用標準記譜法塑造音樂的每個部分。AI 可以幫你起步，作曲的主導權始終在你手中。",
+    "featureAiTitle": "聽從你方向的 AI",
+    "featureAiBody": "生成樂譜或改寫選中的小節，然後親自檢查並打磨音符。",
+    "featureFormatsTitle": "按你的方式匯入和匯出",
+    "featureFormatsBody": "可匯入音訊錄音（MP3、MPA、WAV）、MIDI 和 MusicXML；可匯出 MIDI、MusicXML、WAV 和 MP3。"
+  },
+  "clef": {
+    "treble": "高音譜號",
+    "bass": "低音譜號",
+    "alto": "中音譜號",
+    "tenor": "次中音譜號",
+    "percussion": "打擊樂譜號"
+  },
+  "overlay": {
+    "openingProject": "正在開啟專案…",
+    "transcribingNotes": "正在轉錄錄音…",
+    "progress": "{{stage}}：第 {{done}}/{{total}} 項，{{label}}",
+    "reconnecting": "正在重新連線…",
+    "polling": "實時更新不可用；正在定期檢查專案。",
+    "lockedWhileGenerating": "完成後可繼續編輯和播放。",
+    "stage": {
+      "plan": "規劃",
+      "separate": "分離聲部",
+      "part": "聲部",
+      "section": "段落",
+      "chunk": "片段"
+    }
+  },
+  "account": {
+    "nickname": "暱稱",
+    "nicknameHint": "分享快照時使用的名字，絕不會顯示你的郵箱地址。",
+    "picture": "頭像",
+    "choosePicture": "選擇圖片",
+    "removePicture": "移除頭像",
+    "pictureHint": "支援 JPEG、PNG 或 WebP，上傳前會自動縮小。",
+    "pictureUnsupported": "該檔案無法用作頭像。",
+    "saveFailed": "無法儲存個人資料。",
+    "signedInAs": "已登入：{{email}}",
+    "loadFailed": "無法載入，請稍後重試。"
+  },
+  "coupons": {
+    "code": "優惠券程式碼",
+    "redeem": "兌換",
+    "redeemed": "已增加 {{credits}} 點數，當前餘額為 {{balance}}。",
+    "redeemFailed": "無法兌換該優惠券。",
+    "expires": "到期日期",
+    "expiresPlaceholder": "到期日期，格式為 YYYY-MM-DD",
+    "email": "郵箱（如僅限某個帳戶使用）",
+    "emailHint": "填寫郵箱後，僅該帳戶可以兌換。",
+    "create": "建立優惠券",
+    "created": "已建立 {{code}}",
+    "createFailed": "無法建立該優惠券。",
+    "none": "還沒有優惠券。",
+    "expiresOn": "{{date}} 到期",
+    "redeemedCount": "已兌換 {{count}} 次"
+  },
+  "apiKeys": {
+    "intro": "金鑰可代表你的工作區進行操作，請像對待密碼一樣保管。",
+    "name": "金鑰名稱",
+    "create": "建立金鑰",
+    "newKey": "你的新金鑰：{{name}}",
+    "copyNow": "請立即複製此金鑰，之後將無法再次顯示。",
+    "hide": "隱藏",
+    "none": "還沒有 API 金鑰。",
+    "active": "有效",
+    "revoked": "已撤銷",
+    "revoke": "撤銷",
+    "revokeNamed": "撤銷 {{name}}",
+    "lastUsed": "上次使用：{{date}}",
+    "neverUsed": "從未使用",
+    "unavailable": "你的工作區尚不可用。",
+    "failed": "操作未成功，請重試。"
+  },
+  "history": {
+    "noPurchases": "還沒有購買記錄。",
+    "usage": "使用記錄",
+    "noUsage": "還沒有消耗點數。",
+    "loadMore": "載入更多",
+    "generation": "生成"
+  },
+  "flag": {
+    "title": "舉報此樂譜",
+    "hint": "請說明舉報此分享樂譜的原因。站點管理員將進行稽核。",
+    "reasonLabel": "原因",
+    "detailsLabel": "詳細說明",
+    "detailsPlaceholder": "描述問題",
+    "detailsRequired": "請填寫詳細說明。",
+    "submit": "提交舉報",
+    "submitting": "提交中…",
+    "thanks": "感謝——你的舉報已提交稽核。",
+    "failed": "無法提交舉報，請重試。",
+    "reject": "駁回",
+    "confirm": "確認",
+    "reviewHint": "待稽核的舉報。駁回以忽略，或確認以將該樂譜從社群移除。",
+    "reviewEmpty": "暫無待稽核的舉報。",
+    "reviewFailed": "無法載入舉報。",
+    "removedForReason": "已從社群移除：{{reason}}",
+    "reason": {
+      "copyright": "侵犯版權",
+      "offensive": "不良內容",
+      "other": "其他"
+    },
+    "status": {
+      "submitted": "已提交",
+      "rejected": "已駁回",
+      "confirmed": "已確認"
+    }
+  },
+  "privacy": {
+    "title": "隱私政策",
+    "lastUpdated": "最後更新：{{date}}",
+    "sections": {
+      "introduction": {
+        "title": "簡介",
+        "body": "歡迎使用 {{appName}}。我們尊重您的隱私，並致力於保護您的個人資料。本政策說明了當您使用 {{appName}} 創作、播放和分享音樂時，我們如何收集、使用和保護您的資訊。"
+      },
+      "collection": {
+        "title": "我們收集的資訊",
+        "body": "您提供的資訊：\n• 帳戶資訊（電子郵件地址、姓名）\n• 您的樂譜、編曲和專案\n• 偏好和設定\n• 支付資訊（由我們的支付服務提供商安全處理）\n\n自動收集的資訊：\n• 裝置和應用資訊\n• IP 地址和大致位置\n• 使用模式和分析資料\n• 效能和可靠性指標"
+      },
+      "usage": {
+        "title": "我們如何使用您的資訊",
+        "body": "我們使用收集到的資訊來：\n• 提供並改進 {{appName}} 及其記譜、播放和生成功能\n• 在您的各裝置之間儲存和同步您的專案\n• 處理積分和付款\n• 傳送有關服務的重要更新\n• 分析使用情況以改進應用"
+      },
+      "sharing": {
+        "title": "資訊共享",
+        "body": "我們可能在以下情況下共享您的資訊：\n• 與協助我們運營的服務提供商共享\n• 當法律或法律程式要求時\n• 為保護我們的權利和安全\n• 經您同意"
+      },
+      "security": {
+        "title": "資料安全",
+        "body": "我們採取適當的保護措施：\n• 對傳輸中和靜態儲存的資料進行加密\n• 定期進行安全評估\n• 訪問控制和身份驗證\n• 安全的雲基礎設施"
+      },
+      "retention": {
+        "title": "資料保留",
+        "body": "只要您的帳戶處於活躍狀態，或為提供服務所需，我們就會保留您的個人資訊。我們會儲存您的專案，以便您在不同會話和裝置之間繼續使用。您可以隨時請求刪除您的帳戶及其資料。"
+      },
+      "rights": {
+        "title": "您的隱私權",
+        "body": "您有權：\n• 訪問您的個人資訊\n• 更正不準確的資料\n• 請求刪除您的資料\n• 匯出您的專案\n• 退訂營銷資訊"
+      },
+      "cookies": {
+        "title": "本地儲存",
+        "body": "我們在您的裝置上使用必要的儲存，以保持您的登入狀態、儲存您的作品並記住您的偏好。我們不會將第三方跟蹤用於廣告目的。"
+      },
+      "children": {
+        "title": "兒童隱私",
+        "body": "{{appName}} 面向所有年齡段的使用者。未經父母同意，我們不會故意收集 13 歲以下兒童的個人資訊。"
+      },
+      "transfers": {
+        "title": "國際資料傳輸",
+        "body": "您的資訊可能會被傳輸到您所在國家/地區以外的地方並在那裡處理。在發生此類傳輸時，我們會採取適當措施加以保護。"
+      },
+      "changes": {
+        "title": "本政策的變更",
+        "body": "我們可能會不時更新本隱私政策。我們會在本頁面釋出新政策，並更新上方的日期。"
+      },
+      "language": {
+        "title": "語言",
+        "body": "為方便起見，本文件提供多種語言版本。如果英文版本與翻譯版本存在差異，應以英文版本為準。"
+      }
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "body": "如果您對本隱私政策有任何疑問，請透過 {{email}} 聯絡我們，或訪問 {{website}}。"
+    }
+  },
+  "terms": {
+    "title": "服務條款",
+    "lastUpdated": "最後更新：{{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "條款的接受",
+        "body": "使用 {{appName}} 即表示您同意本服務條款。如果您不同意，請勿使用本服務。"
+      },
+      "service": {
+        "title": "服務說明",
+        "body": "{{appName}} 是一款用於創作、播放和分享樂譜的應用。它提供免費功能，以及用於 AI 輔助生成等功能的付費積分。"
+      },
+      "accounts": {
+        "title": "使用者帳戶",
+        "body": "建立帳戶即表示您同意：\n• 提供準確且完整的資訊\n• 妥善保管您的帳戶憑據\n• 對您帳戶下的活動承擔責任\n• 如發現任何未經授權的訪問，請及時通知我們"
+      },
+      "usage": {
+        "title": "可接受的使用",
+        "body": "使用 {{appName}} 時，您同意不：\n• 在未付費的情況下使用付費功能\n• 使用機器人或自動化系統訪問本服務\n• 逆向工程或提取原始碼\n• 與他人分享您的帳戶憑據\n• 干擾或破壞本服務"
+      },
+      "payments": {
+        "title": "積分與付款",
+        "body": "部分功能需使用積分付費。購買透過應用商店按其政策處理。積分會在使用相應功能時被扣除。"
+      },
+      "ip": {
+        "title": "智慧財產權",
+        "body": "{{appName}} 及其原創內容、功能和設計歸 {{companyName}} 所有，並受國際版權和商標法保護。您創作的音樂仍歸您所有。"
+      },
+      "liability": {
+        "title": "責任限制",
+        "body": "{{appName}} 按\"原樣\"提供，不附帶任何形式的保證。對於因您使用本服務而產生的任何間接、附帶、特殊、後果性或懲罰性損害，我們概不負責。"
+      },
+      "termination": {
+        "title": "終止",
+        "body": "如果違反這些條款，我們可能會暫停或終止您的帳戶。終止後，您使用本服務的權利即告結束。您可以隨時刪除您的帳戶。"
+      },
+      "changes": {
+        "title": "條款變更",
+        "body": "我們可能會不時修改這些條款。我們會透過應用通知您重大變更。在變更後繼續使用 {{appName}} 即表示您接受新條款。"
+      },
+      "language": {
+        "title": "語言",
+        "body": "為方便起見，本文件提供多種語言版本。如果英文版本與翻譯版本存在差異，應以英文版本為準。"
+      }
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "body": "如對本服務條款有任何疑問，請透過 {{email}} 聯絡我們，或訪問 {{website}}。"
+    }
+  }
+}

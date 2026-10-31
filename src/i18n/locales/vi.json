@@ -1,0 +1,1838 @@
+{
+  "about": {
+    "title": "Giới thiệu"
+  },
+  "accidental": {
+    "0": "Dấu bình",
+    "1": "Dấu thăng",
+    "2": "Dấu thăng kép",
+    "-1": "Dấu giáng",
+    "-2": "Dấu giáng kép"
+  },
+  "articulation": {
+    "accent": "Nhấn",
+    "marcato": "Marcato",
+    "none": "Không",
+    "staccato": "Staccato",
+    "tenuto": "Tenuto"
+  },
+  "auth": {
+    "orContinueWith": "Hoặc tiếp tục với",
+    "missingFields": "Nhập email và mật khẩu của bạn.",
+    "signInWithGoogle": "Tiếp tục với Google",
+    "createAccount": "Tạo tài khoản của bạn",
+    "email": "Email",
+    "passwordLabel": "Mật khẩu",
+    "signInWithApple": "Tiếp tục với Apple",
+    "forgotPassword": "Quên mật khẩu?",
+    "resetPasswordHint": "Nhập địa chỉ email của bạn và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu.",
+    "sendResetLink": "Gửi liên kết đặt lại",
+    "resetEmailSent": "Nếu một tài khoản sử dụng địa chỉ đó, một liên kết đặt lại mật khẩu đang được gửi đi. Hãy kiểm tra email của bạn.",
+    "backToSignIn": "Quay lại đăng nhập",
+    "missingEmail": "Nhập địa chỉ email của bạn.",
+    "signUp": "Tạo tài khoản",
+    "alreadyHaveAccount": "Đã có tài khoản?",
+    "dontHaveAccount": "Cần một tài khoản?",
+    "resetPassword": "Đặt lại mật khẩu của bạn",
+    "signInToAccount": "Đăng nhập vào tài khoản của bạn",
+    "genericError": "Xác thực thất bại"
+  },
+  "command": {
+    "clearBars": "Xóa nội dung ô nhịp",
+    "clearTrack": "Xóa nội dung bè",
+    "pasteBars": "Dán ô nhịp",
+    "pasteTrack": "Dán bè",
+    "addMeasure": "Thêm ô nhịp",
+    "insertBars": "Chèn ô nhịp",
+    "addNote": "Thêm nốt",
+    "addTrack": "Thêm bè",
+    "changeAccidental": "Đổi dấu hóa",
+    "changeArticulation": "Đổi cách diễn tấu",
+    "changeClef": "Đổi khóa nhạc",
+    "changeDuration": "Đổi trường độ",
+    "changeKeySignature": "Đổi giọng",
+    "changePitch": "Đổi cao độ",
+    "changeTempo": "Đổi nhịp độ",
+    "changeTimeSignature": "Đổi số chỉ nhịp",
+    "changeTrackProps": "Đổi bè",
+    "changeVelocity": "Đổi cường độ",
+    "changeVoice": "Đổi bè nhạc",
+    "deleteEvents": "Xóa nốt",
+    "deleteMeasure": "Xóa ô nhịp",
+    "deleteTrack": "Xóa bè",
+    "importScore": "Nhập bản nhạc",
+    "insertWithRipple": "Chèn",
+    "moveNotes": "Di chuyển nốt",
+    "pasteEvents": "Dán",
+    "quantize": "Chuẩn hóa nhịp",
+    "relocateNotes": "Di chuyển nốt",
+    "resizeNotes": "Đổi trường độ nốt",
+    "toggleTie": "Dấu nối",
+    "transpose": "Dịch giọng",
+    "changeMetadata": "Đổi thông tin bản nhạc",
+    "changeDynamic": "Đổi sắc thái",
+    "setLyric": "Đổi lời",
+    "toGraceNote": "Đổi nốt hoa mỹ",
+    "setPickup": "Đặt ô nhịp lấy đà",
+    "setChordSymbol": "Đổi ký hiệu hợp âm",
+    "changeRepeats": "Đổi dấu nhắc lại",
+    "changeBeam": "Đổi dấu chụm đuôi",
+    "setFingering": "Đổi ngón bấm",
+    "changeBarline": "Đổi vạch nhịp",
+    "changeMeasureClef": "Đổi khóa nhạc tại ô nhịp",
+    "changeNavigation": "Đổi dấu điều hướng",
+    "changeOrnament": "Đổi dấu láy",
+    "toggleArpeggiate": "Rải hợp âm",
+    "toggleGlissando": "Glissando",
+    "toggleOttava": "Dấu quãng tám",
+    "toggleFermata": "Dấu miễn nhịp",
+    "toggleHairpin": "Dấu chuyển cường độ",
+    "toggleSlur": "Dấu luyến",
+    "moveUnpluggedListener": "Di chuyển người nghe",
+    "turnUnpluggedListener": "Xoay người nghe",
+    "moveUnpluggedTrack": "Di chuyển nhạc cụ",
+    "resetUnpluggedArrangement": "Đặt lại cách sắp xếp"
+  },
+  "common": {
+    "cancel": "Hủy",
+    "closeDialog": "Đóng hộp thoại",
+    "done": "Xong",
+    "ok": "OK",
+    "open": "Mở",
+    "close": "Đóng",
+    "save": "Lưu",
+    "delete": "Xóa"
+  },
+  "community": {
+    "browseResources": "Duyệt tài nguyên",
+    "empty": "Chưa có gì được xuất bản.",
+    "intro": "Những ảnh chụp mọi người đã chia sẻ. Ai cũng có thể nghe — không cần tài khoản.",
+    "loadFailed": "Không thể tải.",
+    "noMatch": "Không có bản nhạc được chia sẻ nào khớp với “{{query}}”.",
+    "searchLabel": "Tìm bản nhạc được chia sẻ",
+    "searchPlaceholder": "Tìm theo tiêu đề hoặc người chia sẻ",
+    "sharedBy": "bởi {{name}}",
+    "title": "Cộng đồng"
+  },
+  "credits": {
+    "balance": "Số dư",
+    "outOfCreditsBody": "Việc tạo nhạc cần tín dụng, và số dư của bạn đã hết. Nạp thêm để tiếp tục — không có gì bạn đang làm bị mất cả.",
+    "outOfCreditsTitle": "Hết tín dụng",
+    "purchaseElsewhere": "Tín dụng được mua trên ứng dụng web.",
+    "rate": "Một tín dụng cho mỗi ô nhịp, mỗi nhạc cụ.",
+    "viewCredits": "Xem tín dụng"
+  },
+  "dashboard": {
+    "create": "Tạo",
+    "empty": "Chưa có dự án nào.",
+    "generating": "Đang tạo…",
+    "transcribing": "Đang chép lại…",
+    "import": "Nhập",
+    "importFormat": "Nhập một tập tin",
+    "importMidi": "Nhập MIDI",
+    "newProject": "Dự Án Mới",
+    "syncToServer": "Lưu lên máy chủ",
+    "importMusicXml": "Nhập MusicXML",
+    "importAudio": "Nhập Âm thanh",
+    "importModule": "Nhập Tracker Module",
+    "importProject": "Nhập tập tin dự án",
+    "connect": "Kết nối",
+    "myProjects": "Dự án của tôi",
+    "newFromTemplateAction": "Tạo từ Mẫu",
+    "projectFileError": {
+      "invalidJson": "Tập tin đó không phải là dự án: không thể đọc được dưới dạng JSON.",
+      "notAProject": "Tập tin đó không phải là dự án Moosiac.",
+      "newerVersion": "Dự án đó được lưu bởi một phiên bản Moosiac mới hơn. Hãy cập nhật ứng dụng để mở nó.",
+      "invalidScore": "Không thể đọc được bản nhạc trong dự án đó."
+    },
+    "openDocuments": "Mở dự án",
+    "creditHistory": "Lịch sử tín dụng",
+    "redeemCoupon": "Đổi phiếu giảm giá",
+    "apiKeys": "Khóa API",
+    "manageCoupons": "Quản lý phiếu giảm giá",
+    "duplicate": "Nhân bản",
+    "duplicateProject": "Nhân bản dự án: {{name}}",
+    "deleteProject": "Xóa dự án: {{name}}",
+    "deleteTitle": "Xóa dự án",
+    "deleteMessage": "Xóa \"{{name}}\"? Không thể hoàn tác.",
+    "updated": "Cập nhật {{date}}",
+    "reviewFlags": "Xem xét báo cáo",
+    "reviewFlagsDesc": "Xem xét các báo cáo về ảnh chụp được chia sẻ"
+  },
+  "docs": {
+    "editor": {
+      "title": "Trình soạn thảo",
+      "summary": "Canvas ký âm, con trỏ, và cách viết nốt.",
+      "figure": "Thanh soạn thảo phía trên một bản nhạc, với con trỏ ở đầu ô nhịp đầu tiên.",
+      "canvas": {
+        "heading": "Canvas",
+        "p1": "Bản nhạc được vẽ lên một canvas duy nhất, và chỉ những hệ thống bạn nhìn thấy mới được vẽ ở mỗi khung hình. Đó là điều giúp một bản nhạc dài vẫn phản hồi nhanh — chi phí vẽ không tăng theo số ô nhịp.",
+        "p2": "Dọc bên trái mỗi hệ thống là máng bè: tên mỗi bè, nhạc cụ của nó, cùng các nút tắt tiếng và solo. Nó được vẽ vào cùng canvas với khuông nhạc, nên không bao giờ lệch khỏi phần nhạc mà nó dán nhãn.",
+        "p3": "Một bè không phải bè bạn đang soạn sẽ mờ đi — nốt, dấu chụm đuôi, dấu nối và dòng khuông nhạc cùng mờ — để bạn thấy ngay phần nào đang được xử lý. Một nốt được chọn giữ màu của nó trên mọi bè, vì chọn qua nhiều bè là điều bạn làm có chủ ý."
+      },
+      "caret": {
+        "heading": "Con trỏ và vùng chọn",
+        "p1": "Con trỏ màu đỏ là nơi nốt tiếp theo được đặt và nơi phát bắt đầu. Nhấp vào khuông nhạc trống sẽ di chuyển nó, làm bè đó hoạt động và xóa vùng chọn; nhấp vào một nốt cũng chọn nốt đó.",
+        "p2": "Shift-nhấp thêm hoặc bỏ một nốt khỏi vùng chọn. Cmd-nhấp chọn mọi thứ từ con trỏ đến nơi bạn nhấp trên bè đang hoạt động, và Cmd-Shift-nhấp làm điều tương tự trên mọi bè.",
+        "p3": "Số ô nhịp phía trên mỗi hệ thống là một máng riêng: nhấp một số để chọn ô nhịp đó, shift-nhấp để mở rộng vùng chọn thành một khoảng ô nhịp. Thay thế và tái tạo đều hoạt động trên các khoảng, nên đây là cách bạn nhắm tới chúng."
+      },
+      "noteInput": {
+        "heading": "Viết nốt",
+        "p1": "Có bốn cách viết một nốt: gõ chữ cái của nó, nhấp vào khuông nhạc khi bật nhập nốt, chơi đàn piano trên màn hình, hoặc chơi một đàn phím MIDI được kết nối.",
+        "p2": "Gõ thường là nhanh nhất. A đến G viết nốt đó tại con trỏ ở quãng tám gần nhất với nốt trước nó, nên một giai điệu không phải dịch giọng về sau. Các chữ số 1 đến 6 chọn trường độ, dấu chấm thêm chấm dôi, R viết một dấu lặng và T tạo dấu nối.",
+        "p3": "Nhập nốt là một chế độ, bật tắt bằng N, vì một cú nhấp phải có thể mang hai nghĩa: khi tắt, nhấp nhắm con trỏ, khi bật, nhấp viết một nốt tại cao độ bạn nhấp."
+      },
+      "editModes": {
+        "heading": "Chèn, thay thế và chồng",
+        "p1": "Chèn đẩy các nốt sau của bè ra để tạo chỗ. Thay thế ghi đè lên bất cứ gì đã có sẵn. Chồng thêm nốt vào những gì đã có tại vị trí đó, dựng nên một hợp âm.",
+        "p2": "Chồng không khả dụng trên một nhạc cụ chỉ có thể vang một nốt mỗi lần — một cây sáo không thể chơi hợp âm, và thanh công cụ nói vậy thay vì để bạn viết một hợp âm."
+      },
+      "voices": {
+        "heading": "Bè nhạc",
+        "p1": "Một khuông nhạc có thể mang hai bè độc lập. Chúng được phân biệt bằng đuôi nốt: bè trên hướng lên và bè dưới hướng xuống, đó là điều một người chép nhạc sẽ làm.",
+        "p2": "Một bè đơn giữ lựa chọn đuôi nốt của chính trình vẽ, vì ép một hướng tại đó sẽ làm nửa số nốt chỉ sai hướng."
+      },
+      "layout": {
+        "heading": "Bố cục và thu phóng",
+        "p1": "Bố cục trang bọc phần nhạc thành các hệ thống vừa với chiều rộng, theo cách nhạc in làm. Bố cục liên tục dàn toàn bộ bản nhạc thành một hệ thống dài và cuộn ngang.",
+        "p2": "Thu phóng co giãn phần khắc nhạc. Nó thay đổi lượng vừa trên màn hình, chứ không bao giờ thay đổi những gì có trong bản nhạc."
+      }
+    },
+    "formats": {
+      "title": "Nhập và xuất",
+      "summary": "Những gì ứng dụng đọc, những gì nó viết, và những gì sống sót qua chuyến đi.",
+      "importing": {
+        "heading": "Nhập",
+        "p1": "Mỗi lần nhập tạo một dự án mới, đó là lý do tất cả đều nằm ở trang Dự án thay vì bên trong trình soạn thảo — một lần nhập từ một bản nhạc đang mở chỉ có thể ném bạn ra khỏi nó.",
+        "p2": "Ngoại lệ duy nhất là âm thanh được đưa vào dưới dạng một bè thay vì một dự án. Việc đó viết một bản chép lại lên bản nhạc bạn đã có, nên nó nằm dưới Thêm Bè trong trình soạn thảo.",
+        "p3": "Một tracker module được chọn theo nội dung của nó thay vì tên tập tin, nên một module bị đặt sai tên vẫn nhập được và một tập tin không nhận dạng được sẽ báo lỗi bằng cách nói ra nó thực sự tìm thấy gì."
+      },
+      "exporting": {
+        "heading": "Xuất",
+        "p1": "Menu Xuất viết MIDI, MusicXML, một XM tracker module, âm thanh dạng WAV hoặc MP3, và dự án dưới dạng tập tin dự án. In là riêng, và cho chọn Letter hoặc Legal theo chiều dọc hoặc chiều ngang.",
+        "p2": "Âm thanh được kết xuất qua cùng SoundFont phát nó, nên tập tin là một bản ghi những gì bạn đã nghe chứ không phải một cách diễn giải thứ hai.",
+        "p3": "Nếu bản nhạc có các bè ẩn, việc xuất sẽ hỏi có bao gồm chúng không thay vì âm thầm quyết định hộ bạn."
+      },
+      "fidelity": {
+        "heading": "Những gì sống sót",
+        "p1": "MIDI mang những gì bộ phát đã chơi, không phải những gì được lưu — sắc thái, dấu chuyển cường độ, cách diễn tấu và nốt hoa mỹ đều đến được tập tin. MusicXML mang phần khắc nhạc: dấu chụm đuôi, dấu luyến, dấu láy, lời, dấu nhắc lại và dấu điều hướng.",
+        "p2": "Một tracker module là định dạng mất mát nhất trong ba, và nói vậy trước khi viết: nó có một lưới hàng, một giới hạn kênh và một tầm âm, và việc xuất cho bạn thấy những gì sẽ mất trước khi viết bất cứ gì."
+      },
+      "importsHeading": "Định dạng nó đọc",
+      "exportsHeading": "Định dạng nó viết",
+      "name": {
+        "midi": "MIDI",
+        "musicxml": "MusicXML",
+        "tracker": "Tracker module",
+        "audio": "Âm thanh",
+        "project": "Tập tin dự án",
+        "xm": "XM module",
+        "wav": "Âm thanh WAV",
+        "mp3": "Âm thanh MP3",
+        "print": "In"
+      },
+      "in": {
+        "midi": "Nốt, nhịp độ và số chỉ nhịp. Bạn chọn cách nó được chia thành các bè và chuẩn hóa nhịp chặt đến đâu.",
+        "musicxml": "Cả phần khắc nhạc lẫn các nốt: dấu chụm đuôi, dấu luyến, dấu láy, lời, dấu nhắc lại và sự thay đổi khóa nhạc.",
+        "tracker": "Các nốt được nhóm theo nhạc cụ thay vì theo kênh, nên một bè chơi qua nhiều kênh sẽ nằm trên một bè.",
+        "audio": "Mỗi lần một dòng. Chỉ đơn âm — không thử hợp âm và hỗn âm, và hộp thoại nói vậy.",
+        "project": "Toàn bộ một dự án đúng như lúc nó được xuất, gồm mọi bè và phần hòa âm của nó."
+      },
+      "out": {
+        "midi": "Những gì bộ phát đã chơi, gồm sắc thái, dấu chuyển cường độ, cách diễn tấu và nốt hoa mỹ.",
+        "musicxml": "Toàn bộ phần khắc nhạc, để mở trong phần mềm ký âm khác.",
+        "tracker": "Chỉ các nốt. Các khe nhạc cụ được đặt tên nhưng để trống, nên tập tin im lặng cho đến khi một người dùng tracker điền vào.",
+        "wav": "Âm thanh không nén, kết xuất qua cùng SoundFont phát nó.",
+        "mp3": "Âm thanh nén, từ cùng bản kết xuất.",
+        "project": "Mọi thứ, để sao lưu hoặc chuyển giữa các tài khoản.",
+        "print": "Một chế độ xem in với khổ giấy và hướng, để in hoặc lưu dưới dạng PDF."
+      }
+    },
+    "generation": {
+      "title": "Tạo nhạc",
+      "summary": "Tạo một bản nhạc, một bè, hoặc một đoạn thay thế — và chi phí của nó.",
+      "figure": "Biểu mẫu dự án mới với Tạo giúp tôi được bật.",
+      "whole": {
+        "heading": "Tạo một bản nhạc",
+        "p1": "Từ trang Dự án, mô tả những gì bạn muốn và chọn nhạc cụ, độ dài, nhịp độ, giọng và nhịp. Bất cứ gì bạn để trống thì bộ tạo tự quyết định.",
+        "p2": "Việc tạo chạy trên máy chủ, không phải trong trình duyệt của bạn. Bạn có thể đóng trang và quay lại — dự án hiển thị tiến trình của nó và kết quả được áp dụng khi nó về đến.",
+        "p3": "Nhạc cụ đầu tiên bạn liệt kê là nhạc cụ mang giai điệu, đó là lý do thứ tự danh sách quan trọng."
+      },
+      "track": {
+        "heading": "Tạo một bè",
+        "p1": "Bên trong trình soạn thảo bạn có thể thêm một bè vào một bản nhạc bạn đã có. Nó được cho giọng, nhịp độ và độ dài của bản nhạc, cùng các bè khác để khớp vào.",
+        "p2": "Phần cuối đó quan trọng: bộ tạo được cho thấy các bè hiện có đang chơi gì trên cùng các ô nhịp, nên một đường bass được viết bên dưới giai điệu của bạn chứ không phải bên cạnh nó."
+      },
+      "replace": {
+        "heading": "Thay thế nhạc",
+        "p1": "Thay thế viết lại một phần của bản nhạc bạn đã có. Chọn một số ô nhịp và thay thế chúng; chọn một bè và thay thế toàn bộ; hoặc chọn từng nốt riêng lẻ và chỉ thay thế chúng.",
+        "p2": "Bạn có thể giữ các phần của nó cố định trong khi phần còn lại thay đổi — giữ hòa âm, giữ tiết tấu, giữ giai điệu và biến đổi phần đệm, hoặc giữ các nốt ở hai đầu để nhạc mới nối vào gọn gàng.",
+        "p3": "Thay thế nốt là trường hợp duy nhất không được làm tròn thành ô nhịp trọn vẹn. Vùng chọn được thay thế theo khoảng mà nó bao phủ, và hộp thoại nói có bao nhiêu nốt trong khoảng đó đã không được chọn."
+      },
+      "credits": {
+        "heading": "Chi phí",
+        "p1": "Một tín dụng viết một ô nhịp cho một nhạc cụ. Tám ô nhịp cho bốn nhạc cụ là 32 tín dụng. Hộp thoại hiển thị một ước tính trước khi bạn cam kết.",
+        "p2": "Ước tính nói khoảng, vì bạn bị tính phí cho những gì thực sự được tạo ra. Con số đó khớp với ước tính khi việc tạo trả về đúng độ dài bạn yêu cầu, và nhỏ hơn trong trường hợp khác."
+      },
+      "quality": {
+        "heading": "Kết quả được kiểm tra thế nào",
+        "p1": "Mỗi bè được tạo ra đều được kiểm tra trước khi bạn thấy nó: các nốt ngoài tầm âm của nhạc cụ, các nốt sẽ im lặng, các nốt trùng lặp tại cùng một khoảnh khắc, các hợp âm nhạc cụ không chơi được, và các bè hoàn toàn không có sự đa dạng về tiết tấu hay sắc thái.",
+        "p2": "Nếu có gì đó sai, bộ tạo được yêu cầu lại, và được nói chính xác cần sửa gì thay vì chỉ được yêu cầu thử một lần nữa. Nó có giới hạn, nên một yêu cầu ngoan cố không chạy mãi.",
+        "p3": "Một vấn đề còn sót lại không bao giờ khiến kết quả bị vứt đi. Nỗ lực tốt nhất được giữ lại và vấn đề được báo cáo, vì một bè cần một chỉnh sửa nhỏ còn đáng giá hơn không có gì cả."
+      }
+    },
+    "getting-started": {
+      "title": "Bắt đầu",
+      "summary": "Ứng dụng này là gì, và làm thế nào để có một bản nhạc trước mắt bạn.",
+      "figure": "Biểu mẫu dự án mới: một tiêu đề, các nhạc cụ, cùng độ dài, giọng và nhịp.",
+      "what": {
+        "heading": "Nó là gì",
+        "p1": "Moosiac là một trình soạn thảo ký âm có gắn khả năng tạo nhạc bằng AI. Bạn mô tả bản nhạc bạn muốn và nó viết một bản nhạc; từ đó mỗi nốt là của bạn để chỉnh sửa, phát lại, in và xuất.",
+        "p2": "Không có gì được tạo ra mà bạn không thể sửa lại bằng tay. Bộ tạo viết vào cùng mô hình bản nhạc mà trình soạn thảo dùng, nên một ô nhịp được tạo ra và một ô nhịp bạn gõ là cùng một loại thứ."
+      },
+      "firstProject": {
+        "heading": "Tạo dự án đầu tiên của bạn",
+        "p1": "Mọi thứ bắt đầu ở trang Dự án. Có bốn cách để khởi đầu: bắt đầu từ một mẫu, tạo cả một bản nhạc bằng AI, nhập một tập tin, hoặc nhân bản một dự án bạn đã có.",
+        "p2": "Các mẫu là những bản nhạc rỗng với khuông nhạc đã được dựng sẵn — một lead sheet, một khuông kép piano, một tứ tấu dây, một ban nhạc jazz. Chúng là cách nhanh nhất để đến một trang trắng có đúng hình dạng.",
+        "p3": "Việc nhập cũng tạo một dự án. Một tập tin MIDI, một tập tin MusicXML, một tracker module, một bản ghi âm hay một tập tin dự án đều nằm lại thành một dự án mới thay vì trộn vào một dự án đang mở."
+      },
+      "dashboard": {
+        "heading": "Trang Dự án",
+        "p1": "Các dự án được liệt kê mới nhất trước và có thể sắp xếp theo tên hoặc tìm kiếm. Mỗi hàng mở trình soạn thảo, và menu trên nó nhân bản hoặc xóa.",
+        "p2": "Một dự án đang được tạo hiển thị tiến trình của nó ngay tại chỗ và có thể hủy ở đó. Bạn có thể rời khỏi trang — việc tạo chạy trên máy chủ, không phải trong trình duyệt của bạn."
+      }
+    },
+    "group": {
+      "start": "Bắt đầu từ đây",
+      "using": "Sử dụng ứng dụng",
+      "reference": "Tham khảo"
+    },
+    "inspector": {
+      "title": "Bảng thuộc tính",
+      "summary": "Bảng thuộc tính: bè, nốt, ô nhịp và bản nhạc.",
+      "figure": "Bảng thuộc tính với một nốt được chọn.",
+      "tabs": {
+        "heading": "Bốn thẻ",
+        "p1": "Bè đứng đầu vì nó luôn có gì đó để hiển thị — luôn có một bè đang hoạt động. Nó giữ tên, nhạc cụ hay bộ trống, khóa nhạc, âm lượng, cân bằng, tắt tiếng và solo, cùng việc xóa bè.",
+        "p2": "Nốt hiển thị những gì được chọn: cao độ, dấu hóa, quãng tám, trường độ, cường độ, bè nhạc, cách diễn tấu, dấu láy, sắc thái, ký hiệu hợp âm, ngón bấm, và các dấu kéo dài — dấu luyến, glissando, dấu quãng tám.",
+        "p3": "Ô nhịp bao quát ô bạn đã chọn: số của nó, số chỉ nhịp và hóa biểu, một thay đổi nhịp độ bắt đầu ở đây, kiểu vạch nhịp, dấu nhắc lại và kết, một thay đổi khóa nhạc, các dấu điều hướng và việc nó có phải ô nhịp lấy đà hay không.",
+        "p4": "Bản nhạc là chính tác phẩm — tiêu đề, người soạn và mô tả của nó. Tiêu đề đặt tên cho mọi tập tin được xuất, và nó không giống với tên dự án dán nhãn hàng trên trang Dự án."
+      },
+      "editing": {
+        "heading": "Đọc nó",
+        "p1": "Bảng nói trường độ nốt, số ô nhịp và tên giọng thay vì tick và số quãng năm. Một nốt đen đọc là một nốt đen, không phải là 480.",
+        "p2": "Nơi nhiều nốt được chọn không đồng nhất về một giá trị, trường hiển thị rằng chúng lẫn lộn thay vì chọn một trong số đó để hiển thị."
+      }
+    },
+    "instruments": {
+      "title": "Nhạc cụ",
+      "summary": "128 chương trình General MIDI, tầm âm của chúng, và nên tin chúng đến đâu.",
+      "catalogue": {
+        "heading": "Danh mục",
+        "p1": "Âm thanh của một bè là một trong 128 chương trình General MIDI, được nhóm thành mười sáu họ, mỗi họ tám. Mỗi chương trình mang tầm âm riêng, số nốt nó có thể vang cùng lúc, và cao độ viết của nó cách cao độ vang bao xa.",
+        "p2": "Bảng dưới đây được tạo từ dữ liệu đó thay vì viết tay, nên nó không thể lệch khỏi những gì ứng dụng thực sự dùng.",
+        "p3": "Dịch giọng được hiển thị theo nửa cung từ vang sang viết. Kèn trumpet giọng Si giáng đọc là +2: một nốt Đô vang được viết là Rê. Một ô trống nghĩa là nhạc cụ được viết đúng nơi nó vang, là hầu hết các nhạc cụ."
+      },
+      "compass": {
+        "heading": "Nên tin một tầm âm đến đâu",
+        "p1": "Cột cuối là cột đáng đọc. Đã đo nghĩa là ai đó đã kiểm tra nhạc cụ đó so với một nguồn. Có thể lên dây nghĩa là nhạc cụ hoàn toàn không có cao độ tuyệt đối cố định — một cây shamisen được lên dây theo người hát, một cây koto theo tác phẩm — nên tầm âm hiển thị là một khoảng điển hình chứ không phải một giới hạn.",
+        "p2": "Tổng hợp nghĩa là một patch điện tử, không có tầm âm acoustic để tôn trọng, nên nó nhận cả bàn phím thay vì một giới hạn bịa ra. Không cao độ nghĩa là một hiệu ứng âm thanh hoặc một âm gõ không có cao độ: không có cao độ nào để nằm ngoài.",
+        "p3": "Chỉ một tầm âm đã đo mới từng được dùng để từ chối một nốt. Từ chối dựa trên một tầm âm không ai xác minh sẽ loại bỏ phần nhạc hoàn toàn ổn, nên ứng dụng không làm vậy."
+      },
+      "percussion": {
+        "heading": "Trống",
+        "p1": "Một bè gõ hoạt động khác đi: cao độ đặt tên một cái trống thay vì một nốt. Đô giữa là trống cái, nốt Rê trên nó là trống snare. Bản đồ bao MIDI 35 đến 81 và bất cứ gì ngoài nó đều không phát ra tiếng.",
+        "p2": "Trên một bè trống, trường nhạc cụ chọn một bộ trống thay vì một nhạc cụ. General MIDI định nghĩa tám — Standard, Room, Power, Electronic, TR-808, Jazz, Brush và Orchestra — và cùng một con số nghĩa là một bộ trống ở đây và một nhạc cụ ở mọi nơi khác.",
+        "p3": "Đàn phím trên màn hình dán nhãn mọi phím trống nên bạn không phải học bản đồ."
+      },
+      "search": "Tìm theo tên, họ hoặc số chương trình",
+      "showing": "Hiển thị {{count}} trên 128 chương trình",
+      "colProgram": "Số",
+      "colName": "Nhạc cụ",
+      "colFamily": "Họ",
+      "colRange": "Tầm âm",
+      "colPolyphony": "Số nốt cùng lúc",
+      "colTranspose": "Dịch giọng",
+      "colBasis": "Tầm âm",
+      "polyUnlimited": "Bất kỳ",
+      "basis": {
+        "measured": "Đã đo",
+        "tunable": "Có thể lên dây",
+        "synthetic": "Tổng hợp",
+        "unpitched": "Không cao độ",
+        "assumed": "Chưa xác minh"
+      }
+    },
+    "limits": {
+      "title": "Giới hạn và các khoảng trống đã biết",
+      "summary": "Những gì ứng dụng cố ý không làm, và những gì nó chưa làm.",
+      "byDesign": {
+        "heading": "Theo thiết kế",
+        "p1": "Nhập âm thanh là đơn âm. Mỗi lần một dòng — không thử hợp âm và hỗn âm, và hộp thoại nói vậy thay vì đưa ra một câu trả lời sai đầy tự tin.",
+        "p2": "Việc tạo trả về một kết quả và áp dụng nó. Không có danh sách ứng viên để chọn giữa, vì việc tạo chạy như một tác vụ nền và không ai đang nhìn khi nó về đến.",
+        "p3": "Ảnh chụp không thể chỉnh sửa hay xóa. Tính bất biến được bảo đảm bởi việc không có thao tác nào để làm điều đó, thay vì bởi một quy tắc phải nhớ."
+      },
+      "known": {
+        "heading": "Các khoảng trống đã biết",
+        "p1": "Chụm đuôi không thể nối qua một phách, chỉ có thể ngắt hoặc bỏ. Một tập tin chụm đuôi qua một phách sẽ nhập với cách nhóm của chúng tôi thay vì của chính nó.",
+        "p2": "Dấu láy được vẽ và xuất nhưng không phát. Dấu này chủ yếu mang tính ký âm, và việc thực hiện nó sẽ khiến dấu láy không thể đọc lại được về sau.",
+        "p3": "Một tracker module được viết chỉ với các nốt. Các khe nhạc cụ của nó được đặt tên nhưng để trống, nên tập tin im lặng cho đến khi một người dùng tracker điền vào — việc xuất nói vậy trước khi viết."
+      }
+    },
+    "midi-input": {
+      "title": "Đàn phím MIDI",
+      "summary": "Chơi nốt vào từ một nhạc cụ được kết nối.",
+      "figure": "Đàn phím piano dưới bản nhạc, dán nhãn ở mỗi phím Đô và Fa.",
+      "connecting": {
+        "heading": "Kết nối",
+        "p1": "Một đàn phím MIDI kết nối với máy tính của bạn có thể chơi nốt thẳng vào bản nhạc. Quyền truy cập được yêu cầu lần đầu khi liệt kê thiết bị, không phải khi trang tải, nên bạn không bao giờ bị hỏi về một quyền mà bạn có thể không cần.",
+        "p2": "Nó hoạt động ở bất cứ đâu trình duyệt hỗ trợ Web MIDI. Nơi nó không hỗ trợ, tính năng đơn giản là không được cung cấp thay vì báo lỗi khi bạn thử.",
+        "p3": "Không có quyền truy cập sysex nào được yêu cầu — chỉ các thông điệp nốt mà trình soạn thảo thực sự dùng."
+      },
+      "playing": {
+        "heading": "Chơi vào",
+        "p1": "Các nốt từ một đàn phím MIDI đi qua đúng cùng một đường như các phím trên màn hình: nốt vang khi được giữ, một hợp âm gảy cùng lúc được nhóm lại, thời gian bạn giữ nó trở thành trường độ, và con trỏ tiến qua những gì đã được viết.",
+        "p2": "Nhiều đàn phím gửi một note-on ở cường độ bằng không thay cho một note-off. Điều đó được đọc là một lần thả, vì hiểu nó theo nghĩa đen sẽ để nốt vang mãi mãi."
+      }
+    },
+    "navLabel": "Các chủ đề tài liệu",
+    "navigation": {
+      "title": "Di chuyển khắp nơi",
+      "summary": "Các trang, mỗi trang để làm gì, và trang nào cần tài khoản.",
+      "figure": "Thanh di chuyển giữa các mục của ứng dụng.",
+      "routes": {
+        "heading": "Các trang",
+        "p1": "Thanh trên cùng mang Dự án, Cộng đồng, Tài liệu, Tài nguyên và Cài đặt. Logo quay về trang chủ. Mọi thứ nằm dưới một tiền tố ngôn ngữ, nên trang tiếng Anh là /en và trang tiếng Trung là /zh.",
+        "p2": "Dự án là công việc của riêng bạn. Cộng đồng là những gì người khác đã chia sẻ. Tài nguyên chỉ đến các kho miễn phí đáng nhập từ đó. Cài đặt giữ chủ đề, cỡ chữ, cách hiển thị cao độ, và các tùy chọn nhà phát triển.",
+        "p3": "Mở một dự án đưa bạn đến trình soạn thảo tại /project/mã-của-nó. In là một chế độ xem riêng tại /project/mã-của-nó/print, và một ảnh chụp được chia sẻ đọc tại /p/mã-công-khai-của-nó."
+      },
+      "account": {
+        "heading": "Những gì cần tài khoản",
+        "p1": "Dự án, tín dụng và các giao dịch mua cần bạn đăng nhập. Trang chủ, Cộng đồng, Tài liệu, Tài nguyên, Cài đặt và bất kỳ ảnh chụp được chia sẻ nào thì không.",
+        "p2": "Điều cuối đó là có chủ ý: một liên kết bạn chia sẻ phải mở được cho người chưa bao giờ đăng nhập, nên người đọc bản đã xuất bản nằm hoàn toàn ngoài cổng đăng nhập."
+      }
+    },
+    "notation": {
+      "title": "Dấu hiệu và ký âm",
+      "summary": "Mọi thứ bạn có thể viết lên một nốt ngoài cao độ và trường độ của nó.",
+      "figure": "Thanh soạn thảo: trường độ nốt, dấu hóa, cách diễn tấu và các dấu hiệu khác.",
+      "ties": {
+        "heading": "Dấu nối và dấu lặng",
+        "p1": "Một dấu nối nối hai nốt cùng cao độ thành một nốt vang. Chọn một nốt và nhấn T, hoặc dùng thanh công cụ. Dấu nối không phải dấu luyến — nó nối, trong khi dấu luyến chỉ phân câu.",
+        "p2": "Bạn không bao giờ viết một dấu lặng để tạo im lặng. Im lặng đơn giản là khoảng trống bạn chừa giữa các nốt, và dấu lặng xuất hiện nơi có khoảng trống. R viết một dấu lặng rõ ràng khi bạn muốn chiếm một phách một cách có chủ ý."
+      },
+      "dynamics": {
+        "heading": "Sắc thái và dấu chuyển cường độ",
+        "p1": "Một sắc thái đánh dấu mức một đoạn bắt đầu ở, từ ppp đến fff, và giữ hiệu lực cho đến dấu kế tiếp. Đánh dấu một nốt f làm cả đoạn to lên — không có gì để áp dụng cho các nốt ở giữa.",
+        "p2": "Cường độ riêng của nốt sống sót như một độ lệch trên mức đó, nên một dấu nhấn trong một đoạn nhỏ vẫn là một dấu nhấn thay vì bị san phẳng.",
+        "p3": "Một dấu chuyển cường độ là sự thay đổi giữa hai mức, viết trên hai nốt trở lên bằng Shift+< hoặc Shift+>. Nó vang như một dốc, chuyển tới dấu nào theo sau nó, hoặc một bậc khi không có gì theo sau."
+      },
+      "articulation": {
+        "heading": "Cách diễn tấu",
+        "p1": "Staccato, nhấn, tenuto và marcato là một trường độ và một sức nặng. Staccato giảm nửa nốt, nhấn thêm sức nặng, marcato làm cả hai, và tenuto là trọn trường độ mà nốt vốn đã có.",
+        "p2": "Việc rút ngắn không bao giờ di chuyển gì cả. Một nốt staccato thả sớm nhưng vẫn chiếm trường độ viết của nó, nên mỗi nốt theo sau vẫn ở nguyên vị trí và ô nhịp vẫn cộng đủ."
+      },
+      "ornaments": {
+        "heading": "Dấu láy",
+        "p1": "Trill, mordent, mordent ngược và turn là các dấu hiệu, không phải các nốt chúng thay thế. Cách thực hiện một dấu láy phụ thuộc vào thời kỳ và thẩm mỹ, nên dấu hiệu được lưu lại và để đọc được.",
+        "p2": "Dấu láy ở đây mang tính ký âm: chúng được vẽ và được xuất, nhưng việc phát lại không thực hiện chúng thành các nốt."
+      },
+      "grace": {
+        "heading": "Nốt hoa mỹ",
+        "p1": "Một nốt hoa mỹ bám vào nốt nó trang trí thay vì lấy thời gian từ ô nhịp, nên nó di chuyển, sao chép và xóa cùng nốt chính và không bao giờ làm một ô nhịp cộng không đủ.",
+        "p2": "Chúng có vang. Một nốt hoa mỹ mượn từ nốt chính của nó thay vì từ ô nhịp — giới hạn ở nửa trường độ của nốt chính — nên mỗi nốt theo sau vẫn ở đúng nơi nó vốn ở."
+      },
+      "tuplets": {
+        "heading": "Chùm nghịch phách",
+        "p1": "Một chùm ba không được lưu, nó được nhận dạng: ba nốt mỗi nốt bằng hai phần ba một giá trị thường là một chùm ba, và được vẽ thành một. Đổi một trong ba và dấu ngoặc đơn giản ngừng được vẽ, đó là sự thật thay vì một dấu hiệu cũ.",
+        "p2": "Chỉ các nhóm đủ ba mới được nhóm. Một chuỗi bốn là một chùm ba và một nốt thừa, và dấu lặng tính là thành viên — một chùm ba có một dấu lặng ở giữa vẫn là một chùm ba."
+      },
+      "beams": {
+        "heading": "Dấu chụm đuôi",
+        "p1": "Dấu chụm đuôi được suy ra từ trường độ nốt và nhịp, nên nó theo phách mà không cần được chỉ bảo. Chỉ sự bất đồng của bạn được lưu: ngắt bắt đầu một nhóm mới tại một nốt, và không chụm lấy một nốt ra khỏi dấu chụm đuôi nên nó vẽ dấu móc của mình.",
+        "p2": "Ngắt là điều viết thanh nhạc cần, nơi dấu chụm đuôi theo các âm tiết thay vì phách. Cố ý không có nối — chụm đuôi qua một phách là thay đổi duy nhất điều này không thể diễn đạt."
+      },
+      "lyrics": {
+        "heading": "Lời",
+        "p1": "Lời được gõ xuyên dòng thay vì từng trường một. Nhấn L và gõ: dấu cách kết thúc một từ, một dấu nối kết thúc một âm tiết bên trong một từ, Enter kết thúc, và Shift+dấu cách lùi lại qua một lỗi gõ.",
+        "p2": "Việc một âm tiết bắt đầu, tiếp tục hay kết thúc một từ được suy ra từ các phím gõ đó thay vì được hỏi. Đó là điều vẽ dấu nối ở cuối và điền kiểu âm tiết khi xuất.",
+        "p3": "Một âm tiết thuộc về nốt của nó, nên nó di chuyển, sao chép và xóa cùng nốt mà nó nằm dưới."
+      },
+      "chords": {
+        "heading": "Ký hiệu hợp âm",
+        "p1": "Một ký hiệu hợp âm được lưu đúng như bạn gõ nó. C-7, Cmin7 và Cm7 là một hợp âm viết ba cách, và không cái nào bị viết lại hoặc bị từ chối.",
+        "p2": "Nó in phía trên khuông nhạc — phía đối diện với lời và sắc thái, đó là điều giữ cả ba đọc được trên một lead sheet. Chỉ nốt gốc được phân tích khi xuất; phần còn lại đi cùng văn bản bạn đã viết."
+      },
+      "spans": {
+        "heading": "Dấu hiệu trên nhiều nốt",
+        "p1": "Một dấu luyến phân câu một chuỗi các cao độ khác nhau và không nối gì. Chọn hai nốt trở lên và nhấn S. Ít hơn hai thì bị từ chối — một dấu phân câu trên một nốt chẳng có nghĩa gì.",
+        "p2": "Một glissando trượt giữa hai nốt; một dấu quãng tám đưa một đoạn lên hoặc xuống một quãng tám trên trang mà không đổi những gì nó vang.",
+        "p3": "Một dấu quãng tám là một thấu kính hiển thị, không phải một dịch giọng. Bản nhạc luôn lưu cao độ vang, nên 8va nghĩa là những nốt này được viết thấp hơn một quãng tám để giữ chúng trên khuông nhạc."
+      }
+    },
+    "playback": {
+      "title": "Phát lại",
+      "summary": "Bộ phát, đàn phím piano, và cách màn hình dõi theo.",
+      "figure": "Thanh phát: phát, dừng, lặp, máy đếm nhịp, vị trí, nhịp độ, tốc độ và âm lượng.",
+      "transport": {
+        "heading": "Bộ phát",
+        "p1": "Phím cách phát và tạm dừng. Thanh phát cũng mang dừng, bước một ô nhịp theo mỗi hướng, lặp, một máy đếm nhịp, tốc độ phát, nhịp độ và âm lượng chủ.",
+        "p2": "Lần nhấn phát đầu tiên có một SoundFont để tải về và trao cho bộ tổng hợp, mất vài giây. Bộ phát không tuyên bố đang phát cho đến khi một nốt thực sự có thể vang, và hiển thị tiến trình tải trong lúc đó.",
+        "p3": "Không thể chỉnh sửa bản nhạc trong khi bộ phát đang phát — ngoại trừ hòa âm. Tắt tiếng, solo, âm lượng và cân bằng vẫn hoạt động, vì tắt tiếng một bè trong khi nghe nó là cách một bản hòa âm được lắng nghe."
+      },
+      "keyboard": {
+        "heading": "Đàn phím piano",
+        "p1": "Dưới bản nhạc là một đàn phím rộng hết chiều ngang hiển thị các nốt đang vang của bè hoạt động khi chúng được chơi. Tầm âm của nó là nhạc cụ của bè hoạt động, không phải luôn luôn cả 88 phím, nên nó theo một thay đổi bè và một thay đổi nhạc cụ như nhau.",
+        "p2": "Nó là một thiết bị nhập cũng như một màn hình hiển thị. Nhấn một phím để nghe thử nó. Với một nốt được chọn, chạm một phím đổi cao độ của nốt đó. Nếu không, thả ra viết một nốt tại con trỏ có trường độ bằng thời gian bạn giữ phím, được bám vào một giá trị mà các nút trường độ cũng có thể tạo ra.",
+        "p3": "Trên một bè trống mỗi phím được dán nhãn với cái trống của nó, kể cả phím đen, vì một bản đồ trống không có mẫu hình để học như một đàn phím có."
+      },
+      "following": {
+        "heading": "Dõi theo phần nhạc",
+        "p1": "Màn hình dõi theo phần phát mà không tranh với việc cuộn của bạn. Ở bố cục trang, nó giữ độ lệch của bạn vào hệ thống khi phần nhạc bọc sang hệ thống kế, nên bè bạn đang dõi theo vẫn ở nơi bạn đặt nó.",
+        "p2": "Ở bố cục liên tục, nó dõi theo ngang thay vào đó, và dọn máng bè khi đi nên ô nhịp đang chơi không bao giờ bị đậu sau tên bè."
+      }
+    },
+    "settings": {
+      "title": "Cài đặt",
+      "summary": "Giao diện, cách hiển thị cao độ, và các tùy chọn nhà phát triển.",
+      "figure": "Màn hình Cài đặt, đang hiển thị Giao diện.",
+      "appearance": {
+        "heading": "Giao diện",
+        "p1": "Chủ đề có thể theo hệ thống của bạn hoặc ghim vào sáng hay tối, và cỡ chữ có thể điều chỉnh. Cả hai áp dụng khắp toàn bộ ứng dụng, kể cả bản nhạc.",
+        "p2": "Bản nhạc được khắc có các màu riêng cho mỗi vai trò — một nốt thường, một nốt được chọn, một nốt vừa được tạo, một nốt đang vang — và chúng theo chủ đề."
+      },
+      "pitch": {
+        "heading": "Cao độ viết hay cao độ vang",
+        "p1": "Các nhạc cụ dịch giọng có thể hiển thị hoặc như chúng vang hoặc như người chơi đọc chúng. Một bè kèn trumpet giọng Si giáng viết ở cao độ hòa tấu trông khác một cung so với bè người chơi cầm.",
+        "p2": "Điều này chỉ đổi hiển thị. Bản nhạc luôn lưu cao độ vang, nên chuyển cài đặt không bao giờ chỉnh sửa một nốt.",
+        "p3": "Nhập nốt đảo ngược hiển thị trước khi lưu, nên nhấp vào một khuông nhạc ở chế độ viết sẽ lưu cao độ thực sự sẽ vang. Không có điều đó, một bè có thể trông đúng mà vang lệch một cung."
+      },
+      "developer": {
+        "heading": "Chế độ nhà phát triển",
+        "p1": "Chế độ nhà phát triển thêm chẩn đoán: các phép đo hiệu năng, một bài đo hiệu năng, và một bản xuất chẩn đoán hữu ích khi báo cáo một vấn đề.",
+        "p2": "Nó không đổi gì về phần nhạc. Nó tắt theo mặc định và an toàn để bật."
+      }
+    },
+    "sharing": {
+      "title": "Ảnh chụp và chia sẻ",
+      "summary": "Giữ các phiên bản, và xuất bản một phiên bản cho người khác.",
+      "figure": "Các lệnh ảnh chụp: tạo một ảnh chụp, mở một ảnh chụp, và xem những ảnh bạn đã xuất bản.",
+      "snapshots": {
+        "heading": "Ảnh chụp",
+        "p1": "Một ảnh chụp là một bản sao của bản nhạc như nó hiện tại, giữ dưới một cái tên bạn chọn. Công việc hiện tại của bạn được lưu trước, nên một ảnh chụp luôn ghim những gì bạn thực sự có thể thấy.",
+        "p2": "Lịch sử là một cây thay vì một danh sách. Mở một ảnh chụp cũ hơn trong khi một ảnh mới hơn tồn tại không hủy ảnh mới hơn — nó phân nhánh, và ảnh chụp tiếp theo bạn tạo là con của ảnh bạn đã mở.",
+        "p3": "Ảnh chụp không thể chỉnh sửa hay xóa. Điều đó được bảo đảm bởi việc không có cách nào để làm, thay vì bởi một quy tắc ai đó phải nhớ."
+      },
+      "publish": {
+        "heading": "Xuất bản",
+        "p1": "Một ảnh chụp có thể được xuất bản, điều này cho nó một liên kết ai cũng mở được — không cần tài khoản. Họ nhận được một trình đọc hiển thị bản nhạc và phát lại nó, và không gì khác.",
+        "p2": "Công việc đã xuất bản mang một cái tên riêng của nó, tách khỏi tên dự án, và đó là cái xuất hiện trên trang Cộng đồng. Bạn có thể đổi nó về sau mà không chạm vào bản nhạc.",
+        "p3": "Việc xuất bản yêu cầu bạn xác nhận rằng tác phẩm là của bạn để chia sẻ. Chỉ những gì một ảnh chụp đã xuất bản cần mới từng được gửi đi — không gì về tài khoản của bạn đi cùng nó."
+      }
+    },
+    "shortcuts": {
+      "title": "Phím tắt",
+      "summary": "Mọi phím mà trình soạn thảo gán.",
+      "intro": {
+        "heading": "Chúng được sắp xếp thế nào",
+        "p1": "Các phím nhập nốt cố ý không nhận phím bổ trợ, nên một phím tắt thuộc về trình duyệt hay hệ điều hành của bạn không bao giờ bị nhầm thành một nốt. Chữ cái trần viết nốt, chữ số chọn trường độ nốt.",
+        "p2": "Điều đó để Shift cho các dấu hiệu và Alt cho con trỏ. Các phím dấu chuyển cường độ là hai phím không ai phải thuộc lòng, vì Shift+< và Shift+> chính là các ký hiệu wedge."
+      },
+      "group": {
+        "transport": "Phát lại",
+        "editing": "Soạn thảo",
+        "selection": "Chọn",
+        "noteEntry": "Viết nốt",
+        "marks": "Dấu hiệu",
+        "caret": "Con trỏ",
+        "pointer": "Con trỏ chuột"
+      }
+    },
+    "structure": {
+      "title": "Ô nhịp và cấu trúc",
+      "summary": "Nhịp, giọng, vạch nhịp, dấu nhắc lại và hình dạng của tác phẩm.",
+      "figure": "Thẻ Ô nhịp của bảng thuộc tính: số chỉ nhịp, giọng, nhịp độ, khóa nhạc và vạch nhịp.",
+      "bars": {
+        "heading": "Ô nhịp",
+        "p1": "Nhấp một số ô nhịp phía trên một hệ thống để chọn ô nhịp đó; shift-nhấp một số khác để chọn khoảng giữa chúng. Đó là cách bạn nhắm tới Thay thế và tái tạo, cả hai đều hoạt động trên một khoảng.",
+        "p2": "Lưới ô nhịp được dùng chung qua các bè. Một ô nhịp là cùng một ô nhịp trên mọi khuông nhạc, đó là lý do bất cứ gì đổi lưới áp dụng cho cả bản nhạc thay vì một bè.",
+        "p3": "Số ô nhịp bỏ qua một ô nhịp lấy đà, nên số bảng thuộc tính hiển thị, số một người chơi đọc và ô nhịp mà \"đi tới\" nhảy đến đều là cùng một số."
+      },
+      "signatures": {
+        "heading": "Nhịp và giọng",
+        "p1": "Cả hai được đặt theo từng ô nhịp từ thẻ Ô nhịp, và cả hai mang tiếp cho đến khi có gì đó đổi chúng. Đặt một số chỉ nhịp ở ô nhịp 9 đổi từ ô nhịp 9 trở đi, không phải cả bản nhạc.",
+        "p2": "Một hóa biểu được lưu như vị trí của nó trên vòng quãng năm cộng với trưởng hay thứ, nhưng bảng thuộc tính cho bạn thấy tên giọng thay vì con số.",
+        "p3": "Đổi nhịp đổi một ô nhịp dài bao nhiêu, nên các nốt đã trong nó được xếp lại thay vì âm thầm tràn."
+      },
+      "pickup": {
+        "heading": "Ô nhịp lấy đà",
+        "p1": "Một ô nhịp lấy đà là một ô nhịp không được đếm. Nó là một cờ trên ô nhịp đầu tiên thay vì một ô nhịp ngắn giữa bản nhạc, vì một ô nhịp ngắn giữa một tác phẩm là một ô nhịp bất thường có chủ ý và giữ số của nó.",
+        "p2": "Nó áp dụng cho mọi bè, vì một ô nhịp lấy đà chỉ trên một khuông nhạc sẽ là một bản nhạc có các bè bất đồng về nơi ô nhịp 1 bắt đầu. Nó chỉ được cung cấp trên ô nhịp đầu tiên."
+      },
+      "barlines": {
+        "heading": "Vạch nhịp",
+        "p1": "Một ô nhịp có thể mang một vạch nhịp kép hoặc vạch nhịp kết. Vắng mặt là vạch đơn thông thường, là hầu hết mọi ô nhịp.",
+        "p2": "Nơi một dấu nhắc lại và một vạch nhịp kép rơi vào cùng một ô nhịp, dấu nhắc lại thắng, cả trong khi vẽ lẫn khi xuất: một dấu nhắc lại là một chỉ dẫn người chơi làm theo, và vẽ một vạch nhịp kép lên nó sẽ âm thầm gỡ nó khỏi phần trình diễn."
+      },
+      "repeats": {
+        "heading": "Dấu nhắc lại và kết",
+        "p1": "Vạch nhịp nhắc lại là hai dấu hiệu độc lập thay vì một khoảng, vì một dấu nhắc lại đóng không có dấu mở sẽ lặp từ đầu tác phẩm — một dấu hiệu thật, không phải một lỗi cần ngăn.",
+        "p2": "Số kết được mang trên mỗi ô nhịp của một volta, và hai đầu của dấu ngoặc được suy ra từ việc ô nhịp kề có cùng số hay không. Xóa một ô nhịp sẽ rút ngắn dấu ngoặc thay vì để một dấu chỉ vào không gì.",
+        "p3": "Dấu nhắc lại có phát. Thời gian riêng của bản nhạc vẫn chuẩn và bộ phát tính ra thứ tự các ô nhịp thực sự được trình diễn, nên con trỏ, thanh tua và số đọc ô nhịp không bao giờ phải biết dấu nhắc lại tồn tại."
+      },
+      "navigation": {
+        "heading": "D.C., D.S., Coda và Fine",
+        "p1": "Segno, coda, To Coda và Fine là các nơi một ô nhịp mang; bước nhảy là chỉ dẫn, nằm trên ô nhịp mà tại cuối nó bước nhảy được tuân theo. Sáu bước nhảy là một lựa chọn thay vì một hướng cộng với một đích, nên chỉ những tổ hợp mà một người chơi thực sự gặp mới có thể được viết.",
+        "p2": "Quy tắc vô hình trong ký âm: Fine và To Coda chẳng có nghĩa gì ở lượt đi. Một người chơi đọc thẳng qua cả hai cho đến khi một bước nhảy đã đưa họ quay lại.",
+        "p3": "Một bước nhảy được thực hiện một lần — sau khi tuân theo nó người chơi đọc xuyên qua nó — nếu không tác phẩm sẽ không bao giờ kết thúc. Một dấu hiệu bị hỏng vẫn phát: một D.S. không có segno lùi về đầu, như một người đọc sẽ làm."
+      },
+      "tempo": {
+        "heading": "Nhịp độ",
+        "p1": "Trường nhịp độ của bộ phát luôn chỉnh nhịp độ tác phẩm bắt đầu ở. Nhịp độ của thẻ Ô nhịp đặt một thay đổi tại ô nhịp đó, nên một tác phẩm có thể chậm lại hoặc chuyển tại một điểm tập.",
+        "p2": "Nó hiển thị nhịp độ đang có hiệu lực, thừa kế từ một ô nhịp trước đó khi ô này không đặt gì, nên nó không bao giờ trống và không bao giờ nói dối. Nhịp độ bắt đầu không thể gỡ — một bản nhạc hoàn toàn không có nhịp độ thì không có nhịp độ."
+      },
+      "clefs": {
+        "heading": "Thay đổi khóa nhạc",
+        "p1": "Một thay đổi khóa nhạc được lưu trên ô nhịp nơi nó xảy ra; vắng mặt nghĩa là tiếp tục với khóa đang có hiệu lực. Một bè không bao giờ đổi khóa nhạc thì chẳng lưu gì cả.",
+        "p2": "Nó áp dụng cho một bè, khác với dấu nhắc lại và vạch nhịp: một tay trái băng vào khóa Sol chẳng nói gì về tay phải. Đặt khóa nhạc đã đang có hiệu lực sẽ gỡ dấu hiệu thay vì lưu một dấu không in ra gì."
+      }
+    },
+    "title": "Tài liệu",
+    "tracks": {
+      "title": "Bè và hòa âm",
+      "summary": "Thêm bè, chọn âm thanh, và cân bằng chúng.",
+      "figure": "Thẻ Bè của bảng thuộc tính: tên, nhạc cụ, khóa nhạc, âm lượng, cân bằng, tắt tiếng và solo.",
+      "adding": {
+        "heading": "Thêm và gỡ bỏ",
+        "p1": "Thêm Bè cung cấp một bè trống, một bè được tạo, hoặc một bè được chép lại từ một tập tin âm thanh. Một bè mới nhận cùng lưới ô nhịp như bản nhạc nó gia nhập.",
+        "p2": "Một bản nhạc luôn giữ ít nhất một bè, nên bè cuối cùng không thể xóa. Xóa bất kỳ bè nào khác là một chỉnh sửa thường và hoàn tác được như một chỉnh sửa thường."
+      },
+      "instrument": {
+        "heading": "Chọn một âm thanh",
+        "p1": "Âm thanh của một bè là một trong 128 chương trình General MIDI, chọn từ thẻ Bè. Đổi nó mang các nốt hiện có vào tầm âm của nhạc cụ mới theo từng quãng tám trọn, nên một đường bass vẫn đọc là đường bass đó.",
+        "p2": "Nếu bè rộng hơn mức nhạc cụ mới chơi được, thay đổi bị từ chối kèm giải thích thay vì áp dụng dở dang.",
+        "p3": "Trên một bè gõ, cùng trường đó chọn một bộ trống. Hai thứ không bao giờ trùng: con số nghĩa là Brush với tư cách một bộ trống nghĩa là Violin với tư cách một nhạc cụ."
+      },
+      "mixing": {
+        "heading": "Âm lượng, cân bằng, tắt tiếng và solo",
+        "p1": "Mỗi bè có một âm lượng và một cân bằng, và có thể bị tắt tiếng hoặc solo. Đây là loại chỉnh sửa duy nhất vẫn khả dụng trong khi bộ phát đang phát, vì tắt tiếng một bè trong khi nghe là cách một bản hòa âm được lắng nghe.",
+        "p2": "Solo là độc quyền: solo một bè thứ hai xóa bè thứ nhất. Bạn solo để nghe một bè, và một solo thứ hai sẽ âm thầm mở rộng những gì bạn đang nghe.",
+        "p3": "Solo cũng làm bè đó hoạt động, nên mọi bè khác mờ đi. Nếu không, sự im lặng không có khuôn mặt — bạn sẽ nghe một bè mà không có gì trên màn hình nói tại sao."
+      },
+      "visibility": {
+        "heading": "Ẩn bè",
+        "p1": "Một bè có thể bị ẩn khỏi bản nhạc mà không bị xóa hay tắt tiếng. Ẩn là về trang, không phải về âm thanh.",
+        "p2": "Xuất một bản nhạc có các bè ẩn sẽ hỏi có bao gồm chúng không thay vì âm thầm quyết định."
+      },
+      "active": {
+        "heading": "Bè hoạt động",
+        "p1": "Một bè luôn là bè hoạt động. Đó là bè các nốt được viết vào, bè đàn phím piano hiển thị, và bè giữ ở cường độ đầy đủ trong khi các bè khác mờ đi.",
+        "p2": "Nhấp bất cứ đâu trên khuông nhạc của một bè làm nó hoạt động. Nếu bè hoạt động bị xóa, bè đầu tiên tiếp quản thay vì để không có gì được chọn."
+      }
+    },
+    "seeShortcutsScreen": "Hiện các phím tắt"
+  },
+  "document": {
+    "untitled": "Chưa đặt tên",
+    "new": "Bản nhạc mới",
+    "open": "Mở…",
+    "close": "Đóng",
+    "unsavedTitle": "Thay đổi chưa lưu",
+    "unsavedBody": "\"{{title}}\" có các thay đổi chưa được lưu.",
+    "unsavedQuitBody": "{{count}} tài liệu đang mở có các thay đổi chưa được lưu.",
+    "closeDocument": "Đóng {{title}}",
+    "exportAs": "Xuất {{format}}",
+    "saveFailedTitle": "Không thể lưu",
+    "closeWithoutSaving": "Đóng không lưu",
+    "quitWithoutSaving": "Thoát không lưu"
+  },
+  "duration": {
+    "eighth": "Móc đơn",
+    "half": "Trắng",
+    "quarter": "Đen",
+    "sixteenth": "Móc kép",
+    "thirtysecond": "Móc ba",
+    "whole": "Tròn"
+  },
+  "editor": {
+    "accidental": "Dấu hóa",
+    "accidentalHint": "Đặt dấu hóa trên các nốt được chọn",
+    "addMeasure": "Chèn ô nhịp…",
+    "insertBarsTitle": "Chèn ô nhịp",
+    "insertBars": "Chèn ô nhịp",
+    "barCount": "Số ô nhịp",
+    "insertBarsPosition": "Vị trí",
+    "insertBarsBefore": "Trước ô nhịp hiện tại",
+    "insertBarsAfter": "Sau ô nhịp hiện tại",
+    "generateInsertedBars": "Tạo nhạc",
+    "generateInsertedBarsHint": "Dùng AI để lấp các ô nhịp mới cho mọi nhạc cụ",
+    "generateInsertedBarsInstruction": "Tiếp tục phần nhạc hiện có một cách tự nhiên trong các ô nhịp được chèn cho mọi nhạc cụ.",
+    "addTrack": "Thêm Bè",
+    "addTrackPrompt": "Loại bè nào?",
+    "arpeggiate": "Rải hợp âm",
+    "arpeggiateHint": "Rải hợp âm",
+    "articulation": "Cách diễn tấu",
+    "articulationHint": "Thêm một cách diễn tấu vào vùng chọn",
+    "barNumber": "Số ô nhịp",
+    "barNumberOf_one": "Số ô nhịp (1 ô nhịp trong bản nhạc này)",
+    "barNumberOf_other": "Số ô nhịp (1–{{count}})",
+    "beamBreak": "Ngắt chụm đuôi",
+    "beamBreakHint": "Ngắt dấu chụm đuôi ở đây",
+    "beamNone": "Không chụm đuôi",
+    "beamNoneHint": "Gỡ khỏi chụm đuôi",
+    "blankTrack": "Bè Trống",
+    "blankTrackHint": "Một khuông nhạc trống, thêm bên dưới các bè khác, sẵn sàng để viết vào.",
+    "clear": "Xóa nội dung",
+    "closeGap": "Khép khoảng trống",
+    "closeGapDetail": "Các nốt sau trên bè này dịch lên để lấp vào",
+    "continuousHint": "Dàn bản nhạc thành một dòng cuộn",
+    "continuousLayout": "Bố cục liên tục",
+    "copy": "Sao chép",
+    "crescendo": "Crescendo",
+    "crescendoHint": "Crescendo",
+    "currentZoom": "Mức thu phóng hiện tại",
+    "cut": "Cắt",
+    "cutMessage": "Còn có nhạc sau chúng trên bè này.",
+    "cutTitle": "Cắt các nốt này",
+    "deleteMeasure": "Xóa ô nhịp",
+    "deleteSelection": "Xóa vùng chọn",
+    "diminuendo": "Diminuendo",
+    "diminuendoHint": "Diminuendo",
+    "done": "Xong",
+    "dotted": "Chấm dôi",
+    "dottedHint": "Chấm dôi",
+    "durationModifier": "Bổ nghĩa trường độ",
+    "editMode": "Chế độ soạn thảo",
+    "ending": "Kết (volta)",
+    "endingPlaceholder": "vd. 1 hoặc 1, 2",
+    "enterLyrics": "Nhập lời",
+    "distributeLine": "Dán một dòng",
+    "distributeTitle": "Viết một dòng lời",
+    "distributeHint": "Dấu cách tách các từ; dấu nối chia các âm tiết.",
+    "distribute": "Phân bổ",
+    "lyricsDidNotFit": "{{count}} âm tiết không vừa giai điệu",
+    "export": "Xuất",
+    "fermata": "Dấu miễn nhịp",
+    "fermataHint": "Dấu miễn nhịp",
+    "fixIssues": "Sửa tất cả",
+    "fixedIssuesPartial_one": "Đã sửa {{count}} vấn đề; {{remaining}} vẫn cần chú ý.",
+    "fixedIssuesPartial_other": "Đã sửa {{count}} vấn đề; {{remaining}} vẫn cần chú ý.",
+    "fixedIssues_one": "Đã sửa {{count}} vấn đề.",
+    "fixedIssues_other": "Đã sửa {{count}} vấn đề.",
+    "fixedNothing": "Không có gì ở đây có thể sửa tự động.",
+    "generateTrack": "Tạo Bè",
+    "generateTrackHint": "Yêu cầu một bè mới được viết để khớp với phần nhạc đã có ở đây.",
+    "generateTrackUnavailable": "Chỉ dành cho các bản nhạc được lưu dưới dạng một dự án trên máy chủ.",
+    "glissando": "Glissando",
+    "glissandoHint": "Glissando giữa hai nốt",
+    "go": "Đi",
+    "goToBar": "Đi tới ô nhịp…",
+    "hideInspector": "Ẩn bảng thuộc tính",
+    "hideKeyboard": "Ẩn đàn phím",
+    "hideSpatial": "Ẩn chế độ xem Không gian",
+    "hyphenate": "Kết thúc âm tiết này bên trong từ",
+    "insert": "Chèn",
+    "insertDetail": "Những gì đang có dời ra sau trên bè này",
+    "insertMode": "Chèn",
+    "insertModeHint": "Chèn: các nốt bạn thêm đẩy các nốt sau của bè này ra",
+    "insertNote": "Chèn nốt",
+    "insertNoteHint": "Chèn một nốt tại con trỏ",
+    "insertRest": "Chèn dấu lặng",
+    "insertRestHint": "Chèn dấu lặng",
+    "inspector": "Bảng thuộc tính",
+    "issues": "Vấn đề",
+    "keyboardShortcuts": "Phím tắt",
+    "lastMeasureKept": "Một bản nhạc giữ ít nhất một ô nhịp.",
+    "layoutMode": "Chế độ bố cục",
+    "leaveSilence": "Để lại im lặng",
+    "leaveSilenceDetail": "Phần còn lại của bè vẫn ở nguyên",
+    "lyricEntry": "Nhập lời",
+    "lyricNoteOf": "Nốt {{current}} trên {{total}}",
+    "marks": "Dấu hiệu",
+    "midi": "MIDI",
+    "moreActions": "Thêm hành động",
+    "musicXml": "MusicXML",
+    "audioMp3": "Âm thanh (MP3)…",
+    "audioWav": "Âm thanh (WAV)…",
+    "projectJson": "Tập tin dự án (.moo)",
+    "xmModule": "XM Module",
+    "noIssues": "Không có vấn đề.",
+    "noScore": "Chưa có bản nhạc được mở.",
+    "noSuchBar_one": "Bản nhạc này chỉ có 1 ô nhịp.",
+    "noSuchBar_other": "Bản nhạc này có ô nhịp 1 đến {{count}}.",
+    "noteDuration": "Trường độ nốt",
+    "noteDurationHint": "Trường độ nốt — cho các nốt bạn thêm, và cho bất kỳ nốt nào được chọn",
+    "noteInput": "Nhập nốt",
+    "noteInputHint": "Nhập nốt (N) — khi bật, nhấp một khuông nhạc viết một nốt tại cao độ đó thay vì di chuyển con trỏ",
+    "noteValue": "Trường độ nốt",
+    "ornament": "Dấu láy",
+    "ornamentHint": "Dấu láy trên các nốt được chọn",
+    "pageHint": "Bọc các hệ thống theo chiều rộng trang",
+    "pageLayout": "Bố cục trang",
+    "paste": "Dán",
+    "pasteMessage": "Đã có gì đó nơi nó sẽ rơi vào.",
+    "pasteTitle": "Dán đè lên phần nhạc này",
+    "pitchConcertShort": "Hòa",
+    "pitchDisplayHint": "Hiển thị cao độ viết của từng người chơi, hoặc những gì bản nhạc vang",
+    "pitchWrittenShort": "Viết",
+    "previousSyllable": "Âm tiết trước",
+    "print": "In…",
+    "quantize": "Chuẩn hóa nhịp",
+    "quantizeGrid": "Lưới chuẩn hóa nhịp",
+    "quantizeGridHint": "Lưới mà Chuẩn hóa nhịp bám vào",
+    "quantizeHint": "Bám vùng chọn vào lưới chuẩn hóa nhịp",
+    "redo": "Làm lại",
+    "removeTempoChange": "Gỡ thay đổi nhịp độ này",
+    "repeatEnd": "Dấu nhắc lại kết thúc ở đây",
+    "repeatStart": "Dấu nhắc lại bắt đầu ở đây",
+    "repeats": "Dấu nhắc lại",
+    "repeatsPlaybackNote": "Dấu nhắc lại được vẽ, xuất và phát lại. Phần phát bắt đầu từ lần đầu tiên một ô nhịp được chơi.",
+    "replaceDetail": "Những gì đang có sẽ bị gỡ bỏ",
+    "replaceMode": "Thay thế",
+    "replaceModeHint": "Thay thế: các nốt bạn thêm ghi đè lên những gì đã có sẵn",
+    "saveNow": "Lưu ngay",
+    "saved": "Đã lưu",
+    "saving": "Đang lưu…",
+    "scoreActions": "Hành động bản nhạc",
+    "scoreActionsHint": "Nhấn giữ bản nhạc để mở cái này.",
+    "selectAll": "Chọn tất cả",
+    "selectAllNotes": "Chọn mọi nốt",
+    "showConcertPitch": "Hiển thị cao độ hòa tấu",
+    "showInspector": "Hiện bảng thuộc tính",
+    "showKeyboard": "Hiện đàn phím",
+    "showSpatial": "Hiện chế độ xem Không gian",
+    "showWrittenPitch": "Hiển thị cao độ viết",
+    "slur": "Dấu luyến",
+    "recordVoice": "Ghi giọng",
+    "recordVoiceHint": "Ghi một giai điệu từ micro của bạn vào bè hiện tại",
+    "captureAudio": "Ghi và chép lại âm thanh",
+    "recordFrom": "Ghi từ",
+    "microphone": "Micro",
+    "speakers": "Loa",
+    "inputDevice": "Thiết bị nhập",
+    "defaultInput": "Thiết bị nhập mặc định của hệ thống",
+    "transcriptionScope": "Chép lại",
+    "voiceTrackOnly": "Chỉ bè giọng",
+    "allTracks": "Mọi bè",
+    "startRecording": "Bắt đầu ghi",
+    "speakerCaptureHelp": "Chọn một màn hình hoặc cửa sổ ứng dụng có âm thanh trong bộ chọn của trình duyệt. Mọi bè sẽ được chép lại.",
+    "speakerCaptureUnavailable": "Nguồn được chọn không cung cấp âm thanh",
+    "stopVoiceRecording": "Dừng ghi giọng",
+    "recordVoiceError": "Không thể ghi hoặc chép lại giọng",
+    "microphoneUnavailable": "Ghi micro không khả dụng ở đây",
+    "microphoneDenied": "Truy cập micro bị từ chối",
+    "emptyRecording": "Bản ghi trống",
+    "noVoiceNotes": "Không tìm thấy nốt nào trong bản ghi",
+    "slurHint": "Luyến vùng chọn",
+    "stackMode": "Chồng thành hợp âm",
+    "stackModeHint": "Chồng: các nốt bạn thêm hợp vào những gì đã có, dựng nên một hợp âm",
+    "stackModeUnavailable": "Chồng cần một nhạc cụ có thể chơi nhiều hơn một nốt mỗi lần — {{instrument}} không thể",
+    "subjectBars": "Ô nhịp",
+    "subjectBars_other": "Ô nhịp",
+    "subjectNotes": "Nốt",
+    "subjectNotes_other": "Nốt",
+    "subjectTrack": "Bè",
+    "syllable": "Âm tiết",
+    "thisInstrument": "nhạc cụ này",
+    "toggleInspector": "Bật tắt bảng thuộc tính",
+    "toggleTie": "Bật tắt dấu nối",
+    "toolbar": "Thanh công cụ trình soạn thảo bản nhạc",
+    "tracks": "Bè",
+    "triplet": "Chùm ba",
+    "tripletHint": "Chùm ba",
+    "undo": "Hoàn tác",
+    "unsaved": "Chưa lưu",
+    "validationIssues": "Vấn đề kiểm tra",
+    "validationProblem": "Chỉnh sửa đó sẽ làm hỏng ô nhịp: {{detail}}",
+    "voice": "Bè nhạc",
+    "voice1Hint": "Bè 1 — dòng chính trên khuông nhạc này",
+    "voice2Hint": "Bè 2 — một dòng thứ hai, độc lập trên cùng khuông nhạc",
+    "voiceNumber": "Bè {{number}}",
+    "zoomIn": "Phóng to",
+    "zoomOut": "Thu nhỏ",
+    "outOfRange": {
+      "above": "{{pitch}} cao hơn tầm âm của {{instrument}} ({{low}}–{{high}}), {{action}}",
+      "below": "{{pitch}} thấp hơn tầm âm của {{instrument}} ({{low}}–{{high}}), {{action}}"
+    },
+    "refused": {
+      "addNote": "nên nó không được thêm.",
+      "addChord": "nên hợp âm này không được thêm.",
+      "changeNote": "nên nốt không được đổi.",
+      "changeAccidental": "nên dấu hóa không được đổi.",
+      "moveNote": "nên nốt không được di chuyển.",
+      "moveNotes": "nên các nốt không được di chuyển.",
+      "transpose": "nên không có gì được dịch giọng.",
+      "paste": "nên không có gì được dán."
+    },
+    "polyphonyOne": "{{instrument}} chơi một nốt mỗi lần, {{action}}",
+    "polyphonyMany": "{{instrument}} chơi nhiều nhất {{limit}} nốt cùng lúc, {{action}}",
+    "unknownInstrument": "Nhạc cụ này",
+    "save": "Lưu",
+    "trackInfo": "Thông tin bè",
+    "trackInfoFull": "Thông tin bè đầy đủ",
+    "trackInfoIcon": "Chỉ biểu tượng nhạc cụ",
+    "trackInfoHint": "Chỉ hiển thị biểu tượng nhạc cụ bên cạnh mỗi khuông nhạc, hoặc thông tin bè đầy đủ"
+  },
+  "errors": {
+    "createProject": "Tạo dự án thất bại",
+    "loadProjects": "Không thể tải các dự án của bạn.",
+    "openProject": "Mở dự án thất bại",
+    "deleteProject": "Xóa dự án thất bại",
+    "duplicateProject": "Nhân bản dự án thất bại"
+  },
+  "export": {
+    "explain": "Chọn một định dạng. Mỗi định dạng giữ một lượng nhạc khác nhau: MusicXML giữ trang, MIDI giữ phần trình diễn, một tracker module giữ các nốt trên một lưới, và âm thanh chỉ giữ tiếng."
+  },
+  "exportScope": {
+    "hiddenCount_one": "Bản nhạc này có {{count}} bè ẩn.",
+    "hiddenCount_other": "Bản nhạc này có {{count}} bè ẩn.",
+    "title": "Xuất các bè ẩn?",
+    "visibleOnly": "Chỉ các bè hiển thị"
+  },
+  "generate": {
+    "action": "Tạo",
+    "estimate": "Việc này sẽ dùng khoảng {{count}} tín dụng.",
+    "instrument": "Nhạc cụ",
+    "prompt": "Lời nhắc",
+    "working": "Đang viết nhạc của bạn",
+    "workingExplain": "Việc này chạy trên máy chủ, nên bạn có thể rời màn hình này. Bản nhạc mở khóa khi nó về đến.",
+    "presets": "Mẫu sẵn"
+  },
+  "generateScore": {
+    "duration": "Độ dài",
+    "durationInvalid": "Nhập một độ dài như 0:45 hoặc 1:30.",
+    "addInstrument": "Thêm nhạc cụ",
+    "removeInstrument": "Gỡ bỏ {{instrument}}",
+    "essential": "(thiết yếu)",
+    "complexity": "Độ phức tạp",
+    "instrumentation": "Dàn nhạc cụ",
+    "key": "Giọng",
+    "measures": "Ô nhịp",
+    "mode": "Thể",
+    "mood": "Tâm trạng",
+    "noMood": "Không tâm trạng",
+    "noStyle": "Không phong cách",
+    "style": "Phong cách",
+    "tempo": "Nhịp độ",
+    "timeSignature": "Số chỉ nhịp",
+    "title": "Tạo một bản nhạc mới",
+    "titleField": "Tiêu đề",
+    "titlePlaceholder": "Bản nhạc được tạo",
+    "styleFamily": {
+      "popRock": "Pop & Rock",
+      "americanRoots": "American Roots",
+      "jazz": "Jazz",
+      "funkSoul": "Funk & Soul",
+      "latinCaribbean": "Latin & Caribbean",
+      "hipHop": "Hip-Hop",
+      "electronic": "Electronic",
+      "classical": "Cổ điển",
+      "danceCeremonial": "Khiêu vũ & Nghi lễ",
+      "screen": "Phim & Không khí"
+    },
+    "styleName": {
+      "ambient": "Ambient",
+      "baroque": "Baroque",
+      "battle": "Battle",
+      "bluegrass": "Bluegrass",
+      "blues": "Blues",
+      "bossaNova": "Bossa Nova",
+      "cinematic": "Cinematic",
+      "classical": "Cổ điển",
+      "country": "Country",
+      "disco": "Disco",
+      "edm": "EDM",
+      "electroSwing": "Electro Swing",
+      "funk": "Funk",
+      "heavyMetal": "Heavy Metal",
+      "hipHop": "Hip-Hop",
+      "house": "House",
+      "jazz": "Jazz",
+      "lofi": "Lo-fi",
+      "march": "Hành khúc",
+      "pop": "Pop",
+      "punk": "Punk",
+      "ragtime": "Ragtime",
+      "reggae": "Reggae",
+      "rock": "Rock",
+      "salsa": "Salsa",
+      "samba": "Samba",
+      "soul": "Soul",
+      "swing": "Swing",
+      "symphonyLarge": "Giao hưởng (Lãng mạn)",
+      "symphonyMedium": "Giao hưởng (Cổ điển)",
+      "symphonySmall": "Giao hưởng (Thính phòng)",
+      "tango": "Tango",
+      "techno": "Techno",
+      "trance": "Trance",
+      "trap": "Trap",
+      "waltz": "Waltz"
+    },
+    "preset": {
+      "gentleMelody": "Một giai điệu tám ô nhịp dịu dàng ở giọng trưởng",
+      "simpleBeginner": "Một giai điệu đơn giản chỉ dùng nốt đen và nốt trắng",
+      "openingTitle": "Một chủ đề nhạc mở đầu ngắn",
+      "slowBuild": "Một đoạn dựng chậm đến một phần kết lớn",
+      "loopableLoop": "Một vòng lặp ngắn lặp lại không có đường nối",
+      "callAndResponse": "Hỏi và đáp giữa bè chính và bè đệm",
+      "quietEnding": "Một tác phẩm kết thúc nhỏ hơn lúc nó bắt đầu",
+      "singleHook": "Một đoạn hook mạnh, nêu ra rồi biến đổi",
+      "verseChorus": "Một đoạn verse và một đoạn chorus, với chorus nâng cao hơn",
+      "loveSong": "Một bản tình ca, hát mộc mạc",
+      "leavingHome": "Một bài hát về việc rời nhà",
+      "lateNightDrive": "Nhạc cho một chuyến lái xe đêm khuya",
+      "breakupSong": "Một bài hát chia tay vẫn giữ được phẩm giá",
+      "crowdSinger": "Một đoạn chorus mà đám đông có thể hát theo",
+      "rainyWindow": "Một bài hát tĩnh lặng ngắm mưa trên cửa sổ",
+      "summerDay": "Một bài hát tươi sáng cho một buổi chiều hè",
+      "walkingBass": "Một vòng hợp âm trên một đường walking bass",
+      "lockedGroove": "Một groove nơi bass và trống khớp chặt với nhau",
+      "handclapBackbeat": "Một backbeat bạn có thể vỗ tay theo",
+      "halfTimeDrop": "Một đoạn chuyển vào nhịp đôi",
+      "drivingEighths": "Các nốt móc đơn thẳng dồn dập từ trên xuống dưới",
+      "syncopatedRiff": "Một riff đảo phách rơi lệch khỏi phách",
+      "triumphant": "Một chủ đề khải hoàn cho một chiến thắng",
+      "menacing": "Một chủ đề đe dọa không bao giờ hoàn toàn giải quyết",
+      "bittersweet": "Thứ gì đó buồn vui lẫn lộn ở giọng thứ",
+      "playfulDance": "Một bản nhạc khiêu vũ vui tươi",
+      "lullaby": "Một bài ru, chậm và đơn giản",
+      "restless": "Nhạc bồn chồn không chịu lắng xuống",
+      "lonely": "Một giai điệu cô đơn với nhiều khoảng trống",
+      "celebration": "Nhạc cho một lễ ăn mừng",
+      "chaseScene": "Nhạc cho một cuộc rượt đuổi",
+      "battleTheme": "Một chủ đề chiến đấu sôi động",
+      "creditsRoll": "Nhạc cho một đoạn chạy credit",
+      "marketScene": "Nhạc nhộn nhịp cho một con phố đông người",
+      "sunriseScene": "Một bình minh chậm rãi",
+      "ceremonyProcession": "Một khúc rước cho một nghi lễ",
+      "twelveBarShuffle": "Một shuffle mười hai ô nhịp có chỗ cho các đoạn ngẫu hứng",
+      "improvisedSolo": "Một đoạn chủ đề, rồi chỗ cho một đoạn solo",
+      "fiddleAnswers": "Một giai điệu có một cây fiddle đáp lại mỗi dòng",
+      "organStabs": "Các nhát organ lệch phách trên một nền bass trầm",
+      "brassStabs": "Các nhát kèn đồng đáp lại bè chính",
+      "pedalDrone": "Một âm ngân nền dưới một dòng chuyển động chậm",
+      "palmMutedRiff": "Một riff bịt dây, lặp lại và dồn dập",
+      "threeChordRush": "Ba hợp âm, nhanh, không trang trí"
+    },
+    "presetPrompts": "Lời nhắc có sẵn",
+    "moodName": {
+      "gentle": "Dịu dàng",
+      "dark": "U tối",
+      "upbeat": "Rộn ràng",
+      "dramatic": "Kịch tính",
+      "calm": "Êm ả",
+      "energetic": "Tràn năng lượng"
+    },
+    "complexityName": {
+      "simple": "Đơn giản",
+      "moderate": "Vừa phải",
+      "complex": "Phức tạp"
+    },
+    "tempoInvalid": "Nhịp độ phải là một số lớn hơn không, hoặc để trống."
+  },
+  "generateTrack": {
+    "intro": "Thêm một bè mới vào bản nhạc này, khớp với giọng, nhịp độ và độ dài của nó.",
+    "promptLabel": "Nó nên chơi gì?",
+    "promptPlaceholder": "Một đường walking bass dưới giai điệu",
+    "title": "Tạo bè"
+  },
+  "import": {
+    "failedTitle": "Không thể nhập",
+    "unsupported": "Bản dựng này không thể mở tập tin.",
+    "warningsExplain": "Tập tin chứa những thứ ứng dụng này không mang. Mọi thứ khác đã được nhập.",
+    "warningsTitle": "Đã nhập, có ghi chú"
+  },
+  "importAudio": {
+    "choose": "Chọn một bản ghi",
+    "description": "Biến một bản ghi thành một dự án, chia thành các bè — giọng hát, trống, bass, guitar, piano và những phần còn lại, mỗi phần trên bè riêng. Nó chạy trên máy chủ và mất vài phút: dự án mở ngay lập tức, và mỗi bè xuất hiện trong bản nhạc khi nó được chép lại. Hãy chờ một bản phác thảo để chỉnh sửa, không phải một bản sao của bản thu. {{formats}}.",
+    "longRecording": "Các bản ghi dài mất một lúc, và những bản rất dài bị từ chối.",
+    "sending": "Đang gửi bản ghi…",
+    "signInRequired": "Đăng nhập để nhập một bản ghi. Nó được chép lại trên máy chủ thành một dự án của bạn, nên nó cần một tài khoản.",
+    "title": "Nhập âm thanh",
+    "unavailable": "Chép lại âm thanh không khả dụng trên máy chủ này.",
+    "upload": "Chép lại"
+  },
+  "importMidi": {
+    "colChannel": "Kênh",
+    "colClef": "Khóa nhạc",
+    "colNotes": "Nốt",
+    "colProgram": "Chương trình",
+    "colTrack": "Bè",
+    "description": "Mở một tập tin MIDI thành một tài liệu mới. Chọn những bè nào để đưa vào và cách đọc thời gian của chúng bên dưới.",
+    "detectKey": "Phát hiện giọng",
+    "fileKind": "tập tin MIDI",
+    "gridEighth": "Nốt móc đơn",
+    "gridHalf": "Nốt trắng",
+    "gridNone": "Không chuẩn hóa nhịp",
+    "gridQuarter": "Nốt đen",
+    "gridSixteenth": "Nốt móc kép",
+    "gridThirtySecond": "Nốt móc ba",
+    "gridWhole": "Nốt tròn",
+    "includeTrack": "Bao gồm bè: {{name}}",
+    "mergeDuplicates": "Gộp các nốt gần trùng lặp",
+    "minDuration": "Trường độ nốt tối thiểu (tick)",
+    "minDurationShort": "Trường độ nốt tối thiểu (tick)",
+    "pianoSplit": "Tách khuông nhạc piano",
+    "quantizeGrid": "Lưới chuẩn hóa nhịp",
+    "splitPoint": "Điểm tách (nốt MIDI)",
+    "splitPointLabel": "Điểm tách (số nốt MIDI)",
+    "summaryLine_one": "{{count}} bè, {{seconds}}s, {{ppq}} PPQ",
+    "summaryLine_other": "{{count}} bè, {{seconds}}s, {{ppq}} PPQ",
+    "sustain": "Xử lý pedal ngân",
+    "sustainExtend": "Kéo dài nốt qua pedal ngân",
+    "sustainIgnore": "Bỏ qua pedal ngân",
+    "trackSummary": "Tóm tắt bè MIDI",
+    "tripletDetection": "Phát hiện chùm ba",
+    "clefOfTrack": "Khóa nhạc: {{name}}"
+  },
+  "inspector": {
+    "articulation": "Cách diễn tấu",
+    "bar": "Ô nhịp",
+    "barline": "Vạch nhịp",
+    "barlineDouble": "Kép",
+    "barlineFinal": "Kết",
+    "barlineSingle": "Đơn",
+    "beat": "Phách",
+    "centerPan": "Cân bằng giữa",
+    "chordSymbol": "Ký hiệu hợp âm",
+    "chordSymbolPlaceholder": "vd. Cmaj7",
+    "clearGraceNotes_one": "Gỡ 1 nốt hoa mỹ",
+    "clearGraceNotes_other": "Gỡ {{count}} nốt hoa mỹ",
+    "clef": "Khóa nhạc",
+    "clefInherit": "Thừa kế ({{clef}})",
+    "coda": "Coda",
+    "composer": "Người soạn",
+    "customDuration": "Tùy chỉnh ({{ticks}} tick)",
+    "deleteTrack": "Xóa bè",
+    "deleteTrackConfirm": "Xóa \"{{name}}\" và toàn bộ nhạc của nó? Không thể hoàn tác trừ bằng Hoàn tác.",
+    "drumKit": "Bộ trống",
+    "duration": "Trường độ",
+    "dynamic": "Sắc thái",
+    "dynamicHint": "Đánh dấu nơi một mức bắt đầu; có hiệu lực cho đến dấu kế tiếp.",
+    "fine": "Fine",
+    "fingering": "Ngón bấm",
+    "glissando": "Trượt",
+    "instrument": "Nhạc cụ",
+    "instrumentRangeError": "{{instrument}} không thể bao phủ tầm nốt của bè này mà không đổi các quãng.",
+    "jump": "Bước nhảy",
+    "jumpNone": "Không",
+    "key": "Giọng",
+    "keyFlats": "{{count}} dấu giáng",
+    "keyFlats_other": "{{count}} dấu giáng",
+    "keyMode": "Thể giọng",
+    "keyNoAccidentals": "không có dấu thăng hay giáng",
+    "keyOptionMajor": "{{tonic}} trưởng — {{accidentals}}",
+    "keyOptionMinor": "{{tonic}} thứ — {{accidentals}}",
+    "keySharps": "{{count}} dấu thăng",
+    "keySharps_other": "{{count}} dấu thăng",
+    "kitOf": "Bộ trống: {{name}}",
+    "makeGraceNote": "Biến nốt kế thành nốt hoa mỹ",
+    "measure": "Ô nhịp",
+    "measureClef": "Khóa nhạc từ đây",
+    "measureNumber": "Ô nhịp {{number}}",
+    "measureRange": "Ô nhịp {{from}}–{{to}}",
+    "mixed": "Lẫn lộn",
+    "mute": "Tắt tiếng",
+    "name": "Tên",
+    "navigation": "Điều hướng",
+    "noDynamic": "Không",
+    "noScore": "Không có bản nhạc",
+    "note": "Nốt",
+    "notesSelected_one": "1 nốt được chọn",
+    "notesSelected_other": "{{count}} nốt được chọn",
+    "octave": "Quãng tám",
+    "ornaments": "Dấu láy",
+    "pan": "Cân bằng",
+    "pickup": "Lấy đà",
+    "pickupBeats": "{{count}} phách",
+    "pickupBeats_other": "{{count}} phách",
+    "pickupNone": "Không",
+    "pitch": "Cao độ",
+    "replaceMeasures": "Thay thế Ô nhịp",
+    "replaceNotes": "Thay thế Nốt",
+    "replaceTrack": "Thay thế Bè",
+    "score": "Bản nhạc",
+    "scoreTitle": "Tiêu đề",
+    "scoreTitleHint": "Đặt tên cho mọi tập tin được xuất. Không phải tên của tài liệu.",
+    "segno": "Segno",
+    "selectMeasure": "Chưa chọn ô nhịp",
+    "selectNote": "Chưa chọn nốt",
+    "selectTrack": "Chưa chọn bè",
+    "solo": "Solo",
+    "spans": "Dấu kéo dài",
+    "tempoHere": "Nhịp độ tại đây (BPM)",
+    "tempoInherited": "Chuyển tiếp từ một ô nhịp trước đó. Gõ một giá trị sẽ đặt một thay đổi nhịp độ ở đây.",
+    "tempoStarting": "Nhịp độ bắt đầu của bản nhạc.",
+    "tieStart": "Bắt đầu dấu nối",
+    "tieStop": "Kết thúc dấu nối",
+    "timeSigDenominator": "Mẫu số chỉ nhịp",
+    "timeSigNumerator": "Tử số chỉ nhịp",
+    "timeSignature": "Số chỉ nhịp",
+    "toCoda": "To Coda",
+    "track": "Bè",
+    "trackName": "Tên bè",
+    "trackPan": "Cân bằng bè",
+    "trackVolume": "Âm lượng bè",
+    "unplugged": "Unplugged",
+    "unpluggedHint": "Kéo một nhạc cụ hoặc chính bạn để thay đổi cách nó vang. Kéo tay cầm nhỏ để xoay hướng bạn đang nhìn.",
+    "unpluggedListener": "Bạn",
+    "unpluggedReset": "Đặt lại cách sắp xếp",
+    "unpluggedStage": "Cách sắp xếp nhạc cụ",
+    "unpluggedTurnHandle": "Xoay",
+    "unpluggedWander": "Đi lang thang",
+    "velocity": "Cường độ",
+    "voice": "Bè nhạc",
+    "volume": "Âm lượng",
+    "moveRefused": "Không thể di chuyển nốt tới vị trí đó.",
+    "outOfRange_one": "{{count}} nốt nằm ngoài tầm âm {{low}}-{{high}} của nhạc cụ này và không thể chơi được trên nó.",
+    "outOfRange_other": "{{count}} nốt nằm ngoài tầm âm {{low}}-{{high}} của nhạc cụ này và không thể chơi được trên nó.",
+    "visibleTracks": "Các bè hiển thị"
+  },
+  "key": {
+    "major": "trưởng",
+    "minor": "thứ"
+  },
+  "library": {
+    "retry": "Thử lại",
+    "saveFailed": "Lưu thất bại. Các thay đổi của bạn vẫn còn đây và sẽ được thử lại.",
+    "playbackFailed": "Không thể bắt đầu phát lại.",
+    "scoreLoadFailed": "Không thể chuẩn bị bản nhạc để phát lại.",
+    "authRequired": "Vui lòng đăng nhập để tiếp tục.",
+    "serverUnavailable": "Tính năng này cần kết nối máy chủ và không khả dụng ở đây."
+  },
+  "musicXmlWarn": {
+    "alterRounded": "Độ biến âm {{alter}} đã được làm tròn thành {{clamped}}.",
+    "complexTimeSignature": "Một số chỉ nhịp phức hợp đã được đơn giản hóa.",
+    "multipleArticulations": "Chỉ cách diễn tấu đầu tiên trên một nốt được giữ lại.",
+    "noDuration": "Một nốt không có trường độ đã bị bỏ qua.",
+    "noPitchOrRest": "Một nốt không có cao độ lẫn dấu lặng đã bị bỏ qua.",
+    "noTempo": "Không có nhịp độ nào được cho; {{defaultBpm}} BPM đã được dùng.",
+    "nonPositiveDuration": "Một nốt có trường độ không dương đã bị bỏ qua.",
+    "noteTrimmed": "Một nốt đã được cắt bớt để vừa ô nhịp của nó.",
+    "tempoClamped": "Nhịp độ {{bpm}} nằm ngoài {{min}}-{{max}} và trở thành {{clamped}}.",
+    "unpitched": "Các nốt không cao độ đã được đặt trên một khuông nhạc gõ.",
+    "unsupportedArticulation": "Cách diễn tấu không được hỗ trợ <{{tag}}> đã bị bỏ.",
+    "unsupportedClef": "Khóa nhạc {{sign}} không được hỗ trợ ở dòng {{line}}; khóa Sol đã được dùng thay thế.",
+    "unsupportedKeyMode": "Thể giọng \"{{mode}}\" không được hỗ trợ; trưởng đã được dùng thay thế.",
+    "unsupportedMeasureElement": "Phần tử measure không được hỗ trợ <{{tag}}> đã bị bỏ.",
+    "unsupportedNotation": "Ký hiệu không được hỗ trợ <{{tag}}> đã bị bỏ.",
+    "unsupportedNoteElement": "Phần tử nốt không được hỗ trợ <{{tag}}> đã bị bỏ.",
+    "unsupportedPitchStep": "Bậc cao độ \"{{step}}\" không được hỗ trợ.",
+    "unsupportedTime": "Số chỉ nhịp không được hỗ trợ ở ô nhịp {{measureNumber}}."
+  },
+  "nav": {
+    "back": "Quay lại",
+    "community": "Cộng đồng",
+    "credits": "Tín dụng",
+    "docs": "Tài liệu",
+    "projects": "Dự án",
+    "published": "Đã xuất bản",
+    "resources": "Tài nguyên",
+    "settings": "Cài đặt",
+    "signIn": "Đăng nhập",
+    "signOut": "Đăng xuất",
+    "purchases": "Giao dịch mua"
+  },
+  "newProject": {
+    "generateForMe": "Tạo giúp tôi",
+    "generateForMeHint": "Để AI viết nhạc. Khi tắt, bạn nhận một bản nhạc rỗng với các nhạc cụ này.",
+    "generationNeedsServer": "Việc tạo cần một dự án trên máy chủ. Cần đăng nhập.",
+    "generationNeedsSignIn": "Đăng nhập để được tạo một bản nhạc cho bạn.",
+    "generationNeedsCredits": "Số dư tín dụng của bạn dưới không, nên việc tạo không khả dụng. Mua tín dụng để dùng lại.",
+    "notEnoughCredits": "Việc này cần {{estimate}} tín dụng, nhưng số dư của bạn là {{balance}} (thiếu {{shortfall}}). Mua tín dụng, dùng ít ô nhịp hoặc nhạc cụ hơn, hoặc tắt “Tạo giúp tôi”.",
+    "buyCredits": "Mua tín dụng",
+    "title": "Dự Án Mới",
+    "untitled": "Dự án chưa đặt tên",
+    "writeLyrics": "Viết lời",
+    "writeLyricsHint": "Lời dưới các nốt được hát",
+    "defaultTitle": "Bản nhạc mới",
+    "defaultTitleGenerated": "Bản nhạc được tạo",
+    "lyricsTheme": "Lời nói về điều gì",
+    "lyricsThemePlaceholder": "vd. một bản tình ca về việc trở về nhà",
+    "lyricsLanguage": "Ngôn ngữ của lời",
+    "lyricsLanguageName": {
+      "en": "Tiếng Anh",
+      "zh": "Tiếng Trung (中文)"
+    }
+  },
+  "ornament": {
+    "invertedMordent": "Mordent ngược",
+    "mordent": "Mordent",
+    "none": "Không",
+    "trill": "Trill",
+    "turn": "Turn"
+  },
+  "print": {
+    "action": "In",
+    "landscape": "Ngang",
+    "orientation": "Hướng",
+    "paper": "Giấy",
+    "paperA4": "A4",
+    "paperLegal": "Legal",
+    "paperLetter": "Letter",
+    "portrait": "Dọc",
+    "whatToPrint": "In gì",
+    "wholeScore": "Toàn bộ bản nhạc"
+  },
+  "published": {
+    "by": "bởi {{name}}",
+    "noLongerShared": "Liên kết này không còn được chia sẻ.",
+    "notFound": "Không tìm thấy",
+    "share": "Chia sẻ",
+    "flag": "Báo cáo"
+  },
+  "replace": {
+    "action": "Thay thế",
+    "measuresTitle": "Thay thế ô nhịp",
+    "notesTitle": "Thay thế nốt",
+    "nothingSelected": "Hãy chọn một ít nhạc trước.",
+    "preserveBoundary": "Giữ các nốt ở biên",
+    "preserveHarmony": "Giữ hòa âm",
+    "preserveMelody": "Giữ giai điệu",
+    "preserveRhythm": "Giữ tiết tấu",
+    "presetInstructions": "Chỉ dẫn có sẵn",
+    "trackTitle": "Thay thế bè",
+    "preset": {
+      "moreDramatic": "Làm đoạn này kịch tính hơn",
+      "simplify": "Đơn giản hóa đoạn này",
+      "rhythmicVariation": "Thêm biến tấu tiết tấu",
+      "memorableMelody": "Làm giai điệu đáng nhớ hơn",
+      "strongerTransition": "Tạo một đoạn chuyển mạnh hơn",
+      "harmonicTension": "Thêm căng thẳng hòa âm",
+      "resolvePhrase": "Giải quyết câu nhạc",
+      "moreUpbeat": "Làm đoạn này rộn ràng hơn",
+      "darker": "Làm đoạn này u tối hơn",
+      "variationKeepMelody": "Tạo một biến tấu trong khi giữ giai điệu",
+      "keepRhythmChangeHarmony": "Giữ tiết tấu nhưng đổi hòa âm",
+      "keepHarmonyChangeMelody": "Giữ hòa âm nhưng đổi giai điệu",
+      "addAccompaniment": "Thêm phần đệm",
+      "thinOrchestration": "Làm mỏng phần phối khí"
+    }
+  },
+  "resources": {
+    "title": "Tài nguyên",
+    "intro": "Nhạc miễn phí bạn có thể đưa thẳng vào {{appName}}, được nhóm theo trình nhập mà mỗi loại tập tin cung cấp. Tải một tập tin xuống, rồi dùng Nhập ở trang dự án.",
+    "group": {
+      "scores": {
+        "title": "Bản nhạc giấy",
+        "route": "Nhập → MusicXML. Nốt, tiết tấu, lời, sắc thái và bố cục đều sống sót qua chuyến đi."
+      },
+      "midi": {
+        "title": "Tập tin MIDI",
+        "route": "Nhập → MIDI. Nốt và thời gian đến được; vạch nhịp và giọng được ước lượng, nên trình hướng dẫn cho bạn sửa chúng."
+      },
+      "modules": {
+        "title": "Tracker module",
+        "route": "Nhập → Module. MOD, S3M, XM, IT và MPTM, được chọn theo những gì bên trong tập tin thay vì theo phần mở rộng của nó."
+      },
+      "audio": {
+        "title": "Bản ghi để chép lại",
+        "route": "Nhập → Âm thanh. Mỗi lần một dòng — việc chép lại là đơn âm, nên hãy chọn một nhạc cụ hoặc giọng độc tấu."
+      },
+      "datasets": {
+        "title": "Bộ sưu tập số lượng lớn",
+        "route": "Nhập → MIDI hoặc MusicXML. Cả kho tác phẩm thay vì từng bản riêng lẻ — tải kho lưu trữ xuống, rồi mở một tập tin từ đó."
+      },
+      "sound": {
+        "title": "Nhạc cụ và âm thanh",
+        "route": "Không nhập được. Đây là các mẫu âm và SoundFont đằng sau việc phát lại, hữu ích nếu bạn muốn nghe một bản nhạc ở nơi khác."
+      },
+      "reference": {
+        "title": "Định dạng và công cụ",
+        "route": "Tham khảo, không phải tập tin. Mỗi định dạng thực sự chứa gì, và còn gì khác có thể mở nó."
+      }
+    },
+    "link": {
+      "musescore": "Hơn một triệu bản nhạc cộng đồng. Những bản thuộc phạm vi công cộng tải về dạng MusicXML.",
+      "openscore": "Tác phẩm cổ điển được khắc lại từ đầu và phát hành vào phạm vi công cộng.",
+      "imslp": "Thư viện bản nhạc cổ điển thuộc phạm vi công cộng — 200.000 tác phẩm, nhiều bản có MusicXML bên cạnh PDF.",
+      "cpdl": "ChoralWiki: 40.000 bản nhạc hợp xướng và thanh nhạc, phần lớn có tập tin nguồn sửa được.",
+      "mutopia": "Các bản nhạc thuộc phạm vi công cộng được xếp chữ lại, với nguồn LilyPond và MIDI bên cạnh mỗi mục.",
+      "musopenScores": "Bản nhạc giấy phát hành hoàn toàn không có hạn chế bản quyền, bên cạnh các bản thu của Musopen.",
+      "openGoldberg": "Các Biến tấu Goldberg của Bach, cả bản nhạc lẫn phần trình diễn đều được phát hành cho mọi mục đích sử dụng.",
+      "musicxmlDirectory": "Danh sách của chính định dạng về các trang xuất bản MusicXML — nơi để tìm sau trang này.",
+      "bitmidi": "Một bộ sưu tập MIDI lớn, có thể tìm kiếm và chơi trong trình duyệt trước khi tải xuống.",
+      "vgmusic": "Nhạc trò chơi điện tử được chép tay, sắp xếp theo máy chơi game và theo tựa.",
+      "kunstderfuge": "Kho MIDI cổ điển lớn nhất trên web, hàng ngàn tập tin miễn phí để lấy.",
+      "midiworld": "MIDI cổ điển, pop và game song song, cùng các mẫu trống.",
+      "mfiles": "MIDI được chép tốt của các tác phẩm cổ điển mà hầu hết mọi người đang tìm.",
+      "classicalArchives": "Một bộ miễn phí được tuyển chọn bạn có thể sao chép và dùng mà không cần xin phép.",
+      "theSession": "Giai điệu truyền thống Ireland, mỗi bản tải về được dạng MIDI.",
+      "hymnary": "Giai điệu và lời thánh ca, phần lớn mang MIDI của bản hòa âm đầy đủ.",
+      "midkar": "Jazz, blues, ragtime và các bản nhạc kinh điển, được chép qua ba thập kỷ.",
+      "modarchive": "Hàng chục ngàn module từ thời demoscene trở đi, với một trình phát tích hợp.",
+      "modland": "Kho lưu trữ sâu: mọi định dạng tracker, sắp theo người soạn, duyệt được như một ổ đĩa.",
+      "amp": "Danh mục của chính cộng đồng Amiga, được lập chỉ mục bởi những người viết nhạc.",
+      "sceneOrg": "Máy chủ tập tin của demoscene. Thư mục nhạc giữ hàng thập kỷ các bản dự thi party.",
+      "woolyss": "Một chỉ mục được duy trì về nơi nhạc tracker tồn tại và thứ gì còn chơi được nó.",
+      "archiveTrackers": "Một bộ MOD, XM, IT và S3M nhiều gigabyte được tuyển chọn dưới dạng một bản tải duy nhất.",
+      "musopenAudio": "Các bản trình diễn cổ điển được thu và phát hành vào phạm vi công cộng.",
+      "freeMusicArchive": "Hơn 100.000 bản nhạc theo Creative Commons, lọc được theo giấy phép.",
+      "freesound": "Nốt đơn, câu nhạc ngắn và bản thu hiện trường, tất cả đều được cấp phép mở.",
+      "archiveAudio": "Các buổi hòa nhạc trực tiếp, bản chuyển 78rpm và tải lên cộng đồng, miễn phí để tải xuống.",
+      "pdmx": "Một phần tư triệu bản nhạc MusicXML thuộc phạm vi công cộng, đóng gói thành một bộ dữ liệu.",
+      "lakh": "176.000 tập tin MIDI tập hợp cho nghiên cứu âm nhạc và miễn phí để tải xuống.",
+      "maestro": "200 giờ trình diễn piano thi đấu, MIDI khớp với âm thanh.",
+      "adlPiano": "MIDI piano được sắp theo thể loại, tiểu thể loại và nghệ sĩ.",
+      "museTrainer": "Một kho MusicXML piano thuộc phạm vi công cộng — sao chép nó và mở bất kỳ tập tin nào.",
+      "womenComposers": "Bản nhạc của các nữ nhạc sĩ, được mã hóa và miễn phí sử dụng.",
+      "freepats": "Mẫu âm nhạc cụ và bộ patch được cấp phép mở.",
+      "polyphone": "SoundFont miễn phí để tải xuống, và trình soạn thảo để tự dựng của riêng bạn.",
+      "generalUser": "Một SoundFont General MIDI được chỉnh sao cho cả 128 chương trình hòa hợp trong một bản phối.",
+      "philharmonia": "Mọi nhạc cụ dàn nhạc, từng nốt một, do chính dàn nhạc thu.",
+      "musicXmlSpec": "Đặc tả MusicXML, từng phần tử một.",
+      "generalMidi": "Bộ âm 128 chương trình mà nhạc cụ của mỗi bè được chọn từ đó.",
+      "standardMidiFile": "Những gì một tập tin .mid thực sự chứa, từ MIDI Association.",
+      "openMpt": "Trình tracker để mở một module khi bạn cũng muốn các mẫu âm của nó.",
+      "verovio": "Chuyển đổi các bản nhạc mã hóa Humdrum sang MusicXML trong trình duyệt."
+    }
+  },
+  "selection": {
+    "notes_one": "{{count}} nốt được chọn",
+    "notes_other": "{{count}} nốt được chọn",
+    "measures_one": "{{count}} ô nhịp được chọn",
+    "measures_other": "{{count}} ô nhịp được chọn",
+    "tracks_one": "{{count}} bè được chọn",
+    "tracks_other": "{{count}} bè được chọn",
+    "none": "Không có vùng chọn",
+    "regenerated": "{{summary}}, đã tái tạo"
+  },
+  "settings": {
+    "account": "Tài khoản",
+    "language": "Ngôn ngữ",
+    "language_en": "English",
+    "language_de": "Deutsch",
+    "language_es": "Español",
+    "language_fr": "Français",
+    "language_it": "Italiano",
+    "language_ja": "日本語",
+    "language_ko": "한국어",
+    "language_pt": "Português",
+    "language_ru": "Русский",
+    "language_sv": "Svenska",
+    "language_th": "ไทย",
+    "language_uk": "Українська",
+    "language_vi": "Tiếng Việt",
+    "language_zh": "简体中文",
+    "language_zh-hant": "繁體中文",
+    "theme": "Chủ đề",
+    "themeSystem": "Theo hệ thống",
+    "themeLight": "Sáng",
+    "themeDark": "Tối",
+    "scoreLabel": "Bản nhạc",
+    "pitchWritten": "Hiển thị cao độ viết",
+    "pitchDisplayHelp": "Các nhạc cụ dịch giọng có thể hiển thị cao độ như viết cho người chơi, hoặc như nó vang.",
+    "page": {
+      "appearanceLabel": "Giao diện"
+    },
+    "privacyPolicy": "Chính sách bảo mật",
+    "termsOfService": "Điều khoản dịch vụ"
+  },
+  "shortcuts": {
+    "playPause": "Phát / tạm dừng",
+    "clearSelection": "Xóa vùng chọn",
+    "deleteNotes": "Xóa các nốt được chọn",
+    "pitchSemitone": "Dịch cao độ lên/xuống một nửa cung",
+    "pitchOctave": "Dịch cao độ lên/xuống một quãng tám",
+    "moveSelection": "Dịch vùng chọn lùi/tới",
+    "clickChord": "Nhấp một hợp âm",
+    "selectEveryNote": "Chọn mọi nốt trong nó",
+    "pianoKey": "Phím piano (hợp âm được chọn)",
+    "addRemoveNote": "Thêm hoặc gỡ nốt đó",
+    "enterPitch": "Viết nốt đó tại con trỏ, ở quãng tám gần nhất với nốt trước nó",
+    "chooseDuration": "Chọn trường độ nốt: tròn, trắng, đen, móc đơn, móc kép, móc ba",
+    "toggleDotted": "Thêm chấm dôi cho trường độ nốt đã chọn",
+    "insertRest": "Chèn một dấu lặng",
+    "toggleTie": "Nối nốt được chọn với nốt kế",
+    "noteInput": "Bật/tắt nhập nốt",
+    "stepCaret": "Di chuyển con trỏ một trường độ nốt",
+    "barEdge": "Con trỏ tới đầu hoặc cuối ô nhịp",
+    "scoreEdge": "Con trỏ tới đầu hoặc cuối bản nhạc",
+    "toggleSlur": "Luyến các nốt được chọn",
+    "markFermata": "Dấu miễn nhịp trên vùng chọn",
+    "markArpeggiate": "Rải hợp âm được chọn",
+    "markGlissando": "Trượt giữa các nốt được chọn",
+    "markOttava": "Dấu quãng tám trên vùng chọn",
+    "markCrescendo": "Crescendo qua vùng chọn",
+    "markDiminuendo": "Diminuendo qua vùng chọn"
+  },
+  "snapshot": {
+    "copyrightConfirm": "Tôi giữ toàn bộ bản quyền đối với tác phẩm này và mọi thứ nó trích dẫn.",
+    "copyrightWarning": "Chỉ xuất bản nhạc do bạn tạo. Việc xuất bản đưa nó lên một trang công khai ai cũng mở được.",
+    "createHint": "Ghim dự án như nó hiện tại. Một ảnh chụp không bao giờ thay đổi sau khi được lưu.",
+    "createTitle": "Tạo ảnh chụp",
+    "currentWork": "Công việc hiện tại",
+    "history": "Lịch sử",
+    "managePublishedTitle": "Ảnh chụp đã xuất bản",
+    "name": "Tên ảnh chụp",
+    "newSnapshot": "Ảnh chụp mới",
+    "open": "Mở",
+    "openTitle": "Mở ảnh chụp",
+    "openWarning": "Công việc hiện tại của bạn sẽ bị thay thế bởi ảnh chụp bạn mở. Không gì khác bị mất — mọi ảnh chụp vẫn ở nguyên.",
+    "publicName": "Tên công khai",
+    "publicNameFor": "Tên công khai cho {{name}}",
+    "publicNameHint": "Tiêu đề hiển thị trên Cộng đồng. Mặc định là tên dự án và tên ảnh chụp.",
+    "publish": "Xuất bản",
+    "publishHint": "Xuất bản — ai có liên kết đều có thể nghe",
+    "publisherHint": "Hiển thị trên Cộng đồng. Không bao giờ là địa chỉ email của bạn.",
+    "publisherName": "Tên người xuất bản",
+    "snapshotFirst": "Chụp công việc hiện tại trước",
+    "unpublish": "Hủy xuất bản"
+  },
+  "templates": {
+    "lead-sheet": {
+      "name": "Lead Sheet",
+      "description": "Một khuông nhạc khóa Sol, 16 ô nhịp 4/4. Trang trắng."
+    },
+    "piano-grand-staff": {
+      "name": "Piano (Khuông Kép)",
+      "description": "Khóa Sol trên khóa Fa, 16 ô nhịp — hai tay trên một nhạc cụ."
+    },
+    "string-quartet": {
+      "name": "Tứ Tấu Dây",
+      "description": "Violin I & II, viola trên khóa Đô alto, cello trên khóa Fa. 16 ô nhịp."
+    },
+    "jazz-combo": {
+      "name": "Ban Nhạc Jazz",
+      "description": "Trumpet, piano, bass đứng và một bộ trống jazz. 32 ô nhịp, Si♭ trưởng."
+    },
+    "rock-band": {
+      "name": "Ban Nhạc Rock",
+      "description": "Hai guitar, bass và một bộ trống rock. 32 ô nhịp ở 120."
+    },
+    "satb-choir": {
+      "name": "Hợp Xướng SATB",
+      "description": "Các giọng soprano, alto, tenor và bass. 16 ô nhịp."
+    },
+    "drum-kit": {
+      "name": "Bộ Trống",
+      "description": "Một khuông nhạc gõ, 16 ô nhịp — đàn phím đặt tên mọi cái trống."
+    },
+    "waltz": {
+      "name": "Waltz (3/4)",
+      "description": "Piano theo nhịp ba, 24 ô nhịp — một nhịp khác để khởi đầu."
+    },
+    "jig": {
+      "name": "Jig (6/8)",
+      "description": "Một dòng giai điệu đơn ở nhịp kép, 16 ô nhịp."
+    },
+    "gentle-piano-melody": {
+      "name": "Giai Điệu Piano Dịu Dàng",
+      "description": "Một giai điệu piano Đô trưởng 8 ô nhịp, đã viết sẵn, để bắt đầu từ đó."
+    },
+    "pop-arrangement": {
+      "name": "Phối Pop",
+      "description": "Một khung phối hai bè khóa Sol/khóa Fa, có nốt."
+    },
+    "orchestral-passage": {
+      "name": "Đoạn Dàn Nhạc",
+      "description": "Các hợp âm khối để phối khí."
+    }
+  },
+  "trackerFit": {
+    "clampedNotes_one": "{{count}} nốt ngoài tầm âm của {{format}} đã được dịch theo từng quãng tám trọn.",
+    "clampedNotes_other": "{{count}} nốt ngoài tầm âm của {{format}} đã được dịch theo từng quãng tám trọn.",
+    "droppedShortNotes_one": "{{count}} nốt ngắn hơn một hàng đã bị bỏ.",
+    "droppedShortNotes_other": "{{count}} nốt ngắn hơn một hàng đã bị bỏ.",
+    "droppedVoices_one": "{{count}} bè nhạc không vừa số kênh của {{format}} và sẽ bị thiếu.",
+    "droppedVoices_other": "{{count}} bè nhạc không vừa số kênh của {{format}} và sẽ bị thiếu.",
+    "quantisedNotes_one": "{{count}} nốt đã dịch nhẹ để rơi vào lưới hàng.",
+    "quantisedNotes_other": "{{count}} nốt đã dịch nhẹ để rơi vào lưới hàng.",
+    "title": "Xuất dưới dạng {{format}}",
+    "exportAnyway": "Vẫn xuất"
+  },
+  "transport": {
+    "audioOutput": "Đầu ra âm thanh",
+    "systemDefault": "Mặc định hệ thống",
+    "outputUnavailable": "Không thể chuyển sang đầu ra âm thanh đó",
+    "editTempo": "Sửa nhịp độ",
+    "goToStart": "Về đầu",
+    "loadFailed": "Nhạc cụ tải thất bại",
+    "masterVolume": "Âm lượng chủ",
+    "measureBeat": "Ô nhịp và phách hiện tại",
+    "nextMeasure": "Ô nhịp kế",
+    "pause": "Tạm dừng",
+    "play": "Phát",
+    "position": "Vị trí",
+    "preparing": "Đang chuẩn bị nhạc cụ {{percent}}%",
+    "preparingUnknown": "Đang chuẩn bị nhạc cụ",
+    "previousMeasure": "Ô nhịp trước",
+    "speed": "Tốc độ phát",
+    "speedMultiplier": "Tốc độ phát",
+    "stop": "Dừng",
+    "tempo": "Nhịp độ",
+    "tempoBpm": "Nhịp độ (BPM)",
+    "time": "Thời gian phát",
+    "toggleLoop": "Lặp",
+    "toggleMetronome": "Máy đếm nhịp",
+    "transport": "Bộ phát",
+    "volume": "Âm"
+  },
+  "generationChoices": {
+    "heading": "Tác phẩm này được tạo thế nào",
+    "hint": "Khóa những gì bạn muốn giữ, rồi tạo lại: các lựa chọn bị khóa vẫn giữ, phần còn lại được tung mới.",
+    "lock": "Giữ {{name}}",
+    "groove": "Groove",
+    "cycle": "Hợp âm",
+    "arcEntry": "Mở đầu",
+    "arcIntensity": "Dựng",
+    "moment": "Khoảnh khắc",
+    "carrier": "Giai điệu",
+    "formShape": "Hình thức",
+    "hook": "Hook",
+    "lyric": "Lời",
+    "again": "Tạo lại",
+    "againKeeping_one": "Tạo lại, giữ 1 lựa chọn",
+    "againKeeping_other": "Tạo lại, giữ {{count}} lựa chọn",
+    "confirmTitle": "Tạo lại tác phẩm này?",
+    "confirmMessage": "Việc này thay thế toàn bộ bản nhạc bằng một bản tạo mới. Bản nhạc hiện tại của bạn không được giữ trừ khi bạn lưu một ảnh chụp trước.",
+    "confirm": "Tạo lại"
+  },
+  "projectOrigin": {
+    "heading": "Nguồn gốc",
+    "kind": {
+      "generated": "Được tạo từ một yêu cầu",
+      "imported": "Được nhập từ một tập tin",
+      "transcribed": "Được chép lại từ một bản ghi",
+      "duplicated": "Được sao từ một dự án khác",
+      "blank": "Khởi đầu từ một bản nhạc trắng",
+      "unknown": "Không được ghi lại"
+    },
+    "file": "Tập tin",
+    "format": "Định dạng",
+    "sourceProject": "Dự án nguồn",
+    "sourceMissing": "Một dự án đã bị xóa từ đó",
+    "request": "Những gì được yêu cầu",
+    "lineup": "Đội hình",
+    "backend": "Máy chủ",
+    "tempoValue": "{{bpm}} BPM",
+    "barsValue_one": "{{count}} ô nhịp",
+    "barsValue_other": "{{count}} ô nhịp",
+    "generatedOn": "Được tạo vào",
+    "modelUsed": "Mô hình đã dùng",
+    "tokens": "Token",
+    "tokensValue": "{{prompt}} vào, {{completion}} ra",
+    "jobLoading": "Đang tải yêu cầu tạo…",
+    "jobMissing": "Tác vụ đã tạo dự án này không còn được liệt kê."
+  },
+  "home": {
+    "heroTitle": "Mã nguồn cho âm nhạc",
+    "heroBody": "{{appName}} dành cho các nhạc sĩ muốn quyền kiểm soát sáng tạo, với AI để trợ giúp. Soạn, xem xét và chỉnh sửa từng nốt trong một bản nhạc chuẩn.",
+    "featureEditorTitle": "Âm nhạc của bạn, từng nốt một",
+    "featureEditorBody": "Làm việc với ký âm chuẩn và tự tay định hình mỗi bè. AI có thể giúp bạn khởi đầu; bạn vẫn là người soạn nhạc.",
+    "featureAiTitle": "AI dõi theo chỉ dẫn của bạn",
+    "featureAiBody": "Tạo một bản nhạc hoặc làm lại các ô nhịp được chọn, rồi tự bạn xem xét và tinh chỉnh các nốt.",
+    "featureFormatsTitle": "Nhập và xuất nhạc theo cách của bạn",
+    "featureFormatsBody": "Nhập bản ghi âm (MP3, MPA, WAV), MIDI và MusicXML. Xuất MIDI, MusicXML, WAV và MP3."
+  },
+  "clef": {
+    "treble": "Khóa Sol",
+    "bass": "Khóa Fa",
+    "alto": "Khóa Đô alto",
+    "tenor": "Khóa Đô tenor",
+    "percussion": "Gõ"
+  },
+  "overlay": {
+    "openingProject": "Đang mở dự án…",
+    "transcribingNotes": "Đang chép lại bản ghi…",
+    "progress": "{{stage}} {{done}} trên {{total}}: {{label}}",
+    "reconnecting": "Đang kết nối lại…",
+    "polling": "Cập nhật trực tiếp không khả dụng; đang kiểm tra dự án định kỳ.",
+    "lockedWhileGenerating": "Soạn thảo và phát lại tiếp tục khi nó hoàn tất.",
+    "stage": {
+      "plan": "Lập kế hoạch",
+      "separate": "Tách",
+      "part": "Bè",
+      "section": "Đoạn",
+      "chunk": "Khối"
+    }
+  },
+  "account": {
+    "nickname": "Biệt danh",
+    "nicknameHint": "Tên bạn chia sẻ ảnh chụp dưới đó. Không bao giờ là địa chỉ email của bạn.",
+    "picture": "Ảnh hồ sơ",
+    "choosePicture": "Chọn ảnh",
+    "removePicture": "Gỡ ảnh",
+    "pictureHint": "JPEG, PNG hoặc WebP. Nó được chỉnh cỡ trước khi tải lên.",
+    "pictureUnsupported": "Tập tin đó không thể dùng làm ảnh.",
+    "saveFailed": "Không thể lưu hồ sơ của bạn.",
+    "signedInAs": "Đã đăng nhập với {{email}}",
+    "loadFailed": "Không thể tải cái này. Hãy thử lại sau."
+  },
+  "coupons": {
+    "code": "Mã phiếu giảm giá",
+    "redeem": "Đổi",
+    "redeemed": "Đã thêm {{credits}} tín dụng. Số dư của bạn là {{balance}}.",
+    "redeemFailed": "Không thể đổi phiếu giảm giá đó.",
+    "expires": "Ngày hết hạn",
+    "expiresPlaceholder": "Hết hạn, dạng YYYY-MM-DD",
+    "email": "Email, nếu nó dành cho một tài khoản",
+    "emailHint": "Với một email, chỉ tài khoản đó mới có thể đổi nó.",
+    "create": "Tạo phiếu giảm giá",
+    "created": "Đã tạo {{code}}",
+    "createFailed": "Không thể tạo phiếu giảm giá đó.",
+    "none": "Chưa có phiếu giảm giá nào.",
+    "expiresOn": "Hết hạn {{date}}",
+    "redeemedCount": "Đã đổi {{count}} lần"
+  },
+  "apiKeys": {
+    "intro": "Một khóa hoạt động thay cho không gian làm việc của bạn. Hãy xem nó như một mật khẩu.",
+    "name": "Tên khóa",
+    "create": "Tạo khóa",
+    "newKey": "Khóa mới của bạn: {{name}}",
+    "copyNow": "Sao chép bí mật này ngay. Nó không thể được hiển thị lại.",
+    "hide": "Ẩn",
+    "none": "Chưa có khóa API nào.",
+    "active": "Đang hoạt động",
+    "revoked": "Đã thu hồi",
+    "revoke": "Thu hồi",
+    "revokeNamed": "Thu hồi {{name}}",
+    "lastUsed": "Dùng lần cuối {{date}}",
+    "neverUsed": "Chưa từng dùng",
+    "unavailable": "Không gian làm việc của bạn chưa khả dụng.",
+    "failed": "Việc đó không thành công. Hãy thử lại."
+  },
+  "history": {
+    "noPurchases": "Chưa có giao dịch mua nào.",
+    "usage": "Sử dụng",
+    "noUsage": "Chưa tiêu tín dụng nào.",
+    "loadMore": "Tải thêm",
+    "generation": "Tạo nhạc"
+  },
+  "flag": {
+    "title": "Báo cáo ảnh chụp này",
+    "hint": "Cho chúng tôi biết lý do bạn báo cáo ảnh chụp được chia sẻ này. Một quản trị viên trang web sẽ xem xét nó.",
+    "reasonLabel": "Lý do",
+    "detailsLabel": "Chi tiết",
+    "detailsPlaceholder": "Mô tả vấn đề",
+    "detailsRequired": "Vui lòng thêm một số chi tiết.",
+    "submit": "Gửi báo cáo",
+    "submitting": "Đang gửi…",
+    "thanks": "Cảm ơn — báo cáo của bạn đã được gửi để xem xét.",
+    "failed": "Không thể gửi báo cáo của bạn. Vui lòng thử lại.",
+    "reject": "Từ chối",
+    "confirm": "Xác nhận",
+    "reviewHint": "Các báo cáo đang chờ xem xét. Từ chối để bỏ qua, hoặc Xác nhận để gỡ ảnh chụp khỏi cộng đồng.",
+    "reviewEmpty": "Không có báo cáo nào để xem xét.",
+    "reviewFailed": "Không thể tải báo cáo.",
+    "removedForReason": "Đã gỡ khỏi cộng đồng: {{reason}}",
+    "reason": {
+      "copyright": "Vi phạm bản quyền",
+      "offensive": "Nội dung phản cảm",
+      "other": "Khác"
+    },
+    "status": {
+      "submitted": "Đã gửi",
+      "rejected": "Đã từ chối",
+      "confirmed": "Đã xác nhận"
+    }
+  },
+  "privacy": {
+    "title": "Chính sách bảo mật",
+    "lastUpdated": "Cập nhật lần cuối: {{date}}",
+    "sections": {
+      "introduction": {
+        "title": "Giới thiệu",
+        "body": "Chào mừng đến với {{appName}}. Chúng tôi tôn trọng quyền riêng tư của bạn và cam kết bảo vệ dữ liệu cá nhân của bạn. Chính sách này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn khi bạn dùng {{appName}} để viết, chơi và chia sẻ nhạc."
+      },
+      "collection": {
+        "title": "Thông tin chúng tôi thu thập",
+        "body": "Thông tin bạn cung cấp:\n• Thông tin tài khoản (địa chỉ email, tên)\n• Các bản nhạc, bản phối và dự án của bạn\n• Tùy chọn và cài đặt\n• Thông tin thanh toán (được xử lý an toàn bởi nhà cung cấp thanh toán của chúng tôi)\n\nThông tin thu thập tự động:\n• Thông tin thiết bị và ứng dụng\n• Địa chỉ IP và vị trí gần đúng\n• Mẫu hình sử dụng và phân tích\n• Số liệu hiệu năng và độ tin cậy"
+      },
+      "usage": {
+        "title": "Cách chúng tôi sử dụng thông tin của bạn",
+        "body": "Chúng tôi sử dụng thông tin thu thập được để:\n• Cung cấp và cải thiện {{appName}} cùng các tính năng ký âm, phát lại và tạo nhạc của nó\n• Lưu trữ và đồng bộ các dự án của bạn trên các thiết bị\n• Xử lý tín dụng và thanh toán\n• Gửi các cập nhật quan trọng về dịch vụ\n• Phân tích việc sử dụng để cải thiện ứng dụng"
+      },
+      "sharing": {
+        "title": "Chia sẻ thông tin",
+        "body": "Chúng tôi có thể chia sẻ thông tin của bạn trong những trường hợp này:\n• Với các nhà cung cấp dịch vụ giúp chúng tôi vận hành\n• Khi pháp luật hoặc quy trình pháp lý yêu cầu\n• Để bảo vệ quyền và sự an toàn của chúng tôi\n• Với sự đồng ý của bạn"
+      },
+      "security": {
+        "title": "Bảo mật dữ liệu",
+        "body": "Chúng tôi sử dụng các biện pháp bảo vệ thích hợp:\n• Mã hóa dữ liệu khi truyền và khi lưu trữ\n• Đánh giá bảo mật định kỳ\n• Kiểm soát truy cập và xác thực\n• Hạ tầng đám mây an toàn"
+      },
+      "retention": {
+        "title": "Lưu giữ dữ liệu",
+        "body": "Chúng tôi giữ thông tin cá nhân của bạn chừng nào tài khoản của bạn còn hoạt động hoặc khi cần để cung cấp dịch vụ. Các dự án của bạn được lưu trữ để bạn có thể quay lại chúng qua các phiên và thiết bị. Bạn có thể yêu cầu xóa tài khoản và dữ liệu của nó bất cứ lúc nào."
+      },
+      "rights": {
+        "title": "Quyền riêng tư của bạn",
+        "body": "Bạn có quyền:\n• Truy cập thông tin cá nhân của bạn\n• Sửa dữ liệu không chính xác\n• Yêu cầu xóa dữ liệu của bạn\n• Xuất các dự án của bạn\n• Từ chối nhận các thông điệp tiếp thị"
+      },
+      "cookies": {
+        "title": "Lưu trữ cục bộ",
+        "body": "Chúng tôi sử dụng lưu trữ thiết yếu trên thiết bị của bạn để giữ bạn đăng nhập, lưu công việc của bạn và ghi nhớ tùy chọn của bạn. Chúng tôi không sử dụng theo dõi của bên thứ ba cho quảng cáo."
+      },
+      "children": {
+        "title": "Quyền riêng tư của trẻ em",
+        "body": "{{appName}} dành cho người dùng mọi lứa tuổi. Chúng tôi không cố ý thu thập thông tin cá nhân từ trẻ em dưới 13 tuổi mà không có sự đồng ý của cha mẹ."
+      },
+      "transfers": {
+        "title": "Chuyển dữ liệu quốc tế",
+        "body": "Thông tin của bạn có thể được chuyển đến và xử lý ở các quốc gia khác với quốc gia của bạn. Chúng tôi thực hiện các bước thích hợp để bảo vệ nó khi điều đó xảy ra."
+      },
+      "changes": {
+        "title": "Thay đổi chính sách này",
+        "body": "Chúng tôi có thể cập nhật Chính sách bảo mật này theo thời gian. Chúng tôi sẽ đăng chính sách mới trên trang này và cập nhật ngày ở trên."
+      },
+      "language": {
+        "title": "Ngôn ngữ",
+        "body": "Tài liệu này được cung cấp bằng nhiều hơn một ngôn ngữ để thuận tiện cho bạn. Nếu bản tiếng Anh và một bản dịch khác nhau, bản tiếng Anh được ưu tiên."
+      }
+    },
+    "contact": {
+      "title": "Liên hệ chúng tôi",
+      "body": "Nếu bạn có câu hỏi về Chính sách bảo mật này, hãy liên hệ chúng tôi tại {{email}} hoặc truy cập {{website}}."
+    }
+  },
+  "terms": {
+    "title": "Điều khoản dịch vụ",
+    "lastUpdated": "Cập nhật lần cuối: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Chấp nhận điều khoản",
+        "body": "Bằng việc sử dụng {{appName}}, bạn đồng ý với các Điều khoản dịch vụ này. Nếu bạn không đồng ý, vui lòng không sử dụng dịch vụ."
+      },
+      "service": {
+        "title": "Mô tả dịch vụ",
+        "body": "{{appName}} là một ứng dụng để viết, chơi và chia sẻ ký âm. Nó cung cấp các tính năng miễn phí và tín dụng trả phí cho các tính năng như tạo nhạc với sự hỗ trợ của AI."
+      },
+      "accounts": {
+        "title": "Tài khoản người dùng",
+        "body": "Khi bạn tạo một tài khoản, bạn đồng ý:\n• Cung cấp thông tin chính xác và đầy đủ\n• Giữ an toàn thông tin đăng nhập tài khoản của bạn\n• Chịu trách nhiệm cho hoạt động dưới tài khoản của bạn\n• Thông báo cho chúng tôi kịp thời về bất kỳ truy cập trái phép nào"
+      },
+      "usage": {
+        "title": "Sử dụng được chấp nhận",
+        "body": "Khi sử dụng {{appName}}, bạn đồng ý không:\n• Truy cập các tính năng trả phí mà không trả tiền cho chúng\n• Sử dụng bot hoặc hệ thống tự động chống lại dịch vụ\n• Dịch ngược hoặc trích xuất mã nguồn\n• Chia sẻ thông tin đăng nhập tài khoản của bạn với người khác\n• Can thiệp hoặc làm gián đoạn dịch vụ"
+      },
+      "payments": {
+        "title": "Tín dụng và thanh toán",
+        "body": "Một số tính năng được trả bằng tín dụng. Các giao dịch mua được xử lý qua cửa hàng ứng dụng theo các chính sách của nó. Tín dụng được tiêu khi các tính năng đó được sử dụng."
+      },
+      "ip": {
+        "title": "Sở hữu trí tuệ",
+        "body": "{{appName}} cùng nội dung, tính năng và thiết kế gốc của nó thuộc sở hữu của {{companyName}} và được bảo vệ bởi luật bản quyền và nhãn hiệu quốc tế. Phần nhạc bạn tạo vẫn là của bạn."
+      },
+      "liability": {
+        "title": "Giới hạn trách nhiệm",
+        "body": "{{appName}} được cung cấp \"nguyên trạng\" không có bảo đảm dưới bất kỳ hình thức nào. Chúng tôi không chịu trách nhiệm cho bất kỳ thiệt hại gián tiếp, ngẫu nhiên, đặc biệt, hệ quả hay mang tính trừng phạt nào phát sinh từ việc bạn sử dụng dịch vụ."
+      },
+      "termination": {
+        "title": "Chấm dứt",
+        "body": "Chúng tôi có thể tạm ngưng hoặc chấm dứt tài khoản của bạn do vi phạm các điều khoản này. Khi chấm dứt, quyền sử dụng dịch vụ của bạn kết thúc. Bạn có thể xóa tài khoản của mình bất cứ lúc nào."
+      },
+      "changes": {
+        "title": "Thay đổi các điều khoản này",
+        "body": "Chúng tôi có thể thay đổi các điều khoản này theo thời gian. Chúng tôi sẽ thông báo cho bạn về những thay đổi quan trọng qua ứng dụng. Việc tiếp tục sử dụng {{appName}} sau một thay đổi nghĩa là bạn chấp nhận các điều khoản mới."
+      },
+      "language": {
+        "title": "Ngôn ngữ",
+        "body": "Tài liệu này được cung cấp bằng nhiều hơn một ngôn ngữ để thuận tiện cho bạn. Nếu bản tiếng Anh và một bản dịch khác nhau, bản tiếng Anh được ưu tiên."
+      }
+    },
+    "contact": {
+      "title": "Liên hệ chúng tôi",
+      "body": "Để biết thêm về các Điều khoản dịch vụ này, hãy liên hệ chúng tôi tại {{email}} hoặc truy cập {{website}}."
+    }
+  }
+}

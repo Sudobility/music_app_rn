@@ -3,7 +3,14 @@
     "iphone_6_9": {
       "simulator": "iPhone 17 Pro Max",
       "runtime": "iOS-26-0",
-      "resolution": "1320x2868"
+      "resolution": "1320x2868",
+      "store_resolution": "1320x2868"
+    },
+    "iphone_duo": {
+      "simulator": "iPhone Duo",
+      "runtime": "iOS-27-2",
+      "resolution": "2007x2853",
+      "store_resolution": "2853x2007"
     }
   },
   "ipados": {
@@ -17,7 +24,8 @@
   "macos": {
     "macos_desktop": {
       "app": "native",
-      "resolution": "2880x1800"
+      "resolution": "2880x1800",
+      "store_resolution": "2880x1800"
     }
   },
   "android": {
@@ -30,6 +38,13 @@
       "emulator": "Medium_Tablet",
       "resolution": "1600x2560",
       "store_resolution": "2560x1600"
+    }
+  },
+  "windows": {
+    "windows_desktop": {
+      "emulator": "local",
+      "resolution": "2560x1440",
+      "store_resolution": "1920x1080"
     }
   }
 }

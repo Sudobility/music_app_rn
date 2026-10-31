@@ -36,8 +36,25 @@ const SHARED_BY_DESIGN = new Set([
   'editor.musicXml',
   // A paper size's name; the web's locale lists it as shared by design too.
   'print.paperA4',
+  // The language picker's own labels are each language's native name, shown the
+  // same whatever the UI language — a reader looking for their language is not
+  // scanning for the Chinese word for it. Most carry no CJK by nature
+  // (`Deutsch`, `Français`), so they are shared by design rather than translated.
   'settings.language_en',
+  'settings.language_de',
+  'settings.language_es',
+  'settings.language_fr',
+  'settings.language_it',
+  'settings.language_ja',
+  'settings.language_ko',
+  'settings.language_pt',
+  'settings.language_ru',
+  'settings.language_sv',
+  'settings.language_th',
+  'settings.language_uk',
+  'settings.language_vi',
   'settings.language_zh',
+  'settings.language_zh-hant',
 ]);
 
 describe('locales', () => {
@@ -70,12 +87,21 @@ describe('languageFor', () => {
   it('reads the device tags, and falls back to English', () => {
     expect(languageFor(null, ['zh-Hans-CN', 'en-US'])).toBe('zh');
     expect(languageFor(null, ['en-GB'])).toBe('en');
-    expect(languageFor(null, ['fr-FR'])).toBe('en');
+    // A device language this build ships is honoured by its subtag.
+    expect(languageFor(null, ['fr-FR'])).toBe('fr');
+    // One it does not ship (Esperanto) falls through to English.
+    expect(languageFor(null, ['eo'])).toBe('en');
     expect(languageFor(null, [])).toBe('en');
   });
 
   it('ignores a stored language this build does not ship', () => {
-    expect(languageFor('fr', ['zh-TW'])).toBe('zh');
+    expect(languageFor('eo', ['zh-TW'])).toBe('zh');
+  });
+
+  it('keeps a stored Traditional Chinese choice rather than folding it into Simplified', () => {
+    // `zh-hant` is an exact code the reader can only reach by choosing it; the
+    // shared subtag rule would otherwise match it to `zh`.
+    expect(languageFor('zh-hant', ['en-US'])).toBe('zh-hant');
   });
 
   it('keeps a stored regional or scripted tag, which it used to drop', () => {

@@ -1,0 +1,1838 @@
+{
+  "about": {
+    "title": "À propos"
+  },
+  "accidental": {
+    "0": "Bécarre",
+    "1": "Dièse",
+    "2": "Double dièse",
+    "-1": "Bémol",
+    "-2": "Double bémol"
+  },
+  "articulation": {
+    "accent": "Accent",
+    "marcato": "Marcato",
+    "none": "Aucune",
+    "staccato": "Staccato",
+    "tenuto": "Tenuto"
+  },
+  "auth": {
+    "orContinueWith": "Ou continuer avec",
+    "missingFields": "Saisissez votre e-mail et votre mot de passe.",
+    "signInWithGoogle": "Continuer avec Google",
+    "createAccount": "Créez votre compte",
+    "email": "E-mail",
+    "passwordLabel": "Mot de passe",
+    "signInWithApple": "Continuer avec Apple",
+    "forgotPassword": "Mot de passe oublié ?",
+    "resetPasswordHint": "Saisissez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "sendResetLink": "Envoyer le lien de réinitialisation",
+    "resetEmailSent": "Si un compte utilise cette adresse, un lien pour réinitialiser son mot de passe est en route. Vérifiez votre boîte de réception.",
+    "backToSignIn": "Retour à la connexion",
+    "missingEmail": "Saisissez votre adresse e-mail.",
+    "signUp": "Créer un compte",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "dontHaveAccount": "Besoin d'un compte ?",
+    "resetPassword": "Réinitialisez votre mot de passe",
+    "signInToAccount": "Connectez-vous à votre compte",
+    "genericError": "Échec de l'authentification"
+  },
+  "command": {
+    "clearBars": "Vider les mesures",
+    "clearTrack": "Vider la piste",
+    "pasteBars": "Coller les mesures",
+    "pasteTrack": "Coller la piste",
+    "addMeasure": "Ajouter une mesure",
+    "insertBars": "Insérer des mesures",
+    "addNote": "Ajouter une note",
+    "addTrack": "Ajouter une piste",
+    "changeAccidental": "Modifier l'altération",
+    "changeArticulation": "Modifier l'articulation",
+    "changeClef": "Changer de clé",
+    "changeDuration": "Modifier la durée",
+    "changeKeySignature": "Changer de tonalité",
+    "changePitch": "Modifier la hauteur",
+    "changeTempo": "Modifier le tempo",
+    "changeTimeSignature": "Modifier le chiffrage de mesure",
+    "changeTrackProps": "Modifier la piste",
+    "changeVelocity": "Modifier la vélocité",
+    "changeVoice": "Changer de voix",
+    "deleteEvents": "Supprimer les notes",
+    "deleteMeasure": "Supprimer la mesure",
+    "deleteTrack": "Supprimer la piste",
+    "importScore": "Importer une partition",
+    "insertWithRipple": "Insérer",
+    "moveNotes": "Déplacer les notes",
+    "pasteEvents": "Coller",
+    "quantize": "Quantifier",
+    "relocateNotes": "Déplacer les notes",
+    "resizeNotes": "Redimensionner les notes",
+    "toggleTie": "Liaison",
+    "transpose": "Transposer",
+    "changeMetadata": "Modifier les détails de la partition",
+    "changeDynamic": "Modifier la nuance",
+    "setLyric": "Modifier les paroles",
+    "toGraceNote": "Modifier les notes d'agrément",
+    "setPickup": "Définir la mesure d'anacrouse",
+    "setChordSymbol": "Modifier le chiffrage d'accord",
+    "changeRepeats": "Modifier les reprises",
+    "changeBeam": "Modifier les ligatures",
+    "setFingering": "Modifier le doigté",
+    "changeBarline": "Modifier la barre de mesure",
+    "changeMeasureClef": "Changer de clé à la mesure",
+    "changeNavigation": "Modifier les repères de navigation",
+    "changeOrnament": "Modifier l'ornement",
+    "toggleArpeggiate": "Arpéger",
+    "toggleGlissando": "Glissando",
+    "toggleOttava": "Crochet d'octave",
+    "toggleFermata": "Point d'orgue",
+    "toggleHairpin": "Soufflet",
+    "toggleSlur": "Liaison de phrasé",
+    "moveUnpluggedListener": "Déplacer l'auditeur",
+    "turnUnpluggedListener": "Tourner l'auditeur",
+    "moveUnpluggedTrack": "Déplacer l'instrument",
+    "resetUnpluggedArrangement": "Réinitialiser la disposition"
+  },
+  "common": {
+    "cancel": "Annuler",
+    "closeDialog": "Fermer la boîte de dialogue",
+    "done": "Terminé",
+    "ok": "OK",
+    "open": "Ouvrir",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "delete": "Supprimer"
+  },
+  "community": {
+    "browseResources": "Parcourir les ressources",
+    "empty": "Rien n'a encore été publié.",
+    "intro": "Des instantanés que des gens ont partagés. N'importe qui peut écouter — aucun compte nécessaire.",
+    "loadFailed": "Chargement impossible.",
+    "noMatch": "Aucune partition partagée ne correspond à « {{query}} ».",
+    "searchLabel": "Rechercher des partitions partagées",
+    "searchPlaceholder": "Rechercher par titre ou par auteur du partage",
+    "sharedBy": "par {{name}}",
+    "title": "Communauté"
+  },
+  "credits": {
+    "balance": "Solde",
+    "outOfCreditsBody": "La génération nécessite des crédits, et votre solde est vide. Rechargez pour continuer — rien de ce sur quoi vous travailliez n'a été perdu.",
+    "outOfCreditsTitle": "Plus de crédits",
+    "purchaseElsewhere": "Les crédits s'achètent sur l'application web.",
+    "rate": "Un crédit par mesure, par instrument.",
+    "viewCredits": "Voir les crédits"
+  },
+  "dashboard": {
+    "create": "Créer",
+    "empty": "Aucun projet pour l'instant.",
+    "generating": "Génération…",
+    "transcribing": "Transcription…",
+    "import": "Importer",
+    "importFormat": "Importer un fichier",
+    "importMidi": "Importer un MIDI",
+    "newProject": "Nouveau projet",
+    "syncToServer": "Enregistrer sur le serveur",
+    "importMusicXml": "Importer un MusicXML",
+    "importAudio": "Importer un audio",
+    "importModule": "Importer un module tracker",
+    "importProject": "Importer un fichier projet",
+    "connect": "Connecter",
+    "myProjects": "Mes projets",
+    "newFromTemplateAction": "Nouveau à partir d'un modèle",
+    "projectFileError": {
+      "invalidJson": "Ce fichier n'est pas un projet : il n'a pas pu être lu comme du JSON.",
+      "notAProject": "Ce fichier n'est pas un projet Moosiac.",
+      "newerVersion": "Ce projet a été enregistré par une version plus récente de Moosiac. Mettez l'application à jour pour l'ouvrir.",
+      "invalidScore": "La partition de ce projet n'a pas pu être lue."
+    },
+    "openDocuments": "Ouvrir le projet",
+    "creditHistory": "Historique des crédits",
+    "redeemCoupon": "Utiliser un coupon",
+    "apiKeys": "Clés API",
+    "manageCoupons": "Gérer les coupons",
+    "duplicate": "Dupliquer",
+    "duplicateProject": "Dupliquer le projet : {{name}}",
+    "deleteProject": "Supprimer le projet : {{name}}",
+    "deleteTitle": "Supprimer le projet",
+    "deleteMessage": "Supprimer « {{name}} » ? Cette action est irréversible.",
+    "updated": "Mis à jour {{date}}",
+    "reviewFlags": "Examiner les signalements",
+    "reviewFlagsDesc": "Examiner les signalements sur les instantanés partagés"
+  },
+  "docs": {
+    "editor": {
+      "title": "L'éditeur",
+      "summary": "Le canevas de notation, le curseur, et comment les notes s'écrivent.",
+      "figure": "La barre d'édition au-dessus d'une partition, avec le curseur au début de la première mesure.",
+      "canvas": {
+        "heading": "Le canevas",
+        "p1": "La partition est dessinée sur un seul canevas, et seuls les systèmes que vous voyez sont dessinés à chaque image. C'est ce qui permet à une longue partition de rester réactive — le coût du dessin n'augmente pas avec le nombre de mesures.",
+        "p2": "Sur la gauche de chaque système se trouve la gouttière de piste : le nom de chaque piste, son instrument, et ses commandes de sourdine et de solo. Elle est peinte sur le même canevas que les portées, de sorte qu'elle ne peut jamais se désaligner de la musique qu'elle étiquette.",
+        "p3": "Une piste qui n'est pas celle que vous modifiez s'estompe — notes, ligatures, liaisons et lignes de portée ensemble — pour que la partie sur laquelle vous travaillez se repère d'un coup d'œil. Une note sélectionnée garde sa couleur sur toutes les pistes, car sélectionner à travers les pistes est quelque chose que vous avez fait exprès."
+      },
+      "caret": {
+        "heading": "Le curseur et la sélection",
+        "p1": "Le curseur rouge est l'endroit où ira la prochaine note et où démarre la lecture. Cliquer sur une portée vide le déplace, rend cette piste active et efface la sélection ; cliquer sur une note sélectionne aussi cette note.",
+        "p2": "Maj+clic ajoute ou retire une note de la sélection. Cmd+clic sélectionne tout depuis le curseur jusqu'à l'endroit cliqué sur la piste active, et Cmd+Maj+clic fait de même sur toutes les pistes.",
+        "p3": "Les numéros de mesure au-dessus de chaque système sont une gouttière à part : cliquez sur l'un pour sélectionner cette mesure, Maj+clic pour étendre la sélection à une plage de mesures. Remplacer et régénérer fonctionnent tous deux sur des plages, c'est donc ainsi que vous les ciblez."
+      },
+      "noteInput": {
+        "heading": "Écrire des notes",
+        "p1": "Il y a quatre façons d'écrire une note : taper sa lettre, cliquer sur la portée avec la saisie de notes activée, jouer le piano à l'écran, ou jouer un clavier MIDI connecté.",
+        "p2": "Taper est généralement le plus rapide. A à G écrit cette note au curseur dans l'octave la plus proche de la note précédente, de sorte qu'une mélodie n'a pas à être transposée après coup. Les chiffres 1 à 6 choisissent la valeur de la note, un point la pointe, R écrit un silence et T lie.",
+        "p3": "La saisie de notes est un mode, activé avec N, car un clic doit pouvoir signifier deux choses : désactivée, un clic vise le curseur ; activée, un clic écrit une note à la hauteur cliquée."
+      },
+      "editModes": {
+        "heading": "Insérer, remplacer et empiler",
+        "p1": "Insérer pousse les notes suivantes de la piste pour faire de la place. Remplacer écrase ce qui était déjà là. Empiler ajoute la note à ce qui est déjà à cette position, formant un accord.",
+        "p2": "Empiler est indisponible sur un instrument qui ne peut émettre qu'une note à la fois — une flûte ne peut pas jouer d'accord, et la barre d'outils le signale plutôt que de vous laisser en écrire un."
+      },
+      "voices": {
+        "heading": "Les voix",
+        "p1": "Une portée peut porter deux voix indépendantes. On les distingue par leurs hampes : la voix supérieure pointe vers le haut et l'inférieure vers le bas, ce que ferait un graveur.",
+        "p2": "Une voix seule garde le choix de hampe du moteur de rendu, car forcer une direction y pointerait la moitié des notes dans le mauvais sens."
+      },
+      "layout": {
+        "heading": "Mise en page et zoom",
+        "p1": "La mise en page par page répartit la musique en systèmes qui tiennent dans la largeur, comme le fait la musique imprimée. La mise en page continue dispose toute la partition en un seul long système et défile latéralement.",
+        "p2": "Le zoom met à l'échelle la gravure. Il change la quantité affichée à l'écran, jamais le contenu de la partition."
+      }
+    },
+    "formats": {
+      "title": "Importation et exportation",
+      "summary": "Ce que l'application lit, ce qu'elle écrit, et ce qui survit au trajet.",
+      "importing": {
+        "heading": "Importer",
+        "p1": "Chaque importation crée un nouveau projet, c'est pourquoi elles vivent toutes sur la page Projets plutôt que dans l'éditeur — une importation depuis une partition ouverte ne pourrait que vous en faire sortir.",
+        "p2": "La seule exception est l'audio importé comme une piste plutôt qu'un projet. Cela écrit une transcription sur la partition que vous avez déjà, c'est donc sous Ajouter une piste dans l'éditeur.",
+        "p3": "Un module tracker est choisi d'après son contenu plutôt que son nom de fichier, de sorte qu'un module mal nommé s'importe quand même et qu'un fichier non reconnu échoue en indiquant ce qu'il a réellement trouvé."
+      },
+      "exporting": {
+        "heading": "Exporter",
+        "p1": "Le menu Exporter écrit du MIDI, du MusicXML, un module tracker XM, de l'audio en WAV ou MP3, et le projet comme fichier projet. L'impression est distincte, et propose Letter ou Legal en portrait ou paysage.",
+        "p2": "L'audio est rendu via la même soundfont qui le joue, de sorte que le fichier est un enregistrement de ce que vous avez entendu plutôt qu'une seconde interprétation.",
+        "p3": "Si la partition a des pistes masquées, l'exportation demande s'il faut les inclure plutôt que de décider en silence à votre place."
+      },
+      "fidelity": {
+        "heading": "Ce qui survit",
+        "p1": "Le MIDI emporte ce que le transport a joué, pas ce qui est stocké — nuances, soufflets, articulation et notes d'agrément atteignent tous le fichier. Le MusicXML emporte la gravure : ligatures, liaisons de phrasé, ornements, paroles, reprises et repères de navigation.",
+        "p2": "Un module tracker est celui des trois qui perd le plus, et le dit avant d'écrire : il a une grille de lignes, une limite de canaux et une étendue de notes, et l'exportation vous montre ce qui serait perdu avant d'écrire quoi que ce soit."
+      },
+      "importsHeading": "Formats qu'elle lit",
+      "exportsHeading": "Formats qu'elle écrit",
+      "name": {
+        "midi": "MIDI",
+        "musicxml": "MusicXML",
+        "tracker": "Module tracker",
+        "audio": "Audio",
+        "project": "Fichier projet",
+        "xm": "Module XM",
+        "wav": "Audio WAV",
+        "mp3": "Audio MP3",
+        "print": "Imprimer"
+      },
+      "in": {
+        "midi": "Notes, tempo et chiffrages de mesure. Vous choisissez comment c'est réparti en pistes et avec quelle précision c'est quantifié.",
+        "musicxml": "La gravure en plus des notes : ligatures, liaisons de phrasé, ornements, paroles, reprises et changements de clé.",
+        "tracker": "Notes regroupées par instrument plutôt que par canal, de sorte qu'une partie jouée sur plusieurs canaux atterrit sur une seule piste.",
+        "audio": "Une ligne à la fois. Monophonique uniquement — les accords et les mélanges ne sont pas tentés, et la boîte de dialogue le dit.",
+        "project": "Un projet entier exactement tel qu'il a été exporté, avec chaque piste et son mixage."
+      },
+      "out": {
+        "midi": "Ce que le transport a joué, y compris nuances, soufflets, articulation et notes d'agrément.",
+        "musicxml": "La gravure complète, pour ouvrir dans d'autres logiciels de notation.",
+        "tracker": "Notes uniquement. Les emplacements d'instruments sont nommés mais vides, de sorte que le fichier est silencieux jusqu'à ce qu'un utilisateur de tracker les remplisse.",
+        "wav": "Audio non compressé, rendu via la même soundfont qui le joue.",
+        "mp3": "Audio compressé, à partir du même rendu.",
+        "project": "Tout, pour la sauvegarde ou pour transférer entre comptes.",
+        "print": "Une vue d'impression avec taille de papier et orientation, pour imprimer ou enregistrer en PDF."
+      }
+    },
+    "generation": {
+      "title": "Génération de musique",
+      "summary": "Générer une partition, une piste ou un remplacement — et ce que ça coûte.",
+      "figure": "Le formulaire de nouveau projet avec « Générer pour moi » activé.",
+      "whole": {
+        "heading": "Générer une partition",
+        "p1": "Depuis la page Projets, décrivez ce que vous voulez et choisissez les instruments, la longueur, le tempo, la tonalité et la métrique. Tout ce que vous laissez vide, le générateur le décide lui-même.",
+        "p2": "La génération tourne sur le serveur, pas dans votre navigateur. Vous pouvez fermer la page et revenir — le projet affiche sa progression et le résultat est appliqué dès qu'il arrive.",
+        "p3": "Le premier instrument que vous listez est celui qui porte la mélodie, c'est pourquoi l'ordre de la liste compte."
+      },
+      "track": {
+        "heading": "Générer une piste",
+        "p1": "Dans l'éditeur, vous pouvez ajouter une piste à une partition que vous avez déjà. On lui donne la tonalité, le tempo et la longueur de la partition, et les autres parties autour desquelles s'ajuster.",
+        "p2": "Ce dernier point compte : on montre au générateur ce que les pistes existantes jouent sur les mêmes mesures, de sorte qu'une ligne de basse est écrite sous votre mélodie plutôt qu'à côté."
+      },
+      "replace": {
+        "heading": "Remplacer de la musique",
+        "p1": "Remplacer réécrit une partie d'une partition que vous avez déjà. Sélectionnez des mesures et remplacez-les ; sélectionnez une piste et remplacez-la entièrement ; ou sélectionnez des notes individuelles et ne remplacez qu'elles.",
+        "p2": "Vous pouvez maintenir certaines parties fixes pendant que le reste change — garder l'harmonie, garder le rythme, garder la mélodie et varier l'accompagnement, ou garder les notes aux extrémités pour que la nouvelle musique se raccorde proprement.",
+        "p3": "Remplacer des notes est le seul cas qui n'est pas arrondi aux mesures entières. La sélection est remplacée selon la plage qu'elle couvre, et la boîte de dialogue indique combien de notes à l'intérieur de cette plage n'étaient pas sélectionnées."
+      },
+      "credits": {
+        "heading": "Ce que ça coûte",
+        "p1": "Un crédit écrit une mesure pour un instrument. Huit mesures pour quatre instruments font 32 crédits. La boîte de dialogue affiche une estimation avant de valider.",
+        "p2": "L'estimation dit « environ », car vous êtes facturé pour ce qui a réellement été produit. Cela correspond à l'estimation quand la génération rend la longueur demandée, et est inférieur sinon."
+      },
+      "quality": {
+        "heading": "Comment le résultat est vérifié",
+        "p1": "Chaque partie générée est vérifiée avant que vous ne la voyiez : notes hors de l'étendue de l'instrument, notes qui seraient silencieuses, notes en double au même instant, accords que l'instrument ne peut pas jouer, et parties sans aucune variété rythmique ou dynamique.",
+        "p2": "Si quelque chose ne va pas, on redemande au générateur, en lui disant exactement quoi corriger plutôt que simplement de réessayer. C'est borné, de sorte qu'une demande obstinée ne s'emballe pas.",
+        "p3": "Un problème restant ne fait jamais jeter le résultat. La meilleure tentative est conservée et le problème est signalé, car une partie qui a besoin d'une petite retouche vaut mieux que rien du tout."
+      }
+    },
+    "getting-started": {
+      "title": "Premiers pas",
+      "summary": "Ce qu'est cette application, et comment mettre une partition devant vous.",
+      "figure": "Le formulaire de nouveau projet : un titre, les instruments, et la longueur, la tonalité et la métrique.",
+      "what": {
+        "heading": "Ce que c'est",
+        "p1": "Moosiac est un éditeur de notation avec de la génération par IA intégrée. Vous décrivez la musique que vous voulez et il écrit une partition ; à partir de là, chaque note vous appartient : à modifier, jouer, imprimer et exporter.",
+        "p2": "Rien n'est généré que vous ne puissiez ensuite modifier à la main. Le générateur écrit dans le même modèle de partition que l'éditeur utilise, de sorte qu'une mesure générée et une mesure que vous avez tapée sont de même nature."
+      },
+      "firstProject": {
+        "heading": "Créer votre premier projet",
+        "p1": "Tout commence sur la page Projets. Il y a quatre façons de débuter : partir d'un modèle, générer une partition entière avec l'IA, importer un fichier, ou dupliquer un projet que vous avez déjà.",
+        "p2": "Les modèles sont des partitions vides avec les portées déjà en place — une lead sheet, un système de piano à deux portées, un quatuor à cordes, un combo de jazz. C'est le chemin le plus rapide vers une page blanche de la bonne forme.",
+        "p3": "Importer crée aussi un projet. Un fichier MIDI, un fichier MusicXML, un module tracker, un enregistrement audio ou un fichier projet atterrissent tous comme un nouveau projet plutôt que de fusionner avec un projet ouvert."
+      },
+      "dashboard": {
+        "heading": "La page Projets",
+        "p1": "Les projets sont listés du plus récent au plus ancien et peuvent être triés par nom ou recherchés. Chaque ligne ouvre l'éditeur, et son menu duplique ou supprime.",
+        "p2": "Un projet en cours de génération affiche sa progression sur place et peut y être annulé. Vous pouvez quitter la page — la génération tourne sur le serveur, pas dans votre navigateur."
+      }
+    },
+    "group": {
+      "start": "Commencer ici",
+      "using": "Utiliser l'application",
+      "reference": "Référence"
+    },
+    "inspector": {
+      "title": "L'inspecteur",
+      "summary": "Le panneau de propriétés : piste, note, mesure et partition.",
+      "figure": "L'inspecteur avec une note sélectionnée.",
+      "tabs": {
+        "heading": "Les quatre onglets",
+        "p1": "Piste est en premier car il a toujours quelque chose à montrer — il y a toujours une piste active. Il contient le nom, l'instrument ou le kit de batterie, la clé, le volume, le panoramique, la sourdine et le solo, et la suppression de la piste.",
+        "p2": "Note montre ce qui est sélectionné : hauteur, altération, octave, durée, vélocité, voix, articulation, ornement, nuance, chiffrage d'accord, doigté, et les étendues — liaison de phrasé, glissando, crochet d'octave.",
+        "p3": "Mesure couvre celle que vous avez sélectionnée : son numéro, son chiffrage de mesure et sa tonalité, un changement de tempo démarrant ici, le style de barre de mesure, les reprises et fins, un changement de clé, les repères de navigation et si c'est une anacrouse.",
+        "p4": "Partition est l'œuvre elle-même — son titre, son compositeur et sa description. Le titre nomme chaque fichier exporté, et ce n'est pas la même chose que le nom de projet qui étiquette la ligne sur la page Projets."
+      },
+      "editing": {
+        "heading": "La lire",
+        "p1": "Le panneau indique les valeurs de notes, les numéros de mesure et les noms de tonalité plutôt que des tics et des quintes. Une noire se lit comme une noire, pas comme 480.",
+        "p2": "Là où plusieurs notes sélectionnées diffèrent sur une valeur, le champ montre qu'elles sont mélangées plutôt que d'en choisir une à afficher."
+      }
+    },
+    "instruments": {
+      "title": "Instruments",
+      "summary": "Les 128 programmes General MIDI, leurs tessitures, et jusqu'où leur faire confiance.",
+      "catalogue": {
+        "heading": "Le catalogue",
+        "p1": "Le son d'une piste est l'un des 128 programmes General MIDI, regroupés en seize familles de huit. Chaque programme porte sa propre tessiture, combien de notes il peut émettre à la fois, et à quelle distance sa hauteur écrite est de sa hauteur réelle.",
+        "p2": "Le tableau ci-dessous est généré à partir de ces données plutôt qu'écrit à la main, de sorte qu'il ne peut pas se désynchroniser de ce que l'application utilise réellement.",
+        "p3": "La transposition est indiquée en demi-tons de la hauteur réelle à la hauteur écrite. Une trompette en si bémol indique +2 : un do réel s'écrit ré. Une cellule vide signifie que l'instrument s'écrit là où il sonne, ce qui est le cas de la plupart."
+      },
+      "compass": {
+        "heading": "Jusqu'où faire confiance à une tessiture",
+        "p1": "La dernière colonne est celle qui vaut la peine d'être lue. « Mesurée » signifie que quelqu'un a vérifié cet instrument par rapport à une source. « Accordable » signifie que l'instrument n'a aucune hauteur absolue fixe — un shamisen est accordé sur le chanteur, un koto sur la pièce — de sorte que l'étendue indiquée est une plage typique plutôt qu'une limite.",
+        "p2": "« Synthétique » désigne un patch électronique, qui n'a aucune tessiture acoustique à respecter, et reçoit donc tout le clavier plutôt qu'une limite inventée. « Sans hauteur » désigne un effet sonore ou une percussion non accordée : il n'y a pas de hauteur dont on puisse sortir.",
+        "p3": "Seule une tessiture mesurée sert jamais à refuser une note. Refuser par rapport à une étendue que personne n'a vérifiée rejetterait de la musique parfaitement correcte, donc l'application ne le fait pas."
+      },
+      "percussion": {
+        "heading": "Batterie",
+        "p1": "Une piste de percussion fonctionne différemment : la hauteur nomme un élément de batterie plutôt qu'une note. Le do central est une grosse caisse, le ré au-dessus une caisse claire. La table couvre les MIDI 35 à 81 et tout ce qui en sort ne produit aucun son.",
+        "p2": "Sur une piste de batterie, le champ instrument sélectionne un kit plutôt qu'un instrument. General MIDI en définit huit — Standard, Room, Power, Electronic, TR-808, Jazz, Brush et Orchestra — et le même numéro désigne un kit ici et un instrument partout ailleurs.",
+        "p3": "Le clavier à l'écran étiquette chaque touche de batterie pour que vous n'ayez pas à apprendre la table."
+      },
+      "search": "Rechercher par nom, famille ou numéro de programme",
+      "showing": "Affichage de {{count}} programmes sur 128",
+      "colProgram": "Nº",
+      "colName": "Instrument",
+      "colFamily": "Famille",
+      "colRange": "Étendue",
+      "colPolyphony": "Notes simultanées",
+      "colTranspose": "Transpose",
+      "colBasis": "Tessiture",
+      "polyUnlimited": "Illimité",
+      "basis": {
+        "measured": "Mesurée",
+        "tunable": "Accordable",
+        "synthetic": "Synthétique",
+        "unpitched": "Sans hauteur",
+        "assumed": "Non vérifiée"
+      }
+    },
+    "limits": {
+      "title": "Limites et lacunes connues",
+      "summary": "Ce que l'application ne fait délibérément pas, et ce qu'elle ne fait pas encore.",
+      "byDesign": {
+        "heading": "Par conception",
+        "p1": "L'importation audio est monophonique. Une ligne à la fois — les accords et les mélanges ne sont pas tentés, et la boîte de dialogue le dit plutôt que de produire une réponse fausse et sûre d'elle.",
+        "p2": "La génération rend un seul résultat et l'applique. Il n'y a pas de liste de candidats parmi lesquels choisir, car la génération tourne comme une tâche en arrière-plan et personne ne regarde quand elle arrive.",
+        "p3": "Les instantanés ne peuvent être ni modifiés ni supprimés. L'immuabilité est assurée par l'absence d'opération pour le faire, plutôt que par une règle à retenir."
+      },
+      "known": {
+        "heading": "Lacunes connues",
+        "p1": "Les ligatures ne peuvent pas être jointes au-delà d'un temps, seulement rompues ou retirées. Un fichier qui ligature au-delà d'un temps s'importe avec notre regroupement plutôt que le sien.",
+        "p2": "Les ornements sont dessinés et exportés mais pas joués. Le signe est avant tout notationnel, et le réaliser rendrait l'ornement impossible à relire ensuite.",
+        "p3": "Un module tracker est écrit avec les notes seulement. Ses emplacements d'instruments sont nommés mais vides, de sorte que le fichier est silencieux jusqu'à ce qu'un utilisateur de tracker les remplisse — l'exportation le dit avant d'écrire."
+      }
+    },
+    "midi-input": {
+      "title": "Claviers MIDI",
+      "summary": "Jouer des notes depuis un instrument connecté.",
+      "figure": "Le clavier de piano sous la partition, étiqueté à chaque do et fa.",
+      "connecting": {
+        "heading": "Connexion",
+        "p1": "Un clavier MIDI connecté à votre ordinateur peut jouer des notes directement dans la partition. L'accès est demandé la première fois que les appareils sont listés, pas au chargement de la page, de sorte que l'on ne vous demande jamais une autorisation dont vous pourriez ne pas avoir besoin.",
+        "p2": "Cela fonctionne partout où le navigateur prend en charge le Web MIDI. Là où ce n'est pas le cas, la fonctionnalité n'est simplement pas proposée plutôt que d'échouer quand vous l'essayez.",
+        "p3": "Aucun accès sysex n'est demandé — seulement les messages de note que l'éditeur utilise réellement."
+      },
+      "playing": {
+        "heading": "Jouer en direct",
+        "p1": "Les notes d'un clavier MIDI passent exactement par le même chemin que les touches à l'écran : la note sonne tant qu'elle est maintenue, un accord frappé ensemble est groupé, la durée du maintien devient la durée, et le curseur avance au-delà de ce qui a été écrit.",
+        "p2": "Beaucoup de claviers envoient un note-on à vélocité zéro au lieu d'un note-off. C'est interprété comme un relâchement, car le prendre au pied de la lettre laisserait la note sonner indéfiniment."
+      }
+    },
+    "navLabel": "Rubriques de la documentation",
+    "navigation": {
+      "title": "Se repérer",
+      "summary": "Les pages, à quoi sert chacune, et lesquelles nécessitent un compte.",
+      "figure": "La barre qui passe d'une section de l'application à l'autre.",
+      "routes": {
+        "heading": "Les pages",
+        "p1": "La barre supérieure porte Projets, Communauté, Docs, Ressources et Paramètres. Le logo revient à la page d'accueil. Tout se trouve sous un préfixe de langue, de sorte que le site anglais est /en et le chinois /zh.",
+        "p2": "Projets est votre propre travail. Communauté est ce que d'autres ont partagé. Ressources pointe vers des archives gratuites qui valent la peine d'être importées. Paramètres contient le thème, la taille du texte, la façon dont la hauteur est affichée, et les options développeur.",
+        "p3": "Ouvrir un projet vous mène à l'éditeur à /project/son-id. L'impression est une vue distincte à /project/son-id/print, et un instantané partagé se lit à /p/son-id-public."
+      },
+      "account": {
+        "heading": "Ce qui nécessite un compte",
+        "p1": "Projets, crédits et achats nécessitent que vous soyez connecté. Accueil, Communauté, Docs, Ressources, Paramètres et tout instantané partagé, non.",
+        "p2": "Ce dernier point est délibéré : un lien que vous partagez doit s'ouvrir pour quelqu'un qui ne s'est jamais connecté, de sorte que le lecteur publié est entièrement hors de la barrière de connexion."
+      }
+    },
+    "notation": {
+      "title": "Signes et notation",
+      "summary": "Tout ce que vous pouvez écrire sur une note au-delà de sa hauteur et de sa durée.",
+      "figure": "La barre d'édition : valeurs de notes, altérations, articulations et les autres signes.",
+      "ties": {
+        "heading": "Liaisons et silences",
+        "p1": "Une liaison de prolongation joint deux notes de même hauteur en une seule note sonore. Sélectionnez une note et appuyez sur T, ou utilisez la barre d'outils. Une liaison de prolongation n'est pas une liaison de phrasé — elle joint, là où le phrasé ne fait que phraser.",
+        "p2": "Vous n'écrivez jamais un silence pour faire du silence. Le silence est simplement l'espace que vous laissez entre les notes, et les silences apparaissent là où sont les trous. R en écrit un explicitement quand vous voulez occuper un temps délibérément."
+      },
+      "dynamics": {
+        "heading": "Nuances et soufflets",
+        "p1": "Une nuance marque le niveau auquel un passage commence, de ppp à fff, et reste en vigueur jusqu'à la suivante. Marquer une note f rend tout le passage fort — il n'y a rien à appliquer aux notes entre les deux.",
+        "p2": "La vélocité propre de la note survit comme un écart au-dessus de ce niveau, de sorte qu'un accent dans un passage calme reste un accent plutôt que d'être aplati.",
+        "p3": "Un soufflet est le changement entre deux niveaux, écrit sur deux notes ou plus avec Maj+< ou Maj+>. Il sonne comme une rampe, allant jusqu'au signe qui le suit, ou d'un cran là où rien ne suit."
+      },
+      "articulation": {
+        "heading": "Articulation",
+        "p1": "Staccato, accent, tenuto et marcato sont une durée et un poids. Le staccato réduit la note de moitié, l'accent ajoute du poids, le marcato fait les deux, et le tenuto est la durée pleine que la note avait déjà.",
+        "p2": "Le raccourcissement ne déplace jamais rien. Une note staccato se relâche tôt mais occupe toujours sa durée écrite, de sorte que chaque note suivante reste où elle était et que la mesure s'additionne toujours."
+      },
+      "ornaments": {
+        "heading": "Ornements",
+        "p1": "Trille, mordant, mordant inversé et gruppetto sont des signes, pas les notes qu'ils représentent. La façon dont un ornement est réalisé dépend de l'époque et du goût, donc le signe est stocké et laissé lisible.",
+        "p2": "Les ornements sont notationnels ici : ils sont dessinés et ils s'exportent, mais la lecture ne les réalise pas en notes."
+      },
+      "grace": {
+        "heading": "Notes d'agrément",
+        "p1": "Une note d'agrément est accrochée à la note qu'elle décore plutôt que de prendre du temps à la mesure, de sorte qu'elle se déplace, se copie et se supprime avec sa note principale et ne fait jamais qu'une mesure ne s'additionne plus.",
+        "p2": "Elles sonnent. Une note d'agrément emprunte à sa note principale plutôt qu'à la mesure — plafonnée à la moitié de sa durée — de sorte que chaque note suivante reste exactement où elle était."
+      },
+      "tuplets": {
+        "heading": "Tuplets",
+        "p1": "Un triolet n'est pas stocké, il est reconnu : trois notes valant chacune deux tiers d'une valeur simple sont un triolet, et sont dessinées comme tel. Changez-en une des trois et le crochet cesse simplement d'être dessiné, ce qui est la vérité plutôt qu'un signe périmé.",
+        "p2": "Seuls les groupes entiers de trois se regroupent. Une série de quatre est un triolet et un reste, et les silences comptent comme membres — un triolet avec un silence au milieu reste un triolet."
+      },
+      "beams": {
+        "heading": "Ligatures",
+        "p1": "La ligature est dérivée des valeurs de notes et de la métrique, de sorte qu'elle suit le temps sans qu'on le lui dise. Seul votre désaccord est stocké : « rompre » démarre un nouveau groupe à une note, et « aucune » retire une note de la ligature pour qu'elle dessine son crochet.",
+        "p2": "« Rompre » est ce dont l'écriture vocale a besoin, où la ligature suit les syllabes plutôt que le temps. Il n'y a délibérément pas de « joindre » — ligaturer au-delà d'un temps est le seul changement que ceci ne peut pas exprimer."
+      },
+      "lyrics": {
+        "heading": "Paroles",
+        "p1": "Les paroles se tapent au fil de la ligne plutôt qu'un champ à la fois. Appuyez sur L et tapez : l'espace termine un mot, un trait d'union termine une syllabe à l'intérieur d'un mot, Entrée termine, et Maj+espace revient sur une faute.",
+        "p2": "Qu'une syllabe commence, continue ou termine un mot est déduit de ces frappes plutôt que demandé. C'est ce qui dessine le trait d'union final et ce qui remplit le type de syllabe à l'exportation.",
+        "p3": "Une syllabe appartient à sa note, donc elle se déplace, se copie et se supprime avec la note sous laquelle elle se trouve."
+      },
+      "chords": {
+        "heading": "Chiffrages d'accords",
+        "p1": "Un chiffrage d'accord est stocké exactement tel que vous le tapez. C-7, Cmin7 et Cm7 sont un même accord écrit de trois façons, et aucun n'est réécrit ni refusé.",
+        "p2": "Il s'imprime au-dessus de la portée — le côté opposé aux paroles et aux nuances, ce qui garde les trois lisibles sur une grille. Seule la fondamentale est analysée à l'exportation ; le reste voyage comme le texte que vous avez écrit."
+      },
+      "spans": {
+        "heading": "Signes sur plusieurs notes",
+        "p1": "Une liaison de phrasé phrase une série de hauteurs différentes et ne joint rien. Sélectionnez deux notes ou plus et appuyez sur S. Moins de deux est refusé — une marque de phrasé sur une seule note ne veut rien dire.",
+        "p2": "Un glissando glisse entre deux notes ; un crochet d'octave déplace un passage d'une octave vers le haut ou le bas sur la page sans changer ce qu'il sonne.",
+        "p3": "Un crochet d'octave est une loupe d'affichage, pas une transposition. La partition stocke toujours la hauteur réelle, donc 8va signifie que ces notes ont été écrites une octave plus bas pour les garder sur la portée."
+      }
+    },
+    "playback": {
+      "title": "Lecture",
+      "summary": "Le transport, le clavier de piano, et comment la vue suit.",
+      "figure": "La barre de transport : lecture, arrêt, boucle, métronome, position, tempo, vitesse et volume.",
+      "transport": {
+        "heading": "Le transport",
+        "p1": "Espace lit et met en pause. La barre de transport porte aussi l'arrêt, le pas d'une mesure dans chaque sens, la boucle, un métronome, la vitesse de lecture, le tempo et le volume général.",
+        "p2": "Le premier appui sur Lecture doit récupérer une soundfont et la remettre au synthétiseur, ce qui prend quelques secondes. Le transport ne prétend pas lire tant qu'une note ne peut pas réellement sonner, et affiche la progression du chargement entre-temps.",
+        "p3": "La partition ne peut pas être modifiée pendant que le transport joue — sauf le mixage. Sourdine, solo, volume et panoramique restent actifs, car mettre une partie en sourdine en l'écoutant est la façon dont un arrangement s'écoute."
+      },
+      "keyboard": {
+        "heading": "Le clavier de piano",
+        "p1": "Sous la partition se trouve un clavier pleine largeur montrant les notes sonnantes de la piste active à mesure qu'elles jouent. Son étendue est celle de l'instrument de la piste active, pas toujours les 88 touches, donc il suit à la fois un changement de piste et un changement d'instrument.",
+        "p2": "C'est un périphérique de saisie autant qu'un affichage. Appuyer sur une touche l'auditionne. Avec une note sélectionnée, taper une touche change la hauteur de cette note. Sinon, la relâcher écrit une note au curseur dont la durée est la durée du maintien, arrondie à une valeur que les boutons de durée auraient aussi pu produire.",
+        "p3": "Sur une piste de batterie, chaque touche est étiquetée avec son élément de batterie, touches noires comprises, car une table de batterie n'a pas de motif à apprendre comme un clavier."
+      },
+      "following": {
+        "heading": "Suivre la musique",
+        "p1": "La vue suit la lecture sans combattre votre propre défilement. En mise en page par page, elle conserve votre décalage dans le système à mesure que la musique passe au suivant, de sorte que la piste que vous regardez reste là où vous l'avez placée.",
+        "p2": "En mise en page continue, elle suit latéralement à la place, et dégage la gouttière de piste au passage pour que la mesure en cours de lecture ne soit jamais garée derrière les noms de pistes."
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "summary": "L'apparence, la façon dont la hauteur est affichée, et les options développeur.",
+      "figure": "L'écran Paramètres, montrant l'Apparence.",
+      "appearance": {
+        "heading": "Apparence",
+        "p1": "Le thème peut suivre votre système ou être fixé sur clair ou sombre, et la taille du texte peut être ajustée. Les deux s'appliquent à toute l'application, y compris la partition.",
+        "p2": "La partition gravée a ses propres couleurs pour chaque rôle — une note normale, une sélectionnée, une qui vient d'être générée, une qui sonne — et elles suivent le thème."
+      },
+      "pitch": {
+        "heading": "Hauteur écrite ou réelle",
+        "p1": "Les instruments transpositeurs peuvent être affichés soit tels qu'ils sonnent, soit tels que leur interprète les lit. Une partie de trompette en si bémol écrite en hauteur de concert a l'air décalée d'un ton par rapport à la partie que l'interprète tient.",
+        "p2": "Ceci change l'affichage uniquement. La partition stocke toujours la hauteur réelle, donc changer ce réglage ne modifie jamais une note.",
+        "p3": "La saisie de notes inverse l'affichage avant de stocker, de sorte que cliquer sur une portée en mode écrit stocke la hauteur qui sonnera réellement. Sans cela, une partie pourrait sembler correcte et sonner un ton trop haut ou trop bas."
+      },
+      "developer": {
+        "heading": "Mode développeur",
+        "p1": "Le mode développeur ajoute des diagnostics : mesures de performance, un benchmark, et un export de diagnostics utile pour signaler un problème.",
+        "p2": "Il ne change rien à la musique. Il est désactivé par défaut et peut être laissé activé sans risque."
+      }
+    },
+    "sharing": {
+      "title": "Instantanés et partage",
+      "summary": "Garder des versions, et en publier une pour d'autres personnes.",
+      "figure": "Les commandes d'instantané : en créer un, en ouvrir un, et voir ceux que vous avez publiés.",
+      "snapshots": {
+        "heading": "Instantanés",
+        "p1": "Un instantané est une copie de la partition telle qu'elle est maintenant, conservée sous un nom que vous choisissez. Votre travail actuel est enregistré d'abord, de sorte qu'un instantané fige toujours ce que vous pouvez réellement voir.",
+        "p2": "L'historique est un arbre plutôt qu'une liste. Ouvrir un ancien instantané alors qu'un plus récent existe ne détruit pas le plus récent — ça crée une branche, et le prochain instantané que vous prenez est un enfant de celui que vous avez ouvert.",
+        "p3": "Les instantanés ne peuvent être ni modifiés ni supprimés. C'est assuré par l'absence de moyen de le faire, plutôt que par une règle que quelqu'un doit retenir."
+      },
+      "publish": {
+        "heading": "Publier",
+        "p1": "Un instantané peut être publié, ce qui lui donne un lien que n'importe qui peut ouvrir — aucun compte nécessaire. On obtient un lecteur qui montre la partition et la joue, et rien d'autre.",
+        "p2": "Le travail publié porte un nom à lui, distinct du nom de projet, et c'est ce qui apparaît sur la page Communauté. Vous pouvez le changer plus tard sans toucher à la partition.",
+        "p3": "Publier vous demande de confirmer que le travail est le vôtre à partager. Seul ce dont un instantané publié a besoin est jamais envoyé — rien de votre compte ne voyage avec."
+      }
+    },
+    "shortcuts": {
+      "title": "Raccourcis clavier",
+      "summary": "Chaque touche que l'éditeur associe.",
+      "intro": {
+        "heading": "Comment ils sont organisés",
+        "p1": "Les touches de saisie de notes ne prennent délibérément aucun modificateur, de sorte qu'un raccourci de votre navigateur ou de votre système d'exploitation ne peut jamais être pris pour une note. Les lettres seules écrivent des notes, les chiffres choisissent les valeurs de notes.",
+        "p2": "Il reste Maj pour les signes et Alt pour le curseur. Les touches de soufflet sont les deux que personne n'a à mémoriser, car Maj+< et Maj+> sont les symboles des soufflets eux-mêmes."
+      },
+      "group": {
+        "transport": "Lecture",
+        "editing": "Édition",
+        "selection": "Sélection",
+        "noteEntry": "Écrire des notes",
+        "marks": "Signes",
+        "caret": "Le curseur",
+        "pointer": "Pointeur"
+      }
+    },
+    "structure": {
+      "title": "Mesures et structure",
+      "summary": "Métrique, tonalité, barres de mesure, reprises et la forme de la pièce.",
+      "figure": "L'onglet Mesure de l'inspecteur : chiffrage de mesure, tonalité, tempo, clé et barre de mesure.",
+      "bars": {
+        "heading": "Mesures",
+        "p1": "Cliquez sur un numéro de mesure au-dessus d'un système pour sélectionner cette mesure ; Maj+clic sur un autre pour sélectionner la plage entre les deux. C'est ainsi que vous ciblez Remplacer et la régénération, qui fonctionnent tous deux sur une plage.",
+        "p2": "La grille de mesures est partagée entre les pistes. Une mesure est la même mesure sur chaque portée, c'est pourquoi tout ce qui change la grille s'applique à toute la partition plutôt qu'à une seule partie.",
+        "p3": "Les numéros de mesure sautent une anacrouse, de sorte que le numéro que l'inspecteur montre, le numéro qu'un interprète lit et la mesure sur laquelle « aller à » atterrit sont tous le même numéro."
+      },
+      "signatures": {
+        "heading": "Métrique et tonalité",
+        "p1": "Les deux se règlent par mesure depuis l'onglet Mesure, et les deux se propagent jusqu'à ce que quelque chose les change. Régler un chiffrage à la mesure 9 change la mesure 9 et les suivantes, pas toute la partition.",
+        "p2": "Une armure est stockée comme sa position sur le cycle des quintes plus majeur ou mineur, mais l'inspecteur vous montre le nom de la tonalité plutôt que le nombre.",
+        "p3": "Changer la métrique change la durée d'une mesure, donc les notes déjà présentes sont réajustées plutôt que de déborder en silence."
+      },
+      "pickup": {
+        "heading": "Mesures d'anacrouse",
+        "p1": "Une anacrouse est une mesure qui n'est pas comptée. C'est un indicateur sur la première mesure plutôt qu'une mesure courte au milieu de la partition, car une mesure courte au milieu d'une pièce est une mesure irrégulière délibérée et garde son numéro.",
+        "p2": "Elle s'applique à toutes les pistes, car une anacrouse sur une seule portée serait une partition dont les parties sont en désaccord sur l'endroit où commence la mesure 1. Elle n'est proposée que sur la première mesure."
+      },
+      "barlines": {
+        "heading": "Barres de mesure",
+        "p1": "Une mesure peut porter une double barre ou une barre finale. Absente, c'est la barre simple ordinaire, soit presque chaque mesure.",
+        "p2": "Là où une reprise et une double barre atterrissent sur la même mesure, la reprise l'emporte, dans le dessin comme à l'exportation : une reprise est une instruction sur laquelle un interprète agit, et dessiner une double barre par-dessus la retirerait en silence de l'exécution."
+      },
+      "repeats": {
+        "heading": "Reprises et fins",
+        "p1": "Les barres de reprise sont deux signes indépendants plutôt qu'une seule étendue, car une reprise fermante sans ouvrante reprend depuis le début de la pièce — un vrai signe, pas une erreur à empêcher.",
+        "p2": "Les numéros de fin sont portés sur chaque mesure d'une volta, et les extrémités du crochet sont déduites de si la mesure voisine a les mêmes numéros. Supprimer une mesure raccourcit le crochet plutôt que de le laisser pointer vers rien.",
+        "p3": "Les reprises se jouent. Le minutage propre de la partition reste canonique et le transport détermine l'ordre dans lequel les mesures sont réellement exécutées, de sorte que le curseur, la glissière et l'affichage de mesure n'ont jamais à savoir que les reprises existent."
+      },
+      "navigation": {
+        "heading": "D.C., D.S., Coda et Fine",
+        "p1": "Segno, coda, To Coda et Fine sont des endroits qu'une mesure porte ; le saut est l'instruction, placée sur la mesure à la fin de laquelle il est obéi. Les six sauts sont un seul choix plutôt qu'une direction plus une cible, de sorte que seules les combinaisons qu'un interprète rencontre réellement peuvent être écrites.",
+        "p2": "La règle qui est invisible dans la notation : Fine et To Coda ne signifient rien à l'aller. Un interprète passe tout droit devant les deux jusqu'à ce qu'un saut l'ait renvoyé en arrière.",
+        "p3": "Un saut est pris une fois — après l'avoir obéi, l'interprète passe au travers — sinon la pièce ne finirait jamais. Un signe cassé se joue quand même : un D.S. sans segno revient au début, comme le ferait un lecteur."
+      },
+      "tempo": {
+        "heading": "Tempo",
+        "p1": "Le champ tempo du transport modifie toujours le tempo auquel la pièce commence. Le tempo de l'onglet Mesure règle un changement à cette mesure, de sorte qu'une pièce peut ralentir ou changer à un point de répétition.",
+        "p2": "Il montre le tempo en vigueur, hérité d'une mesure antérieure quand celle-ci n'en règle aucun, donc il n'est jamais vide et ne ment jamais. Le tempo de départ ne peut pas être retiré — une partition sans aucun tempo n'a pas de tempo."
+      },
+      "clefs": {
+        "heading": "Changements de clé",
+        "p1": "Un changement de clé est stocké sur la mesure où il se produit ; absent signifie continuer avec ce qui est en vigueur. Une partie qui ne change jamais de clé ne stocke rien du tout.",
+        "p2": "Il s'applique à une seule piste, contrairement aux reprises et aux barres de mesure : une main gauche qui passe en clé de sol ne dit rien de la droite. Régler la clé déjà en vigueur retire le signe plutôt que d'en stocker un qui n'imprimerait rien."
+      }
+    },
+    "title": "Documentation",
+    "tracks": {
+      "title": "Pistes et mixage",
+      "summary": "Ajouter des parties, choisir des sons, et les équilibrer.",
+      "figure": "L'onglet Piste de l'inspecteur : nom, instrument, clé, volume, panoramique, sourdine et solo.",
+      "adding": {
+        "heading": "Ajouter et retirer",
+        "p1": "Ajouter une piste propose une piste vierge, une piste générée, ou une piste transcrite depuis un fichier audio. Une nouvelle piste reçoit la même grille de mesures que la partition qu'elle rejoint.",
+        "p2": "Une partition garde toujours au moins une piste, donc la dernière ne peut pas être supprimée. Supprimer n'importe quelle autre est une modification normale et s'annule comme telle."
+      },
+      "instrument": {
+        "heading": "Choisir un son",
+        "p1": "Le son d'une piste est l'un des 128 programmes General MIDI, choisi depuis l'onglet Piste. Le changer transporte les notes existantes dans la tessiture du nouvel instrument par octaves entières, de sorte qu'une ligne de basse se lit toujours comme cette ligne de basse.",
+        "p2": "Si la partie est plus large que ce que le nouvel instrument peut jouer, le changement est refusé avec une explication plutôt qu'appliqué à moitié.",
+        "p3": "Sur une piste de percussion, le même champ choisit un kit de batterie à la place. Les deux ne concordent jamais : le numéro qui signifie Brush comme kit signifie Violon comme instrument."
+      },
+      "mixing": {
+        "heading": "Volume, panoramique, sourdine et solo",
+        "p1": "Chaque piste a un volume et un panoramique, et peut être mise en sourdine ou en solo. C'est le seul type de modification qui reste disponible pendant que le transport joue, car mettre une partie en sourdine en l'écoutant est la façon dont un arrangement s'écoute.",
+        "p2": "Le solo est exclusif : mettre une deuxième piste en solo efface la première. On passe en solo pour entendre une partie, et un second solo élargirait en silence ce que vous entendez.",
+        "p3": "Passer en solo rend aussi cette piste active, donc toutes les autres s'estompent. Sinon le silence n'a pas de visage — vous entendriez une partie sans que rien à l'écran n'en dise la raison."
+      },
+      "visibility": {
+        "heading": "Masquer des pistes",
+        "p1": "Une piste peut être masquée de la partition sans être supprimée ni mise en sourdine. Masquer concerne la page, pas le son.",
+        "p2": "Exporter une partition avec des pistes masquées demande s'il faut les inclure plutôt que de décider en silence."
+      },
+      "active": {
+        "heading": "La piste active",
+        "p1": "Une piste est toujours la piste active. C'est la piste sur laquelle les notes sont écrites, la piste que le clavier de piano montre, et celle qui reste à pleine force pendant que les autres s'estompent.",
+        "p2": "Cliquer n'importe où sur la portée d'une piste la rend active. Si la piste active est supprimée, la première piste prend le relais plutôt que de ne rien laisser sélectionné."
+      }
+    },
+    "seeShortcutsScreen": "Afficher les raccourcis clavier"
+  },
+  "document": {
+    "untitled": "Sans titre",
+    "new": "Nouvelle partition",
+    "open": "Ouvrir…",
+    "close": "Fermer",
+    "unsavedTitle": "Modifications non enregistrées",
+    "unsavedBody": "« {{title}} » comporte des modifications non enregistrées.",
+    "unsavedQuitBody": "{{count}} documents ouverts comportent des modifications non enregistrées.",
+    "closeDocument": "Fermer {{title}}",
+    "exportAs": "Exporter {{format}}",
+    "saveFailedTitle": "Impossible d'enregistrer",
+    "closeWithoutSaving": "Fermer sans enregistrer",
+    "quitWithoutSaving": "Quitter sans enregistrer"
+  },
+  "duration": {
+    "eighth": "Croche",
+    "half": "Blanche",
+    "quarter": "Noire",
+    "sixteenth": "Double croche",
+    "thirtysecond": "Triple croche",
+    "whole": "Ronde"
+  },
+  "editor": {
+    "accidental": "Altération",
+    "accidentalHint": "Définir l'altération sur les notes sélectionnées",
+    "addMeasure": "Insérer des mesures…",
+    "insertBarsTitle": "Insérer des mesures",
+    "insertBars": "Insérer des mesures",
+    "barCount": "Nombre de mesures",
+    "insertBarsPosition": "Position",
+    "insertBarsBefore": "Avant la mesure actuelle",
+    "insertBarsAfter": "Après la mesure actuelle",
+    "generateInsertedBars": "Générer de la musique",
+    "generateInsertedBarsHint": "Utiliser l'IA pour remplir les nouvelles mesures pour tous les instruments",
+    "generateInsertedBarsInstruction": "Continue naturellement la musique existante dans les mesures insérées pour tous les instruments.",
+    "addTrack": "Ajouter une piste",
+    "addTrackPrompt": "Quel type de piste ?",
+    "arpeggiate": "Arpéger",
+    "arpeggiateHint": "Arpéger",
+    "articulation": "Articulation",
+    "articulationHint": "Ajouter une articulation à la sélection",
+    "barNumber": "Numéro de mesure",
+    "barNumberOf_one": "Numéro de mesure (1 mesure dans cette partition)",
+    "barNumberOf_other": "Numéro de mesure (1–{{count}})",
+    "beamBreak": "Rompre la ligature",
+    "beamBreakHint": "Rompre la ligature ici",
+    "beamNone": "Pas de ligature",
+    "beamNoneHint": "Retirer de la ligature",
+    "blankTrack": "Piste vierge",
+    "blankTrackHint": "Une portée vide, ajoutée sous les autres, prête à écrire.",
+    "clear": "Vider",
+    "closeGap": "Combler le vide",
+    "closeGapDetail": "Les notes suivantes de cette piste avancent pour le combler",
+    "continuousHint": "Disposer la partition en une seule ligne défilante",
+    "continuousLayout": "Mise en page continue",
+    "copy": "Copier",
+    "crescendo": "Crescendo",
+    "crescendoHint": "Crescendo",
+    "currentZoom": "Niveau de zoom actuel",
+    "cut": "Couper",
+    "cutMessage": "Il y a davantage de musique après elles sur cette piste.",
+    "cutTitle": "Couper ces notes",
+    "deleteMeasure": "Supprimer la mesure",
+    "deleteSelection": "Supprimer la sélection",
+    "diminuendo": "Diminuendo",
+    "diminuendoHint": "Diminuendo",
+    "done": "Terminé",
+    "dotted": "Pointée",
+    "dottedHint": "Pointée",
+    "durationModifier": "Modificateur de durée",
+    "editMode": "Mode d'édition",
+    "ending": "Fin (volta)",
+    "endingPlaceholder": "p. ex. 1 ou 1, 2",
+    "enterLyrics": "Saisir les paroles",
+    "distributeLine": "Coller une ligne",
+    "distributeTitle": "Écrire une ligne de paroles",
+    "distributeHint": "Les espaces séparent les mots ; les traits d'union divisent les syllabes.",
+    "distribute": "Distribuer",
+    "lyricsDidNotFit": "{{count}} syllabe(s) n'ont pas tenu dans la mélodie",
+    "export": "Exporter",
+    "fermata": "Point d'orgue",
+    "fermataHint": "Point d'orgue",
+    "fixIssues": "Tout corriger",
+    "fixedIssuesPartial_one": "{{count}} problème corrigé ; {{remaining}} nécessitent encore attention.",
+    "fixedIssuesPartial_other": "{{count}} problèmes corrigés ; {{remaining}} nécessitent encore attention.",
+    "fixedIssues_one": "{{count}} problème corrigé.",
+    "fixedIssues_other": "{{count}} problèmes corrigés.",
+    "fixedNothing": "Rien ici ne peut être corrigé automatiquement.",
+    "generateTrack": "Générer une piste",
+    "generateTrackHint": "Demander une nouvelle partie écrite pour s'ajuster à la musique déjà présente.",
+    "generateTrackUnavailable": "Uniquement pour les partitions enregistrées comme projet sur le serveur.",
+    "glissando": "Glissando",
+    "glissandoHint": "Glissando entre deux notes",
+    "go": "Aller",
+    "goToBar": "Aller à la mesure…",
+    "hideInspector": "Masquer le panneau de propriétés",
+    "hideKeyboard": "Masquer le clavier",
+    "hideSpatial": "Masquer la vue spatiale",
+    "hyphenate": "Terminer cette syllabe dans le mot",
+    "insert": "Insérer",
+    "insertDetail": "Ce qui est là maintenant se décale plus loin sur cette piste",
+    "insertMode": "Insérer",
+    "insertModeHint": "Insertion : les notes que vous ajoutez poussent les notes suivantes de cette piste",
+    "insertNote": "Insérer une note",
+    "insertNoteHint": "Insérer une note au curseur",
+    "insertRest": "Insérer un silence",
+    "insertRestHint": "Insérer un silence",
+    "inspector": "Inspecteur",
+    "issues": "Problèmes",
+    "keyboardShortcuts": "Raccourcis clavier",
+    "lastMeasureKept": "Une partition garde au moins une mesure.",
+    "layoutMode": "Mode de mise en page",
+    "leaveSilence": "Laisser le silence",
+    "leaveSilenceDetail": "Le reste de la piste reste à sa place",
+    "lyricEntry": "Saisie de paroles",
+    "lyricNoteOf": "Note {{current}} sur {{total}}",
+    "marks": "Signes",
+    "midi": "MIDI",
+    "moreActions": "Plus d'actions",
+    "musicXml": "MusicXML",
+    "audioMp3": "Audio (MP3)…",
+    "audioWav": "Audio (WAV)…",
+    "projectJson": "Fichier projet (.moo)",
+    "xmModule": "Module XM",
+    "noIssues": "Aucun problème.",
+    "noScore": "Aucune partition ouverte.",
+    "noSuchBar_one": "Cette partition n'a qu'une mesure.",
+    "noSuchBar_other": "Cette partition a les mesures 1 à {{count}}.",
+    "noteDuration": "Durée de la note",
+    "noteDurationHint": "Durée de note — pour les notes que vous ajoutez, et pour celles qui sont sélectionnées",
+    "noteInput": "Saisie de notes",
+    "noteInputHint": "Saisie de notes (N) — une fois activée, cliquer sur une portée écrit une note à cette hauteur au lieu de déplacer le curseur",
+    "noteValue": "Valeur de note",
+    "ornament": "Ornement",
+    "ornamentHint": "Signe d'ornement sur les notes sélectionnées",
+    "pageHint": "Replier les systèmes à la largeur de la page",
+    "pageLayout": "Mise en page par page",
+    "paste": "Coller",
+    "pasteMessage": "Il y a déjà quelque chose là où cela atterrirait.",
+    "pasteTitle": "Coller par-dessus cette musique",
+    "pitchConcertShort": "Réel",
+    "pitchDisplayHint": "Montrer la hauteur écrite de chaque interprète, ou ce que la partition sonne",
+    "pitchWrittenShort": "Écr",
+    "previousSyllable": "Syllabe précédente",
+    "print": "Imprimer…",
+    "quantize": "Quantifier",
+    "quantizeGrid": "Grille de quantification",
+    "quantizeGridHint": "Grille sur laquelle Quantifier s'aligne",
+    "quantizeHint": "Aligner la sélection sur la grille de quantification",
+    "redo": "Rétablir",
+    "removeTempoChange": "Retirer ce changement de tempo",
+    "repeatEnd": "La reprise se termine ici",
+    "repeatStart": "La reprise commence ici",
+    "repeats": "Reprises",
+    "repeatsPlaybackNote": "Les reprises sont dessinées, exportées et jouées. La lecture démarre à la première fois qu'une mesure est jouée.",
+    "replaceDetail": "Ce qui est là maintenant est retiré",
+    "replaceMode": "Remplacer",
+    "replaceModeHint": "Remplacement : les notes que vous ajoutez écrasent ce qui était déjà là",
+    "saveNow": "Enregistrer maintenant",
+    "saved": "Enregistré",
+    "saving": "Enregistrement…",
+    "scoreActions": "Actions de la partition",
+    "scoreActionsHint": "Appuyez longuement sur la partition pour l'ouvrir.",
+    "selectAll": "Tout sélectionner",
+    "selectAllNotes": "Sélectionner toutes les notes",
+    "showConcertPitch": "Afficher la hauteur de concert",
+    "showInspector": "Afficher le panneau de propriétés",
+    "showKeyboard": "Afficher le clavier",
+    "showSpatial": "Afficher la vue spatiale",
+    "showWrittenPitch": "Afficher la hauteur écrite",
+    "slur": "Liaison de phrasé",
+    "recordVoice": "Enregistrer la voix",
+    "recordVoiceHint": "Enregistrer une mélodie depuis votre microphone dans la piste actuelle",
+    "captureAudio": "Enregistrer et transcrire l'audio",
+    "recordFrom": "Enregistrer depuis",
+    "microphone": "Microphone",
+    "speakers": "Haut-parleurs",
+    "inputDevice": "Périphérique d'entrée",
+    "defaultInput": "Entrée système par défaut",
+    "transcriptionScope": "Transcrire",
+    "voiceTrackOnly": "Piste vocale uniquement",
+    "allTracks": "Toutes les pistes",
+    "startRecording": "Démarrer l'enregistrement",
+    "speakerCaptureHelp": "Choisissez un écran ou une fenêtre d'application avec de l'audio dans le sélecteur du navigateur. Toutes les pistes seront transcrites.",
+    "speakerCaptureUnavailable": "La source sélectionnée n'a pas fourni d'audio",
+    "stopVoiceRecording": "Arrêter l'enregistrement de la voix",
+    "recordVoiceError": "Impossible d'enregistrer ou de transcrire la voix",
+    "microphoneUnavailable": "L'enregistrement au microphone est indisponible ici",
+    "microphoneDenied": "L'accès au microphone a été refusé",
+    "emptyRecording": "L'enregistrement était vide",
+    "noVoiceNotes": "Aucune note n'a été trouvée dans l'enregistrement",
+    "slurHint": "Lier la sélection par une liaison de phrasé",
+    "stackMode": "Empiler en accord",
+    "stackModeHint": "Empilement : les notes que vous ajoutez rejoignent ce qui est déjà là, formant un accord",
+    "stackModeUnavailable": "L'empilement nécessite un instrument pouvant jouer plus d'une note à la fois — {{instrument}} ne le peut pas",
+    "subjectBars": "Mesure",
+    "subjectBars_other": "Mesures",
+    "subjectNotes": "Note",
+    "subjectNotes_other": "Notes",
+    "subjectTrack": "Piste",
+    "syllable": "Syllabe",
+    "thisInstrument": "celui-ci",
+    "toggleInspector": "Basculer le panneau de l'inspecteur",
+    "toggleTie": "Basculer la liaison",
+    "toolbar": "Barre d'outils de l'éditeur de partition",
+    "tracks": "Pistes",
+    "triplet": "Triolet",
+    "tripletHint": "Triolet",
+    "undo": "Annuler",
+    "unsaved": "Non enregistré",
+    "validationIssues": "Problèmes de validation",
+    "validationProblem": "Cette modification casserait la mesure : {{detail}}",
+    "voice": "Voix",
+    "voice1Hint": "Voix 1 — la ligne principale sur cette portée",
+    "voice2Hint": "Voix 2 — une seconde ligne indépendante sur la même portée",
+    "voiceNumber": "Voix {{number}}",
+    "zoomIn": "Zoom avant",
+    "zoomOut": "Zoom arrière",
+    "outOfRange": {
+      "above": "{{pitch}} est au-dessus de l'étendue de {{instrument}} ({{low}}–{{high}}), {{action}}",
+      "below": "{{pitch}} est en dessous de l'étendue de {{instrument}} ({{low}}–{{high}}), {{action}}"
+    },
+    "refused": {
+      "addNote": "elle n'a donc pas été ajoutée.",
+      "addChord": "cet accord n'a donc pas été ajouté.",
+      "changeNote": "la note n'a donc pas été modifiée.",
+      "changeAccidental": "l'altération n'a donc pas été modifiée.",
+      "moveNote": "la note n'a donc pas été déplacée.",
+      "moveNotes": "les notes n'ont donc pas été déplacées.",
+      "transpose": "rien n'a donc été transposé.",
+      "paste": "rien n'a donc été collé."
+    },
+    "polyphonyOne": "{{instrument}} joue une note à la fois, {{action}}",
+    "polyphonyMany": "{{instrument}} joue au plus {{limit}} notes à la fois, {{action}}",
+    "unknownInstrument": "Cet instrument",
+    "save": "Enregistrer",
+    "trackInfo": "Infos de piste",
+    "trackInfoFull": "Infos de piste complètes",
+    "trackInfoIcon": "Icônes d'instrument uniquement",
+    "trackInfoHint": "Afficher seulement l'icône d'instrument à côté de chaque portée, ou les infos de piste complètes"
+  },
+  "errors": {
+    "createProject": "Échec de la création du projet",
+    "loadProjects": "Impossible de charger vos projets.",
+    "openProject": "Échec de l'ouverture du projet",
+    "deleteProject": "Échec de la suppression du projet",
+    "duplicateProject": "Échec de la duplication du projet"
+  },
+  "export": {
+    "explain": "Choisissez un format. Chacun conserve une quantité différente de la musique : MusicXML conserve la page, MIDI l'interprétation, un module tracker les notes sur une grille, et l'audio seulement le son."
+  },
+  "exportScope": {
+    "hiddenCount_one": "Cette partition a {{count}} piste masquée.",
+    "hiddenCount_other": "Cette partition a {{count}} pistes masquées.",
+    "title": "Exporter les pistes masquées ?",
+    "visibleOnly": "Pistes visibles uniquement"
+  },
+  "generate": {
+    "action": "Générer",
+    "estimate": "Cela utilisera environ {{count}} crédits.",
+    "instrument": "Instrument",
+    "prompt": "Invite",
+    "working": "Écriture de votre musique",
+    "workingExplain": "Cela tourne sur le serveur, vous pouvez donc quitter cet écran. La partition se déverrouille à son arrivée.",
+    "presets": "Préréglages"
+  },
+  "generateScore": {
+    "duration": "Durée",
+    "durationInvalid": "Saisissez une durée comme 0:45 ou 1:30.",
+    "addInstrument": "Ajouter un instrument",
+    "removeInstrument": "Retirer {{instrument}}",
+    "essential": "(essentiel)",
+    "complexity": "Complexité",
+    "instrumentation": "Instrumentation",
+    "key": "Tonalité",
+    "measures": "Mesures",
+    "mode": "Mode",
+    "mood": "Ambiance",
+    "noMood": "Aucune ambiance",
+    "noStyle": "Aucun style",
+    "style": "Style",
+    "tempo": "Tempo",
+    "timeSignature": "Chiffrage de mesure",
+    "title": "Générer une nouvelle partition",
+    "titleField": "Titre",
+    "titlePlaceholder": "Partition générée",
+    "styleFamily": {
+      "popRock": "Pop & Rock",
+      "americanRoots": "Racines américaines",
+      "jazz": "Jazz",
+      "funkSoul": "Funk & Soul",
+      "latinCaribbean": "Latino & Caraïbes",
+      "hipHop": "Hip-Hop",
+      "electronic": "Électronique",
+      "classical": "Classique",
+      "danceCeremonial": "Danse & Cérémonie",
+      "screen": "Film & Atmosphère"
+    },
+    "styleName": {
+      "ambient": "Ambient",
+      "baroque": "Baroque",
+      "battle": "Combat",
+      "bluegrass": "Bluegrass",
+      "blues": "Blues",
+      "bossaNova": "Bossa Nova",
+      "cinematic": "Cinématique",
+      "classical": "Classique",
+      "country": "Country",
+      "disco": "Disco",
+      "edm": "EDM",
+      "electroSwing": "Electro Swing",
+      "funk": "Funk",
+      "heavyMetal": "Heavy Metal",
+      "hipHop": "Hip-Hop",
+      "house": "House",
+      "jazz": "Jazz",
+      "lofi": "Lo-fi",
+      "march": "Marche",
+      "pop": "Pop",
+      "punk": "Punk",
+      "ragtime": "Ragtime",
+      "reggae": "Reggae",
+      "rock": "Rock",
+      "salsa": "Salsa",
+      "samba": "Samba",
+      "soul": "Soul",
+      "swing": "Swing",
+      "symphonyLarge": "Symphonie (romantique)",
+      "symphonyMedium": "Symphonie (classique)",
+      "symphonySmall": "Symphonie (chambre)",
+      "tango": "Tango",
+      "techno": "Techno",
+      "trance": "Trance",
+      "trap": "Trap",
+      "waltz": "Valse"
+    },
+    "preset": {
+      "gentleMelody": "Une mélodie douce de huit mesures en majeur",
+      "simpleBeginner": "Une mélodie simple utilisant seulement des noires et des blanches",
+      "openingTitle": "Un court thème de générique d'ouverture",
+      "slowBuild": "Une montée lente qui aboutit à une grande section finale",
+      "loopableLoop": "Une courte boucle qui se répète sans couture",
+      "callAndResponse": "Appel et réponse entre le lead et l'accompagnement",
+      "quietEnding": "Une pièce qui finit plus doucement qu'elle n'a commencé",
+      "singleHook": "Un refrain accrocheur fort, énoncé puis varié",
+      "verseChorus": "Un couplet et un refrain, le refrain montant plus haut",
+      "loveSong": "Une chanson d'amour, chantée simplement",
+      "leavingHome": "Une chanson sur le départ de la maison",
+      "lateNightDrive": "De la musique pour une virée nocturne",
+      "breakupSong": "Une chanson de rupture qui garde sa dignité",
+      "crowdSinger": "Un refrain qu'une foule pourrait reprendre en chœur",
+      "rainyWindow": "Une chanson calme qui regarde la pluie sur une fenêtre",
+      "summerDay": "Une chanson lumineuse pour un après-midi d'été",
+      "walkingBass": "Une progression sur une walking bass",
+      "lockedGroove": "Un groove où basse et batterie sont verrouillées ensemble",
+      "handclapBackbeat": "Un contretemps que l'on pourrait taper dans les mains",
+      "halfTimeDrop": "Une section qui bascule en demi-tempo",
+      "drivingEighths": "Des croches régulières et motrices de haut en bas",
+      "syncopatedRiff": "Un riff syncopé qui tombe à contretemps",
+      "triumphant": "Un thème triomphant pour une victoire",
+      "menacing": "Un thème menaçant qui ne se résout jamais vraiment",
+      "bittersweet": "Quelque chose de doux-amer en mineur",
+      "playfulDance": "Une pièce de danse enjouée",
+      "lullaby": "Une berceuse, lente et simple",
+      "restless": "Une musique agitée qui ne veut pas se poser",
+      "lonely": "Une mélodie solitaire avec beaucoup d'espace",
+      "celebration": "De la musique pour une célébration",
+      "chaseScene": "De la musique pour une poursuite",
+      "battleTheme": "Un thème de combat énergique",
+      "creditsRoll": "De la musique pour un générique de fin",
+      "marketScene": "Une musique animée pour une rue bondée",
+      "sunriseScene": "Un lever de soleil lent",
+      "ceremonyProcession": "Une marche processionnelle pour une cérémonie",
+      "twelveBarShuffle": "Un shuffle de douze mesures avec de la place pour les fills",
+      "improvisedSolo": "Un thème, puis de la place pour un solo",
+      "fiddleAnswers": "Un air avec un violon répondant à chaque phrase",
+      "organStabs": "Des accents d'orgue à contretemps sur une basse profonde",
+      "brassStabs": "Des accents de cuivres répondant au lead",
+      "pedalDrone": "Un bourdon sous une ligne au mouvement lent",
+      "palmMutedRiff": "Un riff en palm mute, répété et moteur",
+      "threeChordRush": "Trois accords, rapides, sans ornement"
+    },
+    "presetPrompts": "Invites prédéfinies",
+    "moodName": {
+      "gentle": "Douce",
+      "dark": "Sombre",
+      "upbeat": "Entraînante",
+      "dramatic": "Dramatique",
+      "calm": "Calme",
+      "energetic": "Énergique"
+    },
+    "complexityName": {
+      "simple": "Simple",
+      "moderate": "Modérée",
+      "complex": "Complexe"
+    },
+    "tempoInvalid": "Le tempo doit être un nombre supérieur à zéro, ou laissé vide."
+  },
+  "generateTrack": {
+    "intro": "Ajoute une nouvelle piste à cette partition, en accord avec sa tonalité, son tempo et sa longueur.",
+    "promptLabel": "Que doit-elle jouer ?",
+    "promptPlaceholder": "Une walking bass sous la mélodie",
+    "title": "Générer une piste"
+  },
+  "import": {
+    "failedTitle": "Impossible d'importer",
+    "unsupported": "Cette build ne peut pas ouvrir de fichiers.",
+    "warningsExplain": "Le fichier contenait des éléments que cette application ne gère pas. Tout le reste a été importé.",
+    "warningsTitle": "Importé, avec des remarques"
+  },
+  "importAudio": {
+    "choose": "Choisir un enregistrement",
+    "description": "Transforme un enregistrement en projet, divisé en parties — voix, batterie, basse, guitare, piano et le reste, chacun sur sa propre piste. Cela tourne sur le serveur et prend quelques minutes : le projet s'ouvre tout de suite, et chaque partie apparaît dans la partition à mesure qu'elle est transcrite. Attendez-vous à une esquisse à modifier, pas à une copie du disque. {{formats}}.",
+    "longRecording": "Les longs enregistrements prennent du temps, et les très longs sont refusés.",
+    "sending": "Envoi de l'enregistrement…",
+    "signInRequired": "Connectez-vous pour importer un enregistrement. Il est transcrit sur le serveur dans un projet qui vous appartient, un compte est donc nécessaire.",
+    "title": "Importer un audio",
+    "unavailable": "La transcription audio n'est pas disponible sur ce serveur.",
+    "upload": "Transcrire"
+  },
+  "importMidi": {
+    "colChannel": "Canal",
+    "colClef": "Clé",
+    "colNotes": "Notes",
+    "colProgram": "Programme",
+    "colTrack": "Piste",
+    "description": "Ouvre un fichier MIDI comme un nouveau document. Choisissez quelles pistes importer et comment lire leur minutage ci-dessous.",
+    "detectKey": "Détecter la tonalité",
+    "fileKind": "fichier MIDI",
+    "gridEighth": "Croche",
+    "gridHalf": "Blanche",
+    "gridNone": "Aucune quantification",
+    "gridQuarter": "Noire",
+    "gridSixteenth": "Double croche",
+    "gridThirtySecond": "Triple croche",
+    "gridWhole": "Ronde",
+    "includeTrack": "Inclure la piste : {{name}}",
+    "mergeDuplicates": "Fusionner les notes quasi identiques",
+    "minDuration": "Durée de note minimale (tics)",
+    "minDurationShort": "Durée min. de note (tics)",
+    "pianoSplit": "Séparation de portée de piano",
+    "quantizeGrid": "Grille de quantification",
+    "splitPoint": "Point de séparation (note MIDI)",
+    "splitPointLabel": "Point de séparation (numéro de note MIDI)",
+    "summaryLine_one": "{{count}} piste, {{seconds}} s, {{ppq}} PPQ",
+    "summaryLine_other": "{{count}} pistes, {{seconds}} s, {{ppq}} PPQ",
+    "sustain": "Gestion de la pédale de sustain",
+    "sustainExtend": "Prolonger les notes pendant le sustain",
+    "sustainIgnore": "Ignorer la pédale de sustain",
+    "trackSummary": "Résumé des pistes MIDI",
+    "tripletDetection": "Détection des triolets",
+    "clefOfTrack": "Clé : {{name}}"
+  },
+  "inspector": {
+    "articulation": "Articulation",
+    "bar": "Mesure",
+    "barline": "Barre de mesure",
+    "barlineDouble": "Double",
+    "barlineFinal": "Finale",
+    "barlineSingle": "Simple",
+    "beat": "Temps",
+    "centerPan": "Centrer le panoramique",
+    "chordSymbol": "Chiffrage d'accord",
+    "chordSymbolPlaceholder": "p. ex. Cmaj7",
+    "clearGraceNotes_one": "Retirer 1 note d'agrément",
+    "clearGraceNotes_other": "Retirer {{count}} notes d'agrément",
+    "clef": "Clé",
+    "clefInherit": "Hériter ({{clef}})",
+    "coda": "Coda",
+    "composer": "Compositeur",
+    "customDuration": "Personnalisée ({{ticks}} tics)",
+    "deleteTrack": "Supprimer la piste",
+    "deleteTrackConfirm": "Supprimer « {{name}} » et toute sa musique ? Cette action ne peut être défaite qu'avec Annuler.",
+    "drumKit": "Kit de batterie",
+    "duration": "Durée",
+    "dynamic": "Nuance",
+    "dynamicHint": "Marque le début d'un niveau ; en vigueur jusqu'au signe suivant.",
+    "fine": "Fine",
+    "fingering": "Doigté",
+    "glissando": "Glissé",
+    "instrument": "Instrument",
+    "instrumentRangeError": "{{instrument}} ne peut pas couvrir l'étendue de notes de cette piste sans changer les intervalles.",
+    "jump": "Saut",
+    "jumpNone": "Aucun",
+    "key": "Tonalité",
+    "keyFlats": "{{count}} bémol",
+    "keyFlats_other": "{{count}} bémols",
+    "keyMode": "Mode de tonalité",
+    "keyNoAccidentals": "aucun dièse ni bémol",
+    "keyOptionMajor": "{{tonic}} majeur — {{accidentals}}",
+    "keyOptionMinor": "{{tonic}} mineur — {{accidentals}}",
+    "keySharps": "{{count}} dièse",
+    "keySharps_other": "{{count}} dièses",
+    "kitOf": "Kit de batterie : {{name}}",
+    "makeGraceNote": "Faire une note d'agrément de la suivante",
+    "measure": "Mesure",
+    "measureClef": "Clé à partir d'ici",
+    "measureNumber": "Mesure {{number}}",
+    "measureRange": "Mesures {{from}}–{{to}}",
+    "mixed": "Mélangé",
+    "mute": "Sourdine",
+    "name": "Nom",
+    "navigation": "Navigation",
+    "noDynamic": "Aucune",
+    "noScore": "Aucune partition",
+    "note": "Note",
+    "notesSelected_one": "1 note sélectionnée",
+    "notesSelected_other": "{{count}} notes sélectionnées",
+    "octave": "Octave",
+    "ornaments": "Ornements",
+    "pan": "Panoramique",
+    "pickup": "Anacrouse",
+    "pickupBeats": "{{count}} temps",
+    "pickupBeats_other": "{{count}} temps",
+    "pickupNone": "Aucune",
+    "pitch": "Hauteur",
+    "replaceMeasures": "Remplacer les mesures",
+    "replaceNotes": "Remplacer les notes",
+    "replaceTrack": "Remplacer la piste",
+    "score": "Partition",
+    "scoreTitle": "Titre",
+    "scoreTitleHint": "Nomme chaque fichier exporté. Pas le nom du document.",
+    "segno": "Segno",
+    "selectMeasure": "Aucune mesure sélectionnée",
+    "selectNote": "Aucune note sélectionnée",
+    "selectTrack": "Aucune piste sélectionnée",
+    "solo": "Solo",
+    "spans": "Étendues",
+    "tempoHere": "Tempo ici (BPM)",
+    "tempoInherited": "Reporté d'une mesure antérieure. Saisir une valeur règle un changement de tempo ici.",
+    "tempoStarting": "Le tempo de départ de la partition.",
+    "tieStart": "Début de liaison",
+    "tieStop": "Fin de liaison",
+    "timeSigDenominator": "Dénominateur du chiffrage",
+    "timeSigNumerator": "Numérateur du chiffrage",
+    "timeSignature": "Chiffrage de mesure",
+    "toCoda": "To Coda",
+    "track": "Piste",
+    "trackName": "Nom de la piste",
+    "trackPan": "Panoramique de la piste",
+    "trackVolume": "Volume de la piste",
+    "unplugged": "Unplugged",
+    "unpluggedHint": "Faites glisser un instrument ou vous-même pour changer sa sonorité. Faites glisser la petite poignée pour changer la direction vers laquelle vous êtes tourné.",
+    "unpluggedListener": "Vous",
+    "unpluggedReset": "Réinitialiser la disposition",
+    "unpluggedStage": "Disposition des instruments",
+    "unpluggedTurnHandle": "Tourner",
+    "unpluggedWander": "Errer",
+    "velocity": "Vélocité",
+    "voice": "Voix",
+    "volume": "Volume",
+    "moveRefused": "La note n'a pas pu être déplacée à cette position.",
+    "outOfRange_one": "{{count}} note est hors de l'étendue de cet instrument ({{low}}-{{high}}) et ne peut pas y être jouée.",
+    "outOfRange_other": "{{count}} notes sont hors de l'étendue de cet instrument ({{low}}-{{high}}) et ne peuvent pas y être jouées.",
+    "visibleTracks": "Pistes visibles"
+  },
+  "key": {
+    "major": "majeur",
+    "minor": "mineur"
+  },
+  "library": {
+    "retry": "Réessayer",
+    "saveFailed": "L'enregistrement a échoué. Vos modifications sont toujours là et une nouvelle tentative sera faite.",
+    "playbackFailed": "La lecture n'a pas pu démarrer.",
+    "scoreLoadFailed": "La partition n'a pas pu être préparée pour la lecture.",
+    "authRequired": "Veuillez vous connecter pour continuer.",
+    "serverUnavailable": "Cette fonctionnalité nécessite une connexion au serveur et n'est pas disponible ici."
+  },
+  "musicXmlWarn": {
+    "alterRounded": "L'altération {{alter}} a été arrondie à {{clamped}}.",
+    "complexTimeSignature": "Un chiffrage de mesure composite a été simplifié.",
+    "multipleArticulations": "Seule la première articulation d'une note a été conservée.",
+    "noDuration": "Une note sans durée a été ignorée.",
+    "noPitchOrRest": "Une note sans hauteur ni silence a été ignorée.",
+    "noTempo": "Aucun tempo n'a été fourni ; {{defaultBpm}} BPM a été utilisé.",
+    "nonPositiveDuration": "Une note avec une durée non positive a été ignorée.",
+    "noteTrimmed": "Une note a été rognée pour tenir dans sa mesure.",
+    "tempoClamped": "Le tempo {{bpm}} était hors de {{min}}-{{max}} et est devenu {{clamped}}.",
+    "unpitched": "Les notes sans hauteur ont été placées sur une portée de percussion.",
+    "unsupportedArticulation": "L'articulation non prise en charge <{{tag}}> a été ignorée.",
+    "unsupportedClef": "Clé {{sign}} non prise en charge à la ligne {{line}} ; la clé de sol a été utilisée à la place.",
+    "unsupportedKeyMode": "Mode de tonalité « {{mode}} » non pris en charge ; le majeur a été utilisé à la place.",
+    "unsupportedMeasureElement": "L'élément de mesure non pris en charge <{{tag}}> a été ignoré.",
+    "unsupportedNotation": "La notation non prise en charge <{{tag}}> a été ignorée.",
+    "unsupportedNoteElement": "L'élément de note non pris en charge <{{tag}}> a été ignoré.",
+    "unsupportedPitchStep": "Degré de hauteur « {{step}} » non pris en charge.",
+    "unsupportedTime": "Chiffrage de mesure non pris en charge à la mesure {{measureNumber}}."
+  },
+  "nav": {
+    "back": "Retour",
+    "community": "Communauté",
+    "credits": "Crédits",
+    "docs": "Docs",
+    "projects": "Projets",
+    "published": "Publié",
+    "resources": "Ressources",
+    "settings": "Paramètres",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "purchases": "Achats"
+  },
+  "newProject": {
+    "generateForMe": "Générer pour moi",
+    "generateForMeHint": "Laissez l'IA écrire la musique. Désactivé, vous obtenez une partition vide avec ces instruments.",
+    "generationNeedsServer": "La génération nécessite un projet sur le serveur. Connexion requise.",
+    "generationNeedsSignIn": "Connectez-vous pour qu'une partition soit générée pour vous.",
+    "generationNeedsCredits": "Votre solde de crédits est en dessous de zéro, la génération est donc indisponible. Achetez des crédits pour l'utiliser à nouveau.",
+    "notEnoughCredits": "Cela nécessite {{estimate}} crédits, mais votre solde est de {{balance}} ({{shortfall}} manquants). Achetez des crédits, utilisez moins de mesures ou d'instruments, ou désactivez « Générer pour moi ».",
+    "buyCredits": "Acheter des crédits",
+    "title": "Nouveau projet",
+    "untitled": "Projet sans titre",
+    "writeLyrics": "Écrire des paroles",
+    "writeLyricsHint": "Des mots sous les notes chantées",
+    "defaultTitle": "Nouvelle partition",
+    "defaultTitleGenerated": "Partition générée",
+    "lyricsTheme": "Le sujet des paroles",
+    "lyricsThemePlaceholder": "p. ex. une chanson d'amour sur le retour à la maison",
+    "lyricsLanguage": "Langue des paroles",
+    "lyricsLanguageName": {
+      "en": "Anglais",
+      "zh": "Chinois (中文)"
+    }
+  },
+  "ornament": {
+    "invertedMordent": "Mordant inv.",
+    "mordent": "Mordant",
+    "none": "Aucun",
+    "trill": "Trille",
+    "turn": "Gruppetto"
+  },
+  "print": {
+    "action": "Imprimer",
+    "landscape": "Paysage",
+    "orientation": "Orientation",
+    "paper": "Papier",
+    "paperA4": "A4",
+    "paperLegal": "Legal",
+    "paperLetter": "Letter",
+    "portrait": "Portrait",
+    "whatToPrint": "Quoi imprimer",
+    "wholeScore": "Partition entière"
+  },
+  "published": {
+    "by": "par {{name}}",
+    "noLongerShared": "Ce lien n'est plus partagé.",
+    "notFound": "Introuvable",
+    "share": "Partager",
+    "flag": "Signaler"
+  },
+  "replace": {
+    "action": "Remplacer",
+    "measuresTitle": "Remplacer les mesures",
+    "notesTitle": "Remplacer les notes",
+    "nothingSelected": "Sélectionnez d'abord de la musique.",
+    "preserveBoundary": "Préserver les notes aux limites",
+    "preserveHarmony": "Préserver l'harmonie",
+    "preserveMelody": "Préserver la mélodie",
+    "preserveRhythm": "Préserver le rythme",
+    "presetInstructions": "Instructions prédéfinies",
+    "trackTitle": "Remplacer la piste",
+    "preset": {
+      "moreDramatic": "Rendre ceci plus dramatique",
+      "simplify": "Simplifier ce passage",
+      "rhythmicVariation": "Ajouter de la variation rythmique",
+      "memorableMelody": "Rendre la mélodie plus mémorable",
+      "strongerTransition": "Créer une transition plus forte",
+      "harmonicTension": "Ajouter de la tension harmonique",
+      "resolvePhrase": "Résoudre la phrase",
+      "moreUpbeat": "Rendre ceci plus entraînant",
+      "darker": "Rendre ceci plus sombre",
+      "variationKeepMelody": "Créer une variation en préservant la mélodie",
+      "keepRhythmChangeHarmony": "Préserver le rythme mais changer l'harmonie",
+      "keepHarmonyChangeMelody": "Préserver l'harmonie mais changer la mélodie",
+      "addAccompaniment": "Ajouter un accompagnement",
+      "thinOrchestration": "Alléger l'orchestration"
+    }
+  },
+  "resources": {
+    "title": "Ressources",
+    "intro": "De la musique gratuite que vous pouvez importer directement dans {{appName}}, regroupée par l'importateur que chaque type de fichier alimente. Téléchargez un fichier, puis utilisez Importer sur la page des projets.",
+    "group": {
+      "scores": {
+        "title": "Partitions",
+        "route": "Importer → MusicXML. Notes, rythme, paroles, nuances et mise en page survivent tous au trajet."
+      },
+      "midi": {
+        "title": "Fichiers MIDI",
+        "route": "Importer → MIDI. Les notes et le minutage arrivent ; les barres de mesure et la tonalité sont estimées, l'assistant vous laisse donc les corriger."
+      },
+      "modules": {
+        "title": "Modules tracker",
+        "route": "Importer → Module. MOD, S3M, XM, IT et MPTM, choisis d'après le contenu du fichier plutôt que son extension."
+      },
+      "audio": {
+        "title": "Enregistrements à transcrire",
+        "route": "Importer → Audio. Une ligne à la fois — la transcription est monophonique, choisissez donc un instrument ou une voix en solo."
+      },
+      "datasets": {
+        "title": "Collections en masse",
+        "route": "Importer → MIDI ou MusicXML. Des corpus entiers plutôt que des pièces isolées — téléchargez l'archive, puis ouvrez-en un fichier."
+      },
+      "sound": {
+        "title": "Instruments et son",
+        "route": "Non importable. Ce sont les échantillons et SoundFonts derrière la lecture, utiles si vous voulez entendre une partition ailleurs."
+      },
+      "reference": {
+        "title": "Formats et outils",
+        "route": "Référence, pas des fichiers. Ce que chaque format contient réellement, et quoi d'autre peut l'ouvrir."
+      }
+    },
+    "link": {
+      "musescore": "Plus d'un million de partitions communautaires. Celles du domaine public se téléchargent en MusicXML.",
+      "openscore": "Répertoire classique regravé de zéro et versé dans le domaine public.",
+      "imslp": "La bibliothèque de partitions classiques du domaine public — 200 000 œuvres, beaucoup avec du MusicXML à côté du PDF.",
+      "cpdl": "ChoralWiki : 40 000 partitions chorales et vocales, en grande partie avec des fichiers source modifiables.",
+      "mutopia": "Partitions du domaine public regravées, avec la source LilyPond et du MIDI à côté de chaque entrée.",
+      "musopenScores": "Partitions publiées sans aucune restriction de droits d'auteur, aux côtés des enregistrements de Musopen.",
+      "openGoldberg": "Les Variations Goldberg de Bach, partition et interprétation toutes deux libres de tout usage.",
+      "musicxmlDirectory": "La liste officielle du format des sites publiant du MusicXML — où chercher après cette page.",
+      "bitmidi": "Une grande collection MIDI consultable que vous pouvez écouter dans le navigateur avant de télécharger.",
+      "vgmusic": "Musique de jeux vidéo séquencée à la main, classée par console et par titre.",
+      "kunstderfuge": "La plus grande archive de MIDI classique du web, des milliers de fichiers à prendre gratuitement.",
+      "midiworld": "Du MIDI classique, pop et de jeux côte à côte, plus des motifs de batterie.",
+      "mfiles": "Du MIDI bien séquencé des pièces classiques que la plupart des gens recherchent.",
+      "classicalArchives": "Un ensemble gratuit sélectionné que vous pouvez copier et utiliser sans demander la permission.",
+      "theSession": "Airs traditionnels irlandais, chaque version téléchargeable en MIDI.",
+      "hymnary": "Airs et textes d'hymnes, la plupart portant le MIDI de l'harmonisation complète.",
+      "midkar": "Jazz, blues, ragtime et standards, séquencés sur trois décennies.",
+      "modarchive": "Des dizaines de milliers de modules depuis l'ère de la demoscene, avec un lecteur intégré.",
+      "modland": "L'archive profonde : tous les formats tracker, classés par compositeur, parcourables comme un disque.",
+      "amp": "Le catalogue de la scène Amiga, indexé par les gens qui ont écrit la musique.",
+      "sceneOrg": "Le serveur de fichiers de la demoscene. Le répertoire musique contient des décennies de contributions de parties.",
+      "woolyss": "Un index tenu à jour de l'endroit où vit la musique tracker et de ce qui la joue encore.",
+      "archiveTrackers": "Un ensemble sélectionné de plusieurs gigaoctets de MOD, XM, IT et S3M en un seul téléchargement.",
+      "musopenAudio": "Interprétations classiques enregistrées et versées dans le domaine public.",
+      "freeMusicArchive": "Plus de 100 000 morceaux sous Creative Commons, filtrables par licence.",
+      "freesound": "Notes isolées, courtes phrases et enregistrements de terrain, tous sous licence libre.",
+      "archiveAudio": "Concerts live, transferts de 78 tours et contributions de la communauté, à télécharger gratuitement.",
+      "pdmx": "Un quart de million de partitions MusicXML du domaine public, empaquetées en un seul jeu de données.",
+      "lakh": "176 000 fichiers MIDI rassemblés pour la recherche musicale et à télécharger gratuitement.",
+      "maestro": "200 heures d'interprétations de piano de concours, MIDI aligné sur l'audio.",
+      "adlPiano": "Du MIDI de piano classé par genre, sous-genre et artiste.",
+      "museTrainer": "Un dépôt de MusicXML de piano du domaine public — clonez-le et ouvrez n'importe quel fichier.",
+      "womenComposers": "Partitions de femmes compositrices, encodées et libres d'utilisation.",
+      "freepats": "Échantillons d'instruments et jeux de patchs sous licence libre.",
+      "polyphone": "Des SoundFonts gratuits à télécharger, et l'éditeur pour créer les vôtres.",
+      "generalUser": "Une SoundFont General MIDI accordée pour que les 128 programmes s'accordent dans un même mixage.",
+      "philharmonia": "Chaque instrument d'orchestre, note par note, enregistré par l'orchestre lui-même.",
+      "musicXmlSpec": "La spécification MusicXML, élément par élément.",
+      "generalMidi": "Le jeu de sons de 128 programmes parmi lesquels l'instrument de chaque piste est choisi.",
+      "standardMidiFile": "Ce qu'un fichier .mid contient réellement, d'après la MIDI Association.",
+      "openMpt": "Le tracker dans lequel ouvrir un module quand vous voulez aussi ses échantillons.",
+      "verovio": "Convertit les partitions encodées en Humdrum vers MusicXML dans le navigateur."
+    }
+  },
+  "selection": {
+    "notes_one": "{{count}} note sélectionnée",
+    "notes_other": "{{count}} notes sélectionnées",
+    "measures_one": "{{count}} mesure sélectionnée",
+    "measures_other": "{{count}} mesures sélectionnées",
+    "tracks_one": "{{count}} piste sélectionnée",
+    "tracks_other": "{{count}} pistes sélectionnées",
+    "none": "Aucune sélection",
+    "regenerated": "{{summary}}, régénéré"
+  },
+  "settings": {
+    "account": "Compte",
+    "language": "Langue",
+    "language_en": "English",
+    "language_de": "Deutsch",
+    "language_es": "Español",
+    "language_fr": "Français",
+    "language_it": "Italiano",
+    "language_ja": "日本語",
+    "language_ko": "한국어",
+    "language_pt": "Português",
+    "language_ru": "Русский",
+    "language_sv": "Svenska",
+    "language_th": "ไทย",
+    "language_uk": "Українська",
+    "language_vi": "Tiếng Việt",
+    "language_zh": "简体中文",
+    "language_zh-hant": "繁體中文",
+    "theme": "Thème",
+    "themeSystem": "Suit le système",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "scoreLabel": "Partition",
+    "pitchWritten": "Afficher la hauteur écrite",
+    "pitchDisplayHelp": "Les instruments transpositeurs peuvent afficher la hauteur telle qu'elle est écrite pour l'interprète, ou telle qu'elle sonne.",
+    "page": {
+      "appearanceLabel": "Apparence"
+    },
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation"
+  },
+  "shortcuts": {
+    "playPause": "Lire / mettre en pause",
+    "clearSelection": "Effacer la sélection",
+    "deleteNotes": "Supprimer les notes sélectionnées",
+    "pitchSemitone": "Monter/descendre la hauteur d'un demi-ton",
+    "pitchOctave": "Monter/descendre la hauteur d'une octave",
+    "moveSelection": "Déplacer la sélection en arrière/en avant",
+    "clickChord": "Cliquer sur un accord",
+    "selectEveryNote": "Sélectionner toutes ses notes",
+    "pianoKey": "Touche de piano (accord sélectionné)",
+    "addRemoveNote": "Ajouter ou retirer cette note",
+    "enterPitch": "Écrire cette note au curseur, dans l'octave la plus proche de la note précédente",
+    "chooseDuration": "Choisir la valeur de note : ronde, blanche, noire, croche, double croche, triple croche",
+    "toggleDotted": "Pointer la valeur de note choisie",
+    "insertRest": "Insérer un silence",
+    "toggleTie": "Lier la note sélectionnée à la suivante",
+    "noteInput": "Saisie de notes activée/désactivée",
+    "stepCaret": "Déplacer le curseur d'une valeur de note",
+    "barEdge": "Curseur au début ou à la fin de la mesure",
+    "scoreEdge": "Curseur au début ou à la fin de la partition",
+    "toggleSlur": "Lier les notes sélectionnées par une liaison de phrasé",
+    "markFermata": "Point d'orgue sur la sélection",
+    "markArpeggiate": "Arpéger l'accord sélectionné",
+    "markGlissando": "Glisser entre les notes sélectionnées",
+    "markOttava": "Crochet d'octave sur la sélection",
+    "markCrescendo": "Crescendo sur la sélection",
+    "markDiminuendo": "Diminuendo sur la sélection"
+  },
+  "snapshot": {
+    "copyrightConfirm": "Je détiens l'intégralité des droits d'auteur sur cette œuvre et tout ce qu'elle cite.",
+    "copyrightWarning": "Ne publiez que de la musique que vous avez créée. Publier la place sur une page publique que n'importe qui peut ouvrir.",
+    "createHint": "Fige le projet tel qu'il est maintenant. Un instantané ne change jamais une fois enregistré.",
+    "createTitle": "Créer un instantané",
+    "currentWork": "Travail actuel",
+    "history": "Historique",
+    "managePublishedTitle": "Instantanés publiés",
+    "name": "Nom de l'instantané",
+    "newSnapshot": "Nouvel instantané",
+    "open": "Ouvrir",
+    "openTitle": "Ouvrir un instantané",
+    "openWarning": "Votre travail actuel sera remplacé par l'instantané que vous ouvrez. Rien d'autre n'est perdu — chaque instantané reste à sa place.",
+    "publicName": "Nom public",
+    "publicNameFor": "Nom public pour {{name}}",
+    "publicNameHint": "Le titre affiché sur Communauté. Par défaut, les noms du projet et de l'instantané.",
+    "publish": "Publier",
+    "publishHint": "Publier — toute personne ayant le lien peut écouter",
+    "publisherHint": "Affiché sur Communauté. Jamais votre adresse e-mail.",
+    "publisherName": "Nom du publieur",
+    "snapshotFirst": "Faire d'abord un instantané du travail actuel",
+    "unpublish": "Dépublier"
+  },
+  "templates": {
+    "lead-sheet": {
+      "name": "Lead Sheet",
+      "description": "Une portée en clé de sol, 16 mesures à 4/4. La page blanche."
+    },
+    "piano-grand-staff": {
+      "name": "Piano (deux portées)",
+      "description": "Clé de sol sur clé de fa, 16 mesures — deux mains sur un instrument."
+    },
+    "string-quartet": {
+      "name": "Quatuor à cordes",
+      "description": "Violon I et II, alto en clé d'ut, violoncelle en clé de fa. 16 mesures."
+    },
+    "jazz-combo": {
+      "name": "Combo de jazz",
+      "description": "Trompette, piano, contrebasse et un kit de jazz. 32 mesures, si♭ majeur."
+    },
+    "rock-band": {
+      "name": "Groupe de rock",
+      "description": "Deux guitares, basse et un kit de rock. 32 mesures à 120."
+    },
+    "satb-choir": {
+      "name": "Chœur SATB",
+      "description": "Voix de soprano, alto, ténor et basse. 16 mesures."
+    },
+    "drum-kit": {
+      "name": "Batterie",
+      "description": "Une portée de percussion, 16 mesures — le clavier nomme chaque élément de batterie."
+    },
+    "waltz": {
+      "name": "Valse (3/4)",
+      "description": "Piano à trois temps, 24 mesures — une autre métrique pour commencer."
+    },
+    "jig": {
+      "name": "Gigue (6/8)",
+      "description": "Une seule ligne mélodique en mesure composée, 16 mesures."
+    },
+    "gentle-piano-melody": {
+      "name": "Douce mélodie au piano",
+      "description": "Une mélodie de piano de 8 mesures en do majeur, déjà écrite, pour partir."
+    },
+    "pop-arrangement": {
+      "name": "Arrangement pop",
+      "description": "Un squelette d'arrangement à deux pistes clé de sol/clé de fa, avec des notes."
+    },
+    "orchestral-passage": {
+      "name": "Passage orchestral",
+      "description": "Des accords plaqués à orchestrer."
+    }
+  },
+  "trackerFit": {
+    "clampedNotes_one": "{{count}} note hors de l'étendue de {{format}} a été déplacée par octaves entières.",
+    "clampedNotes_other": "{{count}} notes hors de l'étendue de {{format}} ont été déplacées par octaves entières.",
+    "droppedShortNotes_one": "{{count}} note plus courte qu'une ligne a été supprimée.",
+    "droppedShortNotes_other": "{{count}} notes plus courtes qu'une ligne ont été supprimées.",
+    "droppedVoices_one": "{{count}} voix ne tenait pas dans le nombre de canaux de {{format}} et sera manquante.",
+    "droppedVoices_other": "{{count}} voix ne tenaient pas dans le nombre de canaux de {{format}} et seront manquantes.",
+    "quantisedNotes_one": "{{count}} note a été légèrement déplacée pour tomber sur la grille de lignes.",
+    "quantisedNotes_other": "{{count}} notes ont été légèrement déplacées pour tomber sur la grille de lignes.",
+    "title": "Exporter en {{format}}",
+    "exportAnyway": "Exporter quand même"
+  },
+  "transport": {
+    "audioOutput": "Sortie audio",
+    "systemDefault": "Par défaut du système",
+    "outputUnavailable": "Impossible de basculer vers cette sortie audio",
+    "editTempo": "Modifier le tempo",
+    "goToStart": "Aller au début",
+    "loadFailed": "Échec du chargement des instruments",
+    "masterVolume": "Volume général",
+    "measureBeat": "Mesure et temps actuels",
+    "nextMeasure": "Mesure suivante",
+    "pause": "Pause",
+    "play": "Lire",
+    "position": "Position",
+    "preparing": "Préparation des instruments {{percent}} %",
+    "preparingUnknown": "Préparation des instruments",
+    "previousMeasure": "Mesure précédente",
+    "speed": "Vitesse de lecture",
+    "speedMultiplier": "Vitesse de lecture",
+    "stop": "Arrêter",
+    "tempo": "Tempo",
+    "tempoBpm": "Tempo (BPM)",
+    "time": "Temps de lecture",
+    "toggleLoop": "Boucle",
+    "toggleMetronome": "Métronome",
+    "transport": "Transport de lecture",
+    "volume": "Vol"
+  },
+  "generationChoices": {
+    "heading": "Comment cette pièce a été générée",
+    "hint": "Verrouillez ce que vous voulez garder, puis régénérez : les choix verrouillés restent, le reste est retiré au sort.",
+    "lock": "Garder {{name}}",
+    "groove": "Groove",
+    "cycle": "Accords",
+    "arcEntry": "Ouverture",
+    "arcIntensity": "Montée",
+    "moment": "Moment",
+    "carrier": "Mélodie",
+    "formShape": "Forme",
+    "hook": "Hook",
+    "lyric": "Paroles",
+    "again": "Régénérer",
+    "againKeeping_one": "Régénérer en gardant 1 choix",
+    "againKeeping_other": "Régénérer en gardant {{count}} choix",
+    "confirmTitle": "Régénérer cette pièce ?",
+    "confirmMessage": "Cela remplace toute la partition par une nouvelle génération. Votre partition actuelle n'est pas conservée sauf si vous enregistrez d'abord un instantané.",
+    "confirm": "Régénérer"
+  },
+  "projectOrigin": {
+    "heading": "Origine",
+    "kind": {
+      "generated": "Généré à partir d'une demande",
+      "imported": "Importé depuis un fichier",
+      "transcribed": "Transcrit depuis un enregistrement",
+      "duplicated": "Copié depuis un autre projet",
+      "blank": "Démarré à partir d'une partition vide",
+      "unknown": "Non enregistré"
+    },
+    "file": "Fichier",
+    "format": "Format",
+    "sourceProject": "Projet source",
+    "sourceMissing": "Un projet qui a depuis été supprimé",
+    "request": "Ce qui a été demandé",
+    "lineup": "Formation",
+    "backend": "Backend",
+    "tempoValue": "{{bpm}} BPM",
+    "barsValue_one": "{{count}} mesure",
+    "barsValue_other": "{{count}} mesures",
+    "generatedOn": "Généré le",
+    "modelUsed": "Modèle utilisé",
+    "tokens": "Jetons",
+    "tokensValue": "{{prompt}} en entrée, {{completion}} en sortie",
+    "jobLoading": "Chargement de la demande de génération…",
+    "jobMissing": "La tâche qui a généré ce projet n'est plus listée."
+  },
+  "home": {
+    "heroTitle": "Du code source pour la musique",
+    "heroBody": "{{appName}} est fait pour les musiciens qui veulent le contrôle créatif, avec l'IA pour aider. Composez, inspectez et modifiez chaque note dans une partition standard.",
+    "featureEditorTitle": "Votre musique, note par note",
+    "featureEditorBody": "Travaillez en notation standard et façonnez chaque partie vous-même. L'IA peut vous aider à démarrer ; vous restez le compositeur.",
+    "featureAiTitle": "Une IA qui suit vos directives",
+    "featureAiBody": "Générez une partition ou retravaillez des mesures sélectionnées, puis révisez et affinez les notes vous-même.",
+    "featureFormatsTitle": "Importez et exportez la musique à votre façon",
+    "featureFormatsBody": "Importez des enregistrements audio (MP3, MPA, WAV), MIDI et MusicXML. Exportez MIDI, MusicXML, WAV et MP3."
+  },
+  "clef": {
+    "treble": "Sol",
+    "bass": "Fa",
+    "alto": "Ut (alto)",
+    "tenor": "Ut (ténor)",
+    "percussion": "Percussion"
+  },
+  "overlay": {
+    "openingProject": "Ouverture du projet…",
+    "transcribingNotes": "Transcription de l'enregistrement…",
+    "progress": "{{stage}} {{done}} sur {{total}} : {{label}}",
+    "reconnecting": "Reconnexion…",
+    "polling": "Mises à jour en direct indisponibles ; vérification périodique du projet.",
+    "lockedWhileGenerating": "L'édition et la lecture reprennent à la fin.",
+    "stage": {
+      "plan": "Planification",
+      "separate": "Séparation",
+      "part": "Partie",
+      "section": "Section",
+      "chunk": "Bloc"
+    }
+  },
+  "account": {
+    "nickname": "Pseudo",
+    "nicknameHint": "Le nom sous lequel vous partagez les instantanés. Jamais votre adresse e-mail.",
+    "picture": "Photo de profil",
+    "choosePicture": "Choisir une photo",
+    "removePicture": "Retirer la photo",
+    "pictureHint": "JPEG, PNG ou WebP. Elle est redimensionnée avant d'être téléversée.",
+    "pictureUnsupported": "Ce fichier n'a pas pu être utilisé comme photo.",
+    "saveFailed": "Impossible d'enregistrer votre profil.",
+    "signedInAs": "Connecté en tant que {{email}}",
+    "loadFailed": "Impossible de charger ceci. Réessayez plus tard."
+  },
+  "coupons": {
+    "code": "Code de coupon",
+    "redeem": "Utiliser",
+    "redeemed": "{{credits}} crédits ajoutés. Votre solde est de {{balance}}.",
+    "redeemFailed": "Ce coupon n'a pas pu être utilisé.",
+    "expires": "Date d'expiration",
+    "expiresPlaceholder": "Expiration, au format AAAA-MM-JJ",
+    "email": "E-mail, s'il est pour un seul compte",
+    "emailHint": "Avec un e-mail, seul ce compte peut l'utiliser.",
+    "create": "Créer un coupon",
+    "created": "{{code}} créé",
+    "createFailed": "Ce coupon n'a pas pu être créé.",
+    "none": "Aucun coupon pour l'instant.",
+    "expiresOn": "Expire {{date}}",
+    "redeemedCount": "Utilisé {{count}} fois"
+  },
+  "apiKeys": {
+    "intro": "Une clé agit pour votre espace de travail. Traitez-la comme un mot de passe.",
+    "name": "Nom de la clé",
+    "create": "Créer une clé",
+    "newKey": "Votre nouvelle clé : {{name}}",
+    "copyNow": "Copiez ce secret maintenant. Il ne peut plus être affiché.",
+    "hide": "Masquer",
+    "none": "Aucune clé API pour l'instant.",
+    "active": "Active",
+    "revoked": "Révoquée",
+    "revoke": "Révoquer",
+    "revokeNamed": "Révoquer {{name}}",
+    "lastUsed": "Dernière utilisation {{date}}",
+    "neverUsed": "Jamais utilisée",
+    "unavailable": "Votre espace de travail n'est pas encore disponible.",
+    "failed": "Cela n'a pas fonctionné. Réessayez."
+  },
+  "history": {
+    "noPurchases": "Aucun achat pour l'instant.",
+    "usage": "Utilisation",
+    "noUsage": "Aucun crédit dépensé pour l'instant.",
+    "loadMore": "Charger plus",
+    "generation": "Génération"
+  },
+  "flag": {
+    "title": "Signaler cet instantané",
+    "hint": "Dites-nous pourquoi vous signalez cet instantané partagé. Un administrateur du site l'examinera.",
+    "reasonLabel": "Motif",
+    "detailsLabel": "Détails",
+    "detailsPlaceholder": "Décrivez le problème",
+    "detailsRequired": "Veuillez ajouter des détails.",
+    "submit": "Envoyer le signalement",
+    "submitting": "Envoi…",
+    "thanks": "Merci — votre signalement a été envoyé pour examen.",
+    "failed": "Impossible d'envoyer votre signalement. Veuillez réessayer.",
+    "reject": "Rejeter",
+    "confirm": "Confirmer",
+    "reviewHint": "Signalements en attente d'examen. Rejeter pour écarter, ou Confirmer pour retirer l'instantané de la communauté.",
+    "reviewEmpty": "Aucun signalement à examiner.",
+    "reviewFailed": "Impossible de charger les signalements.",
+    "removedForReason": "Retiré de la communauté : {{reason}}",
+    "reason": {
+      "copyright": "Violation de droits d'auteur",
+      "offensive": "Contenu offensant",
+      "other": "Autre"
+    },
+    "status": {
+      "submitted": "Soumis",
+      "rejected": "Rejeté",
+      "confirmed": "Confirmé"
+    }
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : {{date}}",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "body": "Bienvenue sur {{appName}}. Nous respectons votre vie privée et nous engageons à protéger vos données personnelles. Cette politique explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez {{appName}} pour écrire, jouer et partager de la musique."
+      },
+      "collection": {
+        "title": "Informations que nous collectons",
+        "body": "Informations que vous fournissez :\n• Informations de compte (adresse e-mail, nom)\n• Vos partitions, arrangements et projets\n• Préférences et paramètres\n• Informations de paiement (traitées en toute sécurité par notre prestataire de paiement)\n\nInformations collectées automatiquement :\n• Informations sur l'appareil et l'application\n• Adresse IP et localisation approximative\n• Habitudes d'utilisation et analyses\n• Mesures de performance et de fiabilité"
+      },
+      "usage": {
+        "title": "Comment nous utilisons vos informations",
+        "body": "Nous utilisons les informations que nous collectons pour :\n• Fournir et améliorer {{appName}} et ses fonctions de notation, de lecture et de génération\n• Stocker et synchroniser vos projets sur vos appareils\n• Traiter les crédits et les paiements\n• Envoyer des mises à jour importantes sur le service\n• Analyser l'utilisation pour améliorer l'application"
+      },
+      "sharing": {
+        "title": "Partage des informations",
+        "body": "Nous pouvons partager vos informations dans les circonstances suivantes :\n• Avec des prestataires de services qui nous aident à fonctionner\n• Lorsque la loi ou une procédure judiciaire l'exige\n• Pour protéger nos droits et notre sécurité\n• Avec votre consentement"
+      },
+      "security": {
+        "title": "Sécurité des données",
+        "body": "Nous utilisons des protections appropriées :\n• Chiffrement des données en transit et au repos\n• Évaluations de sécurité régulières\n• Contrôles d'accès et authentification\n• Infrastructure cloud sécurisée"
+      },
+      "retention": {
+        "title": "Conservation des données",
+        "body": "Nous conservons vos informations personnelles tant que votre compte est actif ou aussi longtemps que nécessaire pour fournir le service. Vos projets sont stockés pour que vous puissiez y revenir d'une session et d'un appareil à l'autre. Vous pouvez demander la suppression de votre compte et de ses données à tout moment."
+      },
+      "rights": {
+        "title": "Vos droits en matière de confidentialité",
+        "body": "Vous avez le droit de :\n• Accéder à vos informations personnelles\n• Corriger les données inexactes\n• Demander la suppression de vos données\n• Exporter vos projets\n• Vous désinscrire des messages marketing"
+      },
+      "cookies": {
+        "title": "Stockage local",
+        "body": "Nous utilisons un stockage essentiel sur votre appareil pour vous garder connecté, enregistrer votre travail et mémoriser vos préférences. Nous n'utilisons pas de suivi tiers à des fins publicitaires."
+      },
+      "children": {
+        "title": "Confidentialité des enfants",
+        "body": "{{appName}} est destiné aux utilisateurs de tous âges. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants de moins de 13 ans sans le consentement parental."
+      },
+      "transfers": {
+        "title": "Transferts internationaux de données",
+        "body": "Vos informations peuvent être transférées et traitées dans des pays autres que le vôtre. Nous prenons les mesures appropriées pour les protéger lorsque c'est le cas."
+      },
+      "changes": {
+        "title": "Modifications de cette politique",
+        "body": "Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Nous publierons la nouvelle politique sur cette page et mettrons à jour la date ci-dessus."
+      },
+      "language": {
+        "title": "Langue",
+        "body": "Ce document est fourni en plusieurs langues pour votre commodité. En cas de différence entre la version anglaise et une traduction, la version anglaise prévaut."
+      }
+    },
+    "contact": {
+      "title": "Nous contacter",
+      "body": "Si vous avez des questions sur cette politique de confidentialité, contactez-nous à {{email}} ou visitez {{website}}."
+    }
+  },
+  "terms": {
+    "title": "Conditions d'utilisation",
+    "lastUpdated": "Dernière mise à jour : {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptation des conditions",
+        "body": "En utilisant {{appName}}, vous acceptez ces conditions d'utilisation. Si vous n'êtes pas d'accord, veuillez ne pas utiliser le service."
+      },
+      "service": {
+        "title": "Description du service",
+        "body": "{{appName}} est une application pour écrire, jouer et partager de la notation musicale. Elle propose des fonctionnalités gratuites et des crédits payants pour des fonctions telles que la génération assistée par IA."
+      },
+      "accounts": {
+        "title": "Comptes utilisateur",
+        "body": "Lorsque vous créez un compte, vous acceptez de :\n• Fournir des informations exactes et complètes\n• Garder vos identifiants de compte en sécurité\n• Assumer la responsabilité de l'activité sous votre compte\n• Nous informer rapidement de tout accès non autorisé"
+      },
+      "usage": {
+        "title": "Utilisation acceptable",
+        "body": "Lorsque vous utilisez {{appName}}, vous acceptez de ne pas :\n• Accéder aux fonctionnalités payantes sans les payer\n• Utiliser des bots ou des systèmes automatisés contre le service\n• Faire de l'ingénierie inverse ou extraire le code source\n• Partager vos identifiants de compte avec d'autres\n• Interférer avec le service ou le perturber"
+      },
+      "payments": {
+        "title": "Crédits et paiements",
+        "body": "Certaines fonctionnalités sont payées avec des crédits. Les achats sont traités via la boutique d'applications selon ses politiques. Les crédits sont consommés à mesure que ces fonctionnalités sont utilisées."
+      },
+      "ip": {
+        "title": "Propriété intellectuelle",
+        "body": "{{appName}} et son contenu, ses fonctionnalités et sa conception d'origine sont la propriété de {{companyName}} et protégés par les lois internationales sur le droit d'auteur et les marques. La musique que vous créez reste la vôtre."
+      },
+      "liability": {
+        "title": "Limitation de responsabilité",
+        "body": "{{appName}} est fourni « tel quel » sans garanties d'aucune sorte. Nous ne sommes pas responsables des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs découlant de votre utilisation du service."
+      },
+      "termination": {
+        "title": "Résiliation",
+        "body": "Nous pouvons suspendre ou résilier votre compte en cas de violation de ces conditions. À la résiliation, votre droit d'utiliser le service prend fin. Vous pouvez supprimer votre compte à tout moment."
+      },
+      "changes": {
+        "title": "Modifications de ces conditions",
+        "body": "Nous pouvons modifier ces conditions de temps à autre. Nous vous informerons des changements importants via l'application. Continuer à utiliser {{appName}} après un changement signifie que vous acceptez les nouvelles conditions."
+      },
+      "language": {
+        "title": "Langue",
+        "body": "Ce document est fourni en plusieurs langues pour votre commodité. En cas de différence entre la version anglaise et une traduction, la version anglaise prévaut."
+      }
+    },
+    "contact": {
+      "title": "Nous contacter",
+      "body": "Pour toute question sur ces conditions d'utilisation, contactez-nous à {{email}} ou visitez {{website}}."
+    }
+  }
+}

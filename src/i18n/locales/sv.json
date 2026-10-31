@@ -1,0 +1,1838 @@
+{
+  "about": {
+    "title": "Om"
+  },
+  "accidental": {
+    "0": "Återställningstecken",
+    "1": "Kors",
+    "2": "Dubbelkors",
+    "-1": "B",
+    "-2": "Dubbel-b"
+  },
+  "articulation": {
+    "accent": "Accent",
+    "marcato": "Marcato",
+    "none": "Ingen",
+    "staccato": "Staccato",
+    "tenuto": "Tenuto"
+  },
+  "auth": {
+    "orContinueWith": "Eller fortsätt med",
+    "missingFields": "Ange din e-post och ditt lösenord.",
+    "signInWithGoogle": "Fortsätt med Google",
+    "createAccount": "Skapa ditt konto",
+    "email": "E-post",
+    "passwordLabel": "Lösenord",
+    "signInWithApple": "Fortsätt med Apple",
+    "forgotPassword": "Glömt lösenord?",
+    "resetPasswordHint": "Ange din e-postadress så skickar vi en länk för att återställa ditt lösenord.",
+    "sendResetLink": "Skicka återställningslänk",
+    "resetEmailSent": "Om ett konto använder den adressen är en länk för att återställa lösenordet på väg. Kolla din e-post.",
+    "backToSignIn": "Tillbaka till inloggning",
+    "missingEmail": "Ange din e-postadress.",
+    "signUp": "Skapa konto",
+    "alreadyHaveAccount": "Har du redan ett konto?",
+    "dontHaveAccount": "Behöver du ett konto?",
+    "resetPassword": "Återställ ditt lösenord",
+    "signInToAccount": "Logga in på ditt konto",
+    "genericError": "Autentiseringen misslyckades"
+  },
+  "command": {
+    "clearBars": "Töm takter",
+    "clearTrack": "Töm spår",
+    "pasteBars": "Klistra in takter",
+    "pasteTrack": "Klistra in spår",
+    "addMeasure": "Lägg till takt",
+    "insertBars": "Infoga takter",
+    "addNote": "Lägg till not",
+    "addTrack": "Lägg till spår",
+    "changeAccidental": "Ändra förtecken",
+    "changeArticulation": "Ändra artikulation",
+    "changeClef": "Ändra klav",
+    "changeDuration": "Ändra notvärde",
+    "changeKeySignature": "Ändra tonart",
+    "changePitch": "Ändra tonhöjd",
+    "changeTempo": "Ändra tempo",
+    "changeTimeSignature": "Ändra taktart",
+    "changeTrackProps": "Ändra spår",
+    "changeVelocity": "Ändra anslagsstyrka",
+    "changeVoice": "Ändra stämma",
+    "deleteEvents": "Ta bort noter",
+    "deleteMeasure": "Ta bort takt",
+    "deleteTrack": "Ta bort spår",
+    "importScore": "Importera partitur",
+    "insertWithRipple": "Infoga",
+    "moveNotes": "Flytta noter",
+    "pasteEvents": "Klistra in",
+    "quantize": "Kvantisera",
+    "relocateNotes": "Flytta noter",
+    "resizeNotes": "Ändra notlängd",
+    "toggleTie": "Bindebåge",
+    "transpose": "Transponera",
+    "changeMetadata": "Ändra partituruppgifter",
+    "changeDynamic": "Ändra dynamik",
+    "setLyric": "Ändra sångtext",
+    "toGraceNote": "Ändra förslagsnoter",
+    "setPickup": "Ange upptakt",
+    "setChordSymbol": "Ändra ackordbeteckning",
+    "changeRepeats": "Ändra repriser",
+    "changeBeam": "Ändra balkning",
+    "setFingering": "Ändra fingersättning",
+    "changeBarline": "Ändra taktstreck",
+    "changeMeasureClef": "Ändra klav vid takt",
+    "changeNavigation": "Ändra navigeringstecken",
+    "changeOrnament": "Ändra ornament",
+    "toggleArpeggiate": "Arpeggio",
+    "toggleGlissando": "Glissando",
+    "toggleOttava": "Oktavklammer",
+    "toggleFermata": "Fermat",
+    "toggleHairpin": "Crescendo-/dim.-tecken",
+    "toggleSlur": "Legatobåge",
+    "moveUnpluggedListener": "Flytta lyssnare",
+    "turnUnpluggedListener": "Vrid lyssnare",
+    "moveUnpluggedTrack": "Flytta instrument",
+    "resetUnpluggedArrangement": "Återställ arrangemang"
+  },
+  "common": {
+    "cancel": "Avbryt",
+    "closeDialog": "Stäng dialogruta",
+    "done": "Klar",
+    "ok": "OK",
+    "open": "Öppna",
+    "close": "Stäng",
+    "save": "Spara",
+    "delete": "Radera"
+  },
+  "community": {
+    "browseResources": "Bläddra bland resurser",
+    "empty": "Inget publicerat ännu.",
+    "intro": "Ögonblicksbilder som andra har delat. Vem som helst kan lyssna – inget konto behövs.",
+    "loadFailed": "Kunde inte läsas in.",
+    "noMatch": "Inget delat partitur matchar ”{{query}}”.",
+    "searchLabel": "Sök delade partitur",
+    "searchPlaceholder": "Sök på titel eller vem som delade den",
+    "sharedBy": "av {{name}}",
+    "title": "Community"
+  },
+  "credits": {
+    "balance": "Saldo",
+    "outOfCreditsBody": "Generering kräver krediter, och ditt saldo är tomt. Fyll på för att fortsätta – inget av det du arbetade med har gått förlorat.",
+    "outOfCreditsTitle": "Slut på krediter",
+    "purchaseElsewhere": "Krediter köps i webbappen.",
+    "rate": "En kredit per takt, per instrument.",
+    "viewCredits": "Visa krediter"
+  },
+  "dashboard": {
+    "create": "Skapa",
+    "empty": "Inga projekt ännu.",
+    "generating": "Genererar…",
+    "transcribing": "Transkriberar…",
+    "import": "Importera",
+    "importFormat": "Importera en fil",
+    "importMidi": "Importera MIDI",
+    "newProject": "Nytt projekt",
+    "syncToServer": "Spara till servern",
+    "importMusicXml": "Importera MusicXML",
+    "importAudio": "Importera ljud",
+    "importModule": "Importera tracker-modul",
+    "importProject": "Importera projektfil",
+    "connect": "Anslut",
+    "myProjects": "Mina projekt",
+    "newFromTemplateAction": "Nytt från mall",
+    "projectFileError": {
+      "invalidJson": "Den filen är inte ett projekt: den kunde inte läsas som JSON.",
+      "notAProject": "Den filen är inte ett Moosiac-projekt.",
+      "newerVersion": "Det projektet sparades av en nyare version av Moosiac. Uppdatera appen för att öppna det.",
+      "invalidScore": "Partituret i det projektet kunde inte läsas."
+    },
+    "openDocuments": "Öppna projekt",
+    "creditHistory": "Kredithistorik",
+    "redeemCoupon": "Lös in kupong",
+    "apiKeys": "API-nycklar",
+    "manageCoupons": "Hantera kuponger",
+    "duplicate": "Duplicera",
+    "duplicateProject": "Duplicera projekt: {{name}}",
+    "deleteProject": "Radera projekt: {{name}}",
+    "deleteTitle": "Radera projekt",
+    "deleteMessage": "Radera \"{{name}}\"? Detta kan inte ångras.",
+    "updated": "Uppdaterad {{date}}",
+    "reviewFlags": "Granska anmälningar",
+    "reviewFlagsDesc": "Granska anmälningar av delade ögonblicksbilder"
+  },
+  "docs": {
+    "editor": {
+      "title": "Editorn",
+      "summary": "Notpappret, markören och hur noter skrivs in.",
+      "figure": "Redigeringsraden ovanför ett partitur, med markören i början av första takten.",
+      "canvas": {
+        "heading": "Notpappret",
+        "p1": "Partituret ritas på ett enda papper, och bara de system du kan se ritas i varje bildruta. Det är vad som gör att ett långt partitur förblir följsamt – kostnaden för att rita växer inte med antalet takter.",
+        "p2": "Längs vänsterkanten av varje system finns spårrännan: varje spårs namn, dess instrument och dess kontroller för tysta och solo. Den målas in på samma papper som notsystemen, så den kan aldrig glida ur linje med musiken den märker.",
+        "p3": "Ett spår som inte är det du redigerar dämpas – noter, balkar, bindebågar och notlinjer tillsammans – så att det syns med en blick vilken stämma du arbetar med. En markerad not behåller sin färg på varje spår, eftersom att markera över flera spår är något du gjorde med avsikt."
+      },
+      "caret": {
+        "heading": "Markören och markeringen",
+        "p1": "Den röda markören är där nästa not hamnar och där uppspelningen startar. Att klicka på tomt notsystem flyttar den, gör det spåret aktivt och rensar markeringen; att klicka på en not markerar även den noten.",
+        "p2": "Skift-klick lägger till eller tar bort en not från markeringen. Cmd-klick markerar allt från markören till där du klickade på det aktiva spåret, och Cmd-Skift-klick gör samma sak över varje spår.",
+        "p3": "Taktnumren ovanför varje system är en ränna för sig: klicka på ett för att markera den takten, skift-klicka för att utöka markeringen till ett spann av takter. Både Ersätt och regenerering arbetar på spann, så det är så du siktar in dem."
+      },
+      "noteInput": {
+        "heading": "Skriva noter",
+        "p1": "Det finns fyra sätt att skriva en not: skriv dess bokstav, klicka på notsystemet med notinmatning på, spela på pianot på skärmen eller spela ett anslutet MIDI-klaviatur.",
+        "p2": "Att skriva är oftast snabbast. A till G skriver den noten vid markören i oktaven närmast noten före, så att en melodi inte behöver transponeras i efterhand. Siffrorna 1 till 6 väljer notvärdet, en punkt punkterar den, R skriver en paus och T binder.",
+        "p3": "Notinmatning är ett läge, växlat med N, eftersom ett klick måste kunna betyda två saker: med det av siktar ett klick markören, med det på skriver ett klick en not på den tonhöjd du klickade."
+      },
+      "editModes": {
+        "heading": "Infoga, ersätt och stapla",
+        "p1": "Infoga puttar spårets senare noter åt sidan för att göra plats. Ersätt skriver över det som redan fanns där. Stapla lägger noten till det som redan finns på den positionen och bygger ett ackord.",
+        "p2": "Stapla är otillgängligt på ett instrument som bara kan låta en not i taget – en flöjt kan inte spela ett ackord, och verktygsraden säger det i stället för att låta dig skriva ett."
+      },
+      "voices": {
+        "heading": "Stämmor",
+        "p1": "Ett notsystem kan bära två oberoende stämmor. De skiljs åt av sina notskaft: den övre stämman pekar upp och den nedre pekar ner, vilket är vad en notgravör skulle göra.",
+        "p2": "En ensam stämma behåller renderarens eget val av skaft, eftersom att tvinga en riktning där skulle peka hälften av noterna åt fel håll."
+      },
+      "layout": {
+        "heading": "Layout och zoom",
+        "p1": "Sidlayout bryter musiken i system som ryms i bredden, så som tryckta noter gör. Löpande layout lägger ut hela partituret som ett långt system och rullar i sidled.",
+        "p2": "Zoom skalar notbilden. Den ändrar hur mycket som ryms på skärmen, aldrig vad som finns i partituret."
+      }
+    },
+    "formats": {
+      "title": "Import och export",
+      "summary": "Vad appen läser, vad den skriver och vad som överlever resan.",
+      "importing": {
+        "heading": "Import",
+        "p1": "Varje import skapar ett nytt projekt, vilket är varför de alla finns på Projekt-sidan snarare än inne i editorn – en import från ett öppet partitur skulle bara kunna kasta ut dig ur det.",
+        "p2": "Det enda undantaget är ljud som förs in som ett spår snarare än som ett projekt. Det skriver en transkription på det partitur du redan har, så det ligger under Lägg till spår i editorn i stället.",
+        "p3": "En tracker-modul väljs efter sitt innehåll snarare än sitt filnamn, så en felnamngiven modul importeras ändå och en okänd fil misslyckas genom att säga vad den faktiskt hittade."
+      },
+      "exporting": {
+        "heading": "Export",
+        "p1": "Export-menyn skriver MIDI, MusicXML, en XM-tracker-modul, ljud som WAV eller MP3, och projektet som en projektfil. Utskrift är separat och erbjuder Letter eller Legal i stående eller liggande.",
+        "p2": "Ljud renderas genom samma soundfont som spelar det, så filen är en inspelning av det du hörde snarare än en andra tolkning.",
+        "p3": "Om partituret har dolda spår frågar exporten om de ska inkluderas snarare än att tyst avgöra åt dig."
+      },
+      "fidelity": {
+        "heading": "Vad som överlever",
+        "p1": "MIDI bär det transporten spelade, inte det som lagras – dynamik, crescendo-tecken, artikulation och förslagsnoter når alla filen. MusicXML bär notbilden: balkar, legatobågar, ornament, sångtext, repriser och navigeringstecken.",
+        "p2": "En tracker-modul är den förlustmässigt mest kostsamma av de tre och säger det innan skrivning: den har ett radrutnät, en kanalgräns och ett tonomfång, och exporten visar dig vad som skulle gå förlorat innan den skriver något."
+      },
+      "importsHeading": "Format den läser",
+      "exportsHeading": "Format den skriver",
+      "name": {
+        "midi": "MIDI",
+        "musicxml": "MusicXML",
+        "tracker": "Tracker-modul",
+        "audio": "Ljud",
+        "project": "Projektfil",
+        "xm": "XM-modul",
+        "wav": "WAV-ljud",
+        "mp3": "MP3-ljud",
+        "print": "Utskrift"
+      },
+      "in": {
+        "midi": "Noter, tempo och taktarter. Du väljer hur det delas upp i spår och hur hårt det kvantiseras.",
+        "musicxml": "Notbilden såväl som noterna: balkar, legatobågar, ornament, sångtext, repriser och klavbyten.",
+        "tracker": "Noter grupperade efter instrument snarare än efter kanal, så en stämma som spelats över flera kanaler hamnar på ett spår.",
+        "audio": "En linje i taget. Endast monofont – ackord och blandningar försöks inte, och dialogen säger det.",
+        "project": "Ett helt projekt precis som det exporterades, inklusive varje spår och dess mixning."
+      },
+      "out": {
+        "midi": "Det transporten spelade, inklusive dynamik, crescendo-tecken, artikulation och förslagsnoter.",
+        "musicxml": "Hela notbilden, för att öppna i annan notprogramvara.",
+        "tracker": "Endast noter. Instrumentplatser namnges men är tomma, så filen är tyst tills en tracker-användare fyller dem.",
+        "wav": "Okomprimerat ljud, renderat genom samma soundfont som spelar det.",
+        "mp3": "Komprimerat ljud, från samma rendering.",
+        "project": "Allt, för säkerhetskopiering eller för att flytta mellan konton.",
+        "print": "En utskriftsvy med pappersstorlek och orientering, för utskrift eller att spara som PDF."
+      }
+    },
+    "generation": {
+      "title": "Musikgenerering",
+      "summary": "Att generera ett partitur, ett spår eller en ersättning – och vad det kostar.",
+      "figure": "Nytt projekt-formuläret med Generera åt mig påslaget.",
+      "whole": {
+        "heading": "Generera ett partitur",
+        "p1": "Från Projekt-sidan beskriver du vad du vill ha och väljer instrumenten, längden, tempot, tonarten och taktarten. Allt du lämnar tomt avgör generatorn själv.",
+        "p2": "Generering körs på servern, inte i din webbläsare. Du kan stänga sidan och komma tillbaka – projektet visar sin framfart och resultatet tillämpas när det landar.",
+        "p3": "Det första instrument du listar är det som bär melodin, vilket är varför ordningen i listan spelar roll."
+      },
+      "track": {
+        "heading": "Generera ett spår",
+        "p1": "Inne i editorn kan du lägga till ett spår till ett partitur du redan har. Det får partiturets tonart, tempo och längd, och de andra stämmorna att passa in runt.",
+        "p2": "Den sista delen är viktig: generatorn visas vad de befintliga spåren spelar över samma takter, så att en basgång skrivs under din melodi snarare än bredvid den."
+      },
+      "replace": {
+        "heading": "Ersätta musik",
+        "p1": "Ersätt skriver om en del av ett partitur du redan har. Markera några takter och ersätt dem; markera ett spår och ersätt hela det; eller markera enskilda noter och ersätt bara dem.",
+        "p2": "Du kan hålla delar av det stilla medan resten ändras – behåll harmonin, behåll rytmen, behåll melodin och variera ackompanjemanget, eller behåll noterna vid kanterna så att den nya musiken fogas ihop snyggt.",
+        "p3": "Att ersätta noter är det enda fallet som inte avrundas till hela takter. Markeringen ersätts som det spann den täcker, och dialogen säger hur många noter inom det spannet som inte var markerade."
+      },
+      "credits": {
+        "heading": "Vad det kostar",
+        "p1": "En kredit skriver en takt för ett instrument. Åtta takter för fyra instrument är 32 krediter. Dialogen visar en uppskattning innan du bekräftar.",
+        "p2": "Uppskattningen säger ungefär, eftersom du debiteras för det som faktiskt producerades. Det stämmer med uppskattningen när genereringen ger den längd du bad om, och är mindre annars."
+      },
+      "quality": {
+        "heading": "Hur resultatet kontrolleras",
+        "p1": "Varje genererad stämma kontrolleras innan du ser den: noter utanför instrumentets omfång, noter som skulle vara tysta, dubbletter av noter i samma ögonblick, ackord instrumentet inte kan spela, och stämmor utan någon rytmisk eller dynamisk variation alls.",
+        "p2": "Om något är fel ombeds generatorn på nytt, och får exakt besked om vad som ska åtgärdas snarare än att bara be den försöka igen. Det är begränsat, så en envis begäran rusar inte iväg.",
+        "p3": "Ett kvarvarande problem kastar aldrig bort resultatet. Det bästa försöket behålls och problemet rapporteras, eftersom en stämma som behöver en liten ändring är värd mer än ingenting alls."
+      }
+    },
+    "getting-started": {
+      "title": "Kom igång",
+      "summary": "Vad den här appen är, och hur du får ett partitur framför dig.",
+      "figure": "Nytt projekt-formuläret: en titel, instrumenten och längden, tonarten och taktarten.",
+      "what": {
+        "heading": "Vad det är",
+        "p1": "Moosiac är en noteditor med AI-generering kopplad till. Du beskriver musiken du vill ha och den skriver ett partitur; därifrån är varje not din att redigera, spela upp, skriva ut och exportera.",
+        "p2": "Inget genereras som du sedan inte kan ändra för hand. Generatorn skriver in i samma partiturmodell som editorn använder, så en genererad takt och en takt du skrev är samma slags sak."
+      },
+      "firstProject": {
+        "heading": "Att göra ditt första projekt",
+        "p1": "Allt börjar på Projekt-sidan. Det finns fyra sätt att börja: starta från en mall, generera ett helt partitur med AI, importera en fil, eller duplicera ett projekt du redan har.",
+        "p2": "Mallar är tomma partitur med notsystemen redan uppställda – ett lead sheet, ett pianosystem, en stråkkvartett, en jazzkombo. De är den snabbaste vägen till en tom sida som har rätt form.",
+        "p3": "Import skapar också ett projekt. En MIDI-fil, en MusicXML-fil, en tracker-modul, en ljudinspelning eller en projektfil landar alla som ett nytt projekt snarare än att slås samman med ett öppet."
+      },
+      "dashboard": {
+        "heading": "Projekt-sidan",
+        "p1": "Projekt listas nyast först och kan sorteras efter namn eller sökas. Varje rad öppnar editorn, och menyn på den duplicerar eller raderar.",
+        "p2": "Ett projekt som genereras visar sin framfart på plats och kan avbrytas där. Du kan lämna sidan – generering körs på servern, inte i din webbläsare."
+      }
+    },
+    "group": {
+      "start": "Börja här",
+      "using": "Använda appen",
+      "reference": "Referens"
+    },
+    "inspector": {
+      "title": "Inspektorn",
+      "summary": "Egenskapspanelen: spår, not, takt och partitur.",
+      "figure": "Inspektorn med en not markerad.",
+      "tabs": {
+        "heading": "De fyra flikarna",
+        "p1": "Spår är först eftersom den alltid har något att visa – det finns alltid ett aktivt spår. Den rymmer namnet, instrumentet eller trumsetet, klaven, volym, panorering, tysta och solo, samt att radera spåret.",
+        "p2": "Not visar vad som är markerat: tonhöjd, förtecken, oktav, notvärde, anslagsstyrka, stämma, artikulation, ornament, dynamik, ackordbeteckning, fingersättning, och spannen – legatobåge, glissando, oktavklammer.",
+        "p3": "Takt täcker den du markerade: dess nummer, taktart och tonart, ett tempobyte som börjar här, taktstreckstil, repriser och slut, ett klavbyte, navigeringstecknen och om det är en upptakt.",
+        "p4": "Partitur är själva stycket – dess titel, tonsättare och beskrivning. Titeln namnger varje exporterad fil, och den är inte samma sak som projektnamnet som märker raden på Projekt-sidan."
+      },
+      "editing": {
+        "heading": "Att läsa den",
+        "p1": "Panelen säger notvärden, taktnummer och tonartsnamn snarare än tickar och kvinter. En fjärdedelsnot läses som en fjärdedelsnot, inte som 480.",
+        "p2": "Där flera markerade noter är oense om ett värde visar fältet att de är blandade snarare än att välja en av dem att visa."
+      }
+    },
+    "instruments": {
+      "title": "Instrument",
+      "summary": "De 128 General MIDI-programmen, deras omfång och hur långt de går att lita på.",
+      "catalogue": {
+        "heading": "Katalogen",
+        "p1": "Ett spårs ljud är ett av de 128 General MIDI-programmen, grupperade i sexton familjer om åtta. Varje program bär sitt eget omfång, hur många noter det kan låta samtidigt och hur långt dess noterade tonhöjd ligger från dess klingande tonhöjd.",
+        "p2": "Tabellen nedan genereras från den datan snarare än skrivs ut, så den kan inte glida ur takt med vad appen faktiskt använder.",
+        "p3": "Transposition visas i halvtoner från klingande till noterat. En B-trumpet visar +2: ett klingande C noteras som ett D. En tom cell betyder att instrumentet noteras där det klingar, vilket gäller de flesta."
+      },
+      "compass": {
+        "heading": "Hur långt ett omfång går att lita på",
+        "p1": "Den sista kolumnen är den värd att läsa. Uppmätt betyder att någon kontrollerade det instrumentet mot en källa. Stämbart betyder att instrumentet inte har någon fast absolut tonhöjd alls – en shamisen stäms efter sångaren, en koto efter stycket – så omfånget som visas är ett typiskt spann snarare än en gräns.",
+        "p2": "Syntetiskt betyder en elektronisk patch, som inte har något akustiskt omfång att respektera, så den får hela klaviaturen snarare än en påhittad gräns. Otonat betyder en ljudeffekt eller ett ostämt slagverksljud: det finns ingen tonhöjd att vara utanför.",
+        "p3": "Bara ett uppmätt omfång används någonsin för att neka en not. Att neka mot ett omfång som ingen verifierat skulle avvisa musik som var helt fin, så appen gör det inte."
+      },
+      "percussion": {
+        "heading": "Trummor",
+        "p1": "Ett slagverksspår fungerar annorlunda: tonhöjden namnger en trumma snarare än en not. Ettstrukna C är en bastrumma, D:t ovanför en virvel. Kartan täcker MIDI 35 till 81 och allt utanför den ger inget ljud.",
+        "p2": "På ett trumspår väljer instrumentfältet ett set snarare än ett instrument. General MIDI definierar åtta – Standard, Room, Power, Electronic, TR-808, Jazz, Brush och Orchestra – och samma nummer betyder ett set här och ett instrument överallt annars.",
+        "p3": "Klaviaturen på skärmen märker varje trumtangent så att du inte behöver lära dig kartan."
+      },
+      "search": "Sök på namn, familj eller programnummer",
+      "showing": "Visar {{count}} av 128 program",
+      "colProgram": "Nr.",
+      "colName": "Instrument",
+      "colFamily": "Familj",
+      "colRange": "Omfång",
+      "colPolyphony": "Noter samtidigt",
+      "colTranspose": "Transponerar",
+      "colBasis": "Omfång",
+      "polyUnlimited": "Valfritt",
+      "basis": {
+        "measured": "Uppmätt",
+        "tunable": "Stämbart",
+        "synthetic": "Syntetiskt",
+        "unpitched": "Otonat",
+        "assumed": "Overifierat"
+      }
+    },
+    "limits": {
+      "title": "Begränsningar och kända luckor",
+      "summary": "Vad appen medvetet inte gör, och vad den inte gör ännu.",
+      "byDesign": {
+        "heading": "Avsiktligt",
+        "p1": "Ljudimport är monofon. En linje i taget – ackord och blandningar försöks inte, och dialogen säger det snarare än att producera ett tvärsäkert felaktigt svar.",
+        "p2": "Generering ger ett resultat och tillämpar det. Det finns ingen kandidatlista att välja mellan, eftersom generering körs som ett bakgrundsjobb och ingen tittar när det landar.",
+        "p3": "Ögonblicksbilder kan inte redigeras eller raderas. Oföränderlighet upprätthålls genom att det inte finns någon operation för att göra det, snarare än genom en regel som måste kommas ihåg."
+      },
+      "known": {
+        "heading": "Kända luckor",
+        "p1": "Balkning kan inte fogas ihop över ett taktslag, bara brytas eller tas bort. En fil som balkar över ett taktslag importeras med vår gruppering snarare än sin egen.",
+        "p2": "Ornament ritas och exporteras men spelas inte. Tecknet är i första hand notationsmässigt, och att realisera det skulle göra ornamentet omöjligt att läsa igen efteråt.",
+        "p3": "En tracker-modul skrivs med enbart noter. Dess instrumentplatser namnges men är tomma, så filen är tyst tills en tracker-användare fyller dem – exporten säger det innan den skriver."
+      }
+    },
+    "midi-input": {
+      "title": "MIDI-klaviaturer",
+      "summary": "Att spela in noter från ett anslutet instrument.",
+      "figure": "Pianoklaviaturen under partituret, märkt vid varje C och F.",
+      "connecting": {
+        "heading": "Ansluta",
+        "p1": "En MIDI-klaviatur ansluten till din dator kan spela noter rakt in i partituret. Åtkomst begärs första gången enheter listas, inte när sidan läses in, så du blir aldrig tillfrågad om en behörighet du kanske inte behöver.",
+        "p2": "Det fungerar överallt där webbläsaren stöder Web MIDI. Där den inte gör det erbjuds funktionen helt enkelt inte, snarare än att misslyckas när du provar den.",
+        "p3": "Ingen sysex-åtkomst begärs – bara notmeddelandena som editorn faktiskt använder."
+      },
+      "playing": {
+        "heading": "Spela in",
+        "p1": "Noter från en MIDI-klaviatur går genom exakt samma väg som tangenterna på skärmen: noten låter medan den hålls, ett ackord som slås an samtidigt grupperas, hur länge du höll den blir notvärdet, och markören går förbi det som skrevs.",
+        "p2": "Många klaviaturer skickar en note-on med nollvelocity i stället för en note-off. Det läses som ett släpp, eftersom att ta det bokstavligt skulle låta noten klinga för evigt."
+      }
+    },
+    "navLabel": "Dokumentationsämnen",
+    "navigation": {
+      "title": "Hitta runt",
+      "summary": "Sidorna, vad var och en är till för, och vilka som kräver ett konto.",
+      "figure": "Raden som flyttar mellan appens avsnitt.",
+      "routes": {
+        "heading": "Sidorna",
+        "p1": "Den översta raden bär Projekt, Community, Dokument, Resurser och Inställningar. Logotypen går tillbaka till startsidan. Allt ligger under ett språkprefix, så den engelska sidan är /en och den kinesiska /zh.",
+        "p2": "Projekt är ditt eget arbete. Community är vad andra har delat. Resurser pekar på fria arkiv värda att importera från. Inställningar rymmer tema, textstorlek, hur tonhöjd visas, och utvecklaralternativen.",
+        "p3": "Att öppna ett projekt tar dig till editorn på /project/dess-id. Utskrift är en separat vy på /project/dess-id/print, och en delad ögonblicksbild läses på /p/dess-publika-id."
+      },
+      "account": {
+        "heading": "Vad som kräver ett konto",
+        "p1": "Projekt, krediter och köp kräver att du är inloggad. Hem, Community, Dokument, Resurser, Inställningar och alla delade ögonblicksbilder gör det inte.",
+        "p2": "Den sista är avsiktlig: en länk du delar måste öppnas för någon som aldrig loggat in, så den publicerade läsaren står helt utanför inloggningsspärren."
+      }
+    },
+    "notation": {
+      "title": "Tecken och notation",
+      "summary": "Allt du kan skriva på en not utöver dess tonhöjd och längd.",
+      "figure": "Redigeringsraden: notvärden, förtecken, artikulationer och de andra tecknen.",
+      "ties": {
+        "heading": "Bindebågar och pauser",
+        "p1": "En bindebåge fogar samman två noter av samma tonhöjd till en klingande not. Markera en not och tryck T, eller använd verktygsraden. En bindebåge är inte en legatobåge – den fogar samman, medan en legatobåge bara fraserar.",
+        "p2": "Du skriver aldrig en paus för att skapa tystnad. Tystnad är helt enkelt utrymmet du lämnar mellan noter, och pauser syns där luckorna är. R skriver en uttryckligen när du vill uppta ett slag med avsikt."
+      },
+      "dynamics": {
+        "heading": "Dynamik och crescendo-tecken",
+        "p1": "En dynamik markerar nivån en passage börjar på, från ppp till fff, och gäller tills nästa. Att markera en not f gör hela passagen stark – det finns inget att tillämpa på noterna emellan.",
+        "p2": "Notens egen anslagsstyrka överlever som en avvikelse ovanpå den nivån, så en accent inuti en tyst passage förblir en accent snarare än att jämnas ut.",
+        "p3": "Ett crescendo-tecken är förändringen mellan två nivåer, skrivet över två eller fler noter med Skift+< eller Skift+>. Det låter som en ramp, mot vilket tecken som än följer det, eller med ett steg där inget följer."
+      },
+      "articulation": {
+        "heading": "Artikulation",
+        "p1": "Staccato, accent, tenuto och marcato är en längd och en tyngd. Staccato halverar noten, accent lägger till tyngd, marcato gör båda, och tenuto är den fulla längd noten redan hade.",
+        "p2": "Förkortning flyttar aldrig något. En staccatonot släpps tidigt men upptar ändå sin noterade längd, så varje följande not stannar där den var och takten går ändå ihop."
+      },
+      "ornaments": {
+        "heading": "Ornament",
+        "p1": "Drill, mordent, inverterad mordent och dubbelslag är tecken, inte de noter de står för. Hur ett ornament realiseras beror på epok och smak, så tecknet lagras och lämnas läsbart.",
+        "p2": "Ornament är notationsmässiga här: de ritas och de exporteras, men uppspelning realiserar dem inte till noter."
+      },
+      "grace": {
+        "heading": "Förslagsnoter",
+        "p1": "En förslagsnot hänger på noten den smyckar snarare än att ta tid från takten, så den flyttas, kopieras och raderas med sin huvudnot och får aldrig en takt att inte gå ihop.",
+        "p2": "De låter visst. En förslagsnot lånar från sin huvudnot snarare än från takten – begränsat till halva dess längd – så varje följande not stannar exakt där den var."
+      },
+      "tuplets": {
+        "heading": "Irreguljära taktindelningar",
+        "p1": "En triol lagras inte, den känns igen: tre noter som var och en är två tredjedelar av ett vanligt värde är en triol och ritas som en. Ändra en av de tre och klammern slutar helt enkelt ritas, vilket är sanningen snarare än ett föråldrat tecken.",
+        "p2": "Bara hela tretal grupperas. En rad på fyra är en triol och en överbliven, och pauser räknas som medlemmar – en triol med en paus i mitten är fortfarande en triol."
+      },
+      "beams": {
+        "heading": "Balkar",
+        "p1": "Balkning härleds från notvärdena och taktarten, så den följer slaget utan att behöva bli tillsagd. Bara din avvikelse lagras: bryt startar en ny grupp vid en not, och ingen tar bort en not ur balkningen så att den ritar sin flagga.",
+        "p2": "Bryt är vad vokalskrivande behöver, där balken följer stavelserna snarare än slaget. Det finns medvetet ingen hopfogning – att balka över ett taktslag är den enda ändring detta inte kan uttrycka."
+      },
+      "lyrics": {
+        "heading": "Sångtext",
+        "p1": "Sångtext skrivs genom raden snarare än ett fält i taget. Tryck L och skriv: mellanslag avslutar ett ord, ett bindestreck avslutar en stavelse inom ett, Enter avslutar, och Skift+mellanslag stegar tillbaka över ett skrivfel.",
+        "p2": "Om en stavelse börjar, fortsätter eller avslutar ett ord räknas ut från de tangenttryckningarna snarare än efterfrågas. Det är vad som ritar det avslutande bindestrecket och vad som fyller i stavelsetypen vid export.",
+        "p3": "En stavelse hör till sin not, så den flyttas, kopieras och raderas med noten den sitter under."
+      },
+      "chords": {
+        "heading": "Ackordbeteckningar",
+        "p1": "En ackordbeteckning lagras precis som du skriver den. C-7, Cmin7 och Cm7 är ett ackord skrivet på tre sätt, och inget av dem skrivs om eller nekas.",
+        "p2": "Den skrivs ovanför notsystemet – motsatt sida mot sångtext och dynamik, vilket är vad som håller alla tre läsbara på ett lead sheet. Bara grundtonen tolkas vid export; resten reser som texten du skrev."
+      },
+      "spans": {
+        "heading": "Tecken över flera noter",
+        "p1": "En legatobåge fraserar en rad av olika tonhöjder och fogar inget samman. Markera två eller fler noter och tryck S. Färre än två nekas – en fraseringsbåge över en not betyder inget.",
+        "p2": "Ett glissando glider mellan två noter; en oktavklammer flyttar en passage en oktav upp eller ner på pappret utan att ändra vad den låter.",
+        "p3": "En oktavklammer är en visningslins, inte en transposition. Partituret lagrar alltid klingande tonhöjd, så 8va betyder att dessa skrevs en oktav lägre för att hålla dem på notsystemet."
+      }
+    },
+    "playback": {
+      "title": "Uppspelning",
+      "summary": "Transporten, pianoklaviaturen och hur vyn följer med.",
+      "figure": "Transportraden: spela, stopp, loop, metronom, position, tempo, hastighet och volym.",
+      "transport": {
+        "heading": "Transporten",
+        "p1": "Mellanslag spelar och pausar. Transportraden bär också stopp, stega en takt åt endera hållet, loop, en metronom, uppspelningshastighet, tempo och huvudvolymen.",
+        "p2": "Första trycket på spela har en soundfont att hämta och lämna till synten, vilket tar några sekunder. Transporten påstår sig inte spela förrän en not faktiskt kan låta, och visar inläsningens framfart under tiden.",
+        "p3": "Partituret kan inte redigeras medan transporten spelar – utom för mixning. Tysta, solo, volym och panorering förblir aktiva, eftersom att tysta en stämma medan man lyssnar på den är hur ett arrangemang blir lyssnat på."
+      },
+      "keyboard": {
+        "heading": "Pianoklaviaturen",
+        "p1": "Under partituret finns en klaviatur i full bredd som visar det aktiva spårets klingande noter när de spelas. Dess omfång är det aktiva spårets instrument, inte alltid alla 88 tangenter, så den följer ett spårbyte och ett instrumentbyte lika väl.",
+        "p2": "Den är en inmatningsenhet lika väl som en skärm. Att trycka på en tangent provspelar den. Med en not markerad ändrar ett tryck på en tangent den notens tonhöjd. Annars skriver ett släpp en not vid markören vars längd är hur länge du höll tangenten, fäst vid ett värde som notvärdesknapparna också kunde ha gett.",
+        "p3": "På ett trumspår är varje tangent märkt med sin trumma, svarta tangenter inkluderade, eftersom en trumkarta inte har något mönster att lära sig så som en klaviatur har."
+      },
+      "following": {
+        "heading": "Att följa musiken",
+        "p1": "Vyn följer uppspelningen utan att bråka med din egen rullning. I sidlayout behåller den din förskjutning in i systemet när musiken bryter till nästa, så att spåret du tittar på stannar där du satte det.",
+        "p2": "I löpande layout följer den i sidled i stället, och rensar spårrännan allteftersom så att den spelande takten aldrig parkeras bakom spårnamnen."
+      }
+    },
+    "settings": {
+      "title": "Inställningar",
+      "summary": "Utseende, hur tonhöjd visas, och utvecklaralternativen.",
+      "figure": "Inställningsskärmen, som visar Utseende.",
+      "appearance": {
+        "heading": "Utseende",
+        "p1": "Tema kan följa ditt system eller låsas till ljust eller mörkt, och textstorleken kan justeras. Båda gäller i hela appen, inklusive partituret.",
+        "p2": "Det graverade partituret har egna färger för varje roll – en vanlig not, en markerad, en som just genererats, en som klingar – och de följer temat."
+      },
+      "pitch": {
+        "heading": "Noterad eller klingande tonhöjd",
+        "p1": "Transponerande instrument kan visas antingen som de klingar eller som deras spelare läser dem. En B-trumpetstämma skriven i klingande tonhöjd ser en helton annorlunda ut än stämman spelaren håller.",
+        "p2": "Detta ändrar bara visningen. Partituret lagrar alltid klingande tonhöjd, så att växla inställningen redigerar aldrig en not.",
+        "p3": "Notinmatning inverterar visningen före lagring, så att klicka på ett notsystem i noterat läge lagrar den tonhöjd som faktiskt kommer att klinga. Utan det kunde en stämma se rätt ut och låta en helton fel."
+      },
+      "developer": {
+        "heading": "Utvecklarläge",
+        "p1": "Utvecklarläge lägger till diagnostik: prestandamätningar, en benchmark, och en diagnostikexport som är användbar när ett problem rapporteras.",
+        "p2": "Det ändrar inget om musiken. Det är avstängt som standard och säkert att lämna på."
+      }
+    },
+    "sharing": {
+      "title": "Ögonblicksbilder och delning",
+      "summary": "Att behålla versioner, och publicera en för andra.",
+      "figure": "Ögonblicksbildskommandona: skapa en, öppna en, och se de du har publicerat.",
+      "snapshots": {
+        "heading": "Ögonblicksbilder",
+        "p1": "En ögonblicksbild är en kopia av partituret som det är nu, sparad under ett namn du väljer. Ditt aktuella arbete sparas först, så en ögonblicksbild fäster alltid det du faktiskt kan se.",
+        "p2": "Historiken är ett träd snarare än en lista. Att öppna en äldre ögonblicksbild medan en nyare finns förstör inte den nyare – den grenar sig, och nästa ögonblicksbild du tar blir ett barn till den du öppnade.",
+        "p3": "Ögonblicksbilder kan inte redigeras eller raderas. Det upprätthålls genom att det inte finns något sätt att göra det, snarare än genom en regel som någon måste komma ihåg."
+      },
+      "publish": {
+        "heading": "Publicering",
+        "p1": "En ögonblicksbild kan publiceras, vilket ger den en länk vem som helst kan öppna – inget konto behövs. De får en läsare som visar partituret och spelar upp det, och inget annat.",
+        "p2": "Publicerat arbete bär ett eget namn, skilt från projektnamnet, och det är vad som syns på Community-sidan. Du kan ändra det senare utan att röra partituret.",
+        "p3": "Publicering ber dig bekräfta att arbetet är ditt att dela. Bara det en publicerad ögonblicksbild behöver skickas någonsin – inget om ditt konto reser med den."
+      }
+    },
+    "shortcuts": {
+      "title": "Kortkommandon",
+      "summary": "Varje tangent editorn binder.",
+      "intro": {
+        "heading": "Hur de är ordnade",
+        "p1": "Noterade inmatningstangenter tar medvetet ingen modifierare, så att ett kortkommando som hör till din webbläsare eller ditt operativsystem aldrig kan misstas för en not. Rena bokstäver skriver noter, siffror väljer notvärden.",
+        "p2": "Det lämnar Skift för tecknen och Alt för markören. Crescendo-tangenterna är de två ingen behöver memorera, eftersom Skift+< och Skift+> är själva kilsymbolerna."
+      },
+      "group": {
+        "transport": "Uppspelning",
+        "editing": "Redigering",
+        "selection": "Markering",
+        "noteEntry": "Skriva noter",
+        "marks": "Tecken",
+        "caret": "Markören",
+        "pointer": "Pekare"
+      }
+    },
+    "structure": {
+      "title": "Takter och struktur",
+      "summary": "Taktart, tonart, taktstreck, repriser och styckets form.",
+      "figure": "Inspektorns Takt-flik: taktart, tonart, tempo, klav och taktstreck.",
+      "bars": {
+        "heading": "Takter",
+        "p1": "Klicka på ett taktnummer ovanför ett system för att markera den takten; skift-klicka ett annat för att markera spannet mellan dem. Så siktar du in Ersätt och regenerering, som båda arbetar på ett intervall.",
+        "p2": "Taktrutnätet delas mellan spåren. En takt är samma takt på varje notsystem, vilket är varför allt som ändrar rutnätet gäller hela partituret snarare än en stämma.",
+        "p3": "Taktnummer hoppar över en upptakt, så att numret inspektorn visar, numret en spelare läser och takten som gå-till landar på alla är samma nummer."
+      },
+      "signatures": {
+        "heading": "Taktart och tonart",
+        "p1": "Båda sätts per takt från Takt-fliken, och båda bärs framåt tills något ändrar dem. Att sätta en taktangivelse på takt 9 ändrar takt 9 och framåt, inte hela partituret.",
+        "p2": "En tonart lagras som sin position på kvintcirkeln plus dur eller moll, men inspektorn visar dig tonartsnamnet snarare än numret.",
+        "p3": "Att ändra taktarten ändrar hur lång en takt är, så noterna redan i den passas om snarare än att tyst svämma över."
+      },
+      "pickup": {
+        "heading": "Upptaktstakter",
+        "p1": "En upptakt är en takt som inte räknas. Det är en flagga på första takten snarare än en kort takt mitt i partituret, eftersom en kort takt mitt i ett stycke är en avsiktlig oregelbunden takt och behåller sitt nummer.",
+        "p2": "Den gäller varje spår, eftersom en upptakt bara på ett notsystem skulle vara ett partitur vars stämmor är oense om var takt 1 börjar. Den erbjuds enbart på första takten."
+      },
+      "barlines": {
+        "heading": "Taktstreck",
+        "p1": "En takt kan bära ett dubbelt eller ett sluttaktstreck. Frånvarande är det vanliga enkla strecket, vilket gäller nästan varje takt.",
+        "p2": "Där en repris och ett dubbelt taktstreck landar på samma takt vinner reprisen, i ritningen såväl som i exporten: en repris är en instruktion en spelare agerar på, och att rita ett dubbelt taktstreck över den skulle tyst ta bort den från framförandet."
+      },
+      "repeats": {
+        "heading": "Repriser och slut",
+        "p1": "Repristaktstreck är två oberoende tecken snarare än ett spann, eftersom en avslutande repris utan en inledande repeterar från styckets början – ett verkligt tecken, inte ett fel att förhindra.",
+        "p2": "Slutnummer bärs på varje takt av en volta, och klammerns ändar räknas ut från om grannen har samma nummer. Att radera en takt förkortar klammern i stället för att lämna en pekande mot inget.",
+        "p3": "Repriser spelas. Partiturets egen tidsangivelse förblir kanonisk och transporten räknar ut i vilken ordning takterna faktiskt framförs, så att markören, positionsreglaget och taktavläsningen aldrig behöver veta att repriser finns."
+      },
+      "navigation": {
+        "heading": "D.C., D.S., Coda och Fine",
+        "p1": "Segno, coda, To Coda och Fine är platser en takt bär; hoppet är instruktionen, som sitter på takten vid vars slut det lyds. De sex hoppen är ett val snarare än en riktning plus ett mål, så bara kombinationer en spelare faktiskt möter kan skrivas.",
+        "p2": "Regeln som är osynlig i notationen: Fine och To Coda betyder inget på vägen ut. En spelare läser rakt förbi båda tills ett hopp har skickat dem tillbaka.",
+        "p3": "Ett hopp tas en gång – efter att ha lytt det läser spelaren igenom det – annars skulle stycket aldrig ta slut. Ett trasigt tecken spelas ändå: ett D.S. utan segno faller tillbaka till början, som en läsare skulle."
+      },
+      "tempo": {
+        "heading": "Tempo",
+        "p1": "Transportens tempofält redigerar alltid tempot stycket startar i. Takt-flikens tempo sätter ett byte vid den takten, så ett stycke kan sakta in eller ändras vid en repetitionspunkt.",
+        "p2": "Det visar tempot som gäller, ärvt från en tidigare takt när denna inte sätter något, så det är aldrig tomt och ljuger aldrig. Starttempot kan inte tas bort – ett partitur utan något tempo alls har inget tempo."
+      },
+      "clefs": {
+        "heading": "Klavbyten",
+        "p1": "Ett klavbyte lagras på takten där det sker; frånvarande betyder fortsätt med det som gäller. En stämma som aldrig byter klav lagrar inget alls.",
+        "p2": "Det gäller ett spår, till skillnad från repriser och taktstreck: en vänsterhand som korsar in i diskant säger inget om högerhanden. Att sätta klaven som redan gäller tar bort tecknet snarare än att lagra ett som inte skulle rita något."
+      }
+    },
+    "title": "Dokumentation",
+    "tracks": {
+      "title": "Spår och mixning",
+      "summary": "Att lägga till stämmor, välja ljud och balansera dem.",
+      "figure": "Inspektorns Spår-flik: namn, instrument, klav, volym, panorering, tysta och solo.",
+      "adding": {
+        "heading": "Lägga till och ta bort",
+        "p1": "Lägg till spår erbjuder ett tomt spår, ett genererat, eller ett transkriberat från en ljudfil. Ett nytt spår får samma taktrutnät som partituret det ansluter till.",
+        "p2": "Ett partitur behåller alltid minst ett spår, så det sista kan inte raderas. Att radera något annat är en vanlig redigering och ångras som en."
+      },
+      "instrument": {
+        "heading": "Välja ett ljud",
+        "p1": "Ett spårs ljud är ett av de 128 General MIDI-programmen, valt från Spår-fliken. Att ändra det för de befintliga noterna in i det nya instrumentets omfång med hela oktaver, så att en basgång fortfarande läses som den basgången.",
+        "p2": "Om stämman är vidare än det nya instrumentet kan spela nekas ändringen med en förklaring snarare än att tillämpas till hälften.",
+        "p3": "På ett slagverksspår väljer samma fält ett trumset i stället. De två stämmer aldrig överens: numret som betyder Brush som ett set betyder Violin som ett instrument."
+      },
+      "mixing": {
+        "heading": "Volym, panorering, tysta och solo",
+        "p1": "Varje spår har en volym och en panorering, och kan tystas eller soloas. Dessa är det enda slags redigering som förblir tillgänglig medan transporten spelar, eftersom att tysta en stämma medan man lyssnar är hur ett arrangemang blir lyssnat på.",
+        "p2": "Solo är exklusivt: att soloa ett andra spår rensar det första. Du soloar för att höra en stämma, och ett andra solo skulle tyst bredda vad du hör.",
+        "p3": "Att soloa gör också det spåret aktivt, så varje annat spår dämpas. Annars har tystnaden inget ansikte – du skulle höra en stämma utan något på skärmen som säger varför."
+      },
+      "visibility": {
+        "heading": "Dölja spår",
+        "p1": "Ett spår kan döljas från partituret utan att raderas eller tystas. Att dölja handlar om sidan, inte ljudet.",
+        "p2": "Att exportera ett partitur med dolda spår frågar om de ska inkluderas snarare än att tyst avgöra."
+      },
+      "active": {
+        "heading": "Det aktiva spåret",
+        "p1": "Ett spår är alltid det aktiva. Det är spåret noter skrivs till, spåret pianoklaviaturen visar, och det som förblir vid full styrka medan de andra dämpas.",
+        "p2": "Att klicka var som helst på ett spårs notsystem gör det aktivt. Om det aktiva spåret raderas tar det första spåret över snarare än att lämna inget markerat."
+      }
+    },
+    "seeShortcutsScreen": "Visa kortkommandona"
+  },
+  "document": {
+    "untitled": "Namnlöst",
+    "new": "Nytt partitur",
+    "open": "Öppna…",
+    "close": "Stäng",
+    "unsavedTitle": "Osparade ändringar",
+    "unsavedBody": "\"{{title}}\" har ändringar som inte har sparats.",
+    "unsavedQuitBody": "{{count}} öppna dokument har ändringar som inte har sparats.",
+    "closeDocument": "Stäng {{title}}",
+    "exportAs": "Exportera {{format}}",
+    "saveFailedTitle": "Kunde inte spara",
+    "closeWithoutSaving": "Stäng utan att spara",
+    "quitWithoutSaving": "Avsluta utan att spara"
+  },
+  "duration": {
+    "eighth": "Åttondel",
+    "half": "Halvnot",
+    "quarter": "Fjärdedel",
+    "sixteenth": "16-del",
+    "thirtysecond": "32-del",
+    "whole": "Helnot"
+  },
+  "editor": {
+    "accidental": "Förtecken",
+    "accidentalHint": "Sätt förtecknet på de markerade noterna",
+    "addMeasure": "Infoga takter…",
+    "insertBarsTitle": "Infoga takter",
+    "insertBars": "Infoga takter",
+    "barCount": "Antal takter",
+    "insertBarsPosition": "Position",
+    "insertBarsBefore": "Före aktuell takt",
+    "insertBarsAfter": "Efter aktuell takt",
+    "generateInsertedBars": "Generera musik",
+    "generateInsertedBarsHint": "Använd AI för att fylla de nya takterna för alla instrument",
+    "generateInsertedBarsInstruction": "Fortsätt den befintliga musiken naturligt i de infogade takterna för alla instrument.",
+    "addTrack": "Lägg till spår",
+    "addTrackPrompt": "Vilken sorts spår?",
+    "arpeggiate": "Arpeggio",
+    "arpeggiateHint": "Arpeggio",
+    "articulation": "Artikulation",
+    "articulationHint": "Lägg till en artikulation på markeringen",
+    "barNumber": "Taktnummer",
+    "barNumberOf_one": "Taktnummer (1 takt i detta partitur)",
+    "barNumberOf_other": "Taktnummer (1–{{count}})",
+    "beamBreak": "Bryt balk",
+    "beamBreakHint": "Bryt balken här",
+    "beamNone": "Ingen balk",
+    "beamNoneHint": "Ta bort från balkning",
+    "blankTrack": "Tomt spår",
+    "blankTrackHint": "Ett tomt notsystem, tillagt under de andra, redo att skriva i.",
+    "clear": "Töm",
+    "closeGap": "Slut luckan",
+    "closeGapDetail": "Senare noter på detta spår flyttas tidigare för att fylla den",
+    "continuousHint": "Lägg ut partituret i en rullande linje",
+    "continuousLayout": "Löpande layout",
+    "copy": "Kopiera",
+    "crescendo": "Crescendo",
+    "crescendoHint": "Crescendo",
+    "currentZoom": "Aktuell zoomnivå",
+    "cut": "Klipp ut",
+    "cutMessage": "Det finns mer musik efter dem på detta spår.",
+    "cutTitle": "Klipp ut dessa noter",
+    "deleteMeasure": "Ta bort takt",
+    "deleteSelection": "Ta bort markering",
+    "diminuendo": "Diminuendo",
+    "diminuendoHint": "Diminuendo",
+    "done": "Klar",
+    "dotted": "Punkterad",
+    "dottedHint": "Punkterad",
+    "durationModifier": "Notvärdesmodifierare",
+    "editMode": "Redigeringsläge",
+    "ending": "Slut (volta)",
+    "endingPlaceholder": "t.ex. 1 eller 1, 2",
+    "enterLyrics": "Ange sångtext",
+    "distributeLine": "Klistra in en rad",
+    "distributeTitle": "Skriv en rad sångtext",
+    "distributeHint": "Mellanslag skiljer ord; bindestreck delar stavelser.",
+    "distribute": "Fördela",
+    "lyricsDidNotFit": "{{count}} stavelse(r) rymdes inte i melodin",
+    "export": "Exportera",
+    "fermata": "Fermat",
+    "fermataHint": "Fermat",
+    "fixIssues": "Åtgärda allt",
+    "fixedIssuesPartial_one": "Åtgärdade {{count}} problem; {{remaining}} behöver fortfarande uppmärksamhet.",
+    "fixedIssuesPartial_other": "Åtgärdade {{count}} problem; {{remaining}} behöver fortfarande uppmärksamhet.",
+    "fixedIssues_one": "Åtgärdade {{count}} problem.",
+    "fixedIssues_other": "Åtgärdade {{count}} problem.",
+    "fixedNothing": "Inget här kan åtgärdas automatiskt.",
+    "generateTrack": "Generera spår",
+    "generateTrackHint": "Be om en ny stämma skriven för att passa musiken som redan finns här.",
+    "generateTrackUnavailable": "Endast för partitur sparade som ett projekt på servern.",
+    "glissando": "Glissando",
+    "glissandoHint": "Glissando mellan två noter",
+    "go": "Gå",
+    "goToBar": "Gå till takt…",
+    "hideInspector": "Dölj egenskapspanelen",
+    "hideKeyboard": "Dölj klaviatur",
+    "hideSpatial": "Dölj spatial vy",
+    "hyphenate": "Avsluta denna stavelse inuti ordet",
+    "insert": "Infoga",
+    "insertDetail": "Det som finns där nu flyttas senare på detta spår",
+    "insertMode": "Infoga",
+    "insertModeHint": "Infoga: noter du lägger till puttar detta spårs senare noter åt sidan",
+    "insertNote": "Infoga not",
+    "insertNoteHint": "Infoga en not vid markören",
+    "insertRest": "Infoga paus",
+    "insertRestHint": "Infoga paus",
+    "inspector": "Inspektor",
+    "issues": "Problem",
+    "keyboardShortcuts": "Kortkommandon",
+    "lastMeasureKept": "Ett partitur behåller minst en takt.",
+    "layoutMode": "Layoutläge",
+    "leaveSilence": "Lämna tystnad",
+    "leaveSilenceDetail": "Resten av spåret stannar där det är",
+    "lyricEntry": "Sångtextinmatning",
+    "lyricNoteOf": "Not {{current}} av {{total}}",
+    "marks": "Tecken",
+    "midi": "MIDI",
+    "moreActions": "Fler åtgärder",
+    "musicXml": "MusicXML",
+    "audioMp3": "Ljud (MP3)…",
+    "audioWav": "Ljud (WAV)…",
+    "projectJson": "Projektfil (.moo)",
+    "xmModule": "XM-modul",
+    "noIssues": "Inga problem.",
+    "noScore": "Inget partitur öppet.",
+    "noSuchBar_one": "Detta partitur har bara 1 takt.",
+    "noSuchBar_other": "Detta partitur har takterna 1 till {{count}}.",
+    "noteDuration": "Notvärde",
+    "noteDurationHint": "Notlängd – för noterna du lägger till, och för alla som är markerade",
+    "noteInput": "Notinmatning",
+    "noteInputHint": "Notinmatning (N) – medan den är på skriver ett klick på ett notsystem en not på den tonhöjden i stället för att flytta markören",
+    "noteValue": "Notvärde",
+    "ornament": "Ornament",
+    "ornamentHint": "Ornamenttecken på de markerade noterna",
+    "pageHint": "Bryt system till sidbredden",
+    "pageLayout": "Sidlayout",
+    "paste": "Klistra in",
+    "pasteMessage": "Det finns redan något där detta skulle landa.",
+    "pasteTitle": "Klistra in över denna musik",
+    "pitchConcertShort": "Kling",
+    "pitchDisplayHint": "Visa varje spelares noterade tonhöjd, eller vad partituret klingar",
+    "pitchWrittenShort": "Not",
+    "previousSyllable": "Föregående stavelse",
+    "print": "Skriv ut…",
+    "quantize": "Kvantisera",
+    "quantizeGrid": "Kvantiseringsrutnät",
+    "quantizeGridHint": "Rutnät som Kvantisera fäster vid",
+    "quantizeHint": "Fäst markeringen vid kvantiseringsrutnätet",
+    "redo": "Gör om",
+    "removeTempoChange": "Ta bort detta tempobyte",
+    "repeatEnd": "Repris slutar här",
+    "repeatStart": "Repris börjar här",
+    "repeats": "Repriser",
+    "repeatsPlaybackNote": "Repriser ritas, exporteras och spelas upp. Uppspelning startar från första gången en takt spelas.",
+    "replaceDetail": "Det som finns där nu tas bort",
+    "replaceMode": "Ersätt",
+    "replaceModeHint": "Ersätt: noter du lägger till skriver över det som redan fanns där",
+    "saveNow": "Spara nu",
+    "saved": "Sparat",
+    "saving": "Sparar…",
+    "scoreActions": "Partituråtgärder",
+    "scoreActionsHint": "Tryck och håll på partituret för att öppna detta.",
+    "selectAll": "Markera allt",
+    "selectAllNotes": "Markera alla noter",
+    "showConcertPitch": "Visa klingande tonhöjd",
+    "showInspector": "Visa egenskapspanelen",
+    "showKeyboard": "Visa klaviatur",
+    "showSpatial": "Visa spatial vy",
+    "showWrittenPitch": "Visa noterad tonhöjd",
+    "slur": "Legatobåge",
+    "recordVoice": "Spela in röst",
+    "recordVoiceHint": "Spela in en melodi från din mikrofon till det aktuella spåret",
+    "captureAudio": "Spela in och transkribera ljud",
+    "recordFrom": "Spela in från",
+    "microphone": "Mikrofon",
+    "speakers": "Högtalare",
+    "inputDevice": "Inmatningsenhet",
+    "defaultInput": "Systemets standardinmatning",
+    "transcriptionScope": "Transkribera",
+    "voiceTrackOnly": "Endast röstspår",
+    "allTracks": "Alla spår",
+    "startRecording": "Starta inspelning",
+    "speakerCaptureHelp": "Välj en skärm eller ett appfönster med ljud i webbläsarens väljare. Alla spår kommer att transkriberas.",
+    "speakerCaptureUnavailable": "Den valda källan tillhandahöll inget ljud",
+    "stopVoiceRecording": "Stoppa röstinspelning",
+    "recordVoiceError": "Kunde inte spela in eller transkribera rösten",
+    "microphoneUnavailable": "Mikrofoninspelning är inte tillgänglig här",
+    "microphoneDenied": "Mikrofonåtkomst nekades",
+    "emptyRecording": "Inspelningen var tom",
+    "noVoiceNotes": "Inga noter hittades i inspelningen",
+    "slurHint": "Legatobinda markeringen",
+    "stackMode": "Stapla som ackord",
+    "stackModeHint": "Stapla: noter du lägger till fogas till det som redan finns där och bygger ett ackord",
+    "stackModeUnavailable": "Stapla behöver ett instrument som kan spela mer än en not i taget – {{instrument}} kan inte",
+    "subjectBars": "Takt",
+    "subjectBars_other": "Takter",
+    "subjectNotes": "Not",
+    "subjectNotes_other": "Noter",
+    "subjectTrack": "Spår",
+    "syllable": "Stavelse",
+    "thisInstrument": "detta",
+    "toggleInspector": "Växla inspektorpanel",
+    "toggleTie": "Växla bindebåge",
+    "toolbar": "Verktygsrad för noteditor",
+    "tracks": "Spår",
+    "triplet": "Triol",
+    "tripletHint": "Triol",
+    "undo": "Ångra",
+    "unsaved": "Osparat",
+    "validationIssues": "Valideringsproblem",
+    "validationProblem": "Den redigeringen skulle bryta takten: {{detail}}",
+    "voice": "Stämma",
+    "voice1Hint": "Stämma 1 – huvudlinjen på detta notsystem",
+    "voice2Hint": "Stämma 2 – en andra, oberoende linje på samma notsystem",
+    "voiceNumber": "Stämma {{number}}",
+    "zoomIn": "Zooma in",
+    "zoomOut": "Zooma ut",
+    "outOfRange": {
+      "above": "{{pitch}} är över {{instrument}}s omfång ({{low}}–{{high}}), {{action}}",
+      "below": "{{pitch}} är under {{instrument}}s omfång ({{low}}–{{high}}), {{action}}"
+    },
+    "refused": {
+      "addNote": "så den lades inte till.",
+      "addChord": "så detta ackord lades inte till.",
+      "changeNote": "så noten ändrades inte.",
+      "changeAccidental": "så förtecknet ändrades inte.",
+      "moveNote": "så noten flyttades inte.",
+      "moveNotes": "så noterna flyttades inte.",
+      "transpose": "så inget transponerades.",
+      "paste": "så inget klistrades in."
+    },
+    "polyphonyOne": "{{instrument}} spelar en not i taget, {{action}}",
+    "polyphonyMany": "{{instrument}} spelar som mest {{limit}} noter samtidigt, {{action}}",
+    "unknownInstrument": "Detta instrument",
+    "save": "Spara",
+    "trackInfo": "Spårinfo",
+    "trackInfoFull": "Fullständig spårinfo",
+    "trackInfoIcon": "Endast instrumentikoner",
+    "trackInfoHint": "Visa bara instrumentikonen bredvid varje notsystem, eller fullständig spårinfo"
+  },
+  "errors": {
+    "createProject": "Kunde inte skapa projekt",
+    "loadProjects": "Kunde inte läsa in dina projekt.",
+    "openProject": "Kunde inte öppna projekt",
+    "deleteProject": "Kunde inte radera projekt",
+    "duplicateProject": "Kunde inte duplicera projekt"
+  },
+  "export": {
+    "explain": "Välj ett format. Varje bevarar olika mycket av musiken: MusicXML bevarar sidan, MIDI framförandet, en tracker-modul noterna på ett rutnät, och ljud bara ljudet."
+  },
+  "exportScope": {
+    "hiddenCount_one": "Detta partitur har {{count}} dolt spår.",
+    "hiddenCount_other": "Detta partitur har {{count}} dolda spår.",
+    "title": "Exportera dolda spår?",
+    "visibleOnly": "Endast synliga spår"
+  },
+  "generate": {
+    "action": "Generera",
+    "estimate": "Detta använder ungefär {{count}} krediter.",
+    "instrument": "Instrument",
+    "prompt": "Prompt",
+    "working": "Skriver din musik",
+    "workingExplain": "Detta körs på servern, så du kan lämna denna skärm. Partituret låses upp när det landar.",
+    "presets": "Förinställningar"
+  },
+  "generateScore": {
+    "duration": "Längd",
+    "durationInvalid": "Ange en längd som 0:45 eller 1:30.",
+    "addInstrument": "Lägg till instrument",
+    "removeInstrument": "Ta bort {{instrument}}",
+    "essential": "(nödvändig)",
+    "complexity": "Komplexitet",
+    "instrumentation": "Instrumentering",
+    "key": "Tonart",
+    "measures": "Takter",
+    "mode": "Tonkön",
+    "mood": "Stämning",
+    "noMood": "Ingen stämning",
+    "noStyle": "Ingen stil",
+    "style": "Stil",
+    "tempo": "Tempo",
+    "timeSignature": "Taktart",
+    "title": "Generera ett nytt partitur",
+    "titleField": "Titel",
+    "titlePlaceholder": "Genererat partitur",
+    "styleFamily": {
+      "popRock": "Pop & Rock",
+      "americanRoots": "American Roots",
+      "jazz": "Jazz",
+      "funkSoul": "Funk & Soul",
+      "latinCaribbean": "Latin & Karibiskt",
+      "hipHop": "Hip-Hop",
+      "electronic": "Elektroniskt",
+      "classical": "Klassiskt",
+      "danceCeremonial": "Dans & Ceremoniellt",
+      "screen": "Film & Atmosfär"
+    },
+    "styleName": {
+      "ambient": "Ambient",
+      "baroque": "Barock",
+      "battle": "Strid",
+      "bluegrass": "Bluegrass",
+      "blues": "Blues",
+      "bossaNova": "Bossa Nova",
+      "cinematic": "Filmiskt",
+      "classical": "Klassiskt",
+      "country": "Country",
+      "disco": "Disco",
+      "edm": "EDM",
+      "electroSwing": "Electro Swing",
+      "funk": "Funk",
+      "heavyMetal": "Heavy Metal",
+      "hipHop": "Hip-Hop",
+      "house": "House",
+      "jazz": "Jazz",
+      "lofi": "Lo-fi",
+      "march": "Marsch",
+      "pop": "Pop",
+      "punk": "Punk",
+      "ragtime": "Ragtime",
+      "reggae": "Reggae",
+      "rock": "Rock",
+      "salsa": "Salsa",
+      "samba": "Samba",
+      "soul": "Soul",
+      "swing": "Swing",
+      "symphonyLarge": "Symfoni (romantisk)",
+      "symphonyMedium": "Symfoni (klassisk)",
+      "symphonySmall": "Symfoni (kammar)",
+      "tango": "Tango",
+      "techno": "Techno",
+      "trance": "Trance",
+      "trap": "Trap",
+      "waltz": "Vals"
+    },
+    "preset": {
+      "gentleMelody": "En mjuk melodi på åtta takter i en durtonart",
+      "simpleBeginner": "En enkel melodi med bara fjärdedels- och halvnoter",
+      "openingTitle": "Ett kort tema för en inledande titel",
+      "slowBuild": "En långsam uppbyggnad som landar i ett stort slutparti",
+      "loopableLoop": "En kort loop som upprepas utan skarv",
+      "callAndResponse": "Fråga och svar mellan sologångaren och komp",
+      "quietEnding": "Ett stycke som slutar svagare än det började",
+      "singleHook": "En stark hook, framförd och sedan varierad",
+      "verseChorus": "En vers och en refräng, där refrängen lyfter högre",
+      "loveSong": "En kärlekssång, sjungen rakt och enkelt",
+      "leavingHome": "En sång om att lämna hemmet",
+      "lateNightDrive": "Musik för en bilfärd sent på natten",
+      "breakupSong": "En uppbrottslåt som behåller sin värdighet",
+      "crowdSinger": "En refräng som en publik kunde sjunga med i",
+      "rainyWindow": "En stilla sång som ser regn på en ruta",
+      "summerDay": "En ljus sång för en sommareftermiddag",
+      "walkingBass": "En ackordgång över en walking bass",
+      "lockedGroove": "En groove där bas och trummor låser i varandra",
+      "handclapBackbeat": "En backbeat du kunde klappa med till",
+      "halfTimeDrop": "Ett parti som droppar ner i halvtempo",
+      "drivingEighths": "Drivande raka åttondelar uppifrån och ner",
+      "syncopatedRiff": "Ett synkoperat riff som landar bredvid slaget",
+      "triumphant": "Ett triumferande tema för en seger",
+      "menacing": "Ett hotfullt tema som aldrig riktigt löser upp sig",
+      "bittersweet": "Något bittersött i en molltonart",
+      "playfulDance": "Ett lekfullt dansstycke",
+      "lullaby": "En vaggvisa, långsam och enkel",
+      "restless": "Rastlös musik som inte vill lugna sig",
+      "lonely": "En ensam melodi med mycket utrymme",
+      "celebration": "Musik för ett firande",
+      "chaseScene": "Musik för en jakt",
+      "battleTheme": "Ett energiskt stridstema",
+      "creditsRoll": "Musik för en eftertextrullning",
+      "marketScene": "Livlig musik för en fullsatt gata",
+      "sunriseScene": "En långsam soluppgång",
+      "ceremonyProcession": "En procession för en ceremoni",
+      "twelveBarShuffle": "En tolvtakters shuffle med plats för fills",
+      "improvisedSolo": "Ett tema, sedan plats för ett solo",
+      "fiddleAnswers": "En låt med en fiol som svarar på varje fras",
+      "organStabs": "Synkoperade orgelstötar över en djup bas",
+      "brassStabs": "Brassstötar som svarar sologångaren",
+      "pedalDrone": "En borduston under en långsamt rörlig linje",
+      "palmMutedRiff": "Ett palm-mutat riff, upprepat och drivet",
+      "threeChordRush": "Tre ackord, snabbt, utan ornament"
+    },
+    "presetPrompts": "Förinställda prompter",
+    "moodName": {
+      "gentle": "Mjuk",
+      "dark": "Mörk",
+      "upbeat": "Glad",
+      "dramatic": "Dramatisk",
+      "calm": "Lugn",
+      "energetic": "Energisk"
+    },
+    "complexityName": {
+      "simple": "Enkel",
+      "moderate": "Måttlig",
+      "complex": "Komplex"
+    },
+    "tempoInvalid": "Tempo måste vara ett tal större än noll, eller lämnas tomt."
+  },
+  "generateTrack": {
+    "intro": "Lägger till ett nytt spår till detta partitur, anpassat till dess tonart, tempo och längd.",
+    "promptLabel": "Vad ska det spela?",
+    "promptPlaceholder": "En walking bass-gång under melodin",
+    "title": "Generera spår"
+  },
+  "import": {
+    "failedTitle": "Kunde inte importera",
+    "unsupported": "Denna build kan inte öppna filer.",
+    "warningsExplain": "Filen innehöll saker som denna app inte bär. Allt annat importerades.",
+    "warningsTitle": "Importerat, med anmärkningar"
+  },
+  "importAudio": {
+    "choose": "Välj en inspelning",
+    "description": "Gör en inspelning till ett projekt, uppdelat i stämmor – sång, trummor, bas, gitarr, piano och resten, var och en på sitt eget spår. Det körs på servern och tar några minuter: projektet öppnas direkt, och varje stämma visas i partituret allteftersom den transkriberas. Förvänta dig en skiss att redigera, inte en kopia av inspelningen. {{formats}}.",
+    "longRecording": "Långa inspelningar tar ett tag, och mycket långa nekas.",
+    "sending": "Skickar inspelningen…",
+    "signInRequired": "Logga in för att importera en inspelning. Den transkriberas på servern till ett projekt av dina, så det kräver ett konto.",
+    "title": "Importera ljud",
+    "unavailable": "Ljudtranskription är inte tillgänglig på denna server.",
+    "upload": "Transkribera"
+  },
+  "importMidi": {
+    "colChannel": "Kanal",
+    "colClef": "Klav",
+    "colNotes": "Noter",
+    "colProgram": "Program",
+    "colTrack": "Spår",
+    "description": "Öppnar en MIDI-fil som ett nytt dokument. Välj vilka spår som ska tas med och hur deras tidsangivelse ska läsas nedan.",
+    "detectKey": "Identifiera tonart",
+    "fileKind": "MIDI-fil",
+    "gridEighth": "Åttondel",
+    "gridHalf": "Halvnot",
+    "gridNone": "Ingen kvantisering",
+    "gridQuarter": "Fjärdedel",
+    "gridSixteenth": "Sextondel",
+    "gridThirtySecond": "Trettioandradel",
+    "gridWhole": "Helnot",
+    "includeTrack": "Inkludera spår: {{name}}",
+    "mergeDuplicates": "Slå samman nära dubbletter av noter",
+    "minDuration": "Minsta notvärde (tickar)",
+    "minDurationShort": "Min. notvärde (tickar)",
+    "pianoSplit": "Delning av pianosystem",
+    "quantizeGrid": "Kvantiseringsrutnät",
+    "splitPoint": "Delningspunkt (MIDI-not)",
+    "splitPointLabel": "Delningspunkt (MIDI-notnummer)",
+    "summaryLine_one": "{{count}} spår, {{seconds}} s, {{ppq}} PPQ",
+    "summaryLine_other": "{{count}} spår, {{seconds}} s, {{ppq}} PPQ",
+    "sustain": "Hantering av sustainpedal",
+    "sustainExtend": "Förläng noter genom sustain",
+    "sustainIgnore": "Ignorera sustainpedal",
+    "trackSummary": "Sammanfattning av MIDI-spår",
+    "tripletDetection": "Trioldetektering",
+    "clefOfTrack": "Klav: {{name}}"
+  },
+  "inspector": {
+    "articulation": "Artikulation",
+    "bar": "Takt",
+    "barline": "Taktstreck",
+    "barlineDouble": "Dubbelt",
+    "barlineFinal": "Slut",
+    "barlineSingle": "Enkelt",
+    "beat": "Slag",
+    "centerPan": "Centrera panorering",
+    "chordSymbol": "Ackordbeteckning",
+    "chordSymbolPlaceholder": "t.ex. Cmaj7",
+    "clearGraceNotes_one": "Ta bort 1 förslagsnot",
+    "clearGraceNotes_other": "Ta bort {{count}} förslagsnoter",
+    "clef": "Klav",
+    "clefInherit": "Ärv ({{clef}})",
+    "coda": "Coda",
+    "composer": "Tonsättare",
+    "customDuration": "Anpassat ({{ticks}} tickar)",
+    "deleteTrack": "Ta bort spår",
+    "deleteTrackConfirm": "Radera \"{{name}}\" och all dess musik? Detta kan inte ångras utom med Ångra.",
+    "drumKit": "Trumset",
+    "duration": "Notvärde",
+    "dynamic": "Dynamik",
+    "dynamicHint": "Markerar var en nivå börjar; gäller tills nästa tecken.",
+    "fine": "Fine",
+    "fingering": "Fingersättning",
+    "glissando": "Glissando",
+    "instrument": "Instrument",
+    "instrumentRangeError": "{{instrument}} kan inte täcka detta spårs tonspann utan att ändra intervall.",
+    "jump": "Hopp",
+    "jumpNone": "Inget",
+    "key": "Tonart",
+    "keyFlats": "{{count}} b",
+    "keyFlats_other": "{{count}} b",
+    "keyMode": "Tonkön",
+    "keyNoAccidentals": "inga kors eller b",
+    "keyOptionMajor": "{{tonic}} dur — {{accidentals}}",
+    "keyOptionMinor": "{{tonic}} moll — {{accidentals}}",
+    "keySharps": "{{count}} kors",
+    "keySharps_other": "{{count}} kors",
+    "kitOf": "Trumset: {{name}}",
+    "makeGraceNote": "Gör förslagsnot av nästa",
+    "measure": "Takt",
+    "measureClef": "Klav härifrån",
+    "measureNumber": "Takt {{number}}",
+    "measureRange": "Takterna {{from}}–{{to}}",
+    "mixed": "Blandat",
+    "mute": "Tysta",
+    "name": "Namn",
+    "navigation": "Navigering",
+    "noDynamic": "Ingen",
+    "noScore": "Inget partitur",
+    "note": "Not",
+    "notesSelected_one": "1 not markerad",
+    "notesSelected_other": "{{count}} noter markerade",
+    "octave": "Oktav",
+    "ornaments": "Ornament",
+    "pan": "Panorering",
+    "pickup": "Upptakt",
+    "pickupBeats": "{{count}} slag",
+    "pickupBeats_other": "{{count}} slag",
+    "pickupNone": "Ingen",
+    "pitch": "Tonhöjd",
+    "replaceMeasures": "Ersätt takter",
+    "replaceNotes": "Ersätt noter",
+    "replaceTrack": "Ersätt spår",
+    "score": "Partitur",
+    "scoreTitle": "Titel",
+    "scoreTitleHint": "Namnger varje exporterad fil. Inte dokumentets namn.",
+    "segno": "Segno",
+    "selectMeasure": "Ingen takt markerad",
+    "selectNote": "Ingen not markerad",
+    "selectTrack": "Inget spår markerat",
+    "solo": "Solo",
+    "spans": "Spann",
+    "tempoHere": "Tempo här (BPM)",
+    "tempoInherited": "Överfört från en tidigare takt. Att skriva ett värde sätter ett tempobyte här.",
+    "tempoStarting": "Partiturets starttempo.",
+    "tieStart": "Bindebågens start",
+    "tieStop": "Bindebågens slut",
+    "timeSigDenominator": "Taktartens nämnare",
+    "timeSigNumerator": "Taktartens täljare",
+    "timeSignature": "Taktart",
+    "toCoda": "To Coda",
+    "track": "Spår",
+    "trackName": "Spårnamn",
+    "trackPan": "Spårpanorering",
+    "trackVolume": "Spårvolym",
+    "unplugged": "Unplugged",
+    "unpluggedHint": "Dra ett instrument eller dig själv för att ändra hur det låter. Dra det lilla handtaget för att vrida åt vilket håll du är vänd.",
+    "unpluggedListener": "Du",
+    "unpluggedReset": "Återställ arrangemang",
+    "unpluggedStage": "Instrumentarrangemang",
+    "unpluggedTurnHandle": "Vrid",
+    "unpluggedWander": "Vandra",
+    "velocity": "Anslagsstyrka",
+    "voice": "Stämma",
+    "volume": "Volym",
+    "moveRefused": "Noten kunde inte flyttas till den positionen.",
+    "outOfRange_one": "{{count}} not är utanför detta instruments omfång på {{low}}-{{high}} och kan inte spelas på det.",
+    "outOfRange_other": "{{count}} noter är utanför detta instruments omfång på {{low}}-{{high}} och kan inte spelas på det.",
+    "visibleTracks": "Synliga spår"
+  },
+  "key": {
+    "major": "dur",
+    "minor": "moll"
+  },
+  "library": {
+    "retry": "Försök igen",
+    "saveFailed": "Sparningen misslyckades. Dina ändringar finns kvar och kommer att försökas igen.",
+    "playbackFailed": "Uppspelningen kunde inte starta.",
+    "scoreLoadFailed": "Partituret kunde inte förberedas för uppspelning.",
+    "authRequired": "Logga in för att fortsätta.",
+    "serverUnavailable": "Denna funktion behöver en serveranslutning och är inte tillgänglig här."
+  },
+  "musicXmlWarn": {
+    "alterRounded": "Alterationen {{alter}} avrundades till {{clamped}}.",
+    "complexTimeSignature": "En sammansatt taktart förenklades.",
+    "multipleArticulations": "Bara den första artikulationen på en not behölls.",
+    "noDuration": "En not utan notvärde hoppades över.",
+    "noPitchOrRest": "En not med varken tonhöjd eller paus hoppades över.",
+    "noTempo": "Inget tempo angavs; {{defaultBpm}} BPM användes.",
+    "nonPositiveDuration": "En not med ett icke-positivt notvärde hoppades över.",
+    "noteTrimmed": "En not beskars för att passa sin takt.",
+    "tempoClamped": "Tempot {{bpm}} låg utanför {{min}}-{{max}} och blev {{clamped}}.",
+    "unpitched": "Otonade noter placerades på ett slagverkssystem.",
+    "unsupportedArticulation": "Artikulation <{{tag}}> som inte stöds slopades.",
+    "unsupportedClef": "Klav {{sign}} på linje {{line}} stöds inte; diskant användes i stället.",
+    "unsupportedKeyMode": "Tonkönet \"{{mode}}\" stöds inte; dur användes i stället.",
+    "unsupportedMeasureElement": "Measure-element <{{tag}}> som inte stöds slopades.",
+    "unsupportedNotation": "Notation <{{tag}}> som inte stöds slopades.",
+    "unsupportedNoteElement": "Notelement <{{tag}}> som inte stöds slopades.",
+    "unsupportedPitchStep": "Tonsteget \"{{step}}\" stöds inte.",
+    "unsupportedTime": "Taktart som inte stöds i takt {{measureNumber}}."
+  },
+  "nav": {
+    "back": "Tillbaka",
+    "community": "Community",
+    "credits": "Krediter",
+    "docs": "Dokument",
+    "projects": "Projekt",
+    "published": "Publicerat",
+    "resources": "Resurser",
+    "settings": "Inställningar",
+    "signIn": "Logga in",
+    "signOut": "Logga ut",
+    "purchases": "Köp"
+  },
+  "newProject": {
+    "generateForMe": "Generera åt mig",
+    "generateForMeHint": "Låt AI skriva musiken. Av får du ett tomt partitur med dessa instrument.",
+    "generationNeedsServer": "Generering kräver ett projekt på servern. Inloggning krävs.",
+    "generationNeedsSignIn": "Logga in för att få ett partitur genererat åt dig.",
+    "generationNeedsCredits": "Ditt kreditsaldo är under noll, så generering är otillgänglig. Köp krediter för att använda det igen.",
+    "notEnoughCredits": "Detta kräver {{estimate}} krediter, men ditt saldo är {{balance}} ({{shortfall}} för lite). Köp krediter, använd färre takter eller instrument, eller stäng av ”Generera åt mig”.",
+    "buyCredits": "Köp krediter",
+    "title": "Nytt projekt",
+    "untitled": "Namnlöst projekt",
+    "writeLyrics": "Skriv sångtext",
+    "writeLyricsHint": "Ord under de sjungna noterna",
+    "defaultTitle": "Nytt partitur",
+    "defaultTitleGenerated": "Genererat partitur",
+    "lyricsTheme": "Vad orden handlar om",
+    "lyricsThemePlaceholder": "t.ex. en kärlekssång om att komma hem",
+    "lyricsLanguage": "Ordens språk",
+    "lyricsLanguageName": {
+      "en": "Engelska",
+      "zh": "Kinesiska (中文)"
+    }
+  },
+  "ornament": {
+    "invertedMordent": "Inv. mordent",
+    "mordent": "Mordent",
+    "none": "Inget",
+    "trill": "Drill",
+    "turn": "Dubbelslag"
+  },
+  "print": {
+    "action": "Skriv ut",
+    "landscape": "Liggande",
+    "orientation": "Orientering",
+    "paper": "Papper",
+    "paperA4": "A4",
+    "paperLegal": "Legal",
+    "paperLetter": "Letter",
+    "portrait": "Stående",
+    "whatToPrint": "Vad som ska skrivas ut",
+    "wholeScore": "Hela partituret"
+  },
+  "published": {
+    "by": "av {{name}}",
+    "noLongerShared": "Denna länk delas inte längre.",
+    "notFound": "Hittades inte",
+    "share": "Dela",
+    "flag": "Anmäl"
+  },
+  "replace": {
+    "action": "Ersätt",
+    "measuresTitle": "Ersätt takter",
+    "notesTitle": "Ersätt noter",
+    "nothingSelected": "Markera lite musik först.",
+    "preserveBoundary": "Bevara gränsnoter",
+    "preserveHarmony": "Bevara harmoni",
+    "preserveMelody": "Bevara melodi",
+    "preserveRhythm": "Bevara rytm",
+    "presetInstructions": "Förinställda instruktioner",
+    "trackTitle": "Ersätt spår",
+    "preset": {
+      "moreDramatic": "Gör detta mer dramatiskt",
+      "simplify": "Förenkla denna passage",
+      "rhythmicVariation": "Lägg till rytmisk variation",
+      "memorableMelody": "Gör melodin mer minnesvärd",
+      "strongerTransition": "Skapa en starkare övergång",
+      "harmonicTension": "Lägg till harmonisk spänning",
+      "resolvePhrase": "Lös upp frasen",
+      "moreUpbeat": "Gör detta gladare",
+      "darker": "Gör detta mörkare",
+      "variationKeepMelody": "Skapa en variation samtidigt som melodin bevaras",
+      "keepRhythmChangeHarmony": "Bevara rytmen men ändra harmonin",
+      "keepHarmonyChangeMelody": "Bevara harmonin men ändra melodin",
+      "addAccompaniment": "Lägg till ackompanjemang",
+      "thinOrchestration": "Tunna ut orkestreringen"
+    }
+  },
+  "resources": {
+    "title": "Resurser",
+    "intro": "Fri musik du kan ta rakt in i {{appName}}, grupperad efter importören varje slags fil matar. Ladda ner en fil och använd sedan Importera på projektsidan.",
+    "group": {
+      "scores": {
+        "title": "Noter",
+        "route": "Importera → MusicXML. Noter, rytm, sångtext, dynamik och layout överlever alla resan."
+      },
+      "midi": {
+        "title": "MIDI-filer",
+        "route": "Importera → MIDI. Noter och tidsangivelse kommer med; taktstreck och tonart uppskattas, så guiden låter dig rätta dem."
+      },
+      "modules": {
+        "title": "Tracker-moduler",
+        "route": "Importera → Modul. MOD, S3M, XM, IT och MPTM, valda efter vad som finns inuti filen snarare än efter dess filändelse."
+      },
+      "audio": {
+        "title": "Inspelningar att transkribera",
+        "route": "Importera → Ljud. En linje i taget – transkription är monofon, så välj ett soloinstrument eller en röst."
+      },
+      "datasets": {
+        "title": "Stora samlingar",
+        "route": "Importera → MIDI eller MusicXML. Hela korpusar snarare än enstaka stycken – ladda ner arkivet och öppna sedan en fil ur det."
+      },
+      "sound": {
+        "title": "Instrument och ljud",
+        "route": "Inte importerbara. Detta är samplingarna och SoundFonterna bakom uppspelning, användbara om du vill höra ett partitur någon annanstans."
+      },
+      "reference": {
+        "title": "Format och verktyg",
+        "route": "Referens, inte filer. Vad varje format faktiskt rymmer, och vad annat som kan öppna det."
+      }
+    },
+    "link": {
+      "musescore": "Över en miljon community-partitur. De som är allmän egendom laddas ner som MusicXML.",
+      "openscore": "Klassisk repertoar omgraverad från grunden och släppt som allmän egendom.",
+      "imslp": "Biblioteket med klassiska partitur i allmän egendom – 200 000 verk, många med MusicXML bredvid PDF:en.",
+      "cpdl": "ChoralWiki: 40 000 kör- och vokalpartitur, mycket av det med redigerbara källfiler.",
+      "mutopia": "Omsatta partitur i allmän egendom, med LilyPond-källa och MIDI bredvid varje post.",
+      "musopenScores": "Noter släppta helt utan upphovsrättsliga begränsningar, bredvid Musopens inspelningar.",
+      "openGoldberg": "Bachs Goldbergvariationer, både partitur och framförande släppta för fri användning.",
+      "musicxmlDirectory": "Formatets egen lista över sidor som publicerar MusicXML – var man letar efter denna sida.",
+      "bitmidi": "En stor sökbar MIDI-samling du kan spela i webbläsaren innan du laddar ner.",
+      "vgmusic": "Tv-spelsmusik sekvenserad för hand, sorterad efter konsol och efter titel.",
+      "kunstderfuge": "Det största klassiska MIDI-arkivet på webben, tusentals filer fria att ta.",
+      "midiworld": "Klassisk, pop och spel-MIDI sida vid sida, plus trummönster.",
+      "mfiles": "Välsekvenserad MIDI av de klassiska styckena de flesta letar efter.",
+      "classicalArchives": "En kurerad fri uppsättning du får kopiera och använda utan att be om lov.",
+      "theSession": "Irländska traditionella låtar, varje settning nedladdningsbar som MIDI.",
+      "hymnary": "Psalmmelodier och texter, de flesta med MIDI av hela harmoniseringen.",
+      "midkar": "Jazz, blues, ragtime och standards, sekvenserade under tre decennier.",
+      "modarchive": "Tiotusentals moduler från demoscen-eran och framåt, med en inbyggd spelare.",
+      "modland": "Det djupa arkivet: varje tracker-format, arkiverat efter kompositör, bläddringsbart som en disk.",
+      "amp": "Amiga-scenens egen katalog, indexerad av dem som skrev musiken.",
+      "sceneOrg": "Demoscenens filserver. Musikkatalogen rymmer decennier av party-bidrag.",
+      "woolyss": "Ett underhållet index över var tracker-musik finns och vad som fortfarande spelar den.",
+      "archiveTrackers": "En kurerad uppsättning på flera gigabyte av MOD, XM, IT och S3M som en enda nedladdning.",
+      "musopenAudio": "Klassiska framföranden inspelade och släppta som allmän egendom.",
+      "freeMusicArchive": "Över 100 000 spår under Creative Commons, filtrerbara efter licens.",
+      "freesound": "Enstaka toner, korta fraser och fältinspelningar, alla öppet licensierade.",
+      "archiveAudio": "Livekonserter, 78-varvsöverföringar och community-uppladdningar, fria att ladda ner.",
+      "pdmx": "En kvarts miljon MusicXML-partitur i allmän egendom, paketerade som ett dataset.",
+      "lakh": "176 000 MIDI-filer samlade för musikforskning och fria att ladda ner.",
+      "maestro": "200 timmar tävlingspianoframföranden, MIDI synkad till ljudet.",
+      "adlPiano": "Piano-MIDI arkiverad efter genre, undergenre och artist.",
+      "museTrainer": "Ett förråd av piano-MusicXML i allmän egendom – klona det och öppna vilken fil som helst.",
+      "womenComposers": "Partitur av kvinnliga kompositörer, kodade och fria att använda.",
+      "freepats": "Öppet licensierade instrumentsamplingar och patch-uppsättningar.",
+      "polyphone": "Fria SoundFonts att ladda ner, och editorn för att bygga egna.",
+      "generalUser": "En General MIDI-SoundFont stämd så att alla 128 program sitter ihop i en mix.",
+      "philharmonia": "Varje orkesterinstrument, not för not, inspelat av orkestern själv.",
+      "musicXmlSpec": "MusicXML-specifikationen, element för element.",
+      "generalMidi": "Ljuduppsättningen med 128 program som varje spårs instrument väljs ur.",
+      "standardMidiFile": "Vad en .mid-fil faktiskt innehåller, från MIDI Association.",
+      "openMpt": "Trackern att öppna en modul i när du vill ha dess samplingar också.",
+      "verovio": "Konverterar Humdrum-kodade partitur till MusicXML i webbläsaren."
+    }
+  },
+  "selection": {
+    "notes_one": "{{count}} not markerad",
+    "notes_other": "{{count}} noter markerade",
+    "measures_one": "{{count}} takt markerad",
+    "measures_other": "{{count}} takter markerade",
+    "tracks_one": "{{count}} spår markerat",
+    "tracks_other": "{{count}} spår markerade",
+    "none": "Ingen markering",
+    "regenerated": "{{summary}}, regenererade"
+  },
+  "settings": {
+    "account": "Konto",
+    "language": "Språk",
+    "language_en": "English",
+    "language_de": "Deutsch",
+    "language_es": "Español",
+    "language_fr": "Français",
+    "language_it": "Italiano",
+    "language_ja": "日本語",
+    "language_ko": "한국어",
+    "language_pt": "Português",
+    "language_ru": "Русский",
+    "language_sv": "Svenska",
+    "language_th": "ไทย",
+    "language_uk": "Українська",
+    "language_vi": "Tiếng Việt",
+    "language_zh": "简体中文",
+    "language_zh-hant": "繁體中文",
+    "theme": "Tema",
+    "themeSystem": "Följer systemet",
+    "themeLight": "Ljust",
+    "themeDark": "Mörkt",
+    "scoreLabel": "Partitur",
+    "pitchWritten": "Visa noterad tonhöjd",
+    "pitchDisplayHelp": "Transponerande instrument kan visa tonhöjden som den noteras för spelaren, eller som den klingar.",
+    "page": {
+      "appearanceLabel": "Utseende"
+    },
+    "privacyPolicy": "Integritetspolicy",
+    "termsOfService": "Användarvillkor"
+  },
+  "shortcuts": {
+    "playPause": "Spela / pausa",
+    "clearSelection": "Rensa markering",
+    "deleteNotes": "Ta bort markerade noter",
+    "pitchSemitone": "Flytta tonhöjd upp/ner en halvton",
+    "pitchOctave": "Flytta tonhöjd upp/ner en oktav",
+    "moveSelection": "Flytta markering bakåt/framåt",
+    "clickChord": "Klicka på ett ackord",
+    "selectEveryNote": "Markera varje not i det",
+    "pianoKey": "Pianotangent (ackord markerat)",
+    "addRemoveNote": "Lägg till eller ta bort den noten",
+    "enterPitch": "Skriv den noten vid markören, i oktaven närmast noten före",
+    "chooseDuration": "Välj notvärdet: hel, halv, fjärdedel, åttondel, 16-del, 32-del",
+    "toggleDotted": "Punktera det valda notvärdet",
+    "insertRest": "Infoga en paus",
+    "toggleTie": "Bind den markerade noten till nästa",
+    "noteInput": "Notinmatning på/av",
+    "stepCaret": "Flytta markören ett notvärde",
+    "barEdge": "Markören till taktens början eller slut",
+    "scoreEdge": "Markören till partiturets början eller slut",
+    "toggleSlur": "Legatobinda de markerade noterna",
+    "markFermata": "Fermat på markeringen",
+    "markArpeggiate": "Bryt det markerade ackordet",
+    "markGlissando": "Glid mellan de markerade noterna",
+    "markOttava": "Oktavklammer över markeringen",
+    "markCrescendo": "Crescendo över markeringen",
+    "markDiminuendo": "Diminuendo över markeringen"
+  },
+  "snapshot": {
+    "copyrightConfirm": "Jag innehar hela upphovsrätten till detta verk och allt det citerar.",
+    "copyrightWarning": "Publicera endast musik du skapat. Publicering lägger den på en publik sida vem som helst kan öppna.",
+    "createHint": "Fäster projektet som det är nu. En ögonblicksbild ändras aldrig när den väl sparats.",
+    "createTitle": "Skapa ögonblicksbild",
+    "currentWork": "Aktuellt arbete",
+    "history": "Historik",
+    "managePublishedTitle": "Publicerade ögonblicksbilder",
+    "name": "Namn på ögonblicksbild",
+    "newSnapshot": "Ny ögonblicksbild",
+    "open": "Öppna",
+    "openTitle": "Öppna ögonblicksbild",
+    "openWarning": "Ditt aktuella arbete ersätts av ögonblicksbilden du öppnar. Inget annat går förlorat – varje ögonblicksbild stannar där den är.",
+    "publicName": "Publikt namn",
+    "publicNameFor": "Publikt namn för {{name}}",
+    "publicNameHint": "Titeln som visas på Community. Standard är projekt- och ögonblicksbildsnamnen.",
+    "publish": "Publicera",
+    "publishHint": "Publicera – vem som helst med länken kan lyssna",
+    "publisherHint": "Visas på Community. Aldrig din e-postadress.",
+    "publisherName": "Utgivarnamn",
+    "snapshotFirst": "Ta en ögonblicksbild av aktuellt arbete först",
+    "unpublish": "Avpublicera"
+  },
+  "templates": {
+    "lead-sheet": {
+      "name": "Lead Sheet",
+      "description": "Ett diskantsystem, 16 takter i 4/4. Det tomma bladet."
+    },
+    "piano-grand-staff": {
+      "name": "Piano (pianosystem)",
+      "description": "Diskant över bas, 16 takter – två händer på ett instrument."
+    },
+    "string-quartet": {
+      "name": "Stråkkvartett",
+      "description": "Violin I & II, viola i altklav, cello i bas. 16 takter."
+    },
+    "jazz-combo": {
+      "name": "Jazzkombo",
+      "description": "Trumpet, piano, kontrabas och ett jazzset. 32 takter, B♭ dur."
+    },
+    "rock-band": {
+      "name": "Rockband",
+      "description": "Två gitarrer, bas och ett rockset. 32 takter i 120."
+    },
+    "satb-choir": {
+      "name": "SATB-kör",
+      "description": "Sopran-, alt-, tenor- och basröster. 16 takter."
+    },
+    "drum-kit": {
+      "name": "Trumset",
+      "description": "Ett slagverkssystem, 16 takter – klaviaturen namnger varje trumma."
+    },
+    "waltz": {
+      "name": "Vals (3/4)",
+      "description": "Piano i tre, 24 takter – en annan taktart att börja i."
+    },
+    "jig": {
+      "name": "Jig (6/8)",
+      "description": "En enda melodilinje i sammansatt taktart, 16 takter."
+    },
+    "gentle-piano-melody": {
+      "name": "Mjuk pianomelodi",
+      "description": "En 8-takters pianomelodi i C-dur, inskriven, att utgå från."
+    },
+    "pop-arrangement": {
+      "name": "Pop-arrangemang",
+      "description": "Ett tvåspårigt diskant-/bas-arrangemangsskelett, med noter."
+    },
+    "orchestral-passage": {
+      "name": "Orkesterpassage",
+      "description": "Blockackord att orkestrera."
+    }
+  },
+  "trackerFit": {
+    "clampedNotes_one": "{{count}} not utanför {{format}}s omfång flyttades med hela oktaver.",
+    "clampedNotes_other": "{{count}} noter utanför {{format}}s omfång flyttades med hela oktaver.",
+    "droppedShortNotes_one": "{{count}} not kortare än en rad slopades.",
+    "droppedShortNotes_other": "{{count}} noter kortare än en rad slopades.",
+    "droppedVoices_one": "{{count}} stämma rymdes inte i {{format}}s kanalantal och kommer att saknas.",
+    "droppedVoices_other": "{{count}} stämmor rymdes inte i {{format}}s kanalantal och kommer att saknas.",
+    "quantisedNotes_one": "{{count}} not flyttades något för att landa på radrutnätet.",
+    "quantisedNotes_other": "{{count}} noter flyttades något för att landa på radrutnätet.",
+    "title": "Exportera som {{format}}",
+    "exportAnyway": "Exportera ändå"
+  },
+  "transport": {
+    "audioOutput": "Ljudutgång",
+    "systemDefault": "Systemstandard",
+    "outputUnavailable": "Kunde inte växla till den ljudutgången",
+    "editTempo": "Redigera tempo",
+    "goToStart": "Gå till början",
+    "loadFailed": "Instrumenten kunde inte läsas in",
+    "masterVolume": "Huvudvolym",
+    "measureBeat": "Aktuell takt och slag",
+    "nextMeasure": "Nästa takt",
+    "pause": "Pausa",
+    "play": "Spela",
+    "position": "Position",
+    "preparing": "Förbereder instrument {{percent}} %",
+    "preparingUnknown": "Förbereder instrument",
+    "previousMeasure": "Föregående takt",
+    "speed": "Uppspelningshastighet",
+    "speedMultiplier": "Uppspelningshastighet",
+    "stop": "Stopp",
+    "tempo": "Tempo",
+    "tempoBpm": "Tempo (BPM)",
+    "time": "Uppspelningstid",
+    "toggleLoop": "Loop",
+    "toggleMetronome": "Metronom",
+    "transport": "Uppspelningstransport",
+    "volume": "Vol"
+  },
+  "generationChoices": {
+    "heading": "Hur detta stycke genererades",
+    "hint": "Lås det du vill behålla och generera sedan igen: låsta val stannar, resten rullas på nytt.",
+    "lock": "Behåll {{name}}",
+    "groove": "Groove",
+    "cycle": "Ackord",
+    "arcEntry": "Inledning",
+    "arcIntensity": "Uppbyggnad",
+    "moment": "Ögonblick",
+    "carrier": "Melodi",
+    "formShape": "Form",
+    "hook": "Hook",
+    "lyric": "Sångtext",
+    "again": "Generera igen",
+    "againKeeping_one": "Generera igen, behåll 1 val",
+    "againKeeping_other": "Generera igen, behåll {{count}} val",
+    "confirmTitle": "Generera detta stycke igen?",
+    "confirmMessage": "Detta ersätter hela partituret med en ny generering. Ditt aktuella partitur behålls inte om du inte sparar en ögonblicksbild först.",
+    "confirm": "Generera igen"
+  },
+  "projectOrigin": {
+    "heading": "Ursprung",
+    "kind": {
+      "generated": "Genererat från en begäran",
+      "imported": "Importerat från en fil",
+      "transcribed": "Transkriberat från en inspelning",
+      "duplicated": "Kopierat från ett annat projekt",
+      "blank": "Startat från ett tomt partitur",
+      "unknown": "Inte registrerat"
+    },
+    "file": "Fil",
+    "format": "Format",
+    "sourceProject": "Källprojekt",
+    "sourceMissing": "Ett projekt som sedan har raderats",
+    "request": "Vad som efterfrågades",
+    "lineup": "Uppsättning",
+    "backend": "Backend",
+    "tempoValue": "{{bpm}} BPM",
+    "barsValue_one": "{{count}} takt",
+    "barsValue_other": "{{count}} takter",
+    "generatedOn": "Genererat den",
+    "modelUsed": "Modell som användes",
+    "tokens": "Tokens",
+    "tokensValue": "{{prompt}} in, {{completion}} ut",
+    "jobLoading": "Läser in genereringsbegäran…",
+    "jobMissing": "Jobbet som genererade detta projekt listas inte längre."
+  },
+  "home": {
+    "heroTitle": "Källkod för musik",
+    "heroBody": "{{appName}} är för musiker som vill ha kreativ kontroll, med AI som hjälp. Komponera, granska och redigera varje not i ett vanligt partitur.",
+    "featureEditorTitle": "Din musik, not för not",
+    "featureEditorBody": "Arbeta i vanlig notation och forma varje stämma själv. AI kan hjälpa dig komma igång; du förblir tonsättaren.",
+    "featureAiTitle": "AI som följer din ledning",
+    "featureAiBody": "Generera ett partitur eller omarbeta markerade takter, granska sedan och förfina noterna själv.",
+    "featureFormatsTitle": "Importera och exportera musik på ditt sätt",
+    "featureFormatsBody": "Importera ljudinspelningar (MP3, MPA, WAV), MIDI och MusicXML. Exportera MIDI, MusicXML, WAV och MP3."
+  },
+  "clef": {
+    "treble": "Diskant",
+    "bass": "Bas",
+    "alto": "Alt",
+    "tenor": "Tenor",
+    "percussion": "Slagverk"
+  },
+  "overlay": {
+    "openingProject": "Öppnar projekt…",
+    "transcribingNotes": "Transkriberar inspelningen…",
+    "progress": "{{stage}} {{done}} av {{total}}: {{label}}",
+    "reconnecting": "Återansluter…",
+    "polling": "Liveuppdateringar otillgängliga; kontrollerar projektet periodvis.",
+    "lockedWhileGenerating": "Redigering och uppspelning återupptas när det är klart.",
+    "stage": {
+      "plan": "Planerar",
+      "separate": "Separerar",
+      "part": "Stämma",
+      "section": "Parti",
+      "chunk": "Avsnitt"
+    }
+  },
+  "account": {
+    "nickname": "Smeknamn",
+    "nicknameHint": "Namnet du delar ögonblicksbilder under. Aldrig din e-postadress.",
+    "picture": "Profilbild",
+    "choosePicture": "Välj bild",
+    "removePicture": "Ta bort bild",
+    "pictureHint": "JPEG, PNG eller WebP. Den storleksändras innan den laddas upp.",
+    "pictureUnsupported": "Den filen kunde inte användas som bild.",
+    "saveFailed": "Kunde inte spara din profil.",
+    "signedInAs": "Inloggad som {{email}}",
+    "loadFailed": "Kunde inte läsa in detta. Försök igen senare."
+  },
+  "coupons": {
+    "code": "Kupongkod",
+    "redeem": "Lös in",
+    "redeemed": "{{credits}} krediter tillagda. Ditt saldo är {{balance}}.",
+    "redeemFailed": "Den kupongen kunde inte lösas in.",
+    "expires": "Utgångsdatum",
+    "expiresPlaceholder": "Går ut, som ÅÅÅÅ-MM-DD",
+    "email": "E-post, om den gäller ett konto",
+    "emailHint": "Med en e-post kan bara det kontot lösa in den.",
+    "create": "Skapa kupong",
+    "created": "Skapade {{code}}",
+    "createFailed": "Den kupongen kunde inte skapas.",
+    "none": "Inga kuponger ännu.",
+    "expiresOn": "Går ut {{date}}",
+    "redeemedCount": "Inlöst {{count}} gånger"
+  },
+  "apiKeys": {
+    "intro": "En nyckel agerar för din arbetsyta. Behandla en som ett lösenord.",
+    "name": "Nyckelnamn",
+    "create": "Skapa nyckel",
+    "newKey": "Din nya nyckel: {{name}}",
+    "copyNow": "Kopiera denna hemlighet nu. Den kan inte visas igen.",
+    "hide": "Dölj",
+    "none": "Inga API-nycklar ännu.",
+    "active": "Aktiv",
+    "revoked": "Återkallad",
+    "revoke": "Återkalla",
+    "revokeNamed": "Återkalla {{name}}",
+    "lastUsed": "Senast använd {{date}}",
+    "neverUsed": "Aldrig använd",
+    "unavailable": "Din arbetsyta är inte tillgänglig ännu.",
+    "failed": "Det fungerade inte. Försök igen."
+  },
+  "history": {
+    "noPurchases": "Inga köp ännu.",
+    "usage": "Användning",
+    "noUsage": "Inga krediter spenderade ännu.",
+    "loadMore": "Läs in fler",
+    "generation": "Generering"
+  },
+  "flag": {
+    "title": "Anmäl denna ögonblicksbild",
+    "hint": "Berätta varför du anmäler denna delade ögonblicksbild. En webbplatsadministratör granskar den.",
+    "reasonLabel": "Orsak",
+    "detailsLabel": "Detaljer",
+    "detailsPlaceholder": "Beskriv problemet",
+    "detailsRequired": "Lägg till några detaljer.",
+    "submit": "Skicka anmälan",
+    "submitting": "Skickar…",
+    "thanks": "Tack – din anmälan har skickats för granskning.",
+    "failed": "Kunde inte skicka din anmälan. Försök igen.",
+    "reject": "Avvisa",
+    "confirm": "Bekräfta",
+    "reviewHint": "Anmälningar som väntar på granskning. Avvisa för att avfärda, eller Bekräfta för att ta bort ögonblicksbilden från communityn.",
+    "reviewEmpty": "Inga anmälningar att granska.",
+    "reviewFailed": "Kunde inte läsa in anmälningar.",
+    "removedForReason": "Borttagen från community: {{reason}}",
+    "reason": {
+      "copyright": "Upphovsrättsintrång",
+      "offensive": "Stötande material",
+      "other": "Annat"
+    },
+    "status": {
+      "submitted": "Inskickad",
+      "rejected": "Avvisad",
+      "confirmed": "Bekräftad"
+    }
+  },
+  "privacy": {
+    "title": "Integritetspolicy",
+    "lastUpdated": "Senast uppdaterad: {{date}}",
+    "sections": {
+      "introduction": {
+        "title": "Introduktion",
+        "body": "Välkommen till {{appName}}. Vi respekterar din integritet och är engagerade i att skydda dina personuppgifter. Denna policy förklarar hur vi samlar in, använder och skyddar din information när du använder {{appName}} för att skriva, spela och dela musik."
+      },
+      "collection": {
+        "title": "Information vi samlar in",
+        "body": "Information du lämnar:\n• Kontoinformation (e-postadress, namn)\n• Dina partitur, arrangemang och projekt\n• Inställningar och preferenser\n• Betalningsinformation (säkert hanterad av vår betalningsleverantör)\n\nInformation som samlas in automatiskt:\n• Enhets- och appinformation\n• IP-adress och ungefärlig plats\n• Användningsmönster och analys\n• Prestanda- och tillförlitlighetsmått"
+      },
+      "usage": {
+        "title": "Hur vi använder din information",
+        "body": "Vi använder informationen vi samlar in för att:\n• Tillhandahålla och förbättra {{appName}} och dess funktioner för notation, uppspelning och generering\n• Lagra och synka dina projekt mellan dina enheter\n• Hantera krediter och betalningar\n• Skicka viktiga uppdateringar om tjänsten\n• Analysera användning för att förbättra appen"
+      },
+      "sharing": {
+        "title": "Delning av information",
+        "body": "Vi kan dela din information under dessa omständigheter:\n• Med tjänsteleverantörer som hjälper oss att verka\n• När det krävs enligt lag eller rättslig process\n• För att skydda våra rättigheter och vår säkerhet\n• Med ditt samtycke"
+      },
+      "security": {
+        "title": "Datasäkerhet",
+        "body": "Vi använder lämpliga skyddsåtgärder:\n• Kryptering av data under överföring och i vila\n• Regelbundna säkerhetsbedömningar\n• Åtkomstkontroller och autentisering\n• Säker molninfrastruktur"
+      },
+      "retention": {
+        "title": "Datalagring",
+        "body": "Vi behåller dina personuppgifter så länge ditt konto är aktivt eller så länge det behövs för att tillhandahålla tjänsten. Dina projekt lagras så att du kan återvända till dem mellan sessioner och enheter. Du kan begära radering av ditt konto och dess data när som helst."
+      },
+      "rights": {
+        "title": "Dina integritetsrättigheter",
+        "body": "Du har rätt att:\n• Få tillgång till dina personuppgifter\n• Korrigera felaktiga uppgifter\n• Begära radering av dina uppgifter\n• Exportera dina projekt\n• Avstå från marknadsföringsmeddelanden"
+      },
+      "cookies": {
+        "title": "Lokal lagring",
+        "body": "Vi använder nödvändig lagring på din enhet för att hålla dig inloggad, spara ditt arbete och komma ihåg dina inställningar. Vi använder inte tredjepartsspårning för annonsering."
+      },
+      "children": {
+        "title": "Barns integritet",
+        "body": "{{appName}} är avsedd för användare i alla åldrar. Vi samlar inte medvetet in personuppgifter från barn under 13 år utan föräldrarnas samtycke."
+      },
+      "transfers": {
+        "title": "Internationella dataöverföringar",
+        "body": "Din information kan överföras till och behandlas i andra länder än ditt eget. Vi vidtar lämpliga åtgärder för att skydda den när så sker."
+      },
+      "changes": {
+        "title": "Ändringar av denna policy",
+        "body": "Vi kan uppdatera denna integritetspolicy då och då. Vi lägger upp den nya policyn på denna sida och uppdaterar datumet ovan."
+      },
+      "language": {
+        "title": "Språk",
+        "body": "Detta dokument tillhandahålls på fler än ett språk för din bekvämlighet. Om den engelska versionen och en översättning skiljer sig åt gäller den engelska versionen."
+      }
+    },
+    "contact": {
+      "title": "Kontakta oss",
+      "body": "Om du har frågor om denna integritetspolicy, kontakta oss på {{email}} eller besök {{website}}."
+    }
+  },
+  "terms": {
+    "title": "Användarvillkor",
+    "lastUpdated": "Senast uppdaterad: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "Godkännande av villkor",
+        "body": "Genom att använda {{appName}} godkänner du dessa användarvillkor. Om du inte godkänner dem, använd inte tjänsten."
+      },
+      "service": {
+        "title": "Beskrivning av tjänsten",
+        "body": "{{appName}} är en app för att skriva, spela och dela musiknotation. Den erbjuder gratisfunktioner och betalda krediter för funktioner som AI-assisterad generering."
+      },
+      "accounts": {
+        "title": "Användarkonton",
+        "body": "När du skapar ett konto godkänner du att:\n• Lämna korrekt och fullständig information\n• Hålla dina kontouppgifter säkra\n• Ta ansvar för aktivitet under ditt konto\n• Omgående meddela oss om obehörig åtkomst"
+      },
+      "usage": {
+        "title": "Acceptabel användning",
+        "body": "När du använder {{appName}} godkänner du att inte:\n• Komma åt betalda funktioner utan att betala för dem\n• Använda bottar eller automatiserade system mot tjänsten\n• Dekonstruera eller extrahera källkoden\n• Dela dina kontouppgifter med andra\n• Störa eller avbryta tjänsten"
+      },
+      "payments": {
+        "title": "Krediter och betalningar",
+        "body": "Vissa funktioner betalas med krediter. Köp hanteras genom appbutiken enligt dess policyer. Krediter förbrukas allteftersom dessa funktioner används."
+      },
+      "ip": {
+        "title": "Immateriella rättigheter",
+        "body": "{{appName}} och dess ursprungliga innehåll, funktioner och design ägs av {{companyName}} och skyddas av internationella upphovsrätts- och varumärkeslagar. Musiken du skapar förblir din."
+      },
+      "liability": {
+        "title": "Ansvarsbegränsning",
+        "body": "{{appName}} tillhandahålls \"i befintligt skick\" utan garantier av något slag. Vi ansvarar inte för några indirekta, tillfälliga, särskilda, följd- eller bestraffande skador som uppstår genom din användning av tjänsten."
+      },
+      "termination": {
+        "title": "Uppsägning",
+        "body": "Vi kan stänga av eller avsluta ditt konto vid överträdelser av dessa villkor. Vid uppsägning upphör din rätt att använda tjänsten. Du kan radera ditt konto när som helst."
+      },
+      "changes": {
+        "title": "Ändringar av dessa villkor",
+        "body": "Vi kan ändra dessa villkor då och då. Vi meddelar dig om väsentliga ändringar genom appen. Att fortsätta använda {{appName}} efter en ändring innebär att du godkänner de nya villkoren."
+      },
+      "language": {
+        "title": "Språk",
+        "body": "Detta dokument tillhandahålls på fler än ett språk för din bekvämlighet. Om den engelska versionen och en översättning skiljer sig åt gäller den engelska versionen."
+      }
+    },
+    "contact": {
+      "title": "Kontakta oss",
+      "body": "För frågor om dessa användarvillkor, kontakta oss på {{email}} eller besök {{website}}."
+    }
+  }
+}
