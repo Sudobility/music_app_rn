@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Slut på krediter",
     "purchaseElsewhere": "Krediter köps i webbappen.",
     "rate": "En kredit per takt, per instrument.",
-    "viewCredits": "Visa krediter"
+    "viewCredits": "Visa krediter",
+    "title": "Krediter"
   },
   "dashboard": {
     "create": "Skapa",
@@ -1697,7 +1698,15 @@
     "usage": "Användning",
     "noUsage": "Inga krediter spenderade ännu.",
     "loadMore": "Läs in fler",
-    "generation": "Generering"
+    "generation": "Generering",
+    "amount": "Belopp",
+    "date": "Datum",
+    "package": "Paket",
+    "source": "Källa",
+    "sourceApple": "App Store",
+    "sourceFree": "Gratis",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Webb"
   },
   "flag": {
     "title": "Anmäl denna ögonblicksbild",

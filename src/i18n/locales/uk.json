@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Кредити закінчилися",
     "purchaseElsewhere": "Кредити купуються у вебзастосунку.",
     "rate": "Один кредит за такт, за інструмент.",
-    "viewCredits": "Переглянути кредити"
+    "viewCredits": "Переглянути кредити",
+    "title": "Кредити"
   },
   "dashboard": {
     "create": "Створити",
@@ -1697,7 +1698,15 @@
     "usage": "Використання",
     "noUsage": "Поки що не витрачено кредитів.",
     "loadMore": "Завантажити ще",
-    "generation": "Генерація"
+    "generation": "Генерація",
+    "amount": "Сума",
+    "date": "Дата",
+    "package": "Пакет",
+    "source": "Джерело",
+    "sourceApple": "App Store",
+    "sourceFree": "Безкоштовно",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Веб"
   },
   "flag": {
     "title": "Поскаржитися на цей знімок",

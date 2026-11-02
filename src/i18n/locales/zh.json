@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "积分不足",
     "purchaseElsewhere": "点数请在网页版购买。",
     "rate": "每小节每件乐器消耗一点。",
-    "viewCredits": "查看积分"
+    "viewCredits": "查看积分",
+    "title": "点数"
   },
   "dashboard": {
     "create": "创建",
@@ -1697,7 +1698,15 @@
     "usage": "使用记录",
     "noUsage": "还没有消耗点数。",
     "loadMore": "加载更多",
-    "generation": "生成"
+    "generation": "生成",
+    "amount": "金额",
+    "date": "日期",
+    "package": "套餐",
+    "source": "来源",
+    "sourceApple": "App Store",
+    "sourceFree": "赠送",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "网页"
   },
   "flag": {
     "title": "举报此乐谱",

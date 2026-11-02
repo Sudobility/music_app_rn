@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "クレジットがありません",
     "purchaseElsewhere": "クレジットはウェブアプリで購入します。",
     "rate": "1 小節につき、1 楽器につき 1 クレジット。",
-    "viewCredits": "クレジットを見る"
+    "viewCredits": "クレジットを見る",
+    "title": "クレジット"
   },
   "dashboard": {
     "create": "作成",
@@ -1697,7 +1698,15 @@
     "usage": "使用状況",
     "noUsage": "まだクレジットは使われていません。",
     "loadMore": "もっと読み込む",
-    "generation": "生成"
+    "generation": "生成",
+    "amount": "金額",
+    "date": "日付",
+    "package": "パッケージ",
+    "source": "ソース",
+    "sourceApple": "App Store",
+    "sourceFree": "無料",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "ウェブ"
   },
   "flag": {
     "title": "このスナップショットを通報",

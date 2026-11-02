@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Out of credits",
     "purchaseElsewhere": "Credits are purchased on the web app.",
     "rate": "One credit per bar, per instrument.",
-    "viewCredits": "View credits"
+    "viewCredits": "View credits",
+    "title": "Credits"
   },
   "dashboard": {
     "create": "Create",
@@ -1697,7 +1698,15 @@
     "usage": "Usage",
     "noUsage": "No credits spent yet.",
     "loadMore": "Load more",
-    "generation": "Generation"
+    "generation": "Generation",
+    "amount": "Amount",
+    "date": "Date",
+    "package": "Package",
+    "source": "Source",
+    "sourceApple": "App Store",
+    "sourceFree": "Free",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Web"
   },
   "flag": {
     "title": "Report this snapshot",

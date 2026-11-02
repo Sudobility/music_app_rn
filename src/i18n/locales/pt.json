@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Sem créditos",
     "purchaseElsewhere": "Os créditos são comprados no aplicativo web.",
     "rate": "Um crédito por compasso, por instrumento.",
-    "viewCredits": "Ver créditos"
+    "viewCredits": "Ver créditos",
+    "title": "Créditos"
   },
   "dashboard": {
     "create": "Criar",
@@ -1697,7 +1698,15 @@
     "usage": "Uso",
     "noUsage": "Nenhum crédito gasto ainda.",
     "loadMore": "Carregar mais",
-    "generation": "Geração"
+    "generation": "Geração",
+    "amount": "Quantia",
+    "date": "Data",
+    "package": "Pacote",
+    "source": "Origem",
+    "sourceApple": "App Store",
+    "sourceFree": "Grátis",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Web"
   },
   "flag": {
     "title": "Denunciar este instantâneo",

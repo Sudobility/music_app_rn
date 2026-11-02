@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "크레딧 부족",
     "purchaseElsewhere": "크레딧은 웹 앱에서 구매합니다.",
     "rate": "마디당, 악기당 크레딧 1개.",
-    "viewCredits": "크레딧 보기"
+    "viewCredits": "크레딧 보기",
+    "title": "크레딧"
   },
   "dashboard": {
     "create": "만들기",
@@ -1697,7 +1698,15 @@
     "usage": "사용",
     "noUsage": "아직 사용한 크레딧이 없습니다.",
     "loadMore": "더 보기",
-    "generation": "생성"
+    "generation": "생성",
+    "amount": "금액",
+    "date": "날짜",
+    "package": "패키지",
+    "source": "출처",
+    "sourceApple": "App Store",
+    "sourceFree": "무료",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "웹"
   },
   "flag": {
     "title": "이 스냅샷 신고",

@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Plus de crédits",
     "purchaseElsewhere": "Les crédits s'achètent sur l'application web.",
     "rate": "Un crédit par mesure, par instrument.",
-    "viewCredits": "Voir les crédits"
+    "viewCredits": "Voir les crédits",
+    "title": "Crédits"
   },
   "dashboard": {
     "create": "Créer",
@@ -1697,7 +1698,15 @@
     "usage": "Utilisation",
     "noUsage": "Aucun crédit dépensé pour l'instant.",
     "loadMore": "Charger plus",
-    "generation": "Génération"
+    "generation": "Génération",
+    "amount": "Montant",
+    "date": "Date",
+    "package": "Pack",
+    "source": "Source",
+    "sourceApple": "App Store",
+    "sourceFree": "Gratuit",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Web"
   },
   "flag": {
     "title": "Signaler cet instantané",

@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Keine Credits mehr",
     "purchaseElsewhere": "Credits werden in der Web-App gekauft.",
     "rate": "Ein Credit pro Takt, pro Instrument.",
-    "viewCredits": "Credits ansehen"
+    "viewCredits": "Credits ansehen",
+    "title": "Credits"
   },
   "dashboard": {
     "create": "Erstellen",
@@ -1697,7 +1698,15 @@
     "usage": "Nutzung",
     "noUsage": "Noch keine Credits ausgegeben.",
     "loadMore": "Mehr laden",
-    "generation": "Erzeugung"
+    "generation": "Erzeugung",
+    "amount": "Betrag",
+    "date": "Datum",
+    "package": "Paket",
+    "source": "Quelle",
+    "sourceApple": "App Store",
+    "sourceFree": "Kostenlos",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Web"
   },
   "flag": {
     "title": "Diesen Schnappschuss melden",

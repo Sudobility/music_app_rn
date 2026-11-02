@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Hết tín dụng",
     "purchaseElsewhere": "Tín dụng được mua trên ứng dụng web.",
     "rate": "Một tín dụng cho mỗi ô nhịp, mỗi nhạc cụ.",
-    "viewCredits": "Xem tín dụng"
+    "viewCredits": "Xem tín dụng",
+    "title": "Tín dụng"
   },
   "dashboard": {
     "create": "Tạo",
@@ -1697,7 +1698,15 @@
     "usage": "Sử dụng",
     "noUsage": "Chưa tiêu tín dụng nào.",
     "loadMore": "Tải thêm",
-    "generation": "Tạo nhạc"
+    "generation": "Tạo nhạc",
+    "amount": "Số lượng",
+    "date": "Ngày",
+    "package": "Gói",
+    "source": "Nguồn",
+    "sourceApple": "App Store",
+    "sourceFree": "Miễn phí",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Web"
   },
   "flag": {
     "title": "Báo cáo ảnh chụp này",

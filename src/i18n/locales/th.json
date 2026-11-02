@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "เครดิตหมด",
     "purchaseElsewhere": "เครดิตถูกซื้อบนเว็บแอป",
     "rate": "หนึ่งเครดิตต่อหนึ่งห้อง ต่อหนึ่งเครื่องดนตรี",
-    "viewCredits": "ดูเครดิต"
+    "viewCredits": "ดูเครดิต",
+    "title": "เครดิต"
   },
   "dashboard": {
     "create": "สร้าง",
@@ -1697,7 +1698,15 @@
     "usage": "การใช้งาน",
     "noUsage": "ยังไม่ได้ใช้เครดิต",
     "loadMore": "โหลดเพิ่ม",
-    "generation": "การสร้าง"
+    "generation": "การสร้าง",
+    "amount": "จำนวน",
+    "date": "วันที่",
+    "package": "แพ็กเกจ",
+    "source": "แหล่งที่มา",
+    "sourceApple": "App Store",
+    "sourceFree": "ฟรี",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "เว็บ"
   },
   "flag": {
     "title": "รายงานสแนปช็อตนี้",

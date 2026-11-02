@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "積分不足",
     "purchaseElsewhere": "點數請在網頁版購買。",
     "rate": "每小節每件樂器消耗一點。",
-    "viewCredits": "檢視積分"
+    "viewCredits": "檢視積分",
+    "title": "點數"
   },
   "dashboard": {
     "create": "建立",
@@ -1697,7 +1698,15 @@
     "usage": "使用記錄",
     "noUsage": "還沒有消耗點數。",
     "loadMore": "載入更多",
-    "generation": "生成"
+    "generation": "生成",
+    "amount": "金額",
+    "date": "日期",
+    "package": "套餐",
+    "source": "來源",
+    "sourceApple": "App Store",
+    "sourceFree": "贈送",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "網頁"
   },
   "flag": {
     "title": "舉報此樂譜",

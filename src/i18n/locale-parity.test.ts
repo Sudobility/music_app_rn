@@ -36,6 +36,10 @@ const SHARED_BY_DESIGN = new Set([
   'editor.musicXml',
   // A paper size's name; the web's locale lists it as shared by design too.
   'print.paperA4',
+  // Credit-history source labels for the app stores are proper nouns, left
+  // untranslated — the web app lists these same two as shared by design.
+  'history.sourceApple',
+  'history.sourceGoogle',
   // The language picker's own labels are each language's native name, shown the
   // same whatever the UI language — a reader looking for their language is not
   // scanning for the Chinese word for it. Most carry no CJK by nature

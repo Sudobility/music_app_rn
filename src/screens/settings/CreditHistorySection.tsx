@@ -5,14 +5,22 @@
  * `consumables_client` offers for this read a store singleton that only a
  * purchase adapter initialises, and this app has none. A page at a time, with
  * more asked for rather than fetched up front.
+ *
+ * The rows are drawn by `@sudobility/consumables_pages_rn`'s presentational
+ * `PurchaseHistoryPage` / `UsageHistoryPage` — the RN mirror of the web's
+ * history — so the two platforms render the same ledger. Those components take
+ * the rows and the copy; the fetching and pagination stay here, on the API
+ * client, which needs no purchase SDK.
  */
 import { useCallback, useEffect, useState } from 'react';
-import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { Button, Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
+import {
+  PurchaseHistoryPage,
+  UsageHistoryPage,
+} from '@sudobility/consumables_pages_rn';
 import type {
   ConsumablePurchaseRecord,
+  ConsumableSource,
   ConsumableUsageRecord,
 } from '@sudobility/types';
 import { useAuth } from '@/auth/AuthContext';
@@ -78,106 +86,63 @@ export function CreditHistorySection() {
     );
   }
 
+  // Unknown dates pass through unchanged rather than becoming "Invalid Date".
+  const formatDate = (value: string): string => {
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? value : date.toLocaleString();
+  };
+
+  const sources: Record<string, string> = {
+    web: t('history.sourceWeb', 'Web'),
+    apple: t('history.sourceApple', 'Apple'),
+    google: t('history.sourceGoogle', 'Google'),
+    free: t('history.sourceFree', 'Free'),
+  };
+
   return (
     <ScreenScaffold>
-      <History
-        title={t('nav.purchases')}
-        empty={t('history.noPurchases')}
-        state={purchases}
-        render={row => (
-          <Row
-            key={row.id}
-            label={row.product_id ?? row.source}
-            date={row.created_at}
-            amount={`+${row.credits}`}
-          />
-        )}
+      <PurchaseHistoryPage
+        purchases={purchases.rows}
+        isLoading={purchases.loading && purchases.rows.length === 0}
+        error={purchases.failed ? t('account.loadFailed') : null}
+        onLoadMore={() => purchases.fetchFrom(purchases.rows.length)}
+        hasMore={purchases.more}
+        labels={{
+          title: t('nav.purchases'),
+          columnDate: t('history.date', 'Date'),
+          columnCredits: t('credits.title', 'Credits'),
+          columnSource: t('history.source', 'Source'),
+          columnProduct: t('history.package', 'Product'),
+          columnAmount: t('history.amount', 'Amount'),
+          noRecords: t('history.noPurchases'),
+          loadMore: t('history.loadMore'),
+        }}
+        formatters={{
+          formatDate,
+          formatAmount: (cents, currency) =>
+            new Intl.NumberFormat(undefined, {
+              style: 'currency',
+              currency,
+            }).format(cents / 100),
+          formatSource: (source: ConsumableSource) => sources[source] ?? source,
+        }}
       />
-      <History
-        title={t('history.usage')}
-        empty={t('history.noUsage')}
-        state={usage}
-        render={row => (
-          <Row
-            key={row.id}
-            label={row.reference ?? row.filename ?? t('history.generation')}
-            date={row.created_at}
-            // Absent is one credit, not none: rows written before amounts
-            // varied carry no number.
-            amount={`−${row.credits ?? 1}`}
-          />
-        )}
+      <UsageHistoryPage
+        usages={usage.rows}
+        isLoading={usage.loading && usage.rows.length === 0}
+        error={usage.failed ? t('account.loadFailed') : null}
+        onLoadMore={() => usage.fetchFrom(usage.rows.length)}
+        hasMore={usage.more}
+        labels={{
+          title: t('history.usage'),
+          columnDate: t('history.date', 'Date'),
+          columnFilename: t('history.generation'),
+          columnCredits: t('credits.title', 'Credits'),
+          noRecords: t('history.noUsage'),
+          loadMore: t('history.loadMore'),
+        }}
+        formatters={{ formatDate }}
       />
     </ScreenScaffold>
-  );
-}
-
-function History<T>({
-  title,
-  empty,
-  state,
-  render,
-}: {
-  title: string;
-  empty: string;
-  state: ReturnType<typeof usePages<T>>;
-  render: (row: T) => React.ReactNode;
-}) {
-  const { t } = useTranslation();
-  return (
-    <View className="gap-1">
-      <Text className="text-muted-foreground text-sm font-semibold uppercase">
-        {title}
-      </Text>
-      {state.rows.map(render)}
-      {/* The first page has no control to spin; a later one is the Load
-          more button's own wait. */}
-      {state.loading && state.rows.length === 0 ? (
-        <View className="items-center py-3">
-          <Spinner />
-        </View>
-      ) : null}
-      {state.failed ? (
-        <Text className="text-destructive text-base">
-          {t('account.loadFailed')}
-        </Text>
-      ) : null}
-      {!state.loading && !state.failed && state.rows.length === 0 ? (
-        <Text className="text-muted-foreground py-2 text-base">{empty}</Text>
-      ) : null}
-      {state.more ? (
-        <Button
-          variant="outline"
-          loading={state.loading}
-          onPress={() => state.fetchFrom(state.rows.length)}
-        >
-          {t('history.loadMore')}
-        </Button>
-      ) : null}
-    </View>
-  );
-}
-
-function Row({
-  label,
-  date,
-  amount,
-}: {
-  label: string;
-  date: string;
-  amount: string;
-}) {
-  return (
-    <View className="border-border/50 flex-row items-center justify-between gap-3 border-b py-2">
-      <View className="flex-1">
-        <Text className="text-foreground text-base" numberOfLines={1}>
-          {label}
-        </Text>
-        <Text className="text-muted-foreground text-sm">
-          {new Date(date).toLocaleString()}
-        </Text>
-      </View>
-      <Text className="text-foreground text-base tabular-nums">{amount}</Text>
-    </View>
   );
 }

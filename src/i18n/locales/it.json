@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Crediti esauriti",
     "purchaseElsewhere": "I crediti si acquistano nell'app web.",
     "rate": "Un credito per battuta, per strumento.",
-    "viewCredits": "Vedi crediti"
+    "viewCredits": "Vedi crediti",
+    "title": "Crediti"
   },
   "dashboard": {
     "create": "Crea",
@@ -1697,7 +1698,15 @@
     "usage": "Utilizzo",
     "noUsage": "Ancora nessun credito speso.",
     "loadMore": "Carica altro",
-    "generation": "Generazione"
+    "generation": "Generazione",
+    "amount": "Importo",
+    "date": "Data",
+    "package": "Pacchetto",
+    "source": "Origine",
+    "sourceApple": "App Store",
+    "sourceFree": "Gratuito",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Web"
   },
   "flag": {
     "title": "Segnala questa istantanea",

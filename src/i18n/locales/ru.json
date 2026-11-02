@@ -120,7 +120,8 @@
     "outOfCreditsTitle": "Кредиты закончились",
     "purchaseElsewhere": "Кредиты покупаются в веб-приложении.",
     "rate": "Один кредит за такт, за инструмент.",
-    "viewCredits": "Просмотреть кредиты"
+    "viewCredits": "Просмотреть кредиты",
+    "title": "Кредиты"
   },
   "dashboard": {
     "create": "Создать",
@@ -1697,7 +1698,15 @@
     "usage": "Использование",
     "noUsage": "Кредиты ещё не тратились.",
     "loadMore": "Загрузить ещё",
-    "generation": "Генерация"
+    "generation": "Генерация",
+    "amount": "Сумма",
+    "date": "Дата",
+    "package": "Пакет",
+    "source": "Источник",
+    "sourceApple": "App Store",
+    "sourceFree": "Бесплатно",
+    "sourceGoogle": "Google Play",
+    "sourceWeb": "Веб"
   },
   "flag": {
     "title": "Пожаловаться на этот снимок",
