@@ -17,6 +17,10 @@ import {
   type NewProjectAccount,
   type NewProjectSubmission,
 } from '@/features/projects/useNewProjectForm';
+import {
+  useDetailScroll,
+  AboveTabBar,
+} from '@/components/layout/detail-safe-area';
 
 export type NewPaneProps = {
   account: NewProjectAccount;
@@ -35,41 +39,51 @@ export function NewPane({
   const { t } = useTranslation();
   const newProject = useNewProjectForm({ submitting, account, onSubmit });
   const { form, dispatch, canCreate, handleCreate } = newProject;
+  // The form scrolls (full-bleed + scroll inset + safe-area sides); the Create
+  // bar below it does not, so it is laid out inside the tab content's safe area
+  // (`AboveTabBar`) and stops above the bar rather than running behind it.
+  const body = useDetailScroll({ gap: 12 });
 
   return (
-    <View className="flex-1">
-      <ScrollView
-        className="flex-1"
-        contentContainerClassName="gap-3 p-6"
-        accessibilityLabel={t('newProject.title')}
-      >
-        <ScoreSetupFields
-          draft={form}
-          dispatch={dispatch}
-          generateToggle={
-            <GenerateToggle
-              form={newProject}
-              {...(onOpenCredits ? { onOpenCredits } : {})}
-            />
-          }
-        />
-      </ScrollView>
-
-      {/*
-        Sticky footer, outside the ScrollView — the same shape `FormModal`'s
-        own `actions` footer gives every sheet-based form (Create pinned below
-        scrollable content, never scrolling away with it). This inline pane
-        has no `FormModal` to borrow that from, so it repeats the shape here.
-      */}
-      <View className="border-border border-t px-6 py-4">
-        <Button
-          onPress={handleCreate}
-          disabled={!canCreate}
-          loading={submitting}
+    // The whole pane sits inside the tab content's safe area, so its bottom is
+    // the top of the tab bar: the form scrolls above the pinned Create bar, and
+    // the bar stops above the tab bar rather than behind it. `AboveTabBar` is a
+    // flex-1 view (react-native-screens' own), so it wraps the flex-1 pane, not
+    // the footer row alone.
+    <AboveTabBar>
+      <View className="flex-1">
+        <ScrollView
+          {...body}
+          className="flex-1"
+          accessibilityLabel={t('newProject.title')}
         >
-          {t('dashboard.create')}
-        </Button>
+          <ScoreSetupFields
+            draft={form}
+            dispatch={dispatch}
+            generateToggle={
+              <GenerateToggle
+                form={newProject}
+                {...(onOpenCredits ? { onOpenCredits } : {})}
+              />
+            }
+          />
+        </ScrollView>
+
+        {/*
+          Sticky footer, outside the ScrollView — the same shape `FormModal`'s
+          own `actions` footer gives every sheet-based form (Create pinned below
+          scrollable content, never scrolling away with it).
+        */}
+        <View className="bg-background border-border border-t px-6 py-4">
+          <Button
+            onPress={handleCreate}
+            disabled={!canCreate}
+            loading={submitting}
+          >
+            {t('dashboard.create')}
+          </Button>
+        </View>
       </View>
-    </View>
+    </AboveTabBar>
   );
 }

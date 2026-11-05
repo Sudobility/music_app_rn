@@ -9,7 +9,7 @@
  * My Projects rather than a pane that no longer applies to them.
  */
 import { useTranslation } from 'react-i18next';
-import { SplitMenuList } from '@/components/layout/SplitViewContainer';
+import { SplitMenuList } from '@sudobility/components-rn';
 import type { PaneKey } from './paneKey';
 
 export type ProjectsSidebarProps = {

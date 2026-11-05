@@ -195,10 +195,6 @@ describe('controls come from the library', () => {
       "The split view's list rows (`SplitMenuList`).",
     ],
     [
-      'src/app/DesktopTabBar.tsx',
-      "The desktop window's tab bar, drawn in-app where there is no system bar to hand the tabs to.",
-    ],
-    [
       'src/components/layout/ScreenBackBar.macos.tsx',
       'The back control the macOS navigator does not draw.',
     ],

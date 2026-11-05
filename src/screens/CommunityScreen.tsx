@@ -99,6 +99,12 @@ type CommunityNavigation = {
     (route: 'Resources'): void;
     (route: 'Published', params: { publicId: string }): void;
   };
+  /**
+   * React Navigation's focus event. The list is refetched on it, so a
+   * snapshot published elsewhere shows on returning to this tab — see the
+   * load effect.
+   */
+  addListener: (type: 'focus', callback: () => void) => () => void;
 };
 
 export function CommunityScreen({ navigation }: CommunityScreenProps) {
@@ -163,9 +169,23 @@ function CommunityList({ navigation }: { navigation: CommunityNavigation }) {
     }
   }, [client]);
 
+  /*
+    Load on mount, and again whenever this screen is focused. The web page
+    refetches on every visit because each navigation remounts the route; under
+    a tab bar this screen stays mounted, so a mount-only effect never saw a
+    snapshot published since it first loaded — the reader had to kill the app.
+    `navigation` is the app navigator (passed as a prop: the bar's own
+    navigator would answer only for its one panel screen, which never blurs),
+    so its `focus` event fires on a real tab change and on returning from the
+    editor. `load` keeps the list on screen while it refetches, so there is no
+    spinner flash on a focus.
+  */
   useEffect(() => {
     void load();
-  }, [load]);
+    return navigation.addListener('focus', () => {
+      void load();
+    });
+  }, [load, navigation]);
 
   if (!client) {
     return (

@@ -38,10 +38,10 @@ import {
 } from '@/features/projects/useServerProjectCreation';
 import { useAuth } from '@/auth/AuthContext';
 import { useServerContext } from '@/config/useServerContext';
-import {
-  SplitPanel,
-  SplitViewContainer,
-} from '@/components/layout/SplitViewContainer';
+import { SplitViewContainer } from '@sudobility/components-rn';
+import { EmbeddedScreen } from '@/components/layout/EmbeddedScreen';
+import { useNavigationTheme } from '@/app/useNavigationTheme';
+import { usePrimaryPanelWidth } from '@/components/layout/SplitViewContainer';
 import { SignInPage } from '@/features/account/SignInPage';
 import { useSingleDocumentGuard } from '@/features/documents/useSingleDocumentGuard';
 import { ProjectsSidebar, paneLabelKey } from './ProjectsSidebar';
@@ -92,6 +92,8 @@ export function ProjectsSplitView({
   collapsible = false,
 }: ProjectsSplitViewProps) {
   const { t } = useTranslation();
+  const navTheme = useNavigationTheme();
+  const masterWidth = usePrimaryPanelWidth();
   const { user } = useAuth();
   const serverContext = useServerContext();
   const list = useDocumentList();
@@ -237,18 +239,30 @@ export function ProjectsSplitView({
     <>
       <SplitViewContainer
         collapsible={collapsible}
-        primaryPanel={
-          <SplitPanel title={t('nav.projects')}>
-            <ProjectsSidebar
-              selected={selected}
-              signedIn={signedIn}
-              showOpen={offersOpen}
-              onSelect={setSelected}
-            />
-          </SplitPanel>
+        masterWidth={masterWidth}
+        // Kept low so Projects splits wherever a sidebar and a usable pane fit —
+        // an iPad, and the iPhone Duo unfolded — and drills in only on a narrow
+        // phone or the folded cover screen. Once split, the pane gets all the
+        // real width (measured − sidebar); this is only the threshold. Opening a
+        // project leaves this for the full-screen editor, which is a navigation
+        // push, not a detail here.
+        detailMinWidth={280}
+        navigationTheme={navTheme}
+        masterTitle={t('nav.projects')}
+        detailTitle={t(paneLabelKey(selected))}
+        master={
+          <ProjectsSidebar
+            selected={selected}
+            signedIn={signedIn}
+            showOpen={offersOpen}
+            onSelect={setSelected}
+          />
         }
-        secondaryPanel={
-          <SplitPanel secondary title={t(paneLabelKey(selected))}>
+        detail={
+          // A pane: the back bar stands down, and the split view clears the
+          // pane's own side safe area (right beside the list, both when drilled
+          // in), so the panes do not clear theirs again.
+          <EmbeddedScreen>
             {selected === 'connect' ? (
               // Connect is where a reader goes in order to sign in, so it is
               // the page (`LoginPage`), which brings its own scrolling.
@@ -281,7 +295,7 @@ export function ProjectsSplitView({
                 }}
               />
             ) : null}
-          </SplitPanel>
+          </EmbeddedScreen>
         }
       />
       {prompt}

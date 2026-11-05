@@ -30,7 +30,7 @@ import {
   NavigationContainer,
   NavigationIndependentTree,
 } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { hasTopTabBar } from '@/app/tab-bar';
 import { useNavigationTheme } from '@/app/useNavigationTheme';
 import {
@@ -161,9 +161,13 @@ export function TitledScreen({
 }) {
   if (!hasPanelBar()) return <>{children}</>;
   return (
-    <TopClearance>
+    // The bar's own red behind it, full-bleed: the native bar reserves the
+    // status-bar space itself, and the strip it leaves above its opaque
+    // background shows this red rather than the app background as a band. So
+    // nothing clears the top here — the platform does.
+    <View className="bg-primary flex-1">
       <PanelBar title={title}>{children}</PanelBar>
-    </TopClearance>
+    </View>
   );
 }
 
@@ -260,33 +264,14 @@ function DetailChrome({ children }: { children: ReactNode }) {
 
 type PanelParamList = { Panel: undefined };
 /*
-  The plain stack on every platform, not `createAppStackNavigator`'s native
-  one. A native bar is laid out against the *window*: under an iPad's tab
-  bar, which floats across the top, each panel's bar stretched up beneath it
-  to twice its height. A panel is one screen that never pushes, so there is
-  no transition for a native stack to have done better.
+  The platform's own navigation stack, so each bar is the system's — its
+  height, the status-bar space above it and the centred title are the OS's,
+  not computed here. One screen that never pushes; the bar is drawn for its
+  title alone. The surface behind it is painted the bar's own red
+  (`TitledScreen`), so the strip the native bar leaves above its opaque
+  background reads as one red top rather than the app background as a band.
 */
-const PanelStack = createStackNavigator<PanelParamList>();
-
-/**
- * A panel's bar, as tall as the platform's own: Material's top app bar, an
- * iPad's navigation bar, an iPhone's.
- *
- * **Stated, because the navigator's own answer is a guess from the panel's
- * shape.** It draws a short bar for a view wider than it is tall and a
- * taller one otherwise — a rule about a phone turned on its side, asked of
- * a panel. The list on a phone is about as wide as it is tall, so the
- * answer changed with every layout, each answer changing the layout that
- * was measured for the next: the list's bar jumped between the two heights
- * without stopping, and the list under it jumped with it.
- */
-function panelBarHeight(formFactor: ReturnType<typeof useFormFactor>): number {
-  // Material's top app bar is 64 on a tablet and 48 on a phone held on its
-  // side, which is the only way this app holds one. 64 over a phone's row
-  // of content was a fifth of the screen.
-  if (Platform.OS === 'android') return formFactor === 'phone' ? 48 : 64;
-  return (Platform as { isPad?: boolean }).isPad ? 50 : 44;
-}
+const PanelStack = createNativeStackNavigator<PanelParamList>();
 
 /**
  * Whether a panel draws a navigation bar: where the system's tab bar is
@@ -336,7 +321,6 @@ function PanelBar({
 }) {
   const theme = useNavigationTheme();
   const ink = useNotationInk();
-  const formFactor = useFormFactor();
   const { t } = useTranslation();
   return (
     <NavigationIndependentTree>
@@ -344,9 +328,10 @@ function PanelBar({
         <PanelStack.Navigator
           screenOptions={{
             headerShown: true,
-            // The top of the screen has already been cleared.
-            headerStatusBarHeight: 0,
-            headerStyle: { height: panelBarHeight(formFactor) },
+            // The platform's own bar: its height and the status-bar space
+            // above it are the system's, and the title sits centred as iOS's
+            // own navigation bar has it.
+            headerTitleAlign: 'center',
           }}
         >
           <PanelStack.Screen

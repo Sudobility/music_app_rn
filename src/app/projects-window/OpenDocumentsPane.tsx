@@ -17,6 +17,7 @@ import { Text } from '@sudobility/components-rn';
 import { PressableCard } from '@/components/controls/PressableCard';
 import { useDocuments } from '@/documents/DocumentsContext';
 import type { MusicDocument } from '@/documents/document';
+import { useDetailScroll } from '@/components/layout/detail-safe-area';
 
 export type OpenDocumentsPaneProps = {
   onOpen: (document: MusicDocument) => void;
@@ -25,13 +26,15 @@ export type OpenDocumentsPaneProps = {
 export function OpenDocumentsPane({ onOpen }: OpenDocumentsPaneProps) {
   const { t } = useTranslation();
   const { documents } = useDocuments();
+  // Vertically scrollable: full-bleed with a scroll inset and safe-area sides.
+  const detail = useDetailScroll({ gap: 8 });
 
   return (
     <FlatList
+      {...detail}
       data={documents}
       keyExtractor={(document: MusicDocument) => document.id}
       accessibilityLabel={t('dashboard.openDocuments')}
-      contentContainerClassName="gap-2 p-6"
       renderItem={({ item }: { item: MusicDocument }) => (
         <OpenDocumentRow document={item} onOpen={() => onOpen(item)} />
       )}

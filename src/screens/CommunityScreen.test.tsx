@@ -28,7 +28,19 @@ jest.mock('@/config/server', () => {
 });
 // The app's navigator is a prop, not a hook: the screen's bar is a navigator
 // of its own, and mocking the hook would take that one's header with it.
-const navigation = { navigate: jest.fn() } as never;
+// `addListener` captures the screen's `focus` subscriptions so a test can fire
+// one — the list refetches on focus, which is how a just-published snapshot
+// reaches a tab that never unmounts.
+let focusListeners: Array<() => void> = [];
+const navigation = {
+  navigate: jest.fn(),
+  addListener: (_type: 'focus', callback: () => void) => {
+    focusListeners.push(callback);
+    return () => {
+      focusListeners = focusListeners.filter(listener => listener !== callback);
+    };
+  },
+} as never;
 
 function item(patch: Partial<CommunityItem>): CommunityItem {
   return {
@@ -49,6 +61,14 @@ async function render() {
 }
 
 describe('CommunityScreen', () => {
+  beforeEach(() => {
+    // Call counts and focus subscriptions are asserted below, and this suite
+    // has no auto-clear: each test sets its own resolved value, so a reset
+    // costs nothing and keeps the counts honest.
+    mockListCommunity.mockReset();
+    focusListeners = [];
+  });
+
   it('holds its content to the width of a page, centred', async () => {
     mockListCommunity.mockResolvedValue([item({})]);
     const view = await render();
@@ -122,5 +142,27 @@ describe('CommunityScreen', () => {
     const view = await render();
     expect(view.queryByText('offline')).toBeNull();
     expect(view.getByText(/could not|couldn't|failed/i)).toBeTruthy();
+  });
+
+  it('refetches on focus, so a snapshot published elsewhere appears', async () => {
+    // The bug: this tab never unmounts, so a mount-only load never saw a
+    // snapshot published after the first visit — the reader had to relaunch.
+    mockListCommunity.mockResolvedValue([
+      item({ publicId: 'p1', publicName: 'First' }),
+    ]);
+    const view = await render();
+    expect(view.getByText('First')).toBeTruthy();
+    expect(mockListCommunity).toHaveBeenCalledTimes(1);
+
+    // A snapshot is published elsewhere; the tab is returned to.
+    mockListCommunity.mockResolvedValue([
+      item({ publicId: 'p1', publicName: 'First' }),
+      item({ publicId: 'p2', publicName: 'Just published' }),
+    ]);
+    await act(async () => {
+      focusListeners.forEach(listener => listener());
+    });
+    expect(mockListCommunity).toHaveBeenCalledTimes(2);
+    expect(view.getByText('Just published')).toBeTruthy();
   });
 });

@@ -12,6 +12,7 @@ import { PressableCard } from '@/components/controls/PressableCard';
 import { projectTemplates } from '@sudobility/music_lib';
 import type { ProjectTemplate } from '@sudobility/music_lib';
 import { libraryCopy } from '@/config/initialize';
+import { useDetailScroll } from '@/components/layout/detail-safe-area';
 
 export type TemplatePaneProps = {
   onChoose: (template: ProjectTemplate) => void;
@@ -20,13 +21,16 @@ export type TemplatePaneProps = {
 export function TemplatePane({ onChoose }: TemplatePaneProps) {
   const { t } = useTranslation();
   const templates = projectTemplates(libraryCopy.templates());
+  // Vertically scrollable: full-bleed with a scroll inset and safe-area sides,
+  // from the one rule — see `useDetailScroll`.
+  const detail = useDetailScroll({ gap: 8 });
 
   return (
     <FlatList
+      {...detail}
       data={templates}
       keyExtractor={(template: ProjectTemplate) => template.id}
       accessibilityLabel={t('dashboard.newFromTemplateAction')}
-      contentContainerClassName="gap-2 p-6"
       renderItem={({ item }: { item: ProjectTemplate }) => {
         const choose = () => onChoose(item);
         return (

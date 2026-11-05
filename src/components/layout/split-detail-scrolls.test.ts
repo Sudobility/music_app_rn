@@ -29,14 +29,26 @@ const SPLIT_VIEWS = [
 const SCROLLS =
   /<(ScrollView|FlatList|SectionList|ScreenScaffold|ProjectTiles|LoginPage)\b/;
 
-/** What is drawn inside `<SplitPanel secondary …>`, as source. */
+/**
+ * What is drawn in the `detail={…}` prop of `SplitViewContainer`, as source —
+ * the whole JSX expression, found by balancing braces from the prop's `{`.
+ */
 function detailOf(source: string): string {
-  // However the formatter broke the tag across lines.
-  const opening = /<SplitPanel\s+secondary\b/.exec(source);
-  if (!opening) return '';
-  const end = source.indexOf('</SplitPanel>', opening.index);
-  return end === -1 ? '' : source.slice(opening.index, end);
+  const key = 'detail={';
+  const start = source.indexOf(key);
+  if (start === -1) return '';
+  let depth = 0;
+  let i = start + key.length - 1; // sits on the opening '{'
+  for (; i < source.length; i++) {
+    if (source[i] === '{') depth++;
+    else if (source[i] === '}' && --depth === 0) break;
+  }
+  return source.slice(start, i);
 }
+
+// Transparent wrappers around the detail content: they carry no scroller of
+// their own and are not what the invariant is about.
+const DETAIL_WRAPPERS = new Set(['View', 'EmbeddedScreen', 'SideClearance']);
 
 /** The file a component named in `file` is imported from, if it is this app's. */
 function sourceOf(
@@ -71,7 +83,7 @@ describe('split view detail panels', () => {
       ...new Set(
         [...detail.matchAll(/<([A-Z]\w+)\b/g)]
           .map(match => match[1]!)
-          .filter(name => name !== 'SplitPanel' && name !== 'View'),
+          .filter(name => !DETAIL_WRAPPERS.has(name)),
       ),
     ];
     expect(components.length).toBeGreaterThan(0);

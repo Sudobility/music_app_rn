@@ -9,7 +9,7 @@
  * Import menu — this window's sidebar is where both of those live now, and
  * offering them a second time here would be the same entry point twice.
  */
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, Text } from '@sudobility/components-rn';
 import { Spinner } from '@/components/controls/Spinner';
@@ -17,6 +17,7 @@ import { useProjects } from '@sudobility/music_client';
 import { useServerContext } from '@/config/useServerContext';
 import { ProjectTiles } from '@/features/projects/ProjectTiles';
 import { ServerUnavailable } from '@/screens/ScreenScaffold';
+import { useDetailScroll } from '@/components/layout/detail-safe-area';
 
 export type MyProjectsPaneProps = {
   /** A ready project was chosen. */
@@ -25,12 +26,15 @@ export type MyProjectsPaneProps = {
 
 export function MyProjectsPane({ onOpen }: MyProjectsPaneProps) {
   const context = useServerContext();
+  // The unavailable message clears the safe area through the one rule, the
+  // same as the tiles would; the grid itself brings its own (`ProjectTiles`).
+  const detail = useDetailScroll();
 
   if (!context) {
     return (
-      <View className="p-6">
+      <ScrollView {...detail}>
         <ServerUnavailable />
-      </View>
+      </ScrollView>
     );
   }
 

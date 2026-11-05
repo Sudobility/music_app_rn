@@ -23,7 +23,13 @@
 import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { AppVersion, Select, Text } from '@sudobility/components-rn';
+import {
+  AppVersion,
+  Select,
+  SplitMenuList,
+  SplitViewContainer,
+  Text,
+} from '@sudobility/components-rn';
 import { version as appVersion } from '../../package.json';
 import { CONSTANTS } from '@/config/constants';
 import { useTheme } from '@/config/ThemeContext';
@@ -34,11 +40,12 @@ import { SUPPORTED_LANGUAGES, languageFor } from '@/i18n';
 import { hasTabBar } from '@/app/tab-bar';
 import type { MainTabParamList } from '@/app/Navigation';
 import { ScreenBackBar } from '@/components/layout/ScreenBackBar';
+import { useNavigationTheme } from '@/app/useNavigationTheme';
 import {
-  SplitMenuList,
-  SplitPanel,
-  SplitViewContainer,
-} from '@/components/layout/SplitViewContainer';
+  DETAIL_MAX_WIDTH,
+  EmbeddedScreen,
+} from '@/components/layout/EmbeddedScreen';
+import { usePrimaryPanelWidth } from '@/components/layout/SplitViewContainer';
 import { useAuth } from '@/auth/AuthContext';
 import { useSiteAdmin } from '@/auth/useSiteAdmin';
 import { CreditsScreen } from './CreditsScreen';
@@ -127,6 +134,8 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
   }, []);
 
   const { t } = useTranslation();
+  const navTheme = useNavigationTheme();
+  const masterWidth = usePrimaryPanelWidth();
   const { user } = useAuth();
   const siteAdmin = useSiteAdmin();
   const sections = settingsSectionsFor(user !== null, siteAdmin);
@@ -164,18 +173,24 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
       </View>
       <SplitViewContainer
         collapsible
-        primaryPanel={
-          <SplitPanel title={t('nav.settings')}>
-            <SplitMenuList
-              label={t('nav.settings')}
-              entries={entries}
-              selected={section}
-              onSelect={choose}
-            />
-          </SplitPanel>
+        masterWidth={masterWidth}
+        navigationTheme={navTheme}
+        masterTitle={t('nav.settings')}
+        detailTitle={t(SECTION_LABEL[section])}
+        detailMaxWidth={DETAIL_MAX_WIDTH}
+        master={
+          <SplitMenuList
+            label={t('nav.settings')}
+            entries={entries}
+            selected={section}
+            onSelect={choose}
+          />
         }
-        secondaryPanel={
-          <SplitPanel secondary title={t(SECTION_LABEL[section])}>
+        detail={
+          // A pane: the back bar stands down, and the split view clears the
+          // pane's own side safe area (right beside the list, both when drilled
+          // in), so the sections do not clear theirs again.
+          <EmbeddedScreen>
             {section === 'account' ? <AccountSection /> : null}
             {section === 'credits' ? <CreditsScreen /> : null}
             {section === 'history' ? <CreditHistorySection /> : null}
@@ -185,7 +200,7 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
             {section === 'appearance' ? <AppearanceSection /> : null}
             {section === 'privacy' ? <LegalSection doc="privacy" /> : null}
             {section === 'terms' ? <LegalSection doc="terms" /> : null}
-          </SplitPanel>
+          </EmbeddedScreen>
         }
       />
     </View>

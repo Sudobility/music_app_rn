@@ -19,13 +19,20 @@ import { useEffect, useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { ScreenBackBar } from '@/components/layout/ScreenBackBar';
+import { useNavigationTheme } from '@/app/useNavigationTheme';
 import {
+  DETAIL_MAX_WIDTH,
+  EmbeddedScreen,
+} from '@/components/layout/EmbeddedScreen';
+import { useDetailScroll } from '@/components/layout/detail-safe-area';
+import { usePrimaryPanelWidth } from '@/components/layout/SplitViewContainer';
+import {
+  Button,
   SplitMenuList,
-  SplitPanel,
   SplitViewContainer,
-} from '@/components/layout/SplitViewContainer';
-import type { SplitMenuEntry } from '@/components/layout/SplitViewContainer';
-import { Button, Text } from '@sudobility/components-rn';
+  Text,
+  type SplitMenuEntry,
+} from '@sudobility/components-rn';
 
 import { InstrumentReference } from '@/features/docs/InstrumentReference';
 import { FormatReference } from '@/features/docs/FormatReference';
@@ -42,6 +49,8 @@ export function DocsScreen() {
   }, []);
 
   const { t } = useTranslation();
+  const navTheme = useNavigationTheme();
+  const masterWidth = usePrimaryPanelWidth();
   const [topicId, setTopicId] = useState<string>(DOCS_TOPICS[0]?.id ?? '');
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const topic = DOCS_TOPICS.find(d => d.id === topicId);
@@ -73,81 +82,29 @@ export function DocsScreen() {
       </View>
       <SplitViewContainer
         collapsible
-        primaryPanel={
-          <SplitPanel title={t('docs.title')}>
-            <SplitMenuList
-              label={t('docs.title')}
-              entries={entries}
-              selected={topicId}
-              onSelect={setTopicId}
-            />
-          </SplitPanel>
+        masterWidth={masterWidth}
+        navigationTheme={navTheme}
+        masterTitle={t('docs.title')}
+        detailTitle={topic ? t(topic.title) : t('docs.title')}
+        detailMaxWidth={DETAIL_MAX_WIDTH}
+        master={
+          <SplitMenuList
+            label={t('docs.title')}
+            entries={entries}
+            selected={topicId}
+            onSelect={setTopicId}
+          />
         }
-        secondaryPanel={
-          // Untitled: a topic names itself at the top of what it says.
-          <SplitPanel
-            secondary
-            title={topic ? t(topic.title) : t('docs.title')}
-          >
-            <ScrollView
-              className="flex-1"
-              contentContainerClassName="p-6 gap-3"
-            >
-              {topic ? (
-                <>
-                  <Text className="text-muted-foreground text-base">
-                    {t(topic.summary)}
-                  </Text>
-                  {/*
-              The element the topic is about, captured from this app. Nothing
-              for a topic that has no figure.
-            */}
-                  <DocsFigure topic={topic.id} />
-                  {topic.sections.map(section => (
-                    <View key={section.heading} className="gap-1 pt-2">
-                      <Text className="text-foreground font-medium">
-                        {t(section.heading)}
-                      </Text>
-                      {section.body.map(key => (
-                        <Text key={key} className="text-foreground text-base">
-                          {t(key)}
-                        </Text>
-                      ))}
-                    </View>
-                  ))}
-                  {/*
-              The live-data sections. Prose about a table is a copy of that
-              table, so the instrument list is read from the catalogue and the
-              shortcuts from the bindings — neither can go stale.
-            */}
-                  {topic.widget === 'instruments' ? (
-                    <InstrumentReference />
-                  ) : null}
-                  {/*
-              The format tables. This branch was missing entirely, so the topic
-              that carries `widget: 'formats'` rendered a heading with nothing
-              under it — the one place the docs promised a table and showed
-              none.
-            */}
-                  {topic.widget === 'formats' ? <FormatReference /> : null}
-                  {/*
-              The shortcut table is a sheet of its own, so this opens it
-              rather than printing it twice — but it points *actionably*. It
-              used to be a sentence naming a screen with no way to reach it,
-              which is a dead end dressed as a cross-reference.
-            */}
-                  {topic.widget === 'shortcuts' ? (
-                    <Button
-                      variant="outline"
-                      onPress={() => setShortcutsOpen(true)}
-                    >
-                      {t('docs.seeShortcutsScreen')}
-                    </Button>
-                  ) : null}
-                </>
-              ) : null}
-            </ScrollView>
-          </SplitPanel>
+        detail={
+          // A pane of the split view: the split clears its side safe area, so
+          // the topic view only brings the one rule for its own scrolling
+          // (`useDetailScroll`, inside the pane so it reads that context).
+          <EmbeddedScreen>
+            <DocsTopicView
+              topic={topic}
+              onOpenShortcuts={() => setShortcutsOpen(true)}
+            />
+          </EmbeddedScreen>
         }
       />
       <ShortcutsSheet
@@ -155,5 +112,72 @@ export function DocsScreen() {
         onClose={() => setShortcutsOpen(false)}
       />
     </View>
+  );
+}
+
+/**
+ * The chosen topic, in the detail pane. A `ScrollView`, so it follows the one
+ * rule for a vertically-scrollable surface (`useDetailScroll`): full-bleed with
+ * a scroll inset, its sides left to the split view which already cleared them.
+ */
+function DocsTopicView({
+  topic,
+  onOpenShortcuts,
+}: {
+  topic: (typeof DOCS_TOPICS)[number] | undefined;
+  onOpenShortcuts: () => void;
+}) {
+  const { t } = useTranslation();
+  const detail = useDetailScroll({ gap: 12 });
+  return (
+    <ScrollView {...detail} className="flex-1">
+      {topic ? (
+        <>
+          <Text className="text-muted-foreground text-base">
+            {t(topic.summary)}
+          </Text>
+          {/*
+            The element the topic is about, captured from this app. Nothing for
+            a topic that has no figure.
+          */}
+          <DocsFigure topic={topic.id} />
+          {topic.sections.map(section => (
+            <View key={section.heading} className="gap-1 pt-2">
+              <Text className="text-foreground font-medium">
+                {t(section.heading)}
+              </Text>
+              {section.body.map(key => (
+                <Text key={key} className="text-foreground text-base">
+                  {t(key)}
+                </Text>
+              ))}
+            </View>
+          ))}
+          {/*
+            The live-data sections. Prose about a table is a copy of that table,
+            so the instrument list is read from the catalogue and the shortcuts
+            from the bindings — neither can go stale.
+          */}
+          {topic.widget === 'instruments' ? <InstrumentReference /> : null}
+          {/*
+            The format tables. This branch was missing entirely, so the topic
+            that carries `widget: 'formats'` rendered a heading with nothing
+            under it — the one place the docs promised a table and showed none.
+          */}
+          {topic.widget === 'formats' ? <FormatReference /> : null}
+          {/*
+            The shortcut table is a sheet of its own, so this opens it rather
+            than printing it twice — but it points *actionably*. It used to be a
+            sentence naming a screen with no way to reach it, which is a dead
+            end dressed as a cross-reference.
+          */}
+          {topic.widget === 'shortcuts' ? (
+            <Button variant="outline" onPress={onOpenShortcuts}>
+              {t('docs.seeShortcutsScreen')}
+            </Button>
+          ) : null}
+        </>
+      ) : null}
+    </ScrollView>
   );
 }

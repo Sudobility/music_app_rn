@@ -29,6 +29,7 @@ import {
   useDocumentServices,
 } from '@/documents/DocumentsContext';
 import { openProjectInto } from '@/documents/document';
+import { useDetailScroll } from '@/components/layout/detail-safe-area';
 
 type OfferedFormat = (typeof OFFERED)[number];
 
@@ -55,6 +56,8 @@ export function ImportPane({ onOpened, guard = unguarded }: ImportPaneProps) {
   const services = useDocumentServices();
   const [audioOpen, setAudioOpen] = useState(false);
   const [uploading, setUploading] = useState(false);
+  // Vertically scrollable: full-bleed with a scroll inset and safe-area sides.
+  const detail = useDetailScroll({ gap: 8 });
 
   /**
    * Uploads a recording and opens the project it becomes — the same call
@@ -80,11 +83,11 @@ export function ImportPane({ onOpened, guard = unguarded }: ImportPaneProps) {
   return (
     <>
       <FlatList
+        {...detail}
         data={OFFERED}
         extraData={`${importer.importing}:${uploading}`}
         keyExtractor={(item: OfferedFormat) => item.value}
         accessibilityLabel={t('dashboard.importFormat')}
-        contentContainerClassName="gap-2 p-6"
         renderItem={({ item }: { item: OfferedFormat }) => {
           const choose = () =>
             guard(() => {

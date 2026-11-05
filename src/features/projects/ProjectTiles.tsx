@@ -159,6 +159,10 @@ export function ProjectTiles({
         numColumns={columns}
         keyExtractor={(project: ProjectSummary) => project.id}
         accessibilityLabel={t('dashboard.myProjects')}
+        // Vertically scrollable: the system insets its ends past the top bar
+        // and the bottom tab bar as a scroll inset, so the last tile row stops
+        // clear of the bar instead of behind it.
+        contentInsetAdjustmentBehavior="automatic"
         contentContainerStyle={{
           padding,
           paddingLeft: padding + sideLeft,
