@@ -36,6 +36,8 @@
     <ComponentsRNWindowsDir Condition="'$(ComponentsRNWindowsDir)' == ''">$(MSBuildThisFileDirectory)..\..\node_modules\@sudobility\components-rn\windows\</ComponentsRNWindowsDir>
     <WindowsCanvasRNDir Condition="Exists('$(MSBuildThisFileDirectory)..\..\..\windows_canvas_rn\windows\WindowsCanvas.targets')">$(MSBuildThisFileDirectory)..\..\..\windows_canvas_rn\windows\</WindowsCanvasRNDir>
     <WindowsCanvasRNDir Condition="'$(WindowsCanvasRNDir)' == ''">$(MSBuildThisFileDirectory)..\..\node_modules\@sudobility\windows_canvas_rn\windows\</WindowsCanvasRNDir>
+    <MoosiacSynthRNDir Condition="Exists('$(MSBuildThisFileDirectory)..\..\..\music_synth_rn\windows\MoosiacSynth.targets')">$(MSBuildThisFileDirectory)..\..\..\music_synth_rn\windows\</MoosiacSynthRNDir>
+    <MoosiacSynthRNDir Condition="'$(MoosiacSynthRNDir)' == ''">$(MSBuildThisFileDirectory)..\..\node_modules\@sudobility\music_synth_rn\windows\</MoosiacSynthRNDir>
   </PropertyGroup>
   <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.WindowsSdk.Default.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -129,7 +131,6 @@
     <ClInclude Include="FileSystemModule.h" />
     <ClInclude Include="MenuBridgeModule.h" />
     <ClInclude Include="PrintModule.h" />
-    <ClInclude Include="SynthModule.h" />
     <ClInclude Include="WindowManagerModule.h" />
     <ClInclude Include="WindowTitleModule.h" />
     <ClInclude Include="pch.h" />
@@ -148,16 +149,9 @@
     <ClCompile Include="FileSystemModule.cpp" />
     <ClCompile Include="MenuBridgeModule.cpp" />
     <ClCompile Include="PrintModule.cpp" />
-    <!-- Optimised in Debug too: it holds the Ogg Vorbis decoder and the
-         synthesiser's render loop, which unoptimised take many times as long
-         to decode the soundfont and can fall behind the audio clock. -->
-    <ClCompile Include="SynthModule.cpp">
-      <Optimization Condition="'$(Configuration)'=='Debug'">MaxSpeed</Optimization>
-      <BasicRuntimeChecks Condition="'$(Configuration)'=='Debug'">Default</BasicRuntimeChecks>
-      <!-- The shared PCH is built unoptimised, and MSVC drops /O2 for a file
-           that uses it (C4653). This one parses pch.h itself. -->
-      <PrecompiledHeader Condition="'$(Configuration)'=='Debug'">NotUsing</PrecompiledHeader>
-    </ClCompile>
+    <!-- SynthModule.cpp (and its third_party single-header deps) now live in
+         @sudobility/music_synth_rn and are added by MoosiacSynth.targets,
+         imported below. -->
     <ClCompile Include="WindowManagerModule.cpp" />
     <ClCompile Include="WindowTitleModule.cpp" />
     <ClCompile Include="pch.cpp">
@@ -169,10 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="MoosiacRN.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="third_party\tsf.h" />
-    <None Include="third_party\stb_vorbis.c" />
   </ItemGroup>
   <!--
     The synth's soundfonts, deployed beside MoosiacRN.exe under soundfont\ —
@@ -201,6 +191,8 @@
   </ItemGroup>
   <!-- windows_canvas_rn: its sources, include path and libraries. -->
   <Import Project="$(WindowsCanvasRNDir)WindowsCanvas.targets" />
+  <!-- music_synth_rn: the Windows TinySoundFont/WASAPI SynthModule + include path. -->
+  <Import Project="$(MoosiacSynthRNDir)MoosiacSynth.targets" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ReactNativeWindowsTargets">
     <Import Project="$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Composition.CppApp.targets" Condition="Exists('$(ReactNativeWindowsDir)\PropertySheets\External\Microsoft.ReactNative.Composition.CppApp.targets')" />

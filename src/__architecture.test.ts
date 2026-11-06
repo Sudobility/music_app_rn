@@ -47,6 +47,11 @@ const ALLOWED_NON_UI = new Set([
   // The composition root: it constructs platform services rather than
   // implementing them, which is exactly this repo's job.
   'src/config/initialize.ts',
+  // Composition only: joins music_player's scheduler to music_synth_rn's native
+  // backend (falling back to music_sample_engine's MP3 player) to build the
+  // player and the audio-export renderer. The app is the one place that knows
+  // both the scheduler and a synth; neither library depends on the other.
+  'src/config/native-player.ts',
   // Reading the bundled instrument packs off disk. Platform glue, and
   // deliberately not the player's business: `music_player` exposes a
   // `fetchPack` seam exactly so it never has to know where an app keeps its
@@ -82,6 +87,12 @@ const ALLOWED_NON_UI = new Set([
   // against the extensions the app reads. Arrangement over the document and
   // import tables, and the same kind of platform glue as the menu bar.
   'src/app/open-links.ts',
+  // Deep-link routing: React Navigation's `linking` config mapping the web's
+  // `/:lang/...` paths onto this app's navigator (prefixes, language-prefix
+  // handling, web-only path rewrites). Navigation composition / platform glue,
+  // wired into `Navigation.tsx`'s `NavigationContainer` — neither UI nor a
+  // library's business, the same category as `open-links.ts` beside it.
+  'src/app/linking.ts',
   // The store-screenshot links `app_store/scripts/capture.sh` sends, the
   // scene they hand to the screens, and the score they open. Arrangement of
   // this app's own screens for this app's own store listing: which sheet is

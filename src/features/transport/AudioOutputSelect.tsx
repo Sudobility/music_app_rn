@@ -16,7 +16,7 @@ import {
   outputDevices,
   selectedOutputDevice,
   setOutputDevice,
-} from '@moosiac/synth';
+} from '@sudobility/music_synth_rn';
 import { IconButton } from '@/components/layout/IconButton';
 import { useNotationInk } from '@/components/icons/notation-ink';
 

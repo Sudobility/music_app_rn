@@ -16,12 +16,8 @@ import { setNativeDialogsSupported } from '@sudobility/components-rn';
 import { createMusicIo } from '@sudobility/music_io';
 import type { MusicIo } from '@sudobility/music_io';
 import {
-  createMusicPlayer,
   initializeMusicPlayer,
   resetMusicPlayer,
-  MusicPlayer,
-  NativeSynthBackend,
-  SoundfontPlaybackEngine,
 } from '@sudobility/music_player';
 import type { IMusicPlayer } from '@sudobility/music_player';
 import i18next from 'i18next';
@@ -34,25 +30,12 @@ import {
 } from '@sudobility/music_lib';
 import type { LibraryCopy } from '@sudobility/music_lib';
 import { BUNDLED_SOUNDFONT, readBundledPack } from './soundfont-packs';
-import { bundledSoundfontPath, nativeSynthApi } from '@moosiac/synth';
+import { createNativeMusicPlayer } from './native-player';
+import type { SoundfontOptions } from './native-player';
 import { installWindowsAnimationFrames } from '@/platform/windows-animation-frames';
 
 if (Platform.OS === 'windows') installWindowsAnimationFrames();
 
-/**
- * The player for this platform.
- *
- * On macOS, libfluidsynth (`@moosiac/synth`'s shared `apple/` wrapper over
- * the FluidSynth framework it vendors), and on Windows TinySoundFont — the synthesizers the web
- * plays through, driven by the same shared scheduler
- * (`SoundfontPlaybackEngine` over `NativeSynthBackend`). The per-note MP3
- * engine decoded every instrument before the first note and timed itself
- * from JavaScript timers: a long "Preparing instruments" and a playhead that
- * jumped. iOS and Android have their own native modules too (iOS the vendored
- * FluidSynth XCFramework, Android a JNI FluidSynth core with the Oboe driver);
- * a platform whose module is missing, or a font it cannot read, retains the
- * sample engine as a fallback (see `createPlayer`).
- */
 /*
   Dialogs as real macOS sheets. This app patches a modal host into React Native
   macOS (`patches/react-native-macos+0.81.9.patch`), which stock React Native
@@ -61,49 +44,12 @@ if (Platform.OS === 'windows') installWindowsAnimationFrames();
 */
 if (Platform.OS === 'macos') setNativeDialogsSupported(true);
 
-function createPlayer(soundfont: SoundfontOptions): IMusicPlayer {
-  /*
-    The native synthesizer wherever there is one: macOS, Windows and iOS.
-    One soundfont loaded natively, off the JS thread, and notes scheduled
-    against the audio clock — where the sample engine reads, parses and
-    decodes 88 MP3 clips for every instrument in the score, in JavaScript,
-    when Play is first pressed.
-
-    iOS needed its own build of FluidSynth to be here. The XCFramework
-    FluidSynth publishes is compiled without libsndfile — its binary carries
-    the string "Unsupported wave format %u (without libsndfile)" and no
-    Vorbis symbols — and `FluidR3Mono_GM.sf3` is Ogg-Vorbis-compressed, which
-    only libsndfile can decode. So `fluid_synth_sfload` failed on every
-    instrument load on iPhone and iPad ("Could not load the soundfont at
-    …/MoosiacRN.app/FluidR3Mono_GM.sf3"), while macOS, then linking Homebrew's
-    libsndfile-enabled fluidsynth, played the same file fine. The vendored
-    framework is now built here with libsndfile, Ogg and Vorbis in it:
-    `native/synth/scripts/build-fluidsynth-apple.sh`, which builds the
-    macOS slice too. Replacing it with the
-    official download again would bring the failure back.
-
-    Android has its own native module now too (`native/synth/android`, a
-    Kotlin shell over a JNI FluidSynth core with the Oboe driver and the same
-    bundled SF3): once it reports `isSupported()` and hands back a font path,
-    this same branch picks it with no Android-specific code. A device or build
-    whose module is missing still falls through to the sample engine.
-  */
-  const soundfontUri =
-    Platform.OS === 'macos' ||
-    Platform.OS === 'windows' ||
-    Platform.OS === 'ios' ||
-    Platform.OS === 'android'
-      ? bundledSoundfontPath()
-      : null;
-  if (soundfontUri && nativeSynthApi.isSupported()) {
-    return new MusicPlayer(
-      new SoundfontPlaybackEngine({
-        backend: new NativeSynthBackend({ api: nativeSynthApi, soundfontUri }),
-      }),
-    );
-  }
-  return createMusicPlayer(soundfont);
-}
+/**
+ * The player is built by `createNativeMusicPlayer` (`./native-player`): the
+ * native synth from `@sudobility/music_synth_rn` wherever one is built in, else
+ * the MP3 sample fallback from `@sudobility/music_sample_engine`. music_player
+ * is only the scheduler now; the app composes it with a backend.
+ */
 
 export type AppServices = {
   io: MusicIo;
@@ -119,18 +65,7 @@ export type AppServices = {
   soundfont: SoundfontOptions;
 };
 
-/** The subset of the player's options that says where the samples come from. */
-export type SoundfontOptions = {
-  packBase?: string;
-  percussionBase?: string;
-  /**
-   * Reads a pack body. Carried here beside the bases, not only handed to the
-   * player, because audio export goes through `renderSamples(services.soundfont)`
-   * — so a loader on one side only would let an exported file be voiced from
-   * different bytes than the ones that were heard.
-   */
-  fetchPack?: (url: string) => Promise<string>;
-};
+export type { SoundfontOptions } from './native-player';
 
 let services: AppServices | null = null;
 
@@ -204,7 +139,7 @@ export function initializeApp(options: InitializeOptions = {}): AppServices {
           : {}),
       }
     : { ...BUNDLED_SOUNDFONT, fetchPack: readBundledPack };
-  const player = initializeMusicPlayer(createPlayer(soundfont));
+  const player = initializeMusicPlayer(createNativeMusicPlayer(soundfont));
 
   /*
     macOS is told it has no share sheet, rather than left to work it out.

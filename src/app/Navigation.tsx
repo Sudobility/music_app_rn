@@ -31,6 +31,7 @@ import {
 import type { NavigatorScreenParams } from '@react-navigation/native';
 import { createAppStackNavigator } from './createAppStackNavigator';
 import { MainTabs } from './MainTabs';
+import { linking } from './linking';
 import { hasTabBar } from './tab-bar';
 import type { PaneKey } from './projects-window/paneKey';
 import type { SettingsSection } from '@/screens/SettingsScreen';
@@ -92,7 +93,7 @@ export function Navigation() {
   const theme = useNavigationTheme();
 
   return (
-    <NavigationContainer ref={navigationRef} theme={theme}>
+    <NavigationContainer ref={navigationRef} theme={theme} linking={linking}>
       {hasTabBar() ? (
         <Stack.Navigator
           initialRouteName="Main"

@@ -55,7 +55,7 @@ import {
   selectActiveTrackId,
   selectVisibleTrackIds,
 } from '@sudobility/music_editing';
-import { renderEvents, renderSamples } from '@sudobility/music_player';
+import { renderScoreAudio } from '@/config/native-player';
 import {
   DOCUMENT_EXTENSION,
   estimateReplacementCredits,
@@ -403,11 +403,7 @@ function DocumentEditor({ document }: { document: MusicDocument }) {
           document,
           getAppServices().io,
           format,
-          async score => {
-            const plan = renderEvents(score);
-            const audio = await renderSamples(getAppServices().soundfont)(plan);
-            return { samples: audio.samples, sampleRate: audio.sampleRate };
-          },
+          async score => renderScoreAudio(score, getAppServices().soundfont),
           scope,
         );
         trackEvent('export_complete', { format, scope });

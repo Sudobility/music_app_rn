@@ -18,8 +18,11 @@
 import { useEffect, useState } from 'react';
 import { ScrollView, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import type { NavigationProp, RouteProp } from '@react-navigation/native';
 import { ScreenBackBar } from '@/components/layout/ScreenBackBar';
 import { useNavigationTheme } from '@/app/useNavigationTheme';
+import type { MainTabParamList } from '@/app/Navigation';
 import {
   DETAIL_MAX_WIDTH,
   EmbeddedScreen,
@@ -28,8 +31,8 @@ import { useDetailScroll } from '@/components/layout/detail-safe-area';
 import { usePrimaryPanelWidth } from '@/components/layout/SplitViewContainer';
 import {
   Button,
-  SplitMenuList,
   SplitViewContainer,
+  SplitMenuList,
   Text,
   type SplitMenuEntry,
 } from '@sudobility/components-rn';
@@ -49,15 +52,28 @@ export function DocsScreen() {
   }, []);
 
   const { t } = useTranslation();
-  const navTheme = useNavigationTheme();
   const masterWidth = usePrimaryPanelWidth();
-  const [topicId, setTopicId] = useState<string>(DOCS_TOPICS[0]?.id ?? '');
+  const navTheme = useNavigationTheme();
+  // The selection is the route's own param, so a deep link to `docs/:topicId`
+  // opens that topic and the URL and the screen are one address — the web's
+  // model, driven by the host's route rather than an internal navigator a deep
+  // link cannot reach. An unknown id (`docs/bogus`) is treated as no selection:
+  // the list leads and the first topic fills the detail beside it, rather than a
+  // blank pane — the web redirects `/docs` to the first topic the same way.
+  const route = useRoute<RouteProp<MainTabParamList, 'Docs'>>();
+  const navigation = useNavigation<NavigationProp<MainTabParamList, 'Docs'>>();
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
-  // Whether the reader has drilled into a topic, so a collapse after a rotation
-  // reopens on the topic they were reading rather than on the list (owned here,
-  // since the split view's drill-in is rebuilt on every breakpoint crossing).
-  const [detailFocused, setDetailFocused] = useState(false);
-  const topic = DOCS_TOPICS.find(d => d.id === topicId);
+  const selectedId = route.params?.topicId;
+  const selectedTopic = selectedId
+    ? DOCS_TOPICS.find(d => d.id === selectedId)
+    : undefined;
+  // Only a *valid* selection drills into the detail; an unknown id falls back.
+  const mobileView: 'navigation' | 'content' = selectedTopic
+    ? 'content'
+    : 'navigation';
+  const topic = selectedTopic ?? DOCS_TOPICS[0];
+  const shownId = topic?.id ?? '';
+  const selectTopic = (id: string) => navigation.setParams({ topicId: id });
 
   /*
     Under the web's group headings — Start here, Using the app, Reference —
@@ -91,20 +107,24 @@ export function DocsScreen() {
         masterTitle={t('docs.title')}
         detailTitle={topic ? t(topic.title) : t('docs.title')}
         detailMaxWidth={DETAIL_MAX_WIDTH}
-        detailFocused={detailFocused}
-        onDetailFocusedChange={setDetailFocused}
+        // Controlled / deep-link mode: the route owns the selection, so
+        // `docs/:topicId` resolves straight to the topic — two columns when
+        // wide, the topic over the list when narrow with a back control. The
+        // container's `Panel`s keep the red bar chrome and clear the side safe
+        // area, as Settings and Projects do (which bypassing the container for
+        // `MasterDetailLayout` directly did not).
+        mobileView={mobileView}
+        onBackToNavigation={() => navigation.setParams({ topicId: undefined })}
+        backButtonText={t('docs.title')}
         master={
           <SplitMenuList
             label={t('docs.title')}
             entries={entries}
-            selected={topicId}
-            onSelect={setTopicId}
+            selected={shownId}
+            onSelect={selectTopic}
           />
         }
         detail={
-          // A pane of the split view: the split clears its side safe area, so
-          // the topic view only brings the one rule for its own scrolling
-          // (`useDetailScroll`, inside the pane so it reads that context).
           <EmbeddedScreen>
             <DocsTopicView
               topic={topic}
