@@ -68,7 +68,7 @@
     "@sudobility/music_sample_engine": "^0.0.2",
     "@sudobility/music_spatial_core": "^0.0.30",
     "@sudobility/music_spatial_rn": "^0.0.38",
-    "@sudobility/music_synth_rn": "^0.0.2",
+    "@sudobility/music_synth_rn": "^0.0.3",
     "@sudobility/music_types": "^0.13.62",
     "@sudobility/types": "^1.9.78",
     "@sudobility/windows_canvas_rn": "^0.2.14",

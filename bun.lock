@@ -45,7 +45,7 @@
         "@sudobility/music_sample_engine": "^0.0.2",
         "@sudobility/music_spatial_core": "^0.0.30",
         "@sudobility/music_spatial_rn": "^0.0.38",
-        "@sudobility/music_synth_rn": "^0.0.2",
+        "@sudobility/music_synth_rn": "^0.0.3",
         "@sudobility/music_types": "^0.13.62",
         "@sudobility/types": "^1.9.78",
         "@sudobility/windows_canvas_rn": "^0.2.14",
@@ -856,7 +856,7 @@
 
     "@sudobility/music_spatial_rn": ["@sudobility/music_spatial_rn@0.0.38", "https://npm.pkg.github.com/download/@sudobility/music_spatial_rn/0.0.38/c4b42e590f43e89672de126aed001769c0e1543f", { "peerDependencies": { "@shopify/react-native-skia": ">=1", "@sudobility/music_spatial_core": "^0.0.30", "@sudobility/music_types": "^0.13.62", "@sudobility/windows_canvas_rn": "^0.2.14", "react": ">=18", "react-native": ">=0.74", "react-native-gesture-handler": ">=2", "react-native-reanimated": ">=4", "react-native-svg": ">=13", "react-native-worklets": ">=0.5", "three": "^0.160.0" } }, "sha512-e3oSZb0q+dZLXM3RNs3/Npv6UkIHRPnisXuUbvyJes3LukrKCyl6/jCCV+lvxNWrMuMURfNI7NqqGPznaIr9IQ=="],
 
-    "@sudobility/music_synth_rn": ["@sudobility/music_synth_rn@0.0.2", "https://npm.pkg.github.com/download/@sudobility/music_synth_rn/0.0.2/7bec9736bc207c6e6bd00e1a7cb62b8512c3a89a", { "peerDependencies": { "@sudobility/music_types": "^0.13.62", "react": ">=18", "react-native": ">=0.74" } }, "sha512-ISkVDcYeS6gLyogUmRZNH1rhFPS7kvvXVSDTVHIRqeF22OovrzJRESRCEZXs3tRC+VHB393fKk5/JcezzAfMNg=="],
+    "@sudobility/music_synth_rn": ["@sudobility/music_synth_rn@0.0.3", "https://npm.pkg.github.com/download/@sudobility/music_synth_rn/0.0.3/2bbffb684dd4cf9a4b5f09918e3357c82ed9bcbb", { "peerDependencies": { "@sudobility/music_types": "^0.13.62", "react": ">=18", "react-native": ">=0.74" } }, "sha512-9PzJm1lz6MPDQeWhvvAyzIQhcVL3k4g2TE8jVke3oVSnw79BU9AFIS+z07AT7k4utucInViisUBUrF1coCeHjg=="],
 
     "@sudobility/music_types": ["@sudobility/music_types@0.13.62", "https://npm.pkg.github.com/download/@sudobility/music_types/0.13.62/e3c2aa29657c24c3c7b1bb81762fcb22c140d1b1", { "peerDependencies": { "@sudobility/types": "^1.9.78", "immer": "^10.0.0 || ^11.0.0", "zod": "^4.0.0" } }, "sha512-JCYIggLmiXDL0CBb8yp0uewc1GcUjvZDseC6kC05qHCq8VDCGpptiM8BdPSdIFVnGQrUrqtL0XUJidCfs5dIuw=="],
 
