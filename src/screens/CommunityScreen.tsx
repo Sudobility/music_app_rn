@@ -116,11 +116,11 @@ export function CommunityScreen({ navigation }: CommunityScreenProps) {
   return (
     <TitledScreen title={t('nav.community')}>
       {/*
-        No `SideClearance` wrapper: `ScreenScaffold` inside `CommunityList`
-        already clears the side safe areas (as Resources does). Wrapping it in
-        one too cleared the notch twice — on the iPhone Duo's folded cover the
-        84pt right inset came off the content once here and once in the
-        scaffold, leaving the tiles in a 266pt column with a dead 84pt gap
+        No side-safe-area wrapper here: `ScreenScaffold` inside `CommunityList`
+        already clears the side safe areas (as Resources does). Clearing them
+        again around it cleared the notch twice — on the iPhone Duo's folded
+        cover the 84pt right inset came off the content once here and once in
+        the scaffold, leaving the tiles in a 266pt column with a dead 84pt gap
         beside them.
       */}
       <CommunityList navigation={navigation} />

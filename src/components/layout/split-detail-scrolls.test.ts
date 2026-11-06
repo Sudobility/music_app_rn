@@ -48,7 +48,7 @@ function detailOf(source: string): string {
 
 // Transparent wrappers around the detail content: they carry no scroller of
 // their own and are not what the invariant is about.
-const DETAIL_WRAPPERS = new Set(['View', 'EmbeddedScreen', 'SideClearance']);
+const DETAIL_WRAPPERS = new Set(['View', 'EmbeddedScreen']);
 
 /** The file a component named in `file` is imported from, if it is this app's. */
 function sourceOf(

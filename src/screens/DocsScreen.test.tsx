@@ -106,4 +106,45 @@ describe('DocsScreen', () => {
       0,
     );
   });
+
+  it('stays on the open topic after a rotation collapses the split, once drilled in', () => {
+    // Collapsed (a phone in portrait) it is one column at a time; widening to
+    // two columns and back is a rotation. The reader who drilled into a topic
+    // should land back on it, not on the list — `detailFocused` wired through.
+    const view = renderWithApp(<DocsScreen />);
+    const md = view.getByTestId('master-detail');
+    const layout = (width: number) =>
+      fireEvent(md, 'layout', {
+        nativeEvent: { layout: { width, height: 800, x: 0, y: 0 } },
+      });
+    const other = DOCS_TOPICS[3];
+    // One column: the list, with the detail not beside it.
+    layout(390);
+    expect(view.queryAllByText(label(other.summary))).toHaveLength(0);
+    // Drill into a topic: its detail is pushed over the list.
+    fireEvent.press(view.getAllByText(label(other.title))[0]);
+    expect(view.queryAllByText(label(other.summary)).length).toBeGreaterThan(0);
+    // Rotate to landscape (two columns) and back to portrait (one): still on
+    // the topic, not dropped back to the list.
+    layout(900);
+    layout(390);
+    expect(view.queryAllByText(label(other.summary)).length).toBeGreaterThan(0);
+  });
+
+  it('stays on the list across a rotation when nothing was drilled into', () => {
+    // The mirror of the above: without a drill-in, a collapse reopens on the
+    // list — the detail is not shown over it.
+    const view = renderWithApp(<DocsScreen />);
+    const md = view.getByTestId('master-detail');
+    const layout = (width: number) =>
+      fireEvent(md, 'layout', {
+        nativeEvent: { layout: { width, height: 800, x: 0, y: 0 } },
+      });
+    const first = DOCS_TOPICS[0];
+    layout(390);
+    layout(900);
+    layout(390);
+    // The first topic's body is the detail; on the list it is not rendered.
+    expect(view.queryAllByText(label(first.summary))).toHaveLength(0);
+  });
 });

@@ -1,170 +1,52 @@
 /**
- * The detail of a split view, held to the web's measure.
+ * The app-side helpers around the library's split view: the device-based panel
+ * width, and the titled bar a non-split screen wears to match the panels.
  *
- * The web's master/detail layout caps the detail's content at 1024 and
- * centres it past that; a desktop window is wide enough for it to matter, and
- * a line of text the width of one is not a line anybody reads. The list is
- * not capped: it has a width of its own.
+ * The split view itself (`SplitViewContainer`, `SplitMenuList`, the detail
+ * width cap) is the shared library's now, and is tested there — see
+ * `@sudobility/components-rn`'s `master-detail-layout` tests.
  */
-import { useState } from 'react';
-import { Platform, StyleSheet, Text } from 'react-native';
-import { fireEvent } from '@testing-library/react-native';
+import { Platform, Text } from 'react-native';
 import { renderWithApp } from '@/test/render';
-import {
-  DETAIL_MAX_WIDTH,
-  DETAIL_PADDING,
-} from '@/components/layout/EmbeddedScreen';
 import {
   PHONE_PRIMARY_PANEL_WIDTH,
   PRIMARY_PANEL_WIDTH,
-  SplitMenuList,
-  SplitPanel,
-  SplitViewContainer,
+  TitledScreen,
 } from './SplitViewContainer';
 
-describe('SplitPanel', () => {
-  it('caps what the detail holds at the web’s width, and centres it', () => {
-    const view = renderWithApp(
-      <SplitPanel secondary title="Chosen">
-        <Text>detail</Text>
-      </SplitPanel>,
-    );
-    const content = view.getByTestId('split-detail-content');
-    expect(StyleSheet.flatten(content.props.style).maxWidth).toBe(1024);
-    expect(DETAIL_MAX_WIDTH).toBe(1024);
-    expect(content.props.className).toContain('w-full');
-    expect(view.getByTestId('split-detail').props.className).toContain(
-      'items-center',
-    );
-    expect(view.getByText('detail')).toBeTruthy();
-  });
-
-  it('renders each panel’s body under the system’s native bar', () => {
-    // The title sits in the platform's own navigation bar now — a native prop,
-    // not a text node this renderer expands — so the body is what is asserted
-    // here; the bar itself and its centred title are verified on the device.
-    const list = renderWithApp(
-      <SplitPanel title="Projects">
-        <Text>list</Text>
-      </SplitPanel>,
-    );
-    expect(list.getByText('list')).toBeTruthy();
-    const detail = renderWithApp(
-      <SplitPanel secondary title="New Project">
-        <Text>detail</Text>
-      </SplitPanel>,
-    );
-    expect(detail.getByText('detail')).toBeTruthy();
-  });
-
-  it('draws no bar in a desktop window, and heads the detail instead', () => {
-    const os = Platform.OS;
-    Platform.OS = 'macos';
-    try {
-      const list = renderWithApp(
-        <SplitPanel title="Projects">
-          <Text>list</Text>
-        </SplitPanel>,
-      );
-      expect(list.queryByRole('header')).toBeNull();
-      const detail = renderWithApp(
-        <SplitPanel secondary title="New Project">
-          <Text>detail</Text>
-        </SplitPanel>,
-      );
-      expect(detail.getByText('New Project')).toBeTruthy();
-    } finally {
-      Platform.OS = os;
-    }
-  });
-
-  it('leaves the list alone', () => {
-    const view = renderWithApp(
-      <SplitPanel title="List">
-        <Text>list</Text>
-      </SplitPanel>,
-    );
-    expect(view.queryByTestId('split-detail-content')).toBeNull();
-    expect(view.getByText('list')).toBeTruthy();
-  });
-
-  it('insets the detail as the web does: px-6, pt-6, pb-6', () => {
-    expect(DETAIL_PADDING).toBe(24);
-  });
-
+describe('panel width', () => {
   it('gives a phone a narrower list than a tablet or a desktop', () => {
     expect(PHONE_PRIMARY_PANEL_WIDTH).toBe(240);
     expect(PRIMARY_PANEL_WIDTH).toBe(320);
   });
 });
 
-describe('SplitViewContainer, collapsed', () => {
-  // A split view whose list and detail are told apart by their text, over a
-  // selection the list changes — the shape every collapsing screen has.
-  function Drilldown() {
-    const [selected, setSelected] = useState('alpha');
-    return (
-      <SplitViewContainer
-        collapsible
-        primaryPanel={
-          <SplitPanel title="Menu">
-            <SplitMenuList
-              label="Menu"
-              entries={[
-                { id: 'alpha', label: 'Alpha' },
-                { id: 'beta', label: 'Beta' },
-              ]}
-              selected={selected}
-              onSelect={setSelected}
-            />
-          </SplitPanel>
-        }
-        secondaryPanel={
-          <SplitPanel secondary title="Chosen">
-            <Text>detail-body</Text>
-          </SplitPanel>
-        }
-      />
+describe('TitledScreen', () => {
+  it('draws its content under the system’s native bar on a touch platform', () => {
+    // The title sits in the platform's own navigation bar — a native prop, not
+    // a text node this renderer expands — so the body is what is asserted
+    // here; the bar itself and its centred title are verified on the device.
+    const view = renderWithApp(
+      <TitledScreen title="Community">
+        <Text>body</Text>
+      </TitledScreen>,
     );
-  }
-
-  function layoutWidth(
-    view: ReturnType<typeof renderWithApp>,
-    width: number,
-  ): void {
-    // `MasterDetailLayout` measures its own frame, not the container's, so the
-    // width that decides two-column vs. drill-in is reported on its root.
-    fireEvent(view.getByTestId('master-detail'), 'layout', {
-      nativeEvent: { layout: { width, height: 800, x: 0, y: 0 } },
-    });
-  }
-
-  it('shows one column at a time on a narrow phone, drilling in and back', () => {
-    const view = renderWithApp(<Drilldown />);
-    layoutWidth(view, 390);
-    // The list is the one column; the detail is not mounted over it, and the
-    // list's bar carries no way back.
-    expect(view.getByText('Alpha')).toBeTruthy();
-    expect(view.queryByText('detail-body')).toBeNull();
-    expect(view.queryByTestId('split-back')).toBeNull();
-    // Choosing a row drills into the detail, whose bar now has the way back.
-    // The list stays mounted underneath — the detail slides in over it
-    // (`MasterDetailDrilldown`) — so it is the back control appearing, not the
-    // list's absence, that marks the drill-in.
-    fireEvent.press(view.getByLabelText('Beta'));
-    expect(view.getByText('detail-body')).toBeTruthy();
-    expect(view.getByTestId('split-back')).toBeTruthy();
-    // Back returns to the list: the detail's way back goes with it.
-    fireEvent.press(view.getByTestId('split-back'));
-    expect(view.getByText('Alpha')).toBeTruthy();
-    expect(view.queryByTestId('split-back')).toBeNull();
+    expect(view.getByText('body')).toBeTruthy();
   });
 
-  it('keeps both panels side by side where the view is wide', () => {
-    const view = renderWithApp(<Drilldown />);
-    layoutWidth(view, 900);
-    expect(view.getByText('Alpha')).toBeTruthy();
-    expect(view.getByText('detail-body')).toBeTruthy();
-    expect(view.queryByTestId('split-back')).toBeNull();
+  it('draws no bar in a desktop window, and is just its content', () => {
+    const os = Platform.OS;
+    Platform.OS = 'macos';
+    try {
+      const view = renderWithApp(
+        <TitledScreen title="Community">
+          <Text>body</Text>
+        </TitledScreen>,
+      );
+      expect(view.queryByRole('header')).toBeNull();
+      expect(view.getByText('body')).toBeTruthy();
+    } finally {
+      Platform.OS = os;
+    }
   });
 });

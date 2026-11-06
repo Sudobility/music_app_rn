@@ -296,6 +296,46 @@ describe('SettingsScreen', () => {
     expect(view.queryByLabelText('Community')).toBeNull();
   });
 
+  it('stays on the open section after a rotation collapses the split, once drilled in', () => {
+    // Collapsed (a phone in portrait) it is one column at a time; widening to
+    // two columns and back is a rotation. Having drilled into a section, the
+    // reader lands back on it, not on the list — `detailFocused` wired through.
+    mockUser.mockReturnValue(SIGNED_IN);
+    const view = setup();
+    const md = view.getByTestId('master-detail');
+    const layout = (width: number) =>
+      fireEvent(md, 'layout', {
+        nativeEvent: { layout: { width, height: 800, x: 0, y: 0 } },
+      });
+    layout(390);
+    // One column: the list; the default section's pane is not beside it.
+    expect(view.queryByText('history section')).toBeNull();
+    // Drill into a section: its pane is pushed over the list.
+    fireEvent.press(view.getByLabelText('Credit history'));
+    expect(view.getByText('history section')).toBeTruthy();
+    // Rotate to landscape (two columns) and back to portrait (one): still on
+    // the section, not dropped back to the list.
+    layout(900);
+    layout(390);
+    expect(view.getByText('history section')).toBeTruthy();
+  });
+
+  it('stays on the list across a rotation when no section was drilled into', () => {
+    // The mirror: without a drill-in, a collapse reopens on the list, so the
+    // default section's pane is not rendered over it.
+    mockUser.mockReturnValue(SIGNED_IN);
+    const view = setup();
+    const md = view.getByTestId('master-detail');
+    const layout = (width: number) =>
+      fireEvent(md, 'layout', {
+        nativeEvent: { layout: { width, height: 800, x: 0, y: 0 } },
+      });
+    layout(390);
+    layout(900);
+    layout(390);
+    expect(view.queryByText('account section')).toBeNull();
+  });
+
   it('is the way to Docs, Resources and Community where there is no tab bar', () => {
     const os = Platform.OS;
     // No platform the app is built for: a desktop window has tabs too.

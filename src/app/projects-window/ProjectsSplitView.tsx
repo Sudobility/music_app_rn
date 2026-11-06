@@ -119,6 +119,10 @@ export function ProjectsSplitView({
   const homePane: PaneKey = signedIn ? 'myProjects' : 'new';
   const [selected, setSelectedState] = useState<PaneKey>(homePane);
   const [picked, setPicked] = useState(false);
+  // Whether the reader has drilled into a pane, so a collapse after a rotation
+  // (the Projects tab on a phone) reopens on it rather than on the sidebar —
+  // owned here, since the split view's drill-in is rebuilt on every crossing.
+  const [detailFocused, setDetailFocused] = useState(false);
   const setSelected = useCallback((pane: PaneKey) => {
     setPicked(true);
     setSelectedState(pane);
@@ -250,6 +254,8 @@ export function ProjectsSplitView({
         navigationTheme={navTheme}
         masterTitle={t('nav.projects')}
         detailTitle={t(paneLabelKey(selected))}
+        detailFocused={detailFocused}
+        onDetailFocusedChange={setDetailFocused}
         master={
           <ProjectsSidebar
             selected={selected}

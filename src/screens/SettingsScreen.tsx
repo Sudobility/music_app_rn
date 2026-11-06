@@ -140,6 +140,10 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
   const siteAdmin = useSiteAdmin();
   const sections = settingsSectionsFor(user !== null, siteAdmin);
   const [chosen, setChosen] = useState<SettingsSection>('account');
+  // Whether the reader has drilled into a section, so a collapse after a
+  // rotation reopens on it rather than on the list (owned here, since the split
+  // view's drill-in is rebuilt on every breakpoint crossing).
+  const [detailFocused, setDetailFocused] = useState(false);
   // What is shown is what is listed: signing out while Credits is showing
   // takes Credits off the list, and the pane goes back to the first entry
   // rather than showing a section the list no longer names.
@@ -178,6 +182,8 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
         masterTitle={t('nav.settings')}
         detailTitle={t(SECTION_LABEL[section])}
         detailMaxWidth={DETAIL_MAX_WIDTH}
+        detailFocused={detailFocused}
+        onDetailFocusedChange={setDetailFocused}
         master={
           <SplitMenuList
             label={t('nav.settings')}

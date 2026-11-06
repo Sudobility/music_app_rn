@@ -53,6 +53,10 @@ export function DocsScreen() {
   const masterWidth = usePrimaryPanelWidth();
   const [topicId, setTopicId] = useState<string>(DOCS_TOPICS[0]?.id ?? '');
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  // Whether the reader has drilled into a topic, so a collapse after a rotation
+  // reopens on the topic they were reading rather than on the list (owned here,
+  // since the split view's drill-in is rebuilt on every breakpoint crossing).
+  const [detailFocused, setDetailFocused] = useState(false);
   const topic = DOCS_TOPICS.find(d => d.id === topicId);
 
   /*
@@ -87,6 +91,8 @@ export function DocsScreen() {
         masterTitle={t('docs.title')}
         detailTitle={topic ? t(topic.title) : t('docs.title')}
         detailMaxWidth={DETAIL_MAX_WIDTH}
+        detailFocused={detailFocused}
+        onDetailFocusedChange={setDetailFocused}
         master={
           <SplitMenuList
             label={t('docs.title')}

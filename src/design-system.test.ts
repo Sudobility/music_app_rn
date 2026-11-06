@@ -191,10 +191,6 @@ describe('controls come from the library', () => {
       'The segmented control drawn in-app on macOS, where the native one does not animate.',
     ],
     [
-      'src/components/layout/SplitViewContainer.tsx',
-      "The split view's list rows (`SplitMenuList`).",
-    ],
-    [
       'src/components/layout/ScreenBackBar.macos.tsx',
       'The back control the macOS navigator does not draw.',
     ],
