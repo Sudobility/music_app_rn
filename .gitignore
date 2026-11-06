@@ -34,3 +34,6 @@ app_store/.keys/
 
 # Per-user Xcode state
 xcuserdata/
+
+# Machine-specific Android SDK path
+android/local.properties

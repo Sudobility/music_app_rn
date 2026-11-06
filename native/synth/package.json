@@ -1,7 +1,7 @@
 {
   "name": "@moosiac/synth",
   "version": "0.0.0",
-  "description": "Native SoundFont synthesis for macOS and Windows.",
+  "description": "Native SoundFont synthesis for iOS, macOS, Android and Windows.",
   "main": "index.js",
   "react-native": "index.js",
   "types": "index.d.ts"

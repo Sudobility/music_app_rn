@@ -48,10 +48,10 @@ if (Platform.OS === 'windows') installWindowsAnimationFrames();
  * (`SoundfontPlaybackEngine` over `NativeSynthBackend`). The per-note MP3
  * engine decoded every instrument before the first note and timed itself
  * from JavaScript timers: a long "Preparing instruments" and a playhead that
- * jumped. Platforms without a native module or a font it can read retain the
- * sample engine as a fallback — Android, until it gets its own native synth
- * module, and iOS, whose vendored XCFramework cannot read the bundled SF3
- * (see `createPlayer`).
+ * jumped. iOS and Android have their own native modules too (iOS the vendored
+ * FluidSynth XCFramework, Android a JNI FluidSynth core with the Oboe driver);
+ * a platform whose module is missing, or a font it cannot read, retains the
+ * sample engine as a fallback (see `createPlayer`).
  */
 /*
   Dialogs as real macOS sheets. This app patches a modal host into React Native
@@ -82,13 +82,17 @@ function createPlayer(soundfont: SoundfontOptions): IMusicPlayer {
     macOS slice too. Replacing it with the
     official download again would bring the failure back.
 
-    Android has no native module (`nativeSynthApi.isSupported()` is false
-    there) and takes the sample engine.
+    Android has its own native module now too (`native/synth/android`, a
+    Kotlin shell over a JNI FluidSynth core with the Oboe driver and the same
+    bundled SF3): once it reports `isSupported()` and hands back a font path,
+    this same branch picks it with no Android-specific code. A device or build
+    whose module is missing still falls through to the sample engine.
   */
   const soundfontUri =
     Platform.OS === 'macos' ||
     Platform.OS === 'windows' ||
-    Platform.OS === 'ios'
+    Platform.OS === 'ios' ||
+    Platform.OS === 'android'
       ? bundledSoundfontPath()
       : null;
   if (soundfontUri && nativeSynthApi.isSupported()) {
