@@ -186,10 +186,6 @@ describe('controls come from the library', () => {
       'src/features/toasts/Toasts.tsx',
       "The action and dismiss of a toast, in the ink of the toast's own surface; every `Button` variant brings a surface and ink of its own.",
     ],
-    [
-      'src/components/layout/StatusBar.tsx',
-      "The issue count in the status strip: a run of text in a strip shorter than a `Button`'s 44-point minimum.",
-    ],
   ]);
 
   it('no hand-built button outside the listed wrappers and surfaces', () => {

@@ -11,7 +11,7 @@ import type { NativeStackNavigationOptions } from '@react-navigation/native-stac
 import * as nativeHeader from '@/app/native-header';
 import { renderWithApp, testDocument } from '@/test/render';
 import { useEditorHeader } from './useEditorHeader';
-import type { TitleBarProps } from '@/components/layout/TitleBar';
+import type { TitleBarProps } from '@sudobility/music_ui_rn';
 
 // A tablet shows every title-bar action inline; a phone groups the secondary
 // ones (Export, Print, …) behind the "…" overflow. These assertions press the

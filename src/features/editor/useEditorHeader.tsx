@@ -25,8 +25,8 @@ import { Bars3Icon, ChevronLeftIcon } from 'react-native-heroicons/outline';
 import { useNotationInk } from '@sudobility/music_ui_rn';
 import { IconButton } from '@sudobility/music_ui_rn';
 import { useFormFactor } from '@sudobility/components-rn';
-import { TitleBarActions, TitleBarTitle } from '@/components/layout/TitleBar';
-import type { TitleBarProps } from '@/components/layout/TitleBar';
+import { TitleBarActions, TitleBarTitle } from '@sudobility/music_ui_rn';
+import type { TitleBarProps } from '@sudobility/music_ui_rn';
 
 /** The one thing asked of the navigator, so a test can stand in for it. */
 export type EditorHeaderNavigation = {

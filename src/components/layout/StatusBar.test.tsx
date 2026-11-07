@@ -9,8 +9,9 @@
 import { act, fireEvent } from '@testing-library/react-native';
 
 import { renderWithApp, testDocument } from '@/test/render';
+import { libraryCopy } from '@/config/initialize';
 import type { MusicDocument } from '@/documents/document';
-import { StatusBar } from './StatusBar';
+import { StatusBar } from '@sudobility/music_ui_rn';
 
 /** Empties a bar's voice so the measure no longer adds up. */
 function breakFirstMeasure(document: MusicDocument) {
@@ -40,7 +41,7 @@ describe('StatusBar', () => {
   */
   it('says what is selected, and says so when nothing is', () => {
     const document = testDocument();
-    const view = renderWithApp(<StatusBar document={document} />);
+    const view = renderWithApp(<StatusBar document={document} libraryCopy={libraryCopy} />);
     expect(view.getByText('No selection')).toBeTruthy();
 
     act(() => {
@@ -52,20 +53,20 @@ describe('StatusBar', () => {
 
   it('shows no issue count on a clean score', () => {
     // A permanent "0 issues" trains the reader to ignore the strip.
-    const view = renderWithApp(<StatusBar document={testDocument()} />);
+    const view = renderWithApp(<StatusBar document={testDocument()} libraryCopy={libraryCopy} />);
     expect(view.queryByLabelText(/validation/i)).toBeNull();
   });
 
   it('offers the issues once the score has some', () => {
     const document = testDocument();
-    const view = renderWithApp(<StatusBar document={document} />);
+    const view = renderWithApp(<StatusBar document={document} libraryCopy={libraryCopy} />);
     breakFirstMeasure(document);
     expect(view.getByLabelText(/validation/i)).toBeTruthy();
   });
 
   it('opens the issue list when tapped', () => {
     const document = testDocument();
-    const view = renderWithApp(<StatusBar document={document} />);
+    const view = renderWithApp(<StatusBar document={document} libraryCopy={libraryCopy} />);
     breakFirstMeasure(document);
     fireEvent.press(view.getByLabelText(/validation/i));
     expect(view.getByText('Fix all')).toBeTruthy();

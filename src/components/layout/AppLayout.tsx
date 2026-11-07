@@ -76,7 +76,7 @@ import { DocumentTabs } from '@/features/documents/DocumentTabs';
 import { useScoreSelection } from '@sudobility/music_ui_rn';
 import { EditorToolbar } from '@sudobility/music_ui_rn';
 import { LyricEntryBar } from '@sudobility/music_ui_rn';
-import { TitleBar } from './TitleBar';
+import { TitleBar } from '@sudobility/music_ui_rn';
 import {
   hasMenuBar,
   useMenuAvailability,
@@ -87,9 +87,10 @@ import type { ScoreContextAction } from '@sudobility/music_types';
 import { hasNativeHeader } from '@/app/native-header';
 import { hasTabBar } from '@/app/tab-bar';
 import { devicePrefs, useDevicePrefs } from '@/config/useDevicePrefs';
+import { libraryCopy } from '@/config/initialize';
 import type { GenerationChoicesProps } from '@sudobility/music_ui_rn';
 import type { ProjectOriginProps } from '@sudobility/music_ui_rn';
-import { StatusBar } from './StatusBar';
+import { StatusBar } from '@sudobility/music_ui_rn';
 import { useContainerSize } from '@sudobility/music_ui_rn';
 import { inspectorOpensByDefault } from '@sudobility/music_ui_rn';
 import type { ReactNode } from 'react';
@@ -822,7 +823,7 @@ export function AppLayout({
         edges={bottomEdges}
         className="border-border bg-card border-t"
       >
-        <StatusBar document={document} />
+        <StatusBar document={document} libraryCopy={libraryCopy} />
       </SafeAreaView>
       <ScoreActionsSheet
         open={actionsOpen}

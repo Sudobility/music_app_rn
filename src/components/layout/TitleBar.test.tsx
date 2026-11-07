@@ -10,7 +10,7 @@
 import { jest } from '@jest/globals';
 import { act, fireEvent } from '@testing-library/react-native';
 import { renderWithApp, testDocument } from '@/test/render';
-import { TitleBar } from './TitleBar';
+import { TitleBar } from '@sudobility/music_ui_rn';
 
 function setup(overrides: Partial<Parameters<typeof TitleBar>[0]> = {}) {
   const document = testDocument({ title: 'Quartet' });
