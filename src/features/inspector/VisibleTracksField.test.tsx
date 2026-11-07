@@ -10,7 +10,7 @@ import {
 } from '@sudobility/music_editing';
 import { act, fireEvent } from '@testing-library/react-native';
 import { renderWithApp, testDocument } from '@/test/render';
-import { VisibleTracksField } from './VisibleTracksField';
+import { VisibleTracksField } from '@sudobility/music_ui_rn';
 
 function setup(extraTracks = 1) {
   const document = testDocument();

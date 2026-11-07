@@ -35,7 +35,7 @@ import { Button, FormModal, Input, Text } from '@sudobility/components-rn';
 import { syllabifyText } from '@sudobility/music_types';
 import type { LyricLanguage, NoteEvent } from '@sudobility/music_types';
 import { FieldSlot } from '@sudobility/music_ui_rn';
-import { Field } from '@/features/inspector/Field';
+import { Field } from '@sudobility/music_ui_rn';
 import type { EditingStoreApi } from '@sudobility/music_editing';
 import {
   applyLyricStep,

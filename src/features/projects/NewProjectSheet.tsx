@@ -12,10 +12,11 @@
  * local document — which is why generation can be switched off entirely.
  */
 import { useEffect } from 'react';
+import { publicServerContext } from '@/config/server';
 import { useTranslation } from 'react-i18next';
 import { FormModal } from '@sudobility/components-rn';
 import type { NewProjectSubmission } from '@sudobility/music_lib';
-import { ScoreSetupFields } from '@/features/generation/ScoreSetupFields';
+import { ScoreSetupFields } from '@sudobility/music_ui_rn';
 import { trackButtonClick } from '@/analytics';
 import { GenerateToggle } from './GenerateToggle';
 import { useNewProjectForm, type NewProjectAccount } from './useNewProjectForm';
@@ -113,6 +114,7 @@ export function NewProjectSheet({
       <ScoreSetupFields
         draft={form}
         dispatch={dispatch}
+        serverContext={publicServerContext()}
         generateToggle={
           <GenerateToggle
             form={newProject}

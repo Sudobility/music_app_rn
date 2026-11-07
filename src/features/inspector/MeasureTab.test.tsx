@@ -10,7 +10,7 @@
 import { act, fireEvent } from '@testing-library/react-native';
 import { addBlankTrack } from '@sudobility/music_editing';
 import { renderWithApp, testDocument } from '@/test/render';
-import { MeasureTab } from './MeasureTab';
+import { MeasureTab } from '@sudobility/music_ui_rn';
 import type { MusicDocument } from '@/documents/document';
 
 /** Selects a bar by index, which is what the gutter does on a tap. */

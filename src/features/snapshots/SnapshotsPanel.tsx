@@ -29,7 +29,7 @@ import { Spinner } from '@sudobility/music_ui_rn';
 import type { ProjectSnapshots } from '@sudobility/music_client';
 import { flagReasonLabelKey } from '@sudobility/music_types';
 import { CreateSnapshotSheet, OpenSnapshotSheet } from './SnapshotSheets';
-import { DraftInput } from '@/features/inspector/DraftInput';
+import { DraftInput } from '@sudobility/music_ui_rn';
 import {
   FieldSlot,
   SLOT_BUTTON_CLASS,

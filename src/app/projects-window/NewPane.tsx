@@ -8,9 +8,10 @@
  * switch (`GenerateToggle`).
  */
 import { ScrollView, View } from 'react-native';
+import { publicServerContext } from '@/config/server';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@sudobility/components-rn';
-import { ScoreSetupFields } from '@/features/generation/ScoreSetupFields';
+import { ScoreSetupFields } from '@sudobility/music_ui_rn';
 import { GenerateToggle } from '@/features/projects/GenerateToggle';
 import {
   useNewProjectForm,
@@ -60,6 +61,7 @@ export function NewPane({
           <ScoreSetupFields
             draft={form}
             dispatch={dispatch}
+          serverContext={publicServerContext()}
             generateToggle={
               <GenerateToggle
                 form={newProject}

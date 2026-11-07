@@ -7,7 +7,7 @@ import { renderWithApp } from '@/test/render';
 import {
   GeneratedOriginDetails,
   ProjectOriginPanel,
-} from './ProjectOriginPanel';
+} from '@sudobility/music_ui_rn';
 
 describe('ProjectOriginPanel', () => {
   it('names an import by its format and file', () => {

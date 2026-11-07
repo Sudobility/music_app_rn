@@ -94,7 +94,7 @@ jest.mock('./useScoreCanvas', () => {
 // Measured from the first render: the view only sizes the canvas once it
 // knows its own size, and a test renderer measures nothing.
 jest.mock('@sudobility/music_ui_rn', () => ({
-  ...jest.requireActual('@sudobility/music_ui_rn'),
+  ...(jest.requireActual('@sudobility/music_ui_rn') as Record<string, unknown>),
   // Called once per render of the score view, which is what makes it a counter.
   useContainerSize: () => ({
     ...(mockRenders.count++, {}),

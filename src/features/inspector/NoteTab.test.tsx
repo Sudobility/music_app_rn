@@ -19,7 +19,7 @@ import { isNoteEvent } from '@sudobility/music_types';
 import { renderWithApp, testDocument } from '@/test/render';
 import type { MusicDocument } from '@/documents/document';
 
-const { NoteTab } = require('./NoteTab') as typeof import('./NoteTab');
+const { NoteTab } = require('@sudobility/music_ui_rn') as typeof import('@sudobility/music_ui_rn');
 
 function withSelectedNote() {
   const document = testDocument();

@@ -26,7 +26,7 @@ import { FormModal, Select } from '@sudobility/components-rn';
 import { WHOLE_SCORE } from '@sudobility/music_drawing';
 import type { PrintPlanOptions } from '@sudobility/music_drawing';
 import type { Score } from '@sudobility/music_types';
-import { Field } from '@/features/inspector/Field';
+import { Field } from '@sudobility/music_ui_rn';
 import {
   ORIENTATION_OPTIONS,
   PAPER_OPTIONS,

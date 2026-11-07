@@ -15,6 +15,7 @@
  */
 import { jest } from '@jest/globals';
 import { useReducer } from 'react';
+import { publicServerContext } from '@/config/server';
 import { fireEvent } from '@testing-library/react-native';
 import {
   DEFAULT_GENERATE_SCORE_MEASURES,
@@ -27,7 +28,7 @@ import type {
   NewProjectFormDraft,
 } from '@sudobility/music_lib';
 import { renderWithApp } from '@/test/render';
-import { ScoreSetupFields } from './ScoreSetupFields';
+import { ScoreSetupFields } from '@sudobility/music_ui_rn';
 
 const mockUseScoreStyleSettings = jest.fn<() => { data: unknown }>(() => ({
   data: undefined,
@@ -63,7 +64,7 @@ function Harness({ initial }: { initial: NewProjectFormDraft }) {
     initial,
   );
   latest = draft;
-  return <ScoreSetupFields draft={draft} dispatch={dispatch} />;
+  return <ScoreSetupFields draft={draft} dispatch={dispatch} serverContext={publicServerContext()} />;
 }
 
 function setup(initial: NewProjectFormDraft = initialNewProjectDraft()) {

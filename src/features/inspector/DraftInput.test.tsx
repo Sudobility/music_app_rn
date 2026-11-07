@@ -9,7 +9,7 @@
 import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithApp } from '@/test/render';
-import { DraftInput, NumberDraftInput } from './DraftInput';
+import { DraftInput, NumberDraftInput } from '@sudobility/music_ui_rn';
 
 function setup(value = 'C7') {
   const onCommit = jest.fn<(text: string) => void>();

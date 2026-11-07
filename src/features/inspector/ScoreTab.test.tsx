@@ -11,7 +11,7 @@
 import { act, fireEvent } from '@testing-library/react-native';
 import { renderWithApp, testDocument } from '@/test/render';
 
-const { ScoreTab } = require('./ScoreTab') as typeof import('./ScoreTab');
+const { ScoreTab } = require('@sudobility/music_ui_rn') as typeof import('@sudobility/music_ui_rn');
 
 function setup() {
   const document = testDocument({ title: 'String Quartet' });

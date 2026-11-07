@@ -8,7 +8,7 @@
  * can point at it" the component exists to prevent.
  */
 import { renderWithApp } from '@/test/render';
-import { EmptyTab, Field } from './Field';
+import { EmptyTab, Field } from '@sudobility/music_ui_rn';
 import { Text } from '@sudobility/components-rn';
 
 describe('Field', () => {

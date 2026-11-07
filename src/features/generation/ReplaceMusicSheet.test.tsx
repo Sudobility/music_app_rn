@@ -9,7 +9,7 @@
 import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithApp } from '@/test/render';
-import { ReplaceMusicSheet } from './ReplaceMusicSheet';
+import { ReplaceMusicSheet } from '@sudobility/music_ui_rn';
 
 function setup(
   overrides: Partial<Parameters<typeof ReplaceMusicSheet>[0]> = {},

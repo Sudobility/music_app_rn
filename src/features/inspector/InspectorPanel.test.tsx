@@ -21,7 +21,7 @@ import {
 } from '@sudobility/music_editing';
 import { isNoteEvent } from '@sudobility/music_types';
 import { renderWithApp, testDocument } from '@/test/render';
-import { InspectorPanel } from './InspectorPanel';
+import { InspectorPanel } from '@sudobility/music_ui_rn';
 
 /** Selects a tab the way a tap on that segment does. */
 function selectTab(view: ReturnType<typeof renderWithApp>, index: number) {

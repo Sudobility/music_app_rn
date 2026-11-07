@@ -11,7 +11,7 @@ import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { createEmptyScore } from '@sudobility/music_types';
 import { renderWithApp } from '@/test/render';
-import { GenerateTrackSheet } from './GenerateTrackSheet';
+import { GenerateTrackSheet } from '@sudobility/music_ui_rn';
 
 function setup(measures = 12) {
   const score = createEmptyScore({ title: 'Waltz', measures });

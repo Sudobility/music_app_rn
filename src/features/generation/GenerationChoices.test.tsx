@@ -10,7 +10,7 @@ import { act, fireEvent } from '@testing-library/react-native';
 import type { GenerationRecord } from '@sudobility/music_types';
 import { regenerateWithLocks } from '@sudobility/music_lib';
 import { renderWithApp } from '@/test/render';
-import { GenerationChoices } from './GenerationChoices';
+import { GenerationChoices } from '@sudobility/music_ui_rn';
 
 const record: GenerationRecord = {
   request: { prompt: 'a salsa', durationMeasures: 48, tracks: [] },

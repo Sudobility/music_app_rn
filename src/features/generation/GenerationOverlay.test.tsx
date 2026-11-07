@@ -9,7 +9,7 @@
 import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithApp } from '@/test/render';
-import { GenerationOverlay } from './GenerationOverlay';
+import { GenerationOverlay } from '@sudobility/music_ui_rn';
 
 describe('GenerationOverlay', () => {
   it('draws nothing when nothing is generating', () => {
