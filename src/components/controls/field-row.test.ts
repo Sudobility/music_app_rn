@@ -35,10 +35,13 @@ describe('controls in a row share the touch target height', () => {
   });
 
   it.each([
-    ['the time signature', '../../features/inspector/MeasureTab.tsx'],
+    [
+      'the time signature',
+      '../../../node_modules/@sudobility/music_ui_rn/src/features/inspector/MeasureTab.tsx',
+    ],
     [
       'an instrument and its remove button',
-      '../../features/generation/ScoreSetupFields.tsx',
+      '../../../node_modules/@sudobility/music_ui_rn/src/features/generation/ScoreSetupFields.tsx',
     ],
   ])('draws %s at one height', (_name, path) => {
     const source = read(path);

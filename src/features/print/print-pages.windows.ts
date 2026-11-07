@@ -1,6 +1,6 @@
 import { CanvasScoreRenderer, PRINT_WIDTH } from '@sudobility/music_drawing';
 import type { PrintPlan } from '@sudobility/music_drawing';
-import { SvgDrawingContext } from '../score/svg-context';
+import { SvgDrawingContext } from '@sudobility/music_ui_rn';
 
 /** A page rendered as portable SVG for the Windows print bridge. */
 export type RenderedWindowsPage = {

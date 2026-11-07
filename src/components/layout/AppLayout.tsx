@@ -62,17 +62,17 @@ import {
   selectActiveTrackId,
   selectVisibleTrackIds,
 } from '@sudobility/music_editing';
-import { ScrollingScore } from '@/features/score/ScrollingScore';
+import { ScrollingScore } from '@sudobility/music_ui_rn';
 import { SpatialSection } from '@sudobility/music_ui_rn';
 import { useScreenshotScene } from '@/features/screenshots/screenshot-scene';
-import type { ScrollOffset } from '@/features/score/useScoreCanvas';
+import type { ScrollOffset } from '@sudobility/music_ui_rn';
 import { TransportBar } from '@sudobility/music_ui_rn';
 import { usePlayerBinding } from '@sudobility/music_ui_rn';
 import { KeyboardPanel } from '@sudobility/music_ui_rn';
 import { InspectorPanel } from '@sudobility/music_ui_rn';
 import { ScoreActionsSheet } from '@/features/score-editor/ScoreActionsSheet';
 import { DocumentTabs } from '@/features/documents/DocumentTabs';
-import { useScoreSelection } from '@/features/score/useScoreSelection';
+import { useScoreSelection } from '@sudobility/music_ui_rn';
 import { EditorToolbar } from '@/features/score-editor/EditorToolbar';
 import { LyricEntryBar } from '@/features/score-editor/LyricEntryBar';
 import { TitleBar } from './TitleBar';

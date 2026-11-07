@@ -40,7 +40,7 @@ import type { DocumentOrigin } from '@sudobility/music_lib';
 import { sameOrigin } from './document';
 import type { MusicDocument } from './document';
 // Type only: the score view's own shape, and nothing of Skia comes with it.
-import type { ScrollOffset } from '@/features/score/useScoreCanvas';
+import type { ScrollOffset } from '@sudobility/music_ui_rn';
 
 export type DocumentListState = {
   documents: readonly MusicDocument[];

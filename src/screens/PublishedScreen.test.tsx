@@ -19,7 +19,8 @@ import { renderWithApp } from '@/test/render';
 import { PublishedScore } from './PublishedScreen';
 
 // The page's own behaviour is under test, not the canvas.
-jest.mock('@/features/score/ScrollingScore', () => ({
+jest.mock('@sudobility/music_ui_rn', () => ({
+  ...jest.requireActual('@sudobility/music_ui_rn'),
   ScrollingScore: () => null,
 }));
 // The stack's bar, which the page fills with the score's name and Share.

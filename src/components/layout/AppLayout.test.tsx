@@ -48,7 +48,8 @@ const mockScoreProps: {
   /** Whether the canvas was asked to draw the track-info gutter. */
   trackInfo?: string;
 } = {};
-jest.mock('@/features/score/ScrollingScore', () => ({
+jest.mock('@sudobility/music_ui_rn', () => ({
+  ...jest.requireActual('@sudobility/music_ui_rn'),
   ScrollingScore: (props: typeof mockScoreProps) => {
     mockScoreProps.onPress = props.onPress;
     mockScoreProps.onLongPress = props.onLongPress;

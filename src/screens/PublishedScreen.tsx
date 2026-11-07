@@ -28,7 +28,7 @@ import {
 } from '@sudobility/music_types';
 import type { FlagReason, PublishedSnapshot } from '@sudobility/music_types';
 import { getMusicClient } from '@/config/server';
-import { ScrollingScore } from '@/features/score/ScrollingScore';
+import { ScrollingScore } from '@sudobility/music_ui_rn';
 import { TransportBar } from '@sudobility/music_ui_rn';
 import { SpatialSection } from '@sudobility/music_ui_rn';
 import { SafeAreaView } from '@/platform/SafeArea';

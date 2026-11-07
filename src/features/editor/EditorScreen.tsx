@@ -82,7 +82,7 @@ import {
 import { openProject } from '@/documents/document';
 import type { RootStackParamList } from '@/app/Navigation';
 import type { MusicDocument } from '@/documents/document';
-import type { ScrollOffset } from '@/features/score/useScoreCanvas';
+import type { ScrollOffset } from '@sudobility/music_ui_rn';
 import type { ExportScope } from '@sudobility/music_types';
 import { usePendingAction } from '@sudobility/music_ui_rn';
 
