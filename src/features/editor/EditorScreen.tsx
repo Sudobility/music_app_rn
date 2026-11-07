@@ -36,7 +36,10 @@ import { goToTab, hasTabBar } from '@/app/tab-bar';
 import type { MenuCommand } from '@/app/menu-commands';
 import { canPrint, printScore } from '@/features/print/print-service';
 import { trackButtonClick, trackEvent, trackScreenView } from '@/analytics';
-import { PrintSheet } from '@/features/print/PrintSheet';
+import { PrintSheet } from '@sudobility/music_ui_rn';
+import { devicePrefs, useDevicePrefs } from '@/config/useDevicePrefs';
+import { defaultPaperSizeFor } from '@sudobility/music_types';
+import { getDeviceLocaleTags } from '@sudobility/building_blocks_rn';
 import type { PrintPlanOptions } from '@sudobility/music_drawing';
 import { ReplaceMusicSheet } from '@sudobility/music_ui_rn';
 import { GenerateTrackSheet } from '@sudobility/music_ui_rn';
@@ -182,6 +185,7 @@ export function EditorScreen() {
 
 function DocumentEditor({ document }: { document: MusicDocument }) {
   const { t } = useTranslation();
+  const printPaperSize = useDevicePrefs(s => s.paperSize);
   const [voiceJob, setVoiceJob] = useState<{
     cancel: () => void;
     progress: {
@@ -765,6 +769,9 @@ function DocumentEditor({ document }: { document: MusicDocument }) {
             onPrint={runPrint}
             printing={printing}
             initialScope={printScope}
+            paperSize={printPaperSize}
+            onPaperSizeChange={value => devicePrefs.getState().setPaperSize(value)}
+            defaultPaperSize={defaultPaperSizeFor(getDeviceLocaleTags())}
           />
           <GenerateTrackSheet
             open={generateTrackOpen}

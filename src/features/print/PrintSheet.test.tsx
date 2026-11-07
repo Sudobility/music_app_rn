@@ -11,7 +11,7 @@ import { fireEvent } from '@testing-library/react-native';
 import { createEmptyScore } from '@sudobility/music_types';
 import { renderWithApp } from '@/test/render';
 import { devicePrefs } from '@/config/useDevicePrefs';
-import { PrintSheet } from './PrintSheet';
+import { PrintSheet } from '@sudobility/music_ui_rn';
 
 describe('PrintSheet', () => {
   afterEach(() => devicePrefs.getState().setPaperSize(null));
@@ -25,6 +25,9 @@ describe('PrintSheet', () => {
     const visible = [score.tracks[0]!.id];
     const view = renderWithApp(
       <PrintSheet
+        paperSize={null}
+        onPaperSizeChange={jest.fn()}
+        defaultPaperSize="a4"
         open
         score={score}
         visibleTrackIds={visible}
@@ -51,6 +54,9 @@ describe('PrintSheet', () => {
     const onPrint = jest.fn();
     const view = renderWithApp(
       <PrintSheet
+        paperSize={null}
+        onPaperSizeChange={jest.fn()}
+        defaultPaperSize="a4"
         open
         printing
         score={score}
@@ -69,6 +75,9 @@ describe('PrintSheet', () => {
     devicePrefs.getState().setPaperSize('letter');
     const view = renderWithApp(
       <PrintSheet
+        paperSize={null}
+        onPaperSizeChange={jest.fn()}
+        defaultPaperSize="letter"
         open
         score={createEmptyScore({ title: 'A' })}
         visibleTrackIds={[]}
