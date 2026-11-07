@@ -4,8 +4,8 @@
  */
 import { jest } from '@jest/globals';
 import { act, renderHook } from '@testing-library/react-native';
-import type { PositionSource } from './usePositionReadout';
-import { useOnPositionFrame, usePositionReadout } from './usePositionReadout';
+import type { PositionSource } from '@sudobility/music_ui_rn';
+import { useOnPositionFrame, usePositionReadout } from '@sudobility/music_ui_rn';
 
 function fakeTransport() {
   const listeners = new Set<(tick: number) => void>();

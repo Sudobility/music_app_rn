@@ -17,8 +17,8 @@ import {
 } from '@sudobility/music_types';
 import { selectMeasureRange } from '@sudobility/music_editing';
 import { renderWithApp, testDocument } from '@/test/render';
-import { usePlayerBinding } from './usePlayerBinding';
-import { TransportBar } from './TransportBar';
+import { usePlayerBinding } from '@sudobility/music_ui_rn';
+import { TransportBar } from '@sudobility/music_ui_rn';
 
 /*
   These check control *behaviour* — each reaches the player, not the store —

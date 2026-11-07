@@ -51,7 +51,7 @@ import { getAppServices } from '@/config/initialize';
 import { useTheme } from '@/config/ThemeContext';
 import type { MusicDocument } from '@/documents/document';
 import { PianoKeyboard } from './PianoKeyboard';
-import { useContainerSize } from '@/features/layout/useContainerSize';
+import { useContainerSize } from '@sudobility/music_ui_rn';
 
 import {
   litKeys,

@@ -19,7 +19,7 @@ import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithApp } from '@/test/render';
 import { panReadout } from '@sudobility/music_types';
-import { PanSlider, VolumeSlider } from './MixerSliders';
+import { PanSlider, VolumeSlider } from '@sudobility/music_ui_rn';
 
 describe('VolumeSlider', () => {
   it('states the level in words as well as in a bar', () => {

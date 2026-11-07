@@ -53,7 +53,7 @@ import { PlaybackCursor } from './PlaybackCursor';
 import { useScoreCanvas } from './useScoreCanvas';
 import type { ScrollOffset } from './useScoreCanvas';
 import type { ScoreSelection } from './useScoreSelection';
-import { useContainerSize } from '@/features/layout/useContainerSize';
+import { useContainerSize } from '@sudobility/music_ui_rn';
 import { classifyPress } from '@sudobility/music_editing';
 import type {
   LayoutMode,

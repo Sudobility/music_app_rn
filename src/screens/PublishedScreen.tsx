@@ -29,7 +29,7 @@ import {
 import type { FlagReason, PublishedSnapshot } from '@sudobility/music_types';
 import { getMusicClient } from '@/config/server';
 import { ScrollingScore } from '@/features/score/ScrollingScore';
-import { TransportBar } from '@/features/transport/TransportBar';
+import { TransportBar } from '@sudobility/music_ui_rn';
 import { SpatialSection } from '@/features/spatial/SpatialSection';
 import { SafeAreaView } from '@/platform/SafeArea';
 import { useSafeEdgeList } from '@/platform/safe-edges';
@@ -43,7 +43,7 @@ import { SignInModal } from '@/features/account/SignInModal';
 import { FlagSnapshotSheet } from '@/features/community/FlagSnapshotSheet';
 import { usePendingAction } from '@sudobility/music_ui_rn';
 import { createDocumentStore } from '@sudobility/music_lib';
-import { usePlayerBinding } from '@/features/transport/usePlayerBinding';
+import { usePlayerBinding } from '@sudobility/music_ui_rn';
 import { appToasts } from '@/features/toasts/Toasts';
 import { CONSTANTS } from '@/config/constants';
 import { ScreenScaffold, ServerUnavailable } from './ScreenScaffold';

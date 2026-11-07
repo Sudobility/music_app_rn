@@ -29,7 +29,7 @@ import {
   Switch,
   Text,
 } from '@sudobility/components-rn';
-import { PanSlider, VolumeSlider } from '@/features/tracks/MixerSliders';
+import { PanSlider, VolumeSlider } from '@sudobility/music_ui_rn';
 import {
   controlLocked,
   selectEditLocked,

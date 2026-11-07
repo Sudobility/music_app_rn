@@ -170,10 +170,6 @@ describe('controls come from the library', () => {
     // PressableCard, ToolbarSelect, SegmentedTabs — now live in music_ui_rn and
     // are guarded there).
     [
-      'src/features/transport/AudioOutputSelect.tsx',
-      'An anchored desktop output menu; the library select cannot use an icon-only toolbar trigger.',
-    ],
-    [
       'src/components/layout/ScreenBackBar.macos.tsx',
       'The back control the macOS navigator does not draw.',
     ],

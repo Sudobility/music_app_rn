@@ -44,8 +44,8 @@ import { useTranslation } from 'react-i18next';
 import { Text, useFormFactor } from '@sudobility/components-rn';
 import { ControlsSheet } from '@sudobility/music_ui_rn';
 import type { ControlRow } from '@sudobility/music_ui_rn';
-import { useContainerSize } from '@/features/layout/useContainerSize';
-import { barsCompact } from '@/features/layout/compact-bars';
+import { useContainerSize } from '@sudobility/music_ui_rn';
+import { barsCompact } from '@sudobility/music_ui_rn';
 import {
   addTrackChoices,
   changeAccidental,
