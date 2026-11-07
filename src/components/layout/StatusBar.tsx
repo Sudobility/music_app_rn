@@ -26,7 +26,7 @@ import { selectionSummaryLabel } from '@sudobility/music_types';
 import { libraryCopy } from '@/config/initialize';
 import { Pressable } from 'react-native';
 import { useState } from 'react';
-import { IssuesSheet } from '@/features/score-editor/IssuesSheet';
+import { IssuesSheet } from '@sudobility/music_ui_rn';
 import type { MusicDocument } from '@/documents/document';
 
 export function StatusBar({ document }: { document: MusicDocument }) {

@@ -22,7 +22,7 @@ import {
 import { isNoteEvent, trackNotesInOrder } from '@sudobility/music_types';
 import type { NoteEvent } from '@sudobility/music_types';
 import { renderWithApp, testDocument } from '@/test/render';
-import { LyricEntryBar } from './LyricEntryBar';
+import { LyricEntryBar } from '@sudobility/music_ui_rn';
 import type { MusicDocument } from '@/documents/document';
 
 /** Writes `count` notes so there is a line to sing under. */

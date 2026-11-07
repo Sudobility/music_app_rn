@@ -9,7 +9,7 @@
 import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithApp } from '@/test/render';
-import { ChoiceSheet } from './ChoiceSheet';
+import { ChoiceSheet } from '@sudobility/music_ui_rn';
 
 const CHOICES = [
   {

@@ -179,10 +179,6 @@ describe('controls come from the library', () => {
       'A link out of the app: role `link` with a hint, which `PressableCard` (role `button`) would misreport.',
     ],
     [
-      'src/features/score-editor/InsertBarsSheet.tsx',
-      'A radio pair. The library has no radio.',
-    ],
-    [
       'src/features/snapshots/SnapshotSheets.tsx',
       'Rows of the snapshot tree: selectable, indented by depth, which no library list row expresses.',
     ],

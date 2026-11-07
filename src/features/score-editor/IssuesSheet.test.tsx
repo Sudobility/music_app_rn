@@ -10,7 +10,7 @@ import { jest } from '@jest/globals';
 import { act, fireEvent } from '@testing-library/react-native';
 import type { MusicDocument } from '@/documents/document';
 import { renderWithApp, testDocument } from '@/test/render';
-import { IssuesSheet } from './IssuesSheet';
+import { IssuesSheet } from '@sudobility/music_ui_rn';
 
 // `repairAllIssues` is music_editing's and keeps getting better at repairing —
 // it now clears an overcrowded bar that it once left alone. The "stays open"

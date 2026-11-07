@@ -11,7 +11,7 @@
 import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { renderWithApp } from '@/test/render';
-import { GoToBarSheet } from './GoToBarSheet';
+import { GoToBarSheet } from '@sudobility/music_ui_rn';
 
 function setup(onGo: (text: string) => boolean = () => true) {
   const onClose = jest.fn();

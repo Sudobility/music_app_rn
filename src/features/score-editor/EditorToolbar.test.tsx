@@ -31,7 +31,7 @@ import {
 } from '@sudobility/music_types';
 import { renderWithApp, testDocument } from '@/test/render';
 import type { MusicDocument } from '@/documents/document';
-import { EditorToolbar } from './EditorToolbar';
+import { EditorToolbar } from '@sudobility/music_ui_rn';
 
 // A tablet shows every control inline; a phone groups all but the note-entry
 // essentials behind the "…" sheet, where these tests cannot reach them. The
@@ -62,6 +62,7 @@ function setup(overrides: Partial<Parameters<typeof EditorToolbar>[0]> = {}) {
       onEnterLyrics={onEnterLyrics}
       onToggleInspector={onToggleInspector}
       inspectorVisible={false}
+      devicePrefs={devicePrefs}
       {...overrides}
     />,
   );

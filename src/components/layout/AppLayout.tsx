@@ -56,7 +56,8 @@ import {
   selectForContextMenu,
   useClipboardPrompts,
 } from '@sudobility/music_editing';
-import { ClipboardPromptSheets } from '@/features/score-editor/ClipboardPromptSheets';
+import { VoiceRecordButton } from '@/features/score-editor/VoiceRecordButton';
+import { ClipboardPromptSheets } from '@sudobility/music_ui_rn';
 import type { ReplaceScope } from '@sudobility/music_types';
 import {
   selectActiveTrackId,
@@ -70,11 +71,11 @@ import { TransportBar } from '@sudobility/music_ui_rn';
 import { usePlayerBinding } from '@sudobility/music_ui_rn';
 import { KeyboardPanel } from '@sudobility/music_ui_rn';
 import { InspectorPanel } from '@sudobility/music_ui_rn';
-import { ScoreActionsSheet } from '@/features/score-editor/ScoreActionsSheet';
+import { ScoreActionsSheet } from '@sudobility/music_ui_rn';
 import { DocumentTabs } from '@/features/documents/DocumentTabs';
 import { useScoreSelection } from '@sudobility/music_ui_rn';
-import { EditorToolbar } from '@/features/score-editor/EditorToolbar';
-import { LyricEntryBar } from '@/features/score-editor/LyricEntryBar';
+import { EditorToolbar } from '@sudobility/music_ui_rn';
+import { LyricEntryBar } from '@sudobility/music_ui_rn';
 import { TitleBar } from './TitleBar';
 import {
   hasMenuBar,
@@ -679,6 +680,8 @@ export function AppLayout({
           {...(onGenerateInsertedBars ? { onGenerateInsertedBars } : {})}
           {...(onVoiceTranscriptionJob ? { onVoiceTranscriptionJob } : {})}
           onToggleInspector={() => setInspectorOpen(!inspectorVisible)}
+          devicePrefs={devicePrefs}
+          renderVoiceRecord={opts => <VoiceRecordButton {...opts} />}
         />
       </SafeAreaView>
       {/*

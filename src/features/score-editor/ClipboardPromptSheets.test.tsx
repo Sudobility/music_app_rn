@@ -10,7 +10,7 @@ import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import type { ClipboardPrompts } from '@sudobility/music_editing';
 import { renderWithApp } from '@/test/render';
-import { ClipboardPromptSheets } from './ClipboardPromptSheets';
+import { ClipboardPromptSheets } from '@sudobility/music_ui_rn';
 
 function prompts(overrides: Partial<ClipboardPrompts> = {}): ClipboardPrompts {
   return {

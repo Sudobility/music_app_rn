@@ -49,7 +49,7 @@ const mockScoreProps: {
   trackInfo?: string;
 } = {};
 jest.mock('@sudobility/music_ui_rn', () => ({
-  ...jest.requireActual('@sudobility/music_ui_rn'),
+  ...(jest.requireActual('@sudobility/music_ui_rn') as Record<string, unknown>),
   ScrollingScore: (props: typeof mockScoreProps) => {
     mockScoreProps.onPress = props.onPress;
     mockScoreProps.onLongPress = props.onLongPress;

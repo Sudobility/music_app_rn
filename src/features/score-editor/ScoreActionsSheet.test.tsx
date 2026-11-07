@@ -18,7 +18,7 @@ import { fireEvent } from '@testing-library/react-native';
 import { scoreContextMenuModel } from '@sudobility/music_editing';
 import type { ScoreSelection } from '@sudobility/music_types';
 import { renderWithApp } from '@/test/render';
-import { ScoreActionsSheet } from './ScoreActionsSheet';
+import { ScoreActionsSheet } from '@sudobility/music_ui_rn';
 import type { ClipboardData } from '@sudobility/music_types';
 
 const ids = (prefix: string, n: number) =>
