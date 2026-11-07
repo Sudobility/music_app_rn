@@ -48,10 +48,6 @@ describe('colours come from the theme', () => {
   const HEX = /['"]#[0-9a-fA-F]{3,8}['"]/g;
   const HEX_ALLOWED = new Map([
     [
-      'src/features/piano-keyboard/PianoKeyboard.tsx',
-      'The hairline between white keys. A key is an instrument colour (music_drawing fills them white and black in both themes), so its edge is one too.',
-    ],
-    [
       'src/features/editor/ProjectsPopup.tsx',
       'A shadow colour. A shadow is black in both themes and the theme has no token for one.',
     ],
@@ -141,10 +137,6 @@ describe('controls come from the library', () => {
   const RAW =
     /import\s*\{[^}]*\b(?<![\w$]type\s)(?:Text|TextInput|Switch|Button|TouchableOpacity|TouchableHighlight)\b[^}]*\}\s*from\s*'react-native'/g;
   const RAW_ALLOWED = new Map([
-    [
-      'src/features/piano-keyboard/PianoKeyboard.tsx',
-      "A key's printed name is part of the keyboard drawing: placed by music_drawing's geometry and coloured from the render theme, at a size the library's scale does not have.",
-    ],
   ]);
 
   it('no unstyled React Native control outside the listed wrappers', () => {
@@ -174,10 +166,6 @@ describe('controls come from the library', () => {
       'The back control the macOS navigator does not draw.',
     ],
     // Surfaces that are not buttons.
-    [
-      'src/features/piano-keyboard/PianoKeyboard.tsx',
-      'Piano keys: press-and-hold, tiled, coloured by music_drawing.',
-    ],
     [
       'src/features/documents/DocumentTabs.tsx',
       'A document tab: role `tab`, with a close button inside it.',

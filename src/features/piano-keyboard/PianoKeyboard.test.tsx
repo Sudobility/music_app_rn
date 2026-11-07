@@ -14,7 +14,7 @@ import {
   computeKeys,
   keyboardWidth,
 } from '@sudobility/music_drawing';
-import { PianoKeyboard } from './PianoKeyboard';
+import { PianoKeyboard } from '@sudobility/music_ui_rn';
 
 describe('PianoKeyboard', () => {
   const range = { min: 16, max: 43 }; // E0 up to G2

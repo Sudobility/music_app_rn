@@ -19,8 +19,8 @@ import {
 } from '@/config/initialize';
 import { renderWithApp, testDocument } from '@/test/render';
 import type { MusicDocument } from '@/documents/document';
-import { KeyboardPanel } from './KeyboardPanel';
-import { PianoKeyboard } from './PianoKeyboard';
+import { KeyboardPanel } from '@sudobility/music_ui_rn';
+import { PianoKeyboard } from '@sudobility/music_ui_rn';
 import { StyleSheet } from 'react-native';
 import { PITCH_LABEL_GUTTER } from '@sudobility/music_drawing';
 

@@ -30,7 +30,7 @@ import type { FlagReason, PublishedSnapshot } from '@sudobility/music_types';
 import { getMusicClient } from '@/config/server';
 import { ScrollingScore } from '@/features/score/ScrollingScore';
 import { TransportBar } from '@sudobility/music_ui_rn';
-import { SpatialSection } from '@/features/spatial/SpatialSection';
+import { SpatialSection } from '@sudobility/music_ui_rn';
 import { SafeAreaView } from '@/platform/SafeArea';
 import { useSafeEdgeList } from '@/platform/safe-edges';
 import type { RootStackParamList } from '@/app/Navigation';

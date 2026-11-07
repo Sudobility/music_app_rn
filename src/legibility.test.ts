@@ -40,15 +40,9 @@ describe('touch targets meet the platform figure', () => {
     So the rule is: a Pressable either sizes itself to the minimum, or says
     explicitly how it reaches it. What is banned is neither.
   */
-  const EXEMPT = new Set([
-    /*
-      Piano keys tile exactly against each other. `hitSlop` there would make
-      neighbouring keys overlap and steal each other's touches, which is worse
-      than a small target — a chord would sound the wrong notes. The keyboard
-      sizes its keys from the available width instead.
-    */
-    'src/features/piano-keyboard/PianoKeyboard.tsx',
-  ]);
+  // Piano keys tiled exactly against each other and were the one exemption;
+  // they now live in @sudobility/music_ui_rn and are guarded there.
+  const EXEMPT = new Set<string>([]);
 
   it('every Pressable states a hit region or a minimum size', () => {
     const offenders = sources

@@ -63,12 +63,12 @@ import {
   selectVisibleTrackIds,
 } from '@sudobility/music_editing';
 import { ScrollingScore } from '@/features/score/ScrollingScore';
-import { SpatialSection } from '@/features/spatial/SpatialSection';
+import { SpatialSection } from '@sudobility/music_ui_rn';
 import { useScreenshotScene } from '@/features/screenshots/screenshot-scene';
 import type { ScrollOffset } from '@/features/score/useScoreCanvas';
 import { TransportBar } from '@sudobility/music_ui_rn';
 import { usePlayerBinding } from '@sudobility/music_ui_rn';
-import { KeyboardPanel } from '@/features/piano-keyboard/KeyboardPanel';
+import { KeyboardPanel } from '@sudobility/music_ui_rn';
 import { InspectorPanel } from '@sudobility/music_ui_rn';
 import { ScoreActionsSheet } from '@/features/score-editor/ScoreActionsSheet';
 import { DocumentTabs } from '@/features/documents/DocumentTabs';
