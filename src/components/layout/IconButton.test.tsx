@@ -14,7 +14,7 @@ import { Text } from 'react-native';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { renderWithApp } from '@/test/render';
-import { IconButton } from './IconButton';
+import { IconButton } from '@sudobility/music_ui_rn';
 
 describe('IconButton', () => {
   it('reports pressed state to a screen reader, not only in colour', () => {
@@ -62,7 +62,13 @@ describe('IconButton', () => {
     // Read as source: an interpolated variant is invisible to the extractor,
     // so the utility is never generated and the control silently loses its
     // layout while keeping its colours.
-    const source = readFileSync(join(__dirname, 'IconButton.tsx'), 'utf8');
+    const source = readFileSync(
+      join(
+        __dirname,
+        '../../../node_modules/@sudobility/music_ui_rn/src/components/layout/IconButton.tsx',
+      ),
+      'utf8',
+    );
     expect(source).not.toMatch(/className=\{`[^`]*\$\{/);
   });
 });

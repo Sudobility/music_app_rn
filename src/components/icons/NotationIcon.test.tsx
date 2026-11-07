@@ -26,7 +26,7 @@ import type {
   NotationIconShape,
 } from '@sudobility/music_types';
 import { renderWithApp } from '@/test/render';
-import { NotationIcon } from './NotationIcon';
+import { NotationIcon } from '@sudobility/music_ui_rn';
 
 const ICON_NAMES = Object.keys(NOTATION_ICONS) as NotationIconName[];
 

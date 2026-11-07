@@ -42,8 +42,8 @@ import { View } from 'react-native';
 import { useStore } from 'zustand';
 import { useTranslation } from 'react-i18next';
 import { Text, useFormFactor } from '@sudobility/components-rn';
-import { ControlsSheet } from '@/components/controls/ControlsSheet';
-import type { ControlRow } from '@/components/controls/ControlsSheet';
+import { ControlsSheet } from '@sudobility/music_ui_rn';
+import type { ControlRow } from '@sudobility/music_ui_rn';
 import { useContainerSize } from '@/features/layout/useContainerSize';
 import { barsCompact } from '@/features/layout/compact-bars';
 import {
@@ -106,12 +106,12 @@ import {
   PencilIcon,
   PlusIcon,
 } from 'react-native-heroicons/solid';
-import { NotationIcon } from '@/components/icons/NotationIcon';
-import { useNotationInk } from '@/components/icons/notation-ink';
-import { IconButton } from '@/components/layout/IconButton';
+import { NotationIcon } from '@sudobility/music_ui_rn';
+import { useNotationInk } from '@sudobility/music_ui_rn';
+import { IconButton } from '@sudobility/music_ui_rn';
 import { VoiceRecordButton } from './VoiceRecordButton';
-import { ToolbarSelect } from '@/components/controls/ToolbarSelect';
-import type { ToolbarOption } from '@/components/controls/ToolbarSelect';
+import { ToolbarSelect } from '@sudobility/music_ui_rn';
+import type { ToolbarOption } from '@sudobility/music_ui_rn';
 import { ChoiceSheet } from './ChoiceSheet';
 import { GoToBarSheet } from './GoToBarSheet';
 import { InsertBarsSheet } from './InsertBarsSheet';
@@ -132,7 +132,7 @@ import type {
   QuantizeGrid,
 } from '@sudobility/music_types';
 import type { LayoutMode } from '@sudobility/music_types';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 const ICON_SIZE = 18;
 

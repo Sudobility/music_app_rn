@@ -40,7 +40,7 @@ import { BackHandler } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { decideQuit } from '@sudobility/music_lib';
-import { ConfirmSheet } from '@/components/controls/ConfirmSheet';
+import { ConfirmSheet } from '@sudobility/music_ui_rn';
 import { useDocumentList } from '@/documents/DocumentsContext';
 
 /** What the prompt names, taken off the stores the guard was given. */

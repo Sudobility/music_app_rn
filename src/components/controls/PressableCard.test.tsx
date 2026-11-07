@@ -6,7 +6,7 @@ import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { Text } from '@sudobility/components-rn';
 import { renderWithApp } from '@/test/render';
-import { PressableCard } from './PressableCard';
+import { PressableCard } from '@sudobility/music_ui_rn';
 
 function setup(onPress = jest.fn()) {
   const view = renderWithApp(

@@ -11,7 +11,7 @@ import { useMemo } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
+import { Spinner } from '@sudobility/music_ui_rn';
 import { flagReasonLabelKey, type SnapshotFlag } from '@sudobility/music_types';
 import {
   useReviewFlags,
@@ -21,7 +21,7 @@ import { getMusicClient, getNetworkClient } from '@/config/server';
 import { CONSTANTS } from '@/config/constants';
 import { readIdToken, useAuth } from '@/auth/AuthContext';
 import { ScreenScaffold, ServerUnavailable } from '../ScreenScaffold';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export function ReviewFlagsSection() {
   const { user } = useAuth();

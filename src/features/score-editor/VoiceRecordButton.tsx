@@ -10,8 +10,8 @@ import {
 import { getMusicPosition } from '@sudobility/music_types';
 import { AudioManager } from 'react-native-audio-api';
 import { FormModal, Select, Text } from '@sudobility/components-rn';
-import { IconButton } from '@/components/layout/IconButton';
-import { useNotationInk } from '@/components/icons/notation-ink';
+import { IconButton } from '@sudobility/music_ui_rn';
+import { useNotationInk } from '@sudobility/music_ui_rn';
 import { useAuth } from '@/auth/AuthContext';
 import { getMusicClient } from '@/config/server';
 import type { MusicDocument } from '@/documents/document';

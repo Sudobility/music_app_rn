@@ -25,8 +25,8 @@
  */
 import { View } from 'react-native';
 import { MIN_TOUCH_TARGET, Text } from '@sudobility/components-rn';
-import { LevelSlider, PositionSlider } from '@/components/controls/LevelSlider';
-import { IconButton } from '@/components/layout/IconButton';
+import { LevelSlider, PositionSlider } from '@sudobility/music_ui_rn';
+import { IconButton } from '@sudobility/music_ui_rn';
 /*
   `panReadout` and `volumeReadout` are music_types', not this app's — they sit
   with the other "say a stored value the way a musician says it" conversions in

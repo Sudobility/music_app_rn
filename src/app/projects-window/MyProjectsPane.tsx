@@ -12,7 +12,7 @@
 import { ScrollView, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
+import { Spinner } from '@sudobility/music_ui_rn';
 import { useProjects } from '@sudobility/music_client';
 import { useServerContext } from '@/config/useServerContext';
 import { ProjectTiles } from '@/features/projects/ProjectTiles';

@@ -80,7 +80,7 @@ import {
   FieldSlot,
   SLOT_FIELD_CLASS,
   SLOT_SELECT_CLASS,
-} from '@/components/controls/FieldRow';
+} from '@sudobility/music_ui_rn';
 import { EmptyTab, Field } from './Field';
 import { ReplaceButton } from './ReplaceButton';
 import type { MusicDocument } from '@/documents/document';

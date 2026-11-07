@@ -22,8 +22,8 @@ import type { NativeStackNavigationOptions } from '@react-navigation/native-stac
 import { hasNativeHeader } from '@/app/native-header';
 import { useTranslation } from 'react-i18next';
 import { Bars3Icon, ChevronLeftIcon } from 'react-native-heroicons/outline';
-import { useNotationInk } from '@/components/icons/notation-ink';
-import { IconButton } from '@/components/layout/IconButton';
+import { useNotationInk } from '@sudobility/music_ui_rn';
+import { IconButton } from '@sudobility/music_ui_rn';
 import { useFormFactor } from '@sudobility/components-rn';
 import { TitleBarActions, TitleBarTitle } from '@/components/layout/TitleBar';
 import type { TitleBarProps } from '@/components/layout/TitleBar';

@@ -15,10 +15,10 @@ import { useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@sudobility/components-rn';
-import { FieldRow } from '@/components/controls/FieldRow';
+import { FieldRow } from '@sudobility/music_ui_rn';
 import { useAuth } from '@/auth/AuthContext';
 import { useConsumablesClient } from '@/features/account/useAccountClients';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export function RedeemCouponForm({
   onRedeemed,

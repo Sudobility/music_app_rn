@@ -49,8 +49,8 @@ import {
   PlayIcon,
 } from 'react-native-heroicons/solid';
 import { EllipsisHorizontalIcon } from 'react-native-heroicons/outline';
-import { ControlsSheet } from '@/components/controls/ControlsSheet';
-import type { ControlRow } from '@/components/controls/ControlsSheet';
+import { ControlsSheet } from '@sudobility/music_ui_rn';
+import type { ControlRow } from '@sudobility/music_ui_rn';
 import { useContainerSize } from '@/features/layout/useContainerSize';
 import { barsCompact } from '@/features/layout/compact-bars';
 import {
@@ -66,15 +66,15 @@ import {
   openingTempoBpm,
 } from '@sudobility/music_editing';
 import type { Score } from '@sudobility/music_types';
-import { NotationIcon } from '@/components/icons/NotationIcon';
-import { useNotationInk } from '@/components/icons/notation-ink';
-import { LevelSlider } from '@/components/controls/LevelSlider';
-import { ToolbarSelect } from '@/components/controls/ToolbarSelect';
+import { NotationIcon } from '@sudobility/music_ui_rn';
+import { useNotationInk } from '@sudobility/music_ui_rn';
+import { LevelSlider } from '@sudobility/music_ui_rn';
+import { ToolbarSelect } from '@sudobility/music_ui_rn';
 import { SynthLoadIndicator } from './SynthLoadIndicator';
 import { AudioOutputSelect } from './AudioOutputSelect';
 import { getMusicPlayerIfInitialized } from '@sudobility/music_player/core';
 import { usePlaybackReadiness } from '@sudobility/music_player/react';
-import { IconButton } from '@/components/layout/IconButton';
+import { IconButton } from '@sudobility/music_ui_rn';
 import { trackButtonClick } from '@/analytics';
 import { useOnPositionFrame, usePositionReadout } from './usePositionReadout';
 import type { PositionSource } from './usePositionReadout';

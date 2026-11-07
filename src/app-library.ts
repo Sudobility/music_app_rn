@@ -11,12 +11,6 @@ export * from '@sudobility/music_io';
 export * from '@sudobility/music_player';
 export { PlaybackBus } from '@sudobility/music_player/core';
 
-export * from './store/context';
-export * from './store/document-store';
 export * from './services/library-copy';
 export * from './services/errors';
 export * from './services/export/export-plan';
-export * from './services/persistence/document-saver';
-export * from './services/persistence/project-ui';
-export * from './services/persistence/project-write';
-export * from './services/playback/bind-player';

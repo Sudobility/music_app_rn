@@ -19,7 +19,7 @@ import type { RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
+import { Spinner } from '@sudobility/music_ui_rn';
 import {
   communityItemTitle,
   getMusicPosition,
@@ -36,12 +36,12 @@ import { useSafeEdgeList } from '@/platform/safe-edges';
 import type { RootStackParamList } from '@/app/Navigation';
 import { Share } from 'react-native';
 import { ArrowUpOnSquareIcon, FlagIcon } from 'react-native-heroicons/solid';
-import { IconButton } from '@/components/layout/IconButton';
-import { useNotationInk } from '@/components/icons/notation-ink';
+import { IconButton } from '@sudobility/music_ui_rn';
+import { useNotationInk } from '@sudobility/music_ui_rn';
 import { useAuth, readIdToken } from '@/auth/AuthContext';
 import { SignInModal } from '@/features/account/SignInModal';
 import { FlagSnapshotSheet } from '@/features/community/FlagSnapshotSheet';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 import { createDocumentStore } from '@sudobility/music_lib';
 import { usePlayerBinding } from '@/features/transport/usePlayerBinding';
 import { appToasts } from '@/features/toasts/Toasts';

@@ -14,7 +14,7 @@ import { jest } from '@jest/globals';
 import { fireEvent } from '@testing-library/react-native';
 import { Text } from 'react-native';
 import { renderWithApp } from '@/test/render';
-import { ToolbarSelect } from './ToolbarSelect';
+import { ToolbarSelect } from '@sudobility/music_ui_rn';
 
 const OPTIONS = [
   { value: 'select-all', label: 'Select all notes' },

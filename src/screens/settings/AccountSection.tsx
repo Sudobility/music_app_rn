@@ -16,7 +16,7 @@ import { useEffect, useState } from 'react';
 import { Image, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, Text } from '@sudobility/components-rn';
-import { FieldRow } from '@/components/controls/FieldRow';
+import { FieldRow } from '@sudobility/music_ui_rn';
 import { trackButtonClick } from '@/analytics';
 import {
   useDeleteAvatar,
@@ -32,7 +32,7 @@ import { useServerContext } from '@/config/useServerContext';
 import { useAvatarPicker } from '@/features/account/useAvatarPicker';
 import { ScreenScaffold, ServerUnavailable } from '../ScreenScaffold';
 import { SignInPage } from '@/features/account/SignInPage';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 /** The picture's drawn size, in points. */
 const PICTURE_SIZE = 72;

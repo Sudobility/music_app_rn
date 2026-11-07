@@ -200,11 +200,6 @@ const ALLOWED_NON_UI = new Set([
   // The recent-documents list: ordering, a cap, and a handle that is a
   // security-scoped bookmark on sandboxed macOS. App state, not music.
   'src/documents/recent-documents.ts',
-  // What colour a notation glyph is drawn in. `currentColor` is an SVG idea
-  // react-native-svg does not resolve, so every glyph is handed a literal
-  // colour; this resolves the theme's token to one. Entirely a property of the
-  // renderer, and meaningless anywhere the glyphs are not drawn by hand.
-  'src/components/icons/notation-ink.ts',
   // Composition facade and app-owned integrations for the native harness.
   'src/app-library.ts',
   'src/store/context.ts',

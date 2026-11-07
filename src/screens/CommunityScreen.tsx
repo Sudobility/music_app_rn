@@ -16,8 +16,8 @@ import { Image, View } from 'react-native';
 import type { LayoutChangeEvent } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, SearchInput, Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
-import { PressableCard } from '@/components/controls/PressableCard';
+import { Spinner } from '@sudobility/music_ui_rn';
+import { PressableCard } from '@sudobility/music_ui_rn';
 import {
   communityItemTitle,
   communityListState,

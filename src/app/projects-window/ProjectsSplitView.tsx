@@ -51,7 +51,7 @@ import { TemplatePane } from './TemplatePane';
 import { ImportPane } from './ImportPane';
 import { OpenDocumentsPane } from './OpenDocumentsPane';
 import type { PaneKey } from './paneKey';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export type ProjectsSplitViewProps = {
   /**

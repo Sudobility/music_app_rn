@@ -15,7 +15,7 @@ import { useCallback, useState } from 'react';
 import { FlatList } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@sudobility/components-rn';
-import { PressableCard } from '@/components/controls/PressableCard';
+import { PressableCard } from '@sudobility/music_ui_rn';
 import type { NativeUploadFile } from '@sudobility/music_client';
 import type { ImportFormat } from '@/documents/import';
 import { OFFERED } from '@/features/documents/ImportButtons';

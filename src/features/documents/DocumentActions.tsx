@@ -21,7 +21,7 @@ import {
 import { newDocument } from '@/documents/document';
 import type { MusicDocument } from '@/documents/document';
 import { WRITABLE_EXPORT_FORMATS } from '@sudobility/music_types';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export function DocumentActions({
   document,

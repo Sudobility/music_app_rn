@@ -23,7 +23,7 @@ import { swissTheme } from '@sudobility/design/themes';
 import {
   hslTripleToHex,
   useNotationInk,
-} from '@/components/icons/notation-ink';
+} from '@sudobility/music_ui_rn';
 import { useTheme } from '@/config/ThemeContext';
 
 export function useNavigationTheme(): Theme {

@@ -21,6 +21,7 @@ import { useColorScheme } from 'react-native';
 import { devicePrefs, useDevicePrefs } from './useDevicePrefs';
 import { resolveThemeMode } from '@sudobility/music_lib';
 import type { ThemeMode } from '@sudobility/music_types';
+import { ThemeModeProvider } from '@sudobility/music_ui_rn';
 
 export type ThemeState = {
   /** What the reader asked for, which may be "follow the OS". */
@@ -54,7 +55,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>
+      {/*
+        Bridge the resolved mode into music_ui_rn's own theme-mode context, so
+        the library's functional UI (useNotationInk, ThemeVarsProvider) can
+        resolve design tokens to literal colours without importing this app
+        context. This app still owns *how* the mode is decided.
+      */}
+      <ThemeModeProvider resolved={value.resolved}>
+        {children}
+      </ThemeModeProvider>
+    </ThemeContext.Provider>
   );
 }
 

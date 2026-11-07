@@ -17,8 +17,8 @@ import {
   selectedOutputDevice,
   setOutputDevice,
 } from '@sudobility/music_synth_rn';
-import { IconButton } from '@/components/layout/IconButton';
-import { useNotationInk } from '@/components/icons/notation-ink';
+import { IconButton } from '@sudobility/music_ui_rn';
+import { useNotationInk } from '@sudobility/music_ui_rn';
 
 type OutputDevice = { id: string; name: string };
 type PopupMenu = {

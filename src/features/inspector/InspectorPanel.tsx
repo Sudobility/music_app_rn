@@ -22,7 +22,7 @@ import { ScrollView, View } from 'react-native';
 import { useStore } from 'zustand';
 import { useTranslation } from 'react-i18next';
 import { defaultInspectorTab } from '@sudobility/music_editing';
-import { SegmentedTabs } from '@/components/controls/SegmentedTabs';
+import { SegmentedTabs } from '@sudobility/music_ui_rn';
 import { TrackTab } from './TrackTab';
 import { NoteTab } from './NoteTab';
 import { MeasureTab } from './MeasureTab';

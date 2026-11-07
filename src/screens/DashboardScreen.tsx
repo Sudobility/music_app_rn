@@ -26,7 +26,7 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '@/app/Navigation';
 import { useTranslation } from 'react-i18next';
 import { Button, Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
+import { Spinner } from '@sudobility/music_ui_rn';
 import { ProjectTiles } from '@/features/projects/ProjectTiles';
 import { useProjects } from '@sudobility/music_client';
 import type { NewProjectSubmission } from '@sudobility/music_lib';
@@ -43,7 +43,7 @@ import {
 import { SyncToServerButton } from '@/features/documents/SyncToServerButton';
 import { ScreenScaffold, ServerUnavailable } from './ScreenScaffold';
 import { SignInRequired } from '@/features/account/SignInRequired';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export type DashboardScreenProps = {
   /**

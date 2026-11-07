@@ -16,7 +16,7 @@
  */
 import type { AppErrorCode, AppErrorOptions } from '@sudobility/music_types';
 import { libraryMessage } from '@sudobility/music_lib-core';
-import type { DocumentStore } from '../store/document-store';
+import type { DocumentStore } from '@sudobility/music_lib-core';
 import { trackError } from '../analytics';
 
 /** A taxonomized application error (spec §28). Thrown by call sites that already know *why* an operation failed and want the UI to show something clearer than a raw `Error.message`. */

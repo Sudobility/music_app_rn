@@ -28,9 +28,9 @@ import {
 } from '@sudobility/music_client';
 import type { MusicHookContext } from '@sudobility/music_client';
 import type { ProjectSummary } from '@sudobility/music_types';
-import { ConfirmSheet } from '@/components/controls/ConfirmSheet';
-import { usePendingAction } from '@/components/controls/usePendingAction';
-import { PressableCard } from '@/components/controls/PressableCard';
+import { ConfirmSheet } from '@sudobility/music_ui_rn';
+import { usePendingAction } from '@sudobility/music_ui_rn';
+import { PressableCard } from '@sudobility/music_ui_rn';
 import {
   useContentPadding,
   useSidesHandled,

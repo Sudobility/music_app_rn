@@ -9,13 +9,13 @@ import { useCallback, useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
+import { Spinner } from '@sudobility/music_ui_rn';
 import type { CreditCoupon } from '@sudobility/consumables_client';
 import { useAuth } from '@/auth/AuthContext';
 import { useConsumablesClient } from '@/features/account/useAccountClients';
-import { SelectableText } from '@/components/controls/SelectableText';
+import { SelectableText } from '@sudobility/music_ui_rn';
 import { ScreenScaffold, ServerUnavailable } from '../ScreenScaffold';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 /** A calendar date, as the field asks for one. */
 const DATE = /^\d{4}-\d{2}-\d{2}$/;

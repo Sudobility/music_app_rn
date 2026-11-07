@@ -20,7 +20,7 @@ import { useStore } from 'zustand';
 import { useTranslation } from 'react-i18next';
 import { SpatialView } from '@sudobility/music_spatial_rn';
 import { controlLocked, selectEditLocked } from '@sudobility/music_editing';
-import { useNotationInk } from '@/components/icons/notation-ink';
+import { useNotationInk } from '@sudobility/music_ui_rn';
 import type { MusicDocument } from '@/documents/document';
 import { useSoundingTrackIds } from './useSoundingTrackIds';
 

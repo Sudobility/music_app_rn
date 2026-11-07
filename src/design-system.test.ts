@@ -48,20 +48,12 @@ describe('colours come from the theme', () => {
   const HEX = /['"]#[0-9a-fA-F]{3,8}['"]/g;
   const HEX_ALLOWED = new Map([
     [
-      'src/components/icons/BrandLogos.tsx',
-      "Trademarks: Google's four colours and Apple's black or white are theirs, not the theme's.",
-    ],
-    [
       'src/features/piano-keyboard/PianoKeyboard.tsx',
       'The hairline between white keys. A key is an instrument colour (music_drawing fills them white and black in both themes), so its edge is one too.',
     ],
     [
       'src/features/editor/ProjectsPopup.tsx',
       'A shadow colour. A shadow is black in both themes and the theme has no token for one.',
-    ],
-    [
-      'src/components/controls/LevelSlider.painted.tsx',
-      'A shadow colour, under the slider knob, for the same reason.',
     ],
   ]);
 
@@ -153,10 +145,6 @@ describe('controls come from the library', () => {
       'src/features/piano-keyboard/PianoKeyboard.tsx',
       "A key's printed name is part of the keyboard drawing: placed by music_drawing's geometry and coloured from the render theme, at a size the library's scale does not have.",
     ],
-    [
-      'src/components/controls/SelectableText.tsx',
-      "The library's `Text` does not pass `selectable` through; this is the wrapper that does.",
-    ],
   ]);
 
   it('no unstyled React Native control outside the listed wrappers', () => {
@@ -178,17 +166,12 @@ describe('controls come from the library', () => {
   */
   const PRESSABLE = /<Pressable\b/g;
   const PRESSABLE_ALLOWED = new Map([
-    // The wrappers.
-    ['src/components/layout/IconButton.tsx', 'The icon button itself.'],
-    ['src/components/controls/PressableCard.tsx', 'The list row itself.'],
-    ['src/components/controls/ToolbarSelect.tsx', 'The toolbar picker itself.'],
+    // The wrappers that live in the app (the UI-library wrappers — IconButton,
+    // PressableCard, ToolbarSelect, SegmentedTabs — now live in music_ui_rn and
+    // are guarded there).
     [
       'src/features/transport/AudioOutputSelect.tsx',
       'An anchored desktop output menu; the library select cannot use an icon-only toolbar trigger.',
-    ],
-    [
-      'src/components/controls/SegmentedTabs.macos.tsx',
-      'The segmented control drawn in-app on macOS, where the native one does not animate.',
     ],
     [
       'src/components/layout/ScreenBackBar.macos.tsx',

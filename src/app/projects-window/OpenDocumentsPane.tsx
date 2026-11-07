@@ -14,7 +14,7 @@ import { FlatList } from 'react-native';
 import { useStore } from 'zustand';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@sudobility/components-rn';
-import { PressableCard } from '@/components/controls/PressableCard';
+import { PressableCard } from '@sudobility/music_ui_rn';
 import { useDocuments } from '@/documents/DocumentsContext';
 import type { MusicDocument } from '@/documents/document';
 import { useDetailScroll } from '@/components/layout/detail-safe-area';

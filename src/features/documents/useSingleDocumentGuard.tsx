@@ -20,7 +20,7 @@ import { useCallback, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { decideQuit } from '@sudobility/music_lib';
-import { ConfirmSheet } from '@/components/controls/ConfirmSheet';
+import { ConfirmSheet } from '@sudobility/music_ui_rn';
 import { useDocumentList } from '@/documents/DocumentsContext';
 
 type Pending = { titles: readonly string[]; action: () => void };

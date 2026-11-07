@@ -20,7 +20,7 @@ import type { DocumentStore } from '@sudobility/music_lib';
 import { getMusicClient } from '@/config/server';
 import { useAuth } from '@/auth/AuthContext';
 import { useActiveDocument } from '@/documents/DocumentsContext';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export function SyncToServerButton() {
   const document = useActiveDocument();

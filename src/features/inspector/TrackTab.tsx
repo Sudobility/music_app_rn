@@ -45,9 +45,9 @@ import {
   pitchToString,
 } from '@sudobility/music_types';
 import type { Clef } from '@sudobility/music_types';
-import { ConfirmSheet } from '@/components/controls/ConfirmSheet';
-import { InstrumentIcon } from '@/components/icons/InstrumentIcon';
-import { useNotationInk } from '@/components/icons/notation-ink';
+import { ConfirmSheet } from '@sudobility/music_ui_rn';
+import { InstrumentIcon } from '@sudobility/music_ui_rn';
+import { useNotationInk } from '@sudobility/music_ui_rn';
 import { Field, EmptyTab } from './Field';
 import { ReplaceButton } from './ReplaceButton';
 import { VisibleTracksField } from './VisibleTracksField';

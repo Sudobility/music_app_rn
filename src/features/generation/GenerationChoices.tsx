@@ -30,8 +30,8 @@ import {
 } from '@sudobility/music_lib';
 import type { LockableChoice } from '@sudobility/music_lib';
 import type { GenerationRecord } from '@sudobility/music_types';
-import { ConfirmSheet } from '@/components/controls/ConfirmSheet';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { ConfirmSheet } from '@sudobility/music_ui_rn';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export type GenerationChoicesProps = {
   record: GenerationRecord;

@@ -17,7 +17,7 @@ import { View } from 'react-native';
 import { useStore } from 'zustand';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
+import { Spinner } from '@sudobility/music_ui_rn';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { createKeyValueStore } from '@/documents/rn-key-value';
 import { defaultDocumentUri } from '@/documents/rn-storage';
@@ -81,7 +81,7 @@ import type { RootStackParamList } from '@/app/Navigation';
 import type { MusicDocument } from '@/documents/document';
 import type { ScrollOffset } from '@/features/score/useScoreCanvas';
 import type { ExportScope } from '@sudobility/music_types';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 const keyValue = createKeyValueStore();
 

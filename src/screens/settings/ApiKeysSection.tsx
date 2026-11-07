@@ -13,9 +13,9 @@ import { useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
-import { FieldRow } from '@/components/controls/FieldRow';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { Spinner } from '@sudobility/music_ui_rn';
+import { FieldRow } from '@sudobility/music_ui_rn';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 import {
   useCreateApiKey,
   useEntities,
@@ -28,7 +28,7 @@ import type {
 } from '@sudobility/entity_client';
 import { useAuth } from '@/auth/AuthContext';
 import { useEntityClient } from '@/features/account/useAccountClients';
-import { SelectableText } from '@/components/controls/SelectableText';
+import { SelectableText } from '@sudobility/music_ui_rn';
 import { ScreenScaffold, ServerUnavailable } from '../ScreenScaffold';
 
 export function ApiKeysSection() {

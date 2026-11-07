@@ -21,7 +21,7 @@ import {
   useDocumentList,
   useDocumentServices,
 } from '@/documents/DocumentsContext';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export function RecentDocuments({ keyValue }: { keyValue: KeyValueStore }) {
   const list = useDocumentList();

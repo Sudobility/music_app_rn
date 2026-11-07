@@ -28,10 +28,10 @@ import {
   RectangleStackIcon,
 } from 'react-native-heroicons/outline';
 import type { SaveState as DocumentSaveState } from '@sudobility/music_lib';
-import { IconButton } from './IconButton';
-import { OverflowMenu } from '@/components/controls/OverflowMenu';
-import type { OverflowAction } from '@/components/controls/OverflowMenu';
-import { useNotationInk } from '@/components/icons/notation-ink';
+import { IconButton } from '@sudobility/music_ui_rn';
+import { OverflowMenu } from '@sudobility/music_ui_rn';
+import type { OverflowAction } from '@sudobility/music_ui_rn';
+import { useNotationInk } from '@sudobility/music_ui_rn';
 import type { MusicDocument } from '@/documents/document';
 
 /** Matches the web app's `ICON_GLYPH_CLASS` sizing. */

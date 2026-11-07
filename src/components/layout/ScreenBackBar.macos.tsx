@@ -22,7 +22,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { ChevronLeftIcon } from 'react-native-heroicons/outline';
 import { MIN_TOUCH_TARGET, Text, touchSlop } from '@sudobility/components-rn';
-import { useNotationInk } from '@/components/icons/notation-ink';
+import { useNotationInk } from '@sudobility/music_ui_rn';
 import { useEmbedded } from './EmbeddedScreen';
 
 /** Matches the title bar's glyph size. */

@@ -25,7 +25,7 @@ import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Button, Text } from '@sudobility/components-rn';
-import { Spinner } from '@/components/controls/Spinner';
+import { Spinner } from '@sudobility/music_ui_rn';
 import type { ProjectSnapshots } from '@sudobility/music_client';
 import { flagReasonLabelKey } from '@sudobility/music_types';
 import { CreateSnapshotSheet, OpenSnapshotSheet } from './SnapshotSheets';
@@ -34,8 +34,8 @@ import {
   FieldSlot,
   SLOT_BUTTON_CLASS,
   SLOT_FIELD_CLASS,
-} from '@/components/controls/FieldRow';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+} from '@sudobility/music_ui_rn';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 export type SnapshotsPanelProps = {
   /** `useProjectSnapshots` for this project. */

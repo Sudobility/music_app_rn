@@ -27,7 +27,7 @@ import {
 import { getAppServices, libraryCopy } from '@/config/initialize';
 import { trackButtonClick, trackError, trackEvent } from '@/analytics';
 import { MidiImportSheet } from './MidiImportSheet';
-import { usePendingAction } from '@/components/controls/usePendingAction';
+import { usePendingAction } from '@sudobility/music_ui_rn';
 
 /**
  * A failure, in the reader's language where the failure has a reason.

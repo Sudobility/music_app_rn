@@ -25,7 +25,11 @@ describe('controls in a row share the touch target height', () => {
       'MIN_TOUCH_TARGET is no longer stated this way',
     ).not.toBeNull();
     const [, android, other] = stated!;
-    expect(read('FieldRow.tsx')).toContain(
+    expect(
+      read(
+        '../../../node_modules/@sudobility/music_ui_rn/src/components/controls/FieldRow.tsx',
+      ),
+    ).toContain(
       `Platform.OS === 'android' ? 'min-h-[${android}px]' : 'min-h-[${other}px]'`,
     );
   });
