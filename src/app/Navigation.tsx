@@ -103,99 +103,99 @@ export function Navigation() {
   return (
     <NavigationContainer ref={navigationRef} theme={theme} linking={linking}>
       <NavigatorProvider value={musicNavigator}>
-      {hasTabBar() ? (
-        <Stack.Navigator
-          initialRouteName="Main"
-          screenOptions={{ headerShown: true }}
-        >
-          <Stack.Screen
-            name="Main"
-            component={MainTabs}
-            // Each tab draws its own header. The title is what the editor's
-            // back control reads.
-            options={{ headerShown: false, title: t('nav.projects') }}
-          />
-          {/*
+        {hasTabBar() ? (
+          <Stack.Navigator
+            initialRouteName="Main"
+            screenOptions={{ headerShown: true }}
+          >
+            <Stack.Screen
+              name="Main"
+              component={MainTabs}
+              // Each tab draws its own header. The title is what the editor's
+              // back control reads.
+              options={{ headerShown: false, title: t('nav.projects') }}
+            />
+            {/*
             Above the tabs, not among them: a pushed screen covers the tab
             bar, so an open project has the whole screen. The header is
             always there because it is the way back; `useEditorHeader` fills
             it in while a document is showing.
           */}
-          <Stack.Screen
-            name="Editor"
-            component={EditorScreen}
-            options={{ title: '' }}
-          />
-          <Stack.Screen
-            name="Published"
-            component={PublishedScreen}
-            options={{ title: t('nav.published') }}
-          />
-          <Stack.Screen
-            name="Credits"
-            component={CreditsScreen}
-            options={{ title: t('nav.credits') }}
-          />
-        </Stack.Navigator>
-      ) : (
-        <Stack.Navigator
-          initialRouteName="Editor"
-          screenOptions={{ headerShown: false }}
-        >
-          {/*
+            <Stack.Screen
+              name="Editor"
+              component={EditorScreen}
+              options={{ title: '' }}
+            />
+            <Stack.Screen
+              name="Published"
+              component={PublishedScreen}
+              options={{ title: t('nav.published') }}
+            />
+            <Stack.Screen
+              name="Credits"
+              component={CreditsScreen}
+              options={{ title: t('nav.credits') }}
+            />
+          </Stack.Navigator>
+        ) : (
+          <Stack.Navigator
+            initialRouteName="Editor"
+            screenOptions={{ headerShown: false }}
+          >
+            {/*
             The editor first, not the dashboard. The web opens on a project
             list because a project lives on a server; here a document lives
             on the device, and opening into an empty editor is the shorter
             path to writing something.
           */}
-          <Stack.Screen name="Editor" component={EditorScreen} />
-          {/*
+            <Stack.Screen name="Editor" component={EditorScreen} />
+            {/*
             Unreached on a desktop build, not removed: File ▸ Projects opens
             a separate native window (`ProjectsWindow.tsx`) — see
             `MenuFileCommands.tsx`'s `nav.projects` handling.
           */}
-          <Stack.Screen
-            name="Dashboard"
-            component={DashboardScreen}
-            options={{ headerShown: true, title: t('nav.projects') }}
-          />
-          <Stack.Screen
-            name="Community"
-            component={CommunityScreen}
-            options={{ headerShown: true, title: t('nav.community') }}
-          />
-          <Stack.Screen
-            name="Published"
-            component={PublishedScreen}
-            options={{ headerShown: true, title: t('nav.published') }}
-          />
-          <Stack.Screen
-            name="Docs"
-            component={DocsScreen}
-            options={{ headerShown: true, title: t('docs.title') }}
-          />
-          <Stack.Screen
-            name="Settings"
-            component={SettingsScreen}
-            options={{ headerShown: true, title: t('nav.settings') }}
-          />
-          <Stack.Screen
-            name="Credits"
-            component={CreditsScreen}
-            options={{ headerShown: true, title: t('nav.credits') }}
-          />
-          {/*
+            <Stack.Screen
+              name="Dashboard"
+              component={DashboardScreen}
+              options={{ headerShown: true, title: t('nav.projects') }}
+            />
+            <Stack.Screen
+              name="Community"
+              component={CommunityScreen}
+              options={{ headerShown: true, title: t('nav.community') }}
+            />
+            <Stack.Screen
+              name="Published"
+              component={PublishedScreen}
+              options={{ headerShown: true, title: t('nav.published') }}
+            />
+            <Stack.Screen
+              name="Docs"
+              component={DocsScreen}
+              options={{ headerShown: true, title: t('docs.title') }}
+            />
+            <Stack.Screen
+              name="Settings"
+              component={SettingsScreen}
+              options={{ headerShown: true, title: t('nav.settings') }}
+            />
+            <Stack.Screen
+              name="Credits"
+              component={CreditsScreen}
+              options={{ headerShown: true, title: t('nav.credits') }}
+            />
+            {/*
             Where to find music to open. More useful on a phone than on the
             web, not less: a new install has no folder of scores already on
             the device.
           */}
-          <Stack.Screen
-            name="Resources"
-            component={ResourcesScreen}
-            options={{ headerShown: true, title: t('nav.resources') }}
-          />
-        </Stack.Navigator>
-      )}
+            <Stack.Screen
+              name="Resources"
+              component={ResourcesScreen}
+              options={{ headerShown: true, title: t('nav.resources') }}
+            />
+          </Stack.Navigator>
+        )}
       </NavigatorProvider>
     </NavigationContainer>
   );

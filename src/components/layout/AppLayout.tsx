@@ -151,10 +151,6 @@ export type AppLayoutProps = {
   onExport: () => void;
   /** An export is being written. See `TitleBar`. */
   exporting?: boolean;
-  /** Opens Settings. See `TitleBar`. */
-  onSettings: () => void;
-  /** Opens the projects list — the only route to New Project and to imports. */
-  onDocuments: () => void;
   /** Shows the keyboard shortcuts. Absent where the holder has no sheet for them. */
   onShortcuts?: () => void;
   /** Reports a server-side voice transcription job to the editor's job strip. */
@@ -267,8 +263,6 @@ export function AppLayout({
   onSave,
   onExport,
   exporting = false,
-  onSettings,
-  onDocuments,
   onShortcuts,
   onVoiceTranscriptionJob,
   exportSheet,
@@ -649,8 +643,6 @@ export function AppLayout({
             onSave={onSave}
             onExport={onExport}
             exporting={exporting}
-            onSettings={onSettings}
-            onDocuments={onDocuments}
             {...(onShortcuts ? { onShortcuts } : {})}
             {...(onSnapshots ? { onSnapshots } : {})}
             {...(onPrint ? { onPrint } : {})}

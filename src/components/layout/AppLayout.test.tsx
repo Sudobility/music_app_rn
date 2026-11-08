@@ -83,8 +83,6 @@ describe('AppLayout desktop menu', () => {
         document={testDocument()}
         onSave={jest.fn()}
         onExport={jest.fn()}
-        onSettings={jest.fn()}
-        onDocuments={jest.fn()}
       />,
     );
     expect(view.queryByLabelText('Save now')).toBeNull();
@@ -101,8 +99,6 @@ describe('AppLayout desktop menu', () => {
         document={testDocument()}
         onSave={jest.fn()}
         onExport={jest.fn()}
-        onSettings={jest.fn()}
-        onDocuments={jest.fn()}
       />,
     );
     expect(view.queryByLabelText('Save now')).toBeNull();
@@ -117,8 +113,6 @@ describe('AppLayout desktop menu', () => {
         document={testDocument()}
         onSave={jest.fn()}
         onExport={jest.fn()}
-        onSettings={jest.fn()}
-        onDocuments={jest.fn()}
       />,
     );
     expect(view.queryByLabelText('Save now')).not.toBeNull();
@@ -138,8 +132,6 @@ describe('AppLayout Spatial view', () => {
         document={testDocument()}
         onSave={jest.fn()}
         onExport={jest.fn()}
-        onSettings={jest.fn()}
-        onDocuments={jest.fn()}
       />,
     );
     expect(view.queryByTestId('spatial-view')).toBeNull();
@@ -168,8 +160,6 @@ describe('AppLayout', () => {
         document={testDocument()}
         onSave={jest.fn()}
         onExport={jest.fn()}
-        onSettings={jest.fn()}
-        onDocuments={jest.fn()}
       />,
     );
 
@@ -199,8 +189,6 @@ describe('AppLayout', () => {
         document={testDocument()}
         onSave={jest.fn()}
         onExport={jest.fn()}
-        onSettings={jest.fn()}
-        onDocuments={jest.fn()}
       />,
     );
     expect(view.queryByTestId('piano-keyboard-panel')).not.toBeNull();
@@ -223,8 +211,6 @@ describe('AppLayout', () => {
         document={testDocument()}
         onSave={jest.fn()}
         onExport={jest.fn()}
-        onSettings={jest.fn()}
-        onDocuments={jest.fn()}
       />,
     );
   }
@@ -259,8 +245,6 @@ describe('AppLayout', () => {
           document={document}
           onSave={jest.fn()}
           onExport={jest.fn()}
-          onSettings={jest.fn()}
-          onDocuments={jest.fn()}
         />,
       );
       return { document, view };
@@ -286,8 +270,6 @@ describe('AppLayout', () => {
           document={testDocument({ measures: 4 })}
           onSave={jest.fn()}
           onExport={jest.fn()}
-          onSettings={jest.fn()}
-          onDocuments={jest.fn()}
           scoreReadOnly
         />,
       );
@@ -347,8 +329,6 @@ describe('AppLayout inspector', () => {
         document={testDocument()}
         onSave={jest.fn()}
         onExport={jest.fn()}
-        onSettings={jest.fn()}
-        onDocuments={jest.fn()}
       />,
     );
   }

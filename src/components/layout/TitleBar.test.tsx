@@ -11,24 +11,31 @@ import { jest } from '@jest/globals';
 import { act, fireEvent } from '@testing-library/react-native';
 import { renderWithApp, testDocument } from '@/test/render';
 import { TitleBar } from '@sudobility/music_ui_rn';
+import type { MusicNavigator } from '@sudobility/music_lib';
 
 function setup(overrides: Partial<Parameters<typeof TitleBar>[0]> = {}) {
   const document = testDocument({ title: 'Quartet' });
   const onSave = jest.fn();
   const onExport = jest.fn();
-  const onSettings = jest.fn();
-  const onDocuments = jest.fn();
+  // Projects and Settings now navigate through the shared navigator rather
+  // than through app callbacks, so a spy navigator is how those are asserted.
+  const go = jest.fn();
+  const navigator: MusicNavigator = {
+    go: go as MusicNavigator['go'],
+    replace: () => {},
+    back: () => {},
+    current: () => null,
+  };
   const view = renderWithApp(
     <TitleBar
       document={document}
       onSave={onSave}
       onExport={onExport}
-      onSettings={onSettings}
-      onDocuments={onDocuments}
       {...overrides}
     />,
+    { navigator },
   );
-  return { view, document, onSave, onExport, onSettings, onDocuments };
+  return { view, document, onSave, onExport, go };
 }
 
 describe('TitleBar', () => {
@@ -61,9 +68,9 @@ describe('TitleBar', () => {
       "Settings…" item is the generated template item that answers to nothing.
       Nothing navigated there at all before this button existed.
     */
-    const { view, onSettings } = setup();
+    const { view, go } = setup();
     fireEvent.press(view.getByLabelText('Settings'));
-    expect(onSettings).toHaveBeenCalled();
+    expect(go).toHaveBeenCalledWith('settings');
   });
 
   it('always offers Projects, because it is the only way to that screen', () => {
@@ -75,9 +82,9 @@ describe('TitleBar', () => {
       this button the only document a phone could ever open was the scratch one
       made at launch.
     */
-    const { view, onDocuments } = setup();
+    const { view, go } = setup();
     fireEvent.press(view.getByLabelText('Projects'));
-    expect(onDocuments).toHaveBeenCalled();
+    expect(go).toHaveBeenCalledWith('projects');
   });
 
   it('omits Snapshots for the same reason', () => {

@@ -209,6 +209,13 @@ const ALLOWED_NON_UI = new Set([
   // on desktop (native-stack has no macOS platform), native-stack on mobile.
   // A platform choice about navigation, not about music.
   'src/app/createAppStackNavigator.ts',
+  // The app's `MusicNavigator` implementation over React Navigation: it maps
+  // the shared routing kit's route names onto this app's screens (tab routes
+  // via `goToTab`, the rest pushed) and re-exports the library-owned
+  // `NavigatorProvider`/`useNavigator`. Navigation glue — the shared nav
+  // contract lives in `music_lib`/`@sudobility/routing`; this only wires it to
+  // React Navigation, and holds no rule about music.
+  'src/app/navigator.ts',
   // The closed vocabulary of the desktop Projects window's sidebar panes,
   // shared between the sidebar and the split view so the two cannot
   // disagree about the set. A type declaration, nothing to test.

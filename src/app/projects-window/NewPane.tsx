@@ -61,7 +61,7 @@ export function NewPane({
           <ScoreSetupFields
             draft={form}
             dispatch={dispatch}
-          serverContext={publicServerContext()}
+            serverContext={publicServerContext()}
             generateToggle={
               <GenerateToggle
                 form={newProject}

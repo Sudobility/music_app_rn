@@ -74,9 +74,14 @@ export function makeMusicNavigator(ref: Ref): MusicNavigator {
   };
 
   const nav = {
-    go: (name: keyof MusicRoutes, params?: Record<string, string | undefined>) =>
-      toRoute(name, params),
-    replace: (name: keyof MusicRoutes, params?: Record<string, string | undefined>) => {
+    go: (
+      name: keyof MusicRoutes,
+      params?: Record<string, string | undefined>,
+    ) => toRoute(name, params),
+    replace: (
+      name: keyof MusicRoutes,
+      params?: Record<string, string | undefined>,
+    ) => {
       // A pushed screen can be replaced in place; a tab is reached the same way
       // whether or not it is already there, so replace folds into go.
       if (ref.isReady() && !TAB_ROUTES.has(name)) {

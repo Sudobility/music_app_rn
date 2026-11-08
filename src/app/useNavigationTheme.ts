@@ -20,10 +20,7 @@ import { useMemo } from 'react';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import type { Theme } from '@react-navigation/native';
 import { swissTheme } from '@sudobility/design/themes';
-import {
-  hslTripleToHex,
-  useNotationInk,
-} from '@sudobility/music_ui_rn';
+import { hslTripleToHex, useNotationInk } from '@sudobility/music_ui_rn';
 import { useTheme } from '@/config/ThemeContext';
 
 export function useNavigationTheme(): Theme {

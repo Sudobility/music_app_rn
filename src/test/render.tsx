@@ -10,6 +10,16 @@ import type { ReactElement, ReactNode } from 'react';
 import { render } from '@testing-library/react-native';
 import { PortalHost } from '@sudobility/components-rn';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { NavigatorProvider } from '@sudobility/music_ui_rn';
+import type { MusicNavigator } from '@sudobility/music_lib';
+
+/** A no-op navigator so shared UI's `useNavigator()` resolves under test. */
+const stubNavigator: MusicNavigator = {
+  go: () => {},
+  replace: () => {},
+  back: () => {},
+  current: () => null,
+};
 import { createEmptyScore } from '@sudobility/music_types';
 import { createDocumentStore } from '@sudobility/music_lib';
 import { asDocument } from '@/documents/document';
@@ -38,8 +48,12 @@ export function testDocument(
   );
 }
 
-/** Renders with i18n started. */
-export function renderWithApp(ui: ReactElement) {
+/** Renders with i18n started. Pass a `navigator` to assert navigation. */
+export function renderWithApp(
+  ui: ReactElement,
+  options: { navigator?: MusicNavigator } = {},
+) {
+  const navigator = options.navigator ?? stubNavigator;
   if (!started) {
     // Once per process: i18next is a singleton and re-initialising it mid-run
     // drops the resources every earlier test resolved against.
@@ -85,7 +99,9 @@ export function renderWithApp(ui: ReactElement) {
   });
   const wrapper = ({ children }: { children: ReactNode }) => (
     <QueryClientProvider client={queryClient}>
-      <PortalHost>{children}</PortalHost>
+      <NavigatorProvider value={navigator}>
+        <PortalHost>{children}</PortalHost>
+      </NavigatorProvider>
     </QueryClientProvider>
   );
   return render(ui, { wrapper });

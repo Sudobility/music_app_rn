@@ -12,6 +12,7 @@ import * as nativeHeader from '@/app/native-header';
 import { renderWithApp, testDocument } from '@/test/render';
 import { useEditorHeader } from './useEditorHeader';
 import type { TitleBarProps } from '@sudobility/music_ui_rn';
+import type { MusicNavigator } from '@sudobility/music_lib';
 
 // A tablet shows every title-bar action inline; a phone groups the secondary
 // ones (Export, Print, …) behind the "…" overflow. These assertions press the
@@ -40,8 +41,6 @@ function setup(overrides: Partial<TitleBarProps> = {}, onMaster?: () => void) {
     document: testDocument({ title: 'Quartet' }),
     onSave: jest.fn(),
     onExport: jest.fn(),
-    onSettings: jest.fn(),
-    onDocuments: jest.fn(),
     ...overrides,
   };
   const view = renderWithApp(
@@ -51,7 +50,10 @@ function setup(overrides: Partial<TitleBarProps> = {}, onMaster?: () => void) {
 }
 
 /** Draws what the navigator was handed, as the navigator would. */
-function drawHeader(options: NativeStackNavigationOptions) {
+function drawHeader(
+  options: NativeStackNavigationOptions,
+  navigator?: MusicNavigator,
+) {
   const title = options.headerTitle;
   const right = options.headerRight;
   if (typeof title !== 'function' || !right) {
@@ -62,6 +64,7 @@ function drawHeader(options: NativeStackNavigationOptions) {
       {title({ children: '' })}
       {right({ canGoBack: false })}
     </>,
+    navigator ? { navigator } : {},
   );
 }
 
@@ -75,7 +78,14 @@ describe('useEditorHeader', () => {
     const options = setOptions.mock.calls[0]![0];
     expect(options.headerShown).toBe(true);
 
-    const header = drawHeader(options);
+    const go = jest.fn();
+    const navigator: MusicNavigator = {
+      go: go as MusicNavigator['go'],
+      replace: () => {},
+      back: () => {},
+      current: () => null,
+    };
+    const header = drawHeader(options, navigator);
     expect(header.getByText('Quartet')).toBeTruthy();
     expect(header.getByText('Saved')).toBeTruthy();
     fireEvent.press(header.getByLabelText('Save now'));
@@ -86,8 +96,8 @@ describe('useEditorHeader', () => {
     expect(props.onSave).toHaveBeenCalled();
     expect(props.onExport).toHaveBeenCalled();
     expect(onPrint).toHaveBeenCalled();
-    expect(props.onDocuments).toHaveBeenCalled();
-    expect(props.onSettings).toHaveBeenCalled();
+    expect(go).toHaveBeenCalledWith('projects');
+    expect(go).toHaveBeenCalledWith('settings');
   });
 
   it('leaves out what the title bar would leave out', () => {

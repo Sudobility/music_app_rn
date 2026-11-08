@@ -58,8 +58,6 @@ export function useEditorHeader(
     onSave,
     onExport,
     exporting = false,
-    onSettings,
-    onDocuments,
     onShortcuts,
     onSnapshots,
     onPrint,
@@ -121,8 +119,6 @@ export function useEditorHeader(
           {...(onSnapshots ? { onSnapshots } : {})}
           {...(onPrint ? { onPrint } : {})}
           printing={printing}
-          onSettings={onSettings}
-          onDocuments={onDocuments}
           {...(onShortcuts ? { onShortcuts } : {})}
           phone={phone}
         />
@@ -139,8 +135,6 @@ export function useEditorHeader(
     onSave,
     onExport,
     exporting,
-    onSettings,
-    onDocuments,
     onShortcuts,
     onSnapshots,
     onPrint,

@@ -64,7 +64,13 @@ function Harness({ initial }: { initial: NewProjectFormDraft }) {
     initial,
   );
   latest = draft;
-  return <ScoreSetupFields draft={draft} dispatch={dispatch} serverContext={publicServerContext()} />;
+  return (
+    <ScoreSetupFields
+      draft={draft}
+      dispatch={dispatch}
+      serverContext={publicServerContext()}
+    />
+  );
 }
 
 function setup(initial: NewProjectFormDraft = initialNewProjectDraft()) {

@@ -18,7 +18,8 @@ import { isNoteEvent } from '@sudobility/music_types';
 import { renderWithApp, testDocument } from '@/test/render';
 import type { MusicDocument } from '@/documents/document';
 
-const { TrackTab } = require('@sudobility/music_ui_rn') as typeof import('@sudobility/music_ui_rn');
+const { TrackTab } =
+  require('@sudobility/music_ui_rn') as typeof import('@sudobility/music_ui_rn');
 
 function setup(tracks = 1) {
   const document = testDocument();

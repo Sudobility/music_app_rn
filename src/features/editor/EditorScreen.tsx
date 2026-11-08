@@ -581,28 +581,9 @@ function DocumentEditor({ document }: { document: MusicDocument }) {
     ),
   );
 
-  /*
-    Settings holds the theme, the language, the account, Credits, Shortcuts
-    and About. On iOS and Android it is a tab, behind the editor; on a
-    desktop build the title bar is gone (`hasMenuBar()`) and `nav.settings`
-    — the App menu's Preferences… on macOS, wired in `AppDelegate.mm` — is
-    the way there.
-  */
-  const onSettings = useCallback(
-    () => goToTab(navigation, 'Settings'),
-    [navigation],
-  );
-  /*
-    And the projects list: New Project, every import and the server
-    project list. Same split — this is iOS/Android's route, and a
-    desktop build reaches it through `nav.projects` in the File menu
-    instead, handled in `MenuFileCommands` rather than here because it
-    must work with no document open at all.
-  */
-  const onDocuments = useCallback(
-    () => goToTab(navigation, 'Dashboard'),
-    [navigation],
-  );
+  // Settings and Projects are shared routes: the title bar navigates to them
+  // through the shared `useNavigator` now, so the editor no longer wires them.
+  // (A desktop build reaches them through the File menu — `MenuFileCommands`.)
   /*
     The Projects sidebar, drawn over the score: what a split view offers once
     its detail has the whole screen. Only under a tab bar — a desktop build
@@ -673,8 +654,6 @@ function DocumentEditor({ document }: { document: MusicDocument }) {
       onSave,
       onExport,
       exporting: exporting.pending,
-      onSettings,
-      onDocuments,
       onShortcuts,
       ...(projectId ? { onSnapshots } : {}),
       ...(canPrint() ? { onPrint, printing } : {}),
@@ -692,8 +671,6 @@ function DocumentEditor({ document }: { document: MusicDocument }) {
       onSave={onSave}
       onExport={onExport}
       exporting={exporting.pending}
-      onSettings={onSettings}
-      onDocuments={onDocuments}
       onShortcuts={onShortcuts}
       onVoiceTranscriptionJob={(projectId, cancel, progress) =>
         setVoiceJob(projectId ? { cancel, progress: progress ?? null } : null)
@@ -770,7 +747,9 @@ function DocumentEditor({ document }: { document: MusicDocument }) {
             printing={printing}
             initialScope={printScope}
             paperSize={printPaperSize}
-            onPaperSizeChange={value => devicePrefs.getState().setPaperSize(value)}
+            onPaperSizeChange={value =>
+              devicePrefs.getState().setPaperSize(value)
+            }
             defaultPaperSize={defaultPaperSizeFor(getDeviceLocaleTags())}
           />
           <GenerateTrackSheet

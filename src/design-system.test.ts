@@ -136,8 +136,7 @@ describe('controls come from the library', () => {
   */
   const RAW =
     /import\s*\{[^}]*\b(?<![\w$]type\s)(?:Text|TextInput|Switch|Button|TouchableOpacity|TouchableHighlight)\b[^}]*\}\s*from\s*'react-native'/g;
-  const RAW_ALLOWED = new Map([
-  ]);
+  const RAW_ALLOWED = new Map([]);
 
   it('no unstyled React Native control outside the listed wrappers', () => {
     const found = sources
