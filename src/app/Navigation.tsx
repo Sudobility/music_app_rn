@@ -33,6 +33,7 @@ import { createAppStackNavigator } from './createAppStackNavigator';
 import { MainTabs } from './MainTabs';
 import { linking } from './linking';
 import { hasTabBar } from './tab-bar';
+import { NavigatorProvider, makeMusicNavigator } from './navigator';
 import type { PaneKey } from './projects-window/paneKey';
 import type { SettingsSection } from '@/screens/SettingsScreen';
 import { useNavigationTheme } from './useNavigationTheme';
@@ -79,6 +80,13 @@ const Stack = createAppStackNavigator<RootStackParamList>();
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
 
 /**
+ * The shared `Navigator` (over react-navigation) that lets UI navigate by route
+ * name — the mirror of the web app's. Built once over the container ref and
+ * provided below so `useNavigator()` works anywhere in the tree.
+ */
+const musicNavigator = makeMusicNavigator(navigationRef);
+
+/**
  * Brings the editor forward, for what opens a document from outside any
  * screen — a menu command, a file opened from Finder. Under a tab bar the
  * document is open behind the tabs until the editor is pushed over them.
@@ -94,6 +102,7 @@ export function Navigation() {
 
   return (
     <NavigationContainer ref={navigationRef} theme={theme} linking={linking}>
+      <NavigatorProvider value={musicNavigator}>
       {hasTabBar() ? (
         <Stack.Navigator
           initialRouteName="Main"
@@ -187,6 +196,7 @@ export function Navigation() {
           />
         </Stack.Navigator>
       )}
+      </NavigatorProvider>
     </NavigationContainer>
   );
 }

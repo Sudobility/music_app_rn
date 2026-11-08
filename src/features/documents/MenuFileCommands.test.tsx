@@ -56,6 +56,7 @@ jest.mock('@/auth/AuthContext', () => ({
 jest.mock('@/config/server', () => ({
   getMusicClient: () => null,
   getNetworkClient: () => ({}),
+  publicServerContext: () => null,
 }));
 jest.mock('@/features/credits/useCreditBalance', () => ({
   useCreditBalance: () => ({

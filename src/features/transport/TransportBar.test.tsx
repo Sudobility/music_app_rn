@@ -8,8 +8,8 @@
 import { jest } from '@jest/globals';
 import { act, fireEvent } from '@testing-library/react-native';
 import { installTestAppServices } from '@/config/initialize';
-import { readinessOf } from '@sudobility/music_player/core';
-import type { IMusicPlayer, PlaybackReadiness } from '@sudobility/music_player';
+import { readinessOf } from '@sudobility/music_types';
+import type { IMusicPlayer, PlaybackReadiness } from '@sudobility/music_types';
 import type { PlaybackLoadState } from '@sudobility/music_types';
 import {
   getMusicPosition,

@@ -19,7 +19,7 @@ import {
   initializeMusicPlayer,
   resetMusicPlayer,
 } from '@sudobility/music_player';
-import type { IMusicPlayer } from '@sudobility/music_player';
+import type { IMusicPlayer } from '@sudobility/music_types';
 import i18next from 'i18next';
 import { initializeMusicSelection } from '@sudobility/music_editing';
 import { initializeMusicPosition } from '@sudobility/music_types';

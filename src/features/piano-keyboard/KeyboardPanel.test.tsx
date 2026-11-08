@@ -11,7 +11,7 @@ import { act, fireEvent } from '@testing-library/react-native';
 import { allNotes, changeTrackPropsCommand } from '@sudobility/music_types';
 import type { SoundingNote } from '@sudobility/music_types';
 import { insertNoteAtCaret } from '@sudobility/music_editing';
-import type { IMusicPlayer } from '@sudobility/music_player';
+import type { IMusicPlayer } from '@sudobility/music_types';
 import {
   getAppServices,
   installTestAppServices,

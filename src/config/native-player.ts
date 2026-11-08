@@ -16,7 +16,7 @@ import {
   SoundfontPlaybackEngine,
   renderScoreWith,
 } from '@sudobility/music_player';
-import type { IMusicPlayer } from '@sudobility/music_player';
+import type { IMusicPlayer } from '@sudobility/music_types';
 import { createNativeSynthBackend } from '@sudobility/music_synth_rn';
 import {
   createSamplePlayer,
