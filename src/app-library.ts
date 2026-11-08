@@ -13,4 +13,3 @@ export { PlaybackBus } from '@sudobility/music_player/core';
 
 export * from './services/library-copy';
 export * from './services/errors';
-export * from './services/export/export-plan';
