@@ -16,15 +16,16 @@ import {
   StackActions,
   type NavigationContainerRefWithCurrent,
 } from '@react-navigation/native';
-import { createNavigatorContext } from '@sudobility/routing/react';
 import type { MusicNavigator, MusicRoutes } from '@sudobility/music_lib';
+// The Navigator CONTEXT is owned by the shared UI library (so its components
+// navigate through the same `useNavigator`); this app only supplies the
+// react-navigation-backed `Navigator` below and mounts the provider.
+import { NavigatorProvider, useNavigator } from '@sudobility/music_ui_rn';
 import type { RootStackParamList } from './Navigation';
 import { goToTab } from './tab-bar';
 
-const ctx = createNavigatorContext<MusicRoutes>();
-
-/** Navigate by route name. Must be used under {@link NavigatorProvider}. */
-export const { NavigatorProvider, useNavigator } = ctx;
+/** Navigate by route name. Re-exported from the UI library for local callers. */
+export { NavigatorProvider, useNavigator };
 
 type Ref = NavigationContainerRefWithCurrent<RootStackParamList>;
 
