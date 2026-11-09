@@ -26,10 +26,12 @@ changing it. This file holds only the cross-cutting, non-obvious facts.
 
 ## Commands
 
-- `bun install` — deps (runs `patch-package` on postinstall; see Patches)
+- `bun install` — deps (runs `patch-package` on postinstall; see Patches).
+  `@sudobility/*` is on GitHub Packages (`.npmrc`); needs a `read:packages`
+  `_authToken` for `npm.pkg.github.com` in your user `~/.npmrc`.
 - `bun run verify` — format, typecheck, lint, vitest (the `.test.ts` half). Before any push.
 - `bun run test:components` — jest (the `.test.tsx` half)
-- `bun run start` (Metro, port 8091) · `bun run ios` / `android` / `macos`
+- `bun run start` (Metro, port 8092) · `bun run ios` / `android` / `macos` / `windows`
 
 ## How it differs from the web app
 
@@ -46,7 +48,7 @@ changing it. This file holds only the cross-cutting, non-obvious facts.
 ## Load-bearing gotchas (each cost a debugging cycle)
 
 - **React / react-native / react-native-macos are one locked trio; wrong = crash
-  at launch.** `react@19.1.4`, `react-native@0.81.6`, `react-native-macos@0.81.9`.
+  at launch.** `react@19.3.1`, `react-native@0.83.10`, `react-native-macos@0.83.0`.
   Each RN ships a renderer compiled against one exact React version and asserts it
   ("Incompatible React versions…"). Not avoidable by "running Fabric" —
   `Animated`'s native driver reaches the Paper shim unconditionally.
@@ -58,7 +60,7 @@ changing it. This file holds only the cross-cutting, non-obvious facts.
   20s timeout; `jest.mocks.cjs`/`jest.firebase.cjs` cover modules that throw at
   import. A `.test.tsx` using `jest.fn()` must `import { jest } from '@jest/globals'`
   or **typecheck** (not the test) fails. RNTL is pinned to **v13** (v14's
-  reconciler wants React 19.1.0, this app is 19.1.4).
+  reconciler wants React 19.1.0, this app is 19.3.1).
 - **Sibling UI libs (`music_ui_rn`, `routing`) are dev-linked by overlay, not a
   bare `file:` symlink.** Published registry dep + an overlay: `rsync -a
   --exclude node_modules <sibling>/ node_modules/@sudobility/<pkg>/` (both `dist`
@@ -80,8 +82,9 @@ changing it. This file holds only the cross-cutting, non-obvious facts.
 
 - **macOS build flags live in `macos/Podfile`** (not a shell): `react-native-audio-api`
   needs `DISABLE_AUDIOAPI_STATIC_EXTERNAL_LIBS=1` **and** `DISABLE_AUDIOAPI_FFMPEG=1`.
-  The Podfile also patches `fmt` in `post_install` (RN 0.81's pin fails clang 21 /
-  Xcode 26). Firebase pods stay on CocoaPods, every pod a static framework.
+  (RN 0.81 once needed a `post_install` `fmt` patch for clang 21 / Xcode 26; RN
+  0.83's fmt 12.1.0 fixed it and the patch was deleted — see the Podfile comment.)
+  Firebase pods stay on CocoaPods, every pod a static framework.
 - **`react-native.config.js` traps:** a project-level `platforms` entry *replaces*
   a package's own (only add one to remove a platform); `podspecPath` is absolute,
   Android `sourceDir` is relative; `react-native config` is not the oracle for
@@ -102,7 +105,7 @@ changing it. This file holds only the cross-cutting, non-obvious facts.
   screen); bars `flex-wrap` rather than assume a wide screen. `UIRequiresFullScreen`
   is false on iPhone, true-via-plist elsewhere.
 - **Android:** `JAVA_HOME` = Homebrew `openjdk@17`; emulators `Pixel_Tablet` /
-  `Pixel_10_Phone`; `adb reverse tcp:8091` (Metro) and `tcp:8032` (API).
+  `Pixel_10_Phone`; `adb reverse tcp:8092` (Metro) and `tcp:8032` (API).
 
 ## Structure
 
@@ -122,9 +125,10 @@ changing it. This file holds only the cross-cutting, non-obvious facts.
 
 ## Patches
 
-macOS dependency fixes via `patch-package` on postinstall: `react-native-audio-api`,
-`@shopify/react-native-skia`, `react-native-svg`, `react-native-macos`,
-`@sudobility/components-rn`. See `patches/README.md`. A `Podfile.lock` entry proves
+Dependency fixes via `patch-package` on postinstall (see `patchedDependencies`
+in `package.json`): `@shopify/react-native-skia`, `react-native-audio-api`,
+`react-native-bottom-tabs`, `react-native-macos`, `react-native-svg`. See
+`patches/README.md`. A `Podfile.lock` entry proves
 a pod resolved, not that it compiles (Skia needed the same patch sudojo_app_rn uses).
 
 ## Screen rendering — safe area
