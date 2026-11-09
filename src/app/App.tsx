@@ -29,6 +29,10 @@ import { DevAutoSignIn } from '@/auth/DevAutoSignIn';
 import { WindowTitleSync } from '@/features/documents/WindowTitleSync';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { PortalHost } from '@sudobility/components-rn';
+import { PlayheadViewProvider } from '@sudobility/music_ui_rn';
+// The macOS playback caret's native view lives in this app (a UI library ships
+// no native code); the library takes it through this provider. Null off the Mac.
+import { PlayheadView } from '@moosiac/playhead';
 import { ThemeVarsProvider } from '@/components/ThemeVarsProvider';
 import { ThemeProvider } from '@/config/ThemeContext';
 import { AuthProvider } from '@/auth/AuthContext';
@@ -110,8 +114,9 @@ export default function App() {
                   next. Above the portal host, so a sheet sees it too.
                 */}
                     <EntityUserScope>
-                      <DocumentsProvider list={list} services={services}>
-                        {/*
+                      <PlayheadViewProvider value={PlayheadView}>
+                        <DocumentsProvider list={list} services={services}>
+                          {/*
                     Above everything that opens a picker: a portalled sheet
                     draws here, so it escapes the scrolling toolbar that would
                     otherwise clip it. Inside the data providers, not above
@@ -120,28 +125,29 @@ export default function App() {
                     New Project — failed with "No QueryClient set" when this
                     sat outside `QueryClientProvider`.
                   */}
-                        <PortalHost>
-                          {/*
+                          <PortalHost>
+                            {/*
                       A File-menu import makes a new document from whatever
                       screen is in front, so it can belong to none of them.
                     */}
-                          <MenuImportCommands />
-                          <MenuFileCommands />
-                          {/*
+                            <MenuImportCommands />
+                            <MenuFileCommands />
+                            {/*
                       Store-screenshot links, in a debug build only — the
                       build `app_store/scripts/capture.sh` installs.
                     */}
-                          {__DEV__ ? <ScreenshotLinks /> : null}
-                          {/*
+                            {__DEV__ ? <ScreenshotLinks /> : null}
+                            {/*
                       The test account from `.env`, in a debug build only:
                       what lets the screenshot devices show what needs one.
                     */}
-                          {__DEV__ ? <DevAutoSignIn /> : null}
-                          <WindowTitleSync />
-                          <Navigation />
-                          <Toasts />
-                        </PortalHost>
-                      </DocumentsProvider>
+                            {__DEV__ ? <DevAutoSignIn /> : null}
+                            <WindowTitleSync />
+                            <Navigation />
+                            <Toasts />
+                          </PortalHost>
+                        </DocumentsProvider>
+                      </PlayheadViewProvider>
                     </EntityUserScope>
                   </AuthProvider>
                 </QueryClientProvider>
