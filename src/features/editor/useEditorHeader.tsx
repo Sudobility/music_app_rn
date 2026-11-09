@@ -81,21 +81,34 @@ export function useEditorHeader(
       headerBackVisible: pushed,
       ...(onMaster
         ? {
-            headerLeft: () => (
-              <View className="flex-row items-center gap-1 pl-2">
-                {drawsOwnBack() && navigation.goBack ? (
+            headerLeft: () => {
+              const menu = (
+                <IconButton label={t('nav.projects')} onPress={onMaster}>
+                  <Bars3Icon size={ICON_SIZE} color={ink.onPrimary} />
+                </IconButton>
+              );
+              // On iOS and Android the native stack already draws its own back
+              // control to the menu's left (`headerBackVisible`), so the menu is
+              // the whole of `headerLeft` — returned bare, with no wrapping
+              // View, so the platform sizes and vertically centres the single
+              // bar button itself. A flex row around it left the glyph riding
+              // high in iOS 26's glass capsule on the short cover-screen bar
+              // (the iPhone Duo folded). Only the desktops, which draw no back
+              // of their own (`drawsOwnBack`), need the row that puts a back
+              // chevron beside the menu.
+              if (!(drawsOwnBack() && navigation.goBack)) return menu;
+              return (
+                <View className="flex-row items-center gap-1 pl-2">
                   <IconButton
                     label={t('nav.back')}
                     onPress={() => navigation.goBack?.()}
                   >
                     <ChevronLeftIcon size={ICON_SIZE} color={ink.onPrimary} />
                   </IconButton>
-                ) : null}
-                <IconButton label={t('nav.projects')} onPress={onMaster}>
-                  <Bars3Icon size={ICON_SIZE} color={ink.onPrimary} />
-                </IconButton>
-              </View>
-            ),
+                  {menu}
+                </View>
+              );
+            },
           }
         : {}),
       // The title bar's colours: `bg-primary` (red) under inverse ink. The

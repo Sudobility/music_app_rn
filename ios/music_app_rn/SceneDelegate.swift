@@ -8,6 +8,12 @@ import React
 /// window comes from moved: `UIWindow(windowScene:)` rather than
 /// `UIWindow(frame: UIScreen.main.bounds)`, because a window with no scene is
 /// exactly what iOS 27 now refuses to run.
+///
+/// The launch look — red (`LaunchScreen.storyboard`'s `LaunchBackground`-red)
+/// with the white logo — is the design theme's `bg-primary`, so it flows
+/// straight into the app root with no flash. The storyboard is shown by the
+/// system until React's first frame, which on a dev build is the whole of the
+/// Metro bundle; nothing here has to hold it.
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
 

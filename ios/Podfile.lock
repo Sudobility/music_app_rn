@@ -11,7 +11,7 @@ PODS:
     - PromisesObjC (~> 2.4)
     - PromisesSwift (~> 2.4)
     - RecaptchaInterop (~> 101.0)
-  - building_blocks_rn (0.0.98):
+  - building_blocks_rn (0.0.117):
     - React-Core
   - FBLazyVector (0.83.10)
   - Firebase/CoreOnly (12.19.3):
@@ -151,7 +151,7 @@ PODS:
   - hermes-engine/Pre-built (0.14.1)
   - MoosiacPrint (0.0.0):
     - React-Core
-  - MoosiacSynth (0.0.0):
+  - MoosiacSynth (0.0.6):
     - React-Core
   - nanopb (3.30910.0):
     - nanopb/decode (= 3.30910.0)
@@ -2791,7 +2791,7 @@ DEPENDENCIES:
   - GoogleUtilities
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - "MoosiacPrint (from `../node_modules/@moosiac/print`)"
-  - "MoosiacSynth (from `../node_modules/@moosiac/synth`)"
+  - "MoosiacSynth (from `../node_modules/@sudobility/music_synth_rn`)"
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
   - RCTRequired (from `../node_modules/react-native/Libraries/Required`)
   - RCTSwiftUI (from `../node_modules/react-native/ReactApple/RCTSwiftUI`)
@@ -2928,7 +2928,7 @@ EXTERNAL SOURCES:
   MoosiacPrint:
     :path: "../node_modules/@moosiac/print"
   MoosiacSynth:
-    :path: "../node_modules/@moosiac/synth"
+    :path: "../node_modules/@sudobility/music_synth_rn"
   RCTDeprecation:
     :path: "../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation"
   RCTRequired:
@@ -3125,7 +3125,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AppAuth: ef4da5a3fc2e10b90c09a0a94a9baeaedc0341d5
   AppCheckCore: be8fce5469f68d7f6a29aa94b25f097409ff7fdc
-  building_blocks_rn: 5afe1cbe88a11ae043661e728a1b3ae6f3adeb78
+  building_blocks_rn: c4ec04675207c1801bc15cb60bf290412f6226e2
   FBLazyVector: b88945378388c6651d3725b0e8c2624fbb37ec64
   Firebase: e3c5ab38229ae085490d02398d97b9f5374bbe6e
   FirebaseAnalytics: e9f8c369447e453da23f0455a06e4910bad10de0
@@ -3145,7 +3145,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
   hermes-engine: f37e1d6f1eb198649a60b3f17b6f685a6ac12470
   MoosiacPrint: bad0d77f2dc6a6441c491b892bedcbc846ccf744
-  MoosiacSynth: 4c9f19cefb070075dc7622996effed4f1e33abf9
+  MoosiacSynth: 3033a9942fcd6f544e53197cf8659354ad03a0f0
   nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
   PromisesObjC: 752c3227f599e3467650e47ea36f433eeb10c273
   PromisesSwift: 217dea0fd5d2ad65222a109c48698add13cc1c5b

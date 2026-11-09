@@ -86,6 +86,39 @@ function nativeFirebaseOnMobileOnly(packageName) {
 
 const config = {
   dependencies: {
+    // @sudobility/music_synth_rn (the native FluidSynth module, pod name
+    // `MoosiacSynth`) does not autolink on its own and must be pinned here.
+    // Two independent reasons, both from it declaring `"type": "module"`:
+    //   1. Its `react-native.config.js` is written as CommonJS
+    //      (`module.exports`/`__dirname`). Under `type: module` the RN CLI's
+    //      synchronous cosmiconfig loader (a `require`) parses it as ESM and
+    //      gets an empty object, so the package's own platform config is lost.
+    //   2. Its `exports` map omits `"./package.json"`, so the CLI's
+    //      `resolveNodeModuleDir` throws and the dependency is dropped entirely
+    //      (the stale Podfile.lock then kept pointing at the old
+    //      `@moosiac/synth` path — "MoosiacSynth.h … no such file").
+    // Pinning `root` sidesteps (2) and spelling out `platforms` sidesteps (1).
+    // Remove this once the package ships a `react-native.config.cjs` and a
+    // `"./package.json"` export. podspec is at the package root; the module
+    // name stays `MoosiacSynth` though the npm package was renamed.
+    '@sudobility/music_synth_rn': (() => {
+      const root = path.join(
+        __dirname,
+        'node_modules',
+        '@sudobility',
+        'music_synth_rn',
+      );
+      const podspecPath = path.join(root, 'MoosiacSynth.podspec');
+      return {
+        root,
+        platforms: {
+          ios: { podspecPath },
+          macos: { podspecPath },
+          android: { sourceDir: 'android' },
+          windows: null,
+        },
+      };
+    })(),
     // This package's iOS slider is the community slider (the custom
     // MoosiacNativeSlider component is implemented for macOS/Windows only).
     // Its codegen metadata currently advertises an iOS Fabric component

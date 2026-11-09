@@ -34,7 +34,15 @@ export function useNavigationTheme(): Theme {
       ...base,
       colors: {
         ...base.colors,
-        primary: ink.primary,
+        // `primary` is React Navigation's header tint — the colour of a
+        // native-stack back button (chevron + label) and any header accent. The
+        // bar is red (`card`), so the tint must be the inverse ink that reads on
+        // it, exactly as `text` (the title) is: a red tint drew the back control
+        // red-on-red, barely legible and worse inside iOS 26's tinted glass
+        // capsule. The tab bar's active colour used to ride on this same
+        // `primary`; it is now pinned explicitly in `MainTabs` so this can be
+        // the on-bar colour without turning the active tab white.
+        primary: ink.onPrimary,
         background,
         // The bars are red; the content below them keeps `background`.
         card: ink.primary,

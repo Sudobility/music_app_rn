@@ -70,7 +70,7 @@
     "@sudobility/music_spatial_rn": "^0.0.41",
     "@sudobility/music_synth_rn": "^0.0.6",
     "@sudobility/music_types": "^0.13.66",
-    "@sudobility/music_ui_rn": "^0.0.3",
+    "@sudobility/music_ui_rn": "^0.0.4",
     "@sudobility/routing": "^0.0.3",
     "@sudobility/types": "^1.9.79",
     "@sudobility/windows_canvas_rn": "^0.2.15",

@@ -39,6 +39,7 @@ import { SafeAreaView as TabSafeAreaView } from 'react-native-screens/experiment
 import { createNativeBottomTabNavigator } from '@bottom-tabs/react-navigation';
 import type { AppleIcon } from 'react-native-bottom-tabs';
 import { useTranslation } from 'react-i18next';
+import { useNotationInk } from '@sudobility/music_ui_rn';
 import { UnsavedQuitGuard } from '@/features/documents/UnsavedQuitGuard';
 import { ProjectsScreen } from '@/screens/ProjectsScreen';
 import { CommunityScreen } from '@/screens/CommunityScreen';
@@ -141,9 +142,17 @@ const SCREEN_LAYOUT =
 
 export function MainTabs() {
   const { t } = useTranslation();
+  const ink = useNotationInk();
   return (
     <>
       <Tab.Navigator
+        /*
+          The selected tab's red. Pinned here rather than inherited from the
+          navigation theme's `primary`, because `primary` is now the headers'
+          on-red tint (white) — see `useNavigationTheme`. Without this the active
+          tab label would follow that to white and vanish on the bar.
+        */
+        tabBarActiveTintColor={ink.primary}
         /*
           Back on any tab leaves the app, rather than stepping to the first
           tab and leaving from there: `UnsavedQuitGuard` below answers Back
