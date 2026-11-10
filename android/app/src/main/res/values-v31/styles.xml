@@ -1,0 +1,19 @@
+<resources>
+
+    <!--
+      API 31+ override of the app theme that adds the system splash screen:
+      the Swiss red behind the white logo, so the launch screen matches the app
+      root (`bg-primary`) rather than a bare system colour. `windowSplashScreen*`
+      attributes are read only while the splash shows and ignored afterwards, so
+      this stays the one app theme. The icon (`@drawable/splash_logo`) is a
+      white logo on transparency — the splash does not tint it, which is why it
+      is a white image rather than a tinted template (the iOS launch screen's
+      pitfall). The base theme in `values/styles.xml` serves API < 31.
+    -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <item name="android:windowSplashScreenBackground">@color/launch_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+    </style>
+
+</resources>

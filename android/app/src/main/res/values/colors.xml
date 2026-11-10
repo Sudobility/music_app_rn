@@ -1,0 +1,5 @@
+<resources>
+    <!-- The Swiss design-theme primary red (`bg-primary`), matched to the app
+         root so the launch splash flows into the first screen with no flash. -->
+    <color name="launch_background">#CB1212</color>
+</resources>

@@ -31,7 +31,7 @@ import { useDetailScroll } from '@/components/layout/detail-safe-area';
 import { usePrimaryPanelWidth } from '@/components/layout/SplitViewContainer';
 import {
   Button,
-  SplitViewContainer,
+  MasterDetailLayout,
   SplitMenuList,
   Text,
   type SplitMenuEntry,
@@ -100,12 +100,17 @@ export function DocsScreen() {
       <View className="px-4">
         <ScreenBackBar />
       </View>
-      <SplitViewContainer
+      <MasterDetailLayout
         collapsible
+        headerShown
         masterWidth={masterWidth}
-        navigationTheme={navTheme}
+        theme={navTheme}
         masterTitle={t('docs.title')}
         detailTitle={topic ? t(topic.title) : t('docs.title')}
+        // Split wherever Projects does rather than at the library's wider 400pt
+        // default — a Samsung foldable unfolded (~600–720pt) is wide enough for
+        // the topic list beside the reading column. Matches `ProjectsSplitView`.
+        detailMinWidth={280}
         detailMaxWidth={DETAIL_MAX_WIDTH}
         // Controlled / deep-link mode: the route owns the selection, so
         // `docs/:topicId` resolves straight to the topic — two columns when

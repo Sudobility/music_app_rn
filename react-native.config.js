@@ -114,7 +114,13 @@ const config = {
         platforms: {
           ios: { podspecPath },
           macos: { podspecPath },
-          android: { sourceDir: 'android' },
+          // Android is intentionally omitted: pinning `root` lets the CLI
+          // auto-derive the full Android config (packageImportPath,
+          // cmakeListsPath, the generated codegen paths …) from `<root>/android`,
+          // exactly as every other native module. Supplying a partial
+          // `{ sourceDir }` here REPLACES that, leaving the fields the RN Gradle
+          // plugin regex-rewrites null — "Parameter specified as non-null is
+          // null: method kotlin.text.Regex.replace" at settings evaluation.
           windows: null,
         },
       };

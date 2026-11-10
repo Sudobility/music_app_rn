@@ -39,8 +39,13 @@ import { useSafeAreaInsets } from '@/platform/SafeArea';
 import { useSafeEdges } from '@/platform/safe-edges';
 import { useDocumentList } from '@/documents/DocumentsContext';
 
-/** The narrowest a tile is drawn: a name and a date on a line each. */
-export const TILE_MIN_WIDTH = 240;
+/**
+ * The narrowest a tile is drawn: a name and a date on a line each. Kept low
+ * enough that two fit across the Projects detail pane and the Community grid on
+ * a mid-width screen — a Samsung foldable unfolded — rather than one wide tile
+ * per row. Wider screens pack in proportionally more.
+ */
+export const TILE_MIN_WIDTH = 160;
 /** Between tiles, and around the grid. */
 export const TILE_GAP = 12;
 

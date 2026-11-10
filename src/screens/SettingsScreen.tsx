@@ -26,8 +26,8 @@ import { useTranslation } from 'react-i18next';
 import {
   AppVersion,
   Select,
+  MasterDetailLayout,
   SplitMenuList,
-  SplitViewContainer,
   Text,
 } from '@sudobility/components-rn';
 import { version as appVersion } from '../../package.json';
@@ -175,12 +175,18 @@ export function SettingsScreen({ navigation, route }: SettingsScreenProps) {
       <View className="px-4">
         <ScreenBackBar />
       </View>
-      <SplitViewContainer
+      <MasterDetailLayout
         collapsible
+        headerShown
         masterWidth={masterWidth}
-        navigationTheme={navTheme}
+        theme={navTheme}
         masterTitle={t('nav.settings')}
         detailTitle={t(SECTION_LABEL[section])}
+        // Split wherever Projects does rather than at the library's wider 400pt
+        // default — a Samsung foldable unfolded (~600–720pt) is wide enough for
+        // the list beside a section, and collapsing it there to a drill-down
+        // wastes the width. Matches `ProjectsSplitView`'s 280.
+        detailMinWidth={280}
         detailMaxWidth={DETAIL_MAX_WIDTH}
         detailFocused={detailFocused}
         onDetailFocusedChange={setDetailFocused}

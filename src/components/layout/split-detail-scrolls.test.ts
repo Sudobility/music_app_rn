@@ -111,7 +111,7 @@ describe('split view detail panels', () => {
     ].filter(
       file =>
         existsSync(file) &&
-        /<SplitViewContainer\b/.test(readFileSync(file, 'utf8')),
+        /<MasterDetailLayout\b/.test(readFileSync(file, 'utf8')),
     );
     expect(drawn.sort()).toEqual([...SPLIT_VIEWS].sort());
   });

@@ -38,7 +38,7 @@ import {
 } from '@/features/projects/useServerProjectCreation';
 import { useAuth } from '@/auth/AuthContext';
 import { useServerContext } from '@/config/useServerContext';
-import { SplitViewContainer } from '@sudobility/components-rn';
+import { MasterDetailLayout } from '@sudobility/components-rn';
 import { EmbeddedScreen } from '@/components/layout/EmbeddedScreen';
 import { useNavigationTheme } from '@/app/useNavigationTheme';
 import { usePrimaryPanelWidth } from '@/components/layout/SplitViewContainer';
@@ -241,8 +241,9 @@ export function ProjectsSplitView({
     // which is why Connect's sign-in box looked like a different colour from
     // the window around it, rather than every pane looking that way equally).
     <>
-      <SplitViewContainer
+      <MasterDetailLayout
         collapsible={collapsible}
+        headerShown
         masterWidth={masterWidth}
         // Kept low so Projects splits wherever a sidebar and a usable pane fit —
         // an iPad, and the iPhone Duo unfolded — and drills in only on a narrow
@@ -251,7 +252,7 @@ export function ProjectsSplitView({
         // project leaves this for the full-screen editor, which is a navigation
         // push, not a detail here.
         detailMinWidth={280}
-        navigationTheme={navTheme}
+        theme={navTheme}
         masterTitle={t('nav.projects')}
         detailTitle={t(paneLabelKey(selected))}
         detailFocused={detailFocused}
