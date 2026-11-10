@@ -42,10 +42,10 @@ echo "Bun version: $(bun --version)"
 # --- npm registry for @sudobility packages (GitHub Packages) ---
 # @sudobility/* moved off npmjs to GitHub Packages (npm.pkg.github.com); the
 # committed .npmrc routes the scope there, so CI must supply a read:packages
-# token or every @sudobility download 401s. Set GITHUB_PACKAGE_TOKEN (a GitHub
+# token or every @sudobility download 401s. Set GH_PACKAGES_READ_TOKEN (a GitHub
 # PAT with read:packages) as a Secret environment variable in the Xcode Cloud
 # workflow; NPM_TOKEN is still accepted as a fallback name for the same value.
-GH_PKG_TOKEN="${GITHUB_PACKAGE_TOKEN:-${NPM_TOKEN:-}}"
+GH_PKG_TOKEN="${GH_PACKAGES_READ_TOKEN:-${NPM_TOKEN:-}}"
 if [ -n "$GH_PKG_TOKEN" ]; then
   echo "Configuring GitHub Packages registry for @sudobility..."
   cat > "$HOME/.npmrc" << EOF
@@ -53,7 +53,7 @@ if [ -n "$GH_PKG_TOKEN" ]; then
 //npm.pkg.github.com/:_authToken=${GH_PKG_TOKEN}
 EOF
 else
-  echo "WARNING: no GITHUB_PACKAGE_TOKEN/NPM_TOKEN set; @sudobility installs will 401" >&2
+  echo "WARNING: no GH_PACKAGES_READ_TOKEN/NPM_TOKEN set; @sudobility installs will 401" >&2
 fi
 
 # --- Install JS dependencies ---

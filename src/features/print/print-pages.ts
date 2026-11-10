@@ -7,21 +7,21 @@
  * None of them wants a PDF *from* the app. What they want is a drawing.
  *
  * So this produces one PNG per page with the renderer the editor already draws
- * with. What goes on which page — and which score, a part written for its
- * instrument or the marked full score — is music_drawing's `printPlan`, the
- * one the web print view uses. This app had its own `print-plan.ts`, which
- * printed every track in concert pitch with no rehearsal marks and laid page
- * turns out for the first track even across a whole score.
+ * with. The memory-managed, yield-between-pages render loop is
+ * `@sudobility/printing_rn`'s `renderPagesToPng` (shared, domain-free); this
+ * file is the music-specific half it cannot own — it wires in the Skia 2D
+ * context (`createSkiaContext2D`) and the score renderer, and computes the
+ * plan's per-page band.
  *
- * A page is drawn by rendering the score with that page's band at the top.
- * `viewport` keeps it cheap: the renderer draws only the systems intersecting
- * it, which is what the scrolling editor does every frame, so printing needs
- * no new renderer path.
+ * What goes on which page — and which score, a part written for its instrument
+ * or the marked full score — is music_drawing's `printPlan`, the one the web
+ * print view uses.
  */
-import { Skia } from '@shopify/react-native-skia';
-// The whole module, because `createSkiaContext2D` wants the enums beside the
-// factory — the same shape `ScoreView` passes it.
+// The whole module (for `createSkiaContext2D`, which wants the enums beside the
+// factory — the same shape `ScoreView` passes it) and the `Skia` factory itself
+// (which carries `Surface`/`Color` for the render loop).
 import * as skia from '@shopify/react-native-skia';
+import { Skia } from '@shopify/react-native-skia';
 import {
   CanvasScoreRenderer,
   PRINT_SCALE,
@@ -29,57 +29,45 @@ import {
 } from '@sudobility/music_drawing';
 import { createSkiaContext2D } from '@sudobility/music_drawing/skia';
 import type { PrintPlan } from '@sudobility/music_drawing';
+import { renderPagesToPng } from '@sudobility/printing_rn';
+import type { PrintablePage } from '@sudobility/printing_rn';
 
 /** One rendered page, as base64 PNG — which is what the native side wants. */
-export type RenderedPage = { base64: string; width: number; height: number };
-
-/** Lets a frame go by, so a spinner keeps turning between pages. */
-function nextFrame(): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, 0));
-}
+export type RenderedPage = PrintablePage;
 
 /**
- * Renders the plan's pages one at a time, yielding between them.
+ * Renders the plan's pages one at a time, yielding between them and releasing
+ * each page's GPU surface and snapshot as soon as its PNG is taken (see
+ * `renderPagesToPng`). `isCancelled` is asked between pages; a cancelled render
+ * answers null.
  *
- * **Each page's GPU surface and snapshot are released as soon as its PNG is
- * taken.** A page is ~3000×4000 pixels (`PRINT_WIDTH` × `PRINT_SCALE`), about
- * 48 MB as a surface; left to the garbage collector, a 21-page score held
- * hundreds of megabytes of GPU memory until long after printing. And rendering
- * every page in one synchronous loop froze the JS thread for the whole of it,
- * so nothing the reader pressed — the sheet closing, a spinner — could happen
- * until it finished.
- *
- * `isCancelled` is asked between pages; a cancelled render answers null.
+ * A page is drawn by rendering the score with that page's band at the top.
+ * `viewport` keeps it cheap: the renderer draws only the systems intersecting
+ * it, which is what the scrolling editor does every frame, so printing needs no
+ * new renderer path.
  */
-export async function renderPrintPages(
+export function renderPrintPages(
   plan: PrintPlan,
   isCancelled: () => boolean = () => false,
 ): Promise<RenderedPage[] | null> {
   const { score, slices, pages, pageHeight, renderOptions } = plan;
   const height = Math.round(pageHeight);
   const renderer = new CanvasScoreRenderer();
-  const rendered: RenderedPage[] = [];
 
-  for (const page of pages) {
-    await nextFrame();
-    if (isCancelled()) return null;
-    const first = slices[page.systemIndices[0]!]!;
-    const last = slices[page.systemIndices[page.systemIndices.length - 1]!]!;
-
-    const surface = Skia.Surface.MakeOffscreen(
-      PRINT_WIDTH * PRINT_SCALE,
-      height * PRINT_SCALE,
-    );
-    if (!surface) throw new Error('Could not make a surface to print onto.');
-    try {
-      const canvas = surface.getCanvas();
-      /*
-        White, not transparent. A transparent PNG prints as whatever the print
-        service decides it should be, and "whatever it decides" is not
-        something to hand somebody's sheet music to.
-      */
-      canvas.clear(Skia.Color('white'));
-
+  return renderPagesToPng({
+    // Drawn far larger than it is displayed: the backing store is print
+    // resolution, the reported page size is the layout's.
+    skia: Skia,
+    pageCount: pages.length,
+    pixelWidth: PRINT_WIDTH * PRINT_SCALE,
+    pixelHeight: height * PRINT_SCALE,
+    pageWidth: PRINT_WIDTH,
+    pageHeight: height,
+    isCancelled,
+    drawPage: (canvas, pageIndex) => {
+      const page = pages[pageIndex]!;
+      const first = slices[page.systemIndices[0]!]!;
+      const last = slices[page.systemIndices[page.systemIndices.length - 1]!]!;
       const ctx = createSkiaContext2D({
         skia,
         canvas,
@@ -93,20 +81,6 @@ export async function renderPrintPages(
         ...renderOptions,
         viewport: { top: first.top, bottom: last.bottom },
       });
-
-      const image = surface.makeImageSnapshot();
-      try {
-        rendered.push({
-          base64: image.encodeToBase64(),
-          width: PRINT_WIDTH,
-          height,
-        });
-      } finally {
-        image.dispose();
-      }
-    } finally {
-      surface.dispose();
-    }
-  }
-  return rendered;
+    },
+  });
 }
