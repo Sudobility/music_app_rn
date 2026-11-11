@@ -50,7 +50,7 @@
         "@sudobility/music_ui_rn": "^0.0.5",
         "@sudobility/printing_core": "^0.1.0",
         "@sudobility/printing_rn": "^0.1.0",
-        "@sudobility/resources_client": "^0.0.1",
+        "@sudobility/resources_client": "^0.1.0",
         "@sudobility/resources_pages_rn": "^0.0.1",
         "@sudobility/routing": "^0.0.3",
         "@sudobility/types": "^1.9.79",
@@ -872,7 +872,7 @@
 
     "@sudobility/printing_rn": ["@sudobility/printing_rn@0.1.0", "https://npm.pkg.github.com/download/@sudobility/printing_rn/0.1.0/53361b1e0fb4ee51da0e2349bfc0301b5432f6b1", {}, "sha512-tFr2/tdpLpXiR1OLX1f/Ldb9+EeaRL1R/OxjzWaij29kGIJq/JARAzPOqleRbBMJFcDifnXMwmY2we7j9h2CVQ=="],
 
-    "@sudobility/resources_client": ["@sudobility/resources_client@0.0.1", "https://npm.pkg.github.com/download/@sudobility/resources_client/0.0.1/1b1997110ffe1545b9b37bd350f6aebda0e1e6aa", { "peerDependencies": { "@sudobility/types": "^1.9.79", "react": "^18.0.0 || ^19.0.0" } }, "sha512-W6Pxrek052K8MXJgaEVe44EfTPDBWkB9OJLhMr0IwfIGdaz5Va/miTaQd/wg/BvQM1Xn79UPqivZK6jg7rMZqQ=="],
+    "@sudobility/resources_client": ["@sudobility/resources_client@0.1.0", "https://npm.pkg.github.com/download/@sudobility/resources_client/0.1.0/03b357008987f412a3b6749be5362241647fc1a4", { "peerDependencies": { "@sudobility/types": "^1.9.79", "react": "^18.0.0 || ^19.0.0" } }, "sha512-s2vcfw7s3ItWb9uKtsJXHHvZ96fqX4GGMOrT7ck+/i2smT+qSujbGxKJiYuQ+kalGkpuNOda8/bzuViHEDCbAw=="],
 
     "@sudobility/resources_pages_rn": ["@sudobility/resources_pages_rn@0.0.1", "https://npm.pkg.github.com/download/@sudobility/resources_pages_rn/0.0.1/e5c92e8600de694b4cbde1e590207bbee0a976aa", { "peerDependencies": { "@sudobility/design": "^1.1.71", "@sudobility/resources_client": "^0.0.1", "@sudobility/types": "^1.9.79", "react": ">=18", "react-native": ">=0.74" } }, "sha512-TOmJsAHeYauIDRZ702fGKZmWdyQQSgjC3lsmW6LKm7tasMMciYRn0FN1O957/zrNesQ5e4rvsO7uqPriTiJYgQ=="],
 
