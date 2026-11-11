@@ -73,10 +73,6 @@ describe('colours come from the theme', () => {
       'src/features/editor/ProjectsPopup.tsx',
       "The scrim over the editor. The theme has no scrim token, and the library's own `Backdrop` is `bg-black` at an opacity for the same reason.",
     ],
-    [
-      'src/screens/ResourcesScreen.tsx',
-      "The chip a site's mark sits in, white in both themes as on the web page. A mark is drawn for a white page, and a dark chip swallows the dark ones.",
-    ],
   ]);
 
   it('no palette class outside the listed ones', () => {
@@ -172,10 +168,6 @@ describe('controls come from the library', () => {
     [
       'src/features/editor/ProjectsPopup.tsx',
       'The scrim: everything the panel does not cover, pressed to dismiss.',
-    ],
-    [
-      'src/screens/ResourcesScreen.tsx',
-      'A link out of the app: role `link` with a hint, which `PressableCard` (role `button`) would misreport.',
     ],
     [
       'src/features/snapshots/SnapshotSheets.tsx',

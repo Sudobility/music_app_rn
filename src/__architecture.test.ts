@@ -44,6 +44,10 @@ const ALLOWED_NON_UI = new Set([
   // is told an asset exists. Files on disk are the one part of that page a
   // library cannot hold — the web app keeps its own table for the same reason.
   'src/screens/resource-icons.ts',
+  // Resources catalog wiring: constructs the public ResourcesApiClient and
+  // initializes resources_client's singleton. Composition/platform glue — the
+  // catalog logic lives in @sudobility/resources_client, not here.
+  'src/config/resources.ts',
   // The composition root: it constructs platform services rather than
   // implementing them, which is exactly this repo's job.
   'src/config/initialize.ts',

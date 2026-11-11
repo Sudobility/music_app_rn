@@ -1312,6 +1312,8 @@
   },
   "resources": {
     "title": "资源",
+    "empty": "暂无资源。",
+    "errorTitle": "无法加载资源",
     "intro": "可直接导入 {{appName}} 的免费音乐，按各类文件对应的导入方式分组。下载文件后，在项目页面使用「导入」。",
     "group": {
       "scores": {

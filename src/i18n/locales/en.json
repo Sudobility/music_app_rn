@@ -1312,6 +1312,8 @@
   },
   "resources": {
     "title": "Resources",
+    "empty": "No resources available yet.",
+    "errorTitle": "Couldn’t load resources",
     "intro": "Free music you can bring straight into {{appName}}, grouped by the importer each kind of file feeds. Download a file, then use Import on the projects page.",
     "group": {
       "scores": {

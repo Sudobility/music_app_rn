@@ -73,6 +73,8 @@
     "@sudobility/music_ui_rn": "^0.0.5",
     "@sudobility/printing_core": "^0.1.0",
     "@sudobility/printing_rn": "^0.1.0",
+    "@sudobility/resources_client": "^0.0.1",
+    "@sudobility/resources_pages_rn": "^0.0.1",
     "@sudobility/routing": "^0.0.3",
     "@sudobility/types": "^1.9.79",
     "@sudobility/windows_canvas_rn": "^0.2.15",

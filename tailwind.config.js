@@ -28,6 +28,7 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
     './node_modules/@sudobility/components-rn/{src,dist}/**/*.{js,jsx,ts,tsx}',
     './node_modules/@sudobility/music_ui_rn/{src,dist}/**/*.{js,jsx,ts,tsx}',
+    './node_modules/@sudobility/resources_pages_rn/{src,dist}/**/*.{js,jsx,ts,tsx}',
     './node_modules/@sudobility/design/dist/**/*.{js,jsx}',
   ],
   presets: [require('nativewind/preset'), createTailwindPreset()],
