@@ -41,6 +41,7 @@ import {
   useServerProjectCreation,
 } from '@/features/projects/useServerProjectCreation';
 import { SyncToServerButton } from '@/features/documents/SyncToServerButton';
+import { RequireSignIn } from '@sudobility/building_blocks_rn';
 import { ScreenScaffold, ServerUnavailable } from './ScreenScaffold';
 import { SignInRequired } from '@/features/account/SignInRequired';
 import { usePendingAction } from '@sudobility/music_ui_rn';
@@ -90,23 +91,29 @@ export function DashboardScreen({ onOpenProject }: DashboardScreenProps = {}) {
       </ScreenScaffold>
     );
   }
-  if (!user) {
-    return (
-      <ScreenScaffold title={t('nav.projects')}>
-        <ImportButtons />
-        {/* Over this screen, not a route away: once signed in, the list is
-            what this screen shows. */}
-        <SignInRequired />
-      </ScreenScaffold>
-    );
-  }
+  // The shared gate (building_blocks_rn `RequireSignIn`) does the signed-in
+  // branching; signed out it shows this screen's own prompt (import buttons +
+  // the prompt that embeds the sign-in modal), so `signedOut` is the app node.
   return (
-    <ProjectList
-      context={context}
-      onOpen={openProject}
-      onOpened={openProject}
-      onOpenCredits={() => navigation.navigate('Credits')}
-    />
+    <RequireSignIn
+      user={user}
+      loading={false}
+      signedOut={
+        <ScreenScaffold title={t('nav.projects')}>
+          <ImportButtons />
+          {/* Over this screen, not a route away: once signed in, the list is
+              what this screen shows. */}
+          <SignInRequired />
+        </ScreenScaffold>
+      }
+    >
+      <ProjectList
+        context={context}
+        onOpen={openProject}
+        onOpened={openProject}
+        onOpenCredits={() => navigation.navigate('Credits')}
+      />
+    </RequireSignIn>
   );
 }
 

@@ -24,6 +24,7 @@ import { View } from 'react-native';
 import { Text } from '@sudobility/components-rn';
 import { useCreditBalance } from '@/features/credits/useCreditBalance';
 import { RedeemCouponForm } from './settings/RedeemCouponForm';
+import { RequireSignIn } from '@sudobility/building_blocks_rn';
 import { useAuth } from '@/auth/AuthContext';
 import { getMusicClient } from '@/config/server';
 import { ScreenScaffold, ServerUnavailable } from './ScreenScaffold';
@@ -44,18 +45,25 @@ export function CreditsScreen() {
       </ScreenScaffold>
     );
   }
-  if (!user) {
-    return (
-      <ScreenScaffold>
-        {/* Signing in here is in the way of the balance, not the point of
-            the screen: it opens over it, and the balance shows once it is
-            done. */}
-        <SignInRequired />
-      </ScreenScaffold>
-    );
-  }
-
-  return <CreditsBody />;
+  // The shared gate (building_blocks_rn `RequireSignIn`) does the signed-in
+  // branching; signed out it shows this screen's own prompt, which embeds the
+  // sign-in modal — so `signedOut` is the app's node, not the built-in notice.
+  return (
+    <RequireSignIn
+      user={user}
+      loading={false}
+      signedOut={
+        <ScreenScaffold>
+          {/* Signing in here is in the way of the balance, not the point of
+              the screen: it opens over it, and the balance shows once it is
+              done. */}
+          <SignInRequired />
+        </ScreenScaffold>
+      }
+    >
+      <CreditsBody />
+    </RequireSignIn>
+  );
 }
 
 function CreditsBody() {

@@ -1,3 +1,6 @@
+// three.js (the WebGPU Spatial canvas) needs TextDecoder/TextEncoder, which
+// Hermes does not provide — load the polyfill before anything can pull in three.
+import 'fast-text-encoding';
 // Configure the Firebase China proxy before anything initializes Firebase.
 // Blank/unset means standard Firebase (the library holds no default). It is a
 // fetch wrapper, so it covers the Firebase JS SDK — auth, on every platform —

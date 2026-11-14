@@ -1,7 +1,10 @@
 buildscript {
     ext {
         buildToolsVersion = "36.0.0"
-        minSdkVersion = 24
+        // react-native-webgpu (WebGPU Spatial stage) requires API 26; its native
+        // module self-raises to 26, so the app must match or the manifest merge
+        // fails. Drops Android 7.0/7.1. See docs + music_spatial_rn webgpu plan.
+        minSdkVersion = 26
         compileSdkVersion = 36
         targetSdkVersion = 36
         ndkVersion = "27.1.12297006"

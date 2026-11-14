@@ -68,6 +68,15 @@ const config = mergeConfig(getDefaultConfig(root), {
     // Linked spatial packages have their own node_modules for development.
     // Resolve their peer dependencies from this app to keep one React/RN copy.
     resolveRequest: (context, moduleName, platform) => {
+      // The WebGPU Spatial canvas pulls three.js through `three/webgpu`, while
+      // music_spatial_core builds geometry from `three`. Both must resolve to
+      // the one WebGPU build so the renderer and the geometries share classes.
+      if (moduleName === 'three' || moduleName === 'three/webgpu') {
+        return {
+          filePath: path.join(appNodeModules, 'three/build/three.webgpu.js'),
+          type: 'sourceFile',
+        };
+      }
       const fromLinkedSpatial = linkedSpatialPackages.some(directory =>
         context.originModulePath.startsWith(directory + path.sep),
       );

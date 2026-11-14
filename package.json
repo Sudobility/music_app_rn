@@ -50,7 +50,7 @@
     "@react-navigation/stack": "~7.12.1",
     "@shopify/react-native-skia": "2.13.0",
     "@sudobility/auth_lib": "^0.0.130",
-    "@sudobility/building_blocks_rn": "^0.0.123",
+    "@sudobility/building_blocks_rn": "^0.0.125",
     "@sudobility/components-rn": "^1.0.157",
     "@sudobility/consumables_client": "^0.0.42",
     "@sudobility/consumables_pages_rn": "^0.0.8",
@@ -70,7 +70,7 @@
     "@sudobility/music_spatial_rn": "^0.0.42",
     "@sudobility/music_synth_rn": "^0.0.7",
     "@sudobility/music_types": "^0.13.67",
-    "@sudobility/music_ui_rn": "^0.0.7",
+    "@sudobility/music_ui_rn": "^0.0.8",
     "@sudobility/printing_core": "^0.1.0",
     "@sudobility/printing_rn": "^0.1.0",
     "@sudobility/resources_client": "^0.1.1",
@@ -81,6 +81,7 @@
     "@tanstack/react-query": "~5.104.5",
     "class-variance-authority": "~0.7.1",
     "clsx": "~2.1.1",
+    "fast-text-encoding": "~1.0.6",
     "firebase": "~12.19.0",
     "i18next": "~26.3.1",
     "immer": "~11.2.9",
@@ -102,6 +103,7 @@
     "react-native-screens": "~4.24.0",
     "react-native-share": "~12.3.1",
     "react-native-svg": "15.16.0",
+    "react-native-webgpu": "0.19.2",
     "react-native-windows": "0.83.2",
     "react-native-worklets": "0.7.4",
     "tailwind-merge": "~3.7.0",
@@ -150,6 +152,7 @@
     "react-native-audio-api@0.13.3": "patches/react-native-audio-api@0.13.3.patch",
     "react-native-bottom-tabs@1.5.0": "patches/react-native-bottom-tabs@1.5.0.patch",
     "react-native-macos@0.83.0": "patches/react-native-macos@0.83.0.patch",
-    "react-native-svg@15.16.0": "patches/react-native-svg@15.16.0.patch"
+    "react-native-svg@15.16.0": "patches/react-native-svg@15.16.0.patch",
+    "react-native-webgpu@0.19.2": "patches/react-native-webgpu@0.19.2.patch"
   }
 }
