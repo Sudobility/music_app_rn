@@ -16,17 +16,17 @@
       },
       "Microsoft.ReactNative": {
         "type": "Direct",
-        "requested": "[0.81.35, )",
-        "resolved": "0.81.35",
-        "contentHash": "WjsJFALaLLUvJHUBw8k8G8/PB3p5qvqqXG7NYJefHOgqB7MbCSOnD/bckIqKcp53J+MkPxqaeg5tnYLVTVhqwQ=="
+        "requested": "[0.85.0, )",
+        "resolved": "0.85.0",
+        "contentHash": "B8cad8WfsNlrSvCGxDBmfpNHwMV/Z9bTOU7OWCosrmc4yObh5R+c8SGGtp9PsAH8+E8MS7PywJcGgwfqreYlng=="
       },
       "Microsoft.ReactNative.Cxx": {
         "type": "Direct",
-        "requested": "[0.81.35, )",
-        "resolved": "0.81.35",
-        "contentHash": "oadpIMSLN11M9W/hyZKyiCKE2wMvjb80Bl5jInVUmqDJWNswxnu7W5Kt/NA9ciy+BN0ru62ucO0E2PJDrnP/Jg==",
+        "requested": "[0.85.0, )",
+        "resolved": "0.85.0",
+        "contentHash": "rl2EJmg8kvaB0xzKRkM4nh79AZjjQE29FXaQyhqabWEU0sP+Kp03RQiiEZhI4/Zk9hwHaRt+GgGmG0+atjwiDA==",
         "dependencies": {
-          "Microsoft.ReactNative": "0.81.35"
+          "Microsoft.ReactNative": "0.85.0"
         }
       },
       "Microsoft.VCRTForwarders.140": {
@@ -156,26 +156,18 @@
       "reactnativeasyncstorage": {
         "type": "Project",
         "dependencies": {
-          "Microsoft.ReactNative": "[0.81.35, )",
-          "Microsoft.ReactNative.Cxx": "[0.81.35, )",
+          "Microsoft.ReactNative": "[0.85.0, )",
+          "Microsoft.ReactNative.Cxx": "[0.85.0, )",
           "Microsoft.VCRTForwarders.140": "[1.0.2-rc, )",
           "Microsoft.WindowsAppSDK": "[1.8.260508005, )",
           "boost": "[1.84.0, )"
         }
       },
-      "rnscreens": {
-        "type": "Project",
-        "dependencies": {
-          "Microsoft.ReactNative": "[0.81.35, )",
-          "Microsoft.ReactNative.Cxx": "[0.81.35, )",
-          "Microsoft.WindowsAppSDK": "[1.8.260508005, )"
-        }
-      },
       "rnsvg": {
         "type": "Project",
         "dependencies": {
-          "Microsoft.ReactNative": "[0.81.35, )",
-          "Microsoft.ReactNative.Cxx": "[0.81.35, )",
+          "Microsoft.ReactNative": "[0.85.0, )",
+          "Microsoft.ReactNative.Cxx": "[0.85.0, )",
           "Microsoft.VCRTForwarders.140": "[1.0.2-rc, )",
           "Microsoft.WindowsAppSDK": "[1.8.260508005, )",
           "boost": "[1.84.0, )"
@@ -185,9 +177,9 @@
     "native,Version=v0.0/win": {
       "Microsoft.ReactNative": {
         "type": "Direct",
-        "requested": "[0.81.35, )",
-        "resolved": "0.81.35",
-        "contentHash": "WjsJFALaLLUvJHUBw8k8G8/PB3p5qvqqXG7NYJefHOgqB7MbCSOnD/bckIqKcp53J+MkPxqaeg5tnYLVTVhqwQ=="
+        "requested": "[0.85.0, )",
+        "resolved": "0.85.0",
+        "contentHash": "B8cad8WfsNlrSvCGxDBmfpNHwMV/Z9bTOU7OWCosrmc4yObh5R+c8SGGtp9PsAH8+E8MS7PywJcGgwfqreYlng=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Direct",
@@ -214,9 +206,9 @@
     "native,Version=v0.0/win-arm64": {
       "Microsoft.ReactNative": {
         "type": "Direct",
-        "requested": "[0.81.35, )",
-        "resolved": "0.81.35",
-        "contentHash": "WjsJFALaLLUvJHUBw8k8G8/PB3p5qvqqXG7NYJefHOgqB7MbCSOnD/bckIqKcp53J+MkPxqaeg5tnYLVTVhqwQ=="
+        "requested": "[0.85.0, )",
+        "resolved": "0.85.0",
+        "contentHash": "B8cad8WfsNlrSvCGxDBmfpNHwMV/Z9bTOU7OWCosrmc4yObh5R+c8SGGtp9PsAH8+E8MS7PywJcGgwfqreYlng=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Direct",
@@ -243,9 +235,9 @@
     "native,Version=v0.0/win-x64": {
       "Microsoft.ReactNative": {
         "type": "Direct",
-        "requested": "[0.81.35, )",
-        "resolved": "0.81.35",
-        "contentHash": "WjsJFALaLLUvJHUBw8k8G8/PB3p5qvqqXG7NYJefHOgqB7MbCSOnD/bckIqKcp53J+MkPxqaeg5tnYLVTVhqwQ=="
+        "requested": "[0.85.0, )",
+        "resolved": "0.85.0",
+        "contentHash": "B8cad8WfsNlrSvCGxDBmfpNHwMV/Z9bTOU7OWCosrmc4yObh5R+c8SGGtp9PsAH8+E8MS7PywJcGgwfqreYlng=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Direct",
@@ -272,9 +264,9 @@
     "native,Version=v0.0/win-x86": {
       "Microsoft.ReactNative": {
         "type": "Direct",
-        "requested": "[0.81.35, )",
-        "resolved": "0.81.35",
-        "contentHash": "WjsJFALaLLUvJHUBw8k8G8/PB3p5qvqqXG7NYJefHOgqB7MbCSOnD/bckIqKcp53J+MkPxqaeg5tnYLVTVhqwQ=="
+        "requested": "[0.85.0, )",
+        "resolved": "0.85.0",
+        "contentHash": "B8cad8WfsNlrSvCGxDBmfpNHwMV/Z9bTOU7OWCosrmc4yObh5R+c8SGGtp9PsAH8+E8MS7PywJcGgwfqreYlng=="
       },
       "Microsoft.VCRTForwarders.140": {
         "type": "Direct",

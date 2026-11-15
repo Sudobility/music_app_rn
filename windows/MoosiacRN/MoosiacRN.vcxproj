@@ -174,12 +174,12 @@
       <DeploymentContent>true</DeploymentContent>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\native\synth\resources\FluidR3Mono_GM.sf3">
+    <Content Include="$(MoosiacSynthRNDir)..\resources\FluidR3Mono_GM.sf3">
       <Link>soundfont\FluidR3Mono_GM.sf3</Link>
       <DeploymentContent>true</DeploymentContent>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\..\native\synth\resources\FluidR3Mono_License.md">
+    <Content Include="$(MoosiacSynthRNDir)..\resources\FluidR3Mono_License.md">
       <Link>soundfont\FluidR3Mono_License.md</Link>
       <DeploymentContent>true</DeploymentContent>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
