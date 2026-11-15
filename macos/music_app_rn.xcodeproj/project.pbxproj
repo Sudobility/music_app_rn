@@ -228,8 +228,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-music_app_rn-macOS/Pods-music_app_rn-macOS-resources.sh",
-				"${PODS_ROOT}/../../node_modules/@moosiac/synth/resources/FluidR3Mono_GM.sf3",
-				"${PODS_ROOT}/../../node_modules/@moosiac/synth/resources/FluidR3Mono_License.md",
+				"${PODS_ROOT}/../../node_modules/@sudobility/music_synth_rn/resources/FluidR3Mono_GM.sf3",
+				"${PODS_ROOT}/../../node_modules/@sudobility/music_synth_rn/resources/FluidR3Mono_License.md",
 				"${PODS_CONFIGURATION_BUILD_DIR}/RCT-Folly/RCT-Folly_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/RNCAsyncStorage/RNCAsyncStorage_resources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/RNSVG/RNSVGFilters.bundle",

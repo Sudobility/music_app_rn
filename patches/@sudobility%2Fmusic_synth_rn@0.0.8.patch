@@ -1,0 +1,74 @@
+diff --git a/package.json b/package.json
+index 6543432..60fec09 100644
+--- a/package.json
++++ b/package.json
+@@ -14,7 +14,8 @@
+       "types": "./dist/index.d.ts",
+       "import": "./dist/index.js",
+       "default": "./dist/index.js"
+-    }
++    },
++    "./package.json": "./package.json"
+   },
+   "files": [
+     "dist",
+diff --git a/react-native.config.cjs b/react-native.config.cjs
+new file mode 100644
+index 0000000..1c1b820
+--- /dev/null
++++ b/react-native.config.cjs
+@@ -0,0 +1,24 @@
++/**
++ * Autolinking for the native synth, carried by this package.
++ *
++ * CocoaPods links the iOS and macOS source (the same `apple/` files + a
++ * vendored FluidSynth XCFramework — see MoosiacSynth.podspec), Gradle links the
++ * Android library (`android/`, a Kotlin shell over a JNI core and a prebuilt
++ * libfluidsynth.so), and RNW links the Windows TinySoundFont/WASAPI module.
++ *
++ * The native module name stays `MoosiacSynth` (the `NativeModules` key the TS
++ * bridge reads) even though the npm package is `@sudobility/music_synth_rn`.
++ */
++module.exports = {
++  dependency: {
++    platforms: {
++      ios: { podspecPath: __dirname + '/MoosiacSynth.podspec' },
++      macos: { podspecPath: __dirname + '/MoosiacSynth.podspec' },
++      // Relative to the package root, unlike `podspecPath`: the Android
++      // resolver joins it onto the root itself, so an absolute path here
++      // resolves to nothing and the module is silently not linked.
++      android: { sourceDir: 'android' },
++      windows: null,
++    },
++  },
++};
+diff --git a/react-native.config.js b/react-native.config.js
+deleted file mode 100644
+index 1c1b820..0000000
+--- a/react-native.config.js
++++ /dev/null
+@@ -1,24 +0,0 @@
+-/**
+- * Autolinking for the native synth, carried by this package.
+- *
+- * CocoaPods links the iOS and macOS source (the same `apple/` files + a
+- * vendored FluidSynth XCFramework — see MoosiacSynth.podspec), Gradle links the
+- * Android library (`android/`, a Kotlin shell over a JNI core and a prebuilt
+- * libfluidsynth.so), and RNW links the Windows TinySoundFont/WASAPI module.
+- *
+- * The native module name stays `MoosiacSynth` (the `NativeModules` key the TS
+- * bridge reads) even though the npm package is `@sudobility/music_synth_rn`.
+- */
+-module.exports = {
+-  dependency: {
+-    platforms: {
+-      ios: { podspecPath: __dirname + '/MoosiacSynth.podspec' },
+-      macos: { podspecPath: __dirname + '/MoosiacSynth.podspec' },
+-      // Relative to the package root, unlike `podspecPath`: the Android
+-      // resolver joins it onto the root itself, so an absolute path here
+-      // resolves to nothing and the module is silently not linked.
+-      android: { sourceDir: 'android' },
+-      windows: null,
+-    },
+-  },
+-};

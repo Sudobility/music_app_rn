@@ -120,12 +120,13 @@
     },
   },
   "patchedDependencies": {
-    "react-native-svg@15.16.0": "patches/react-native-svg@15.16.0.patch",
     "react-native-macos@0.83.0": "patches/react-native-macos@0.83.0.patch",
+    "@sudobility/music_synth_rn@0.0.8": "patches/@sudobility%2Fmusic_synth_rn@0.0.8.patch",
     "react-native-audio-api@0.13.3": "patches/react-native-audio-api@0.13.3.patch",
+    "react-native-svg@15.16.0": "patches/react-native-svg@15.16.0.patch",
+    "react-native-bottom-tabs@1.5.0": "patches/react-native-bottom-tabs@1.5.0.patch",
     "react-native-webgpu@0.19.2": "patches/react-native-webgpu@0.19.2.patch",
     "@shopify/react-native-skia@2.13.0": "patches/@shopify%2Freact-native-skia@2.13.0.patch",
-    "react-native-bottom-tabs@1.5.0": "patches/react-native-bottom-tabs@1.5.0.patch",
   },
   "overrides": {
     "@react-native-community/cli-platform-ios": "20.2.0",

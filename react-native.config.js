@@ -101,30 +101,26 @@ const config = {
     // Remove this once the package ships a `react-native.config.cjs` and a
     // `"./package.json"` export. podspec is at the package root; the module
     // name stays `MoosiacSynth` though the npm package was renamed.
-    '@sudobility/music_synth_rn': (() => {
-      const root = path.join(
-        __dirname,
-        'node_modules',
-        '@sudobility',
-        'music_synth_rn',
-      );
-      const podspecPath = path.join(root, 'MoosiacSynth.podspec');
-      return {
-        root,
-        platforms: {
-          ios: { podspecPath },
-          macos: { podspecPath },
-          // Android is intentionally omitted: pinning `root` lets the CLI
-          // auto-derive the full Android config (packageImportPath,
-          // cmakeListsPath, the generated codegen paths …) from `<root>/android`,
-          // exactly as every other native module. Supplying a partial
-          // `{ sourceDir }` here REPLACES that, leaving the fields the RN Gradle
-          // plugin regex-rewrites null — "Parameter specified as non-null is
-          // null: method kotlin.text.Regex.replace" at settings evaluation.
-          windows: null,
-        },
-      };
-    })(),
+    // @sudobility/music_synth_rn — the native FluidSynth module (pod/native
+    // module name `MoosiacSynth`, Kotlin package `com.moosiac.synth`).
+    // Autolinks on iOS, macOS and Android straight from the package's own
+    // `MoosiacSynth.podspec` and `android/`; only Windows is switched off
+    // (the desktops navigate and play without it).
+    //
+    // Deliberately NOT pinned with `root` and NOT given an explicit
+    // `platforms` map for ios/macos/android. The package is `"type":
+    // "module"`, so the CLI's synchronous loader reads its CommonJS
+    // `react-native.config.js` as ESM and gets `{}` — harmless, the CLI
+    // then auto-derives every platform from the package layout. What it
+    // could NOT do before was resolve the package at all: its `exports`
+    // map omitted `"./package.json"`, so it was dropped from
+    // `react-native config` entirely. That export is added via a
+    // patch-package patch; with it, auto-derivation supplies the `android`
+    // block AND the top-level `name` the RN Gradle settings plugin needs
+    // (`ModelAutolinkingDependenciesJson.nameCleansed` NPEs on a null name
+    // — "Parameter specified as non-null is null: method Regex.replace").
+    // Pinning `root` here is what used to drop `name`, so we don't.
+    '@sudobility/music_synth_rn': { platforms: { windows: null } },
     // This package's iOS slider is the community slider (the custom
     // MoosiacNativeSlider component is implemented for macOS/Windows only).
     // Its codegen metadata currently advertises an iOS Fabric component

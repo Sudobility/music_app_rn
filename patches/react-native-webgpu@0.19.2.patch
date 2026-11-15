@@ -24,7 +24,7 @@
  typedef UIView RNWGPlatformView;
 --- a/apple/MetalView.mm
 +++ b/apple/MetalView.mm
-@@ -18,6 +18,13 @@
+@@ -19,6 +19,13 @@
    }
    return self;
  }
@@ -38,3 +38,17 @@
  #endif // !TARGET_OS_OSX
  
  - (void)configure {
+diff --git a/android/build.gradle b/android/build.gradle
+index d893d99..ac5a1b0 100644
+--- a/android/build.gradle
++++ b/android/build.gradle
+@@ -96,6 +96,9 @@ def supportsNamespace() {
+ 
+ android {
+   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
++  if (rootProject.ext.has("ndkVersion")) {
++    ndkVersion rootProject.ext.get("ndkVersion")
++  }
+ 
+   defaultConfig {
+     minSdkVersion resolveMinSdkVersion()

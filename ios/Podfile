@@ -168,5 +168,27 @@ target 'music_app_rn' do
         config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf'
       end
     end
+
+    # react-native-webgpu disables Xcode's headermap (USE_HEADERMAP = NO, to
+    # stop same-named headers leaking across pods — e.g. Skia's jsi helpers)
+    # but then only lists its top-level `cpp` dir on the header search path.
+    # Its headers actually live nested: RNWebGPUManager.h in `cpp/rnwgpu`,
+    # GPU.h in `cpp/rnwgpu/api`. The pod's own `apple/` sources import those
+    # by bare name (`#import "RNWebGPUManager.h"`), so under static frameworks
+    # — with no headermap to resolve a basename — the build fails with
+    # "'RNWebGPUManager.h' file not found" / "'GPU.h' file not found". Add the
+    # pod's cpp tree recursively to its *own* search paths. Scoped to this one
+    # target via $(inherited), so the cross-pod isolation above is preserved.
+    installer.pods_project.targets.each do |target|
+      next unless target.name == 'react-native-webgpu'
+      target.build_configurations.each do |config|
+        current = config.build_settings['HEADER_SEARCH_PATHS']
+        current = current.is_a?(Array) ? current.dup : [current || '$(inherited)']
+        addition = '"$(PODS_TARGET_SRCROOT)/cpp/**"'
+        unless current.include?(addition)
+          config.build_settings['HEADER_SEARCH_PATHS'] = current + [addition]
+        end
+      end
+    end
   end
 end
