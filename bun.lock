@@ -51,7 +51,7 @@
         "@sudobility/printing_core": "^0.1.1",
         "@sudobility/printing_rn": "^0.1.1",
         "@sudobility/resources_client": "^0.1.4",
-        "@sudobility/resources_pages_rn": "^0.0.1",
+        "@sudobility/resources_pages_rn": "^0.1.1",
         "@sudobility/routing": "^0.0.4",
         "@sudobility/types": "^1.11.2",
         "@sudobility/windows_canvas_rn": "^0.2.16",
@@ -781,7 +781,7 @@
 
     "@sudobility/resources_client": ["@sudobility/resources_client@0.1.4", "https://npm.pkg.github.com/download/@sudobility/resources_client/0.1.4/4bad0ada7a118792e7f474b4a7ae0b1c5a0842f0", { "peerDependencies": { "@sudobility/types": "^1.11.2", "react": "^18.0.0 || ^19.0.0" } }, "sha512-LswK+TanscGdzmoOyHE1TvvQj21HhhHHCoS8lngWC46fREfTG9fJzmq5cHPL3L1kNxCp8TG7kaQ0RAVEsCMWow=="],
 
-    "@sudobility/resources_pages_rn": ["@sudobility/resources_pages_rn@0.0.1", "https://npm.pkg.github.com/download/@sudobility/resources_pages_rn/0.0.1/e5c92e8600de694b4cbde1e590207bbee0a976aa", { "peerDependencies": { "@sudobility/design": "^1.1.71", "@sudobility/resources_client": "^0.0.1", "@sudobility/types": "^1.9.79", "react": ">=18", "react-native": ">=0.74" } }, "sha512-TOmJsAHeYauIDRZ702fGKZmWdyQQSgjC3lsmW6LKm7tasMMciYRn0FN1O957/zrNesQ5e4rvsO7uqPriTiJYgQ=="],
+    "@sudobility/resources_pages_rn": ["@sudobility/resources_pages_rn@0.1.1", "https://npm.pkg.github.com/download/@sudobility/resources_pages_rn/0.1.1/deedd22cdb0c1ac5d80e8a0efca3f51e84942a16", { "peerDependencies": { "@sudobility/design": "^1.1.72", "@sudobility/resources_client": "^0.1.4", "@sudobility/types": "^1.11.2", "react": ">=18", "react-native": ">=0.74" } }, "sha512-vnEQnf7hF4ksv/e/SjS54IEkMtGgUkOgG8hht5vVXbfm/rLs70Zrk2OxLI+XwcVRlPU3GemYW5TqoxJiQpa7CQ=="],
 
     "@sudobility/routing": ["@sudobility/routing@0.0.4", "https://npm.pkg.github.com/download/@sudobility/routing/0.0.4/44ce5b4f9510514855b4fe8d60192057213225b5", { "peerDependencies": { "react": ">=18" } }, "sha512-oFOYEZYZrQlVqKBVtuYbotpWbdWJtC6xeawxOMzLHh0Qq4gMu/QW8CeOQwKb1tnXW8ZH4Riy5dN9UyrnDfGL/w=="],
 

@@ -74,7 +74,7 @@
     "@sudobility/printing_core": "^0.1.1",
     "@sudobility/printing_rn": "^0.1.1",
     "@sudobility/resources_client": "^0.1.4",
-    "@sudobility/resources_pages_rn": "^0.0.1",
+    "@sudobility/resources_pages_rn": "^0.1.1",
     "@sudobility/routing": "^0.0.4",
     "@sudobility/types": "^1.11.2",
     "@sudobility/windows_canvas_rn": "^0.2.16",
