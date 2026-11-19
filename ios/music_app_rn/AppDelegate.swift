@@ -247,13 +247,17 @@ class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
 
   override func bundleURL() -> URL? {
 #if DEBUG
-    // React-Core-prebuilt ships RCTBundleURLProvider already compiled, with
-    // RCT_METRO_PORT baked in at 8081 by the upstream artifact — no build
-    // setting in this project can change it. sudojo_app_rn and svgr_app_rn
-    // hit the same wall and settled on this: override the port at runtime,
-    // the one thing `jsLocation` is for, rather than the app's compiled default.
     let provider = RCTBundleURLProvider.sharedSettings()
-    provider.jsLocation = "localhost:8092"
+    // Metro dev-server host/port come from .env (METRO_HOST / METRO_PORT),
+    // injected into Info.plist at build time by the "Inject Metro Dev Server
+    // (.env)" build phase — nothing hardcoded here. On a physical device the
+    // host must be the dev Mac's LAN IP; the simulator can use localhost.
+    // Falls back to RN's default (localhost:8081) when the keys are absent.
+    if let host = Bundle.main.object(forInfoDictionaryKey: "MetroHost") as? String,
+       let port = Bundle.main.object(forInfoDictionaryKey: "MetroPort") as? String,
+       !host.isEmpty, !port.isEmpty {
+      provider.jsLocation = "\(host):\(port)"
+    }
     return provider.jsBundleURL(forBundleRoot: "index")
 #else
     Bundle.main.url(forResource: "main", withExtension: "jsbundle")

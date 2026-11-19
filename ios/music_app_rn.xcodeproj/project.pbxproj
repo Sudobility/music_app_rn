@@ -123,6 +123,7 @@
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
 				37CB8BF83E8E618A15318DE4 /* [CP-User] [RNFB] Core Configuration */,
 				D6C5A477E2B837A2605DCE4C /* [CP-User] [RNFB] Crashlytics Configuration */,
+				0129797E6848E0F36DD78A53 /* Inject Metro Dev Server (.env) */,
 			);
 			buildRules = (
 			);
@@ -211,6 +212,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-music_app_rn/Pods-music_app_rn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0129797E6848E0F36DD78A53 /* Inject Metro Dev Server (.env) */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Inject Metro Dev Server (.env)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Injects the Metro dev-server host/port from <repo>/.env (METRO_HOST,\n# METRO_PORT) into the built Info.plist in Debug builds, so\n# RCTBundleURLProvider.jsLocation points at the right packager. Source of\n# truth is .env; no values are committed to source. See AppDelegate.swift.\nif [ \"${CONFIGURATION}\" != \"Debug\" ]; then\n  echo \"metro-inject: ${CONFIGURATION} build, skipping\"\n  exit 0\nfi\nENV_FILE=\"${SRCROOT}/../.env\"\n[ -f \"$ENV_FILE\" ] || ENV_FILE=\"${SRCROOT}/../.env.example\"\nif [ ! -f \"$ENV_FILE\" ]; then echo \"metro-inject: no .env found\"; exit 0; fi\nval() { grep -E \"^$1=\" \"$ENV_FILE\" | tail -1 | sed -E \"s/^[^=]+=//; s/^[\\\"']//; s/[\\\"']\\$//; s/[[:space:]]*\\$//\"; }\nHOST=\"$(val METRO_HOST)\"\nPORT=\"$(val METRO_PORT)\"\nPLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\nif [ -z \"$HOST\" ] || [ -z \"$PORT\" ] || [ ! -f \"$PLIST\" ]; then\n  echo \"metro-inject: missing METRO_HOST/METRO_PORT or Info.plist (host='$HOST' port='$PORT')\"\n  exit 0\nfi\n/usr/libexec/PlistBuddy -c \"Delete :MetroHost\" \"$PLIST\" 2>/dev/null || true\n/usr/libexec/PlistBuddy -c \"Add :MetroHost string $HOST\" \"$PLIST\"\n/usr/libexec/PlistBuddy -c \"Delete :MetroPort\" \"$PLIST\" 2>/dev/null || true\n/usr/libexec/PlistBuddy -c \"Add :MetroPort string $PORT\" \"$PLIST\"\necho \"metro-inject: set MetroHost=$HOST MetroPort=$PORT in $PLIST\"\n";
 			showEnvVarsInLog = 0;
 		};
 		37CB8BF83E8E618A15318DE4 /* [CP-User] [RNFB] Core Configuration */ = {

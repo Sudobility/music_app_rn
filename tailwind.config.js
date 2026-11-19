@@ -29,6 +29,9 @@ module.exports = {
     './node_modules/@sudobility/components-rn/{src,dist}/**/*.{js,jsx,ts,tsx}',
     './node_modules/@sudobility/music_ui_rn/{src,dist}/**/*.{js,jsx,ts,tsx}',
     './node_modules/@sudobility/resources_pages_rn/{src,dist}/**/*.{js,jsx,ts,tsx}',
+    // Settings' credit history draws consumables_pages_rn's rows; without this
+    // glob the classes only that package uses are never generated.
+    './node_modules/@sudobility/consumables_pages_rn/{src,dist}/**/*.{js,jsx,ts,tsx}',
     './node_modules/@sudobility/design/dist/**/*.{js,jsx}',
   ],
   presets: [require('nativewind/preset'), createTailwindPreset()],
