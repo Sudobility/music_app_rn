@@ -54,6 +54,6 @@ export function installWindowsAnimationFrames() {
     return handle;
   };
   globalThis.cancelAnimationFrame = handle => {
-    pending.delete(handle);
+    if (handle != null) pending.delete(handle);
   };
 }

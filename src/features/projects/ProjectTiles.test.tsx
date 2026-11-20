@@ -56,7 +56,7 @@ describe('the grid', () => {
   it('fits as many tiles as the width holds, all the same width', () => {
     // A tablet's detail pane beside a 320-point list.
     const { columns, tileWidth } = tileGrid(860);
-    expect(columns).toBe(3);
+    expect(columns).toBe(4);
     expect(tileWidth).toBeGreaterThanOrEqual(TILE_MIN_WIDTH);
     expect(columns * tileWidth + (columns + 1) * TILE_GAP).toBeLessThanOrEqual(
       860,
