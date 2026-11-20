@@ -300,6 +300,26 @@ _Use_decl_annotations_ int CALLBACK WinMain(HINSTANCE /* instance */, HINSTANCE,
   // The menu goes on before the window is first shown, so the first layout
   // already measures the client area below it.
   g_mainHwnd = winrt::Microsoft::UI::GetWindowFromWindowId(appWindow.Id());
+  // The taskbar button's icon. `AppWindow.SetIcon` above sets the title-bar
+  // icon but not the taskbar's, which reads the window's WM_SETICON ICON_BIG.
+  // Load the exe icon at the big/small system sizes and set both on the HWND.
+  {
+    const HMODULE moduleHandle = GetModuleHandleW(nullptr);
+    if (auto bigIcon = static_cast<HICON>(LoadImageW(
+            moduleHandle, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON,
+            GetSystemMetrics(SM_CXICON), GetSystemMetrics(SM_CYICON),
+            LR_DEFAULTCOLOR))) {
+      SendMessageW(g_mainHwnd, WM_SETICON, ICON_BIG,
+                   reinterpret_cast<LPARAM>(bigIcon));
+    }
+    if (auto smallIcon = static_cast<HICON>(LoadImageW(
+            moduleHandle, MAKEINTRESOURCEW(IDI_ICON1), IMAGE_ICON,
+            GetSystemMetrics(SM_CXSMICON), GetSystemMetrics(SM_CYSMICON),
+            LR_DEFAULTCOLOR))) {
+      SendMessageW(g_mainHwnd, WM_SETICON, ICON_SMALL,
+                   reinterpret_cast<LPARAM>(smallIcon));
+    }
+  }
   SetMenu(g_mainHwnd, BuildMenuBar());
   SetWindowSubclass(g_mainHwnd, MainWindowSubclass, 1, 0);
   g_accelerators = BuildAccelerators();
