@@ -50,7 +50,7 @@
     "@react-navigation/stack": "~7.12.1",
     "@shopify/react-native-skia": "2.13.0",
     "@sudobility/auth_lib": "^0.0.134",
-    "@sudobility/building_blocks_rn": "^0.0.131",
+    "@sudobility/building_blocks_rn": "^0.0.132",
     "@sudobility/components-rn": "^1.0.162",
     "@sudobility/consumables_client": "^0.0.45",
     "@sudobility/consumables_pages_rn": "^0.0.12",
